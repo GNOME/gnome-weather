@@ -1,0 +1,38 @@
+#!@PYTHON@
+
+import sys, os, re
+
+def add_to_envvar(var, value):
+    if var in os.environ:
+        os.environ[var] += ':' + value
+    else:
+        os.environ[var] = value
+
+# HACK!
+# We need to remove python2 directories that are added
+# by jhbuild, or we end up loading pygobject for python 2!
+
+newpath = []
+for p in sys.path:
+    is_python2 = False
+    for d in p.split('/'):
+        if d.startswith('python2'):
+            is_python2 = True
+            break
+    if not is_python2:
+        newpath.append(p)
+
+sys.path = newpath
+
+if os.path.exists('./src'):
+   # running from source tree
+   sys.path.append('./src')
+   add_to_envvar('GI_TYPELIB_PATH', './lib')
+else:
+   sys.path.append("@pkgdatadir@")
+   add_to_envvar('GI_TYPELIB_PATH', '@pkglibdir@')
+from gi.repository import GLib
+from app import GnomeWeatherApp
+
+GLib.set_prgname('gnome-weather')
+sys.exit(GnomeWeatherApp().run(sys.argv))
