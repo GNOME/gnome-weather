@@ -35,7 +35,7 @@ class GnomeWeatherApp(Gtk.Application):
     def _build_ui(self):
         self.window = Gtk.ApplicationWindow(application=self,
                                             title=self._make_title())
-        self.window.set_default_size(600, 500)
+        self.window.set_size_request(700, 500)
 
         grid = Gtk.Grid(orientation=Gtk.Orientation.VERTICAL, visible=True)
 

@@ -137,5 +137,6 @@ class WeatherWidget(GtkClutter.Embed):
         self._temperature.props.text = _("Temperature: ") + info.get_temp_summary()
         self._wind.props.text = _("Wind: ") + info.get_wind()
 
-        for i in info.get_forecast_list():
-            self._forecasts.add_actor(ForecastActor(i))
+        l = info.get_forecast_list()
+        for i in range(min(len(l), 6)):
+            self._forecasts.add_actor(ForecastActor(l[i]))
