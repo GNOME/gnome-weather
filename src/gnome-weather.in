@@ -1,6 +1,7 @@
 #!@PYTHON@
 
 import sys, os, re
+import gettext
 
 def add_to_envvar(var, value):
     if var in os.environ:
@@ -24,13 +25,16 @@ for p in sys.path:
 
 sys.path = newpath
 
+gettext.textdomain('@GETTEXT_PACKAGE@')
 if os.path.exists('./src'):
    # running from source tree
    sys.path.append('./src')
    add_to_envvar('GI_TYPELIB_PATH', './lib')
+   gettext.bindtextdomain('@GETTEXT_PACKAGE@', './po')
 else:
    sys.path.append("@pkgdatadir@")
    add_to_envvar('GI_TYPELIB_PATH', '@pkglibdir@')
+   gettext.bindtextdomain('@GETTEXT_PACKAGE@', '@localedir@')
 from gi.repository import GLib
 from app import GnomeWeatherApp
 
