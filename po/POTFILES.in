@@ -2,3 +2,6 @@ data/gnome-weather.desktop.in
 src/gnome-weather.in
 src/app.py
 src/widget.py
+src/conditions.py
+src/forecast.py
+src/strings.py

@@ -11,7 +11,8 @@ gnome-weather: gnome-weather.in Makefile
 	                $< > $@
 	@chmod +x $@
 
-dist_pkgdata_DATA = \
+pydir = $(pkglibdir)
+dist_py_PYTHON = \
 	__init__.py	\
 	app.py		\
 	util.py		\
@@ -26,3 +27,4 @@ dist_pkgui_DATA = \
 	ui/custom.css
 
 dist_noinst_DATA = gnome-weather.in
+CLEANFILES = gnome-weather

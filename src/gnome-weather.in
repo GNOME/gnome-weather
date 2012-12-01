@@ -7,7 +7,7 @@
 # Free Software Foundation; either version 2 of the License, or (at your
 # option) any later version.
 #
-# Gnome Clocks is distributed in the hope that it will be useful, but
+# Gnome Weather is distributed in the hope that it will be useful, but
 # WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
 # or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
 # for more details.
@@ -45,19 +45,20 @@ gettext.textdomain('@GETTEXT_PACKAGE@')
 
 if os.path.exists('./src'):
    # running from source tree
-   add_to_envvar('GI_TYPELIB_PATH', './lib')
    gettext.bindtextdomain('@GETTEXT_PACKAGE@', './po')
    pkgdatadir = './src'
+   pkglibdir = './src'
 else:
-   add_to_envvar('GI_TYPELIB_PATH', '@pkglibdir@')
    gettext.bindtextdomain('@GETTEXT_PACKAGE@', '@localedir@')
    pkgdatadir = '@pkgdatadir@'
+   pkglibdir = '@pkglibdir@'
 
-sys.path.append(pkgdatadir)
+sys.path.append(pkglibdir)
 from gi.repository import GLib
 from app import GnomeWeatherApp
 
 class PathConfig:
+      PKGLIBDIR = pkglibdir
       PKGDATADIR = pkgdatadir
       UIDIR = pkgdatadir + '/ui'
 
