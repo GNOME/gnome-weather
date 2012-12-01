@@ -27,6 +27,8 @@ __pycache__
 *.la
 *.lo
 *.o
+*.pyc
+*.pyo
 
 data/gnome-weather.desktop
 src/gnome-weather

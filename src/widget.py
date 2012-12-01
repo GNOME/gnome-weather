@@ -1,6 +1,24 @@
 
-from gi.repository import GLib, Gio, GObject, Clutter, Gtk, GtkClutter, GWeather, GWeatherUI
+# Copyright (c) 2012 Giovanni Campagna <scampa.giovanni@gmail.com>
+#
+# Gnome Weather is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2 of the License, or (at your
+# option) any later version.
+#
+# Gnome Weather is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+# for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with Gnome Weather; if not, write to the Free Software Foundation,
+# Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+from gi.repository import GLib, Gio, GObject, Clutter, Gtk, GtkClutter, GWeather
 import util
+from forecast import ForecastBox
+from conditions import ConditionsSidebar
 from gettext import gettext as _
 
 class LocationEntryItem(Gtk.ToolItem):
@@ -27,33 +45,6 @@ class LocationEntryItem(Gtk.ToolItem):
     def _locationbar_changed(self, entry, pspec):
         self.notify('location')
 
-class ForecastActor(Clutter.Actor):
-    def __init__(self, info, margin_left=5, margin_right=5, **kw):
-        super().__init__(margin_left=margin_left, margin_right=margin_right, **kw)
-
-        self.info = info
-
-        layout = Clutter.BoxLayout(vertical=True)
-        self.props.layout_manager = layout
-
-        ok, date = self.info.get_value_update()
-        if ok:
-            datetime = GLib.DateTime.new_from_unix_local(date)
-            datelabel = Clutter.Text(text=datetime.format("<b>%A</b>"),
-                                     use_markup=True)
-            layout.pack(datelabel, True, True, False, Clutter.BoxAlignment.START, Clutter.BoxAlignment.START)
-        else:
-            raise ValueError("Invalid GWeather.Info (has no update time)")
-
-        image = Clutter.Actor(content=GWeatherUI.util_load_gicon_to_clutter(Gio.ThemedIcon(name=info.get_icon_name()),
-                                                                            48),
-                              width=48, height=48)
-        layout.pack(image, True, False, False, Clutter.BoxAlignment.CENTER, Clutter.BoxAlignment.CENTER)
-
-        # TRANSLATORS: this holds the minimum and maximum forecasted temperatures
-        temp = Clutter.Text(text=_("%s / %s") % (info.get_temp_min(), info.get_temp_max()))
-        layout.pack(temp, True, True, False, Clutter.BoxAlignment.START, Clutter.BoxAlignment.END)
-
 class WeatherWidget(GtkClutter.Embed):
     def __init__(self, info, visible=True, **kw):
         super().__init__(visible=visible, **kw)
@@ -69,6 +60,7 @@ class WeatherWidget(GtkClutter.Embed):
         self.info = info
         if info:
             self._updated_id = info.connect('updated', self.on_updated)
+            #self.begin_update()
             info.update()
 
     def destroy(self):
@@ -76,53 +68,45 @@ class WeatherWidget(GtkClutter.Embed):
         super().destroy()
 
     def begin_update(self):
-        self._forecasts.destroy_all_children()
+        self._forecasts.clear()
+        self._overlay.show()
         self._overlay.props.opacity = 255
 
     def _build_ui(self):
-        self._icon = Clutter.Actor(width=256, height=256)
-        self._icon.add_constraint(Clutter.AlignConstraint(align_axis=Clutter.AlignAxis.BOTH,
-                                                          factor=0.5,
-                                                          source=self.get_stage()))
+        icon_bin = GtkClutter.Actor()
+        icon_bin.add_constraint(Clutter.AlignConstraint(align_axis=Clutter.AlignAxis.BOTH,
+                                                        factor=0.5, source=self.get_stage()))
+        self.get_stage().add_actor(icon_bin)
+        self._icon = Gtk.Image(pixel_size=256, visible=True)
+        icon_bin.get_widget().get_style_context().add_class('white-background')
+        icon_bin.get_widget().add(self._icon)
 
-        self.get_stage().add_actor(self._icon)
-
-        current_box = Clutter.Actor(margin_right=15, margin_top=15)
+        current_box = GtkClutter.Actor(margin_right=15, margin_top=15)
         current_box.add_constraint(Clutter.AlignConstraint(align_axis=Clutter.AlignAxis.X_AXIS,
-                                                          factor=1.0,
-                                                          source=self.get_stage()))
+                                                           factor=1.0, source=self.get_stage()))
         current_box.add_constraint(Clutter.AlignConstraint(align_axis=Clutter.AlignAxis.Y_AXIS,
-                                                          factor=0.0,
-                                                          source=self.get_stage()))
+                                                           factor=0.0, source=self.get_stage()))
         self.get_stage().add_actor(current_box)
-        layout = Clutter.BoxLayout(vertical=True, )
-        current_box.props.layout_manager = layout
+        self._conditions = ConditionsSidebar()
+        current_box.get_widget().add(self._conditions)
+        current_box.get_widget().get_style_context().add_class('white-background')
 
-        title = Clutter.Text(text='<b>' + _("Current conditions:") + '</b>',
-                             use_markup=True)
-        layout.pack(title, True, True, False, Clutter.BoxAlignment.START, Clutter.BoxAlignment.START)
-
-        self._conditions = Clutter.Text()
-        layout.pack(self._conditions, True, True, False, Clutter.BoxAlignment.START, Clutter.BoxAlignment.START)
-
-        self._temperature = Clutter.Text()
-        layout.pack(self._temperature, True, True, False, Clutter.BoxAlignment.START, Clutter.BoxAlignment.START)
-
-        self._wind = Clutter.Text()
-        layout.pack(self._wind, True, True, False, Clutter.BoxAlignment.START, Clutter.BoxAlignment.START)
-
-        self._forecasts = Clutter.Actor(margin_bottom=10, margin_left=5, margin_right=5)
-        self._forecasts.add_constraint(Clutter.AlignConstraint(align_axis=Clutter.AlignAxis.Y_AXIS,
-                                                              factor=1.0,
-                                                              source=self.get_stage()))
-        self._forecasts.add_constraint(Clutter.BindConstraint(coordinate=Clutter.BindCoordinate.WIDTH,
-                                                             source=self.get_stage()))
-        self._forecasts.props.layout_manager = Clutter.BoxLayout()
-        self.get_stage().add_actor(self._forecasts)
+        forecasts_bin = GtkClutter.Actor(margin_bottom=10, margin_left=5, margin_right=5)
+        forecasts_bin.add_constraint(Clutter.AlignConstraint(align_axis=Clutter.AlignAxis.Y_AXIS,
+                                                             factor=1.0, source=self.get_stage()))
+        forecasts_bin.add_constraint(Clutter.BindConstraint(coordinate=Clutter.BindCoordinate.WIDTH,
+                                                            source=self.get_stage()))
+        self.get_stage().add_actor(forecasts_bin)
+        self._forecasts = ForecastBox()
+        forecasts_bin.get_widget().add(self._forecasts)
+        forecasts_bin.get_widget().get_style_context().add_class('white-background')
 
         self._overlay = Clutter.Actor(background_color=util.clutter_color_from_string('#a0a0a0'))
         self._overlay.add_constraint(Clutter.BindConstraint(coordinate=Clutter.BindCoordinate.ALL,
-                                                           source=self.get_stage()))
+                                                            source=self.get_stage()))
+        self._overlay.show()
+        self._overlay.set_position(0, 0)
+        self._overlay.set_size(400, 400)
         self.get_stage().add_actor(self._overlay)
 
     def on_updated(self, info):
@@ -130,13 +114,13 @@ class WeatherWidget(GtkClutter.Embed):
         self._overlay.props.opacity = 0
         self._overlay.restore_easing_state()
 
-        icon = info.get_icon_name()
-        self._icon.props.content = GWeatherUI.util_load_gicon_to_clutter(Gio.ThemedIcon(name=icon), 256)
+        self._conditions.update(info)
 
-        self._conditions.props.text = info.get_weather_summary()
-        self._temperature.props.text = _("Temperature: ") + info.get_temp_summary()
-        self._wind.props.text = _("Wind: ") + info.get_wind()
+        self._icon.props.icon_name = info.get_icon_name()
 
-        l = info.get_forecast_list()
-        for i in range(min(len(l), 6)):
-            self._forecasts.add_actor(ForecastActor(l[i]))
+        forecasts = info.get_forecast_list()
+        if len(forecasts) > 0:
+            self._forecasts.update(forecasts)
+            self._forecasts.show()
+        else:
+            self._forecasts.hide()

@@ -1,3 +1,5 @@
+NULL =
+
 bin_SCRIPTS = gnome-weather
 
 gnome-weather: gnome-weather.in Makefile
@@ -9,8 +11,18 @@ gnome-weather: gnome-weather.in Makefile
 	                $< > $@
 	@chmod +x $@
 
-pkgdata_DATA = \
+dist_pkgdata_DATA = \
 	__init__.py	\
 	app.py		\
 	util.py		\
-	widget.py
+	widget.py	\
+	forecast.py 	\
+	conditions.py	\
+	strings.py	\
+	$(NULL)
+
+pkguidir = $(pkgdatadir)/ui
+dist_pkgui_DATA = \
+	ui/custom.css
+
+dist_noinst_DATA = gnome-weather.in

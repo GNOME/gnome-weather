@@ -1,5 +1,21 @@
 #!@PYTHON@
 
+# Copyright (c) 2012 Giovanni Campagna <scampa.giovanni@gmail.com>
+#
+# Gnome Weather is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by the
+# Free Software Foundation; either version 2 of the License, or (at your
+# option) any later version.
+#
+# Gnome Clocks is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
+# for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with Gnome Weather; if not, write to the Free Software Foundation,
+# Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
 import sys, os, re
 import gettext
 
@@ -26,17 +42,24 @@ for p in sys.path:
 sys.path = newpath
 
 gettext.textdomain('@GETTEXT_PACKAGE@')
+
 if os.path.exists('./src'):
    # running from source tree
-   sys.path.append('./src')
    add_to_envvar('GI_TYPELIB_PATH', './lib')
    gettext.bindtextdomain('@GETTEXT_PACKAGE@', './po')
+   pkgdatadir = './src'
 else:
-   sys.path.append("@pkgdatadir@")
    add_to_envvar('GI_TYPELIB_PATH', '@pkglibdir@')
    gettext.bindtextdomain('@GETTEXT_PACKAGE@', '@localedir@')
+   pkgdatadir = '@pkgdatadir@'
+
+sys.path.append(pkgdatadir)
 from gi.repository import GLib
 from app import GnomeWeatherApp
 
+class PathConfig:
+      PKGDATADIR = pkgdatadir
+      UIDIR = pkgdatadir + '/ui'
+
 GLib.set_prgname('gnome-weather')
-sys.exit(GnomeWeatherApp().run(sys.argv))
+sys.exit(GnomeWeatherApp(PathConfig()).run(sys.argv))
