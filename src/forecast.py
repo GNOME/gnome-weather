@@ -24,7 +24,7 @@ class ForecastBox(Gtk.Grid):
 
     def __init__(self, **kw):
         super().__init__(orientation=Gtk.Orientation.HORIZONTAL,
-                         column_spacing=24, **kw)
+                         column_spacing=24, column_homogeneous=True, **kw)
 
     def update(self, infos):
         # Compact multiple infos for the same day

@@ -47,7 +47,7 @@ class LocationEntryItem(Gtk.ToolItem):
 
 class WeatherWidget(GtkClutter.Embed):
     def __init__(self, info, visible=True, **kw):
-        super().__init__(visible=visible, **kw)
+        super().__init__(visible=visible, use_layout_size=True, **kw)
 
         self._build_ui()
         self.info = None
