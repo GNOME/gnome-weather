@@ -32,21 +32,34 @@ class ForecastBox(Gtk.Grid):
 
         subday = self._has_subday_resolution(dates)
 
-        for i, k in zip(infos, range(len(infos))):
+        n = 0
+        current = None
+        for info in infos:
             # limit to 5 infos max
-            if k >= 5:
+            if n > 5:
                 break
 
-            label = Gtk.Label(label='<b>' + self._get_date(i, subday) + '</b>',
+            # only show forecasts if they're separated by
+            # at least 6 hours
+            ok, date = info.get_value_update()
+            datetime = GLib.DateTime.new_from_unix_local(date)
+            SIX_HOURS = 21600000000
+            if current and datetime.difference(current) < SIX_HOURS:
+                continue
+
+            label = Gtk.Label(label='<b>' + self._get_date(datetime, subday) + '</b>',
                               use_markup=True, visible=True)
-            self.attach(label, k, 0, 1, 1)
+            self.attach(label, n, 0, 1, 1)
 
-            image = Gtk.Image(icon_name=i.get_icon_name(),
+            image = Gtk.Image(icon_name=info.get_icon_name(),
                               icon_size=Gtk.IconSize.DIALOG, visible=True)
-            self.attach(image, k, 1, 1, 1)
+            self.attach(image, n, 1, 1, 1)
 
-            temperature = Gtk.Label(label=self._get_temperature(i), visible=True)
-            self.attach(temperature, k, 2, 1, 1)
+            temperature = Gtk.Label(label=self._get_temperature(info), visible=True)
+            self.attach(temperature, n, 2, 1, 1)
+
+            current = datetime
+            n += 1
 
     def clear(self):
         self.foreach(lambda w, d: w.destroy(), None)
@@ -62,9 +75,7 @@ class ForecastBox(Gtk.Grid):
         else:
             return False
 
-    def _get_date(self, info, subday):
-        ok, date = info.get_value_update()
-        datetime = GLib.DateTime.new_from_unix_local(date)
+    def _get_date(self, datetime, subday):
         now = GLib.DateTime.new_now_local()
         tomorrow = now.add_days(1)
 
