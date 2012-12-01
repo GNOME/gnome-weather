@@ -1,0 +1,24 @@
+<Project xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:foaf="http://xmlns.com/foaf/0.1/"
+         xmlns:gnome="http://api.gnome.org/doap-extensions#"
+         xmlns="http://usefulinc.com/ns/doap#">
+
+  <name xml:lang="en">Gnome Weather</name>
+  <shortdesc xml:lang="en">Access current weather conditions and forecasts</shortdesc>
+  <description>
+    This is a small application that allows you to monitor the current
+    weather conditions for your city, or anywhere in the world, and to
+    access updated forecasts provided by various internet services.
+  </description>
+
+  <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Giovanni Campagna</foaf:name>
+      <foaf:mbox rdf:resource="mailto:scampa.giovanni@gmail.com" />
+      <gnome:userid>gcampagna</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+</Project>
