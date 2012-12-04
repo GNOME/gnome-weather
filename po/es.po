@@ -30,7 +30,7 @@ msgstr "Mostrar las condiciones meteorológicas y la predicción"
 
 #: ../src/widget.py:34
 msgid "Location: "
-msgstr "Ubicación:"
+msgstr "Ubicación: "
 
 #: ../src/conditions.py:26
 msgid "Current conditions:"
@@ -38,11 +38,11 @@ msgstr "Condiciones actuales:"
 
 #: ../src/conditions.py:47
 msgid "Temperature: "
-msgstr "Temperatura:"
+msgstr "Temperatura: "
 
 #: ../src/conditions.py:49
 msgid "Wind: "
-msgstr "Viento:"
+msgstr "Viento: "
 
 #: ../src/forecast.py:86
 msgid "Today"
