@@ -1,0 +1,197 @@
+# Russian translation for gnome-weather.
+# Copyright (C) 2012 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Stas Solovey <whats_up@tut.by>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2012-12-05 10:06+0000\n"
+"PO-Revision-Date: 2012-12-14 17:59+0300\n"
+"Last-Translator: Stas Solovey <whats_up@tut.by>\n"
+"Language-Team: Russian <gnome-cyr@gnome.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 2.91.5\n"
+
+#: ../data/gnome-weather.desktop.in.h:1
+msgid "Weather"
+msgstr "Погода"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Показать погодные условия и прогноз"
+
+#: ../src/widget.py:34
+msgid "Location: "
+msgstr "Местоположение: "
+
+#: ../src/conditions.py:26
+msgid "Current conditions:"
+msgstr "Текущие условия:"
+
+#: ../src/conditions.py:47
+msgid "Temperature: "
+msgstr "Температура: "
+
+#: ../src/conditions.py:49
+msgid "Wind: "
+msgstr "Ветер: "
+
+#: ../src/forecast.py:86
+msgid "Today"
+msgstr "Сегодня"
+
+#: ../src/forecast.py:91
+msgid "Tomorrow"
+msgstr "Завтра"
+
+#: ../src/strings.py:22
+msgid "Monday night"
+msgstr "В понедельник ночью"
+
+#: ../src/strings.py:22
+msgid "Monday morning"
+msgstr "В понедельник утром"
+
+#: ../src/strings.py:22
+msgid "Monday afternoon"
+msgstr "В понедельник днём"
+
+#: ../src/strings.py:22
+msgid "Monday evening"
+msgstr "В понедельник вечером"
+
+#: ../src/strings.py:23
+msgid "Tuesday night"
+msgstr "Во вторник ночью"
+
+#: ../src/strings.py:23
+msgid "Tuesday morning"
+msgstr "Во вторник утром"
+
+#: ../src/strings.py:23
+msgid "Tuesday afternoon"
+msgstr "Во вторник днём"
+
+#: ../src/strings.py:23
+msgid "Tuesday evening"
+msgstr "Во вторник вечером"
+
+#: ../src/strings.py:24
+msgid "Wednesday night"
+msgstr "В среду ночью"
+
+#: ../src/strings.py:24
+msgid "Wednesday morning"
+msgstr "В среду утром"
+
+#: ../src/strings.py:24
+msgid "Wednesday afternoon"
+msgstr "В среду днём"
+
+#: ../src/strings.py:24
+msgid "Wednesday evening"
+msgstr "В среду вечером"
+
+#: ../src/strings.py:25
+msgid "Thursday night"
+msgstr "В четверг ночью"
+
+#: ../src/strings.py:25
+msgid "Thursday morning"
+msgstr "В четверг утром"
+
+#: ../src/strings.py:25
+msgid "Thursday afternoon"
+msgstr "В четверг днём"
+
+#: ../src/strings.py:25
+msgid "Thursday evening"
+msgstr "В четверг вечером"
+
+#: ../src/strings.py:26
+msgid "Friday night"
+msgstr "В пятницу ночью"
+
+#: ../src/strings.py:26
+msgid "Friday morning"
+msgstr "В пятницу утром"
+
+#: ../src/strings.py:26
+msgid "Friday afternoon"
+msgstr "В пятницу днём"
+
+#: ../src/strings.py:26
+msgid "Friday evening"
+msgstr "В пятницу вечером"
+
+#: ../src/strings.py:27
+msgid "Saturday night"
+msgstr "В субботу ночью"
+
+#: ../src/strings.py:27
+msgid "Saturday morning"
+msgstr "В субботу утром"
+
+#: ../src/strings.py:27
+msgid "Saturday afternoon"
+msgstr "В субботу днём"
+
+#: ../src/strings.py:27
+msgid "Saturday evening"
+msgstr "В субботу вечером"
+
+#: ../src/strings.py:28
+msgid "Sunday night"
+msgstr "В воскресенье ночью"
+
+#: ../src/strings.py:28
+msgid "Sunday morning"
+msgstr "В воскресенье утром"
+
+#: ../src/strings.py:28
+msgid "Sunday afternoon"
+msgstr "В воскресенье днём"
+
+#: ../src/strings.py:28
+msgid "Sunday evening"
+msgstr "В воскресенье вечером"
+
+#: ../src/strings.py:31
+msgid "This night"
+msgstr "Сегодня ночью"
+
+#: ../src/strings.py:31
+msgid "This morning"
+msgstr "Сегодня утром"
+
+#: ../src/strings.py:31
+msgid "This afternoon"
+msgstr "Сегодня днём"
+
+#: ../src/strings.py:31
+msgid "This evening"
+msgstr "Сегодня вечером"
+
+#: ../src/strings.py:32
+msgid "Tomorrow night"
+msgstr "Завтра ночью"
+
+#: ../src/strings.py:32
+msgid "Tomorrow morning"
+msgstr "Завтра утром"
+
+#: ../src/strings.py:32
+msgid "Tomorrow afternoon"
+msgstr "Завтра днём"
+
+#: ../src/strings.py:32
+msgid "Tomorrow evening"
+msgstr "Завтра вечером"
