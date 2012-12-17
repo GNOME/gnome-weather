@@ -1,5 +1,5 @@
 AC_PREREQ(2.63)
-AC_INIT([gnome-weather],[0.1],[https://github.com/gcampax/gnome-weather])
+AC_INIT([gnome-weather],[0.2],[http://git.gnome.org/gnome-weather])
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
