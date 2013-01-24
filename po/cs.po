@@ -30,7 +30,7 @@ msgstr "Zobrazit povětrnostní podmínky a předpověď"
 
 #: ../src/widget.py:34
 msgid "Location: "
-msgstr "Umístění: "
+msgstr "Místo: "
 
 #: ../src/conditions.py:26
 msgid "Current conditions:"
