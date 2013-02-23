@@ -30,7 +30,7 @@ const WeatherWidget = new Lang.Class({
                                        name: 'weather-page' });
         this.parent(params);
 
-        let outerGrid = new Gtk.Grid({ orientation: Gtk.Orientation.VERTICAL });
+        let outerGrid = new Gtk.Grid();
 
         let alignment = new Gtk.Grid({ hexpand: true, vexpand: true,
                                        halign: Gtk.Align.CENTER,
@@ -55,21 +55,43 @@ const WeatherWidget = new Lang.Class({
 
         this._attribution = new Gtk.Label({ xalign: 0.0, wrap: true,
                                             name: 'attribution-label',
-                                            max_width_chars: 30,
                                             use_markup: true });
         innerGrid.attach(this._attribution, 1, 2, 1, 1);
 
         alignment.add(innerGrid);
-        outerGrid.add(alignment);
+        outerGrid.attach(alignment, 0, 0, 1, 1);
 
         this._forecasts = new Forecast.ForecastBox({ hexpand: true });
-        outerGrid.add(this._forecasts);
+        outerGrid.attach(this._forecasts, 0, 1, 1, 1);
+
+        this._revealButton = new Gd.HeaderSimpleButton({ symbolic_icon_name: 'go-previous-symbolic',
+                                                         halign: Gtk.Align.CENTER,
+                                                         valign: Gtk.Align.CENTER });
+        outerGrid.attach(this._revealButton, 1, 0, 1, 2);
+
+        this._today = new Forecast.TodaySidebar({ vexpand: true,
+                                                  name: 'today-sidebar' });
+        this._revealer = new Gd.Revealer({ child: this._today,
+                                           reveal_child: false,
+                                           orientation: Gtk.Orientation.VERTICAL });
+        outerGrid.attach(this._revealer, 2, 0, 1, 2);
+
+        this._revealButton.connect('clicked', Lang.bind(this, function() {
+            if (this._revealer.reveal_child) {
+                this._revealer.reveal_child = false;
+                this._revealButton.symbolic_icon_name = 'go-previous-symbolic';
+            } else {
+                this._revealer.reveal_child = true;
+                this._revealButton.symbolic_icon_name = 'go-next-symbolic';
+            }
+        }));
 
         this.add(outerGrid);
     },
 
     clear: function() {
         this._forecasts.clear();
+        this._today.clear();
     },
 
     update: function(info) {
@@ -93,8 +115,14 @@ const WeatherWidget = new Lang.Class({
         if (forecasts.length > 0) {
             this._forecasts.update(forecasts);
             this._forecasts.show();
+
+            this._today.update(forecasts);
+            this._revealButton.show();
+            this._revealer.show();
         } else {
             this._forecasts.hide();
+            this._revealButton.hide();
+            this._revealer.hide();
         }
     }
 });

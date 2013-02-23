@@ -1,6 +1,6 @@
 #weather-page {
     padding: 12px;
-    /*background: white;*/
+    padding-right: 0;
 }
 
 #loading-label {
@@ -18,9 +18,6 @@
     font-size: small;
 }
 
-#conditions-image:dir(ltr) {
+#conditions-image {
     padding-right: 12px;
-}
-#conditions-image:dir(rtl) {
-    padding-left: 12px;
 }

@@ -46,6 +46,9 @@ const Application = new Lang.Class({
 
         Util.loadStyleSheet();
 
+        let settings = Gtk.Settings.get_for_screen(Gdk.Screen.get_default());
+        settings.gtk_application_prefer_dark_theme = true;
+
         this.world = GWeather.Location.new_world(false);
     },
 

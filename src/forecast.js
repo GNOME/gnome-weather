@@ -21,7 +21,8 @@ const Util = imports.util;
 
 // In microseconds
 const ONE_DAY = 24*3600*1000*1000;
-const SIX_HOURS = 6*3600*1000*1000;
+const TWELVE_HOURS = 12*3600*1000*1000;
+const ONE_HOUR = 3600*1000*1000;
 
 const ForecastBox = new Lang.Class({
     Name: 'ForecastBox',
@@ -50,10 +51,10 @@ const ForecastBox = new Lang.Class({
             let info = infos[i];
 
             // only show forecasts if they're separated by
-            // at least 6 hours
+            // at least 12 hours
             let [ok, date] = info.get_value_update();
             let datetime = GLib.DateTime.new_from_unix_local(date);
-            if (current && datetime.difference(current) < SIX_HOURS)
+            if (current && datetime.difference(current) < TWELVE_HOURS)
                 continue;
 
             let text = '<b>' + this._getDate(datetime, subday) + '</b>';
@@ -126,3 +127,157 @@ const ForecastBox = new Lang.Class({
     }
 });
 
+const TodaySidebar = new Lang.Class({
+    Name: 'TodaySidebar',
+    Extends: Gtk.ScrolledWindow,
+
+    _init: function(params) {
+        params = Params.fill(params, { hscrollbar_policy: Gtk.PolicyType.NEVER });
+        this.parent(params);
+
+        this._grid = new Gtk.Grid({ column_spacing: 6,
+                                    row_spacing: 12,
+                                    margin_left: 12,
+                                    margin_right: 12 });
+        this.add(this._grid);
+
+        this._headline = new Gtk.Label({ use_markup: true,
+                                         xalign: 0.0 });
+        this._grid.attach(this._headline, 0, 0, 3, 1);
+
+        this._subline = new Gtk.Label({ margin_bottom: 4,
+                                        xalign: 0.0 });
+        this._grid.attach(this._subline, 0, 1, 3, 1);
+
+        this._hasMore = false;
+        this._moreButton = new Gtk.Button({ label: _("More..."),
+                                            margin_top: 4,
+                                            halign: Gtk.Align.END,
+                                            visible: true });
+        this._moreButton.connect('clicked', Lang.bind(this, this._showMore));
+
+        this._infoWidgets = [];
+        this._trimmedIndex = -1;
+    },
+
+    clear: function() {
+        this._infoWidgets.forEach(function(w) { w.destroy(); });
+        this._infoWidgets = [];
+
+        if (this._hasMore) {
+            this._grid.remove(this._moreButton);
+            this._hasMore = false;
+        }
+    },
+
+    // Ensure that infos are sufficiently spaced, and
+    // remove infos for the wrong day
+    _preprocess: function(now, infos) {
+        let ret = [];
+        let current = now;
+
+        for (let i = 0; i < infos.length; i++) {
+            let info = infos[i];
+
+            let [ok, date] = info.get_value_update();
+            let datetime = GLib.DateTime.new_from_unix_local(date);
+            if (datetime.difference(current) < ONE_HOUR)
+                continue;
+
+            if (!Util.arrayEqual(now.get_ymd(),
+                                 datetime.get_ymd()))
+                break;
+
+            ret.push(info);
+            current = datetime;
+        }
+
+        return ret;
+    },
+
+    update: function(infos) {
+        let [ok, v_first] = infos[0].get_value_update();
+
+        let now = GLib.DateTime.new_now_local();
+        let first = GLib.DateTime.new_from_unix_local(v_first);
+
+        let sameDay = Util.arrayEqual(now.get_ymd(),
+                                      first.get_ymd());
+
+        // Show today if we have it (sameDay), and if it's
+        // worth it, ie. it's not after 9pm (as the weather at
+        // point is unlikely to change)
+        if (sameDay && now.get_hour() < 21) {
+            this._headline.label = '<b>' + _("Forecast for Today") + '</b>';
+        } else {
+            this._headline.label = '<b>' + _("Forecast for Tomorrow") + '</b>';
+            now = now.add_days(1);
+        }
+
+        this._subline.label = now.format(_("%B %d"));
+
+        infos = this._preprocess(now, infos);
+        let i;
+
+        // Show at most 6 hours now, we'll show more with the ... button
+        for (i = 0; i < Math.min(infos.length, 6); i++) {
+            let info = infos[i];
+            this._addOneInfo(info, i + 2);
+        }
+
+        this._trimmedIndex = i;
+        if (this._trimmedIndex < infos.length) {
+            this._grid.attach(this._moreButton, 2, i+2, 1, 1);
+            this._hasMore = true;
+        }
+
+        this._infos = infos;
+    },
+
+    _addOneInfo: function(info, row) {
+        let [ok, date] = info.get_value_update();
+        let datetime = GLib.DateTime.new_from_unix_local(date);
+
+        let label = new Gtk.Label({ label: datetime.format(_("%k:%M")),
+                                    visible: true,
+                                    xalign: 1.0 });
+        label.get_style_context().add_class('dim-label');
+        this._grid.attach(label, 0, row, 1, 1);
+        this._infoWidgets.push(label);
+
+        let image = new Gtk.Image({ icon_name: info.get_symbolic_icon_name(),
+                                    icon_size: Gtk.IconSize.MENU,
+                                    use_fallback: true,
+                                    visible: true });
+        this._grid.attach(image, 1, row, 1, 1);
+        this._infoWidgets.push(image);
+
+        let conditions = new Gtk.Label({ label: this._getConditions(info),
+                                         visible: true,
+                                         xalign: 0.0 });
+        this._grid.attach(conditions, 2, row, 1, 1);
+        this._infoWidgets.push(conditions);
+    },
+
+    _getConditions: function(info) {
+        let conditions = info.get_conditions();
+        if (conditions == '-') // Not significant
+            conditions = info.get_sky();
+        return conditions;
+    },
+
+    _showMore: function() {
+        if (!this._hasMore) {
+            log('_showMore called when _hasMore is false, this should not happen');
+            return;
+        }
+
+        this._grid.remove(this._moreButton);
+        this._hasMore = false;
+
+        for (let i = this._trimmedIndex; i < this._infos.length; i++) {
+            let info = this._infos[i];
+            this._addOneInfo(info, i + 2);
+        }
+    },
+});
