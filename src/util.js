@@ -54,3 +54,44 @@ function arrayEqual(one, two) {
 
     return true;
 }
+
+function getSettings(schemaId, path) {
+    const GioSSS = Gio.SettingsSchemaSource;
+    let schemaSource;
+
+    if (pkg.moduledir != pkg.pkgdatadir) {
+        // Running from the source tree
+        schemaSource = GioSSS.new_from_directory(pkg.pkgdatadir,
+                                                 GioSSS.get_default(),
+                                                 false);
+    } else {
+        schemaSource = GioSSS.get_default();
+    }
+
+    let schemaObj = schemaSource.lookup(schemaId, true);
+    if (!schemaObj) {
+        log('Missing GSettings schema ' + schemaId);
+        System.exit(1);
+    }
+
+    if (path === undefined)
+        return new Gio.Settings({ settings_schema: schemaObj });
+    else
+        return new Gio.Settings({ settings_schema: schemaObj,
+                                  path: path });
+}
+
+function loadIcon(iconName, size) {
+    let theme = Gtk.IconTheme.get_default();
+
+    return theme.load_icon(iconName,
+                           size,
+                           Gtk.IconLookupFlags.GENERIC_FALLBACK);
+}
+
+function getWeatherConditions(info) {
+    let conditions = info.get_conditions();
+    if (conditions == '-') // Not significant
+        conditions = info.get_sky();
+    return conditions;
+}

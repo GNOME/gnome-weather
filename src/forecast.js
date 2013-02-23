@@ -252,18 +252,11 @@ const TodaySidebar = new Lang.Class({
         this._grid.attach(image, 1, row, 1, 1);
         this._infoWidgets.push(image);
 
-        let conditions = new Gtk.Label({ label: this._getConditions(info),
+        let conditions = new Gtk.Label({ label: Util.getWeatherConditions(info),
                                          visible: true,
                                          xalign: 0.0 });
         this._grid.attach(conditions, 2, row, 1, 1);
         this._infoWidgets.push(conditions);
-    },
-
-    _getConditions: function(info) {
-        let conditions = info.get_conditions();
-        if (conditions == '-') // Not significant
-            conditions = info.get_sky();
-        return conditions;
     },
 
     _showMore: function() {

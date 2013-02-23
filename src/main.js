@@ -21,13 +21,16 @@ pkg.initGettext();
 pkg.initFormat();
 pkg.require({ 'Gd': '1.0',
               'Gdk': '3.0',
+              'GdkPixbuf': '2.0',
+              'Gio': '2.0',
               'GLib': '2.0',
               'GObject': '2.0',
               'Gtk': '3.0',
               'GWeather': '3.0',
               'Lang': '1.0',
               'Mainloop': '1.0',
-              'Params': '1.0' });
+              'Params': '1.0',
+              'System': '1.0' });
 
 const Util = imports.util;
 const Window = imports.window;
@@ -47,7 +50,7 @@ const Application = new Lang.Class({
         Util.loadStyleSheet();
 
         let settings = Gtk.Settings.get_for_screen(Gdk.Screen.get_default());
-        settings.gtk_application_prefer_dark_theme = true;
+        settings.gtk_application_prefer_dark_theme = false;
 
         this.world = GWeather.Location.new_world(false);
     },

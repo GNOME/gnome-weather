@@ -16,7 +16,8 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const View = imports.view;
+const City = imports.city;
+const World = imports.world;
 
 function makeTitle(location) {
     let city = location;
@@ -34,70 +35,74 @@ function makeTitle(location) {
         return city.get_name();
 }
 
+const Page = {
+    WORLD: 0,
+    CITY: 1
+};
+
 const MainWindow = new Lang.Class({
     Name: 'MainWindow',
     Extends: Gtk.ApplicationWindow,
-    Properties: {
-        'location': GObject.ParamSpec.boxed('location', 'Location', '',
-                                            GObject.ParamFlags.READABLE |
-                                            GObject.ParamFlags.WRITABLE,
-                                            GWeather.Location),
-    },
 
     _init: function(params) {
-        params = Params.fill(params, { default_width: 700,
-                                       default_height: 500 });
+        params = Params.fill(params, { width_request: 700,
+                                       height_request: 520 });
         this.parent(params);
 
         this._world = this.application.world;
-        this._info = new GWeather.Info({ world: this._world,
-                                         forecast_type: GWeather.ForecastType.LIST,
-                                         enabled_providers: GWeather.Provider.METAR |
-                                                            GWeather.Provider.YR_NO });
-        this._location = this._info.get_location();
+        this._model = new World.WorldModel(this._world);
+        this._currentInfo = null;
+        this._currentPage = Page.WORLD;
+        this._pageWidgets = [[],[]];
 
         let grid = new Gtk.Grid({ orientation: Gtk.Orientation.VERTICAL });
 
-        this._header = new Gd.HeaderBar({ title: makeTitle(this._location),
-                                          hexpand: true });
+        this._header = new Gd.HeaderBar({ hexpand: true });
         grid.add(this._header);
 
-        this._search = new Gd.HeaderToggleButton({ symbolic_icon_name: 'edit-find-symbolic' });
-        this._header.pack_end(this._search);
+        let newButton = new Gd.HeaderSimpleButton({ label: _("New") });
+        newButton.connect('clicked', Lang.bind(this, this._newLocation));
+        this._header.pack_start(newButton);
+        this._pageWidgets[Page.WORLD].push(newButton);
+
+        let goWorldButton = new Gd.HeaderSimpleButton({ label: _("World Weather") });
+        goWorldButton.connect('clicked', Lang.bind(this, this._goWorld));
+        this._header.pack_start(goWorldButton);
+        this._pageWidgets[Page.CITY].push(goWorldButton);
 
         let refresh = new Gd.HeaderSimpleButton({ symbolic_icon_name: 'view-refresh-symbolic' });
         refresh.connect('clicked', Lang.bind(this, this.update));
         this._header.pack_end(refresh);
+        this._pageWidgets[Page.CITY].push(refresh);
 
-        this._locationEntry = new GWeather.LocationEntry({ top: this._world,
-                                                           location: this._location,
-                                                           width_request: 500,
-                                                           halign: Gtk.Align.CENTER });
-        this._locationEntry.bind_property('location', this, 'location',
-                                          GObject.BindingFlags.DEFAULT);
+        let select = new Gd.HeaderToggleButton({ symbolic_icon_name: 'object-select-symbolic' });
+        this._header.pack_end(select);
+        this._pageWidgets[Page.WORLD].push(select);
 
-        let toolbar = new Gtk.Toolbar({ hexpand: true });
-        toolbar.get_style_context().add_class(Gtk.STYLE_CLASS_PRIMARY_TOOLBAR);
-        let item = new Gtk.ToolItem();
-        item.set_expand(true);
-        item.add(this._locationEntry);
-        toolbar.insert(item, 0);
+        this._stack = new Gd.Stack();
 
-        let revealer = new Gd.Revealer({ reveal_child: false,
-                                         child: toolbar });
-        this._search.bind_property('active', revealer, 'reveal-child',
-                                   GObject.BindingFlags.DEFAULT);
-        grid.add(revealer);
+        this._cityView = new City.WeatherView({ hexpand: true,
+                                                vexpand: true });
+        this._stack.add(this._cityView);
 
-        this._view = new View.WeatherView({ info: this._info,
-                                            hexpand: true,
-                                            vexpand: true });
-        grid.add(this._view);
+        this._worldView = new Gd.MainView({ view_type: Gd.MainViewType.ICON });
+        this._worldView.model = this._model;
+        this._worldView.connect('item-activated', Lang.bind(this, this._itemActivated));
+        this._worldView.connect('selection-mode-request', function() {
+            select.active = true;
+        });
+        select.bind_property('active', this._worldView, 'selection-mode',
+                             GObject.BindingFlags.DEFAULT);
+        this._stack.add(this._worldView);
+
+        this._stack.set_visible_child(this._worldView);
+        grid.add(this._stack);
 
         this.add(grid);
         grid.show_all();
 
-        this._view.beginUpdate();
+        for (let i = 0; i < this._pageWidgets[Page.CITY].length; i++)
+            this._pageWidgets[Page.CITY][i].hide();
     },
 
     get location() {
@@ -114,7 +119,66 @@ const MainWindow = new Lang.Class({
     },
 
     update: function() {
-        this._view.beginUpdate();
-        this._info.update();
+        this._cityView.update();
     },
+
+    _getTitle: function() {
+        if (this._currentPage == Page.WORLD)
+            return '';
+
+        return makeTitle(this._cityView.info.location);
+    },
+
+    _goToPage: function(page) {
+        if (page == this._currentPage)
+            return;
+
+        for (let i = 0; i < this._pageWidgets[this._currentPage].length; i++)
+            this._pageWidgets[this._currentPage][i].hide();
+
+        for (let i = 0; i < this._pageWidgets[page].length; i++)
+            this._pageWidgets[page][i].show();
+
+        this._currentPage = page;
+        this._header.title = this._getTitle();
+    },
+
+    _itemActivated: function(view, id, path) {
+        let [ok, iter] = this._model.get_iter(path);
+        let info = this._model.get_value(iter, World.Columns.INFO);
+
+        this._cityView.info = info;
+        this._stack.set_visible_child(this._cityView);
+        this._goToPage(Page.CITY);
+    },
+
+    _goWorld: function() {
+        this._cityView.info = null;
+        this._stack.set_visible_child(this._worldView);
+        this._goToPage(Page.WORLD);
+    },
+
+    _newLocation: function() {
+        let dialog = new Gtk.Dialog({ title: _("New Location"),
+                                      transient_for: this.get_toplevel(),
+                                      modal: true });
+        let entry = new GWeather.LocationEntry({ top: this._world });
+
+        dialog.get_content_area().add(entry);
+        dialog.add_button('gtk-add', Gtk.ResponseType.OK);
+
+        dialog.connect('response', Lang.bind(this, function(dialog, response) {
+            dialog.destroy();
+
+            if (response != Gtk.ResponseType.OK)
+                return;
+
+            let location = entry.location;
+            if (!location)
+                return;
+
+            this._model.addLocation(entry.location);
+        }));
+        dialog.show_all();
+    }
 });

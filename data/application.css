@@ -21,3 +21,7 @@
 #conditions-image {
     padding-right: 12px;
 }
+
+.content-view.cell {
+    font-weight: bold;
+}

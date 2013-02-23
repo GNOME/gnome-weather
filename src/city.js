@@ -95,10 +95,7 @@ const WeatherWidget = new Lang.Class({
     },
 
     update: function(info) {
-        let conditions = info.get_conditions();
-        if (conditions == '-') // Not significant
-            conditions = info.get_sky();
-        this._conditions.label = conditions;
+        this._conditions.label = Util.getWeatherConditions(info);
         this._temperature.label = info.get_temp_summary();
 
         let attr = info.get_attribution();
@@ -132,7 +129,6 @@ const WeatherView = new Lang.Class({
     Extends: Gd.Stack,
 
     _init: function(params) {
-        let filtered = Params.filter(params, { info: null });
         this.parent(params);
 
         let loadingPage = new Gtk.Grid({ orientation: Gtk.Orientation.VERTICAL,
@@ -149,9 +145,30 @@ const WeatherView = new Lang.Class({
         this._infoPage = new WeatherWidget();
         this.add_named(this._infoPage, 'info');
 
-        this._info = filtered.info;
-        this._updateId = this._info.connect('updated',
-                                            Lang.bind(this, this._onUpdate));
+        this._info = null;
+        this._updateId = 0;
+    },
+
+    get info() {
+        return this._info;
+    },
+
+    set info(info) {
+        if (this._updateId) {
+            this._info.disconnect(this._updateId);
+            this._updateId = 0;
+
+            this._infoPage.clear();
+        }
+
+        this._info = info;
+
+        if (info) {
+            this._updateId = this._info.connect('updated',
+                                                Lang.bind(this, this._onUpdate));
+            if (info.is_valid())
+                this._onUpdate(info);
+        }
     },
 
     vfunc_destroy: function() {
@@ -163,10 +180,12 @@ const WeatherView = new Lang.Class({
         this.parent();
     },
 
-    beginUpdate: function() {
+    update: function() {
         this.visible_child_name = 'loading';
         this._spinner.start();
         this._infoPage.clear();
+
+        this._info.update();
     },
 
     _onUpdate: function(info) {
