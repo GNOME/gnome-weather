@@ -3,7 +3,6 @@ AC_INIT([gnome-weather],[0.2],[http://git.gnome.org/gnome-weather])
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
-AC_CONFIG_AUX_DIR([config])
 
 AM_INIT_AUTOMAKE([1.11 dist-xz foreign tar-ustar -Wno-portability])
 

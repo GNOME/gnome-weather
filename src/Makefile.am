@@ -19,3 +19,5 @@ gnome-weather: $(top_builddir)/config.status gnome-weather.in
 
 EXTRA_DIST = gnome-weather.in
 DISTCLEANFILES = gnome-weather
+
+include $(top_srcdir)/git.mk

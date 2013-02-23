@@ -8,3 +8,5 @@ apps_DATA = gnome-weather.desktop
 
 EXTRA_DIST = gnome-weather.desktop.in
 CLEANFILES = $(apps_DATA)
+
+include $(top_srcdir)/git.mk
