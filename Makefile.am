@@ -1,3 +1,3 @@
-ACLOCAL_AMFLAGS = -I m4
+ACLOCAL_AMFLAGS = -I m4 -I libgd
 
-SUBDIRS = data src po
+SUBDIRS = po data libgd src

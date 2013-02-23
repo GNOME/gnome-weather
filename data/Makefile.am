@@ -1,8 +1,10 @@
-appsdir = $(datadir)/applications
+cssdir = $(pkgdatadir)
+css_DATA = application.css
 
+appsdir = $(datadir)/applications
 apps_DATA = gnome-weather.desktop
 
 @INTLTOOL_DESKTOP_RULE@
 
-dist_noinst_DATA = gnome-weather.desktop.in
+EXTRA_DIST = gnome-weather.desktop.in
 CLEANFILES = $(apps_DATA)

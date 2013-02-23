@@ -1,30 +1,21 @@
 NULL =
 
-bin_SCRIPTS = gnome-weather
+nodist_bin_SCRIPTS = gnome-weather
 
-gnome-weather: gnome-weather.in Makefile
-	$(AM_V_GEN) sed -e "s|[@]PYTHON@|$(PYTHON)|g"   \
-	                -e "s|[@]pkgdatadir@|$(pkgdatadir)|g" \
-	                -e "s|[@]pkglibdir@|$(pkglibdir)|g" \
-	                -e "s|[@]GETTEXT_PACKAGE@|$(GETTEXT_PACKAGE)|g" \
-	                -e "s|[@]localedir@|$(datadir)/locale|g" \
-	                $< > $@
-	@chmod +x $@
-
-pydir = $(pkglibdir)
-dist_py_PYTHON = \
-	__init__.py	\
-	app.py		\
-	util.py		\
-	widget.py	\
-	forecast.py 	\
-	conditions.py	\
-	strings.py	\
+jsdir = $(pkgdatadir)
+dist_js_DATA = \
+	conditions.js	\
+	forecast.js	\
+	main.js		\
+	strings.js	\
+	util.js		\
+	view.js		\
+	window.js	\
 	$(NULL)
 
-pkguidir = $(pkgdatadir)/ui
-dist_pkgui_DATA = \
-	ui/custom.css
+gnome-weather: $(top_builddir)/config.status gnome-weather.in
+	$(AM_V_GEN) cd $(top_builddir) && $(SHELL) ./config.status --file $(subdir)/$@
+	@chmod +x $@
 
-dist_noinst_DATA = gnome-weather.in
-CLEANFILES = gnome-weather
+EXTRA_DIST = gnome-weather.in
+DISTCLEANFILES = gnome-weather

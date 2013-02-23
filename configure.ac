@@ -5,7 +5,7 @@ AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_AUX_DIR([config])
 
-AM_INIT_AUTOMAKE([1.10 dist-bzip2 no-dist-gzip foreign tar-ustar])
+AM_INIT_AUTOMAKE([1.11 dist-xz foreign tar-ustar -Wno-portability])
 
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
@@ -17,20 +17,21 @@ IT_PROG_INTLTOOL(0.26)
 
 AC_PROG_CC
 AM_PROG_CC_C_O
-LT_INIT
+LT_INIT([disable-static])
+
+LIBGD_INIT([header-bar revealer gir])
 
 PKG_PROG_PKG_CONFIG([0.22])
-
-PKG_CHECK_MODULES([GWEATHER], [gtk+-3.0 clutter-1.0 gdk-pixbuf-2.0 gio-2.0 gweather-3.0 >= 3.5.0])
 
 GLIB_GSETTINGS
 GOBJECT_INTROSPECTION_REQUIRE([1.30.0])
 
-AM_PATH_PYTHON([3.0])
+AC_PATH_PROG([GJS],[gjs])
 
 AC_CONFIG_FILES([
   Makefile
   data/Makefile
+  libgd/Makefile
   src/Makefile
   po/Makefile.in
 ])

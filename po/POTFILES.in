@@ -1,7 +1,8 @@
 data/gnome-weather.desktop.in
-src/gnome-weather.in
-src/app.py
-src/widget.py
-src/conditions.py
-src/forecast.py
-src/strings.py
+src/conditions.js
+src/forecast.js
+src/main.js
+src/strings.js
+src/util.js
+src/view.js
+src/window.js
