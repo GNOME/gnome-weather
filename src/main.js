@@ -19,13 +19,11 @@
 pkg.initSubmodule('libgd');
 pkg.initGettext();
 pkg.initFormat();
-pkg.require({ 'Clutter': '1.0',
-              'Gd': '1.0',
+pkg.require({ 'Gd': '1.0',
               'Gdk': '3.0',
               'GLib': '2.0',
               'GObject': '2.0',
               'Gtk': '3.0',
-              'GtkClutter': '1.0',
               'GWeather': '3.0',
               'Lang': '1.0',
               'Mainloop': '1.0',
@@ -44,7 +42,6 @@ const Application = new Lang.Class({
     },
 
     vfunc_startup: function() {
-        GtkClutter.init(null);
         this.parent();
 
         Util.loadStyleSheet();

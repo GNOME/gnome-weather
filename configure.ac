@@ -18,7 +18,7 @@ AC_PROG_CC
 AM_PROG_CC_C_O
 LT_INIT([disable-static])
 
-LIBGD_INIT([header-bar revealer gir])
+LIBGD_INIT([header-bar stack revealer gir])
 
 PKG_PROG_PKG_CONFIG([0.22])
 

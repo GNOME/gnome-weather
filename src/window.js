@@ -91,6 +91,8 @@ const MainWindow = new Lang.Class({
 
         this.add(grid);
         grid.show_all();
+
+        this._view.beginUpdate();
     },
 
     get location() {
