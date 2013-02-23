@@ -30,6 +30,7 @@ const ForecastBox = new Lang.Class({
     _init: function(params) {
         params = Params.fill({ orientation: Gtk.Orientation.HORIZONTAL,
                                column_spacing: 24,
+                               row_spacing: 6,
                                column_homogeneous: true });
         this.parent(params);
     },
@@ -61,8 +62,9 @@ const ForecastBox = new Lang.Class({
                                         visible: true });
             this.attach(label, n, 0, 1, 1);
 
-            let image = new Gtk.Image({ icon_name: info.get_icon_name(),
+            let image = new Gtk.Image({ icon_name: info.get_symbolic_icon_name(),
                                         icon_size: Gtk.IconSize.DIALOG,
+                                        use_fallback: true,
                                         visible: true });
             this.attach(image, n, 1, 1, 1);
 

@@ -1,9 +1,26 @@
 #weather-page {
     padding: 12px;
-    background: white;
+    /*background: white;*/
 }
 
 #loading-label {
     padding-top: 24px;
     font-size: 1.5em;
+}
+
+#temperature-label {
+    font-size: 4em;
+}
+#condition-label {
+    font-size: 2.5em;
+}
+#attribution-label {
+    font-size: small;
+}
+
+#conditions-image:dir(ltr) {
+    padding-right: 12px;
+}
+#conditions-image:dir(rtl) {
+    padding-left: 12px;
 }

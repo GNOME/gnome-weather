@@ -16,7 +16,6 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const Conditions = imports.conditions;
 const Forecast = imports.forecast;
 const Util = imports.util;
 
@@ -31,21 +30,42 @@ const WeatherWidget = new Lang.Class({
                                        name: 'weather-page' });
         this.parent(params);
 
-        let grid = new Gtk.Grid();
-        this._icon = new Gtk.Image({ pixel_size: 256,
-                                     halign: Gtk.Align.CENTER,
-                                     valign: Gtk.Align.CENTER,
-                                     hexpand: true,
-                                     vexpand: true });
-        grid.attach(this._icon, 0, 0, 1, 1);
+        let outerGrid = new Gtk.Grid({ orientation: Gtk.Orientation.VERTICAL });
 
-        this._conditions = new Conditions.ConditionsSidebar();
-        grid.attach(this._conditions, 1, 0, 1, 1);
+        let alignment = new Gtk.Grid({ hexpand: true, vexpand: true,
+                                       halign: Gtk.Align.CENTER,
+                                       valign: Gtk.Align.CENTER });
 
-        this._forecasts = new Forecast.ForecastBox();
-        grid.attach(this._forecasts, 0, 1, 2, 1);
+        let innerGrid = new Gtk.Grid({ hexpand: false, vexpand: false });
+        this._icon = new Gtk.Image({ pixel_size: 172,
+                                     use_fallback: true,
+                                     name: 'conditions-image' });
+        innerGrid.attach(this._icon, 0, 0, 1, 2);
 
-        this.add(grid);
+        this._temperature = new Gtk.Label({ xalign: 0.0,
+                                            name: 'temperature-label',
+                                            vexpand: true,
+                                            valign: Gtk.Align.END });
+        innerGrid.attach(this._temperature, 1, 0, 1, 1);
+
+        this._conditions = new Gtk.Label({ xalign: 0.0,
+                                           name: 'condition-label',
+                                           valign: Gtk.Align.END });
+        innerGrid.attach(this._conditions, 1, 1, 1, 1);
+
+        this._attribution = new Gtk.Label({ xalign: 0.0, wrap: true,
+                                            name: 'attribution-label',
+                                            max_width_chars: 30,
+                                            use_markup: true });
+        innerGrid.attach(this._attribution, 1, 2, 1, 1);
+
+        alignment.add(innerGrid);
+        outerGrid.add(alignment);
+
+        this._forecasts = new Forecast.ForecastBox({ hexpand: true });
+        outerGrid.add(this._forecasts);
+
+        this.add(outerGrid);
     },
 
     clear: function() {
@@ -53,9 +73,21 @@ const WeatherWidget = new Lang.Class({
     },
 
     update: function(info) {
-        this._conditions.update(info);
+        let conditions = info.get_conditions();
+        if (conditions == '-') // Not significant
+            conditions = info.get_sky();
+        this._conditions.label = conditions;
+        this._temperature.label = info.get_temp_summary();
 
-        this._icon.icon_name = info.get_icon_name();
+        let attr = info.get_attribution();
+        if (attr) {
+            this._attribution.label = attr;
+            this._attribution.show();
+        } else {
+            this._attribution.hide();
+        }
+
+        this._icon.icon_name = info.get_symbolic_icon_name();
 
         let forecasts = info.get_forecast_list();
         if (forecasts.length > 0) {

@@ -4,7 +4,6 @@ nodist_bin_SCRIPTS = gnome-weather
 
 jsdir = $(pkgdatadir)
 dist_js_DATA = \
-	conditions.js	\
 	forecast.js	\
 	main.js		\
 	strings.js	\
