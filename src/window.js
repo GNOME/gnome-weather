@@ -60,9 +60,14 @@ const MainWindow = new Lang.Class({
 
         this._header = new Gd.HeaderBar({ title: makeTitle(this._location),
                                           hexpand: true });
+        grid.add(this._header);
+
         this._search = new Gd.HeaderToggleButton({ symbolic_icon_name: 'edit-find-symbolic' });
         this._header.pack_end(this._search);
-        grid.add(this._header);
+
+        let refresh = new Gd.HeaderSimpleButton({ symbolic_icon_name: 'view-refresh-symbolic' });
+        refresh.connect('clicked', Lang.bind(this, this.update));
+        this._header.pack_end(refresh);
 
         this._locationEntry = new GWeather.LocationEntry({ top: this._world,
                                                            location: this._location,
