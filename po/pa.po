@@ -1,0 +1,197 @@
+# Punjabi translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+#
+# A S Alam <aalam@users.sf.net>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-01-24 21:10+0000\n"
+"PO-Revision-Date: 2013-03-03 07:51+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"Language: pa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../data/gnome-weather.desktop.in.h:1
+msgid "Weather"
+msgstr "ਮੌਸਮ"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "ਮੌਸਮ ਹਾਲਤ ਅਤੇ ਭਵਿੱਖਬਾਣੀ ਵੇਖੋ"
+
+#: ../src/widget.py:34
+msgid "Location: "
+msgstr "ਟਿਕਾਣਾ: "
+
+#: ../src/conditions.py:26
+msgid "Current conditions:"
+msgstr "ਮੌਜੂਦਾ ਹਾਲਤ:"
+
+#: ../src/conditions.py:47
+msgid "Temperature: "
+msgstr "ਤਾਪਮਾਨ: "
+
+#: ../src/conditions.py:49
+msgid "Wind: "
+msgstr "ਹਵਾ: "
+
+#: ../src/forecast.py:86
+msgid "Today"
+msgstr "ਅੱਜ"
+
+#: ../src/forecast.py:91
+msgid "Tomorrow"
+msgstr "ਭਲਕ"
+
+#: ../src/strings.py:22
+msgid "Monday night"
+msgstr "ਸੋਮਵਾਰ ਰਾਤ"
+
+#: ../src/strings.py:22
+msgid "Monday morning"
+msgstr "ਸੋਮਵਾਰ ਸਵੇਰ"
+
+#: ../src/strings.py:22
+msgid "Monday afternoon"
+msgstr "ਸੋਮਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
+
+#: ../src/strings.py:22
+msgid "Monday evening"
+msgstr "ਸੋਮਵਾਰ ਆਥਣ"
+
+#: ../src/strings.py:23
+msgid "Tuesday night"
+msgstr "ਮੰਗਲਵਾਰ ਰਾਤ"
+
+#: ../src/strings.py:23
+msgid "Tuesday morning"
+msgstr "ਮੰਗਲਵਾਰ ਸਵੇਰ"
+
+#: ../src/strings.py:23
+msgid "Tuesday afternoon"
+msgstr "ਮੰਗਲਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
+
+#: ../src/strings.py:23
+msgid "Tuesday evening"
+msgstr "ਮੰਗਲਵਾਰ ਆਥਣ"
+
+#: ../src/strings.py:24
+msgid "Wednesday night"
+msgstr "ਬੁੱਧਵਾਰ ਰਾਤ"
+
+#: ../src/strings.py:24
+msgid "Wednesday morning"
+msgstr "ਬੁੱਧਵਾਰ ਸਵੇਰ"
+
+#: ../src/strings.py:24
+msgid "Wednesday afternoon"
+msgstr "ਬੁੱਧਵਾਰ ਬਾਅਦ-ਦੁਪੈਹਰ"
+
+#: ../src/strings.py:24
+msgid "Wednesday evening"
+msgstr "ਬੁੱਧਵਾਰ ਆਥਣ"
+
+#: ../src/strings.py:25
+msgid "Thursday night"
+msgstr "ਵੀਰਵਾਰ ਰਾਤ"
+
+#: ../src/strings.py:25
+msgid "Thursday morning"
+msgstr "ਵੀਰਵਾਰ ਸਵੇਰ"
+
+#: ../src/strings.py:25
+msgid "Thursday afternoon"
+msgstr "ਵੀਰਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
+
+#: ../src/strings.py:25
+msgid "Thursday evening"
+msgstr "ਵੀਰਵਾਰ ਆਥਣ"
+
+#: ../src/strings.py:26
+msgid "Friday night"
+msgstr "ਸ਼ੁੱਕਰਵਾਰ ਰਾਤ"
+
+#: ../src/strings.py:26
+msgid "Friday morning"
+msgstr "ਸ਼ੁੱਕਰਵਾਰ ਸਵੇਰ"
+
+#: ../src/strings.py:26
+msgid "Friday afternoon"
+msgstr "ਸ਼ੁੱਕਰਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
+
+#: ../src/strings.py:26
+msgid "Friday evening"
+msgstr "ਸ਼ੁੱਕਰਵਾਰ ਆਥਣ"
+
+#: ../src/strings.py:27
+msgid "Saturday night"
+msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਰਾਤ"
+
+#: ../src/strings.py:27
+msgid "Saturday morning"
+msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਸਵੇਰ"
+
+#: ../src/strings.py:27
+msgid "Saturday afternoon"
+msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
+
+#: ../src/strings.py:27
+msgid "Saturday evening"
+msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਆਥਣ"
+
+#: ../src/strings.py:28
+msgid "Sunday night"
+msgstr "ਐਤਵਾਰ ਰਾਤ"
+
+#: ../src/strings.py:28
+msgid "Sunday morning"
+msgstr "ਐਤਵਾਰ ਸਵੇਰ"
+
+#: ../src/strings.py:28
+msgid "Sunday afternoon"
+msgstr "ਐਤਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
+
+#: ../src/strings.py:28
+msgid "Sunday evening"
+msgstr "ਐਤਵਾਰ ਆਥਣ"
+
+#: ../src/strings.py:31
+msgid "This night"
+msgstr "ਅੱਜ ਰਾਤ"
+
+#: ../src/strings.py:31
+msgid "This morning"
+msgstr "ਅੱਜ ਸਵੇਰ"
+
+#: ../src/strings.py:31
+msgid "This afternoon"
+msgstr "ਅੱਜ ਬਾਅਦ ਦੁਪੈਹਰ"
+
+#: ../src/strings.py:31
+msgid "This evening"
+msgstr "ਅੱਜ ਆਥਣ"
+
+#: ../src/strings.py:32
+msgid "Tomorrow night"
+msgstr "ਭਲਕੇ ਰਾਤ"
+
+#: ../src/strings.py:32
+msgid "Tomorrow morning"
+msgstr "ਭਲਕੇ ਸਵੇਰ"
+
+#: ../src/strings.py:32
+msgid "Tomorrow afternoon"
+msgstr "ਭਲਕੇ ਬਾਅਦ-ਦੁਪੈਹਰ"
+
+#: ../src/strings.py:32
+msgid "Tomorrow evening"
+msgstr "ਭਲਕੇ ਆਥਣ"
+
