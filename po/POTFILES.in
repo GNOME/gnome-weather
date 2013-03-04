@@ -1,8 +1,7 @@
 data/gnome-weather.desktop.in
-src/conditions.js
+data/org.gnome.Weather.Application.gschema.xml
+src/city.js
 src/forecast.js
 src/main.js
 src/strings.js
-src/util.js
-src/view.js
 src/window.js
