@@ -1,0 +1,198 @@
+# German translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2013.
+# Christian Kirbach <christian.kirbach@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-01-24 21:10+0000\n"
+"PO-Revision-Date: 2013-02-24 22:20+0100\n"
+"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
+"Language-Team: Deutsch <gnome-de@gnome.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#: ../data/gnome-weather.desktop.in.h:1
+msgid "Weather"
+msgstr "Wetter"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Wetterberichte und -vorhersagen anzeigen"
+
+#: ../src/widget.py:34
+msgid "Location: "
+msgstr "Standort: "
+
+#: ../src/conditions.py:26
+msgid "Current conditions:"
+msgstr "Momentane Bedingungen:"
+
+#: ../src/conditions.py:47
+msgid "Temperature: "
+msgstr "Temperatur:"
+
+#: ../src/conditions.py:49
+msgid "Wind: "
+msgstr "Wind: "
+
+#: ../src/forecast.py:86
+msgid "Today"
+msgstr "Heute"
+
+#: ../src/forecast.py:91
+msgid "Tomorrow"
+msgstr "Morgen"
+
+#: ../src/strings.py:22
+msgid "Monday night"
+msgstr "Montag nachts"
+
+#: ../src/strings.py:22
+msgid "Monday morning"
+msgstr "Montag morgens"
+
+#: ../src/strings.py:22
+msgid "Monday afternoon"
+msgstr "Montag nachmittags"
+
+#: ../src/strings.py:22
+msgid "Monday evening"
+msgstr "Montag abends"
+
+# http://www.duden.de/rechtschreibung/Dienstagnacht
+#: ../src/strings.py:23
+msgid "Tuesday night"
+msgstr "Dienstag nachts"
+
+#: ../src/strings.py:23
+msgid "Tuesday morning"
+msgstr "Dienstag morgens"
+
+#: ../src/strings.py:23
+msgid "Tuesday afternoon"
+msgstr "Dienstag nachmittags"
+
+#: ../src/strings.py:23
+msgid "Tuesday evening"
+msgstr "Donnerstag abends"
+
+#: ../src/strings.py:24
+msgid "Wednesday night"
+msgstr "Mittwoch nachts"
+
+#: ../src/strings.py:24
+msgid "Wednesday morning"
+msgstr "Mittwoch morgens"
+
+#: ../src/strings.py:24
+msgid "Wednesday afternoon"
+msgstr "Mittwoch nachmittags"
+
+#: ../src/strings.py:24
+msgid "Wednesday evening"
+msgstr "Mittwochabend"
+
+#: ../src/strings.py:25
+msgid "Thursday night"
+msgstr "Donnerstag nachts"
+
+#: ../src/strings.py:25
+msgid "Thursday morning"
+msgstr "Donnerstag morgens"
+
+#: ../src/strings.py:25
+msgid "Thursday afternoon"
+msgstr "Donnerstag nachmittags"
+
+#: ../src/strings.py:25
+msgid "Thursday evening"
+msgstr "Donnerstagabend"
+
+#: ../src/strings.py:26
+msgid "Friday night"
+msgstr "Freitag nachts"
+
+#: ../src/strings.py:26
+msgid "Friday morning"
+msgstr "Freitag morgens"
+
+#: ../src/strings.py:26
+msgid "Friday afternoon"
+msgstr "Freitag nachmittags"
+
+#: ../src/strings.py:26
+msgid "Friday evening"
+msgstr "Freitagabend"
+
+#: ../src/strings.py:27
+msgid "Saturday night"
+msgstr "Samstag nachts"
+
+#: ../src/strings.py:27
+msgid "Saturday morning"
+msgstr "Samstag morgens"
+
+#: ../src/strings.py:27
+msgid "Saturday afternoon"
+msgstr "Samstag nachmittags"
+
+#: ../src/strings.py:27
+msgid "Saturday evening"
+msgstr "Samstagabend"
+
+#: ../src/strings.py:28
+msgid "Sunday night"
+msgstr "Sonntag nachts"
+
+#: ../src/strings.py:28
+msgid "Sunday morning"
+msgstr "Sonntag morgens"
+
+#: ../src/strings.py:28
+msgid "Sunday afternoon"
+msgstr "Sonntag nachmittags"
+
+#: ../src/strings.py:28
+msgid "Sunday evening"
+msgstr "Sonntagabend"
+
+#: ../src/strings.py:31
+msgid "This night"
+msgstr "Heute Nacht"
+
+#: ../src/strings.py:31
+msgid "This morning"
+msgstr "Heute Morgen"
+
+#: ../src/strings.py:31
+msgid "This afternoon"
+msgstr "Heute Nachmittag"
+
+#: ../src/strings.py:31
+msgid "This evening"
+msgstr "Heute Abend"
+
+#: ../src/strings.py:32
+msgid "Tomorrow night"
+msgstr "Morgen Nacht"
+
+#: ../src/strings.py:32
+msgid "Tomorrow morning"
+msgstr "Morgen früh"
+
+#: ../src/strings.py:32
+msgid "Tomorrow afternoon"
+msgstr "Morgen nachmittags"
+
+#: ../src/strings.py:32
+msgid "Tomorrow evening"
+msgstr "Morgen abends"
