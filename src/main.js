@@ -27,10 +27,10 @@ pkg.require({ 'Gd': '1.0',
               'GObject': '2.0',
               'Gtk': '3.0',
               'GWeather': '3.0',
-              'Lang': '1.0',
-              'Mainloop': '1.0',
+              'Lang': '',
+              'Mainloop': '',
               'Params': '1.0',
-              'System': '1.0' });
+              'System': '' });
 
 const Util = imports.util;
 const Window = imports.window;
