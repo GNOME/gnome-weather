@@ -4,14 +4,14 @@
 # pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Piotr Drąg <piotrdrag@gmail.com>, 2012.
-# Aviary.pl <gnomepl@aviary.pl>, 2012.
+# Piotr Drąg <piotrdrag@gmail.com>, 2012-2013.
+# Aviary.pl <gnomepl@aviary.pl>, 2012-2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-01 21:29+0100\n"
-"PO-Revision-Date: 2012-12-01 21:30+0100\n"
+"POT-Creation-Date: 2013-03-04 23:44+0100\n"
+"PO-Revision-Date: 2013-03-04 23:45+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../data/gnome-weather.desktop.in.h:1
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44
 msgid "Weather"
 msgstr "Pogoda"
 
@@ -31,170 +31,212 @@ msgstr "Pogoda"
 msgid "Show weather conditions and forecast"
 msgstr "Wyświetlanie warunków pogodowych i prognozy"
 
-#: ../src/widget.py:34
-msgid "Location: "
-msgstr "Położenie: "
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Skonfigurowane miasta, dla których wyświetlać pogodę"
 
-#: ../src/conditions.py:26
-msgid "Current conditions:"
-msgstr "Obecnie warunki:"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Położenia wyświetlane w widoku świata programu gnome-weather. Każda wartość "
+"to GVariant zwrócone przez gweather_location_serialize()."
 
-#: ../src/conditions.py:47
-msgid "Temperature: "
-msgstr "Temperatura: "
+#: ../src/city.js:141
+msgid "Loading..."
+msgstr "Wczytywanie..."
 
-#: ../src/conditions.py:49
-msgid "Wind: "
-msgstr "Wiatr: "
-
-#: ../src/forecast.py:86
+#: ../src/forecast.js:104
 msgid "Today"
 msgstr "Dzisiaj"
 
-#: ../src/forecast.py:91
+#: ../src/forecast.js:110
 msgid "Tomorrow"
 msgstr "Jutro"
 
-#: ../src/strings.py:22
+#: ../src/forecast.js:124
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:153
+msgid "More..."
+msgstr "Więcej..."
+
+#: ../src/forecast.js:211
+msgid "Forecast for Today"
+msgstr "Prognoza na dzisiaj"
+
+#: ../src/forecast.js:213
+msgid "Forecast for Tomorrow"
+msgstr "Prognoza na jutro"
+
+#: ../src/forecast.js:217
+msgid "%B %d"
+msgstr "%d %B"
+
+#: ../src/forecast.js:241
+msgid "%k:%M"
+msgstr "%k:%M"
+
+#: ../src/strings.js:22
 msgid "Monday night"
 msgstr "Poniedziałek w nocy"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday morning"
 msgstr "Poniedziałek rano"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday afternoon"
 msgstr "Poniedziałek popołudniu"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday evening"
 msgstr "Poniedziałek wieczorem"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday night"
 msgstr "Wtorek w nocy"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday morning"
 msgstr "Wtorek rano"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday afternoon"
 msgstr "Wtorek popołudniu"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday evening"
 msgstr "Wtorek wieczorem"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday night"
 msgstr "Środa w nocy"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday morning"
 msgstr "Środa rano"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday afternoon"
 msgstr "Środa popołudniu"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday evening"
 msgstr "Środa wieczorem"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday night"
 msgstr "Czwartek w nocy"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday morning"
 msgstr "Czwartek rano"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday afternoon"
 msgstr "Czwartek popołudniu"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday evening"
 msgstr "Czwartek wieczorem"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday night"
 msgstr "Piątek w nocy"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday morning"
 msgstr "Piątek rano"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday afternoon"
 msgstr "Piątek popołudniu"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday evening"
 msgstr "Piątek wieczorem"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday night"
 msgstr "Sobota w nocy"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday morning"
 msgstr "Sobota rano"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday afternoon"
 msgstr "Sobota popołudniu"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday evening"
 msgstr "Sobota wieczorem"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday night"
 msgstr "Niedziela w nocy"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday morning"
 msgstr "Niedziela rano"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday afternoon"
 msgstr "Niedziela popołudniu"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday evening"
 msgstr "Niedziela wieczorem"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This night"
 msgstr "Dzisiejsza noc"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This morning"
 msgstr "Dzisiaj rano"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This afternoon"
 msgstr "Dzisiejsze popołudnie"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This evening"
 msgstr "Dzisiejszy wieczór"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow night"
 msgstr "Jutro w nocy"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow morning"
 msgstr "Jutro rano"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow afternoon"
 msgstr "Jutro popołudniu"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow evening"
 msgstr "Jutro wieczorem"
+
+#: ../src/window.js:33
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/window.js:63
+msgid "New"
+msgstr "Nowe"
+
+#: ../src/window.js:68
+msgid "World Weather"
+msgstr "Pogoda na świecie"
+
+#: ../src/window.js:162
+msgid "New Location"
+msgstr "Nowe położenie"
