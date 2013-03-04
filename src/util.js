@@ -95,3 +95,18 @@ function getWeatherConditions(info) {
         conditions = info.get_sky();
     return conditions;
 }
+
+if (!GWeather.Info.prototype.get_symbolic_icon_name) {
+    GWeather.Info.prototype.get_symbolic_icon_name = function() {
+        let icon = this.get_icon_name().split('-');
+
+        // If the icon is for a moonphase it ends like -000
+        // Replace the moonphase with -symbolic
+        if (!isNaN(icon[icon.length-1]))
+            icon[icon.length-1] = 'symbolic';
+        else
+            icon.push('symbolic');
+
+        return icon.join('-');
+    }
+}
