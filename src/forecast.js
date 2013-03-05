@@ -174,9 +174,28 @@ const TodaySidebar = new Lang.Class({
     // remove infos for the wrong day
     _preprocess: function(now, infos) {
         let ret = [];
-        let current = now;
+        let i;
+        let current;
 
-        for (let i = 0; i < infos.length; i++) {
+        // First ignore all infos that are on a different
+        // day than now.
+        // infos are ordered by time, and it's assumed at some point
+        // there is an info for the current day (otherwise, nothing
+        // is shown)
+        for (i = 0; i < infos.length; i++) {
+            let info = infos[i];
+
+            let [ok, date] = info.get_value_update();
+            let datetime = GLib.DateTime.new_from_unix_local(date);
+
+            if (Util.arrayEqual(now.get_ymd(),
+                                datetime.get_ymd())) {
+                current = datetime;
+                break;
+            }
+        }
+
+        for ( ; i < infos.length; i++) {
             let info = infos[i];
 
             let [ok, date] = info.get_value_update();
