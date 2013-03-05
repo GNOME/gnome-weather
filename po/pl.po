@@ -44,8 +44,8 @@ msgstr ""
 "to GVariant zwrócone przez gweather_location_serialize()."
 
 #: ../src/city.js:141
-msgid "Loading..."
-msgstr "Wczytywanie..."
+msgid "Loading…"
+msgstr "Wczytywanie…"
 
 #: ../src/forecast.js:104
 msgid "Today"
@@ -61,8 +61,8 @@ msgid "%s / %s"
 msgstr "%s / %s"
 
 #: ../src/forecast.js:153
-msgid "More..."
-msgstr "Więcej..."
+msgid "More…"
+msgstr "Więcej…"
 
 #: ../src/forecast.js:211
 msgid "Forecast for Today"
@@ -77,8 +77,8 @@ msgid "%B %d"
 msgstr "%d %B"
 
 #: ../src/forecast.js:241
-msgid "%k:%M"
-msgstr "%k:%M"
+msgid "%k∶%M"
+msgstr "%k∶%M"
 
 #: ../src/strings.js:22
 msgid "Monday night"

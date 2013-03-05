@@ -138,7 +138,7 @@ const WeatherView = new Lang.Class({
         this._spinner = new Gtk.Spinner({ height_request: SPINNER_SIZE,
                                           width_request: SPINNER_SIZE });
         loadingPage.add(this._spinner);
-        loadingPage.add(new Gtk.Label({ label: _("Loading..."),
+        loadingPage.add(new Gtk.Label({ label: _("Loading…"),
                                         name: "loading-label" }));
         this.add_named(loadingPage, 'loading');
 

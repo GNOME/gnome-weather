@@ -150,7 +150,7 @@ const TodaySidebar = new Lang.Class({
         this._grid.attach(this._subline, 0, 1, 3, 1);
 
         this._hasMore = false;
-        this._moreButton = new Gtk.Button({ label: _("More..."),
+        this._moreButton = new Gtk.Button({ label: _("More…"),
                                             margin_top: 4,
                                             halign: Gtk.Align.END,
                                             visible: true });
@@ -238,7 +238,7 @@ const TodaySidebar = new Lang.Class({
         let [ok, date] = info.get_value_update();
         let datetime = GLib.DateTime.new_from_unix_local(date);
 
-        let label = new Gtk.Label({ label: datetime.format(_("%k:%M")),
+        let label = new Gtk.Label({ label: datetime.format(_("%k∶%M")),
                                     visible: true,
                                     xalign: 1.0 });
         label.get_style_context().add_class('dim-label');
