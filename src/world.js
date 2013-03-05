@@ -105,7 +105,7 @@ const WorldModel = new Lang.Class({
         while (ok) {
             let location = this.get_value(iter, Columns.LOCATION);
 
-            let found = true;
+            let found = false;
             for (let j = 0; j < newLocations.length; j++) {
                 let variant = newLocations[j];
                 if (variant == null)
@@ -127,7 +127,7 @@ const WorldModel = new Lang.Class({
         }
 
         for (let i = 0; i < toErase.length; i++)
-            this.erase(toErase[i]);
+            this.remove(toErase[i]);
 
         for (let i = 0; i < newLocations.length; i++) {
             let variant = newLocations[i];
