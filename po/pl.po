@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-04 23:44+0100\n"
-"PO-Revision-Date: 2013-03-04 23:45+0100\n"
+"POT-Creation-Date: 2013-03-05 18:57+0100\n"
+"PO-Revision-Date: 2013-03-05 18:58+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -193,7 +193,7 @@ msgid "Sunday evening"
 msgstr "Niedziela wieczorem"
 
 #: ../src/strings.js:31
-msgid "This night"
+msgid "Tonight"
 msgstr "Dzisiejsza noc"
 
 #: ../src/strings.js:31
@@ -229,14 +229,14 @@ msgstr "Jutro wieczorem"
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: ../src/window.js:63
+#: ../src/window.js:64
 msgid "New"
 msgstr "Nowe"
 
-#: ../src/window.js:68
+#: ../src/window.js:69
 msgid "World Weather"
 msgstr "Pogoda na świecie"
 
-#: ../src/window.js:162
+#: ../src/window.js:163
 msgid "New Location"
 msgstr "Nowe położenie"
