@@ -135,6 +135,8 @@ const TodaySidebar = new Lang.Class({
         params = Params.fill(params, { hscrollbar_policy: Gtk.PolicyType.NEVER });
         this.parent(params);
 
+        this._settings = new Gio.Settings({ schema: 'org.gnome.desktop.interface' });
+
         this._grid = new Gtk.Grid({ column_spacing: 6,
                                     row_spacing: 12,
                                     margin_left: 12,
@@ -257,7 +259,17 @@ const TodaySidebar = new Lang.Class({
         let [ok, date] = info.get_value_update();
         let datetime = GLib.DateTime.new_from_unix_local(date);
 
-        let label = new Gtk.Label({ label: datetime.format(_("%k∶%M")),
+        let timeSetting = this._settings.get_string('clock-format');
+        let timeFormat = null;
+
+        if (timeSetting == '12h')
+            // Translators: this is a time format without date used for AM/PM
+            timeFormat = _("%l∶%M %p");
+        else
+            // Translators: this is a time format without date used for 24h mode
+            timeFormat = _("%R");
+
+        let label = new Gtk.Label({ label: datetime.format(timeFormat),
                                     visible: true,
                                     xalign: 1.0 });
         label.get_style_context().add_class('dim-label');
