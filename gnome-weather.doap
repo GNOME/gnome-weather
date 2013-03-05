@@ -12,6 +12,8 @@
     access updated forecasts provided by various internet services.
   </description>
 
+  <bug-database rdf:resource="http://bugzilla.gnome.org/browse.cgi?product=gnome-weather" />
+
   <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
 
   <maintainer>
