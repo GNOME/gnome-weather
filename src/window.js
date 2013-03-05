@@ -76,9 +76,15 @@ const MainWindow = new Lang.Class({
         this._header.pack_end(refresh);
         this._pageWidgets[Page.CITY].push(refresh);
 
-        let select = new Gd.HeaderToggleButton({ symbolic_icon_name: 'object-select-symbolic' });
+        let select = new Gd.HeaderSimpleButton({ symbolic_icon_name: 'object-select-symbolic' });
         this._header.pack_end(select);
         this._pageWidgets[Page.WORLD].push(select);
+
+        let selectDone = new Gd.HeaderSimpleButton({ label: _("Done"),
+                                                     no_show_all: true });
+        selectDone.get_style_context().add_class('suggested-action');
+        this._header.pack_end(selectDone);
+        this._pageWidgets[Page.WORLD].push(selectDone);
 
         this._stack = new Gd.Stack();
 
@@ -89,12 +95,35 @@ const MainWindow = new Lang.Class({
         this._worldView = new Gd.MainView({ view_type: Gd.MainViewType.ICON });
         this._worldView.model = this._model;
         this._worldView.connect('item-activated', Lang.bind(this, this._itemActivated));
-        this._worldView.connect('selection-mode-request', function() {
-            select.active = true;
-        });
-        select.bind_property('active', this._worldView, 'selection-mode',
-                             GObject.BindingFlags.DEFAULT);
+        this._worldView.connect('selection-mode-request', Lang.bind(this, function() {
+            this._worldView.selection_mode = true;
+        }));
         this._stack.add(this._worldView);
+
+        select.connect('clicked', Lang.bind(this, function() {
+            this._worldView.selection_mode = true;
+        }));
+        selectDone.connect('clicked', Lang.bind(this, function() {
+            this._worldView.selection_mode = false;
+        }));
+        this._worldView.connect('notify::selection-mode', Lang.bind(this, function() {
+            let mode = this._worldView.selection_mode;
+
+            if (mode) {
+                this._header.get_style_context().add_class('selection-mode');
+                this._header.set_title(_("Click on locations to select them"));
+            } else {
+                this._header.get_style_context().remove_class('selection-mode');
+                this._header.set_title(null);
+            }
+        }));
+
+        this._worldView.bind_property('selection-mode', newButton, 'visible',
+                                      GObject.BindingFlags.INVERT_BOOLEAN);
+        this._worldView.bind_property('selection-mode', select, 'visible',
+                                      GObject.BindingFlags.INVERT_BOOLEAN);
+        this._worldView.bind_property('selection-mode', selectDone, 'visible',
+                                      GObject.BindingFlags.SYNC_CREATE);
 
         this._stack.set_visible_child(this._worldView);
         grid.add(this._stack);
@@ -137,8 +166,11 @@ const MainWindow = new Lang.Class({
         for (let i = 0; i < this._pageWidgets[this._currentPage].length; i++)
             this._pageWidgets[this._currentPage][i].hide();
 
-        for (let i = 0; i < this._pageWidgets[page].length; i++)
-            this._pageWidgets[page][i].show();
+        for (let i = 0; i < this._pageWidgets[page].length; i++) {
+            let widget = this._pageWidgets[page][i];
+            if (!widget.no_show_all)
+                this._pageWidgets[page][i].show();
+        }
 
         this._currentPage = page;
         this._header.title = this._getTitle();
