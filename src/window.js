@@ -19,6 +19,9 @@
 const City = imports.city;
 const World = imports.world;
 
+const Gettext = imports.gettext;
+const Tweener = imports.tweener.tweener;
+
 function makeTitle(location) {
     let city = location;
     if (location.get_level() == GWeather.LocationLevel.WEATHER_STATION)
@@ -39,6 +42,63 @@ const Page = {
     WORLD: 0,
     CITY: 1
 };
+
+const _SELECTION_TOOLBAR_DEFAULT_WIDTH = 300;
+
+const SelectionToolbar = new Lang.Class({
+    Name: 'SelectionToolbar',
+    Extends: Gtk.Toolbar,
+
+    _init: function(worldView) {
+        this._worldView = worldView;
+
+        this.parent({ show_arrow: false,
+                      halign: Gtk.Align.CENTER,
+                      valign: Gtk.Align.END,
+                      margin_bottom: 40,
+                      icon_size: Gtk.IconSize.LARGE_TOOLBAR,
+                      opacity: 0 });
+        this.get_style_context().add_class('osd');
+        this.set_size_request(_SELECTION_TOOLBAR_DEFAULT_WIDTH, -1);
+
+        this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL });
+        let item = new Gtk.ToolItem({ child: this._box });
+        item.set_expand(true);
+        this.insert(item, -1);
+
+        let button = new Gtk.Button({ label: _("Delete"),
+                                      hexpand: true });
+        this._box.add(button);
+
+        button.connect('clicked', Lang.bind(this, function() {
+            let items = this._worldView.get_selection();
+            let model = this._worldView.get_model();
+
+            items.forEach(function(itemPath) {
+                let [res, iter] = model.get_iter(itemPath);
+                if (res)
+                    model.removeLocation(iter);
+            });
+        }));
+    },
+
+    fadeIn: function() {
+        this.show_all();
+        Tweener.addTween(this, { opacity: 1,
+                                 time: 0.30,
+                                 transition: 'easeOutQuad' });
+    },
+
+    fadeOut: function() {
+        Tweener.addTween(this, { opacity: 0,
+                                 time: 0.30,
+                                 transition: 'easeOutQuad',
+                                 onComplete: function() {
+                                     this.hide();
+                                 },
+                                 onCompleteScope: this });
+    }
+});
 
 const MainWindow = new Lang.Class({
     Name: 'MainWindow',
@@ -126,7 +186,29 @@ const MainWindow = new Lang.Class({
                                       GObject.BindingFlags.SYNC_CREATE);
 
         this._stack.set_visible_child(this._worldView);
-        grid.add(this._stack);
+
+        this._overlay = new Gtk.Overlay();
+        this._overlay.add(this._stack);
+        grid.add(this._overlay);
+
+        this._selectionToolbar = new SelectionToolbar(this._worldView);
+        this._overlay.add_overlay(this._selectionToolbar);
+
+        this._worldView.connect('view-selection-changed', Lang.bind(this, function() {
+            let items = this._worldView.get_selection();
+            let label = _("Click on locations to select them");
+
+            if (items.length > 0) {
+                label = Gettext.ngettext("%d selected",
+                                         "%d selected",
+                                         items.length).format(items.length);
+                this._selectionToolbar.fadeIn();
+            } else {
+                this._selectionToolbar.fadeOut();
+            }
+
+            this._header.set_title(label);
+        }));
 
         this.add(grid);
         grid.show_all();
