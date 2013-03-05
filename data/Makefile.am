@@ -1,5 +1,5 @@
 cssdir = $(pkgdatadir)
-css_DATA = application.css
+dist_css_DATA = application.css
 
 appsdir = $(datadir)/applications
 apps_DATA = gnome-weather.desktop
@@ -17,4 +17,4 @@ CLEANFILES = $(apps_DATA) *.valid gschemas.compiled
 all-local:
 	$(GLIB_COMPILE_SCHEMAS) $(builddir)
 
-include $(top_srcdir)/git.mk
+-include $(top_srcdir)/git.mk
