@@ -146,7 +146,7 @@ const MainWindow = new Lang.Class({
         this._header.pack_end(selectDone);
         this._pageWidgets[Page.WORLD].push(selectDone);
 
-        this._stack = new Gd.Stack();
+        this._stack = new Gd.Stack({ transition_type: Gd.StackTransitionType.CROSSFADE });
 
         this._cityView = new City.WeatherView({ hexpand: true,
                                                 vexpand: true });
