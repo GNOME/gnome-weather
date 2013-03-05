@@ -28,7 +28,7 @@ const DAY_PARTS = [
     [N_("Sunday night"), N_("Sunday morning"), N_("Sunday afternoon"), N_("Sunday evening")],
 ];
 
-const TODAY_PARTS = [N_("This night"), N_("This morning"), N_("This afternoon"), N_("This evening")];
+const TODAY_PARTS = [N_("Tonight"), N_("This morning"), N_("This afternoon"), N_("This evening")];
 const TOMORROW_PARTS = [N_("Tomorrow night"), N_("Tomorrow morning"), N_("Tomorrow afternoon"), N_("Tomorrow evening")];
 
 function _getDatetimePart(datetime) {
