@@ -19,4 +19,4 @@ MAINTAINERCLEANFILES = \
 
 GITIGNOREFILES = m4/
 
-include $(top_srcdir)/git.mk
+-include $(top_srcdir)/git.mk
