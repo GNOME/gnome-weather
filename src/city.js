@@ -31,11 +31,14 @@ const WeatherWidget = new Lang.Class({
         this.parent(params);
 
         let outerBox = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL });
-        let contentFrame = new Gtk.Frame({ name: 'weather-page-content-view' });
-        outerBox.add(contentFrame);
+
+        this._currentStyle = null;
+        this._contentFrame = new Gtk.Frame({ shadow_type: Gtk.ShadowType.NONE,
+                                             name: 'weather-page-content-view' });
+        outerBox.add(this._contentFrame);
 
         let outerGrid = new Gtk.Grid();
-        contentFrame.add(outerGrid);
+        this._contentFrame.add(outerGrid);
 
         let alignment = new Gtk.Grid({ hexpand: true, vexpand: true,
                                        halign: Gtk.Align.CENTER,
@@ -99,6 +102,12 @@ const WeatherWidget = new Lang.Class({
         this._today.clear();
     },
 
+    _get_style_class: function(info) {
+        let icon = info.get_icon_name();
+        let name = icon.replace(/(-\d{3})/, "");
+        return name;
+    },
+
     update: function(info) {
         this._conditions.label = Util.getWeatherConditions(info);
         this._temperature.label = info.get_temp_summary();
@@ -112,6 +121,11 @@ const WeatherWidget = new Lang.Class({
         }
 
         this._icon.icon_name = info.get_symbolic_icon_name();
+        let context = this._contentFrame.get_style_context();
+        if (this._currentStyle)
+            context.remove_class(this._currentStyle);
+        this._currentStyle = this._get_style_class(info);
+        context.add_class(this._currentStyle);
 
         let forecasts = info.get_forecast_list();
         if (forecasts.length > 0) {
