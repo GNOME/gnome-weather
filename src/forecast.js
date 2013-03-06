@@ -149,11 +149,15 @@ const TodaySidebar = new Lang.Class({
 
         this._settings = new Gio.Settings({ schema: 'org.gnome.desktop.interface' });
 
+        let box = new Gtk.Box({ orientation: Gtk.Orientation.VERTICAL,
+                                vexpand: true });
+        this.add(box);
+
         this._grid = new Gtk.Grid({ column_spacing: 6,
                                     row_spacing: 12,
                                     margin_left: 12,
                                     margin_right: 12 });
-        this.add(this._grid);
+        box.add(this._grid);
 
         this._headline = new Gtk.Label({ use_markup: true,
                                          xalign: 0.0 });
@@ -162,6 +166,14 @@ const TodaySidebar = new Lang.Class({
         this._subline = new Gtk.Label({ margin_bottom: 4,
                                         xalign: 0.0 });
         this._grid.attach(this._subline, 0, 1, 3, 1);
+
+        this._attribution = new Gtk.Label({ xalign: 0.5,
+                                            wrap: true,
+                                            max_width_chars: 32,
+                                            margin_bottom: 10,
+                                            name: 'attribution-label',
+                                            use_markup: true });
+        box.pack_end(this._attribution, false, false, 0);
 
         this._hasMore = false;
         this._moreButton = new Gtk.Button({ label: _("More…"),
@@ -228,7 +240,9 @@ const TodaySidebar = new Lang.Class({
         return ret;
     },
 
-    update: function(infos) {
+    update: function(info) {
+        let infos = info.get_forecast_list();
+
         let [ok, v_first] = infos[0].get_value_update();
 
         let now = GLib.DateTime.new_now_local();
@@ -265,6 +279,14 @@ const TodaySidebar = new Lang.Class({
         }
 
         this._infos = infos;
+
+        let attr = info.get_attribution();
+        if (attr) {
+            this._attribution.label = attr;
+            this._attribution.show();
+        } else {
+            this._attribution.hide();
+        }
     },
 
     _addOneInfo: function(info, row) {
