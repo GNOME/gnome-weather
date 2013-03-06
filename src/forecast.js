@@ -153,10 +153,9 @@ const TodaySidebar = new Lang.Class({
                                 vexpand: true });
         this.add(box);
 
-        this._grid = new Gtk.Grid({ column_spacing: 6,
-                                    row_spacing: 12,
-                                    margin_left: 12,
-                                    margin_right: 12 });
+        this._grid = new Gtk.Grid({ column_spacing: 12,
+                                    row_spacing: 6,
+                                    margin: 12 });
         box.add(this._grid);
 
         this._headline = new Gtk.Label({ use_markup: true,
