@@ -61,11 +61,6 @@ const WeatherWidget = new Lang.Class({
                                            valign: Gtk.Align.END });
         innerGrid.attach(this._conditions, 1, 1, 1, 1);
 
-        this._attribution = new Gtk.Label({ xalign: 0.0, wrap: true,
-                                            name: 'attribution-label',
-                                            use_markup: true });
-        innerGrid.attach(this._attribution, 1, 2, 1, 1);
-
         alignment.add(innerGrid);
         outerGrid.attach(alignment, 0, 0, 1, 1);
 
@@ -112,14 +107,6 @@ const WeatherWidget = new Lang.Class({
         this._conditions.label = Util.getWeatherConditions(info);
         this._temperature.label = info.get_temp_summary();
 
-        let attr = info.get_attribution();
-        if (attr) {
-            this._attribution.label = attr;
-            this._attribution.show();
-        } else {
-            this._attribution.hide();
-        }
-
         this._icon.icon_name = info.get_symbolic_icon_name();
         let context = this._contentFrame.get_style_context();
         if (this._currentStyle)
@@ -132,7 +119,7 @@ const WeatherWidget = new Lang.Class({
             this._forecasts.update(forecasts);
             this._forecasts.show();
 
-            this._today.update(forecasts);
+            this._today.update(info);
             this._revealButton.show();
             this._revealer.show();
         } else {
