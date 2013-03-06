@@ -1,6 +1,8 @@
 #weather-page {
     padding: 12px;
     padding-right: 0;
+    text-shadow: inset 1px 1px 3px black;
+    icon-shadow: inset 1px 1px 3px black;
 }
 
 #loading-label {
