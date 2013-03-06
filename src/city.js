@@ -70,6 +70,7 @@ const WeatherWidget = new Lang.Class({
         outerGrid.attach(this._forecasts, 0, 1, 2, 1);
 
         this._revealButton = new Gd.HeaderSimpleButton({ symbolic_icon_name: 'go-previous-symbolic',
+                                                         margin_right: 20,
                                                          halign: Gtk.Align.CENTER,
                                                          valign: Gtk.Align.CENTER });
         let context = this._revealButton.get_style_context();
