@@ -72,6 +72,9 @@ const WeatherWidget = new Lang.Class({
         this._revealButton = new Gd.HeaderSimpleButton({ symbolic_icon_name: 'go-previous-symbolic',
                                                          halign: Gtk.Align.CENTER,
                                                          valign: Gtk.Align.CENTER });
+        let context = this._revealButton.get_style_context();
+        context.add_class('osd');
+
         outerGrid.attach(this._revealButton, 1, 0, 1, 2);
 
         this._today = new Forecast.TodaySidebar({ vexpand: true,
