@@ -17,13 +17,14 @@
 }
 #condition-label {
     font-size: 2.5em;
+    padding-bottom: 12px; /* keep in sync with conditions-image */
 }
 #attribution-label {
     font-size: small;
 }
 
 #conditions-image {
-    padding-right: 12px;
+    padding: 12px;
 }
 
 .content-view.cell {
