@@ -26,14 +26,22 @@ const ONE_HOUR = 3600*1000*1000;
 
 const ForecastBox = new Lang.Class({
     Name: 'ForecastBox',
-    Extends: Gtk.Grid,
+    Extends: Gtk.Frame,
 
     _init: function(params) {
-        params = Params.fill({ orientation: Gtk.Orientation.HORIZONTAL,
-                               column_spacing: 24,
-                               row_spacing: 6,
-                               column_homogeneous: true });
+        params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE });
         this.parent(params);
+
+        this._grid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
+                                    column_spacing: 24,
+                                    row_spacing: 6,
+                                    margin: 12,
+                                    column_homogeneous: true });
+        this.add(this._grid);
+
+        let context = this.get_style_context();
+        context.add_class('background');
+        context.add_class('osd');
     },
 
     update: function(infos) {
@@ -61,17 +69,17 @@ const ForecastBox = new Lang.Class({
             let label = new Gtk.Label({ label: text,
                                         use_markup: true,
                                         visible: true });
-            this.attach(label, n, 0, 1, 1);
+            this._grid.attach(label, n, 0, 1, 1);
 
             let image = new Gtk.Image({ icon_name: info.get_symbolic_icon_name(),
                                         icon_size: Gtk.IconSize.DIALOG,
                                         use_fallback: true,
                                         visible: true });
-            this.attach(image, n, 1, 1, 1);
+            this._grid.attach(image, n, 1, 1, 1);
 
             let temperature = new Gtk.Label({ label: this._getTemperature(info),
                                               visible: true });
-            this.attach(temperature, n, 2, 1, 1);
+            this._grid.attach(temperature, n, 2, 1, 1);
 
             current = datetime;
             n++;
@@ -79,7 +87,7 @@ const ForecastBox = new Lang.Class({
     },
 
     clear: function() {
-        this.foreach(function(w) { w.destroy(); });
+        this._grid.foreach(function(w) { w.destroy(); });
     },
 
     _hasSubdayResolution: function(dates) {
