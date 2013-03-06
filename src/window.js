@@ -295,5 +295,28 @@ const MainWindow = new Lang.Class({
             this._model.addLocation(entry.location);
         }));
         dialog.show_all();
+    },
+
+    showAbout: function() {
+        let aboutDialog = new Gtk.AboutDialog(
+            { artists: [ 'Jakub Steiner <jimmac@gmail.com>' ],
+              authors: [ 'Giovanni Campagna <gcampagna@src.gnome.org>' ],
+              translator_credits: _("translator-credits"),
+              program_name: _("Weather"),
+              comments: _("A weather application"),
+              copyright: 'Copyright 2013 The Weather Developers',
+              license_type: Gtk.License.GPL_2_0,
+              logo_icon_name: 'weather-clear',
+              version: pkg.version,
+              website: 'https://live.gnome.org/Design/Apps/Weather',
+              wrap_license: true,
+              modal: true,
+              transient_for: this
+            });
+
+        aboutDialog.show();
+        aboutDialog.connect('response', function() {
+            aboutDialog.destroy();
+        });
     }
 });

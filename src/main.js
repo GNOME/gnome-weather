@@ -44,15 +44,43 @@ const Application = new Lang.Class({
         GLib.set_application_name(_("Weather"));
     },
 
+    _onQuit: function() {
+        this.quit();
+    },
+
+    _onAbout: function() {
+        let win = this.get_active_window();
+        win.showAbout();
+    },
+
+    _initAppMenu: function() {
+        let builder = new Gtk.Builder();
+        builder.add_from_resource('/org/gnome/weather/app-menu.ui');
+
+        let menu = builder.get_object('app-menu');
+        this.set_app_menu(menu);
+    },
+
     vfunc_startup: function() {
         this.parent();
 
-        Util.loadStyleSheet();
+        let resource = Gio.Resource.load(pkg.pkgdatadir + '/gnome-weather.gresource');
+        resource._register();
+
+        Util.loadStyleSheet(Gio.file_new_for_uri('resource:///org/gnome/weather/application.css'));
 
         let settings = Gtk.Settings.get_for_screen(Gdk.Screen.get_default());
         settings.gtk_application_prefer_dark_theme = true;
 
         this.world = GWeather.Location.new_world(false);
+
+        Util.initActions(this,
+                         [{ name: 'quit',
+                            callback: this._onQuit },
+                          { name: 'about',
+                            callback: this._onAbout }]);
+
+        this._initAppMenu();
     },
 
     vfunc_activate: function() {
