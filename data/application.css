@@ -5,6 +5,47 @@
 
 #weather-page-content-view {
     background-color: black;
+    background-size: cover;
+    background-position: center;
+}
+
+#weather-page-content-view.weather-clear {
+    background-image: url("weather-clear.jpg");
+}
+
+#weather-page-content-view.weather-clear-night {
+    background-image: url("weather-clear-night.jpg");
+}
+
+#weather-page-content-view.weather-few-clouds {
+    background-image: url("weather-few-clouds.jpg");
+}
+
+#weather-page-content-view.weather-few-clouds-night {
+    background-image: url("weather-few-clouds-night.jpg");
+}
+
+#weather-page-content-view.weather-fog {
+    background-image: url("weather-fog.jpg");
+    background-position: center 20%;
+}
+
+#weather-page-content-view.weather-overcast {
+    background-image: url("weather-overcast.jpg");
+}
+
+#weather-page-content-view.weather-showers,
+#weather-page-content-view.weather-showers-scattered {
+    background-image: url("weather-showers.jpg");
+}
+
+#weather-page-content-view.weather-snow {
+    background-image: url("weather-snow.jpg");
+}
+
+#weather-page-content-view.weather-storm {
+    background-image: url("weather-storm.jpg");
+    background-position: center 80%;
 }
 
 #loading-label {

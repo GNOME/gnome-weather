@@ -3,5 +3,14 @@
   <gresource prefix="/org/gnome/weather">
     <file preprocess="xml-stripblanks">app-menu.ui</file>
     <file>application.css</file>
+    <file>weather-clear.jpg</file>
+    <file>weather-clear-night.jpg</file>
+    <file>weather-few-clouds.jpg</file>
+    <file>weather-few-clouds-night.jpg</file>
+    <file>weather-fog.jpg</file>
+    <file>weather-overcast.jpg</file>
+    <file>weather-showers.jpg</file>
+    <file>weather-snow.jpg</file>
+    <file>weather-storm.jpg</file>
   </gresource>
 </gresources>
