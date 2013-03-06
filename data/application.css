@@ -3,6 +3,10 @@
     icon-shadow: inset 1px 1px 3px black;
 }
 
+#weather-page-content-view {
+    background-color: black;
+}
+
 #loading-label {
     padding-top: 24px;
     font-size: 1.5em;

@@ -30,7 +30,12 @@ const WeatherWidget = new Lang.Class({
                                        name: 'weather-page' });
         this.parent(params);
 
+        let outerBox = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL });
+        let contentFrame = new Gtk.Frame({ name: 'weather-page-content-view' });
+        outerBox.add(contentFrame);
+
         let outerGrid = new Gtk.Grid();
+        contentFrame.add(outerGrid);
 
         let alignment = new Gtk.Grid({ hexpand: true, vexpand: true,
                                        halign: Gtk.Align.CENTER,
@@ -74,7 +79,7 @@ const WeatherWidget = new Lang.Class({
         this._revealer = new Gd.Revealer({ child: this._today,
                                            reveal_child: false,
                                            orientation: Gtk.Orientation.VERTICAL });
-        outerGrid.attach(this._revealer, 2, 0, 1, 2);
+        outerBox.add(this._revealer);
 
         this._revealButton.connect('clicked', Lang.bind(this, function() {
             if (this._revealer.reveal_child) {
@@ -86,7 +91,7 @@ const WeatherWidget = new Lang.Class({
             }
         }));
 
-        this.add(outerGrid);
+        this.add(outerBox);
     },
 
     clear: function() {
