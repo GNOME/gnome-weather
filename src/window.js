@@ -291,8 +291,16 @@ const MainWindow = new Lang.Class({
     },
 
     _showAbout: function() {
+        let artists = [ 'Jakub Steiner <jimmac@gmail.com>',
+                        'Pink Sherbet Photography (D. Sharon Pruitt)',
+                        'Elliott Brown',
+                        'Analogick',
+                        'DBduo Photography (Daniel R. Blume)',
+                        'davharuk',
+                        'Tech Haven Ministries',
+                        'Jim Pennucci' ];
         let aboutDialog = new Gtk.AboutDialog(
-            { artists: [ 'Jakub Steiner <jimmac@gmail.com>' ],
+            { artists: artists,
               authors: [ 'Giovanni Campagna <gcampagna@src.gnome.org>' ],
               translator_credits: _("translator-credits"),
               program_name: _("Weather"),
