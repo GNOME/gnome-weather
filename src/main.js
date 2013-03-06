@@ -49,8 +49,7 @@ const Application = new Lang.Class({
     },
 
     _initAppMenu: function() {
-        let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/weather/app-menu.ui');
+        let builder = Util.loadUI('/org/gnome/weather/app-menu.ui');
 
         let menu = builder.get_object('app-menu');
         this.set_app_menu(menu);
@@ -61,7 +60,7 @@ const Application = new Lang.Class({
 
         pkg.loadResource();
 
-        Util.loadStyleSheet(Gio.file_new_for_uri('resource:///org/gnome/weather/application.css'));
+        Util.loadStyleSheet('/org/gnome/weather/application.css');
 
         let settings = Gtk.Settings.get_for_screen(Gdk.Screen.get_default());
         settings.gtk_application_prefer_dark_theme = true;
