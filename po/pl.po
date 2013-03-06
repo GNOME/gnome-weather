@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-06 17:12+0100\n"
-"PO-Revision-Date: 2013-03-06 17:13+0100\n"
+"POT-Creation-Date: 2013-03-07 00:23+0100\n"
+"PO-Revision-Date: 2013-03-07 00:24+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -23,7 +23,15 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44
+#: ../data/app-menu.ui.h:1
+msgid "About Weather"
+msgstr "O programie"
+
+#: ../data/app-menu.ui.h:2
+msgid "Quit"
+msgstr "Zakończ"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:305
 msgid "Weather"
 msgstr "Pogoda"
 
@@ -43,46 +51,46 @@ msgstr ""
 "Położenia wyświetlane w widoku świata programu gnome-weather. Każda wartość "
 "to GVariant zwrócone przez gweather_location_serialize()."
 
-#: ../src/city.js:141
+#: ../src/city.js:154
 msgid "Loading…"
 msgstr "Wczytywanie…"
 
-#: ../src/forecast.js:104
+#: ../src/forecast.js:112
 msgid "Today"
 msgstr "Dzisiaj"
 
-#: ../src/forecast.js:110
+#: ../src/forecast.js:118
 msgid "Tomorrow"
 msgstr "Jutro"
 
-#: ../src/forecast.js:124
+#: ../src/forecast.js:132
 #, c-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:155
+#: ../src/forecast.js:178
 msgid "More…"
 msgstr "Więcej…"
 
-#: ../src/forecast.js:232
+#: ../src/forecast.js:257
 msgid "Forecast for Today"
 msgstr "Prognoza na dzisiaj"
 
-#: ../src/forecast.js:234
+#: ../src/forecast.js:259
 msgid "Forecast for Tomorrow"
 msgstr "Prognoza na jutro"
 
-#: ../src/forecast.js:238
+#: ../src/forecast.js:263
 msgid "%B %d"
 msgstr "%d %B"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:267
+#: ../src/forecast.js:300
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:270
+#: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
 
@@ -266,3 +274,13 @@ msgstr[2] "Zaznaczono: %d"
 #: ../src/window.js:277
 msgid "New Location"
 msgstr "Nowe położenie"
+
+#: ../src/window.js:304
+msgid "translator-credits"
+msgstr ""
+"Piotr Drąg <piotrdrag@gmail.com>, 2012-2013\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2012-2013"
+
+#: ../src/window.js:306
+msgid "A weather application"
+msgstr "Prognoza pogody"
