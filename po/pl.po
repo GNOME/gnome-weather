@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-05 18:57+0100\n"
-"PO-Revision-Date: 2013-03-05 18:58+0100\n"
+"POT-Creation-Date: 2013-03-06 17:12+0100\n"
+"PO-Revision-Date: 2013-03-06 17:13+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -60,25 +60,31 @@ msgstr "Jutro"
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:153
+#: ../src/forecast.js:155
 msgid "More…"
 msgstr "Więcej…"
 
-#: ../src/forecast.js:211
+#: ../src/forecast.js:232
 msgid "Forecast for Today"
 msgstr "Prognoza na dzisiaj"
 
-#: ../src/forecast.js:213
+#: ../src/forecast.js:234
 msgid "Forecast for Tomorrow"
 msgstr "Prognoza na jutro"
 
-#: ../src/forecast.js:217
+#: ../src/forecast.js:238
 msgid "%B %d"
 msgstr "%d %B"
 
-#: ../src/forecast.js:241
-msgid "%k∶%M"
-msgstr "%k∶%M"
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:267
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:270
+msgid "%R"
+msgstr "%R"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -224,19 +230,39 @@ msgstr "Jutro popołudniu"
 msgid "Tomorrow evening"
 msgstr "Jutro wieczorem"
 
-#: ../src/window.js:33
+#: ../src/window.js:36
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: ../src/window.js:64
+#: ../src/window.js:69
+msgid "Delete"
+msgstr "Usuń"
+
+#: ../src/window.js:124
 msgid "New"
 msgstr "Nowe"
 
-#: ../src/window.js:69
+#: ../src/window.js:129
 msgid "World Weather"
 msgstr "Pogoda na świecie"
 
-#: ../src/window.js:163
+#: ../src/window.js:143
+msgid "Done"
+msgstr "Gotowe"
+
+#: ../src/window.js:174 ../src/window.js:199
+msgid "Click on locations to select them"
+msgstr "Kliknięcie położenia zaznacza je"
+
+#: ../src/window.js:202
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "Zaznaczono: %d"
+msgstr[1] "Zaznaczono: %d"
+msgstr[2] "Zaznaczono: %d"
+
+#: ../src/window.js:277
 msgid "New Location"
 msgstr "Nowe położenie"
