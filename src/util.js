@@ -34,14 +34,25 @@ function loadUI(file) {
 }
 
 function loadStyleSheet(file) {
-    file = file || 'application.css';
+    file = file || Gio.file_new_for_path(GLib.build_filenamev([pkg.pkgdatadir,
+                                                               'application.css']));
 
     let provider = new Gtk.CssProvider();
-    provider.load_from_path(GLib.build_filenamev([pkg.pkgdatadir,
-                                                  file]));
+    provider.load_from_file(file);
     Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(),
                                              provider,
                                              Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+}
+
+function initActions(app, simpleActionEntries) {
+    simpleActionEntries.forEach(function(entry) {
+        let action = new Gio.SimpleAction({ name: entry.name });
+
+        if (entry.callback)
+            action.connect('activate', Lang.bind(app, entry.callback));
+
+        app.add_action(action);
+    });
 }
 
 function arrayEqual(one, two) {
