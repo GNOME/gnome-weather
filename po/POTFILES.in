@@ -1,3 +1,4 @@
+[type: gettext/glade]data/app-menu.ui
 data/gnome-weather.desktop.in
 data/org.gnome.Weather.Application.gschema.xml
 src/city.js
