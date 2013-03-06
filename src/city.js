@@ -44,7 +44,9 @@ const WeatherWidget = new Lang.Class({
                                        halign: Gtk.Align.CENTER,
                                        valign: Gtk.Align.CENTER });
 
-        let innerGrid = new Gtk.Grid({ hexpand: false, vexpand: false });
+        let innerGrid = new Gtk.Grid({ column_spacing: 20,
+                                       hexpand: false,
+                                       vexpand: false });
         this._icon = new Gtk.Image({ pixel_size: 172,
                                      use_fallback: true,
                                      name: 'conditions-image' });
