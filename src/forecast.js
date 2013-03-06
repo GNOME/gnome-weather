@@ -143,6 +143,10 @@ const TodaySidebar = new Lang.Class({
         params = Params.fill(params, { hscrollbar_policy: Gtk.PolicyType.NEVER });
         this.parent(params);
 
+        let context = this.get_style_context();
+        context.add_class('view');
+        context.add_class('content-view');
+
         this._settings = new Gio.Settings({ schema: 'org.gnome.desktop.interface' });
 
         this._grid = new Gtk.Grid({ column_spacing: 6,
