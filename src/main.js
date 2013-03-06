@@ -59,8 +59,7 @@ const Application = new Lang.Class({
     vfunc_startup: function() {
         this.parent();
 
-        let resource = Gio.Resource.load(pkg.pkgdatadir + '/gnome-weather.gresource');
-        resource._register();
+        pkg.loadResource();
 
         Util.loadStyleSheet(Gio.file_new_for_uri('resource:///org/gnome/weather/application.css'));
 

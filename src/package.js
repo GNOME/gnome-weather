@@ -280,3 +280,9 @@ function initSubmodule(name) {
         // Running installed, submodule is in $(pkglibdir), nothing to do
     }
 }
+
+function loadResource(name) {
+    name = (name || this.name) + '.gresource';
+
+    Gio.Resource.load(GLib.build_filenamev([pkg.pkgdatadir, name]))._register();
+}
