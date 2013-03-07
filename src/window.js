@@ -217,19 +217,6 @@ const MainWindow = new Lang.Class({
             this._pageWidgets[Page.CITY][i].hide();
     },
 
-    get location() {
-        return this._location;
-    },
-
-    set location(l) {
-        this._location = l;
-        this._info.location = l;
-        this._header.title = makeTitle(l);
-        this.update();
-
-        this.notify('location');
-    },
-
     update: function() {
         this._cityView.update();
     },
