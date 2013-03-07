@@ -255,7 +255,6 @@ const MainWindow = new Lang.Class({
     },
 
     _goWorld: function() {
-        this._cityView.info = null;
         this._stack.set_visible_child(this._worldView);
         this._goToPage(Page.WORLD);
     },
