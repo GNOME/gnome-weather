@@ -2,25 +2,34 @@
 # Copyright (C) 2012 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-12-03 23:31+0000\n"
-"PO-Revision-Date: 2012-12-04 11:58+0100\n"
+"POT-Creation-Date: 2013-03-06 23:26+0000\n"
+"PO-Revision-Date: 2013-03-07 17:00+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Gtranslator 2.91.5\n"
 
-#: ../data/gnome-weather.desktop.in.h:1
+#: ../data/app-menu.ui.h:1
+#| msgid "Weather"
+msgid "About Weather"
+msgstr "Acerca de Meteorología"
+
+#: ../data/app-menu.ui.h:2
+msgid "Quit"
+msgstr "Salir"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:305
 msgid "Weather"
 msgstr "Meteorología"
 
@@ -28,170 +37,257 @@ msgstr "Meteorología"
 msgid "Show weather conditions and forecast"
 msgstr "Mostrar las condiciones meteorológicas y la predicción"
 
-#: ../src/widget.py:34
-msgid "Location: "
-msgstr "Ubicación: "
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Ciudades configuradas para las que mostrar el tiempo"
 
-#: ../src/conditions.py:26
-msgid "Current conditions:"
-msgstr "Condiciones actuales:"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Las ubicaciones mostradas en la vista del mundo de gnome-weather. Cada valor "
+"es un GVariant devuelto por gweather_location_serialize()."
 
-#: ../src/conditions.py:47
-msgid "Temperature: "
-msgstr "Temperatura: "
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "Cargando…"
 
-#: ../src/conditions.py:49
-msgid "Wind: "
-msgstr "Viento: "
-
-#: ../src/forecast.py:86
+#: ../src/forecast.js:112
 msgid "Today"
 msgstr "Hoy"
 
-#: ../src/forecast.py:91
+#: ../src/forecast.js:118
 msgid "Tomorrow"
 msgstr "Mañana"
 
-#: ../src/strings.py:22
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Más…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Previsión para hoy"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Previsión para mañana"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
 msgid "Monday night"
-msgstr "Mañana por la noche"
+msgstr "Lunes por la noche"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday morning"
-msgstr "Mañana por la mañana"
+msgstr "Lunes por la mañana"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday afternoon"
-msgstr "Mañana por la tarde"
+msgstr "Lunes por la tarde"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday evening"
 msgstr "Lunes a medianoche"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday night"
 msgstr "Martes por la noche"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday morning"
 msgstr "Martes por la mañana"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday afternoon"
 msgstr "Martes por la tarde"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday evening"
 msgstr "Martes a medianoche"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday night"
 msgstr "Miércoles por la noche"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday morning"
 msgstr "Miércoles por la mañana"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday afternoon"
 msgstr "Miércoles por la tarde"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday evening"
 msgstr "Miércoles a medianoche"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday night"
 msgstr "Jueves por la noche"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday morning"
 msgstr "Jueves por la mañana"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday afternoon"
 msgstr "Jueves por la tarde"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday evening"
 msgstr "Jueves a medianoche"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday night"
 msgstr "Viernes por la noche"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday morning"
 msgstr "Viernes por la mañana"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday afternoon"
 msgstr "Viernes por la tarde"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday evening"
 msgstr "Viernes a medianoche"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday night"
 msgstr "Sábado por la noche"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday morning"
 msgstr "Sábado por la mañana"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday afternoon"
 msgstr "Sábado por la tarde"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday evening"
 msgstr "Sábado a medianoche"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday night"
 msgstr "Domingo por la noche"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday morning"
 msgstr "Domingo por la mañana"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday afternoon"
 msgstr "Domingo por la tarde"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday evening"
 msgstr "Domingo a medianoche"
 
-#: ../src/strings.py:31
-msgid "This night"
-msgstr "Hoy a medianoche"
+#: ../src/strings.js:31
+#| msgid "This night"
+msgid "Tonight"
+msgstr "Esta noche"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This morning"
 msgstr "Esta mañana"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This afternoon"
 msgstr "Esta tarde"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This evening"
 msgstr "Esta noche"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow night"
 msgstr "Mañana por la noche"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow morning"
 msgstr "Mañana por la mañana"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow afternoon"
 msgstr "Mañana por la tarde"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow evening"
 msgstr "Mañana a medianoche"
+
+#: ../src/window.js:36
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/window.js:69
+msgid "Delete"
+msgstr "Eliminar"
+
+#: ../src/window.js:124
+msgid "New"
+msgstr "Nueva"
+
+#: ../src/window.js:129
+#| msgid "Weather"
+msgid "World Weather"
+msgstr "Meteorología del mundo"
+
+#: ../src/window.js:143
+msgid "Done"
+msgstr "Hecho"
+
+#: ../src/window.js:174 ../src/window.js:199
+msgid "Click on locations to select them"
+msgstr "Pulse sobre las ubicaciones para seleccionarlas"
+
+#: ../src/window.js:202
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d seleccionada"
+msgstr[1] "%d seleccionadas"
+
+#: ../src/window.js:277
+#| msgid "Location: "
+msgid "New Location"
+msgstr "Ubicación nueva"
+
+#: ../src/window.js:304
+msgid "translator-credits"
+msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013"
+
+#: ../src/window.js:306
+msgid "A weather application"
+msgstr "Una aplicación de meteorología"
+
+#~ msgid "Current conditions:"
+#~ msgstr "Condiciones actuales:"
+
+#~ msgid "Temperature: "
+#~ msgstr "Temperatura: "
+
+#~ msgid "Wind: "
+#~ msgstr "Viento: "
