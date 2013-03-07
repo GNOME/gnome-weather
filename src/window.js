@@ -22,22 +22,6 @@ const World = imports.world;
 const Gettext = imports.gettext;
 const Tweener = imports.tweener.tweener;
 
-function makeTitle(location) {
-    let city = location;
-    if (location.get_level() == GWeather.LocationLevel.WEATHER_STATION)
-        city = location.get_parent();
-
-    let country = city.get_parent();
-    while (country &&
-           country.get_level() > GWeather.LocationLevel.COUNTRY)
-        country = country.get_parent();
-
-    if (country)
-        return _("%s, %s").format(city.get_name(), country.get_name());
-    else
-        return city.get_name();
-}
-
 const Page = {
     WORLD: 0,
     CITY: 1
@@ -223,9 +207,22 @@ const MainWindow = new Lang.Class({
 
     _getTitle: function() {
         if (this._currentPage == Page.WORLD)
-            return '';
+            return ['', null];
 
-        return makeTitle(this._cityView.info.location);
+        let location = this._cityView.info.location;
+        let city = location;
+        if (location.get_level() == GWeather.LocationLevel.WEATHER_STATION)
+            city = location.get_parent();
+
+        let country = city.get_parent();
+        while (country &&
+               country.get_level() > GWeather.LocationLevel.COUNTRY)
+            country = country.get_parent();
+
+        if (country)
+            return [city.get_name(), country.get_name()];
+        else
+            return [city.get_name(), null];
     },
 
     _goToPage: function(page) {
@@ -242,7 +239,10 @@ const MainWindow = new Lang.Class({
         }
 
         this._currentPage = page;
-        this._header.title = this._getTitle();
+
+        let [title, subtitle] = this._getTitle();
+        this._header.title = title;
+        this._header.subtitle = subtitle;
     },
 
     _itemActivated: function(view, id, path) {
