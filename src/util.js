@@ -44,14 +44,14 @@ function loadStyleSheet(file) {
                                              Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 }
 
-function initActions(app, simpleActionEntries) {
+function initActions(actionMap, simpleActionEntries) {
     simpleActionEntries.forEach(function(entry) {
         let action = new Gio.SimpleAction({ name: entry.name });
 
         if (entry.callback)
-            action.connect('activate', Lang.bind(app, entry.callback));
+            action.connect('activate', Lang.bind(actionMap, entry.callback));
 
-        app.add_action(action);
+        actionMap.add_action(action);
     });
 }
 

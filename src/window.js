@@ -18,6 +18,7 @@
 
 const City = imports.city;
 const World = imports.world;
+const Util = imports.util;
 
 const Gettext = imports.gettext;
 const Tweener = imports.tweener.tweener;
@@ -99,6 +100,12 @@ const MainWindow = new Lang.Class({
         this._currentInfo = null;
         this._currentPage = Page.WORLD;
         this._pageWidgets = [[],[]];
+
+        Util.initActions(this,
+                         [{ name: 'new',
+                            callback: this._newLocation },
+                          { name: 'about',
+                            callback: this._showAbout }]);
 
         let grid = new Gtk.Grid({ orientation: Gtk.Orientation.VERTICAL });
 
@@ -283,7 +290,7 @@ const MainWindow = new Lang.Class({
         dialog.show_all();
     },
 
-    showAbout: function() {
+    _showAbout: function() {
         let aboutDialog = new Gtk.AboutDialog(
             { artists: [ 'Jakub Steiner <jimmac@gmail.com>' ],
               authors: [ 'Giovanni Campagna <gcampagna@src.gnome.org>' ],

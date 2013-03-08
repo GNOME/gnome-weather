@@ -48,11 +48,6 @@ const Application = new Lang.Class({
         this.quit();
     },
 
-    _onAbout: function() {
-        let win = this.get_active_window();
-        win.showAbout();
-    },
-
     _initAppMenu: function() {
         let builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/weather/app-menu.ui');
@@ -76,9 +71,7 @@ const Application = new Lang.Class({
 
         Util.initActions(this,
                          [{ name: 'quit',
-                            callback: this._onQuit },
-                          { name: 'about',
-                            callback: this._onAbout }]);
+                            callback: this._onQuit }]);
 
         this._initAppMenu();
     },
