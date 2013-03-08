@@ -107,34 +107,24 @@ const MainWindow = new Lang.Class({
                           { name: 'about',
                             callback: this._showAbout }]);
 
-        let grid = new Gtk.Grid({ orientation: Gtk.Orientation.VERTICAL });
+        let builder = Util.loadUI('/org/gnome/weather/window.ui', this);
 
-        this._header = new Gd.HeaderBar({ hexpand: true });
-        grid.add(this._header);
+        let grid = builder.get_object('main-panel');
+        this._header = builder.get_object('header-bar');
 
-        let newButton = new Gd.HeaderSimpleButton({ label: _("New") });
-        newButton.connect('clicked', Lang.bind(this, this._newLocation));
-        this._header.pack_start(newButton);
+        let newButton = builder.get_object('new-button');
         this._pageWidgets[Page.WORLD].push(newButton);
 
-        let goWorldButton = new Gd.HeaderSimpleButton({ label: _("World Weather") });
-        goWorldButton.connect('clicked', Lang.bind(this, this._goWorld));
-        this._header.pack_start(goWorldButton);
+        let goWorldButton = builder.get_object('world-button');
         this._pageWidgets[Page.CITY].push(goWorldButton);
 
-        let refresh = new Gd.HeaderSimpleButton({ symbolic_icon_name: 'view-refresh-symbolic' });
-        refresh.connect('clicked', Lang.bind(this, this.update));
-        this._header.pack_end(refresh);
-        this._pageWidgets[Page.CITY].push(refresh);
-
-        let select = new Gd.HeaderSimpleButton({ symbolic_icon_name: 'object-select-symbolic' });
-        this._header.pack_end(select);
+        let select = builder.get_object('select-button');
         this._pageWidgets[Page.WORLD].push(select);
 
-        let selectDone = new Gd.HeaderSimpleButton({ label: _("Done"),
-                                                     no_show_all: true });
-        selectDone.get_style_context().add_class('suggested-action');
-        this._header.pack_end(selectDone);
+        let refresh = builder.get_object('refresh-button');
+        this._pageWidgets[Page.CITY].push(refresh);
+
+        let selectDone = builder.get_object('done-button');
         this._pageWidgets[Page.WORLD].push(selectDone);
 
         this._stack = new Gd.Stack({ transition_type: Gd.StackTransitionType.CROSSFADE });
