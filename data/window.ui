@@ -36,6 +36,7 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="symbolic-icon-name">object-select-symbolic</property>
+            <signal name="clicked" handler="javascript:this._worldView.selection_mode = true;"/>
           </object>
           <packing>
             <property name="pack_type">end</property>
@@ -47,6 +48,7 @@
             <property name="no_show_all">True</property>
             <property name="can_focus">False</property>
             <property name="label" translatable="yes">Done</property>
+            <signal name="clicked" handler="javascript:this._worldView.selection_mode = false;"/>
             <style>
               <class name="suggested-action"/>
             </style>

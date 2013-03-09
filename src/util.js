@@ -34,7 +34,13 @@ function loadUI(resource, scope) {
 
     ui.add_from_resource(resource);
     ui.connect_signals_full(function(builder, object, signal_name, handler_name, connect_object, flags) {
-        let realHandler = scope[handler_name];
+        let realHandler;
+        if (handler_name.substr(0, 11) == 'javascript:') {
+            realHandler = new Function('object', handler_name.substr(11));
+        } else {
+            realHandler = scope[handler_name];
+        }
+
         let handler;
         if (connect_object) {
             if (flags & GObject.ConnectFlags.SWAPPED) {

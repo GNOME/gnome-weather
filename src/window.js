@@ -141,12 +141,6 @@ const MainWindow = new Lang.Class({
         }));
         this._stack.add(this._worldView);
 
-        select.connect('clicked', Lang.bind(this, function() {
-            this._worldView.selection_mode = true;
-        }));
-        selectDone.connect('clicked', Lang.bind(this, function() {
-            this._worldView.selection_mode = false;
-        }));
         this._worldView.connect('notify::selection-mode', Lang.bind(this, function() {
             let mode = this._worldView.selection_mode;
 
