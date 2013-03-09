@@ -24,9 +24,37 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-function loadUI(resource) {
+function loadUI(resource, scope) {
+    // Normalize scope to be an object or the global object
+    scope = scope || window;
+
     let ui = new Gtk.Builder();
+    if (scope instanceof GObject.Object)
+        ui.expose_object('scope', scope);
+
     ui.add_from_resource(resource);
+    ui.connect_signals_full(function(builder, object, signal_name, handler_name, connect_object, flags) {
+        let realHandler = scope[handler_name];
+        let handler;
+        if (connect_object) {
+            if (flags & GObject.ConnectFlags.SWAPPED) {
+                handler = function () {
+                    let args = [connect_object].concat(Array.prototype.slice.call(arguments, 1)).concat(arguments[0]);
+                    return realHandler.apply(scope, args);
+                }
+            } else {
+                handler = Lang.bind(scope, realHandler, connect_object);
+            }
+        } else {
+            handler = Lang.bind(scope, realHandler);
+        }
+
+        if (flags & GObject.ConnectFlags.AFTER)
+            object.connect_after(signal_name, handler);
+        else
+            object.connect(signal_name, handler);
+    });
+
     return ui;
 }
 
