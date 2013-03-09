@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-07 00:23+0100\n"
-"PO-Revision-Date: 2013-03-07 00:24+0100\n"
+"POT-Creation-Date: 2013-03-09 19:43+0100\n"
+"PO-Revision-Date: 2013-03-09 19:44+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -24,14 +24,18 @@ msgstr ""
 "X-Poedit-Country: Poland\n"
 
 #: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Nowe"
+
+#: ../data/app-menu.ui.h:2
 msgid "About Weather"
 msgstr "O programie"
 
-#: ../data/app-menu.ui.h:2
+#: ../data/app-menu.ui.h:3
 msgid "Quit"
 msgstr "Zakończ"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:305
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:306
 msgid "Weather"
 msgstr "Pogoda"
 
@@ -238,32 +242,27 @@ msgstr "Jutro popołudniu"
 msgid "Tomorrow evening"
 msgstr "Jutro wieczorem"
 
-#: ../src/window.js:36
-#, c-format
-msgid "%s, %s"
-msgstr "%s, %s"
-
-#: ../src/window.js:69
+#: ../src/window.js:54
 msgid "Delete"
 msgstr "Usuń"
 
-#: ../src/window.js:124
+#: ../src/window.js:115
 msgid "New"
 msgstr "Nowe"
 
-#: ../src/window.js:129
+#: ../src/window.js:120
 msgid "World Weather"
 msgstr "Pogoda na świecie"
 
-#: ../src/window.js:143
+#: ../src/window.js:134
 msgid "Done"
 msgstr "Gotowe"
 
-#: ../src/window.js:174 ../src/window.js:199
+#: ../src/window.js:165 ../src/window.js:190
 msgid "Click on locations to select them"
 msgstr "Kliknięcie położenia zaznacza je"
 
-#: ../src/window.js:202
+#: ../src/window.js:193
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -271,16 +270,16 @@ msgstr[0] "Zaznaczono: %d"
 msgstr[1] "Zaznaczono: %d"
 msgstr[2] "Zaznaczono: %d"
 
-#: ../src/window.js:277
+#: ../src/window.js:270
 msgid "New Location"
 msgstr "Nowe położenie"
 
-#: ../src/window.js:304
+#: ../src/window.js:305
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2012-2013\n"
 "Aviary.pl <gnomepl@aviary.pl>, 2012-2013"
 
-#: ../src/window.js:306
+#: ../src/window.js:307
 msgid "A weather application"
 msgstr "Prognoza pogody"
