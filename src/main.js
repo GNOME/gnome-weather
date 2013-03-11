@@ -74,6 +74,9 @@ const Application = new Lang.Class({
                             callback: this._onQuit }]);
 
         this._initAppMenu();
+
+        this.add_accelerator("Escape", "win.exit-selection-mode", null);
+        this.add_accelerator("<Primary>a", "win.select-all", null);
     },
 
     vfunc_activate: function() {

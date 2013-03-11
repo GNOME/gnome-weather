@@ -105,7 +105,13 @@ const MainWindow = new Lang.Class({
                          [{ name: 'new',
                             callback: this._newLocation },
                           { name: 'about',
-                            callback: this._showAbout }]);
+                            callback: this._showAbout },
+                          { name: 'exit-selection-mode',
+                            callback: this._exitSelectionMode },
+                          { name: 'select-all',
+                            callback: this._selectAll },
+                          { name: 'select-none',
+                            callback: this._selectNone }]);
 
         let builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/weather/window.ui');
@@ -130,6 +136,14 @@ const MainWindow = new Lang.Class({
 
         let selectDone = builder.get_object('done-button');
         this._pageWidgets[Page.WORLD].push(selectDone);
+
+        let selectionMenu = builder.get_object("selection-menu");
+
+        this._selectionMenuButton = new Gd.HeaderMenuButton(
+            { label: _("Click on items to select them"),
+              menu_model: selectionMenu,
+            });
+        this._selectionMenuButton.get_style_context().add_class("selection-menu");
 
         this._stack = new Gd.Stack({ transition_type: Gd.StackTransitionType.CROSSFADE });
 
@@ -156,10 +170,10 @@ const MainWindow = new Lang.Class({
 
             if (mode) {
                 this._header.get_style_context().add_class('selection-mode');
-                this._header.set_title(_("Click on locations to select them"));
+                this._header.set_custom_title(this._selectionMenuButton);
             } else {
                 this._header.get_style_context().remove_class('selection-mode');
-                this._header.set_title(null);
+                this._header.set_custom_title(null);
             }
         }));
 
@@ -192,7 +206,7 @@ const MainWindow = new Lang.Class({
                 this._selectionToolbar.fadeOut();
             }
 
-            this._header.set_title(label);
+            this._selectionMenuButton.set_label(label);
         }));
 
         this.add(grid);
@@ -295,6 +309,19 @@ const MainWindow = new Lang.Class({
             this._model.addLocation(entry.location);
         }));
         dialog.show_all();
+    },
+
+    _exitSelectionMode: function() {
+        this._worldView.selection_mode = false;
+    },
+
+    _selectAll: function() {
+        this._worldView.selection_mode = true;
+        this._worldView.select_all();
+    },
+
+    _selectNone: function() {
+        this._worldView.unselect_all();
     },
 
     _showAbout: function() {
