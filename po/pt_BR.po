@@ -2,22 +2,37 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Enrico Nicoletto <liverig@gmail.com>, 2013.
+# Rafael Ferreira <rafael.f.f1@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2012-12-28 12:46+0000\n"
-"PO-Revision-Date: 2013-01-02 17:50-0300\n"
-"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-03-09 18:45+0000\n"
+"PO-Revision-Date: 2013-03-10 22:09-0300\n"
+"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.5.4\n"
 
-#: ../data/gnome-weather.desktop.in.h:1
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Novo"
+
+#: ../data/app-menu.ui.h:2
+msgid "About Weather"
+msgstr "Sobre o Meteorologia"
+
+#: ../data/app-menu.ui.h:3
+msgid "Quit"
+msgstr "Sair"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:298
 msgid "Weather"
 msgstr "Meteorologia"
 
@@ -25,172 +40,252 @@ msgstr "Meteorologia"
 msgid "Show weather conditions and forecast"
 msgstr "Mostra condições meteorológicas e previsão do tempo"
 
-#: ../src/widget.py:34
-msgid "Location: "
-msgstr "Local: "
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Cidades configuradas para mostrar o tempo para"
 
-#: ../src/conditions.py:26
-msgid "Current conditions:"
-msgstr "Condições atuais:"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Os locais mostrados na visão global do gnome-weather. Cada valor é um "
+"GVariant retornado por gweather_location_serialize()."
 
-#: ../src/conditions.py:47
-msgid "Temperature: "
-msgstr "Temperatura: "
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "Carregando..."
 
-#: ../src/conditions.py:49
-msgid "Wind: "
-msgstr "Vento: "
-
-#: ../src/forecast.py:86
+#: ../src/forecast.js:112
 msgid "Today"
 msgstr "Hoje"
 
-#: ../src/forecast.py:91
+#: ../src/forecast.js:118
 msgid "Tomorrow"
 msgstr "Amanhã"
 
-#: ../src/strings.py:22
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Mais..."
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Previsão do tempo para hoje"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Previsão do tempo para amanhã"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%d de %B"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
 msgid "Monday night"
 msgstr "Noite de segunda-feira"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday morning"
 msgstr "Manhã de segunda-feira"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday afternoon"
 msgstr "Tarde de segunda-feira"
 
 # Diferença entre night e evening, é que a primeira relaciona-se com todo o período da noite (período de ausência de luz entre o pôr do sol e o nascer do sol), já evening é referente ao período entre o pôr do sol e o começo da hora de dormir (period from sunset to bedtime).
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday evening"
-msgstr "Segunda-feira anoitecendo"
+msgstr "Anoitecer de segunda-feira"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday night"
 msgstr "Noite de terça-feira"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday morning"
 msgstr "Manhã de terça-feira"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday afternoon"
 msgstr "Tarde de terça-feira"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday evening"
-msgstr "Terça-feira anoitecendo"
+msgstr "Anoitecer de terça-feira"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday night"
 msgstr "Noite de quarta-feira"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday morning"
 msgstr "Manhã de quarta-feira"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday afternoon"
 msgstr "Tarde de quarta-feira"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday evening"
-msgstr "Quarta-feira anoitecendo"
+msgstr "Anoitecer de quarta-feira"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday night"
 msgstr "Noite de quinta-feira"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday morning"
 msgstr "Manhã de quinta-feira"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday afternoon"
 msgstr "Tarde de quinta-feira"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday evening"
-msgstr "Quinta-feira anoitecendo"
+msgstr "Anoitecer de quinta-feira"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday night"
 msgstr "Noite de sexta-feira"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday morning"
 msgstr "Manhã de sexta-feira"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday afternoon"
 msgstr "Tarde de sexta-feira"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday evening"
-msgstr "Sexta-feira anoitecendo"
+msgstr "Anoitecer de sexta-feira"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday night"
 msgstr "Noite de sábado"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday morning"
 msgstr "Manhã de sábado"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday afternoon"
 msgstr "Tarde de sábado"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday evening"
-msgstr "Sábado anoitecendo"
+msgstr "Anoitecer de sábado"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday night"
 msgstr "Noite de domingo"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday morning"
 msgstr "Manhã de domingo"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday afternoon"
 msgstr "Tarde de domingo"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday evening"
-msgstr "Domingo anoitecendo"
+msgstr "Anoitecer de domingo"
 
-#: ../src/strings.py:31
-msgid "This night"
-msgstr "Esta noite"
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Hoje à noite"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This morning"
 msgstr "Esta manhã"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This afternoon"
 msgstr "Esta tarde"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This evening"
-msgstr "Este final de tarde"
+msgstr "Este anoitecer"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow night"
 msgstr "Amanhã à noite"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow morning"
 msgstr "Amanhã de manhã"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow afternoon"
 msgstr "Amanhã de tarde"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow evening"
 msgstr "Amanhã ao anoitecer"
 
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "Excluir"
+
+#: ../src/window.js:115
+msgid "New"
+msgstr "Novo"
+
+#: ../src/window.js:120
+msgid "World Weather"
+msgstr "Meteorologia mundial"
+
+#: ../src/window.js:134
+msgid "Done"
+msgstr "Feito"
+
+#: ../src/window.js:165 ../src/window.js:190
+msgid "Click on locations to select them"
+msgstr "Clique nos locais para selecioná-las"
+
+#: ../src/window.js:193
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d selecionado"
+msgstr[1] "%d selecionados"
+
+#: ../src/window.js:270
+msgid "New Location"
+msgstr "Novo local"
+
+#: ../src/window.js:297
+msgid "translator-credits"
+msgstr ""
+"Enrico Nicoletto <liverig@gmail.com>\n"
+"Rafael Ferreira <rafael.f.f1@gmail.com>"
+
+#: ../src/window.js:299
+msgid "A weather application"
+msgstr "Um aplicativo de meteorologia"
+
+#~ msgid "Current conditions:"
+#~ msgstr "Condições atuais:"
+
+#~ msgid "Temperature: "
+#~ msgstr "Temperatura: "
+
+#~ msgid "Wind: "
+#~ msgstr "Vento: "
