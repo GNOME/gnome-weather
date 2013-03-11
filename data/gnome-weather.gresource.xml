@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/org/gnome/weather">
     <file preprocess="xml-stripblanks">app-menu.ui</file>
+    <file preprocess="xml-stripblanks">window.ui</file>
     <file>application.css</file>
     <file>weather-clear.jpg</file>
     <file>weather-clear-night.jpg</file>
