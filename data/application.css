@@ -7,6 +7,8 @@
     background-color: black;
     background-size: cover;
     background-position: center;
+    background-origin: border-box;
+    background-clip: border-box;
 }
 
 #weather-page-content-view.weather-clear {
