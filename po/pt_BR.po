@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-09 18:45+0000\n"
-"PO-Revision-Date: 2013-03-10 22:09-0300\n"
+"POT-Creation-Date: 2013-03-12 17:37+0000\n"
+"PO-Revision-Date: 2013-03-12 09:21-0300\n"
 "Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -32,13 +32,17 @@ msgstr "Sobre o Meteorologia"
 msgid "Quit"
 msgstr "Sair"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:298
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
 msgid "Weather"
 msgstr "Meteorologia"
 
 #: ../data/gnome-weather.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Mostra condições meteorológicas e previsão do tempo"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Pesquisar por uma cidade:"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -51,6 +55,26 @@ msgid ""
 msgstr ""
 "Os locais mostrados na visão global do gnome-weather. Cada valor é um "
 "GVariant retornado por gweather_location_serialize()."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr ""
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr ""
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "Novo"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "Meteorologia mundial"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "Feito"
 
 #: ../src/city.js:154
 msgid "Loading…"
@@ -244,40 +268,34 @@ msgstr "Amanhã ao anoitecer"
 msgid "Delete"
 msgstr "Excluir"
 
-#: ../src/window.js:115
-msgid "New"
-msgstr "Novo"
+#: ../src/window.js:143
+#, fuzzy
+#| msgid "Click on locations to select them"
+msgid "Click on items to select them"
+msgstr "Clique nos locais para selecioná-las"
 
-#: ../src/window.js:120
-msgid "World Weather"
-msgstr "Meteorologia mundial"
-
-#: ../src/window.js:134
-msgid "Done"
-msgstr "Feito"
-
-#: ../src/window.js:165 ../src/window.js:190
+#: ../src/window.js:198
 msgid "Click on locations to select them"
 msgstr "Clique nos locais para selecioná-las"
 
-#: ../src/window.js:193
+#: ../src/window.js:201
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d selecionado"
 msgstr[1] "%d selecionados"
 
-#: ../src/window.js:270
+#: ../src/window.js:278
 msgid "New Location"
 msgstr "Novo local"
 
-#: ../src/window.js:297
+#: ../src/window.js:339
 msgid "translator-credits"
 msgstr ""
 "Enrico Nicoletto <liverig@gmail.com>\n"
 "Rafael Ferreira <rafael.f.f1@gmail.com>"
 
-#: ../src/window.js:299
+#: ../src/window.js:341
 msgid "A weather application"
 msgstr "Um aplicativo de meteorologia"
 
