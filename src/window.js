@@ -96,7 +96,6 @@ const MainWindow = new Lang.Class({
         this.parent(params);
 
         this._world = this.application.world;
-        this._model = new World.WorldModel(this._world);
         this._currentInfo = null;
         this._currentPage = Page.WORLD;
         this._pageWidgets = [[],[]];
@@ -151,13 +150,10 @@ const MainWindow = new Lang.Class({
                                                 vexpand: true });
         this._stack.add(this._cityView);
 
-        this._worldView = new Gd.MainView({ view_type: Gd.MainViewType.ICON });
-        this._worldView.model = this._model;
-        this._worldView.connect('item-activated', Lang.bind(this, this._itemActivated));
-        this._worldView.connect('selection-mode-request', Lang.bind(this, function() {
-            this._worldView.selection_mode = true;
-        }));
+        this._worldView = new World.WorldView(this.application.model);
         this._stack.add(this._worldView);
+
+        this._worldView.connect('item-activated', Lang.bind(this, this._itemActivated));
 
         select.connect('clicked', Lang.bind(this, function() {
             this._worldView.selection_mode = true;
@@ -166,9 +162,7 @@ const MainWindow = new Lang.Class({
             this._worldView.selection_mode = false;
         }));
         this._worldView.connect('notify::selection-mode', Lang.bind(this, function() {
-            let mode = this._worldView.selection_mode;
-
-            if (mode) {
+            if (this._worldView.selection_mode) {
                 this._header.get_style_context().add_class('selection-mode');
                 this._header.set_custom_title(this._selectionMenuButton);
             } else {
@@ -261,8 +255,8 @@ const MainWindow = new Lang.Class({
     },
 
     _itemActivated: function(view, id, path) {
-        let [ok, iter] = this._model.get_iter(path);
-        let info = this._model.get_value(iter, World.Columns.INFO);
+        let [ok, iter] = this._worldView.model.get_iter(path);
+        let info = this._worldView.model.get_value(iter, World.Columns.INFO);
 
         this._cityView.info = info;
         this._stack.set_visible_child(this._cityView);
@@ -306,7 +300,7 @@ const MainWindow = new Lang.Class({
             if (!location)
                 return;
 
-            this._model.addLocation(entry.location);
+            this._worldView.model.addLocation(entry.location);
         }));
         dialog.show_all();
     },

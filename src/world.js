@@ -159,3 +159,18 @@ const WorldModel = new Lang.Class({
         this._settings.set_value('locations', new GLib.Variant('av', newLocations));
     },
 });
+
+const WorldView = new Lang.Class({
+    Name: 'WorldView',
+    Extends: Gd.MainView,
+
+    _init: function(model, params) {
+        params = Params.fill(params, { view_type: Gd.MainViewType.ICON });
+        this.parent(params);
+        this.model = model;
+
+        this.connect('selection-mode-request', Lang.bind(this, function() {
+            this.selection_mode = true;
+        }));
+    }
+});

@@ -34,6 +34,7 @@ pkg.require({ 'Gd': '1.0',
 
 const Util = imports.util;
 const Window = imports.window;
+const World = imports.world;
 
 const Application = new Lang.Class({
     Name: 'WeatherApplication',
@@ -68,6 +69,7 @@ const Application = new Lang.Class({
         settings.gtk_application_prefer_dark_theme = true;
 
         this.world = GWeather.Location.new_world(false);
+        this.model = new World.WorldModel(this.world);
 
         Util.initActions(this,
                          [{ name: 'quit',
