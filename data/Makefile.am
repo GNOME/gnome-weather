@@ -15,6 +15,7 @@ gsettings_SCHEMAS = org.gnome.Weather.Application.gschema.xml
 @GSETTINGS_RULES@
 
 EXTRA_DIST = \
+	CREDITS \
 	gnome-weather.desktop.in \
 	gnome-weather.gresource.xml \
 	$(gsettings_SCHEMAS) \
