@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-11 23:40+0100\n"
-"PO-Revision-Date: 2013-03-11 23:41+0100\n"
+"POT-Creation-Date: 2013-03-12 18:54+0100\n"
+"PO-Revision-Date: 2013-03-12 18:55+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -35,7 +35,7 @@ msgstr "O programie"
 msgid "Quit"
 msgstr "Zakończ"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:313
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
 msgid "Weather"
 msgstr "Pogoda"
 
@@ -60,14 +60,22 @@ msgstr ""
 "to GVariant zwrócone przez gweather_location_serialize()."
 
 #: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Zaznacz wszystko"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Odznacz wszystko"
+
+#: ../data/window.ui.h:3
 msgid "New"
 msgstr "Nowe"
 
-#: ../data/window.ui.h:2
+#: ../data/window.ui.h:4
 msgid "World Weather"
 msgstr "Pogoda na świecie"
 
-#: ../data/window.ui.h:3
+#: ../data/window.ui.h:5
 msgid "Done"
 msgstr "Gotowe"
 
@@ -262,11 +270,15 @@ msgstr "Jutro wieczorem"
 msgid "Delete"
 msgstr "Usuń"
 
-#: ../src/window.js:159 ../src/window.js:184
+#: ../src/window.js:143
+msgid "Click on items to select them"
+msgstr "Kliknięcie elementu zaznacza go"
+
+#: ../src/window.js:198
 msgid "Click on locations to select them"
 msgstr "Kliknięcie położenia zaznacza je"
 
-#: ../src/window.js:187
+#: ../src/window.js:201
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -274,16 +286,16 @@ msgstr[0] "Zaznaczono: %d"
 msgstr[1] "Zaznaczono: %d"
 msgstr[2] "Zaznaczono: %d"
 
-#: ../src/window.js:264
+#: ../src/window.js:278
 msgid "New Location"
 msgstr "Nowe położenie"
 
-#: ../src/window.js:312
+#: ../src/window.js:339
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2012-2013\n"
 "Aviary.pl <gnomepl@aviary.pl>, 2012-2013"
 
-#: ../src/window.js:314
+#: ../src/window.js:341
 msgid "A weather application"
 msgstr "Prognoza pogody"
