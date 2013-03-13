@@ -137,6 +137,8 @@ function init(params) {
     imports.searchPath.unshift(moduledir);
     GIRepository.Repository.prepend_search_path(girpath);
     GIRepository.Repository.prepend_library_path(libpath);
+
+    _parseArgs();
 }
 
 /**
@@ -291,5 +293,23 @@ function initSubmodule(name) {
         GIRepository.Repository.prepend_library_path(libpath);
     } else {
         // Running installed, submodule is in $(pkglibdir), nothing to do
+    }
+}
+
+function _spawnGDB(debugIndex) {
+    ARGV.splice(debugIndex, 1);
+
+    try {
+        System.exec(['gdb', '--args', 'gjs', System.programInvocationName].concat(ARGV));
+    } catch(e) {
+        print('Failed to launch debugger: ' + e.message);
+        System.exit(1);
+    }
+}
+
+function _parseArgs() {
+    for (let i = 0; i < ARGV.length; i++) {
+        if (ARGV[i] == '--debug')
+            _spawnGDB(i);
     }
 }
