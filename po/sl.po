@@ -2,41 +2,48 @@
 # Copyright (C) 2012 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 #
-# Matej Urbančič <mateju@svn.gnome.org>, 2012.
+# Matej Urbančič <mateju@svn.gnome.org>, 2012 - 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-07 16:20+0000\n"
-"PO-Revision-Date: 2013-03-07 21:34+0100\n"
+"POT-Creation-Date: 2013-03-14 15:45+0000\n"
+"PO-Revision-Date: 2013-03-15 11:51+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 1.5.4\n"
 
 #: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Nov"
+
+#: ../data/app-menu.ui.h:2
 msgid "About Weather"
 msgstr "O programu"
 
-#: ../data/app-menu.ui.h:2
+#: ../data/app-menu.ui.h:3
 msgid "Quit"
 msgstr "Končaj"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:291
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
 msgid "Weather"
 msgstr "Vreme"
 
 #: ../data/gnome-weather.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Spremljanje trenutnih vremenskih razmer in napovedi"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Iskanje mesta:"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -47,6 +54,26 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr "Mesta, ki so prikazana v svetovnem pogledu programa gnome-weather."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Izberi vse"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Odstrani izbor"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "Novo"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "Vreme po svetu"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "Končano"
 
 #: ../src/city.js:154
 msgid "Loading…"
@@ -235,27 +262,19 @@ msgstr "Jutri popoldne"
 msgid "Tomorrow evening"
 msgstr "Jutri zvečer"
 
-#: ../src/window.js:53
+#: ../src/window.js:54
 msgid "Delete"
 msgstr "Izbriši"
 
-#: ../src/window.js:108
-msgid "New"
-msgstr "Novo"
+#: ../src/window.js:143
+msgid "Click on items to select them"
+msgstr "S klikom se predmeti izberejo."
 
-#: ../src/window.js:113
-msgid "World Weather"
-msgstr "Vreme po svetu"
-
-#: ../src/window.js:127
-msgid "Done"
-msgstr "Končano"
-
-#: ../src/window.js:158 ../src/window.js:183
+#: ../src/window.js:198
 msgid "Click on locations to select them"
 msgstr "S klikom se predmeti izberejo."
 
-#: ../src/window.js:186
+#: ../src/window.js:201
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -264,23 +283,14 @@ msgstr[1] "%d izbrano"
 msgstr[2] "%d izbrani"
 msgstr[3] "%d izbrana"
 
-#: ../src/window.js:263
+#: ../src/window.js:278
 msgid "New Location"
 msgstr "Novo mesto"
 
-#: ../src/window.js:290
+#: ../src/window.js:339
 msgid "translator-credits"
 msgstr "Matej Urbančič <matej.urban@svn.gnome.org>"
 
-#: ../src/window.js:292
+#: ../src/window.js:341
 msgid "A weather application"
 msgstr "Program za prikaz podatkov vremena"
-
-#~ msgid "Current conditions:"
-#~ msgstr "Trenutne razmere:"
-
-#~ msgid "Temperature: "
-#~ msgstr "Temperatura:"
-
-#~ msgid "Wind: "
-#~ msgstr "Veter:"
