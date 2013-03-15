@@ -3,6 +3,11 @@
     icon-shadow: inset 1px 1px 3px black;
 }
 
+#weather-page-placeholder-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
 #weather-page-content-view {
     background-color: black;
     background-size: cover;

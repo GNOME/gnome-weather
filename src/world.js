@@ -160,7 +160,7 @@ const WorldModel = new Lang.Class({
     },
 });
 
-const WorldView = new Lang.Class({
+const WorldIconView = new Lang.Class({
     Name: 'WorldView',
     Extends: Gd.MainView,
 
@@ -172,5 +172,99 @@ const WorldView = new Lang.Class({
         this.connect('selection-mode-request', Lang.bind(this, function() {
             this.selection_mode = true;
         }));
+    }
+});
+
+const WorldContentView = new Lang.Class({
+    Name: 'WorldContentView',
+    Extends: Gtk.Bin,
+    Properties: { 'empty': GObject.ParamSpec.boolean('empty', '', '', GObject.ParamFlags.READABLE, false) },
+
+    _init: function(model, params) {
+        params = Params.fill(params, { hexpand: true, vexpand: true,
+                                       halign: Gtk.Align.FILL, valign: Gtk.Align.FILL });
+        this.parent(params);
+
+        this.iconView = new WorldIconView(model, { visible: true });
+
+        this._placeHolder = new Gtk.Grid({ halign: Gtk.Align.CENTER,
+                                           valign: Gtk.Align.CENTER,
+                                           name: 'weather-page-placeholder',
+                                           column_spacing: 6 });
+        this._placeHolder.get_style_context().add_class('dim-label');
+
+        let iconGrid = new Gtk.Grid({ row_spacing: 4, column_spacing: 4 });
+        iconGrid.attach(new Gtk.Image({ icon_name: 'weather-overcast-symbolic',
+                                        icon_size: Gtk.IconSize.LARGE_TOOLBAR }),
+                        0, 0, 1, 1);
+        iconGrid.attach(new Gtk.Image({ icon_name: 'weather-few-clouds-symbolic',
+                                        icon_size: Gtk.IconSize.LARGE_TOOLBAR }),
+                        1, 0, 1, 1);
+        iconGrid.attach(new Gtk.Image({ icon_name: 'weather-clear-symbolic',
+                                        icon_size: Gtk.IconSize.LARGE_TOOLBAR }),
+                        0, 1, 1, 1);
+        iconGrid.attach(new Gtk.Image({ icon_name: 'weather-showers-symbolic',
+                                        icon_size: Gtk.IconSize.LARGE_TOOLBAR }),
+                        1, 1, 1, 1);
+
+        this._placeHolder.attach(iconGrid, 0, 0, 1, 2);
+
+        this._placeHolder.attach(new Gtk.Label({ name: 'weather-page-placeholder-title',
+                                                 label: _("Add locations"),
+                                                 xalign: 0.0 }),
+                                 1, 0, 1, 1);
+        this._placeHolder.attach(new Gtk.Label({ label: _("Use the <b>New</b> button on the toolbar to add more world locations"),
+                                                 use_markup: true,
+                                                 max_width_chars: 30,
+                                                 wrap: true,
+                                                 halign: Gtk.Align.START,
+                                                 valign: Gtk.Align.START }),
+                                 1, 1, 1, 1);
+        this._placeHolder.show_all();
+
+        this.model = model;
+        this._rowInsertedId = model.connect('row-inserted', Lang.bind(this, this._updateEmpty));
+        this._rowDeletedId = model.connect('row-deleted', Lang.bind(this, this._updateEmpty));
+
+        let [ok, ] = model.get_iter_first();
+        if (ok)
+            this.add(this.iconView);
+        else
+            this.add(this._placeHolder);
+        this._empty = !ok;
+    },
+
+    get empty() {
+        return this._empty;
+    },
+
+    vfunc_destroy: function() {
+        if (this._rowInsertedId) {
+            this.model.disconnect(this._rowInsertedId);
+            this._rowInsertedId = 0;
+        }
+        if (this._rowDeletedId) {
+            this.model.disconnect(this._rowDeletedId);
+            this._rowDeletedId = 0;
+        }
+
+        this.parent();
+    },
+
+    _updateEmpty: function() {
+        let [ok, iter] = this.model.get_iter_first();
+
+        if (!ok != this._empty) {
+            if (ok) {
+                this.remove(this._placeHolder);
+                this.add(this.iconView);
+            } else {
+                this.remove(this.iconView);
+                this.add(this._placeHolder);
+            }
+
+            this._empty = !ok;
+            this.notify('empty');
+        }
     }
 });

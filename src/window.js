@@ -56,8 +56,8 @@ const SelectionToolbar = new Lang.Class({
         this._box.add(button);
 
         button.connect('clicked', Lang.bind(this, function() {
-            let items = this._worldView.get_selection();
-            let model = this._worldView.get_model();
+            let items = this._worldView.iconView.get_selection();
+            let model = this._worldView.iconView.model;
 
             for (let i = items.length - 1; i >= 0; i--) {
                 let [res, iter] = model.get_iter(items[i]);
@@ -150,19 +150,20 @@ const MainWindow = new Lang.Class({
                                                 vexpand: true });
         this._stack.add(this._cityView);
 
-        this._worldView = new World.WorldView(this.application.model);
+        this._worldView = new World.WorldContentView(this.application.model, { visible: true });
+        let iconView = this._worldView.iconView;
         this._stack.add(this._worldView);
 
-        this._worldView.connect('item-activated', Lang.bind(this, this._itemActivated));
+        iconView.connect('item-activated', Lang.bind(this, this._itemActivated));
 
         select.connect('clicked', Lang.bind(this, function() {
-            this._worldView.selection_mode = true;
+            this._worldView.iconView.selection_mode = true;
         }));
         selectDone.connect('clicked', Lang.bind(this, function() {
-            this._worldView.selection_mode = false;
+            this._worldView.iconView.selection_mode = false;
         }));
-        this._worldView.connect('notify::selection-mode', Lang.bind(this, function() {
-            if (this._worldView.selection_mode) {
+        iconView.connect('notify::selection-mode', Lang.bind(this, function() {
+            if (iconView.selection_mode) {
                 this._header.get_style_context().add_class('selection-mode');
                 this._header.set_custom_title(this._selectionMenuButton);
             } else {
@@ -171,12 +172,15 @@ const MainWindow = new Lang.Class({
             }
         }));
 
-        this._worldView.bind_property('selection-mode', newButton, 'visible',
+        iconView.bind_property('selection-mode', newButton, 'visible',
+                               GObject.BindingFlags.INVERT_BOOLEAN);
+        iconView.bind_property('selection-mode', select, 'visible',
+                               GObject.BindingFlags.INVERT_BOOLEAN);
+        iconView.bind_property('selection-mode', selectDone, 'visible',
+                               GObject.BindingFlags.SYNC_CREATE);
+        this._worldView.bind_property('empty', select, 'sensitive',
+                                      GObject.BindingFlags.SYNC_CREATE |
                                       GObject.BindingFlags.INVERT_BOOLEAN);
-        this._worldView.bind_property('selection-mode', select, 'visible',
-                                      GObject.BindingFlags.INVERT_BOOLEAN);
-        this._worldView.bind_property('selection-mode', selectDone, 'visible',
-                                      GObject.BindingFlags.SYNC_CREATE);
 
         this._stack.set_visible_child(this._worldView);
 
@@ -187,8 +191,8 @@ const MainWindow = new Lang.Class({
         this._selectionToolbar = new SelectionToolbar(this._worldView);
         this._overlay.add_overlay(this._selectionToolbar);
 
-        this._worldView.connect('view-selection-changed', Lang.bind(this, function() {
-            let items = this._worldView.get_selection();
+        iconView.connect('view-selection-changed', Lang.bind(this, function() {
+            let items = iconView.get_selection();
             let label = _("Click on locations to select them");
 
             if (items.length > 0) {
@@ -255,8 +259,8 @@ const MainWindow = new Lang.Class({
     },
 
     _itemActivated: function(view, id, path) {
-        let [ok, iter] = this._worldView.model.get_iter(path);
-        let info = this._worldView.model.get_value(iter, World.Columns.INFO);
+        let [ok, iter] = view.model.get_iter(path);
+        let info = view.model.get_value(iter, World.Columns.INFO);
 
         this._cityView.info = info;
         this._stack.set_visible_child(this._cityView);
@@ -307,16 +311,16 @@ const MainWindow = new Lang.Class({
     },
 
     _exitSelectionMode: function() {
-        this._worldView.selection_mode = false;
+        this._worldView.iconView.selection_mode = false;
     },
 
     _selectAll: function() {
-        this._worldView.selection_mode = true;
-        this._worldView.select_all();
+        this._worldView.iconView.selection_mode = true;
+        this._worldView.iconView.select_all();
     },
 
     _selectNone: function() {
-        this._worldView.unselect_all();
+        this._worldView.iconView.unselect_all();
     },
 
     _showAbout: function() {
