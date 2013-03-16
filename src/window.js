@@ -59,11 +59,11 @@ const SelectionToolbar = new Lang.Class({
             let items = this._worldView.get_selection();
             let model = this._worldView.get_model();
 
-            items.forEach(function(itemPath) {
-                let [res, iter] = model.get_iter(itemPath);
+            for (let i = items.length - 1; i >= 0; i--) {
+                let [res, iter] = model.get_iter(items[i]);
                 if (res)
                     model.removeLocation(iter);
-            });
+            }
         }));
     },
 
