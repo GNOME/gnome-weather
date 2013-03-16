@@ -1,3 +1,16 @@
+3.7.92
+======
+
+* First release to follow GNOME versioning
+* Application completely rewritten in JS + gtk + libgd (no longer
+  uses clutter-gtk)
+* Features a full GNOME 3 layout (header bar, content view,
+  selection toolbar, application menu)
+* Includes the ability to show multiple cities at once
+* Uses dark theme and symbolic icons
+* Includes pretty backgrounds matching the current conditions
+* Many many bugfixes and translation fixes
+
 0.2
 ===
 * Initial release, first one to be published at GNOME archives
