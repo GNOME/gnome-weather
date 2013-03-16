@@ -7,6 +7,10 @@
         <attribute name="accel">&lt;Primary&gt;n</attribute>
       </item>
       <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">win.preferences</attribute>
+      </item>
+      <item>
         <attribute name="action">win.about</attribute>
         <attribute name="label" translatable="yes">About Weather</attribute>
       </item>
