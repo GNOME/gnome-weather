@@ -83,6 +83,12 @@ const Application = new Lang.Class({
 
     vfunc_activate: function() {
         (new Window.MainWindow({ application: this })).show();
+    },
+
+    vfunc_shutdown: function() {
+        GWeather.Info.store_cache();
+
+        this.parent();
     }
 });
 
