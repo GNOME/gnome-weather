@@ -106,9 +106,17 @@ function loadIcon(iconName, size) {
                            Gtk.IconLookupFlags.GENERIC_FALLBACK);
 }
 
-function getWeatherConditions(info) {
+function getWeatherConditions(info, includeTemperature) {
     let conditions = info.get_conditions();
     if (conditions == '-') // Not significant
         conditions = info.get_sky();
-    return conditions;
+
+    if (includeTemperature) {
+        let temp = info.get_temp_summary();
+        // Translators, this is a combination of weather
+        // conditions and a temperature, such as "Cloudy, 57 °F"
+        return _("%s, %s").format(conditions, temp);
+    } else {
+        return conditions;
+    }
 }

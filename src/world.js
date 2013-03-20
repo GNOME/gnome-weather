@@ -73,7 +73,7 @@ const WorldModel = new Lang.Class({
         let iter;
         info.connect('updated', Lang.bind(this, function(info) {
             let icon = Util.loadIcon(info.get_symbolic_icon_name(), ICON_SIZE);
-            let secondary_text = Util.getWeatherConditions(info);
+            let secondary_text = Util.getWeatherConditions(info, true);
             this.set(iter,
                      [Columns.ICON, Columns.SECONDARY_TEXT],
                      [icon, secondary_text]);
