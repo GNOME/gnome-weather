@@ -126,11 +126,11 @@ const MainWindow = new Lang.Class({
         goWorldButton.connect('clicked', Lang.bind(this, this._goWorld));
         this._pageWidgets[Page.CITY].push(goWorldButton);
 
-        let select = builder.get_object('select-button');
-        this._pageWidgets[Page.WORLD].push(select);
-
         let refresh = builder.get_object('refresh-button');
         this._pageWidgets[Page.CITY].push(refresh);
+
+        let select = builder.get_object('select-button');
+        this._pageWidgets[Page.WORLD].push(select);
 
         let selectDone = builder.get_object('done-button');
         this._pageWidgets[Page.WORLD].push(selectDone);
@@ -149,10 +149,16 @@ const MainWindow = new Lang.Class({
         let iconView = this._worldView.iconView;
         this._stack.add(this._worldView);
 
-        iconView.connect('item-activated', Lang.bind(this, this._itemActivated));
+        iconView.connect('child-activated', Lang.bind(this, this._childActivated));
 
-        iconView.connect('notify::selection-mode', Lang.bind(this, function() {
-            if (iconView.selection_mode) {
+        this._worldView.bind_property('empty', this.lookup_action('selection-mode'), 'enabled',
+                                      GObject.BindingFlags.SYNC_CREATE |
+                                      GObject.BindingFlags.INVERT_BOOLEAN);
+
+        this._stack.set_visible_child(this._worldView);
+
+        iconView.connect('notify::is-selecting', Lang.bind(this, function() {
+            if (iconView.is_selecting) {
                 this._header.get_style_context().add_class('selection-mode');
                 this._header.set_custom_title(this._selectionMenuButton);
             } else {
@@ -160,26 +166,21 @@ const MainWindow = new Lang.Class({
                 this._header.set_custom_title(null);
             }
 
-            let selectionState = new GLib.Variant('b', iconView.selection_mode);
+            let selectionState = new GLib.Variant('b', iconView.is_selecting);
             this.lookup_action('selection-mode').set_state(selectionState);
         }));
 
-        iconView.bind_property('selection-mode', newButton, 'visible',
+        iconView.bind_property('is-selecting', newButton, 'visible',
                                GObject.BindingFlags.INVERT_BOOLEAN);
-        iconView.bind_property('selection-mode', select, 'visible',
+        iconView.bind_property('is-selecting', select, 'visible',
                                GObject.BindingFlags.INVERT_BOOLEAN);
-        iconView.bind_property('selection-mode', selectDone, 'visible',
+        iconView.bind_property('is-selecting', selectDone, 'visible',
                                GObject.BindingFlags.SYNC_CREATE);
-        iconView.bind_property('selection-mode', selectionBarRevealer, 'reveal-child',
+        iconView.bind_property('is-selecting', selectionBarRevealer, 'reveal-child',
                                GObject.BindingFlags.SYNC_CREATE);
-        this._worldView.bind_property('empty', this.lookup_action('selection-mode'), 'enabled',
-                                      GObject.BindingFlags.SYNC_CREATE |
-                                      GObject.BindingFlags.INVERT_BOOLEAN);
 
-        this._stack.set_visible_child(this._worldView);
-
-        iconView.connect('view-selection-changed', Lang.bind(this, function() {
-            let items = iconView.get_selection();
+        iconView.connect('selected-children-changed', Lang.bind(this, function() {
+            let items = iconView.get_selected_children();
             let label;
 
             if (items.length > 0) {
@@ -244,11 +245,10 @@ const MainWindow = new Lang.Class({
         this._header.subtitle = subtitle;
     },
 
-    _itemActivated: function(view, id, path) {
-        let [ok, iter] = view.model.get_iter(path);
-        let info = view.model.get_value(iter, World.Columns.INFO);
+    _childActivated: function(view, child) {
+        this._worldView.iconView.is_selecting = false;
+        this._cityView.info = child.info;
 
-        this._cityView.info = info;
         this._stack.set_visible_child(this._cityView);
         this._goToPage(Page.CITY);
     },
@@ -266,11 +266,10 @@ const MainWindow = new Lang.Class({
     },
 
     _setSelectionMode: function(action, param) {
-        this._worldView.iconView.selection_mode = param.get_boolean();
+        this._worldView.iconView.is_selecting = param.get_boolean();
     },
 
     _selectAll: function() {
-        this._worldView.iconView.selection_mode = true;
         this._worldView.iconView.select_all();
     },
 
@@ -310,16 +309,15 @@ const MainWindow = new Lang.Class({
     },
 
     _deleteSelected: function() {
-        let items = this._worldView.iconView.get_selection();
+        let items = this._worldView.iconView.get_selected_children();
         let model = this._worldView.iconView.model;
 
         for (let i = items.length - 1; i >= 0; i--) {
-            let [res, iter] = model.get_iter(items[i]);
-            if (res)
-                model.removeLocation(iter);
+            let location = items[i].info.get_location();
+            model.removeLocation(location);
         }
 
-        this._worldView.iconView.selection_mode = false;
+        this._worldView.iconView.is_selecting = false;
     },
 
     _close: function() {

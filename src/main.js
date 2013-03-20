@@ -20,7 +20,8 @@ pkg.initSubmodule('egg-list-box');
 pkg.initSubmodule('libgd');
 pkg.initGettext();
 pkg.initFormat();
-pkg.require({ 'Gd': '1.0',
+pkg.require({ 'Egg': '1.0',
+              'Gd': '1.0',
               'Gdk': '3.0',
               'GdkPixbuf': '2.0',
               'Gio': '2.0',
@@ -31,6 +32,7 @@ pkg.require({ 'Gd': '1.0',
               'Lang': '',
               'Mainloop': '',
               'Params': '1.0',
+              'Signals': '',
               'System': '' });
 
 const Util = imports.util;
