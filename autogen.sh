@@ -4,7 +4,7 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
-ACLOCAL_FLAGS="-I libgd ${ACLOCAL_FLAGS}"
+ACLOCAL_FLAGS="-I libgd -I egg-list-box ${ACLOCAL_FLAGS}"
 PKG_NAME="gnome-weather"
 
 test -f $srcdir/configure.ac || {

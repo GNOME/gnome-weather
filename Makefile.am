@@ -1,6 +1,6 @@
-ACLOCAL_AMFLAGS = -I m4 -I libgd
+ACLOCAL_AMFLAGS = -I m4 -I libgd -I egg-list-box
 
-SUBDIRS = po data libgd src
+SUBDIRS = po data egg-list-box libgd src
 
 MAINTAINERCLEANFILES = \
 	$(srcdir)/INSTALL \

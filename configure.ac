@@ -22,6 +22,7 @@ AM_PROG_CC_C_O
 LT_INIT([disable-static])
 
 LIBGD_INIT([main-view gir])
+EGG_LIST_BOX_INIT([gir])
 
 PKG_PROG_PKG_CONFIG([0.22])
 
@@ -37,6 +38,7 @@ AC_CONFIG_FILES([
   Makefile
   data/Makefile
   data/icons/Makefile
+  egg-list-box/Makefile
   libgd/Makefile
   src/Makefile
   po/Makefile.in
