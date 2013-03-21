@@ -1,0 +1,294 @@
+# Finnish translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+#
+# Jiri Grönroos <jiri.gronroos+l10n@iki.fi>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-03-16 00:03+0000\n"
+"PO-Revision-Date: 2013-03-21 22:06+0200\n"
+"Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
+"Language-Team: Finnish <gnome-fi-laatu@lists.sourceforge.net>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Uusi"
+
+#: ../data/app-menu.ui.h:2
+msgid "About Weather"
+msgstr "Tietoja sääsovelluksesta"
+
+#: ../data/app-menu.ui.h:3
+msgid "Quit"
+msgstr "Lopeta"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
+msgid "Weather"
+msgstr "Sää"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Näytä säätiedot ja -ennuste"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Etsi kaupunkia:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Valitse kaikki"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Älä valitse mitään"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "Uusi"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "Maailman sää"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "Valmis"
+
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "Ladataan…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Tänään"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Huomenna"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Lisää…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Tämän päivän ennuste"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Huomisen ennuste"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr ""
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr ""
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr ""
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Maanantaiyö"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Maanantaiaamu"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Maanantai-iltapäivä"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Maanantai-ilta"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Tiistaiyö"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Tiistaiaamu"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Tiistai-iltapäivä"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Tiistai-ilta"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Keskiviikkoyö"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Keskiviikkoaamu"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Keskiviikkoiltapäivä"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Keskiviikkoilta"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Torstaiyö"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Torstaiaamu"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Torstai-iltapäivä"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Torstai-ilta"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Perjantaiyö"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Perjantaiaamu"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Perjantai-iltapäivä"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Perjantai-ilta"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Lauantaiyö"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Lauantaiaamu"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Lauantai-iltapäivä"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Lauantai-ilta"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Sunnuntaiyö"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Sunnuntaiaamu"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Sunnuntai-iltapäivä"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Sunnuntai-ilta"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Tämä yö"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Tämä aamu"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Tämä iltapäivä"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Tämä ilta"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Huomisyö"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Huomisaamu"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Huomisiltapäivä"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Huomisilta"
+
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "Poista"
+
+#: ../src/window.js:143
+msgid "Click on items to select them"
+msgstr "Napsauta kohteita valitaksesi ne"
+
+#: ../src/window.js:198
+msgid "Click on locations to select them"
+msgstr "Napsauta sijainteja valitaksesi ne"
+
+#: ../src/window.js:201
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d valittu"
+msgstr[1] "%d valittu"
+
+#: ../src/window.js:278
+msgid "New Location"
+msgstr "Uusi sijainti"
+
+#: ../src/window.js:339
+msgid "translator-credits"
+msgstr "Jiri Grönroos"
+
+#: ../src/window.js:341
+msgid "A weather application"
+msgstr "Sääsovellus"
+
+
