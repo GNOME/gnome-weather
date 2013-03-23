@@ -1,0 +1,302 @@
+# Slovak translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+#  Dušan Kazik <prescott66@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-03-21 20:51+0000\n"
+"PO-Revision-Date: 2013-03-23 13:25+0100\n"
+"Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
+"Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Nové"
+
+#: ../data/app-menu.ui.h:2
+msgid "About Weather"
+msgstr "O programe Počasie"
+
+#: ../data/app-menu.ui.h:3
+msgid "Quit"
+msgstr "Ukončiť"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
+msgid "Weather"
+msgstr "Počasie"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Zobrazuje poveternostné podmienky a predpoveď počasia"
+
+# label
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Vyhľadajte mesto:"
+
+# summary
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Nastavené mestá, pre ktoré sa má zobraziť počasie"
+
+# description
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Umiestnenia zobrazené na mape sveta aplikácie Počasie prostredia Gnome. "
+"Každá hodnota reprezentuje GVariant vrátený službou "
+"gweather_location_serialize()."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Vybrať všetko"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Zrušiť výber"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "Nové"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "Počasie vo svete"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "Dokončiť"
+
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "Načítava sa…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Dnes"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Zajtra"
+
+# DK: prve %s=min. teplota
+# druhe %s=max. teplota
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Viac…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Predpoveď na dnes"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Predpoveď na zajtra"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%e. %B"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%H:%M"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "V pondelok v noci"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "V pondelok ráno"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "V pondelok popoludní"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "V pondelok večer"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "V utorok v noci"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "V utorok ráno"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "V utorok popoludní"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "V utorok večer"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "V stredu v noci"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "V stredu ráno"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "V stredu popoludní"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "V stredu večer"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "V štvrtok v noci"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "V štvrtok ráno"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "V štvrtok popoludní"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "V štvrtok večer"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "V piatok v noci"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "V piatok ráno"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "V piatok popoludní"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "V piatok večer"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "V sobotu v noci"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "V sobotu ráno"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "V sobotu popoludní"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "V sobotu večer"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "V nedeľu v noci"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "V nedeľu ráno"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "V nedeľu popoludní"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "V nedeľu večer"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Dnes v noci"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Dnes ráno"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Dnes popoludní"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Dnes večer"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Zajtra v noci"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Zajtra ráno"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Zajtra popoludní"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Zajtra večer"
+
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "Odstrániť"
+
+#: ../src/window.js:143
+msgid "Click on items to select them"
+msgstr "Kliknutím na položky ich vyberiete"
+
+#: ../src/window.js:198
+msgid "Click on locations to select them"
+msgstr "Kliknutím na umiestnenia ich vyberiete"
+
+# DK: umiestnenie
+#: ../src/window.js:201
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d vybraných"
+msgstr[1] "%d vybrané"
+msgstr[2] "%d vybrané"
+
+#: ../src/window.js:278
+msgid "New Location"
+msgstr "Nové umiestnenie"
+
+#: ../src/window.js:339
+msgid "translator-credits"
+msgstr "Dušan Kazik <prescott66@gmail.com>"
+
+#: ../src/window.js:341
+msgid "A weather application"
+msgstr "Aplikácia Počasie"
