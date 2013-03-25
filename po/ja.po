@@ -1,0 +1,287 @@
+# Japanese translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-clocks master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-03-18 19:04+0000\n"
+"PO-Revision-Date: 2013-03-20 00:12+0900\n"
+"Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
+"Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "新規(_N)"
+
+#: ../data/app-menu.ui.h:2
+msgid "About Weather"
+msgstr "このアプリケーションについて"
+
+#: ../data/app-menu.ui.h:3
+msgid "Quit"
+msgstr "終了"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
+msgid "Weather"
+msgstr "天気"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "天気の概況と予報を表示します"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "都市の検索:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "天気を表示する都市"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid "The locations shown in the world view of gnome-weather. Each value is a GVariant returned by gweather_location_serialize()."
+msgstr "gnome-weather の世界ビューで表示される場所のリストです。各値は gweather_location_serialize() が返却する GVariant です。"
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "すべて選択"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "何も選択しない"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "新規"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "各地の天気"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "完了"
+
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "ロード中…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "今日"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "明日"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "さらに…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "今日の予報"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "明日の予報"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B%-e日"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%p%I∶%M"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%H∶%M"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "月曜日 深夜"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "月曜日 朝"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "月曜日 昼"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "月曜日 夜"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "火曜日 深夜"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "火曜日 朝"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "火曜日 昼"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "火曜日 夜"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "水曜日 深夜"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "水曜日 朝"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "水曜日 昼"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "水曜日 夜"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "木曜日 深夜"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "木曜日 朝"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "木曜日 昼"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "木曜日 夜"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "金曜日 深夜"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "金曜日 朝"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "金曜日 昼"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "金曜日 夜"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "土曜日 深夜"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "土曜日 朝"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "土曜日 昼"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "土曜日 夜"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "日曜日 深夜"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "日曜日 朝"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "日曜日 昼"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "日曜日 夜"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "今日 深夜"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "今日 朝"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "今日 昼"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "今日 夜"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "明日 深夜"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "明日 朝"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "明日 昼"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "明日 夜"
+
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "削除"
+
+#: ../src/window.js:143
+msgid "Click on items to select them"
+msgstr "選択するアイテムをクリックします"
+
+#: ../src/window.js:198
+msgid "Click on locations to select them"
+msgstr "選択する場所をクリックします"
+
+#: ../src/window.js:201
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d 件選択"
+
+#: ../src/window.js:278
+msgid "New Location"
+msgstr "新しい場所"
+
+#: ../src/window.js:339
+msgid "translator-credits"
+msgstr "松澤二郎 <jmatsuzawa@gnome.org>"
+
+#: ../src/window.js:341
+msgid "A weather application"
+msgstr "天気アプリケーション"
