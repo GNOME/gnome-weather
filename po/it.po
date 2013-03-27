@@ -3,46 +3,391 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.0.1\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 02:26+0100\n"
-"PO-Revision-Date: 2012-03-24 02:30+0100\n"
-"Last-Translator: Giovanni Campagna <scampa.giovanni@gmail.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-03-26 19:31+0000\n"
+"PO-Revision-Date: 2013-03-27 02:04+0100\n"
+"Last-Translator: Luca Ferretti <lferrett@gnome.org>\n"
 "Language-Team: None\n"
-"Language: it\n"
+"Language: Italan\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/gnome-weather.desktop.in.h:1
+# posizione
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Nuova"
+
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "Preferen_ze"
+
+#: ../data/app-menu.ui.h:3
+msgid "About Weather"
+msgstr "Informazioni su Meteo"
+
+#: ../data/app-menu.ui.h:4
+msgid "Quit"
+msgstr "Esci"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:341
 msgid "Weather"
 msgstr "Meteo"
 
 #: ../data/gnome-weather.desktop.in.h:2
 msgid "Show weather conditions and forecast"
-msgstr "Mostra le previsioni del tempo"
+msgstr "Mostra condizioni e previsioni meteo"
 
-#: ../src/widget.py:16
-msgid "Location: "
-msgstr "Posizione: "
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Cerca una città:"
 
-#. TRANSLATORS: this holds the minimum and maximum forecasted temperatures
-#: ../src/widget.py:54
-#, python-format
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Città configurate per cui mostrare il meteo"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr "Le posizioni mostrate nella vista mondiale di gnome-weather. Ciascun valore è un GVariant restituito da gweather_location_serialize()."
+
+#: ../data/preferences.ui.h:1
+msgid "Meters (m)"
+msgstr "Metri (m)"
+
+#: ../data/preferences.ui.h:2
+msgid "Kilometers (km)"
+msgstr "Kilometri (km)"
+
+#: ../data/preferences.ui.h:3
+msgid "Miles (mi)"
+msgstr "Miglia (mi)"
+
+#: ../data/preferences.ui.h:4
+msgid "Preferences"
+msgstr "Preferenze"
+
+#: ../data/preferences.ui.h:5
+msgid "Temperature unit:"
+msgstr "Unità per temperatura:"
+
+#: ../data/preferences.ui.h:6
+msgid "Speed unit:"
+msgstr "Unità per velocità:"
+
+#: ../data/preferences.ui.h:7
+msgid "Distance unit:"
+msgstr "Unità per distanza:"
+
+#: ../data/preferences.ui.h:8
+msgid "Pressure unit:"
+msgstr "Unità per pressione:"
+
+#: ../data/preferences.ui.h:9
+msgid "Kilopascal (kPa)"
+msgstr "Kilopascal (kPa)"
+
+#: ../data/preferences.ui.h:10
+msgid "Hectopascal (hPa)"
+msgstr "Ettopascal (hPa)"
+
+#: ../data/preferences.ui.h:11
+msgid "Millibar (mbar)"
+msgstr "Millibar (mbar)"
+
+#: ../data/preferences.ui.h:12
+msgid "Millimeters of mercury (mmHg)"
+msgstr "Millimetri di mercuio (mmHg)"
+
+#: ../data/preferences.ui.h:13
+msgid "Inches of mercury (inchHg)"
+msgstr "Pollici di mercurio (inchHg)"
+
+#: ../data/preferences.ui.h:14
+msgid "Atmosphere (atm)"
+msgstr "Atmosfera (atm)"
+
+#: ../data/preferences.ui.h:15
+msgid "Meters per second (m/s)"
+msgstr "Metri al secondo (m/s)"
+
+#: ../data/preferences.ui.h:16
+msgid "Kilometers per hour (km/h)"
+msgstr "Kilometri all'ora (km/h)"
+
+#: ../data/preferences.ui.h:17
+msgid "Miles per hour (mph)"
+msgstr "Miglia all'ora (mph)"
+
+#: ../data/preferences.ui.h:18
+msgid "Knots"
+msgstr "Nodi"
+
+#: ../data/preferences.ui.h:19
+msgid "Beaufort scale"
+msgstr "Scala Beafort"
+
+#: ../data/preferences.ui.h:20
+msgid "Kelvin (K)"
+msgstr "Kelvin (K)"
+
+#: ../data/preferences.ui.h:21
+msgid "Centigrade (°C)"
+msgstr "Gradi centigradi (°C)"
+
+#: ../data/preferences.ui.h:22
+msgid "Fahrenheit (°F)"
+msgstr "Gradi Fahrenheit (°F)"
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Seleziona tutto"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Seleziona nessuno"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "Nuova"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "Meteo mondiale"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "Fatto"
+
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "Caricamento…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Oggi"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Domani"
+
+#: ../src/forecast.js:132
+#, c-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/widget.py:101
-msgid "Current conditions:"
-msgstr "Condizioni attuali:"
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Altro…"
 
-#: ../src/widget.py:137
-msgid "Temperature: "
-msgstr "Temperatura: "
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Previsioni per oggi"
 
-#: ../src/widget.py:138
-msgid "Wind: "
-msgstr "Vento: "
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Previsioni per domani"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%d %B"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l.%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%k.%M"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Lunedì notte"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Lunedì mattina"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Lunedì pomeriggio"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Lunedì sera"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Martedì notte"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Martedì mattina"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Martedì pomeriggio"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Martedì sera"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Mercoledì notte"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Mercoledì mattina"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Mercoledì pomeriggio"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Mercoledì sera"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Giovedì notte"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Giovedì mattina"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Giovedì pomeriggio"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Giovedì sera"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Venerdì notte"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Venerdì mattina"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Venerdì pomeriggio"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Venerdì sera"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Sabato notte"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Sabato mattina"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Sabato pomeriggio"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Sabato sera"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Domenica notte"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Domenica mattina"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Domenica pomeriggio"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Domanica sera"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Stanotte"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Questa mattina"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Questo pomeriggio"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Questa sera"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Domani notte"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Domani mattina"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Domani pomeriggio"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Domani sera"
+
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "Elimina"
+
+#: ../src/window.js:144
+msgid "Click on items to select them"
+msgstr "Fare clic sulle voci per selezionarle"
+
+#: ../src/window.js:198
+msgid "Click on locations to select them"
+msgstr "Fare clic sulle località per selezionarle"
+
+#: ../src/window.js:201
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d selezionata"
+msgstr[1] "%d selezionate"
+
+#: ../src/window.js:278
+msgid "New Location"
+msgstr "Nuova località"
+
+#: ../src/window.js:340
+msgid "translator-credits"
+msgstr ""
+"Luca Ferretti <lferrett@gnome.org>\n"
+"Giovanni Campagna"
+
+#: ../src/window.js:342
+msgid "A weather application"
+msgstr "Una applicazione per il meteo"
+
+#: ../src/world.js:213
+msgid "Add locations"
+msgstr "Aggiungi località"
+
+#: ../src/world.js:216
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr "Usare il pulsante <b>Nuova</b> nella barra strumenti per aggiungere località mondiali"
