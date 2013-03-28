@@ -1,0 +1,396 @@
+# Hungarian translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+#
+# Balázs Úr <urbalazs at gmail dot com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-03-27 01:07+0000\n"
+"PO-Revision-Date: 2013-03-28 10:23+0100\n"
+"Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
+"Language-Team: Hungarian <gnome-hu-list@gnome.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "Ú_j"
+
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "_Beállítások"
+
+#: ../data/app-menu.ui.h:3
+msgid "About Weather"
+msgstr "Az Időjárás névjegye"
+
+#: ../data/app-menu.ui.h:4
+msgid "Quit"
+msgstr "Kilépés"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:341
+msgid "Weather"
+msgstr "Időjárás"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Időjárási viszonyok és előrejelzés megjelenítése"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Város keresése:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Beállított városok az időjárás megtekintéséhez"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"A gnome-weather világnézetében megjelenő helyek. Minden érték a "
+"gweather_location_serialize() által visszaadott GVariant."
+
+#: ../data/preferences.ui.h:1
+msgid "Meters (m)"
+msgstr "Méter (m)"
+
+#: ../data/preferences.ui.h:2
+msgid "Kilometers (km)"
+msgstr "Kilométer (km)"
+
+#: ../data/preferences.ui.h:3
+msgid "Miles (mi)"
+msgstr "Mérföld (mi)"
+
+#: ../data/preferences.ui.h:4
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: ../data/preferences.ui.h:5
+msgid "Temperature unit:"
+msgstr "Hőmérséklet mértékegysége:"
+
+#: ../data/preferences.ui.h:6
+msgid "Speed unit:"
+msgstr "Sebesség mértékegysége:"
+
+#: ../data/preferences.ui.h:7
+msgid "Distance unit:"
+msgstr "Távolság mértékegysége:"
+
+#: ../data/preferences.ui.h:8
+msgid "Pressure unit:"
+msgstr "Nyomás mértékegysége:"
+
+#: ../data/preferences.ui.h:9
+msgid "Kilopascal (kPa)"
+msgstr "Kilopascal (kPa)"
+
+#: ../data/preferences.ui.h:10
+msgid "Hectopascal (hPa)"
+msgstr "Hectopascal (hPa)"
+
+#: ../data/preferences.ui.h:11
+msgid "Millibar (mbar)"
+msgstr "Millibar (mbar)"
+
+#: ../data/preferences.ui.h:12
+msgid "Millimeters of mercury (mmHg)"
+msgstr "Higanymilliméter (mmHg)"
+
+#: ../data/preferences.ui.h:13
+msgid "Inches of mercury (inchHg)"
+msgstr "Higanyhüvelyk (inchHg)"
+
+#: ../data/preferences.ui.h:14
+msgid "Atmosphere (atm)"
+msgstr "Atmoszféra (atm)"
+
+#: ../data/preferences.ui.h:15
+msgid "Meters per second (m/s)"
+msgstr "Méter per másodperc (m/s)"
+
+#: ../data/preferences.ui.h:16
+msgid "Kilometers per hour (km/h)"
+msgstr "Kilométer per óra (km/h)"
+
+#: ../data/preferences.ui.h:17
+msgid "Miles per hour (mph)"
+msgstr "Mérföld per óra (mph)"
+
+#: ../data/preferences.ui.h:18
+msgid "Knots"
+msgstr "Csomó"
+
+#: ../data/preferences.ui.h:19
+msgid "Beaufort scale"
+msgstr "Beaufort skála"
+
+#: ../data/preferences.ui.h:20
+msgid "Kelvin (K)"
+msgstr "Kelvin (K)"
+
+#: ../data/preferences.ui.h:21
+msgid "Centigrade (°C)"
+msgstr "Celsius-fok (°C)"
+
+#: ../data/preferences.ui.h:22
+msgid "Fahrenheit (°F)"
+msgstr "Fahrenheit (°F)"
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Összes kijelölése"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Kijelölés megszüntetése"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "Új"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "Világ időjárás"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "Kész"
+
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "Betöltés…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Ma"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Holnap"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Több…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Mai előrejelzés"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Holnapi előrejelzés"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d."
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%p %l.%M"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Hétfő éjjel"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Hétfő reggel"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Hétfő délután"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Hétfő este"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Kedd éjjel"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Kedd reggel"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Kedd délután"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Kedd este"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Szerda éjjel"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Szerda reggel"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Szerda délután"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Szerda este"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Csütörtök éjjel"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Csütörtök reggel"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Csütörtök délután"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Csütörtök este"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Péntek éjjel"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Péntek reggel"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Péntek délután"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Péntek este"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Szombat éjjel"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Szombat reggel"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Szombat délután"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Szombat este"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Vasárnap éjjel"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Vasárnap reggel"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Vasárnap délután"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Vasárnap este"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Ma éjjel"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Ma reggel"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Ma délután"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Ma este"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Holnap éjjel"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Holnap reggel"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Holnap délután"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Holnap este"
+
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "Törlés"
+
+#: ../src/window.js:144
+msgid "Click on items to select them"
+msgstr "Kattintson az elemekre a kiválasztásukhoz"
+
+#: ../src/window.js:198
+msgid "Click on locations to select them"
+msgstr "Kattintson a helyekre a kiválasztásukhoz"
+
+#: ../src/window.js:201
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d kiválasztva"
+msgstr[1] "%d kiválasztva"
+
+#: ../src/window.js:278
+msgid "New Location"
+msgstr "Új hely"
+
+#: ../src/window.js:340
+msgid "translator-credits"
+msgstr "Úr Balázs <urbalazs@gmail.com>"
+
+#: ../src/window.js:342
+msgid "A weather application"
+msgstr "Egy időjárás alkalmazás"
+
+#: ../src/world.js:213
+msgid "Add locations"
+msgstr "Helyek hozzáadása"
+
+#: ../src/world.js:216
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"Használja az <b>Új</b> gombot az eszköztáron további világhelyek hozzáadásához"
+
