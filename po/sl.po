@@ -7,10 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-14 15:45+0000\n"
-"PO-Revision-Date: 2013-03-15 11:51+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-03-26 19:31+0000\n"
+"PO-Revision-Date: 2013-03-28 08:40+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -20,20 +19,28 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 1.5.4\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
 msgstr "_Nov"
 
 #: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "_Nastavitve"
+
+#: ../data/app-menu.ui.h:3
 msgid "About Weather"
 msgstr "O programu"
 
-#: ../data/app-menu.ui.h:3
+#: ../data/app-menu.ui.h:4
 msgid "Quit"
 msgstr "Končaj"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
+#: ../data/gnome-weather.desktop.in.h:1
+#: ../src/main.js:45
+#: ../src/window.js:341
 msgid "Weather"
 msgstr "Vreme"
 
@@ -50,10 +57,96 @@ msgid "Configured cities to show weather for"
 msgstr "Nastavljena mesta za prikaz vremena"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:2
-msgid ""
-"The locations shown in the world view of gnome-weather. Each value is a "
-"GVariant returned by gweather_location_serialize()."
+msgid "The locations shown in the world view of gnome-weather. Each value is a GVariant returned by gweather_location_serialize()."
 msgstr "Mesta, ki so prikazana v svetovnem pogledu programa gnome-weather."
+
+#: ../data/preferences.ui.h:1
+msgid "Meters (m)"
+msgstr "meter (m)"
+
+#: ../data/preferences.ui.h:2
+msgid "Kilometers (km)"
+msgstr "kilometer (km)"
+
+#: ../data/preferences.ui.h:3
+msgid "Miles (mi)"
+msgstr "milja (mi)"
+
+#: ../data/preferences.ui.h:4
+msgid "Preferences"
+msgstr "Nastavitve"
+
+#: ../data/preferences.ui.h:5
+msgid "Temperature unit:"
+msgstr "Merska enota za temperaturo:"
+
+#: ../data/preferences.ui.h:6
+msgid "Speed unit:"
+msgstr "Merska enota za hitrost:"
+
+#: ../data/preferences.ui.h:7
+msgid "Distance unit:"
+msgstr "Merska enota za dolžino:"
+
+#: ../data/preferences.ui.h:8
+msgid "Pressure unit:"
+msgstr "Merska enota za tlak:"
+
+#: ../data/preferences.ui.h:9
+msgid "Kilopascal (kPa)"
+msgstr "kilopascal (kPa)"
+
+#: ../data/preferences.ui.h:10
+msgid "Hectopascal (hPa)"
+msgstr "hektopascal (hPa)"
+
+#: ../data/preferences.ui.h:11
+msgid "Millibar (mbar)"
+msgstr "milibar (mbar)"
+
+#: ../data/preferences.ui.h:12
+msgid "Millimeters of mercury (mmHg)"
+msgstr "milimeter živega srebra (mmHg)"
+
+#: ../data/preferences.ui.h:13
+msgid "Inches of mercury (inchHg)"
+msgstr "palec živega srebra (inchHg)"
+
+#: ../data/preferences.ui.h:14
+msgid "Atmosphere (atm)"
+msgstr "atmosfera (atm)"
+
+#: ../data/preferences.ui.h:15
+msgid "Meters per second (m/s)"
+msgstr "metri na sekundo (m/s)"
+
+#: ../data/preferences.ui.h:16
+msgid "Kilometers per hour (km/h)"
+msgstr "kilometri na uro (km/h)"
+
+#: ../data/preferences.ui.h:17
+msgid "Miles per hour (mph)"
+msgstr "milje na uro (mph)"
+
+#: ../data/preferences.ui.h:18
+msgid "Knots"
+msgstr "vozli"
+
+#: ../data/preferences.ui.h:19
+msgid "Beaufort scale"
+msgstr "Beaufortova lestvica"
+
+#: ../data/preferences.ui.h:20
+msgid "Kelvin (K)"
+msgstr "kelvin (K)"
+
+#: ../data/preferences.ui.h:21
+msgid "Centigrade (°C)"
+msgstr "stopinja Celzija (°C)"
+
+#: ../data/preferences.ui.h:22
+msgid "Fahrenheit (°F)"
+msgstr "stopinja Fahrenheit (°F)"
 
 #: ../data/window.ui.h:1
 msgid "Select All"
@@ -266,7 +359,7 @@ msgstr "Jutri zvečer"
 msgid "Delete"
 msgstr "Izbriši"
 
-#: ../src/window.js:143
+#: ../src/window.js:144
 msgid "Click on items to select them"
 msgstr "S klikom se predmeti izberejo."
 
@@ -287,10 +380,20 @@ msgstr[3] "%d izbrana"
 msgid "New Location"
 msgstr "Novo mesto"
 
-#: ../src/window.js:339
+#: ../src/window.js:340
 msgid "translator-credits"
 msgstr "Matej Urbančič <matej.urban@svn.gnome.org>"
 
-#: ../src/window.js:341
+#: ../src/window.js:342
 msgid "A weather application"
 msgstr "Program za prikaz podatkov vremena"
+
+#: ../src/world.js:213
+#| msgid "New Location"
+msgid "Add locations"
+msgstr "Dodaj mesta"
+
+#: ../src/world.js:216
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr "Uporabite gumb <b>Nov</b> v orodni vrstici, da dodate več svetovnih mest"
+
