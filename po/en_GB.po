@@ -1,0 +1,393 @@
+# British English translation of gnome-weather
+# Copyright (C) 2013 gnome-weather'S COPYRIGHT HOLDER
+# This file is distributed under the same licence as the gnome-weather package.
+# Bruce Cowan <bruce@bcowan.me.uk>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-03-29 15:36+0000\n"
+"PO-Revision-Date: 2013-03-29 15:54+0000\n"
+"Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
+"Language-Team: British English <>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_New"
+
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "_Preferences"
+
+#: ../data/app-menu.ui.h:3
+msgid "About Weather"
+msgstr "About Weather"
+
+#: ../data/app-menu.ui.h:4
+msgid "Quit"
+msgstr "Quit"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:341
+msgid "Weather"
+msgstr "Weather"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Show weather conditions and forecast"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Search for a city:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Configured cities to show weather for"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+
+#: ../data/preferences.ui.h:1
+msgid "Meters (m)"
+msgstr "Metres (m)"
+
+#: ../data/preferences.ui.h:2
+msgid "Kilometers (km)"
+msgstr "Kilometres (km)"
+
+#: ../data/preferences.ui.h:3
+msgid "Miles (mi)"
+msgstr "Miles (mi)"
+
+#: ../data/preferences.ui.h:4
+msgid "Preferences"
+msgstr "Preferences"
+
+#: ../data/preferences.ui.h:5
+msgid "Temperature unit:"
+msgstr "Temperature unit:"
+
+#: ../data/preferences.ui.h:6
+msgid "Speed unit:"
+msgstr "Speed unit:"
+
+#: ../data/preferences.ui.h:7
+msgid "Distance unit:"
+msgstr "Distance unit:"
+
+#: ../data/preferences.ui.h:8
+msgid "Pressure unit:"
+msgstr "Pressure unit:"
+
+#: ../data/preferences.ui.h:9
+msgid "Kilopascal (kPa)"
+msgstr "Kilopascal (kPa)"
+
+#: ../data/preferences.ui.h:10
+msgid "Hectopascal (hPa)"
+msgstr "Hectopascal (hPa)"
+
+#: ../data/preferences.ui.h:11
+msgid "Millibar (mbar)"
+msgstr "Millibar (mbar)"
+
+#: ../data/preferences.ui.h:12
+msgid "Millimeters of mercury (mmHg)"
+msgstr "Millimetres of mercury (mmHg)"
+
+#: ../data/preferences.ui.h:13
+msgid "Inches of mercury (inchHg)"
+msgstr "Inches of mercury (inchHg)"
+
+#: ../data/preferences.ui.h:14
+msgid "Atmosphere (atm)"
+msgstr "Atmosphere (atm)"
+
+#: ../data/preferences.ui.h:15
+msgid "Meters per second (m/s)"
+msgstr "Metres per second (m/s)"
+
+#: ../data/preferences.ui.h:16
+msgid "Kilometers per hour (km/h)"
+msgstr "Kilometres per hour (km/h)"
+
+#: ../data/preferences.ui.h:17
+msgid "Miles per hour (mph)"
+msgstr "Miles per hour (mph)"
+
+#: ../data/preferences.ui.h:18
+msgid "Knots"
+msgstr "Knots"
+
+#: ../data/preferences.ui.h:19
+msgid "Beaufort scale"
+msgstr "Beaufort scale"
+
+#: ../data/preferences.ui.h:20
+msgid "Kelvin (K)"
+msgstr "Kelvin (K)"
+
+#: ../data/preferences.ui.h:21
+msgid "Centigrade (°C)"
+msgstr "Centigrade (°C)"
+
+#: ../data/preferences.ui.h:22
+msgid "Fahrenheit (°F)"
+msgstr "Fahrenheit (°F)"
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Select All"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Select None"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "New"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "World Weather"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "Done"
+
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "Loading…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Today"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Tomorrow"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "More…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Forecast for Today"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Forecast for Tomorrow"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%d %B"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Monday night"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Monday morning"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Monday afternoon"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Monday evening"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Tuesday night"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Tuesday morning"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Tuesday afternoon"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Tuesday evening"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Wednesday night"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Wednesday morning"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Wednesday afternoon"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Wednesday evening"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Thursday night"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Thursday morning"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Thursday afternoon"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Thursday evening"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Friday night"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Friday morning"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Friday afternoon"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Friday evening"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Saturday night"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Saturday morning"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Saturday afternoon"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Saturday evening"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Sunday night"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Sunday morning"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Sunday afternoon"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Sunday evening"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Tonight"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "This morning"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "This afternoon"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "This evening"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Tomorrow night"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Tomorrow morning"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Tomorrow afternoon"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Tomorrow evening"
+
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "Delete"
+
+#: ../src/window.js:144
+msgid "Click on items to select them"
+msgstr "Click on items to select them"
+
+#: ../src/window.js:198
+msgid "Click on locations to select them"
+msgstr "Click on locations to select them"
+
+#: ../src/window.js:201
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d selected"
+msgstr[1] "%d selected"
+
+#: ../src/window.js:278
+msgid "New Location"
+msgstr "New Location"
+
+#: ../src/window.js:340
+msgid "translator-credits"
+msgstr "Bruce Cowan <bruce@bcowan.me.uk>"
+
+#: ../src/window.js:342
+msgid "A weather application"
+msgstr "A weather application"
+
+#: ../src/world.js:213
+msgid "Add locations"
+msgstr "Add locations"
+
+#: ../src/world.js:216
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr "Use the <b>New</b> button on the toolbar to add more world locations"
