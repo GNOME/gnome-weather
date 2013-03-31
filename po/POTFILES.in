@@ -2,6 +2,7 @@
 data/gnome-weather.desktop.in
 [type: gettext/glade]data/new-location-dialog.ui
 data/org.gnome.Weather.Application.gschema.xml
+[type: gettext/glade]data/city.ui
 [type: gettext/glade]data/preferences.ui
 [type: gettext/glade]data/window.ui
 src/city.js

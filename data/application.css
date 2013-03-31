@@ -63,10 +63,12 @@
 #temperature-label {
     font-size: 4em;
 }
-#condition-label {
+
+#conditions-label {
     font-size: 2.5em;
     padding-bottom: 12px; /* keep in sync with conditions-image */
 }
+
 #attribution-label {
     font-size: small;
 }

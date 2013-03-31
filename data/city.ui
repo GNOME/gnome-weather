@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <object class="GtkBox" id="outer-box">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkFrame" id="content-frame">
+        <property name="name">weather-page-content-view</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label_xalign">0</property>
+        <property name="shadow_type">none</property>
+        <child>
+          <object class="GtkGrid" id="outer-grid">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkGrid" id="alignment">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <child>
+                  <object class="GtkGrid" id="inner-grid">
+                    <property name="name">conditions-grid</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="column_spacing">20</property>
+                    <child>
+                      <object class="GtkImage" id="conditions-image">
+                        <property name="name">conditions-image</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="pixel_size">172</property>
+                        <property name="icon-size">2</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">0</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="temperature-label">
+                        <property name="name">temperature-label</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="valign">end</property>
+                        <property name="vexpand">True</property>
+                        <property name="xalign">0</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">0</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="conditions-label">
+                        <property name="name">conditions-label</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="valign">end</property>
+                        <property name="xalign">0</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="top_attach">1</property>
+                        <property name="width">1</property>
+                        <property name="height">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                    <property name="width">1</property>
+                    <property name="height">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+                <property name="width">1</property>
+                <property name="height">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GdHeaderSimpleButton" id="reveal-button">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="margin_right">20</property>
+                <property name="symbolic_icon_name">go-previous-symbolic</property>
+                <style>
+                  <class name="osd"/>
+                </style>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+                <property name="width">1</property>
+                <property name="height">2</property>
+              </packing>
+            </child>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GdRevealer" id="revealer">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <property name="reveal-child">false</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+  </object>
+</interface>

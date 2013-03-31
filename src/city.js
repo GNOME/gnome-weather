@@ -30,61 +30,26 @@ const WeatherWidget = new Lang.Class({
                                        name: 'weather-page' });
         this.parent(params);
 
-        let outerBox = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL });
-
         this._currentStyle = null;
-        this._contentFrame = new Gtk.Frame({ shadow_type: Gtk.ShadowType.NONE,
-                                             name: 'weather-page-content-view' });
-        outerBox.add(this._contentFrame);
 
-        let outerGrid = new Gtk.Grid();
-        this._contentFrame.add(outerGrid);
+        let builder = new Gtk.Builder();
+        builder.add_from_resource('/org/gnome/weather/city.ui');
 
-        let alignment = new Gtk.Grid({ hexpand: true, vexpand: true,
-                                       halign: Gtk.Align.CENTER,
-                                       valign: Gtk.Align.CENTER });
-
-        let innerGrid = new Gtk.Grid({ name: 'conditions-grid',
-                                       column_spacing: 20,
-                                       hexpand: false,
-                                       vexpand: false });
-        this._icon = new Gtk.Image({ pixel_size: 172,
-                                     use_fallback: true,
-                                     name: 'conditions-image' });
-        innerGrid.attach(this._icon, 0, 0, 1, 2);
-
-        this._temperature = new Gtk.Label({ xalign: 0.0,
-                                            name: 'temperature-label',
-                                            vexpand: true,
-                                            valign: Gtk.Align.END });
-        innerGrid.attach(this._temperature, 1, 0, 1, 1);
-
-        this._conditions = new Gtk.Label({ xalign: 0.0,
-                                           name: 'condition-label',
-                                           valign: Gtk.Align.END });
-        innerGrid.attach(this._conditions, 1, 1, 1, 1);
-
-        alignment.add(innerGrid);
-        outerGrid.attach(alignment, 0, 0, 1, 1);
+        let outerBox = builder.get_object('outer-box');
+        this._contentFrame = builder.get_object('content-frame');
+        let outerGrid = builder.get_object('outer-grid');
+        this._icon = builder.get_object('conditions-image');
+        this._temperature = builder.get_object('temperature-label');
+        this._conditions = builder.get_object('conditions-label');
+        this._revealButton = builder.get_object('reveal-button');
+        this._revealer = builder.get_object('revealer');
 
         this._forecasts = new Forecast.ForecastBox({ hexpand: true });
         outerGrid.attach(this._forecasts, 0, 1, 2, 1);
 
-        this._revealButton = new Gd.HeaderSimpleButton({ symbolic_icon_name: 'go-previous-symbolic',
-                                                         margin_right: 20,
-                                                         halign: Gtk.Align.CENTER,
-                                                         valign: Gtk.Align.CENTER });
-        let context = this._revealButton.get_style_context();
-        context.add_class('osd');
-
-        outerGrid.attach(this._revealButton, 1, 0, 1, 2);
-
         this._today = new Forecast.TodaySidebar({ vexpand: true,
                                                   name: 'today-sidebar' });
-        this._revealer = new Gd.Revealer({ child: this._today,
-                                           reveal_child: false,
-                                           orientation: Gtk.Orientation.VERTICAL });
-        outerBox.add(this._revealer);
+        this._revealer.child = this._today;
 
         this._revealButton.connect('clicked', Lang.bind(this, function() {
             if (this._revealer.reveal_child) {
