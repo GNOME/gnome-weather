@@ -1,0 +1,401 @@
+# Chinese (China) translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# tuhaihe <1132321739qq@gmail.com>, 2013.
+# Wylmer Wang <wantinghard@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-03-29 22:15+0000\n"
+"PO-Revision-Date: 2013-04-01 23:16+0800\n"
+"Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
+"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "新建(_N)"
+
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "首选项(_P)"
+
+#: ../data/app-menu.ui.h:3
+msgid "About Weather"
+msgstr "关于 天气"
+
+#: ../data/app-menu.ui.h:4
+msgid "Quit"
+msgstr "退出"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:341
+msgid "Weather"
+msgstr "天气"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "显示天气状况和天气预报"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "搜索城市："
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "已配置的显示天气的城市"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"gnome-weather 的世界视图中显示的位置。每个值都是由 "
+"gweather_location_serialize() 返回的 GVariant 值。"
+
+#: ../data/preferences.ui.h:1
+msgid "Meters (m)"
+msgstr "米(m)"
+
+#: ../data/preferences.ui.h:2
+msgid "Kilometers (km)"
+msgstr "千米(km)"
+
+#: ../data/preferences.ui.h:3
+msgid "Miles (mi)"
+msgstr "英里(mi)"
+
+#: ../data/preferences.ui.h:4
+msgid "Preferences"
+msgstr "首选项"
+
+#: ../data/preferences.ui.h:5
+msgid "Temperature unit:"
+msgstr "温度单位："
+
+#: ../data/preferences.ui.h:6
+msgid "Speed unit:"
+msgstr "速度单位："
+
+#: ../data/preferences.ui.h:7
+msgid "Distance unit:"
+msgstr "距离单位："
+
+#: ../data/preferences.ui.h:8
+msgid "Pressure unit:"
+msgstr "压力单位："
+
+#: ../data/preferences.ui.h:9
+msgid "Kilopascal (kPa)"
+msgstr "千帕(kPa)"
+
+#: ../data/preferences.ui.h:10
+msgid "Hectopascal (hPa)"
+msgstr "百帕(hPa)"
+
+#: ../data/preferences.ui.h:11
+msgid "Millibar (mbar)"
+msgstr "毫巴(mbar)"
+
+#: ../data/preferences.ui.h:12
+msgid "Millimeters of mercury (mmHg)"
+msgstr "毫米汞柱(mmHg)"
+
+#: ../data/preferences.ui.h:13
+msgid "Inches of mercury (inchHg)"
+msgstr "英寸汞柱(inchHg)"
+
+#: ../data/preferences.ui.h:14
+msgid "Atmosphere (atm)"
+msgstr "大气(atm)"
+
+#: ../data/preferences.ui.h:15
+msgid "Meters per second (m/s)"
+msgstr "米每秒(m/s)"
+
+#: ../data/preferences.ui.h:16
+msgid "Kilometers per hour (km/h)"
+msgstr "千米每小时(km/h)"
+
+#: ../data/preferences.ui.h:17
+msgid "Miles per hour (mph)"
+msgstr "英里每小时(mph)"
+
+#: ../data/preferences.ui.h:18
+msgid "Knots"
+msgstr ""
+
+#: ../data/preferences.ui.h:19
+msgid "Beaufort scale"
+msgstr "蒲福风级"
+
+#: ../data/preferences.ui.h:20
+msgid "Kelvin (K)"
+msgstr "开尔文(K)"
+
+#: ../data/preferences.ui.h:21
+msgid "Centigrade (°C)"
+msgstr "摄氏度(°C)"
+
+#: ../data/preferences.ui.h:22
+msgid "Fahrenheit (°F)"
+msgstr "华氏度(°F)"
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "全选"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "全不选"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "新建"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "世界天气"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "完成"
+
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "正在加载..."
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "今日"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "明日"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "更多..."
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "今日预报"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "明日预报"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "周一夜间"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "周一上午"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "周一下午"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "周一晚间"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "周二夜间"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "周二上午"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "周二下午"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "周二晚间"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "周三夜间"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "周三上午"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "周三下午"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "周三晚间"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "周四夜间"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "周四上午"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "周四下午"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "周四晚间"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "周五夜间"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "周五上午"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "周五下午"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "周五晚间"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "周六夜间"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "周六上午"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "周六下午"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "周六晚间"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "周日夜间"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "周日上午"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "周日下午"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "周日晚间"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "今夜"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "今天上午"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "今天下午"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "今晚"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "明日夜间"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "明天上午"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "明天下午"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "明晚"
+
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "删除"
+
+#: ../src/window.js:144
+msgid "Click on items to select them"
+msgstr "点击项目来选择它们"
+
+#: ../src/window.js:198
+msgid "Click on locations to select them"
+msgstr "点击位置来选择它们"
+
+#: ../src/window.js:201
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "已选择 %d 项"
+
+#: ../src/window.js:278
+msgid "New Location"
+msgstr "新建位置"
+
+#: ../src/window.js:340
+msgid "translator-credits"
+msgstr ""
+"tuhaihe <1132321739qq@gmail.com>, 2013\n"
+"Wylmer Wang <wantinghard@gmail.com>, 2013"
+
+#: ../src/window.js:342
+msgid "A weather application"
+msgstr "一款天气应用"
+
+#: ../src/world.js:213
+msgid "Add locations"
+msgstr "添加位置"
+
+#: ../src/world.js:216
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr "使用工具栏上的<b>新建</b>按钮来添加更多世界位置"
+
+#~ msgid "Current conditions:"
+#~ msgstr "当前状况："
+
+#~ msgid "Wind: "
+#~ msgstr "风："
