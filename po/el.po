@@ -1,0 +1,297 @@
+# Greek translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Dimitris Spingos <dmtrs32@gmail.com>, 2013.
+# Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather gnome-3-8\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-03-28 09:26+0000\n"
+"PO-Revision-Date: 2013-04-09 17:28+0300\n"
+"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"Language-Team: team@gnome.gr\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Νέο"
+
+#: ../data/app-menu.ui.h:2
+msgid "About Weather"
+msgstr "Για τον καιρό"
+
+#: ../data/app-menu.ui.h:3
+msgid "Quit"
+msgstr "Έξοδος"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
+msgid "Weather"
+msgstr "Καιρός"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Εμφάνιση συνθηκών καιρού και πρόβλεψης"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Αναζήτηση πόλης:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Ρυθμισμένες πόλεις για την προβολή καιρού"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Οι εμφανιζόμενες τοποθεσίες στην παγκόσμια προβολή του καιρού gnome. Κάθε "
+"τιμή είναι η επιστρεφόμενη GVariant από το gweather_location_serialize()."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Επιλογή όλων"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Καμία επιλογή"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "Νέο"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "Παγκόσμιος καιρός"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "Έτοιμο"
+
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "Φορτώνεται…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Σήμερα"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Αύριο"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Περισσότερα…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Πρόβλεψη για σήμερα"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Πρόβλεψη για αύριο"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%d %B"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Δευτέρα νύχτα"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Δευτέρα πρωί"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Δευτέρα απόγευμα"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Δευτέρα βράδυ"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Τρίτη νύχτα"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Τρίτη πρωί"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Τρίτη απόγευμα"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Τρίτη βράδυ"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Τρίτη νύχτα"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Τετάρτη πρωί"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Τετάρτη απόγευμα"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Τετάρτη βράδυ"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Πέμπτη νύχτα"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Πέμπτη πρωί"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Πέμπτη απόγευμα"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Πέμπτη βράδυ"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Παρασκευή νύχτα"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Παρασκευή πρωί"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Παρασκευή απόγευμα"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Παρασκευή βράδυ"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Σαββάτο νύχτα"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Σαββάτο πρωί"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Σαββάτο απόγευμα"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Σαββάτο βράδυ"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Κυριακή νύχτα"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Κυριακή πρωί"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Κυριακή απόγευμα"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Κυριακή βράδυ"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Απόψε"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Αυτό το πρωί"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Αυτό το απόγευμα"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Αυτό το βράδυ"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Αύριο τη νύχτα"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Αύριο το πρωί"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Αύριο το απόγευμα"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Αύριο το βράδυ"
+
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: ../src/window.js:143
+msgid "Click on items to select them"
+msgstr "Πατήστε στα στοιχεία για να τα επιλέξετε"
+
+#: ../src/window.js:198
+msgid "Click on locations to select them"
+msgstr "Πατήστε στις τοποθεσίες για να τις επιλέξετε"
+
+#: ../src/window.js:201
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d επιλεγμένο"
+msgstr[1] "%d επιλεγμένα"
+
+#: ../src/window.js:278
+msgid "New Location"
+msgstr "Νέα τοποθεσία"
+
+#: ../src/window.js:339
+msgid "translator-credits"
+msgstr ""
+" Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
+" Για περισσότερα δείτε: http://gnome.gr"
+
+#: ../src/window.js:341
+msgid "A weather application"
+msgstr "Μια εφαρμογή καιρού"
