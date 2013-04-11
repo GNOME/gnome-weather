@@ -7,20 +7,31 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-02 19:57+0000\n"
-"PO-Revision-Date: 2013-01-02 21:45+0200\n"
+"POT-Creation-Date: 2013-04-09 14:31+0000\n"
+"PO-Revision-Date: 2013-04-11 11:24+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/gnome-weather.desktop.in.h:1
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Novo"
+
+#: ../data/app-menu.ui.h:2
+msgid "About Weather"
+msgstr "O Vremenu"
+
+#: ../data/app-menu.ui.h:3
+msgid "Quit"
+msgstr "Izađi"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
 msgid "Weather"
 msgstr "Vreme"
 
@@ -28,170 +39,261 @@ msgstr "Vreme"
 msgid "Show weather conditions and forecast"
 msgstr "Prikažite vremenske prilike i prognozu"
 
-#: ../src/widget.py:34
-msgid "Location: "
-msgstr "Mesto: "
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Potražite grad:"
 
-#: ../src/conditions.py:26
-msgid "Current conditions:"
-msgstr "Tekuće prilike:"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Podešeni gradovi za koje prikazivati vreme"
 
-#: ../src/conditions.py:47
-msgid "Temperature: "
-msgstr "Temperatura: "
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Mesta prikazana u pregledu sveta gnomovog vremena. Svaka vrednost je "
+"Gvarijanta koju daje funkcija „gweather_location_serialize()“."
 
-#: ../src/conditions.py:49
-msgid "Wind: "
-msgstr "Vetar: "
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Izaberi sve"
 
-#: ../src/forecast.py:86
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Poništi izbor"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "Novo"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "Svetsko vreme"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "Urađeno"
+
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "Učitavam…"
+
+#: ../src/forecast.js:112
 msgid "Today"
 msgstr "Danas"
 
-#: ../src/forecast.py:91
+#: ../src/forecast.js:118
 msgid "Tomorrow"
 msgstr "Sutra"
 
-#: ../src/strings.py:22
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Još…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Prognoza za danas"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Prognoza za sutra"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
 msgid "Monday night"
 msgstr "U ponedeljak noću"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday morning"
 msgstr "U ponedeljak ujutru"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday afternoon"
 msgstr "U ponedeljak popodne"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday evening"
 msgstr "U ponedeljak uveče"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday night"
 msgstr "U utorak noću"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday morning"
 msgstr "U utorak ujutru"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday afternoon"
 msgstr "U utorak popodne"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday evening"
 msgstr "U utorak uveče"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday night"
 msgstr "U sredu noću"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday morning"
 msgstr "U sredu ujutru"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday afternoon"
 msgstr "U sredu popodne"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday evening"
 msgstr "U sredu uveče"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday night"
 msgstr "U četvrtak noću"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday morning"
 msgstr "U četvrtak ujutru"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday afternoon"
 msgstr "U četvrtak popodne"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday evening"
 msgstr "U četvrtak uveče"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday night"
 msgstr "U petak noću"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday morning"
 msgstr "U petak ujutru"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday afternoon"
 msgstr "U petak popodne"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday evening"
 msgstr "U petak uveče"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday night"
 msgstr "U subotu noću"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday morning"
 msgstr "U subotu ujutru"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday afternoon"
 msgstr "U subotu popodne"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday evening"
 msgstr "U subotu uveče"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday night"
 msgstr "U nedelju noću"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday morning"
 msgstr "U nedelju ujutru"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday afternoon"
 msgstr "U nedelju popodne"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday evening"
 msgstr "U nedelju uveče"
 
-#: ../src/strings.py:31
-msgid "This night"
-msgstr "Ove noći"
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Noćas"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This morning"
 msgstr "Ovog jutra"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This afternoon"
 msgstr "Ovog popodneva"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This evening"
 msgstr "Ove večeri"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow night"
 msgstr "Sutra noću"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow morning"
 msgstr "Sutra ujutru"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow afternoon"
 msgstr "Sutra popodne"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow evening"
 msgstr "Sutra uveče"
+
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "Obriši"
+
+#: ../src/window.js:143
+msgid "Click on items to select them"
+msgstr "Kliknite na stavke da ih izaberete"
+
+#: ../src/window.js:198
+msgid "Click on locations to select them"
+msgstr "Kliknite na mesta da ih izaberete"
+
+#: ../src/window.js:201
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d izabrano"
+msgstr[1] "%d izabrana"
+msgstr[2] "%d izabranih"
+msgstr[3] "Jedno izabrano"
+
+#: ../src/window.js:278
+msgid "New Location"
+msgstr "Novo mesto"
+
+#: ../src/window.js:339
+msgid "translator-credits"
+msgstr ""
+"  Miroslav Nikolić\n"
+"\n"
+"  http://prevod.org — prevod na srpski jezik"
+
+#: ../src/window.js:341
+msgid "A weather application"
+msgstr "Program za vremenske prilike"
