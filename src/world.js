@@ -164,10 +164,9 @@ const WorldIconView = new Lang.Class({
     Name: 'WorldView',
     Extends: Gd.MainView,
 
-    _init: function(model, params) {
+    _init: function(params) {
         params = Params.fill(params, { view_type: Gd.MainViewType.ICON });
         this.parent(params);
-        this.model = model;
 
         this.connect('selection-mode-request', Lang.bind(this, function() {
             this.selection_mode = true;
@@ -185,7 +184,7 @@ const WorldContentView = new Lang.Class({
                                        halign: Gtk.Align.FILL, valign: Gtk.Align.FILL });
         this.parent(params);
 
-        this.iconView = new WorldIconView(model, { visible: true });
+        this.iconView = new WorldIconView({ model: model, visible: true });
 
         this._placeHolder = new Gtk.Grid({ halign: Gtk.Align.CENTER,
                                            valign: Gtk.Align.CENTER,
