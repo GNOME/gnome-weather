@@ -100,8 +100,8 @@ function init(params) {
     datadir = GLib.build_filenamev([prefix, 'share']);
     let libpath, girpath;
 
-    if (GLib.file_test('./src',
-                       GLib.FileTest.IS_DIR)) {
+    if (GLib.file_test(name + '.doap',
+                       GLib.FileTest.EXISTS)) {
         log('Running from source tree, using local files');
         // Running from source directory
         _base = GLib.get_current_dir();
@@ -121,7 +121,7 @@ function init(params) {
         moduledir = pkgdatadir;
     }
 
-    imports.searchPath.push(moduledir);
+    imports.searchPath.unshift(moduledir);
     GIRepository.Repository.prepend_search_path(girpath);
     GIRepository.Repository.prepend_library_path(libpath);
 }
