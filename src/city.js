@@ -104,7 +104,7 @@ const WeatherWidget = new Lang.Class({
 
 const WeatherView = new Lang.Class({
     Name: 'WeatherView',
-    Extends: Gd.Stack,
+    Extends: Gtk.Stack,
 
     _init: function(params) {
         this.parent(params);

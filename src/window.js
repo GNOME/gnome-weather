@@ -140,13 +140,9 @@ const MainWindow = new Lang.Class({
 
         let selectionMenu = builder.get_object("selection-menu");
 
-        this._selectionMenuButton = new Gd.HeaderMenuButton(
-            { label: _("Click on items to select them"),
-              menu_model: selectionMenu,
-            });
-        this._selectionMenuButton.get_style_context().add_class("selection-menu");
-
-        this._stack = new Gd.Stack({ transition_type: Gd.StackTransitionType.CROSSFADE });
+        this._selectionMenuButton = builder.get_object('selection-menu-button');
+        this._stack = builder.get_object('main-stack');
+        this._overlay = builder.get_object('main-overlay');
 
         this._cityView = new City.WeatherView({ hexpand: true,
                                                 vexpand: true });
@@ -185,10 +181,6 @@ const MainWindow = new Lang.Class({
                                       GObject.BindingFlags.INVERT_BOOLEAN);
 
         this._stack.set_visible_child(this._worldView);
-
-        this._overlay = new Gtk.Overlay();
-        this._overlay.add(this._stack);
-        grid.add(this._overlay);
 
         this._selectionToolbar = new SelectionToolbar(this._worldView);
         this._overlay.add_overlay(this._selectionToolbar);

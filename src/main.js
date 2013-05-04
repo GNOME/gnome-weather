@@ -59,6 +59,7 @@ const Application = new Lang.Class({
 
     vfunc_startup: function() {
         this.parent();
+        Gd.ensure_types();
 
         let resource = Gio.Resource.load(pkg.pkgdatadir + '/gnome-weather.gresource');
         resource._register();
