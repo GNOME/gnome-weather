@@ -78,7 +78,7 @@ function parse(params, defaults) {
 // Return value: a new object, containing the merged parameters from
 // @params and @defaults
 function fill(params, defaults) {
-    let ret = {};
+    let ret = {}, prop;
     params = params || {};
 
     for (prop in params)
