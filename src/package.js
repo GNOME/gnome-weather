@@ -25,6 +25,7 @@
 
 const GLib = imports.gi.GLib;
 const GIRepository = imports.gi.GIRepository;
+const Gio = imports.gi.Gio;
 const System = imports.system;
 
 const Gettext = imports.gettext;
