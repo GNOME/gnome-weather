@@ -44,6 +44,19 @@ var localedir;
 let _base;
 let _requires;
 
+function _runningFromSource(name) {
+    if (System.version >= 13600) {
+        let fileName = System.programInvocationName;
+
+        let binary = Gio.File.new_for_path(fileName);
+        let cwd = Gio.File.new_for_path('.');
+        return binary.has_prefix(cwd);
+    } else {
+        return GLib.file_test(name + '.doap',
+                              GLib.FileTest.EXISTS);
+    }
+}
+
 /**
  * init:
  * @params: package parameters
@@ -100,8 +113,7 @@ function init(params) {
     datadir = GLib.build_filenamev([prefix, 'share']);
     let libpath, girpath;
 
-    if (GLib.file_test(name + '.doap',
-                       GLib.FileTest.EXISTS)) {
+    if (_runningFromSource(name)) {
         log('Running from source tree, using local files');
         // Running from source directory
         _base = GLib.get_current_dir();
