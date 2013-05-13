@@ -74,7 +74,7 @@ const Application = new Lang.Class({
 
         Util.initActions(this,
                          [{ name: 'quit',
-                            callback: this._onQuit }]);
+                            activate: this._onQuit }]);
 
         this._initAppMenu();
 

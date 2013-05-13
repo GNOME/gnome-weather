@@ -44,12 +44,18 @@ function loadStyleSheet(file) {
                                              Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 }
 
-function initActions(actionMap, simpleActionEntries) {
+function initActions(actionMap, simpleActionEntries, context) {
     simpleActionEntries.forEach(function(entry) {
-        let action = new Gio.SimpleAction({ name: entry.name });
+        let filtered = Params.filter(entry, { activate: null,
+                                              state_changed: null,
+                                              context: null });
+        let action = new Gio.SimpleAction(entry);
 
-        if (entry.callback)
-            action.connect('activate', Lang.bind(actionMap, entry.callback));
+        let context = filtered.context || actionMap;
+        if (filtered.activate)
+            action.connect('activate', filtered.activate.bind(context));
+        if (filtered.state_changed)
+            action.connect('state-changed', filtered.state_changed.bind(context));
 
         actionMap.add_action(action);
     });

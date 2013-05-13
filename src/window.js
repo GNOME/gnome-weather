@@ -45,19 +45,19 @@ const MainWindow = new Lang.Class({
 
         Util.initActions(this,
                          [{ name: 'new',
-                            callback: this._newLocation },
+                            activate: this._newLocation },
                           { name: 'preferences',
-                            callback: this._showPreferences },
+                            activate: this._showPreferences },
                           { name: 'about',
-                            callback: this._showAbout },
+                            activate: this._showAbout },
                           { name: 'exit-selection-mode',
-                            callback: this._exitSelectionMode },
+                            activate: this._exitSelectionMode },
                           { name: 'select-all',
-                            callback: this._selectAll },
+                            activate: this._selectAll },
                           { name: 'select-none',
-                            callback: this._selectNone },
+                            activate: this._selectNone },
                           { name: 'delete-selected',
-                            callback: this._deleteSelected }]);
+                            activate: this._deleteSelected }]);
 
         let builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/weather/window.ui');
