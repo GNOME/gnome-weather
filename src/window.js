@@ -28,63 +28,6 @@ const Page = {
     CITY: 1
 };
 
-const _SELECTION_TOOLBAR_DEFAULT_WIDTH = 300;
-
-const SelectionToolbar = new Lang.Class({
-    Name: 'SelectionToolbar',
-    Extends: Gtk.Toolbar,
-
-    _init: function(worldView) {
-        this._worldView = worldView;
-
-        this.parent({ show_arrow: false,
-                      halign: Gtk.Align.CENTER,
-                      valign: Gtk.Align.END,
-                      margin_bottom: 40,
-                      icon_size: Gtk.IconSize.LARGE_TOOLBAR,
-                      opacity: 0 });
-        this.get_style_context().add_class('osd');
-        this.set_size_request(_SELECTION_TOOLBAR_DEFAULT_WIDTH, -1);
-
-        this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL });
-        let item = new Gtk.ToolItem({ child: this._box });
-        item.set_expand(true);
-        this.insert(item, -1);
-
-        let button = new Gtk.Button({ label: _("Delete"),
-                                      hexpand: true });
-        this._box.add(button);
-
-        button.connect('clicked', Lang.bind(this, function() {
-            let items = this._worldView.iconView.get_selection();
-            let model = this._worldView.iconView.model;
-
-            for (let i = items.length - 1; i >= 0; i--) {
-                let [res, iter] = model.get_iter(items[i]);
-                if (res)
-                    model.removeLocation(iter);
-            }
-        }));
-    },
-
-    fadeIn: function() {
-        this.show_all();
-        Tweener.addTween(this, { opacity: 1,
-                                 time: 0.30,
-                                 transition: 'easeOutQuad' });
-    },
-
-    fadeOut: function() {
-        Tweener.addTween(this, { opacity: 0,
-                                 time: 0.30,
-                                 transition: 'easeOutQuad',
-                                 onComplete: function() {
-                                     this.hide();
-                                 },
-                                 onCompleteScope: this });
-    }
-});
-
 const MainWindow = new Lang.Class({
     Name: 'MainWindow',
     Extends: Gtk.ApplicationWindow,
@@ -112,7 +55,9 @@ const MainWindow = new Lang.Class({
                           { name: 'select-all',
                             callback: this._selectAll },
                           { name: 'select-none',
-                            callback: this._selectNone }]);
+                            callback: this._selectNone },
+                          { name: 'delete-selected',
+                            callback: this._deleteSelected }]);
 
         let builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/weather/window.ui');
@@ -138,11 +83,11 @@ const MainWindow = new Lang.Class({
         let selectDone = builder.get_object('done-button');
         this._pageWidgets[Page.WORLD].push(selectDone);
 
+        let selectionBarRevealer = builder.get_object('selection-bar-revealer');
         let selectionMenu = builder.get_object("selection-menu");
 
         this._selectionMenuButton = builder.get_object('selection-menu-button');
         this._stack = builder.get_object('main-stack');
-        this._overlay = builder.get_object('main-overlay');
 
         this._cityView = new City.WeatherView({ hexpand: true,
                                                 vexpand: true });
@@ -156,9 +101,6 @@ const MainWindow = new Lang.Class({
 
         select.connect('clicked', Lang.bind(this, function() {
             this._worldView.iconView.selection_mode = true;
-        }));
-        selectDone.connect('clicked', Lang.bind(this, function() {
-            this._worldView.iconView.selection_mode = false;
         }));
         iconView.connect('notify::selection-mode', Lang.bind(this, function() {
             if (iconView.selection_mode) {
@@ -176,26 +118,24 @@ const MainWindow = new Lang.Class({
                                GObject.BindingFlags.INVERT_BOOLEAN);
         iconView.bind_property('selection-mode', selectDone, 'visible',
                                GObject.BindingFlags.SYNC_CREATE);
+        iconView.bind_property('selection-mode', selectionBarRevealer, 'reveal-child',
+                               GObject.BindingFlags.SYNC_CREATE);
         this._worldView.bind_property('empty', select, 'sensitive',
                                       GObject.BindingFlags.SYNC_CREATE |
                                       GObject.BindingFlags.INVERT_BOOLEAN);
 
         this._stack.set_visible_child(this._worldView);
 
-        this._selectionToolbar = new SelectionToolbar(this._worldView);
-        this._overlay.add_overlay(this._selectionToolbar);
-
         iconView.connect('view-selection-changed', Lang.bind(this, function() {
             let items = iconView.get_selection();
-            let label = _("Click on locations to select them");
+            let label;
 
             if (items.length > 0) {
                 label = Gettext.ngettext("%d selected",
                                          "%d selected",
                                          items.length).format(items.length);
-                this._selectionToolbar.fadeIn();
             } else {
-                this._selectionToolbar.fadeOut();
+                label = _("Click on locations to select them");
             }
 
             this._selectionMenuButton.set_label(label);
@@ -370,5 +310,18 @@ const MainWindow = new Lang.Class({
         dialog.connect('response', function(d) { d.destroy(); });
 
         dialog.show();
-    }
+    },
+
+    _deleteSelected: function() {
+        let items = this._worldView.iconView.get_selection();
+        let model = this._worldView.iconView.model;
+
+        for (let i = items.length - 1; i >= 0; i--) {
+            let [res, iter] = model.get_iter(items[i]);
+            if (res)
+                model.removeLocation(iter);
+        }
+
+        this._exitSelectionMode();
+    },
 });
