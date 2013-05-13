@@ -1,3 +1,9 @@
+3.8.2
+=====
+* Update libgd to master
+* Fix detection of source trees at startup
+* Translation updates
+
 3.8.1
 =====
 * Update libgd to master
