@@ -6,12 +6,25 @@
         <attribute name="action">win.new</attribute>
         <attribute name="accel">&lt;Primary&gt;n</attribute>
       </item>
+    </section>
+    <submenu>
+      <attribute translatable="yes" name="label">Temperature unit</attribute>
+      <item>
+        <attribute translatable="yes" name="label">Celsius</attribute>
+        <attribute name="action">app.temperature-unit</attribute>
+        <attribute name="target">centigrade</attribute>
+      </item>
+      <item>
+        <attribute translatable="yes" name="label">Fahrenheit</attribute>
+        <attribute name="action">app.temperature-unit</attribute>
+        <attribute name="target">fahrenheit</attribute>
+      </item>
+    </submenu>
+    <section>
       <item>
         <attribute name="action">win.about</attribute>
         <attribute name="label" translatable="yes">About Weather</attribute>
       </item>
-    </section>
-    <section>
       <item>
         <attribute name="action">app.quit</attribute>
         <attribute name="label" translatable="yes">Quit</attribute>

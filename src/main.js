@@ -76,6 +76,9 @@ const Application = new Lang.Class({
                          [{ name: 'quit',
                             activate: this._onQuit }]);
 
+        let gwSettings = new Gio.Settings({ schema: 'org.gnome.GWeather' });
+        this.add_action(gwSettings.create_action('temperature-unit'));
+
         this._initAppMenu();
 
         this.add_accelerator("Escape", "win.selection-mode(false)", null);
