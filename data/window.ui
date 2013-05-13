@@ -34,6 +34,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="label" translatable="yes">New</property>
+            <property name="action-name">win.new-location</property>
           </object>
           <packing>
             <property name="pack_type">start</property>
@@ -54,6 +55,8 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="symbolic-icon-name">object-select-symbolic</property>
+            <property name="action-name">win.selection-mode</property>
+            <property name="action-target">true</property>
           </object>
           <packing>
             <property name="pack_type">end</property>
@@ -65,7 +68,8 @@
             <property name="no_show_all">True</property>
             <property name="can_focus">True</property>
             <property name="label" translatable="yes">Cancel</property>
-            <property name="action-name">win.exit-selection-mode</property>
+            <property name="action-name">win.selection-mode</property>
+            <property name="action-target">false</property>
             <style>
               <class name="suggested-action"/>
             </style>
@@ -79,6 +83,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="symbolic-icon-name">view-refresh-symbolic</property>
+            <property name="action-name">win.refresh</property>
           </object>
           <packing>
             <property name="pack_type">end</property>

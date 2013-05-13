@@ -78,7 +78,7 @@ const Application = new Lang.Class({
 
         this._initAppMenu();
 
-        this.add_accelerator("Escape", "win.exit-selection-mode", null);
+        this.add_accelerator("Escape", "win.selection-mode(false)", null);
         this.add_accelerator("<Primary>a", "win.select-all", null);
     },
 

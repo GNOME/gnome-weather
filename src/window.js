@@ -50,14 +50,20 @@ const MainWindow = new Lang.Class({
                             activate: this._showPreferences },
                           { name: 'about',
                             activate: this._showAbout },
-                          { name: 'exit-selection-mode',
-                            activate: this._exitSelectionMode },
+                          { name: 'new-location',
+                            activate: this._newLocation },
+                          { name: 'selection-mode',
+                            activate: this._setSelectionMode,
+                            parameter_type: new GLib.VariantType('b'),
+                            state: new GLib.Variant('b', false) },
                           { name: 'select-all',
                             activate: this._selectAll },
                           { name: 'select-none',
                             activate: this._selectNone },
                           { name: 'delete-selected',
-                            activate: this._deleteSelected }]);
+                            activate: this._deleteSelected },
+                          { name: 'refresh',
+                            activate: this.update }]);
 
         let builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/weather/window.ui');
@@ -66,7 +72,6 @@ const MainWindow = new Lang.Class({
         this._header = builder.get_object('header-bar');
 
         let newButton = builder.get_object('new-button');
-        newButton.connect('clicked', Lang.bind(this, this._newLocation));
         this._pageWidgets[Page.WORLD].push(newButton);
 
         let goWorldButton = builder.get_object('world-button');
@@ -77,7 +82,6 @@ const MainWindow = new Lang.Class({
         this._pageWidgets[Page.WORLD].push(select);
 
         let refresh = builder.get_object('refresh-button');
-        refresh.connect('clicked', Lang.bind(this, this.update));
         this._pageWidgets[Page.CITY].push(refresh);
 
         let selectDone = builder.get_object('done-button');
@@ -99,9 +103,6 @@ const MainWindow = new Lang.Class({
 
         iconView.connect('item-activated', Lang.bind(this, this._itemActivated));
 
-        select.connect('clicked', Lang.bind(this, function() {
-            this._worldView.iconView.selection_mode = true;
-        }));
         iconView.connect('notify::selection-mode', Lang.bind(this, function() {
             if (iconView.selection_mode) {
                 this._header.get_style_context().add_class('selection-mode');
@@ -110,6 +111,9 @@ const MainWindow = new Lang.Class({
                 this._header.get_style_context().remove_class('selection-mode');
                 this._header.set_custom_title(null);
             }
+
+            let selectionState = new GLib.Variant('b', iconView.selection_mode);
+            this.lookup_action('selection-mode').set_state(selectionState);
         }));
 
         iconView.bind_property('selection-mode', newButton, 'visible',
@@ -120,7 +124,7 @@ const MainWindow = new Lang.Class({
                                GObject.BindingFlags.SYNC_CREATE);
         iconView.bind_property('selection-mode', selectionBarRevealer, 'reveal-child',
                                GObject.BindingFlags.SYNC_CREATE);
-        this._worldView.bind_property('empty', select, 'sensitive',
+        this._worldView.bind_property('empty', this.lookup_action('selection-mode'), 'enabled',
                                       GObject.BindingFlags.SYNC_CREATE |
                                       GObject.BindingFlags.INVERT_BOOLEAN);
 
@@ -244,8 +248,8 @@ const MainWindow = new Lang.Class({
         dialog.show_all();
     },
 
-    _exitSelectionMode: function() {
-        this._worldView.iconView.selection_mode = false;
+    _setSelectionMode: function(action, param) {
+        this._worldView.iconView.selection_mode = param.get_boolean();
     },
 
     _selectAll: function() {
