@@ -46,8 +46,6 @@ const MainWindow = new Lang.Class({
         Util.initActions(this,
                          [{ name: 'new',
                             activate: this._newLocation },
-                          { name: 'preferences',
-                            activate: this._showPreferences },
                           { name: 'about',
                             activate: this._showAbout },
                           { name: 'new-location',
@@ -292,30 +290,6 @@ const MainWindow = new Lang.Class({
         });
     },
 
-    _showPreferences: function() {
-        let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/weather/preferences.ui');
-
-        let dialog = builder.get_object('preferences-dialog');
-        dialog.transient_for = this;
-
-        let settings = new Gio.Settings({ schema: 'org.gnome.GWeather' });
-        settings.bind('temperature-unit', builder.get_object('temp-combo'), 'active-id',
-                      Gio.SettingsBindFlags.DEFAULT);
-        settings.bind('speed-unit', builder.get_object('speed-combo'), 'active-id',
-                      Gio.SettingsBindFlags.DEFAULT);
-        settings.bind('distance-unit', builder.get_object('distance-combo'), 'active-id',
-                      Gio.SettingsBindFlags.DEFAULT);
-        settings.bind('pressure-unit', builder.get_object('pressure-combo'), 'active-id',
-                      Gio.SettingsBindFlags.DEFAULT);
-
-        dialog.add_button(Gtk.STOCK_CLOSE, Gtk.ResponseType.CLOSE);
-        dialog.set_default_response(Gtk.ResponseType.CLOSE);
-        dialog.connect('response', function(d) { d.destroy(); });
-
-        dialog.show();
-    },
-
     _deleteSelected: function() {
         let items = this._worldView.iconView.get_selection();
         let model = this._worldView.iconView.model;
@@ -327,5 +301,5 @@ const MainWindow = new Lang.Class({
         }
 
         this._exitSelectionMode();
-    },
+    }
 });
