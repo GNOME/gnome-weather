@@ -3,15 +3,16 @@
 # This file is distributed under the same license as the gnome-weather package.
 #
 # Adam Matoušek <adamatousek@gmail.com>, 2013.
+# Daniel Puncman <puncmdan@fel.cvut.cz>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-02 20:48+0000\n"
-"PO-Revision-Date: 2013-01-12 14:46+0100\n"
-"Last-Translator: Adam Matoušek <adamatousek@gmail.com>\n"
+"POT-Creation-Date: 2013-03-26 19:31+0000\n"
+"PO-Revision-Date: 2013-05-05 20:03+0100\n"
+"Last-Translator: Daniel Puncman <puncmdan@fel.cvut.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +21,23 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../data/gnome-weather.desktop.in.h:1
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Nové"
+
+#: ../data/app-menu.ui.h:2
+msgid "_Preferences"
+msgstr "_Předvolby"
+
+#: ../data/app-menu.ui.h:3
+msgid "About Weather"
+msgstr "O aplikaci Počasí"
+
+#: ../data/app-menu.ui.h:4
+msgid "Quit"
+msgstr "Ukončit"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:341
 msgid "Weather"
 msgstr "Počasí"
 
@@ -28,170 +45,360 @@ msgstr "Počasí"
 msgid "Show weather conditions and forecast"
 msgstr "Zobrazit povětrnostní podmínky a předpověď"
 
-#: ../src/widget.py:34
-msgid "Location: "
-msgstr "Místo: "
+# label
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Vyhledat město:"
 
-#: ../src/conditions.py:26
-msgid "Current conditions:"
-msgstr "Aktuální podmínky:"
+# summary
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Nastavená města, pro která se má zobrazit počasí"
 
-#: ../src/conditions.py:47
-msgid "Temperature: "
-msgstr "Teplota: "
+# description
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Místa zobrazená na mapě světa v aplikaci Počasí pro prostředí Gnome. Každá "
+"hodnota reprezentuje GVariant vrácený službou gweather_location_serialize()."
 
-#: ../src/conditions.py:49
-msgid "Wind: "
-msgstr "Vítr: "
+# Měla by být „Jednotka vzdálenosti“.
+#: ../data/preferences.ui.h:1
+msgid "Meters (m)"
+msgstr "Metry (m)"
 
-#: ../src/forecast.py:86
+#: ../data/preferences.ui.h:2
+msgid "Kilometers (km)"
+msgstr "Kilometry (km)"
+
+#: ../data/preferences.ui.h:3
+msgid "Miles (mi)"
+msgstr "Míle (mi)"
+
+#: ../data/preferences.ui.h:4
+msgid "Preferences"
+msgstr "Předvolby"
+
+#: ../data/preferences.ui.h:5
+msgid "Temperature unit:"
+msgstr "Jednotka teploty:"
+
+#: ../data/preferences.ui.h:6
+msgid "Speed unit:"
+msgstr "Jednotka rychlosti:"
+
+#: ../data/preferences.ui.h:7
+msgid "Distance unit:"
+msgstr "Jednotka vzdálenosti:"
+
+#: ../data/preferences.ui.h:8
+msgid "Pressure unit:"
+msgstr "Jednotka tlaku:"
+
+#: ../data/preferences.ui.h:9
+msgid "Kilopascal (kPa)"
+msgstr "Kilopascal (kPa)"
+
+#: ../data/preferences.ui.h:10
+msgid "Hectopascal (hPa)"
+msgstr "Hektopascal (hPa)"
+
+#: ../data/preferences.ui.h:11
+msgid "Millibar (mbar)"
+msgstr "Milibar (mbar)"
+
+#: ../data/preferences.ui.h:12
+msgid "Millimeters of mercury (mmHg)"
+msgstr "Milimetr rtuťového sloupce (mmHg)"
+
+#: ../data/preferences.ui.h:13
+msgid "Inches of mercury (inchHg)"
+msgstr "Palec rtuťového sloupce (inchHg)"
+
+#: ../data/preferences.ui.h:14
+msgid "Atmosphere (atm)"
+msgstr "Atmosféra (atm)"
+
+#: ../data/preferences.ui.h:15
+msgid "Meters per second (m/s)"
+msgstr "Meter za sekundu (m/s)"
+
+#: ../data/preferences.ui.h:16
+msgid "Kilometers per hour (km/h)"
+msgstr "Kilometr za hodinu (km/h)"
+
+#: ../data/preferences.ui.h:17
+msgid "Miles per hour (mph)"
+msgstr "Míle za hodinu (mph)"
+
+#: ../data/preferences.ui.h:18
+msgid "Knots"
+msgstr "Uzel"
+
+#: ../data/preferences.ui.h:19
+msgid "Beaufort scale"
+msgstr "Beaufortova stupnice"
+
+#: ../data/preferences.ui.h:20
+msgid "Kelvin (K)"
+msgstr "Kelvin (K)"
+
+#: ../data/preferences.ui.h:21
+msgid "Centigrade (°C)"
+msgstr "Stupeň Celsia (°C)"
+
+#: ../data/preferences.ui.h:22
+msgid "Fahrenheit (°F)"
+msgstr "Stupeň Fahrenheita (°F)"
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Vybrat vše"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Zrušit výběr"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "Nové"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "Počasí ve světě"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "Hotovo"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "Načítá se…"
+
+#: ../src/forecast.js:112
 msgid "Today"
 msgstr "Dnes"
 
-#: ../src/forecast.py:91
+#: ../src/forecast.js:118
 msgid "Tomorrow"
 msgstr "Zítra"
 
-#: ../src/strings.py:22
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Více…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Předpověď na dnes"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Předpověď na zítra"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%e. %B"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%H:%M"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
 msgid "Monday night"
 msgstr "Pondělí v noci"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday morning"
 msgstr "Pondělí ráno"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday afternoon"
 msgstr "Pondělí odpoledne"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday evening"
 msgstr "Pondělí večer"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday night"
 msgstr "Úterý v noci"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday morning"
 msgstr "Úterý ráno"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday afternoon"
 msgstr "Úterý odpoledne"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday evening"
 msgstr "Úterý večer"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday night"
 msgstr "Středa v noci"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday morning"
 msgstr "Středa ráno"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday afternoon"
 msgstr "Středa odpoledne"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday evening"
 msgstr "Středa večer"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday night"
 msgstr "Čtvrtek v noci"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday morning"
 msgstr "Čtvrtek ráno"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday afternoon"
 msgstr "Čtvrtek odpoledne"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday evening"
 msgstr "Čtvrtek večer"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday night"
 msgstr "Pátek v noci"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday morning"
 msgstr "Pátek ráno"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday afternoon"
 msgstr "Pátek odpoledne"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday evening"
 msgstr "Pátek večer"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday night"
 msgstr "Sobota v noci"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday morning"
 msgstr "Sobota ráno"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday afternoon"
 msgstr "Sobota odpoledne"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday evening"
 msgstr "Sobota večer"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday night"
 msgstr "Neděle v noci"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday morning"
 msgstr "Neděle ráno"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday afternoon"
 msgstr "Neděle odpoledne"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday evening"
 msgstr "Neděle večer"
 
-#: ../src/strings.py:31
-msgid "This night"
+#: ../src/strings.js:31
+msgid "Tonight"
 msgstr "Dnes v noci"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This morning"
 msgstr "Dnes ráno"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This afternoon"
 msgstr "Dnes odpoledne"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This evening"
 msgstr "Dnes večer"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow night"
 msgstr "Zítra v noci"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow morning"
 msgstr "Zítra ráno"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow afternoon"
 msgstr "Zítra odpoledne"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow evening"
 msgstr "Zítra večer"
+
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "Smazat"
+
+#: ../src/window.js:144
+msgid "Click on items to select them"
+msgstr "Kliknutím na položky je vyberete"
+
+#: ../src/window.js:198
+msgid "Click on locations to select them"
+msgstr "Kliknutím na místa je vyberete"
+
+#: ../src/window.js:201
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d vybraná"
+msgstr[1] "%d vybrané"
+msgstr[2] "%d vybraných"
+
+#: ../src/window.js:278
+msgid "New Location"
+msgstr "Nové místo"
+
+#: ../src/window.js:340
+msgid "translator-credits"
+msgstr ""
+"Adam Matoušek <adamatousek@gmail.com>\n"
+"Daniel Puncman <puncmdan@fel.cvut.cz>"
+
+#: ../src/window.js:342
+msgid "A weather application"
+msgstr "Aplikace Počasí"
+
+#: ../src/world.js:212
+msgid "Add locations"
+msgstr "Přidejte místo"
+
+#: ../src/world.js:215
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"Použitím tlačítka <b>Nové</b> z lišty nástrojů přidáte více zeměpisných míst"
