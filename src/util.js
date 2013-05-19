@@ -24,12 +24,15 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-function loadUI(file) {
-    file = file || 'main.ui';
-
+function loadUI(resourcePath, objects) {
     let ui = new Gtk.Builder();
-    ui.add_from_file(GLib.build_filenamev([pkg.pkgdatadir,
-                                           file]));
+
+    if (objects) {
+        for (let o in objects)
+            ui.expose_object(o, objects[o]);
+    }
+
+    ui.add_from_resource(resourcePath);
     return ui;
 }
 

@@ -209,23 +209,11 @@ const MainWindow = new Lang.Class({
     },
 
     _newLocation: function() {
-        let dialog = new Gtk.Dialog({ title: _("New Location"),
-                                      transient_for: this.get_toplevel(),
-                                      modal: true });
+        let builder = Util.loadUI('/org/gnome/weather/new-location-dialog.ui',
+                                  { 'parent-window': this.get_toplevel() });
 
-        let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/weather/new-location-dialog.ui');
-
-        let grid = builder.get_object('location-dialog-content');
-
-        let find_icon = Gio.ThemedIcon.new_with_default_fallbacks("edit-find-symbolic");
-        let entry = new GWeather.LocationEntry({ top: this._world,
-                                                 width_request: 400,
-                                                 activates_default: true });
-        entry.set_icon_from_gicon(Gtk.EntryIconPosition.SECONDARY, find_icon);
-
-        grid.attach(entry, 0, 1, 1, 1);
-        dialog.get_content_area().add(grid);
+        let dialog = builder.get_object('location-dialog');
+        let entry = builder.get_object('location-entry');
 
         dialog.add_button(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL);
         dialog.add_button(Gtk.STOCK_ADD, Gtk.ResponseType.OK);
@@ -243,7 +231,8 @@ const MainWindow = new Lang.Class({
 
             this._worldView.model.addLocation(entry.location);
         }));
-        dialog.show_all();
+
+        dialog.show();
     },
 
     _setSelectionMode: function(action, param) {
