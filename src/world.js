@@ -66,8 +66,7 @@ const WorldModel = new Lang.Class({
     },
 
     _addLocationInternal: function(location) {
-        let info = new GWeather.Info({ world: this._world,
-                                       location: location,
+        let info = new GWeather.Info({ location: location,
                                        forecast_type: GWeather.ForecastType.LIST,
                                        enabled_providers: (GWeather.Provider.METAR |
                                                            GWeather.Provider.YR_NO) });
