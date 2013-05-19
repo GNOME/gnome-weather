@@ -28,6 +28,56 @@ const Page = {
     CITY: 1
 };
 
+const NewLocationController = new Lang.Class({
+    Name: 'NewLocationController',
+
+    _init: function(parentWindow, worldModel) {
+        this._worldModel = worldModel;
+
+        let builder = Util.loadUI('/org/gnome/weather/new-location-dialog.ui',
+                                  { 'parent-window': parentWindow });
+
+        let dialog = builder.get_object('location-dialog');
+        let entry = builder.get_object('location-entry');
+
+        entry.connect('changed', function() {
+            if (entry.text == '')
+                entry.secondary_icon_name = 'edit-find-symbolic';
+            else
+                entry.secondary_icon_name = 'edit-clear-symbolic';
+        });
+        entry.connect('icon-release', function() {
+            entry.text = '';
+        });
+
+        dialog.add_button(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL);
+        dialog.add_button(Gtk.STOCK_ADD, Gtk.ResponseType.OK);
+        dialog.set_default_response(Gtk.ResponseType.OK);
+
+        dialog.connect('response', Lang.bind(this, this._onResponse));
+
+        this._dialog = dialog;
+        this._entry = entry;
+    },
+
+    run: function() {
+        this._dialog.show();
+    },
+
+    _onResponse: function(dialog, response) {
+        dialog.destroy();
+
+        if (response != Gtk.ResponseType.OK)
+            return;
+
+        let location = this._entry.location;
+        if (!location)
+            return;
+
+        this._worldModel.addLocation(location);
+    }
+});
+
 const MainWindow = new Lang.Class({
     Name: 'MainWindow',
     Extends: Gtk.ApplicationWindow,
@@ -209,30 +259,10 @@ const MainWindow = new Lang.Class({
     },
 
     _newLocation: function() {
-        let builder = Util.loadUI('/org/gnome/weather/new-location-dialog.ui',
-                                  { 'parent-window': this.get_toplevel() });
+        let controller = new NewLocationController(this.get_toplevel(),
+                                                   this._worldView.model);
 
-        let dialog = builder.get_object('location-dialog');
-        let entry = builder.get_object('location-entry');
-
-        dialog.add_button(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL);
-        dialog.add_button(Gtk.STOCK_ADD, Gtk.ResponseType.OK);
-        dialog.set_default_response(Gtk.ResponseType.OK);
-
-        dialog.connect('response', Lang.bind(this, function(dialog, response) {
-            dialog.destroy();
-
-            if (response != Gtk.ResponseType.OK)
-                return;
-
-            let location = entry.location;
-            if (!location)
-                return;
-
-            this._worldView.model.addLocation(entry.location);
-        }));
-
-        dialog.show();
+        controller.run();
     },
 
     _setSelectionMode: function(action, param) {
