@@ -1,0 +1,306 @@
+# Norwegian bokmål translation of gnome-weather.
+# Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Kjartan Maraas <kmaraas@gnome.org>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather 3.9.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-22 13:19+0200\n"
+"PO-Revision-Date: 2013-05-22 13:27+0200\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
+"Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Ny"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Temperaturenhet"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celcius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "Om vær"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Avslutt"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
+msgid "Weather"
+msgstr "Vær"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Vis værforhold og værmelding"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Søk etter en by:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Byer som er konfigurert for visning av vær"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr "Lokasjonene som vises i verdensvisning av gnome-weather. Hver verdi er en GVariant som returneres av gweather_location_serialize()."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Velg alle"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Velg ingen"
+
+#: ../data/window.ui.h:3
+msgid "Click on items to select them"
+msgstr "Klikk på oppføringer for å velge dem"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Ny"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr "Været i verden"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "Slett"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "Laster …"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "I dag"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "I morgen"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Mer …"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Værmelding for i dag"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Værmelding for i morgen"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%H.%M"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Mandag kveld"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Mandag morgen"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Mandag ettermiddag"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Mandag kveld"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Tirsdag natt"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Tirsdag morgen"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Tirsdag ettermiddag"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Tirsdag kveld"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Onsdag natt"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Onsdag morgen"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Onsdag ettermiddag"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Onsdag kveld"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Torsdag natt"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Torsdag morgen"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Torsdag ettermiddag"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Torsdag kveld"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Fredag natt"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Fredag morgen"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Fredag ettermiddag"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Fredag kveld"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Lørdag natt"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Lørdag morgen"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Lørdag ettermiddag"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Lørdag kveld"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Søndag natt"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Søndag morgen"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Søndag ettermiddag"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Søndag kveld"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "I kveld"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "I morges"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "I ettermiddag"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "I kveld"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "I morgen natt"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "I morgen tidlig"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "I morgen ettermiddag"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "I morgen kveld"
+
+#: ../src/window.js:186
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d valgt"
+msgstr[1] "%d valgt"
+
+#: ../src/window.js:190
+msgid "Click on locations to select them"
+msgstr "Klikk på lokasjoner for å velge dem"
+
+#: ../src/window.js:293
+msgid "translator-credits"
+msgstr "Kjartan Maraas <kmaraas@gnome.org>"
+
+#: ../src/window.js:295
+msgid "A weather application"
+msgstr "Et program for vær"
+
+#: ../src/world.js:211
+msgid "Add locations"
+msgstr "Legg til lokasjoner"
+
+#: ../src/world.js:214
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr "Bruk <b>Ny</b>-knappen på verktøylinjen for å legge til flere lokasjoner i verden"
