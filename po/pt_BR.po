@@ -3,15 +3,17 @@
 # This file is distributed under the same license as the gnome-weather package.
 # Enrico Nicoletto <liverig@gmail.com>, 2013.
 # Rafael Ferreira <rafael.f.f1@gmail.com>, 2013.
+# Georges Basile Stavracas Neto <georges.stavracas@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-04-03 22:14+0000\n"
-"PO-Revision-Date: 2013-04-10 02:30-0300\n"
-"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
+"POT-Creation-Date: 2013-05-22 11:28+0000\n"
+"PO-Revision-Date: 2013-05-22 21:24-0300\n"
+"Last-Translator: Georges Basile Stavracas Neto <georges.stavracas@gmail."
+"com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -25,18 +27,26 @@ msgid "_New"
 msgstr "_Nova"
 
 #: ../data/app-menu.ui.h:2
-msgid "_Preferences"
-msgstr "_Preferências"
+msgid "Temperature unit"
+msgstr "Unidade de temperatura:"
 
 #: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
 msgid "About Weather"
 msgstr "Sobre o Meteorologia"
 
-#: ../data/app-menu.ui.h:4
+#: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Sair"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:341
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
 msgid "Weather"
 msgstr "Meteorologia"
 
@@ -60,94 +70,6 @@ msgstr ""
 "As localizações mostradas na visão global do GNOME Weather. Cada valor é um "
 "GVariant retornado por gweather_location_serialize()."
 
-#: ../data/preferences.ui.h:1
-msgid "Meters (m)"
-msgstr "Metros (m)"
-
-#: ../data/preferences.ui.h:2
-msgid "Kilometers (km)"
-msgstr "Quilômetros (km)"
-
-#: ../data/preferences.ui.h:3
-msgid "Miles (mi)"
-msgstr "Milhas (mi)"
-
-#: ../data/preferences.ui.h:4
-msgid "Preferences"
-msgstr "Preferências"
-
-#: ../data/preferences.ui.h:5
-msgid "Temperature unit:"
-msgstr "Unidade de temperatura:"
-
-#: ../data/preferences.ui.h:6
-msgid "Speed unit:"
-msgstr "Unidade de velocidade:"
-
-#: ../data/preferences.ui.h:7
-msgid "Distance unit:"
-msgstr "Unidade de distância:"
-
-#: ../data/preferences.ui.h:8
-msgid "Pressure unit:"
-msgstr "Unidade de pressão:"
-
-#: ../data/preferences.ui.h:9
-msgid "Kilopascal (kPa)"
-msgstr "Quilopascal (kPa)"
-
-#: ../data/preferences.ui.h:10
-msgid "Hectopascal (hPa)"
-msgstr "Hectopascal (hPa)"
-
-#: ../data/preferences.ui.h:11
-msgid "Millibar (mbar)"
-msgstr "Milibares (mbar)"
-
-#: ../data/preferences.ui.h:12
-msgid "Millimeters of mercury (mmHg)"
-msgstr "Milímetros de mercúrio (mmHg)"
-
-#: ../data/preferences.ui.h:13
-msgid "Inches of mercury (inchHg)"
-msgstr "Polegadas de mercúrio (inchHg)"
-
-#: ../data/preferences.ui.h:14
-msgid "Atmosphere (atm)"
-msgstr "Atmosfera (atm)"
-
-#: ../data/preferences.ui.h:15
-msgid "Meters per second (m/s)"
-msgstr "Metros por segundo (m/s)"
-
-#: ../data/preferences.ui.h:16
-msgid "Kilometers per hour (km/h)"
-msgstr "Quilômetros por hora (km/h)"
-
-#: ../data/preferences.ui.h:17
-msgid "Miles per hour (mph)"
-msgstr "Milhas por hora (mph)"
-
-#: ../data/preferences.ui.h:18
-msgid "Knots"
-msgstr "Nós"
-
-#: ../data/preferences.ui.h:19
-msgid "Beaufort scale"
-msgstr "Escala Beaufort"
-
-#: ../data/preferences.ui.h:20
-msgid "Kelvin (K)"
-msgstr "Kelvin (K)"
-
-#: ../data/preferences.ui.h:21
-msgid "Centigrade (°C)"
-msgstr "Celsius (°C)"
-
-#: ../data/preferences.ui.h:22
-msgid "Fahrenheit (°F)"
-msgstr "Fahrenheit (°F)"
-
 #: ../data/window.ui.h:1
 msgid "Select All"
 msgstr "Selecionar todos"
@@ -157,16 +79,24 @@ msgid "Select None"
 msgstr "Selecionar nenhum"
 
 #: ../data/window.ui.h:3
+msgid "Click on items to select them"
+msgstr "Clique nos itens para selecioná-los"
+
+#: ../data/window.ui.h:4
 msgid "New"
 msgstr "Novo"
 
-#: ../data/window.ui.h:4
+#: ../data/window.ui.h:5
 msgid "World Weather"
 msgstr "Meteorologia mundial"
 
-#: ../data/window.ui.h:5
-msgid "Done"
-msgstr "Feito"
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "Excluir"
 
 #: ../src/city.js:119
 msgid "Loading…"
@@ -356,48 +286,105 @@ msgstr "Amanhã de tarde"
 msgid "Tomorrow evening"
 msgstr "Amanhã ao anoitecer"
 
-#: ../src/window.js:54
-msgid "Delete"
-msgstr "Excluir"
-
-#: ../src/window.js:144
-msgid "Click on items to select them"
-msgstr "Clique nos itens para selecioná-los"
-
-#: ../src/window.js:198
-msgid "Click on locations to select them"
-msgstr "Clique nas localizações para selecioná-las"
-
-#: ../src/window.js:201
+#: ../src/window.js:186
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d selecionada"
 msgstr[1] "%d selecionadas"
 
-#: ../src/window.js:278
-msgid "New Location"
-msgstr "Novo local"
+#: ../src/window.js:190
+msgid "Click on locations to select them"
+msgstr "Clique nas localizações para selecioná-las"
 
-#: ../src/window.js:340
+#: ../src/window.js:293
 msgid "translator-credits"
 msgstr ""
 "Enrico Nicoletto <liverig@gmail.com>\n"
 "Rafael Ferreira <rafael.f.f1@gmail.com>"
 
-#: ../src/window.js:342
+#: ../src/window.js:295
 msgid "A weather application"
 msgstr "Um aplicativo de meteorologia"
 
-#: ../src/world.js:213
+#: ../src/world.js:211
 msgid "Add locations"
 msgstr "Adicionar localizações"
 
-#: ../src/world.js:216
+#: ../src/world.js:214
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Use o botão <b>Nova</b> na barra de ferramentas para adicionar mais "
 "localizações mundiais"
+
+#~ msgid "_Preferences"
+#~ msgstr "_Preferências"
+
+#~ msgid "Meters (m)"
+#~ msgstr "Metros (m)"
+
+#~ msgid "Kilometers (km)"
+#~ msgstr "Quilômetros (km)"
+
+#~ msgid "Miles (mi)"
+#~ msgstr "Milhas (mi)"
+
+#~ msgid "Preferences"
+#~ msgstr "Preferências"
+
+#~ msgid "Speed unit:"
+#~ msgstr "Unidade de velocidade:"
+
+#~ msgid "Distance unit:"
+#~ msgstr "Unidade de distância:"
+
+#~ msgid "Pressure unit:"
+#~ msgstr "Unidade de pressão:"
+
+#~ msgid "Kilopascal (kPa)"
+#~ msgstr "Quilopascal (kPa)"
+
+#~ msgid "Hectopascal (hPa)"
+#~ msgstr "Hectopascal (hPa)"
+
+#~ msgid "Millibar (mbar)"
+#~ msgstr "Milibares (mbar)"
+
+#~ msgid "Millimeters of mercury (mmHg)"
+#~ msgstr "Milímetros de mercúrio (mmHg)"
+
+#~ msgid "Inches of mercury (inchHg)"
+#~ msgstr "Polegadas de mercúrio (inchHg)"
+
+#~ msgid "Atmosphere (atm)"
+#~ msgstr "Atmosfera (atm)"
+
+#~ msgid "Meters per second (m/s)"
+#~ msgstr "Metros por segundo (m/s)"
+
+#~ msgid "Kilometers per hour (km/h)"
+#~ msgstr "Quilômetros por hora (km/h)"
+
+#~ msgid "Miles per hour (mph)"
+#~ msgstr "Milhas por hora (mph)"
+
+#~ msgid "Knots"
+#~ msgstr "Nós"
+
+#~ msgid "Beaufort scale"
+#~ msgstr "Escala Beaufort"
+
+#~ msgid "Kelvin (K)"
+#~ msgstr "Kelvin (K)"
+
+#~ msgid "Centigrade (°C)"
+#~ msgstr "Celsius (°C)"
+
+#~ msgid "Done"
+#~ msgstr "Feito"
+
+#~ msgid "New Location"
+#~ msgstr "Novo local"
 
 #~ msgid "Current conditions:"
 #~ msgstr "Condições atuais:"
