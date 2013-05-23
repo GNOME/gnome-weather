@@ -319,6 +319,6 @@ const MainWindow = new Lang.Class({
                 model.removeLocation(iter);
         }
 
-        this._exitSelectionMode();
+        this._worldView.iconView.selection_mode = false;
     }
 });
