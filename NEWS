@@ -1,3 +1,41 @@
+3.9.2
+=====
+* Updated libgd, but mostly replaced with Gtk types
+* Added a welcome screen for the first launch
+* The app menu now offers a choice for the temperature unit
+* Implements the new selection pattern, with a separate
+  selection toolbar and rubberbanding
+* Improved the libgweather usage to support disk caching
+
+3.8.2
+=====
+* Update libgd to master
+* Fix detection of source trees at startup
+* Translation updates
+
+3.8.1
+=====
+* Update libgd to master
+* Translation updates
+
+3.8.0
+=====
+
+* Translation updates
+
+3.7.92
+======
+
+* First release to follow GNOME versioning
+* Application completely rewritten in JS + gtk + libgd (no longer
+  uses clutter-gtk)
+* Features a full GNOME 3 layout (header bar, content view,
+  selection toolbar, application menu)
+* Includes the ability to show multiple cities at once
+* Uses dark theme and symbolic icons
+* Includes pretty backgrounds matching the current conditions
+* Many many bugfixes and translation fixes
+
 0.2
 ===
 * Initial release, first one to be published at GNOME archives
