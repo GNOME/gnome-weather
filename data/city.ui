@@ -92,16 +92,24 @@
               </packing>
             </child>
             <child>
-              <object class="GdHeaderSimpleButton" id="reveal-button">
+              <object class="GtkButton" id="reveal-button">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="halign">center</property>
                 <property name="valign">center</property>
                 <property name="margin_right">20</property>
-                <property name="symbolic_icon_name">go-previous-symbolic</property>
                 <style>
+                  <class name="image-button"/>
                   <class name="osd"/>
                 </style>
+                <child>
+                  <object class="GtkImage" id="reveal-button-image">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="icon-name">go-previous-symbolic</property>
+                    <property name="icon-size">1</property>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="left_attach">1</property>

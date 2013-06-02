@@ -54,10 +54,10 @@ const WeatherWidget = new Lang.Class({
         this._revealButton.connect('clicked', Lang.bind(this, function() {
             if (this._revealer.reveal_child) {
                 this._revealer.reveal_child = false;
-                this._revealButton.symbolic_icon_name = 'go-previous-symbolic';
+                this._revealButton.get_child().icon_name = 'go-previous-symbolic';
             } else {
                 this._revealer.reveal_child = true;
-                this._revealButton.symbolic_icon_name = 'go-next-symbolic';
+                this._revealButton.get_child().icon_name = 'go-next-symbolic';
             }
         }));
 
