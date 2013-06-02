@@ -64,7 +64,7 @@ const Application = new Lang.Class({
         let resource = Gio.Resource.load(pkg.pkgdatadir + '/gnome-weather.gresource');
         resource._register();
 
-        Util.loadStyleSheet(Gio.file_new_for_uri('resource:///org/gnome/weather/application.css'));
+        Util.loadStyleSheet('/org/gnome/weather/application.css');
 
         let settings = Gtk.Settings.get_for_screen(Gdk.Screen.get_default());
         settings.gtk_application_prefer_dark_theme = true;

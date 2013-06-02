@@ -36,12 +36,9 @@ function loadUI(resourcePath, objects) {
     return ui;
 }
 
-function loadStyleSheet(file) {
-    file = file || Gio.file_new_for_path(GLib.build_filenamev([pkg.pkgdatadir,
-                                                               'application.css']));
-
+function loadStyleSheet(resource) {
     let provider = new Gtk.CssProvider();
-    provider.load_from_file(file);
+    provider.load_from_file(Gio.File.new_for_uri('resource://' + resource));
     Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(),
                                              provider,
                                              Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
