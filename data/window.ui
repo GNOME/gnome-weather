@@ -53,114 +53,139 @@
       <class name="selection-menu"/>
     </style>
   </object>
+  <object class="GtkHeaderBar" id="header-bar">
+    <property name="visible">True</property>
+    <property name="vexpand">False</property>
+    <child>
+      <object class="GtkButton" id="new-button">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="label" translatable="yes">New</property>
+        <property name="action-name">win.new-location</property>
+        <property name="valign">center</property>
+        <style>
+          <class name="text-button"/>
+        </style>
+      </object>
+      <packing>
+        <property name="pack_type">start</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="world-button">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="label" translatable="yes">World Weather</property>
+        <property name="valign">center</property>
+        <style>
+          <class name="text-button"/>
+        </style>
+      </object>
+      <packing>
+        <property name="pack_type">start</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="select-button">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="action-name">win.selection-mode</property>
+        <property name="action-target">true</property>
+        <property name="valign">center</property>
+        <style>
+          <class name="image-button"/>
+        </style>
+        <child>
+          <object class="GtkImage" id="select-button-image">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="icon-name">object-select-symbolic</property>
+            <property name="icon-size">1</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="pack_type">end</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="done-button">
+        <property name="visible">True</property>
+        <property name="no_show_all">True</property>
+        <property name="can_focus">True</property>
+        <property name="label" translatable="yes">Cancel</property>
+        <property name="valign">center</property>
+        <property name="action-name">win.selection-mode</property>
+        <property name="action-target">false</property>
+        <style>
+          <class name="text-button"/>
+          <class name="suggested-action"/>
+        </style>
+          </object>
+          <packing>
+            <property name="pack_type">end</property>
+          </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="refresh-button">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="action-name">win.refresh</property>
+        <property name="valign">center</property>
+        <style>
+              <class name="image-button"/>
+        </style>
+        <child>
+          <object class="GtkImage" id="refresh-button-image">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="icon-name">view-refresh-symbolic</property>
+            <property name="icon-size">1</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="pack_type">end</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSeparator" id="close-button-separator">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <property name="valign">fill</property>
+      </object>
+      <packing>
+        <property name="pack_type">end</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="close-button">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="valign">center</property>
+        <property name="relief">none</property>
+        <property name="action-name">win.close</property>
+        <style>
+          <class name="image-button"/>
+        </style>
+        <child>
+          <object class="GtkImage" id="close-button-image">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="icon_name">window-close-symbolic</property>
+            <property name="icon_size">1</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="pack_type">end</property>
+      </packing>
+    </child>
+  </object>
   <object class="GtkGrid" id="main-panel">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="orientation">vertical</property>
-    <child>
-      <object class="GtkHeaderBar" id="header-bar">
-        <property name="visible">True</property>
-        <property name="vexpand">False</property>
-        <child>
-          <object class="GtkButton" id="new-button">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="label" translatable="yes">New</property>
-            <property name="action-name">win.new-location</property>
-            <property name="valign">center</property>
-            <style>
-              <class name="text-button"/>
-            </style>
-          </object>
-          <packing>
-            <property name="pack_type">start</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="world-button">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="label" translatable="yes">World Weather</property>
-            <property name="valign">center</property>
-            <style>
-              <class name="text-button"/>
-            </style>
-          </object>
-          <packing>
-            <property name="pack_type">start</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="select-button">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="action-name">win.selection-mode</property>
-            <property name="action-target">true</property>
-            <property name="valign">center</property>
-            <style>
-              <class name="image-button"/>
-            </style>
-            <child>
-              <object class="GtkImage" id="select-button-image">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="icon-name">object-select-symbolic</property>
-                <property name="icon-size">1</property>
-              </object>
-            </child>
-          </object>
-          <packing>
-            <property name="pack_type">end</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="done-button">
-            <property name="visible">True</property>
-            <property name="no_show_all">True</property>
-            <property name="can_focus">True</property>
-            <property name="label" translatable="yes">Cancel</property>
-            <property name="valign">center</property>
-            <property name="action-name">win.selection-mode</property>
-            <property name="action-target">false</property>
-            <style>
-              <class name="text-button"/>
-              <class name="suggested-action"/>
-            </style>
-          </object>
-          <packing>
-            <property name="pack_type">end</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="refresh-button">
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="action-name">win.refresh</property>
-            <property name="valign">center</property>
-            <style>
-              <class name="image-button"/>
-            </style>
-            <child>
-              <object class="GtkImage" id="refresh-button-image">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="icon-name">view-refresh-symbolic</property>
-                <property name="icon-size">1</property>
-              </object>
-            </child>
-          </object>
-          <packing>
-            <property name="pack_type">end</property>
-          </packing>
-        </child>
-      </object>
-      <packing>
-        <property name="left_attach">0</property>
-        <property name="top_attach">0</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
-    </child>
     <child>
       <object class="GtkStack" id="main-stack">
         <property name="transition-type">crossfade</property>
@@ -173,7 +198,7 @@
       </object>
       <packing>
         <property name="left-attach">0</property>
-        <property name="top-attach">1</property>
+        <property name="top-attach">0</property>
         <property name="width">1</property>
         <property name="height">1</property>
       </packing>
@@ -206,7 +231,7 @@
       </object>
       <packing>
         <property name="left-attach">0</property>
-        <property name="top-attach">2</property>
+        <property name="top-attach">1</property>
         <property name="width">1</property>
         <property name="height">1</property>
       </packing>

@@ -83,8 +83,7 @@ const MainWindow = new Lang.Class({
     Extends: Gtk.ApplicationWindow,
 
     _init: function(params) {
-        params = Params.fill(params, { hide_titlebar_when_maximized: true,
-                                       width_request: 700,
+        params = Params.fill(params, { width_request: 700,
                                        height_request: 520 });
         this.parent(params);
 
@@ -98,6 +97,8 @@ const MainWindow = new Lang.Class({
                             activate: this._newLocation },
                           { name: 'about',
                             activate: this._showAbout },
+                          { name: 'close',
+                            activate: this._close },
                           { name: 'new-location',
                             activate: this._newLocation },
                           { name: 'selection-mode',
@@ -118,6 +119,7 @@ const MainWindow = new Lang.Class({
 
         let grid = builder.get_object('main-panel');
         this._header = builder.get_object('header-bar');
+        this.set_titlebar(this._header);
 
         let newButton = builder.get_object('new-button');
         this._pageWidgets[Page.WORLD].push(newButton);
@@ -320,5 +322,9 @@ const MainWindow = new Lang.Class({
         }
 
         this._worldView.iconView.selection_mode = false;
+    },
+
+    _close: function() {
+        this.destroy();
     }
 });
