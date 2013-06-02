@@ -3,7 +3,7 @@
     <section>
       <item>
         <attribute name="label" translatable="yes">_New</attribute>
-        <attribute name="action">win.new</attribute>
+        <attribute name="action">win.new-location</attribute>
         <attribute name="accel">&lt;Primary&gt;n</attribute>
       </item>
     </section>

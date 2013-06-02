@@ -93,14 +93,12 @@ const MainWindow = new Lang.Class({
         this._pageWidgets = [[],[]];
 
         Util.initActions(this,
-                         [{ name: 'new',
+                         [{ name: 'new-location',
                             activate: this._newLocation },
                           { name: 'about',
                             activate: this._showAbout },
                           { name: 'close',
                             activate: this._close },
-                          { name: 'new-location',
-                            activate: this._newLocation },
                           { name: 'selection-mode',
                             activate: this._setSelectionMode,
                             parameter_type: new GLib.VariantType('b'),
