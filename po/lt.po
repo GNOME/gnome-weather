@@ -1,0 +1,314 @@
+# Lithuanian translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Aurimas Černius <aurisc4@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-05-30 23:35+0000\n"
+"PO-Revision-Date: 2013-06-02 14:12+0300\n"
+"Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
+"Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Naujas"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Temperatūros vienetas"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celcijus"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Farenheitas"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "Apie orus"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Išeiti"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
+msgid "Weather"
+msgstr "Orai"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Rodyti orų sąlygas ir prognozes"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Ieškoti miesto:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Nustatyti miestai orams rodyti"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Vietos, rodomas gnome-weather pasaulio vaizde. Kiekviena vertė yra "
+"gweather_location_serialize() grąžintas GVariant."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Žymėti visus"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Nežymėti nieko"
+
+#: ../data/window.ui.h:3
+msgid "Click on items to select them"
+msgstr "Spauskite ant elementų jiems pažymėti"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Nauja"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr "Pasaulio orai"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "Atsisakyti"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "Ištrinti"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "Įkeliama…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Šiandien"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Rytoj"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Daugiau…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Šiandienos prognozė"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Rytojaus prognozė"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Pirmadienio naktis"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Pirmadienio rytas"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Pirmadienio diena"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Pirmadienio vakaras"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Antradienio naktis"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Antradienio rytas"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Antradienio diena"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Antradienio vakaras"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Trečiadienio naktis"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Trečiadienio rytas"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Trečiadienio diena"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Trečiadienio vakaras"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Ketvirtadienio naktis"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Ketvirtadienio rytas"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Ketvirtadienio diena"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Ketvirtadienio vakaras"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Penktadienio naktis"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Penktadienio rytas"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Penktadienio diena"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Penktadienio vakaras"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Šeštadienio naktis"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Šeštadienio rytas"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Šeštadienio diena"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Šeštadienio vakaras"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Sekmadienio naktis"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Sekmadienio rytas"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Sekmadienio diena"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Sekmadienio vakaras"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Ši naktis"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Šis rytas"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Šiandien"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Šis vakaras"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Rytojaus naktis"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Rytojaus rytas"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Rytojaus diena"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Rytojaus vakaras"
+
+#: ../src/window.js:186
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d pažymėtas"
+msgstr[1] "%d pažymėti"
+msgstr[2] "%d pažymėtų"
+
+#: ../src/window.js:190
+msgid "Click on locations to select them"
+msgstr "Spauskite ant vietų joms pažymėti"
+
+#: ../src/window.js:293
+msgid "translator-credits"
+msgstr ""
+"išvertė:\n"
+"Aurimas Černius <aurisc4@gmail.com>"
+
+#: ../src/window.js:295
+msgid "A weather application"
+msgstr "Orų programa"
+
+#: ../src/world.js:211
+msgid "Add locations"
+msgstr "Pridėti vietų"
+
+#: ../src/world.js:214
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr "Naudokite įrankinės mygtuką <b>Nauja</b> pasaulio vietoms pridėti"
