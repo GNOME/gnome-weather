@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-04-02 16:59+0000\n"
-"PO-Revision-Date: 2013-04-02 21:55+0200\n"
+"POT-Creation-Date: 2013-05-30 23:35+0000\n"
+"PO-Revision-Date: 2013-05-31 09:25+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -24,18 +24,26 @@ msgid "_New"
 msgstr "_Nové"
 
 #: ../data/app-menu.ui.h:2
-msgid "_Preferences"
-msgstr "N_astavenia"
+msgid "Temperature unit"
+msgstr "Jednotka teploty"
 
 #: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
 msgid "About Weather"
 msgstr "O programe Počasie"
 
-#: ../data/app-menu.ui.h:4
+#: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Ukončiť"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:341
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
 msgid "Weather"
 msgstr "Počasie"
 
@@ -63,95 +71,6 @@ msgstr ""
 "Každá hodnota reprezentuje GVariant vrátený službou "
 "gweather_location_serialize()."
 
-# Nie som si istý ako sa to zobrazí, ale pokiaľ je to ku „Jednotka vzdialenosti“, tak by som to dal v jednotnom čísle.
-#: ../data/preferences.ui.h:1
-msgid "Meters (m)"
-msgstr "Meter (m)"
-
-#: ../data/preferences.ui.h:2
-msgid "Kilometers (km)"
-msgstr "Kilometer (km)"
-
-#: ../data/preferences.ui.h:3
-msgid "Miles (mi)"
-msgstr "Míľa (mi)"
-
-#: ../data/preferences.ui.h:4
-msgid "Preferences"
-msgstr "Nastavenia"
-
-#: ../data/preferences.ui.h:5
-msgid "Temperature unit:"
-msgstr "Jednotka teploty:"
-
-#: ../data/preferences.ui.h:6
-msgid "Speed unit:"
-msgstr "Jednotka rýchlosti:"
-
-#: ../data/preferences.ui.h:7
-msgid "Distance unit:"
-msgstr "Jednotka vzdialenosti:"
-
-#: ../data/preferences.ui.h:8
-msgid "Pressure unit:"
-msgstr "Jednotka tlaku:"
-
-#: ../data/preferences.ui.h:9
-msgid "Kilopascal (kPa)"
-msgstr "Kilopascal (kPa)"
-
-#: ../data/preferences.ui.h:10
-msgid "Hectopascal (hPa)"
-msgstr "Hektopascal (hPa)"
-
-#: ../data/preferences.ui.h:11
-msgid "Millibar (mbar)"
-msgstr "Milibar (mbar)"
-
-#: ../data/preferences.ui.h:12
-msgid "Millimeters of mercury (mmHg)"
-msgstr "Stĺpec ortuti v milimetroch (mmHg)"
-
-#: ../data/preferences.ui.h:13
-msgid "Inches of mercury (inchHg)"
-msgstr "Stĺpec ortuti v palcoch (inchHg)"
-
-#: ../data/preferences.ui.h:14
-msgid "Atmosphere (atm)"
-msgstr "Atmosféra (atm)"
-
-#: ../data/preferences.ui.h:15
-msgid "Meters per second (m/s)"
-msgstr "Meter za sekundu (m/s)"
-
-#: ../data/preferences.ui.h:16
-msgid "Kilometers per hour (km/h)"
-msgstr "Kilometer za hodinu (km/h)"
-
-#: ../data/preferences.ui.h:17
-msgid "Miles per hour (mph)"
-msgstr "Míľa za hodinu (mph)"
-
-#: ../data/preferences.ui.h:18
-msgid "Knots"
-msgstr "Uzol"
-
-#: ../data/preferences.ui.h:19
-msgid "Beaufort scale"
-msgstr "Beaufortova stupnica"
-
-#: ../data/preferences.ui.h:20
-msgid "Kelvin (K)"
-msgstr "Kelvin (K)"
-
-#: ../data/preferences.ui.h:21
-msgid "Centigrade (°C)"
-msgstr "Stupeň celzia (°C)"
-
-#: ../data/preferences.ui.h:22
-msgid "Fahrenheit (°F)"
-msgstr "Fahrenheit (°F)"
-
 #: ../data/window.ui.h:1
 msgid "Select All"
 msgstr "Vybrať všetko"
@@ -161,16 +80,24 @@ msgid "Select None"
 msgstr "Zrušiť výber"
 
 #: ../data/window.ui.h:3
+msgid "Click on items to select them"
+msgstr "Kliknutím na položky ich vyberiete"
+
+#: ../data/window.ui.h:4
 msgid "New"
 msgstr "Nové"
 
-#: ../data/window.ui.h:4
+#: ../data/window.ui.h:5
 msgid "World Weather"
 msgstr "Počasie vo svete"
 
-#: ../data/window.ui.h:5
-msgid "Done"
-msgstr "Dokončiť"
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "Odstrániť"
 
 #: ../src/city.js:119
 msgid "Loading…"
@@ -361,20 +288,8 @@ msgstr "Zajtra popoludní"
 msgid "Tomorrow evening"
 msgstr "Zajtra večer"
 
-#: ../src/window.js:54
-msgid "Delete"
-msgstr "Odstrániť"
-
-#: ../src/window.js:144
-msgid "Click on items to select them"
-msgstr "Kliknutím na položky ich vyberiete"
-
-#: ../src/window.js:198
-msgid "Click on locations to select them"
-msgstr "Kliknutím na polohy ich vyberiete"
-
 # DK: poloha
-#: ../src/window.js:201
+#: ../src/window.js:186
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -382,24 +297,27 @@ msgstr[0] "%d vybraných"
 msgstr[1] "%d vybraná"
 msgstr[2] "%d vybrané"
 
-# PM: location môže byť aj zemepisná poloha
-#: ../src/window.js:278
-msgid "New Location"
-msgstr "Nová poloha"
+#: ../src/window.js:190
+msgid "Click on locations to select them"
+msgstr "Kliknutím na polohy ich vyberiete"
 
-#: ../src/window.js:340
+#: ../src/window.js:293
 msgid "translator-credits"
 msgstr "Dušan Kazik <prescott66@gmail.com>"
 
-#: ../src/window.js:342
+#: ../src/window.js:295
 msgid "A weather application"
 msgstr "Aplikácia Počasie"
 
-#: ../src/world.js:213
+#: ../src/world.js:211
 msgid "Add locations"
 msgstr "Pridajte polohy"
 
-#: ../src/world.js:216
+#: ../src/world.js:214
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
-"Použitím tlačidla <b>Nové</b> z lišty nástrojov pridáte viac zemepisných polôh"
+"Použitím tlačidla <b>Nové</b> z lišty nástrojov pridáte viac zemepisných "
+"polôh"
+
+#~ msgid "_Preferences"
+#~ msgstr "N_astavenia"
