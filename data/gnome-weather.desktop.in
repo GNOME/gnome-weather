@@ -2,5 +2,5 @@
 Type=Application
 _Name=Weather
 _Comment=Show weather conditions and forecast
-Icon=weather-clear
+Icon=gnome-weather
 Exec=gnome-weather
