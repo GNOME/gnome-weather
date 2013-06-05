@@ -1,3 +1,7 @@
+# I chose to use recursive automake so I can use nobase_ and avoid
+# 5 different directory declarations
+SUBDIRS = icons
+
 resource_files = $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/gnome-weather.gresource.xml)
 gnome-weather.gresource: gnome-weather.gresource.xml $(resource_files)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) $<
