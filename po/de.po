@@ -9,24 +9,40 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-05 22:51+0000\n"
-"PO-Revision-Date: 2013-03-06 10:21+0100\n"
-"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
+"POT-Creation-Date: 2013-05-15 12:46+0000\n"
+"PO-Revision-Date: 2013-06-02 09:52+0100\n"
+"Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Poedit 1.5.5\n"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Neu"
+
+#: ../data/app-menu.ui.h:2
+msgid "About Weather"
+msgstr "Info zu Wetter"
+
+#: ../data/app-menu.ui.h:3
+msgid "Quit"
+msgstr "Beenden"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
 msgid "Weather"
 msgstr "Wetter"
 
 #: ../data/gnome-weather.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Wetterberichte und -vorhersagen anzeigen"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Nach einer Stadt suchen:"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -40,94 +56,114 @@ msgstr ""
 "Die in der Weltansicht von gnome-weather angezeigten Orte. Jeder Wert ist "
 "ein GVariant, das von gweather_location_serialize() zurückgegeben wurde."
 
-#: ../src/city.js:141
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Alle auswählen"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Nichts auswählen"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "Neu"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "Weltwetter"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "Erledigt"
+
+#: ../src/city.js:154
 msgid "Loading…"
 msgstr "Laden …"
 
-#: ../src/forecast.js:104
+#: ../src/forecast.js:112
 msgid "Today"
 msgstr "Heute"
 
-#: ../src/forecast.js:110
+#: ../src/forecast.js:118
 msgid "Tomorrow"
 msgstr "Morgen"
 
-#: ../src/forecast.js:124
+#: ../src/forecast.js:132
 #, c-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:155
+#: ../src/forecast.js:178
 msgid "More…"
 msgstr "Weitere …"
 
-#: ../src/forecast.js:232
+#: ../src/forecast.js:257
 msgid "Forecast for Today"
 msgstr "Vorhersage für heute"
 
-#: ../src/forecast.js:234
+#: ../src/forecast.js:259
 msgid "Forecast for Tomorrow"
 msgstr "Vorhersage für morgen"
 
 # http://php.net/manual/de/function.strftime.php
-#: ../src/forecast.js:238
+#: ../src/forecast.js:263
 msgid "%B %d"
 msgstr "%d. %B"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:267
+#: ../src/forecast.js:300
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:270
+#: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
 
 #: ../src/strings.js:22
 msgid "Monday night"
-msgstr "Montag nachts"
+msgstr "Montagnacht"
 
 #: ../src/strings.js:22
 msgid "Monday morning"
-msgstr "Montag morgens"
+msgstr "Montagmorgen"
 
 #: ../src/strings.js:22
 msgid "Monday afternoon"
-msgstr "Montag nachmittags"
+msgstr "Montagnachmittag"
 
 #: ../src/strings.js:22
 msgid "Monday evening"
-msgstr "Montag abends"
+msgstr "Montagabend"
 
 # http://www.duden.de/rechtschreibung/Dienstagnacht
 #: ../src/strings.js:23
 msgid "Tuesday night"
-msgstr "Dienstag nachts"
+msgstr "Dienstagnacht"
 
 #: ../src/strings.js:23
 msgid "Tuesday morning"
-msgstr "Dienstag morgens"
+msgstr "Dienstagmorgen"
 
 #: ../src/strings.js:23
 msgid "Tuesday afternoon"
-msgstr "Dienstag nachmittags"
+msgstr "Dienstagnachmittag"
 
 #: ../src/strings.js:23
 msgid "Tuesday evening"
-msgstr "Donnerstag abends"
+msgstr "Donnerstagabend"
 
 #: ../src/strings.js:24
 msgid "Wednesday night"
-msgstr "Mittwoch nachts"
+msgstr "Mittwochnacht"
 
 #: ../src/strings.js:24
 msgid "Wednesday morning"
-msgstr "Mittwoch morgens"
+msgstr "Mittwochmorgen"
 
 #: ../src/strings.js:24
 msgid "Wednesday afternoon"
-msgstr "Mittwoch nachmittags"
+msgstr "Mittwochnachmittag"
 
 #: ../src/strings.js:24
 msgid "Wednesday evening"
@@ -135,15 +171,15 @@ msgstr "Mittwochabend"
 
 #: ../src/strings.js:25
 msgid "Thursday night"
-msgstr "Donnerstag nachts"
+msgstr "Donnerstagnacht"
 
 #: ../src/strings.js:25
 msgid "Thursday morning"
-msgstr "Donnerstag morgens"
+msgstr "Donnerstagmorgen"
 
 #: ../src/strings.js:25
 msgid "Thursday afternoon"
-msgstr "Donnerstag nachmittags"
+msgstr "Donnerstagnachmittag"
 
 #: ../src/strings.js:25
 msgid "Thursday evening"
@@ -151,15 +187,15 @@ msgstr "Donnerstagabend"
 
 #: ../src/strings.js:26
 msgid "Friday night"
-msgstr "Freitag nachts"
+msgstr "Freitagnacht"
 
 #: ../src/strings.js:26
 msgid "Friday morning"
-msgstr "Freitag morgens"
+msgstr "Freitagmorgen"
 
 #: ../src/strings.js:26
 msgid "Friday afternoon"
-msgstr "Freitag nachmittags"
+msgstr "Freitagnachmittag"
 
 #: ../src/strings.js:26
 msgid "Friday evening"
@@ -167,15 +203,15 @@ msgstr "Freitagabend"
 
 #: ../src/strings.js:27
 msgid "Saturday night"
-msgstr "Samstag nachts"
+msgstr "Samstagnacht"
 
 #: ../src/strings.js:27
 msgid "Saturday morning"
-msgstr "Samstag morgens"
+msgstr "Samstagmorgen"
 
 #: ../src/strings.js:27
 msgid "Saturday afternoon"
-msgstr "Samstag nachmittags"
+msgstr "Samstagnachmittag"
 
 #: ../src/strings.js:27
 msgid "Saturday evening"
@@ -183,15 +219,15 @@ msgstr "Samstagabend"
 
 #: ../src/strings.js:28
 msgid "Sunday night"
-msgstr "Sonntag nachts"
+msgstr "Sonntagnacht"
 
 #: ../src/strings.js:28
 msgid "Sunday morning"
-msgstr "Sonntag morgens"
+msgstr "Sonntagmorgen"
 
 #: ../src/strings.js:28
 msgid "Sunday afternoon"
-msgstr "Sonntag nachmittags"
+msgstr "Sonntagnachmittag"
 
 #: ../src/strings.js:28
 msgid "Sunday evening"
@@ -223,47 +259,45 @@ msgstr "Morgen früh"
 
 #: ../src/strings.js:32
 msgid "Tomorrow afternoon"
-msgstr "Morgen nachmittags"
+msgstr "Morgen Nachmittag"
 
 #: ../src/strings.js:32
 msgid "Tomorrow evening"
-msgstr "Morgen abends"
+msgstr "Morgen Abend"
 
-#: ../src/window.js:36
-#, c-format
-msgid "%s, %s"
-msgstr "%s, %s"
-
-#: ../src/window.js:69
+#: ../src/window.js:54
 msgid "Delete"
 msgstr "Löschen"
 
-#: ../src/window.js:124
-msgid "New"
-msgstr "Neu"
-
-#: ../src/window.js:129
-msgid "World Weather"
-msgstr "Weltwetter"
-
 #: ../src/window.js:143
-msgid "Done"
-msgstr "Erledigt"
+msgid "Click on items to select them"
+msgstr "Klicken Sie auf Objekte, um diese auszuwählen"
 
-#: ../src/window.js:174 ../src/window.js:199
+#: ../src/window.js:198
 msgid "Click on locations to select them"
 msgstr "Klicken Sie auf Orte, um diese auszuwählen"
 
-#: ../src/window.js:202
+#: ../src/window.js:201
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d ausgewählt"
 msgstr[1] "%d ausgewählt"
 
-#: ../src/window.js:277
+#: ../src/window.js:278
 msgid "New Location"
 msgstr "Neuer Ort"
+
+#: ../src/window.js:339
+msgid "translator-credits"
+msgstr "Christian Kirbach <christian.kirbach@gmail.com>, 2013"
+
+#: ../src/window.js:341
+msgid "A weather application"
+msgstr "Eine Wetter-Anwendung"
+
+#~ msgid "%s, %s"
+#~ msgstr "%s, %s"
 
 #~ msgid "Current conditions:"
 #~ msgstr "Momentane Bedingungen:"
