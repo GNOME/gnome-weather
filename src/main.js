@@ -69,7 +69,7 @@ const Application = new Lang.Class({
         let settings = Gtk.Settings.get_for_screen(Gdk.Screen.get_default());
         settings.gtk_application_prefer_dark_theme = true;
 
-        this.world = GWeather.Location.new_world(true);
+        this.world = GWeather.Location.get_world();
         this.model = new World.WorldModel(this.world);
 
         Util.initActions(this,

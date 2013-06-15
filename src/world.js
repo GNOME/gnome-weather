@@ -72,7 +72,6 @@ const WorldModel = new Lang.Class({
             providers |= GWeather.Provider.OWM;
 
         let info = new GWeather.Info({ location: location,
-                                       forecast_type: GWeather.ForecastType.LIST,
                                        enabled_providers: providers });
         let iter;
         info.connect('updated', Lang.bind(this, function(info) {
