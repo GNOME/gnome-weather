@@ -167,6 +167,7 @@ const WeatherView = new Lang.Class({
     },
 
     _onUpdate: function(info) {
+        this._infoPage.clear();
         this._infoPage.update(info);
         this._spinner.stop();
         this.visible_child_name = 'info';
