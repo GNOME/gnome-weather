@@ -40,16 +40,6 @@ const NewLocationController = new Lang.Class({
         let dialog = builder.get_object('location-dialog');
         let entry = builder.get_object('location-entry');
 
-        entry.connect('changed', function() {
-            if (entry.text == '')
-                entry.secondary_icon_name = 'edit-find-symbolic';
-            else
-                entry.secondary_icon_name = 'edit-clear-symbolic';
-        });
-        entry.connect('icon-release', function() {
-            entry.text = '';
-        });
-
         dialog.add_button(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL);
         dialog.add_button(Gtk.STOCK_ADD, Gtk.ResponseType.OK);
         dialog.set_default_response(Gtk.ResponseType.OK);
