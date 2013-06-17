@@ -1,3 +1,17 @@
+3.9.3
+=====
+* Fixed icon handling in GWeatherLocationEntry due
+  to the ABI change in libgweather
+* Replaced most of libgd with Gtk types (still using
+  GdMainView only)
+* Now using the header bar as a titlebar (fixes the close
+  button when maximized)
+* Includes a new application icon, designed specifically
+  for gnome-weather
+* Once again fixed launching the application in certain
+  "looks-like-source-tree" cases
+* Translation updates
+
 3.9.2
 =====
 * Updated libgd, but mostly replaced with Gtk types
