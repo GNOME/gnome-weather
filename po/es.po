@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-05-15 10:08+0000\n"
+"POT-Creation-Date: 2013-06-15 15:18+0000\n"
 "PO-Revision-Date: 2013-05-17 13:31+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -25,7 +25,6 @@ msgid "_New"
 msgstr "Nueva"
 
 #: ../data/app-menu.ui.h:2
-#| msgid "Temperature unit:"
 msgid "Temperature unit"
 msgstr "Unidad de temperatura"
 
@@ -34,7 +33,6 @@ msgid "Celsius"
 msgstr "Celsius"
 
 #: ../data/app-menu.ui.h:4
-#| msgid "Fahrenheit (°F)"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
@@ -46,7 +44,7 @@ msgstr "Acerca de Meteorología"
 msgid "Quit"
 msgstr "Salir"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:275
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
 msgid "Weather"
 msgstr "Meteorología"
 
@@ -78,9 +76,9 @@ msgstr "Seleccionar todo"
 msgid "Select None"
 msgstr "Seleccionar nada"
 
-#: ../data/window.ui.h:3
-msgid "Click on items to select them"
-msgstr "Pulse sobre los elementos para seleccionarlos"
+#: ../data/window.ui.h:3 ../src/window.js:190
+msgid "Click on locations to select them"
+msgstr "Pulse sobre las ubicaciones para seleccionarlas"
 
 #: ../data/window.ui.h:4
 msgid "New"
@@ -285,38 +283,36 @@ msgstr "Mañana por la tarde"
 msgid "Tomorrow evening"
 msgstr "Mañana a medianoche"
 
-#: ../src/window.js:136
+#: ../src/window.js:186
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionada"
 msgstr[1] "%d seleccionadas"
 
-#: ../src/window.js:140
-msgid "Click on locations to select them"
-msgstr "Pulse sobre las ubicaciones para seleccionarlas"
-
-#: ../src/window.js:212
-msgid "New Location"
-msgstr "Ubicación nueva"
-
-#: ../src/window.js:274
+#: ../src/window.js:293
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013"
 
-#: ../src/window.js:276
+#: ../src/window.js:295
 msgid "A weather application"
 msgstr "Una aplicación de meteorología"
 
-#: ../src/world.js:212
+#: ../src/world.js:211
 msgid "Add locations"
 msgstr "Añadir ubicaciones"
 
-#: ../src/world.js:215
+#: ../src/world.js:214
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Use el botón <b>Nueva</b> en la barra de herramientas para añadir más "
 "ubicaciones mundiales."
+
+#~ msgid "Click on items to select them"
+#~ msgstr "Pulse sobre los elementos para seleccionarlos"
+
+#~ msgid "New Location"
+#~ msgstr "Ubicación nueva"
 
 #~ msgid "_Preferences"
 #~ msgstr "_Preferencias"
