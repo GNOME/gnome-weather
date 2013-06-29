@@ -1,0 +1,380 @@
+# Korean translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Jinkyu Yi <jincreator@jincreator.net>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-06-16 07:49+0000\n"
+"PO-Revision-Date: 2013-04-29 22:46+0900\n"
+"Last-Translator: Jinkyu Yi <jincreator@jincreator.net>\n"
+"Language-Team: Korean <gnome-kr@googlegroups.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "새 날씨(_N)"
+
+#: ../data/app-menu.ui.h:2
+#, fuzzy
+#| msgid "Temperature unit:"
+msgid "Temperature unit"
+msgstr "온도 단위:"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr ""
+
+#: ../data/app-menu.ui.h:4
+#, fuzzy
+#| msgid "Fahrenheit (°F)"
+msgid "Fahrenheit"
+msgstr "화씨 온도(°F)"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "날씨 정보"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "끝내기"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:284
+msgid "Weather"
+msgstr "날씨"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "날씨와 일기 예보 보기"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "도시로 검색:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "날씨를 보도록 구성한 도시"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"gnome-weather의 세계 보기에 나오는 지역입니다. 각 값은 "
+"gweather_location_serialize()에서 반환한 GVariant형입니다."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "모두 선택"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "모두 선택 해제"
+
+#: ../data/window.ui.h:3 ../src/window.js:180
+msgid "Click on locations to select them"
+msgstr "지역을 눌러서 선택"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "새 날씨"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr "세계 날씨"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr ""
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "삭제"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "읽어오는 중…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "오늘"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "내일"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "더 보기…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "오늘의 날씨"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "내일의 날씨"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d일"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "월요일 밤"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "월요일 아침"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "월요일 점심"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "월요일 저녁"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "화요일 밤"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "화요일 아침"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "화요일 점심"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "화요일 저녁"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "수요일 밤"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "수요일 아침"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "수요일 점심"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "수요일 저녁"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "목요일 밤"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "목요일 아침"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "목요일 점심"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "목요일 저녁"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "금요일 밤"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "금요일 아침"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "금요일 점심"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "금요일 저녁"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "토요일 밤"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "토요일 아침"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "토요일 점심"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "토요일 저녁"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "일요일 밤"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "일요일 아침"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "일요일 점심"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "일요일 저녁"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "오늘밤"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "오늘 아침"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "오늘 점심"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "오늘 저녁"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "내일 밤"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "내일 아침"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "내일 점심"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "내일 저녁"
+
+#: ../src/window.js:176
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d개 선택함"
+
+#: ../src/window.js:283
+msgid "translator-credits"
+msgstr "Jinkyu Yi <jincreator@jincreator.net>"
+
+#: ../src/window.js:285
+msgid "A weather application"
+msgstr "날씨 프로그램"
+
+#: ../src/world.js:211
+msgid "Add locations"
+msgstr "지역 추가"
+
+#: ../src/world.js:214
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr "도구 모음의 <b>새 날씨</b> 단추를 눌러 다른 세계 지역 추가"
+
+#~ msgid "_Preferences"
+#~ msgstr "기본 설정(_P)"
+
+#~ msgid "Meters (m)"
+#~ msgstr "미터(m)"
+
+#~ msgid "Kilometers (km)"
+#~ msgstr "킬로미터(km)"
+
+#~ msgid "Miles (mi)"
+#~ msgstr "마일(mi)"
+
+#~ msgid "Preferences"
+#~ msgstr "기본 설정"
+
+#~ msgid "Speed unit:"
+#~ msgstr "속도 단위:"
+
+#~ msgid "Distance unit:"
+#~ msgstr "거리 단위:"
+
+#~ msgid "Pressure unit:"
+#~ msgstr "압력 단위:"
+
+#~ msgid "Kilopascal (kPa)"
+#~ msgstr "킬로파스칼(kPa)"
+
+#~ msgid "Hectopascal (hPa)"
+#~ msgstr "헥토파스칼(hPa)"
+
+#~ msgid "Millibar (mbar)"
+#~ msgstr "밀리바(mbar)"
+
+#~ msgid "Millimeters of mercury (mmHg)"
+#~ msgstr "수은 기둥의 밀리미터 단위 높이(mmHg)"
+
+#~ msgid "Inches of mercury (inchHg)"
+#~ msgstr "수은 기둥의 인치 단위 높이(inchHg)"
+
+#~ msgid "Atmosphere (atm)"
+#~ msgstr "기압(atm)"
+
+#~ msgid "Meters per second (m/s)"
+#~ msgstr "초당 미터(m/s)"
+
+#~ msgid "Kilometers per hour (km/h)"
+#~ msgstr "시간당 킬로미터(km/h)"
+
+#~ msgid "Miles per hour (mph)"
+#~ msgstr "시간당 마일(mph)"
+
+#~ msgid "Knots"
+#~ msgstr "노트"
+
+#~ msgid "Beaufort scale"
+#~ msgstr "보퍼트 계급"
+
+#~ msgid "Kelvin (K)"
+#~ msgstr "켈빈(K)"
+
+#~ msgid "Centigrade (°C)"
+#~ msgstr "섭씨 온도(°C)"
+
+#~ msgid "Done"
+#~ msgstr "완료"
+
+#~ msgid "Click on items to select them"
+#~ msgstr "항목을 눌러서 선택"
+
+#~ msgid "New Location"
+#~ msgstr "새 지역"
