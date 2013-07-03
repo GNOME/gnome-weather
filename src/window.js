@@ -129,7 +129,13 @@ const MainWindow = new Lang.Class({
         let selectionMenu = builder.get_object("selection-menu");
 
         this._selectionMenuButton = builder.get_object('selection-menu-button');
+        this._selectionMenuButtonLabel = builder.get_object('selection-menu-button-label');
         this._stack = builder.get_object('main-stack');
+
+        let closeButton = builder.get_object('close-button');
+        let closeButtonSeparator = builder.get_object('close-button-separator');
+
+        this._deleteButton = builder.get_object('delete-button');
 
         this._cityView = new City.WeatherView({ hexpand: true,
                                                 vexpand: true });
@@ -156,6 +162,10 @@ const MainWindow = new Lang.Class({
 
         iconView.bind_property('selection-mode', newButton, 'visible',
                                GObject.BindingFlags.INVERT_BOOLEAN);
+        iconView.bind_property('selection-mode', closeButtonSeparator, 'visible',
+                               GObject.BindingFlags.INVERT_BOOLEAN);
+        iconView.bind_property('selection-mode', closeButton, 'visible',
+                               GObject.BindingFlags.INVERT_BOOLEAN);
         iconView.bind_property('selection-mode', select, 'visible',
                                GObject.BindingFlags.INVERT_BOOLEAN);
         iconView.bind_property('selection-mode', selectDone, 'visible',
@@ -171,16 +181,20 @@ const MainWindow = new Lang.Class({
         iconView.connect('view-selection-changed', Lang.bind(this, function() {
             let items = iconView.get_selection();
             let label;
+            let sensitive;
 
             if (items.length > 0) {
                 label = Gettext.ngettext("%d selected",
                                          "%d selected",
                                          items.length).format(items.length);
+                sensitive = true;
             } else {
                 label = _("Click on locations to select them");
+                sensitive = false;
             }
 
-            this._selectionMenuButton.set_label(label);
+            this._selectionMenuButtonLabel.label = label;
+            this._deleteButton.sensitive = sensitive;
         }));
 
         this.add(grid);
@@ -257,6 +271,7 @@ const MainWindow = new Lang.Class({
 
     _setSelectionMode: function(action, param) {
         this._worldView.iconView.selection_mode = param.get_boolean();
+        this._deleteButton.sensitive = false;
     },
 
     _selectAll: function() {

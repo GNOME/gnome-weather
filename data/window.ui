@@ -214,6 +214,7 @@
             <child>
               <object class="GtkButton" id="delete-button">
                 <property name="visible">True</property>
+                <property name="sensitive">False</property>
                 <property name="can_focus">True</property>
                 <property name="label" translatable="yes">Delete</property>
                 <property name="action-name">win.delete-selected</property>
@@ -223,7 +224,7 @@
                 </style>
               </object>
               <packing>
-                <property name="pack_type">start</property>
+                <property name="pack_type">end</property>
               </packing>
             </child>
           </object>
