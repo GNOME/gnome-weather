@@ -1,0 +1,306 @@
+# Indonesian translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Andika Triwidada <andika@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-06-29 16:36+0000\n"
+"PO-Revision-Date: 2013-07-04 10:19+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
+"Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.5\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Baru"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Satuan suhu"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "Tentang Cuaca"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Keluar"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:284
+msgid "Weather"
+msgstr "Cuaca"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Tampilkan kondisi dan ramalan cuaca"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "Cari kota:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Kota yang ditata untuk ditampilkan cuacanya"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Lokasi ditunjukkan dalam tampilan dunia gnome-weather. Setiap nilai adalah "
+"GVariant yang dikembalikan oleh gweather_location_serialize()."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Pilih Semua"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Pilih Tak Satupun"
+
+#: ../data/window.ui.h:3 ../src/window.js:180
+msgid "Click on locations to select them"
+msgstr "Klik pada lokasi untuk memilihnya"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Baru"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr "Cuaca Dunia"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "Batal"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "Hapus"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "Memuat..."
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Hari Ini"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Besok"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Lebih Banyak..."
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Ramalan Hari Ini"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Ramalan Besok"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%d %B"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Senin malam"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Senin pagi"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Senin siang"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Senin sore"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Selasa malam"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Selasa pagi"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Selasa siang"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Selasa sore"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Rabu malam"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Rabu pagi"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Rabu siang"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Rabu sore"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Kamis malam"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Kamis pagi"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Kamis siang"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Kamis sore"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Jumat malam"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Jumat pagi"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Jumat siang"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Jumat sore"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Sabtu malam"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Sabtu pagi"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Sabtu siang"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Sabtu sore"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Minggu malam"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Minggu pagi"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Minggu siang"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Minggu sore"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Malam ini"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Pagi ini"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Siang ini"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Sore ini"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Besok malam"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Besok pagi"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Besok siang"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Besok sore"
+
+#: ../src/window.js:176
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d dipilih"
+
+#: ../src/window.js:283
+msgid "translator-credits"
+msgstr "Andika Triwidada <andika@gmail.com>, 2013"
+
+#: ../src/window.js:285
+msgid "A weather application"
+msgstr "Aplikasi cuaca"
+
+#: ../src/world.js:211
+msgid "Add locations"
+msgstr "Tambah lokasi"
+
+#: ../src/world.js:214
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"Gunakan tombol <b>Baru</b> pada bilah alat untuk menambah lebih banyak lokasi"
