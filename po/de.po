@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the gnome-weather package.
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2013.
 # Christian Kirbach <christian.kirbach@gmail.com>, 2013.
+# Benjamin Steinwender <b@stbe.at>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-05-15 12:46+0000\n"
-"PO-Revision-Date: 2013-06-02 09:52+0100\n"
+"POT-Creation-Date: 2013-06-18 14:30+0000\n"
+"PO-Revision-Date: 2013-06-28 05:16+0100\n"
 "Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -25,14 +26,26 @@ msgid "_New"
 msgstr "_Neu"
 
 #: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Temperatureinheit:"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Grad Celsius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Grad Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
 msgid "About Weather"
 msgstr "Info zu Wetter"
 
-#: ../data/app-menu.ui.h:3
+#: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Beenden"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:284
 msgid "Weather"
 msgstr "Wetter"
 
@@ -64,19 +77,27 @@ msgstr "Alle auswählen"
 msgid "Select None"
 msgstr "Nichts auswählen"
 
-#: ../data/window.ui.h:3
+#: ../data/window.ui.h:3 ../src/window.js:180
+msgid "Click on locations to select them"
+msgstr "Klicken Sie auf Orte, um diese auszuwählen"
+
+#: ../data/window.ui.h:4
 msgid "New"
 msgstr "Neu"
 
-#: ../data/window.ui.h:4
+#: ../data/window.ui.h:5
 msgid "World Weather"
 msgstr "Weltwetter"
 
-#: ../data/window.ui.h:5
-msgid "Done"
-msgstr "Erledigt"
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "Abbrechen"
 
-#: ../src/city.js:154
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "Löschen"
+
+#: ../src/city.js:119
 msgid "Loading…"
 msgstr "Laden …"
 
@@ -265,45 +286,42 @@ msgstr "Morgen Nachmittag"
 msgid "Tomorrow evening"
 msgstr "Morgen Abend"
 
-#: ../src/window.js:54
-msgid "Delete"
-msgstr "Löschen"
-
-#: ../src/window.js:143
-msgid "Click on items to select them"
-msgstr "Klicken Sie auf Objekte, um diese auszuwählen"
-
-#: ../src/window.js:198
-msgid "Click on locations to select them"
-msgstr "Klicken Sie auf Orte, um diese auszuwählen"
-
-#: ../src/window.js:201
+#: ../src/window.js:176
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d ausgewählt"
 msgstr[1] "%d ausgewählt"
 
-#: ../src/window.js:278
-msgid "New Location"
-msgstr "Neuer Ort"
-
-#: ../src/window.js:339
+#: ../src/window.js:283
 msgid "translator-credits"
 msgstr "Christian Kirbach <christian.kirbach@gmail.com>, 2013"
 
-#: ../src/window.js:341
+#: ../src/window.js:285
 msgid "A weather application"
 msgstr "Eine Wetter-Anwendung"
+
+#: ../src/world.js:211
+msgid "Add locations"
+msgstr "Orte hinzufügen"
+
+#: ../src/world.js:214
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"Verwenden Sie den »Neu«-Knopf auf der Werkzeugleiste, um weitere Orte "
+"hinzuzufügen"
+
+#~ msgid "Done"
+#~ msgstr "Erledigt"
+
+#~ msgid "Click on items to select them"
+#~ msgstr "Klicken Sie auf Objekte, um diese auszuwählen"
 
 #~ msgid "%s, %s"
 #~ msgstr "%s, %s"
 
 #~ msgid "Current conditions:"
 #~ msgstr "Momentane Bedingungen:"
-
-#~ msgid "Temperature: "
-#~ msgstr "Temperatur:"
 
 #~ msgid "Wind: "
 #~ msgstr "Wind: "
