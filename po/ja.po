@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-clocks master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-18 19:04+0000\n"
+"POT-Creation-Date: 2013-06-18 14:30+0000\n"
 "PO-Revision-Date: 2013-03-20 00:12+0900\n"
 "Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -22,14 +22,26 @@ msgid "_New"
 msgstr "新規(_N)"
 
 #: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "温度の単位"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "摂氏 (℃)"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "華氏 (℉)"
+
+#: ../data/app-menu.ui.h:5
 msgid "About Weather"
 msgstr "このアプリケーションについて"
 
-#: ../data/app-menu.ui.h:3
+#: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "終了"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:284
 msgid "Weather"
 msgstr "天気"
 
@@ -57,19 +69,27 @@ msgstr "すべて選択"
 msgid "Select None"
 msgstr "何も選択しない"
 
-#: ../data/window.ui.h:3
+#: ../data/window.ui.h:3 ../src/window.js:180
+msgid "Click on locations to select them"
+msgstr "選択する場所をクリックします"
+
+#: ../data/window.ui.h:4
 msgid "New"
 msgstr "新規"
 
-#: ../data/window.ui.h:4
+#: ../data/window.ui.h:5
 msgid "World Weather"
 msgstr "各地の天気"
 
-#: ../data/window.ui.h:5
-msgid "Done"
-msgstr "完了"
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "キャンセル"
 
-#: ../src/city.js:154
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "削除"
+
+#: ../src/city.js:119
 msgid "Loading…"
 msgstr "ロード中…"
 
@@ -256,32 +276,30 @@ msgstr "明日 昼"
 msgid "Tomorrow evening"
 msgstr "明日 夜"
 
-#: ../src/window.js:54
-msgid "Delete"
-msgstr "削除"
-
-#: ../src/window.js:143
-msgid "Click on items to select them"
-msgstr "選択するアイテムをクリックします"
-
-#: ../src/window.js:198
-msgid "Click on locations to select them"
-msgstr "選択する場所をクリックします"
-
-#: ../src/window.js:201
+#: ../src/window.js:176
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d 件選択"
 
-#: ../src/window.js:278
-msgid "New Location"
-msgstr "新しい場所"
-
-#: ../src/window.js:339
+#: ../src/window.js:283
 msgid "translator-credits"
 msgstr "松澤二郎 <jmatsuzawa@gnome.org>"
 
-#: ../src/window.js:341
+#: ../src/window.js:285
 msgid "A weather application"
 msgstr "天気アプリケーション"
+
+#: ../src/world.js:211
+msgid "Add locations"
+msgstr "場所の追加"
+
+#: ../src/world.js:214
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr "ツールバーの<b>新規</b>ボタンを押して、場所を追加してください。"
+
+#~ msgid "Done"
+#~ msgstr "完了"
+
+#~ msgid "Click on items to select them"
+#~ msgstr "選択するアイテムをクリックします"
