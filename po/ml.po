@@ -1,0 +1,304 @@
+# Malayalam translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Balasankar C <c.balasankar@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-07-08 15:52+0000\n"
+"PO-Revision-Date: 2013-07-12 21:20+0530\n"
+"Last-Translator: Balasankar C <c.balasankar@gmail.com>\n"
+"Language-Team: Swathanthra Malayalam Computing\n"
+"Language: ml\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_പുതിയ "
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "താപനിലയുടെ യൂണിറ്റ്"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "സെല്‍ഷ്യസ്"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "ഫാരന്‍ഹീറ്റ്"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "കാലാവസ്ഥയെ കുറിച്ച്"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "പുറത്ത് കടക്കുക"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:284
+msgid "Weather"
+msgstr "കാലാവസ്ഥ"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "കാലാവസ്ഥയുടെ നിഅയും പ്രവചനവും കാണിക്കുക"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "ഒരു നഗരത്തിനായി തിരയുക"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "കാലാവസ്ഥ കാണിക്കുന്നതിനായി ക്രമപ്പെടുത്തിയിരിക്കുന്ന നഗരങ്ങൾ"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "എല്ലാം തെരഞ്ഞെടുക്കുക"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "ഒന്നും തെരഞ്ഞെടുക്കേണ്ട"
+
+#: ../data/window.ui.h:3 ../src/window.js:180
+msgid "Click on locations to select them"
+msgstr "സ്ഥലങ്ങൾ തിരഞ്ഞെടുക്കാനായി അവയിൽ ഞെക്കുക"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "പുതിയ"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr "ലോക കാലാവസ്ഥ"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "റദ്ദാക്കുക"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "മായ്‌‌യ്ക്കുക"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "ലഭ്യമാക്കിക്കൊണ്ടിരിക്കുന്നു"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "ഇന്ന്"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "നാളെ"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "കൂടുതല്‍"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "ഇന്നത്തേക്കുള്ള പ്രവചനം"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "നാളത്തേക്കുള്ള പ്രവചനം"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l:%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "തിങ്കളാഴ്ച രാത്രി"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "തിങ്കളാഴ്ച രാവിലെ"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "തിങ്കളാഴ്ച ഉച്ച തിരിഞ്ഞ്"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "തിങ്കളാഴ്ച വൈകുന്നേരം"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "ചൊവ്വാഴ്ച രാത്രി"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "ചൊവ്വാഴ്ച  രാവിലെ"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "ചൊവ്വാഴ്ച  ഉച്ച തിരിഞ്ഞ്"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "ചൊവ്വാഴ്ച  വൈകുന്നേരം"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "ബുധനാഴ്ച രാത്രി"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "ബുധനാഴ്ച രാവിലെ"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "ബുധനാഴ്ച ഉച്ച തിരിഞ്ഞ്"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "ബുധനാഴ്ച വൈകുന്നേരം"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "വ്യാഴാഴ്ച രാത്രി"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "വ്യാഴാഴ്ച രാവിലെ"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "വ്യാഴാഴ്ച ഉച്ച തിരിഞ്ഞ്"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "വ്യാഴാഴ്ച വൈകുന്നേരം"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "വെള്ളിയാഴ്ച രാത്രി"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "വെള്ളിയാഴ്ച രാവിലെ"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "വെള്ളിയാഴ്ച ഉച്ച തിരിഞ്ഞ്"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "വെള്ളിയാഴ്ച വൈകുന്നേരം"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "ശനിയാഴ്ച രാത്രി"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "ശനിയാഴ്ച രാവിലെ"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "ശനിയാഴ്ച ഉച്ച തിരിഞ്ഞ്"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "ശനിയാഴ്ച വൈകുന്നേരം"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "ഞായറാഴ്ച രാത്രി"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "ഞായറാഴ്ച രാവിലെ"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "ഞായറാഴ്ച ഉച്ച തിരിഞ്ഞ്"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "ഞായറാഴ്ച വൈകുന്നേരം"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "ഇന്ന് രാത്രി"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "ഇന്ന് രാവിലെ"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "ഇന്ന് ഉച്ചതിരിഞ്ഞ്"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "ഇന്ന് വൈകുന്നേരം"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "നാളെ രാത്രി"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "നാളെ രാവിലെ"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "നാളെ ഉച്ച തിരിഞ്ഞ്"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "നാളെ വൈകുന്നേരം"
+
+#: ../src/window.js:176
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d തിരഞ്ഞെടുത്തിരിക്കുന്നു"
+msgstr[1] "%d എന്നിവ തിരഞ്ഞെടുത്തിരിക്കുന്നു"
+
+#: ../src/window.js:283
+msgid "translator-credits"
+msgstr "ബാലശങ്കർ സി <c.balasankar@gmail.com>"
+
+#: ../src/window.js:285
+msgid "A weather application"
+msgstr "ഒരു കാലാവസ്ഥാ പ്രയോഗം"
+
+#: ../src/world.js:211
+msgid "Add locations"
+msgstr "സ്ഥലങ്ങൾ ചേർക്കുക"
+
+#: ../src/world.js:214
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr "കൂടുതൽ സ്ഥലങ്ങൾ ചേർക്കാൻ ഉപകരണപ്പട്ടയിലെ <b>പുതിയ</b> ബട്ടൺ ഉപയോഗിക്കുക"
