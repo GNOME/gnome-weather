@@ -66,10 +66,14 @@ const WorldModel = new Lang.Class({
     },
 
     _addLocationInternal: function(location) {
+        let providers = (GWeather.Provider.METAR |
+                         GWeather.Provider.YR_NO);
+        if ('OWM' in GWeather.Provider)
+            providers |= GWeather.Provider.OWM;
+
         let info = new GWeather.Info({ location: location,
                                        forecast_type: GWeather.ForecastType.LIST,
-                                       enabled_providers: (GWeather.Provider.METAR |
-                                                           GWeather.Provider.YR_NO) });
+                                       enabled_providers: providers });
         let iter;
         info.connect('updated', Lang.bind(this, function(info) {
             let icon = Util.loadIcon(info.get_symbolic_icon_name(), ICON_SIZE);
