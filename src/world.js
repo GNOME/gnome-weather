@@ -55,6 +55,14 @@ const WorldModel = new Lang.Class({
 
         this._settings = Util.getSettings('org.gnome.Weather.Application');
 
+        let provider_override = GLib.getenv('GWEATHER_DEBUG_BACKEND');
+        if (provider_override) {
+            this._providers = GWeather.Provider.METAR | GWeather.Provider[provider_override];
+        } else {
+            this._providers = GWeather.Provider.METAR | GWeather.Provider.YR_NO |
+                GWeather.Provider.OWM;
+        }
+
         let locations = this._settings.get_value('locations').deep_unpack();
         for (let i = 0; i < locations.length; i++) {
             let variant = locations[i];
@@ -66,13 +74,8 @@ const WorldModel = new Lang.Class({
     },
 
     _addLocationInternal: function(location) {
-        let providers = (GWeather.Provider.METAR |
-                         GWeather.Provider.YR_NO);
-        if ('OWM' in GWeather.Provider)
-            providers |= GWeather.Provider.OWM;
-
         let info = new GWeather.Info({ location: location,
-                                       enabled_providers: providers });
+                                       enabled_providers: this._providers });
         let iter;
         info.connect('updated', Lang.bind(this, function(info) {
             let icon = Util.loadIcon(info.get_symbolic_icon_name(), ICON_SIZE);
