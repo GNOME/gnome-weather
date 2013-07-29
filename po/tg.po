@@ -1,0 +1,304 @@
+# Tajik translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-07-21 14:38+0000\n"
+"PO-Revision-Date: 2013-07-29 12:47-0000\n"
+"Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
+"Language-Team: Tajik <tg@li.org>\n"
+"Language: tg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Нав"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr ""
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr ""
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr ""
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr ""
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr ""
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:299
+msgid "Weather"
+msgstr ""
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr ""
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr ""
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr ""
+
+#: ../data/window.ui.h:3 ../src/window.js:192
+msgid "Click on locations to select them"
+msgstr ""
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr ""
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr ""
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr ""
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr ""
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr ""
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr ""
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr ""
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr ""
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr ""
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr ""
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr ""
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr ""
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr ""
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr ""
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr ""
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr ""
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr ""
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr ""
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr ""
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr ""
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr ""
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr ""
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr ""
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr ""
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr ""
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr ""
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr ""
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr ""
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr ""
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr ""
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr ""
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr ""
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr ""
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr ""
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr ""
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr ""
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr ""
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr ""
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr ""
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr ""
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr ""
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr ""
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr ""
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr ""
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr ""
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr ""
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr ""
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr ""
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr ""
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr ""
+
+#: ../src/window.js:187
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/window.js:298
+msgid "translator-credits"
+msgstr ""
+
+#: ../src/window.js:300
+msgid "A weather application"
+msgstr ""
+
+#: ../src/world.js:217
+msgid "Add locations"
+msgstr ""
+
+#: ../src/world.js:220
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
