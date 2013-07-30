@@ -1,3 +1,10 @@
+3.9.5
+=====
+* Fixed selection mode to latest mockups
+* Enabled OpenWeatherMap backend
+* Updated for libgweather API changes
+* Translation updates
+ 
 3.9.3
 =====
 * Fixed icon handling in GWeatherLocationEntry due
