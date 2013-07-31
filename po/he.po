@@ -7,20 +7,43 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-28 14:41+0200\n"
-"PO-Revision-Date: 2012-12-28 14:45+0200\n"
+"POT-Creation-Date: 2013-07-31 12:25+0300\n"
+"PO-Revision-Date: 2013-07-31 12:28+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <sh.yaron@gmail.com>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Hebrew\n"
-"X-Poedit-Country: ISRAEL\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.4\n"
 
-#: ../data/gnome-weather.desktop.in.h:1
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_חדש"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "יחידת מעלות"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "צלזיוס"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "פרנהייט"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "על אודות מזג האוויר"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "יציאה"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:299
 msgid "Weather"
 msgstr "מזג האוויר"
 
@@ -28,171 +51,263 @@ msgstr "מזג האוויר"
 msgid "Show weather conditions and forecast"
 msgstr "הצגת תנאים ואת תחזית מזג האוויר"
 
-#: ../src/widget.py:34
-msgid "Location: "
-msgstr "מיקום:"
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "חיפוש אחר עיר:"
 
-#: ../src/conditions.py:26
-msgid "Current conditions:"
-msgstr "התנאים הנוכחיים:"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Configured cities to show weather for"
 
-#: ../src/conditions.py:47
-msgid "Temperature: "
-msgstr "מעלות:"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
 
-#: ../src/conditions.py:49
-msgid "Wind: "
-msgstr "רוח:"
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "בחירת הכול"
 
-#: ../src/forecast.py:86
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "בחירת כלום"
+
+#: ../data/window.ui.h:3 ../src/window.js:192
+msgid "Click on locations to select them"
+msgstr "יש ללחוץ על מיקומים כדי לבחור אותם"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "חדש"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr "מזג האוויר בעולם"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "ביטול"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "מחיקה"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "בטעינה…"
+
+#: ../src/forecast.js:112
 msgid "Today"
 msgstr "היום"
 
-#: ../src/forecast.py:91
+#: ../src/forecast.js:118
 msgid "Tomorrow"
 msgstr "מחר"
 
-#: ../src/strings.py:22
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "עוד…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "תחזית להיום"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "תחזית למחר"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%H∶%M"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
 msgid "Monday night"
 msgstr "יום שני בלילה"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday morning"
 msgstr "יום שני בבוקר"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday afternoon"
 msgstr "יום שני אחה״צ"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday evening"
 msgstr "יום שני בערב"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday night"
 msgstr "יום שלישי בלילה"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday morning"
 msgstr "יום שלישי בבוקר"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday afternoon"
 msgstr "יום שלישי אחה״צ"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday evening"
 msgstr "יום שלישי בערב"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday night"
 msgstr "יום רביעי בלילה"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday morning"
 msgstr "יום רביעי בבוקר"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday afternoon"
 msgstr "יום רביעי אחה״צ"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday evening"
 msgstr "יום רביעי בערב"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday night"
 msgstr "יום חמישי בלילה"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday morning"
 msgstr "יום חמישי בבוקר"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday afternoon"
 msgstr "יום חמישי אחה״צ"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday evening"
 msgstr "יום חמישי בערב"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday night"
 msgstr "יום שישי בלילה"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday morning"
 msgstr "יום שישי בבוקר"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday afternoon"
 msgstr "יום שישי אחה״צ"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday evening"
 msgstr "יום שישי בערב"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday night"
 msgstr "יום שבת בלילה"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday morning"
 msgstr "יום שבת בבוקר"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday afternoon"
 msgstr "יום שבת אחה״צ"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday evening"
 msgstr "יום שישי בערב"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday night"
 msgstr "יום ראשון בלילה"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday morning"
 msgstr "יום ראשון בבוקר"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday afternoon"
 msgstr "יום ראשון אחה״צ"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday evening"
 msgstr "יום ראשון בערב"
 
-#: ../src/strings.py:31
-msgid "This night"
+#: ../src/strings.js:31
+msgid "Tonight"
 msgstr "הלילה"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This morning"
 msgstr "הבוקר"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This afternoon"
 msgstr "היום אחה״צ"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This evening"
 msgstr "הערב"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow night"
 msgstr "מחר בלילה"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow morning"
 msgstr "מחר בבוקר"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow afternoon"
 msgstr "מחר אחה״צ"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow evening"
 msgstr "מחר בערב"
 
+#: ../src/window.js:187
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "נבחרה אחת"
+msgstr[1] "נבחרו %d"
+
+#: ../src/window.js:298
+msgid "translator-credits"
+msgstr "ירון שהרבני <sh.yaron@gmail.com>"
+
+#: ../src/window.js:300
+msgid "A weather application"
+msgstr "יישום מזג אוויר"
+
+#: ../src/world.js:217
+msgid "Add locations"
+msgstr "הוספת מיקומים"
+
+#: ../src/world.js:220
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"יש להשתמש בלחצן <b>חדש</b> בסרגל הכלים כדי להוסיף מיקומים נוספים ברחבי העולם"
+
+#~ msgid "Current conditions:"
+#~ msgstr "התנאים הנוכחיים:"
+
+#~ msgid "Wind: "
+#~ msgstr "רוח:"
