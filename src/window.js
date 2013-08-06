@@ -132,9 +132,6 @@ const MainWindow = new Lang.Class({
         this._selectionMenuButtonLabel = builder.get_object('selection-menu-button-label');
         this._stack = builder.get_object('main-stack');
 
-        let closeButton = builder.get_object('close-button');
-        let closeButtonSeparator = builder.get_object('close-button-separator');
-
         this._deleteButton = builder.get_object('delete-button');
 
         this._cityView = new City.WeatherView({ hexpand: true,
@@ -162,9 +159,7 @@ const MainWindow = new Lang.Class({
 
         iconView.bind_property('selection-mode', newButton, 'visible',
                                GObject.BindingFlags.INVERT_BOOLEAN);
-        iconView.bind_property('selection-mode', closeButtonSeparator, 'visible',
-                               GObject.BindingFlags.INVERT_BOOLEAN);
-        iconView.bind_property('selection-mode', closeButton, 'visible',
+        iconView.bind_property('selection-mode', this._header, 'show-close-button',
                                GObject.BindingFlags.INVERT_BOOLEAN);
         iconView.bind_property('selection-mode', select, 'visible',
                                GObject.BindingFlags.INVERT_BOOLEAN);

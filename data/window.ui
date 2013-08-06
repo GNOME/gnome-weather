@@ -56,6 +56,7 @@
   <object class="GtkHeaderBar" id="header-bar">
     <property name="visible">True</property>
     <property name="vexpand">False</property>
+    <property name="show-close-button">True</property>
     <child>
       <object class="GtkButton" id="new-button">
         <property name="visible">True</property>
@@ -141,39 +142,6 @@
             <property name="can_focus">False</property>
             <property name="icon-name">view-refresh-symbolic</property>
             <property name="icon-size">1</property>
-          </object>
-        </child>
-      </object>
-      <packing>
-        <property name="pack_type">end</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkSeparator" id="close-button-separator">
-        <property name="visible">True</property>
-        <property name="orientation">vertical</property>
-        <property name="valign">fill</property>
-      </object>
-      <packing>
-        <property name="pack_type">end</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkButton" id="close-button">
-        <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="valign">center</property>
-        <property name="relief">none</property>
-        <property name="action-name">win.close</property>
-        <style>
-          <class name="image-button"/>
-        </style>
-        <child>
-          <object class="GtkImage" id="close-button-image">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="icon_name">window-close-symbolic</property>
-            <property name="icon_size">1</property>
           </object>
         </child>
       </object>
