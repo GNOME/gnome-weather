@@ -1,0 +1,308 @@
+# Thai translation for gnome-weather.
+# Copyright (C) 2013 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-weather package.
+# Akom Chotiphantawanon <knight2000@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather gnome-3-8\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-08-10 19:22+0700\n"
+"PO-Revision-Date: 2013-08-10 19:25+0700\n"
+"Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
+"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "ใ_หม่"
+
+#: ../data/app-menu.ui.h:2
+msgid "About Weather"
+msgstr "เกี่ยวกับ รายงานอากาศ"
+
+#: ../data/app-menu.ui.h:3
+msgid "Quit"
+msgstr "ออก"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:44 ../src/window.js:340
+msgid "Weather"
+msgstr "รายงานอากาศ"
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "แสดงสภาพอากาศและการพยากรณ์"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr "ค้นหาเมือง:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "เมืองที่ตั้งค่าไว้ให้แสดงสภาพอากาศ"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"ตำแหน่งที่ตั้งที่แสดงในมุมมองโลกของ gnome-weather แต่ละค่าเป็น GVariant ที่คืนค่ามาจาก "
+"gweather_location_serialize()"
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "เลือกทั้งหมด"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "ล้างการเลือก"
+
+#: ../data/window.ui.h:3
+msgid "New"
+msgstr "ใหม่"
+
+#: ../data/window.ui.h:4
+msgid "World Weather"
+msgstr "สภาพอากาศโลก"
+
+#: ../data/window.ui.h:5
+msgid "Done"
+msgstr "เสร็จสิ้น"
+
+#: ../src/city.js:154
+msgid "Loading…"
+msgstr "กำลังโหลด…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "วันนี้"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "พรุ่งนี้"
+
+#: ../src/forecast.js:132
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "เพิ่มเติม…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "พยากรณ์อากาศวันนี้"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "พยากรณ์อากาศพรุ่งนี้"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%d %B"
+
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "คืนวันจันทร์"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "เช้าวันจันทร์"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "บ่ายวันจันทร์"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "เย็นวันจันทร์"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "คืนวันอังคาร"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "เช้าวันอังคาร"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "บ่ายวันอังคาร"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "เย็นวันอังคาร"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "คืนวันพุธ"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "เช้าวันพุธ"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "บ่ายวันพุธ"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "เย็นวันพุธ"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "คืนวันพฤหัส"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "เช้าวันพฤหัส"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "บ่ายวันพฤหัส"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "เย็นวันพฤหัส"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "คืนวันศุกร์"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "เช้าวันศุกร์"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "บ่ายวันศุกร์"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "เย็นวันศุกร์"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "คืนวันเสาร์"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "เช้าวันเสาร์"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "บ่ายวันเสาร์"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "เย็นวันเสาร์"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "คืนวันอาทิตย์"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "เช้าวันอาทิตย์"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "บ่ายวันอาทิตย์"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "เย็นวันอาทิตย์"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "คืนนี้"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "เช้านี้"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "บ่ายนี้"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "เย็นนี้"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "คืนพรุ่งนี้"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "เช้าพรุ่งนี้"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "บ่ายพรุ่งนี้"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "เย็นพรุ่งนี้"
+
+#: ../src/window.js:54
+msgid "Delete"
+msgstr "ลบ"
+
+#: ../src/window.js:143
+msgid "Click on items to select them"
+msgstr "คลิกรายการเพื่อเลือก"
+
+#: ../src/window.js:198
+msgid "Click on locations to select them"
+msgstr "คลิกตำแหน่งเพื่อเลือก"
+
+#: ../src/window.js:201
+#, javascript-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "เลือกอยู่ %d รายการ"
+
+#: ../src/window.js:278
+msgid "New Location"
+msgstr "ตำแหน่งที่ตั้งใหม่"
+
+#: ../src/window.js:339
+msgid "translator-credits"
+msgstr "Akom Chotiphantawanon"
+
+#: ../src/window.js:341
+msgid "A weather application"
+msgstr "โปรแกรมรายงานอากาศ"
+
+#~ msgid "Temperature unit"
+#~ msgstr "หน่วยอุณหภูมิ"
+
+#~ msgid "Celsius"
+#~ msgstr "เซลเซียส"
+
+#~ msgid "Fahrenheit"
+#~ msgstr "ฟาเรนไฮต์"
+
+#~ msgid "Cancel"
+#~ msgstr "ยกเลิก"
+
+#~ msgid "Add locations"
+#~ msgstr "เพิ่มตำแหน่งที่ตั้ง"
+
+#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+#~ msgstr "ใช้ปุ่ม <b>ใหม่</b>  บนแถบเครื่องมือในการเพิ่มตำแหน่งที่ตั้งบนโลกเพิ่มเติม"
