@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-05-19 15:02+0000\n"
-"PO-Revision-Date: 2013-06-03 16:30+0200\n"
+"POT-Creation-Date: 2013-08-08 11:52+0000\n"
+"PO-Revision-Date: 2013-08-10 06:37+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -46,7 +46,7 @@ msgstr "O aplikaci Počasí"
 msgid "Quit"
 msgstr "Ukončit"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:264
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
 msgid "Weather"
 msgstr "Počasí"
 
@@ -54,8 +54,12 @@ msgstr "Počasí"
 msgid "Show weather conditions and forecast"
 msgstr "Zobrazit povětrnostní podmínky a předpověď"
 
-# label
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Nové místo"
+
+# label
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "Vyhledat město:"
 
@@ -81,9 +85,9 @@ msgstr "Vybrat vše"
 msgid "Select None"
 msgstr "Zrušit výběr"
 
-#: ../data/window.ui.h:3
-msgid "Click on items to select them"
-msgstr "Kliknutím na položky je vyberete"
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
+msgstr "Kliknutím na místa je vyberete"
 
 #: ../data/window.ui.h:4
 msgid "New"
@@ -288,7 +292,7 @@ msgstr "Zítra odpoledne"
 msgid "Tomorrow evening"
 msgstr "Zítra večer"
 
-#: ../src/window.js:136
+#: ../src/window.js:182
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -296,25 +300,21 @@ msgstr[0] "%d vybraná"
 msgstr[1] "%d vybrané"
 msgstr[2] "%d vybraných"
 
-#: ../src/window.js:140
-msgid "Click on locations to select them"
-msgstr "Kliknutím na místa je vyberete"
-
-#: ../src/window.js:263
+#: ../src/window.js:293
 msgid "translator-credits"
 msgstr ""
 "Adam Matoušek <adamatousek@gmail.com>\n"
 "Daniel Puncman <puncmdan@fel.cvut.cz>"
 
-#: ../src/window.js:265
+#: ../src/window.js:295
 msgid "A weather application"
 msgstr "Aplikace Počasí"
 
-#: ../src/world.js:211
+#: ../src/world.js:217
 msgid "Add locations"
 msgstr "Přidejte místo"
 
-#: ../src/world.js:214
+#: ../src/world.js:220
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Použitím tlačítka <b>Nové</b> z lišty nástrojů přidáte více zeměpisných míst"
