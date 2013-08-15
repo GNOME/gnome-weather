@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-clocks master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-06-18 14:30+0000\n"
-"PO-Revision-Date: 2013-03-20 00:12+0900\n"
+"POT-Creation-Date: 2013-08-08 11:52+0000\n"
+"PO-Revision-Date: 2013-08-09 00:46+0900\n"
 "Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -41,7 +41,7 @@ msgstr "このアプリケーションについて"
 msgid "Quit"
 msgstr "終了"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:284
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
 msgid "Weather"
 msgstr "天気"
 
@@ -50,6 +50,10 @@ msgid "Show weather conditions and forecast"
 msgstr "天気の概況と予報を表示します"
 
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "新しい場所"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "都市の検索:"
 
@@ -69,7 +73,7 @@ msgstr "すべて選択"
 msgid "Select None"
 msgstr "何も選択しない"
 
-#: ../data/window.ui.h:3 ../src/window.js:180
+#: ../data/window.ui.h:3 ../src/window.js:187
 msgid "Click on locations to select them"
 msgstr "選択する場所をクリックします"
 
@@ -276,25 +280,25 @@ msgstr "明日 昼"
 msgid "Tomorrow evening"
 msgstr "明日 夜"
 
-#: ../src/window.js:176
+#: ../src/window.js:182
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d 件選択"
 
-#: ../src/window.js:283
+#: ../src/window.js:293
 msgid "translator-credits"
 msgstr "松澤二郎 <jmatsuzawa@gnome.org>"
 
-#: ../src/window.js:285
+#: ../src/window.js:295
 msgid "A weather application"
 msgstr "天気アプリケーション"
 
-#: ../src/world.js:211
+#: ../src/world.js:217
 msgid "Add locations"
 msgstr "場所の追加"
 
-#: ../src/world.js:214
+#: ../src/world.js:220
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr "ツールバーの<b>新規</b>ボタンを押して、場所を追加してください。"
 
