@@ -4,7 +4,7 @@
          xmlns:gnome="http://api.gnome.org/doap-extensions#"
          xmlns="http://usefulinc.com/ns/doap#">
 
-  <name xml:lang="en">Gnome Weather</name>
+  <name xml:lang="en">gnome-weather</name>
   <shortdesc xml:lang="en">Access current weather conditions and forecasts</shortdesc>
   <description>
     This is a small application that allows you to monitor the current
