@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-20 19:53+0800\n"
-"PO-Revision-Date: 2013-07-20 19:53+0800\n"
+"POT-Creation-Date: 2013-08-16 13:10+0800\n"
+"PO-Revision-Date: 2013-08-16 13:10+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Hong Kong) <community@linuxhall.org>\n"
 "Language: zh_TW\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.3\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -42,7 +42,7 @@ msgstr "關於 Weather"
 msgid "Quit"
 msgstr "結束"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:299
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
 msgid "Weather"
 msgstr "天氣"
 
@@ -51,6 +51,10 @@ msgid "Show weather conditions and forecast"
 msgstr "顯示天氣狀況與氣象預報"
 
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "新增位置"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "搜尋城市："
 
@@ -72,7 +76,7 @@ msgstr "全部選取"
 msgid "Select None"
 msgstr "都不選取"
 
-#: ../data/window.ui.h:3 ../src/window.js:192
+#: ../data/window.ui.h:3 ../src/window.js:187
 msgid "Click on locations to select them"
 msgstr "點擊位置來選取它們"
 
@@ -279,25 +283,25 @@ msgstr "明天下午"
 msgid "Tomorrow evening"
 msgstr "明天傍晚"
 
-#: ../src/window.js:187
+#: ../src/window.js:182
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "已選擇 %d 個"
 
-#: ../src/window.js:298
+#: ../src/window.js:293
 msgid "translator-credits"
 msgstr "Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>, 2013"
 
-#: ../src/window.js:300
+#: ../src/window.js:295
 msgid "A weather application"
 msgstr "天氣應用程式"
 
-#: ../src/world.js:211
+#: ../src/world.js:217
 msgid "Add locations"
 msgstr "加入位置"
 
-#: ../src/world.js:214
+#: ../src/world.js:220
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr "使用工具列上的 <b>新增</b> 按鈕來加入更多世界位置"
 
