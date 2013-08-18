@@ -85,6 +85,9 @@ const Application = new Lang.Class({
 
         this.add_accelerator("Escape", "win.selection-mode(false)", null);
         this.add_accelerator("<Primary>a", "win.select-all", null);
+
+        if (pkg.pkgdatadir != pkg.moduledir) // running from source
+            this.activate();
     },
 
     vfunc_activate: function() {
