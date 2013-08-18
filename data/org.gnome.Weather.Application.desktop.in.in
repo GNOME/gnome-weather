@@ -2,5 +2,6 @@
 Type=Application
 _Name=Weather
 _Comment=Show weather conditions and forecast
-Icon=gnome-weather
-Exec=gnome-weather
+Icon=@PACKAGE_NAME@
+Exec=@pkgdatadir@/@PACKAGE_NAME@
+DBusActivatable=true

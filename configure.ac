@@ -1,5 +1,5 @@
 AC_PREREQ(2.63)
-AC_INIT([gnome-weather],[3.9.5],
+AC_INIT([org.gnome.Weather.Application],[3.9.5],
 	[https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather],
 	[gnome-weather],
 	[https://live.gnome.org/Design/Apps/Weather])
@@ -7,11 +7,13 @@ AC_INIT([gnome-weather],[3.9.5],
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([1.11 dist-xz foreign tar-ustar -Wno-portability])
+AM_INIT_AUTOMAKE([1.11 dist-xz foreign tar-ustar no-define -Wno-portability])
+# revert automake using PACKAGE_TARNAME instead of PACKAGE_NAME
+AC_SUBST([PACKAGE], [$PACKAGE_NAME])
 
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
-GETTEXT_PACKAGE=gnome-weather
+GETTEXT_PACKAGE=$PACKAGE_NAME
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE",
                    [The prefix for our gettext translation domains.])

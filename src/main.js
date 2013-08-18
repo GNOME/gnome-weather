@@ -41,7 +41,8 @@ const Application = new Lang.Class({
     Extends: Gtk.Application,
 
     _init: function() {
-        this.parent({ application_id: 'org.gnome.Weather.Application' });
+        this.parent({ application_id: pkg.name,
+                      flags: Gio.ApplicationFlags.IS_SERVICE });
         GLib.set_application_name(_("Weather"));
     },
 
@@ -61,7 +62,8 @@ const Application = new Lang.Class({
         this.parent();
         Gd.ensure_types();
 
-        let resource = Gio.Resource.load(pkg.pkgdatadir + '/gnome-weather.gresource');
+        let resource = Gio.Resource.load(GLib.build_filenamev([pkg.pkgdatadir,
+                                                               pkg.name + '.gresource']));
         resource._register();
 
         Util.loadStyleSheet('/org/gnome/weather/application.css');

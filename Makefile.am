@@ -19,4 +19,6 @@ MAINTAINERCLEANFILES = \
 
 GITIGNOREFILES = m4/
 
+distdir = $(PACKAGE_TARNAME)-$(VERSION)
+
 -include $(top_srcdir)/git.mk
