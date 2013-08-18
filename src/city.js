@@ -45,7 +45,7 @@ const WeatherWidget = new Lang.Class({
         this._revealer = builder.get_object('revealer');
 
         this._forecasts = new Forecast.ForecastBox({ hexpand: true });
-        outerGrid.attach(this._forecasts, 0, 1, 2, 1);
+        outerGrid.attach(this._forecasts, 0, 1, 1, 1);
 
         this._today = new Forecast.TodaySidebar({ vexpand: true,
                                                   name: 'today-sidebar' });
