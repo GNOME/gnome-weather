@@ -1,3 +1,16 @@
+3.9.90
+======
+* All publicly visible IDs for the application (including
+  the .desktop file name and installation folder) now
+  follow the reverse DNS notation convention, that is,
+  they are "org.gnome.Weather.Application"
+* The application is now DBus activated, and only ships
+  a shim launcher in $bindir
+* In city view, the side bar is now overlaid on the rest of
+  the content rather than pushing it
+* We use now GTK+ support for the close button in the header
+* Translation updates
+
 3.9.5
 =====
 * Fixed selection mode to latest mockups
