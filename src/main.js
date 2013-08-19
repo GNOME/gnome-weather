@@ -19,6 +19,7 @@
 pkg.initSubmodule('libgd');
 pkg.initGettext();
 pkg.initFormat();
+pkg.initResources();
 pkg.require({ 'Gd': '1.0',
               'Gdk': '3.0',
               'GdkPixbuf': '2.0',
@@ -35,6 +36,7 @@ pkg.require({ 'Gd': '1.0',
 const Util = imports.util;
 const Window = imports.window;
 const World = imports.world;
+const SearchProvider = imports.searchProvider;
 
 const Application = new Lang.Class({
     Name: 'WeatherApplication',
@@ -42,8 +44,11 @@ const Application = new Lang.Class({
 
     _init: function() {
         this.parent({ application_id: pkg.name,
-                      flags: Gio.ApplicationFlags.IS_SERVICE });
+                      flags: Gio.ApplicationFlags.IS_SERVICE,
+                      inactivity_timeout: 60000 });
         GLib.set_application_name(_("Weather"));
+
+        this._searchProvider = new SearchProvider.SearchProvider(this);
     },
 
     _onQuit: function() {
@@ -58,13 +63,22 @@ const Application = new Lang.Class({
         this.set_app_menu(menu);
     },
 
+    vfunc_dbus_register: function(connection, path) {
+        this.parent(connection, path);
+
+        this._searchProvider.export(connection, path);
+        return true;
+    },
+
+    vfunc_dbus_unregister: function(connection) {
+        this._searchProvider.unexport(connection);
+
+        this.parent(connection);
+    },
+
     vfunc_startup: function() {
         this.parent();
         Gd.ensure_types();
-
-        let resource = Gio.Resource.load(GLib.build_filenamev([pkg.pkgdatadir,
-                                                               pkg.name + '.gresource']));
-        resource._register();
 
         Util.loadStyleSheet('/org/gnome/weather/application.css');
 

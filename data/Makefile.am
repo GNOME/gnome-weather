@@ -40,6 +40,9 @@ $(PACKAGE_NAME).desktop.in: $(PACKAGE_NAME).desktop.in.in
 servicedir = $(datadir)/dbus-1/services
 service_DATA = $(PACKAGE_NAME).service
 
+searchproviderdir = $(datadir)/gnome-shell/search-providers
+dist_searchprovider_DATA = org.gnome.Weather.Application.search-provider.ini
+
 EXTRA_DIST = \
 	CREDITS \
 	$(PACKAGE_NAME).desktop.in.in \

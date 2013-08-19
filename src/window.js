@@ -247,6 +247,10 @@ const MainWindow = new Lang.Class({
         let [ok, iter] = view.model.get_iter(path);
         let info = view.model.get_value(iter, World.Columns.INFO);
 
+        this.showInfo(info);
+    },
+
+    showInfo: function(info) {
         this._cityView.info = info;
         this._stack.set_visible_child(this._cityView);
         this._goToPage(Page.CITY);

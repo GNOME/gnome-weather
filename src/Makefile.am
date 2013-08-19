@@ -12,6 +12,7 @@ dist_js_DATA = \
 	main.js		\
 	package.js	\
 	params.js	\
+	searchProvider.js \
 	strings.js	\
 	util.js		\
 	window.js	\

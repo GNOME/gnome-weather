@@ -294,6 +294,12 @@ function initSubmodule(name) {
     }
 }
 
+function initResources() {
+    let resource = Gio.Resource.load(GLib.build_filenamev([pkg.pkgdatadir,
+                                                           pkg.name + '.gresource']));
+    resource._register();
+}
+
 function launch(params) {
     params.flags = params.flags || 0;
     let app = new Gio.Application({ application_id: params.name,

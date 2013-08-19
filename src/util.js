@@ -112,3 +112,29 @@ function getWeatherConditions(info) {
         conditions = info.get_sky();
     return conditions;
 }
+
+function isCdm(c) {
+    return ((c >= 0x0300 && c <= 0x036F) ||
+        (c >= 0x1DC0 && c <= 0x1DFF)  ||
+        (c >= 0x20D0 && c <= 0x20FF)  ||
+        (c >= 0xFE20 && c <= 0xFE2F));
+}
+
+function normalizeCasefoldAndUnaccent(str) {
+    // The one and only!
+    // Travelled all over gnome, from tracker to gnome-shell to gnome-control-center,
+    // to seahorse, epiphany...
+    //
+    // Originally written by Aleksander Morgado <aleksander@gnu.org>
+
+    str = GLib.utf8_normalize(str, -1, GLib.NormalizeMode.NFKD);
+    str = GLib.utf8_casefold(str, -1);
+
+    /* Combining diacritical mark?
+     *  Basic range: [0x0300,0x036F]
+     *  Supplement:  [0x1DC0,0x1DFF]
+     *  For Symbols: [0x20D0,0x20FF]
+     *  Half marks:  [0xFE20,0xFE2F]
+     */
+    return str.replace(/[\u0300-\u036f]|[\u1dc0-\u1dff]|[\u20d0-\u20ff]|[\ufe20-\ufe2f]/, '');
+}
