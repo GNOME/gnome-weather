@@ -120,7 +120,6 @@
         <property name="action-target">false</property>
         <style>
           <class name="text-button"/>
-          <class name="suggested-action"/>
         </style>
           </object>
           <packing>
