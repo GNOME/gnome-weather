@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-31 01:31+0200\n"
-"PO-Revision-Date: 2013-05-31 01:34+0200\n"
+"POT-Creation-Date: 2013-08-27 03:23+0200\n"
+"PO-Revision-Date: 2013-08-27 03:24+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -43,15 +43,20 @@ msgstr "Sobre Tempo"
 msgid "Quit"
 msgstr "Saír"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:46
+#: ../src/window.js:294
 msgid "Weather"
 msgstr "O tempo"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Mostrar as condicións e predicións do tempo"
 
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Nova localización"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "Buscar unha cidade:"
 
@@ -75,9 +80,9 @@ msgstr "Seleccoinar todo"
 msgid "Select None"
 msgstr "Deseleccionar todo"
 
-#: ../data/window.ui.h:3
-msgid "Click on items to select them"
-msgstr "Prema nos elementos para seleccionalos"
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
+msgstr "Prema nas localizacións para seleccionalas"
 
 #: ../data/window.ui.h:4
 msgid "New"
@@ -282,16 +287,12 @@ msgstr "Mañá á tarde"
 msgid "Tomorrow evening"
 msgstr "Mañá á noitiña"
 
-#: ../src/window.js:186
+#: ../src/window.js:182
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionada"
 msgstr[1] "%d seleccionadas"
-
-#: ../src/window.js:190
-msgid "Click on locations to select them"
-msgstr "Prema nas localizacións para seleccionalas"
 
 #: ../src/window.js:293
 msgid "translator-credits"
@@ -301,15 +302,18 @@ msgstr "Fran Dieguez <frandieguez@gnome.org>, 2013."
 msgid "A weather application"
 msgstr "Un aplicativo do tempo"
 
-#: ../src/world.js:211
+#: ../src/world.js:217
 msgid "Add locations"
 msgstr "Engadir localizacións"
 
-#: ../src/world.js:214
+#: ../src/world.js:220
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Use o botón <b>Nova</b> na barra de ferramentas para engadir máis "
 "localizacións mundiais"
+
+#~ msgid "Click on items to select them"
+#~ msgstr "Prema nos elementos para seleccionalos"
 
 #~ msgid "Current conditions:"
 #~ msgstr "Condicións actuais:"
