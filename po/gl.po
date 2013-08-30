@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-27 03:23+0200\n"
-"PO-Revision-Date: 2013-08-27 03:24+0200\n"
+"POT-Creation-Date: 2013-08-30 12:24+0200\n"
+"PO-Revision-Date: 2013-08-30 12:26+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -51,6 +51,17 @@ msgstr "O tempo"
 #: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Mostrar as condicións e predicións do tempo"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Un pequeno aplicativo que lle permitirá facer un seguimento das condicións "
+"meteorolóxicas actuais da súa cidade, ou calquera lugar do mundo e acceder a "
+"predicións actualizadas até 7 días, fornecidas por varios servizos de "
+"Internet."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
