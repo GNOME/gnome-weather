@@ -18,6 +18,11 @@ gsettings_SCHEMAS = $(PACKAGE_NAME).gschema.xml
 
 @GSETTINGS_RULES@
 
+appdatadir = $(datadir)/appdata
+appdata_DATA = $(PACKAGE_NAME).appdata.xml
+
+@INTLTOOL_XML_RULE@
+
 $(PACKAGE_NAME).service: $(PACKAGE_NAME).service.in
 	$(AM_V_GEN) sed \
 		-e "s|[@]PACKAGE_NAME@|$(PACKAGE_NAME)|g" \
