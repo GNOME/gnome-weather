@@ -2,15 +2,15 @@
 # Copyright (C) 2012 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 #
-# Matej Urbančič <mateju@svn.gnome.org>, 2012 - 2013.
+# Matej Urbančič <mateju@svn.gnome.org>, 2012-2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-06-03 14:33+0000\n"
-"PO-Revision-Date: 2013-06-03 21:23+0100\n"
+"POT-Creation-Date: 2013-08-30 14:33+0000\n"
+"PO-Revision-Date: 2013-08-30 22:22+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -46,15 +46,30 @@ msgstr "O programu"
 msgid "Quit"
 msgstr "Končaj"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:46
+#: ../src/window.js:294
 msgid "Weather"
 msgstr "Vreme"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Spremljanje trenutnih vremenskih razmer in napovedi"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Program, ki omogoča nadzor nad trenutnimi vremenskimi pogoji za izbrana "
+"mesta, kjerkoli na svetu in pregled napovedi za naslednjih 7 dni preko "
+"različnih spletnih storitev."
+
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Novo mesto"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "Iskanje mesta:"
 
@@ -76,8 +91,8 @@ msgstr "Izberi vse"
 msgid "Select None"
 msgstr "Odstrani izbor"
 
-#: ../data/window.ui.h:3
-msgid "Click on items to select them"
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
 msgstr "S klikom se predmeti izberejo."
 
 #: ../data/window.ui.h:4
@@ -283,7 +298,7 @@ msgstr "Jutri popoldne"
 msgid "Tomorrow evening"
 msgstr "Jutri zvečer"
 
-#: ../src/window.js:186
+#: ../src/window.js:182
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -291,10 +306,6 @@ msgstr[0] "%d izbranih"
 msgstr[1] "%d izbrano"
 msgstr[2] "%d izbrani"
 msgstr[3] "%d izbrana"
-
-#: ../src/window.js:190
-msgid "Click on locations to select them"
-msgstr "S klikom se predmeti izberejo."
 
 #: ../src/window.js:293
 msgid "translator-credits"
@@ -304,14 +315,17 @@ msgstr "Matej Urbančič <matej.urban@svn.gnome.org>"
 msgid "A weather application"
 msgstr "Program za prikaz podatkov vremena"
 
-#: ../src/world.js:211
+#: ../src/world.js:217
 msgid "Add locations"
 msgstr "Dodaj mesta"
 
-#: ../src/world.js:214
+#: ../src/world.js:220
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Uporabite gumb <b>Nov</b> v orodni vrstici, da dodate več svetovnih mest"
+
+#~ msgid "Click on items to select them"
+#~ msgstr "S klikom se predmeti izberejo."
 
 #~ msgid "_Preferences"
 #~ msgstr "_Nastavitve"
@@ -378,6 +392,3 @@ msgstr ""
 
 #~ msgid "Done"
 #~ msgstr "Končano"
-
-#~ msgid "New Location"
-#~ msgstr "Novo mesto"
