@@ -1,6 +1,7 @@
 [type: gettext/glade]data/app-menu.ui
 [type: gettext/glade]data/city.ui
 data/org.gnome.Weather.Application.desktop.in.in
+data/org.gnome.Weather.Application.appdata.xml.in
 [type: gettext/glade]data/new-location-dialog.ui
 data/org.gnome.Weather.Application.gschema.xml
 [type: gettext/glade]data/window.ui
