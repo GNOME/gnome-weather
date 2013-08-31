@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-20 23:11+0200\n"
-"PO-Revision-Date: 2013-08-20 23:12+0200\n"
+"POT-Creation-Date: 2013-08-31 23:13+0200\n"
+"PO-Revision-Date: 2013-08-31 23:15+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -47,14 +47,24 @@ msgstr "O programie"
 msgid "Quit"
 msgstr "Zakończ"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:46
-#: ../src/window.js:294
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "Pogoda"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Wyświetlanie warunków pogodowych i prognozy"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Mały program umożliwiający monitorowanie bieżących warunków pogodowych w "
+"dowolnym miejscu na świecie, a także dający dostęp do aktualnych prognoz (do "
+"siedmiu dni), dostarczanych przez różne usługi internetowe."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -146,6 +156,11 @@ msgstr "%l∶%M %p"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%H∶%M"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -299,13 +314,13 @@ msgstr[0] "Zaznaczono: %d"
 msgstr[1] "Zaznaczono: %d"
 msgstr[2] "Zaznaczono: %d"
 
-#: ../src/window.js:293
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2012-2013\n"
 "Aviary.pl <gnomepl@aviary.pl>, 2012-2013"
 
-#: ../src/window.js:295
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "Prognoza pogody"
 
