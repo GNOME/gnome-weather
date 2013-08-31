@@ -49,6 +49,7 @@ EXTRA_DIST = \
 	$(PACKAGE_NAME).service.in \
 	$(PACKAGE_NAME).gresource.xml \
 	$(gsettings_SCHEMAS) \
+	$(PACKAGE_NAME).appdata.xml.in \
 	$(resource_files) \
 	$(NULL)
 
