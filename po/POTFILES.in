@@ -8,6 +8,7 @@ data/org.gnome.Weather.Application.gschema.xml
 src/city.js
 src/forecast.js
 src/main.js
+src/searchProvider.js
 src/strings.js
 src/window.js
 src/world.js
