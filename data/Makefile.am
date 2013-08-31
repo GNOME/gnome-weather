@@ -56,6 +56,7 @@ CLEANFILES = \
 	$(PACKAGE_NAME).desktop.in \
 	$(PACKAGE_NAME).service \
 	$(PACKAGE_NAME).gresource \
+	$(PACKAGE_NAME).appdata.xml \
 	$(apps_DATA) \
 	*.valid \
 	gschemas.compiled \
