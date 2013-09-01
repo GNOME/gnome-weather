@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-30 12:24+0200\n"
-"PO-Revision-Date: 2013-08-30 12:26+0200\n"
+"POT-Creation-Date: 2013-09-01 18:44+0200\n"
+"PO-Revision-Date: 2013-09-01 18:44+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -43,8 +43,8 @@ msgstr "Sobre Tempo"
 msgid "Quit"
 msgstr "Saír"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:46
-#: ../src/window.js:294
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "O tempo"
 
@@ -153,6 +153,11 @@ msgstr "%l∶%M %p"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -305,11 +310,11 @@ msgid_plural "%d selected"
 msgstr[0] "%d seleccionada"
 msgstr[1] "%d seleccionadas"
 
-#: ../src/window.js:293
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr "Fran Dieguez <frandieguez@gnome.org>, 2013."
 
-#: ../src/window.js:295
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "Un aplicativo do tempo"
 
