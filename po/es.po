@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-06-15 15:18+0000\n"
-"PO-Revision-Date: 2013-05-17 13:31+0200\n"
+"POT-Creation-Date: 2013-08-31 19:57+0000\n"
+"PO-Revision-Date: 2013-09-02 16:29+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -44,15 +44,30 @@ msgstr "Acerca de Meteorología"
 msgid "Quit"
 msgstr "Salir"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "Meteorología"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Mostrar las condiciones meteorológicas y la predicción"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Una pequeña aplicación que le permite monitorizar el tiempo actual en su "
+"ciudad, o en cualquier lugar del mundo y acceder a predicciones "
+"actualizadas, hasta 7 días, proporcionadas por varios servicios en Internet."
+
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Ubicación nueva"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "Buscar una ciudad:"
 
@@ -76,7 +91,7 @@ msgstr "Seleccionar todo"
 msgid "Select None"
 msgstr "Seleccionar nada"
 
-#: ../data/window.ui.h:3 ../src/window.js:190
+#: ../data/window.ui.h:3 ../src/window.js:187
 msgid "Click on locations to select them"
 msgstr "Pulse sobre las ubicaciones para seleccionarlas"
 
@@ -138,6 +153,11 @@ msgstr "%l∶%M %p"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -283,26 +303,26 @@ msgstr "Mañana por la tarde"
 msgid "Tomorrow evening"
 msgstr "Mañana a medianoche"
 
-#: ../src/window.js:186
+#: ../src/window.js:182
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionada"
 msgstr[1] "%d seleccionadas"
 
-#: ../src/window.js:293
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013"
 
-#: ../src/window.js:295
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "Una aplicación de meteorología"
 
-#: ../src/world.js:211
+#: ../src/world.js:217
 msgid "Add locations"
 msgstr "Añadir ubicaciones"
 
-#: ../src/world.js:214
+#: ../src/world.js:220
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Use el botón <b>Nueva</b> en la barra de herramientas para añadir más "
@@ -310,9 +330,6 @@ msgstr ""
 
 #~ msgid "Click on items to select them"
 #~ msgstr "Pulse sobre los elementos para seleccionarlos"
-
-#~ msgid "New Location"
-#~ msgstr "Ubicación nueva"
 
 #~ msgid "_Preferences"
 #~ msgstr "_Preferencias"
@@ -379,9 +396,6 @@ msgstr ""
 
 #~ msgid "Done"
 #~ msgstr "Hecho"
-
-#~ msgid "%s, %s"
-#~ msgstr "%s, %s"
 
 #~ msgid "Current conditions:"
 #~ msgstr "Condiciones actuales:"
