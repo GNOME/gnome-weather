@@ -1,3 +1,11 @@
+3.9.91
+======
+* Further update the UI to match the selection mode mockups
+* Add an AppData file to be used by gnome-software
+* Add a shell search provider to show weather for configured
+  locations
+* Translation updates
+
 3.9.90
 ======
 * All publicly visible IDs for the application (including
