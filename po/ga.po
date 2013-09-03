@@ -1,0 +1,331 @@
+# Irish translations for gnome-weather package.
+# Copyright (C) 2013 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-weather package.
+# Seán de Búrca <leftmostcat@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather.master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-03 02:47-0600\n"
+"PO-Revision-Date: 2013-09-03 03:16-0600\n"
+"Last-Translator: Seán de Búrca <leftmostcat@gmail.com>\n"
+"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"Language: ga\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : "
+"4;\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Nua"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Aonad teochta"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "Maidir le hAimsir"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Scoir"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../src/window.js:298
+msgid "Weather"
+msgstr "Aimsir"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Taispeáin staid agus réamhaisnéis na haimsire"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Agus an feidhmchlár beag seo, is féidir leat monatóireacht a dhéanamh ar "
+"staid na haimsire i do chathair nó in aon áit sa domhain agus rochtain a "
+"dhéanamh ar réamhaisnéisí nuashonraithe, suas go dtí 7 lá, a sholáthraítear "
+"ag seirbhísí éagsúla idirlín."
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Suíomh Nua"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "Cuardaigh cathair:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Cathracha cumraithe a thaispeántar a gcuid aimsire"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Na suíomhanna a thaispeántar in amharc an domhain de gnome-weather. Is "
+"GVariant gach luach, a filleadh ag gweather_location_serialize()."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Roghnaigh Uile"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Ná roghnaigh"
+
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
+msgstr "Cliceáil ar shuíomhanna chun iad a roghnú"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Nua"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr "Aimsir an Domhain"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "Cealaigh"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "Scrios"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "Á luchtú…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Inniu"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Amárach"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Tuilleadh…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Réamhaisnéis an Lae Inniu"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Réamhaisnéis an Lae Amárach"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%d %B"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Oíche Luain"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Maidin Luain"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Iarnóin Dé Luain"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Tráthnóna Dé Luain"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Oíche Mháirt"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Maidin Mháirt"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Iarnóin Dé Máirt"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Tráthnóna Dé Máirt"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Oíche Chéadaoin"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Maidin Chéadaoin"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Iarnóin Dé Céadaoin"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Tráthnóna Dé Céadaoin"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Oíche Dhéardaoin"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Maidin Déardaoin"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Iarnóin Déardaoin"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Tráthnóna Déardaoin"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Oíche Aoine"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Maidin Aoine"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Iarnóin Dé hAoine"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Tráthnóna Dé hAoine"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Oíche Shathairn"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Maidin Sathairn"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Iarnóin Dé Sathairn"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Tráthnóna Dé Sathairn"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Oíche Dhomhnaigh"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Maidin Domhnaigh"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Iarnóin Dé Domhnaigh"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Tráthnóna Dé Domhnaigh"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Anocht"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Maidin inniu"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Iarnóin inniu"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Tráthnóna inniu"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Oíche amárach"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Maidin amárach"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Iarnóin amárach"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Tráthnóna amárach"
+
+#: ../src/window.js:182
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d roghnaithe"
+msgstr[1] "%d roghnaithe"
+msgstr[2] "%d roghnaithe"
+msgstr[3] "%d roghnaithe"
+msgstr[4] "%d roghnaithe"
+
+#: ../src/window.js:297
+msgid "translator-credits"
+msgstr "Seán de Búrca <leftmostcat@gmail.com>"
+
+#: ../src/window.js:299
+msgid "A weather application"
+msgstr "Feidhmchlár aimsire"
+
+#: ../src/world.js:217
+msgid "Add locations"
+msgstr "Cuir suíomhanna leis"
+
+#: ../src/world.js:220
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"Úsáid an cnaipe <b>Nua</b> ar an mbarra uirlisí chun tuilleadh suíomhanna an "
+"domhain a chur leis"
