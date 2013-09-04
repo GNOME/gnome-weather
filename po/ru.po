@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-05-14 16:44+0000\n"
-"PO-Revision-Date: 2013-05-15 14:00+0300\n"
-"Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
-"Language-Team: Russian <gnome-cyr@gnome.org>\n"
+"POT-Creation-Date: 2013-09-03 18:08+0000\n"
+"PO-Revision-Date: 2013-09-04 00:45+0300\n"
+"Last-Translator: Stas Solovey <whats_up@tut.by>\n"
+"Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.4\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -42,17 +42,33 @@ msgstr "О программе"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
-msgstr "Выйти"
+msgstr "Завершить"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:275
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "Погода"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Показать погодные условия и прогноз"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Небольшое приложение, которое позволяет отслеживать текущее состояние погоды "
+"для вашего города или любой точки мира, а также предоставляет доступ к "
+"обновляемым прогнозам, до 7 дней, предоставленных различными интернет-"
+"сервисами."
+
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Новое местоположение"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "Найти город:"
 
@@ -76,10 +92,9 @@ msgstr "Выбрать все"
 msgid "Select None"
 msgstr "Снять выбор"
 
-#: ../data/window.ui.h:3
-#| msgid "Click on locations to select them"
-msgid "Click on items to select them"
-msgstr "Нажмите на элемент, чтобы выбрать его"
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
+msgstr "Нажмите для выбора местоположения"
 
 #: ../data/window.ui.h:4
 msgid "New"
@@ -139,6 +154,11 @@ msgstr "%l∶%M %p"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -284,7 +304,7 @@ msgstr "Завтра днём"
 msgid "Tomorrow evening"
 msgstr "Завтра вечером"
 
-#: ../src/window.js:136
+#: ../src/window.js:182
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -292,32 +312,20 @@ msgstr[0] "Выделен %d"
 msgstr[1] "Выделено %d"
 msgstr[2] "Выделено %d"
 
-#: ../src/window.js:140
-msgid "Click on locations to select them"
-msgstr "Нажмите для выбора местоположения"
-
-#: ../src/window.js:212
-msgid "New Location"
-msgstr "Новое местоположение"
-
-#: ../src/window.js:274
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr "Stas Solovey <whats_up@tut.by>, 2012, 2013."
 
-#: ../src/window.js:276
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "Программа прогноза погоды"
 
-#: ../src/world.js:212
-#| msgid "New Location"
+#: ../src/world.js:217
 msgid "Add locations"
 msgstr "Добавить местоположения"
 
-#: ../src/world.js:215
+#: ../src/world.js:220
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Для добавления дополнительных местоположений используйте кнопку <b>Создать</"
 "b> в панели инструментов"
-
-#~ msgid "Done"
-#~ msgstr "Готово"
