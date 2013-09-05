@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-05-14 16:44+0000\n"
-"PO-Revision-Date: 2013-05-15 12:09+0200\n"
+"POT-Creation-Date: 2013-08-31 19:57+0000\n"
+"PO-Revision-Date: 2013-09-05 11:32+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -24,7 +24,6 @@ msgid "_New"
 msgstr "_Ново"
 
 #: ../data/app-menu.ui.h:2
-#| msgid "Temperature unit:"
 msgid "Temperature unit"
 msgstr "Јединица температуре"
 
@@ -33,7 +32,6 @@ msgid "Celsius"
 msgstr "Целзијуси"
 
 #: ../data/app-menu.ui.h:4
-#| msgid "Fahrenheit (°F)"
 msgid "Fahrenheit"
 msgstr "Фаренхајти"
 
@@ -45,15 +43,30 @@ msgstr "О Времену"
 msgid "Quit"
 msgstr "Изађи"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:275
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "Време"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Прикажите временске прилике и прогнозу"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Програмче које вам омогућава да надгледате тренутне временске прилике за ваш "
+"град, или било где у свету и да приступите освеженој временској прогнози, "
+"до 7 дана, коју обезбеђују разне услуге интернета."
+
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Ново место"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "Потражите град:"
 
@@ -77,9 +90,9 @@ msgstr "Изабери све"
 msgid "Select None"
 msgstr "Поништи избор"
 
-#: ../data/window.ui.h:3
-msgid "Click on items to select them"
-msgstr "Кликните на ставке да их изаберете"
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
+msgstr "Кликните на места да их изаберете"
 
 #: ../data/window.ui.h:4
 msgid "New"
@@ -139,6 +152,11 @@ msgstr "%l∶%M %p"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -284,7 +302,7 @@ msgstr "Сутра поподне"
 msgid "Tomorrow evening"
 msgstr "Сутра увече"
 
-#: ../src/window.js:136
+#: ../src/window.js:182
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -293,30 +311,22 @@ msgstr[1] "%d изабрана"
 msgstr[2] "%d изабраних"
 msgstr[3] "Једно изабрано"
 
-#: ../src/window.js:140
-msgid "Click on locations to select them"
-msgstr "Кликните на места да их изаберете"
-
-#: ../src/window.js:212
-msgid "New Location"
-msgstr "Ново место"
-
-#: ../src/window.js:274
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr ""
 "  Мирослав Николић\n"
 "\n"
 "  http://prevod.org — превод на српски језик"
 
-#: ../src/window.js:276
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "Програм за временске прилике"
 
-#: ../src/world.js:212
+#: ../src/world.js:217
 msgid "Add locations"
 msgstr "Додајте места"
 
-#: ../src/world.js:215
+#: ../src/world.js:220
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Користите дугме <b>Ново</b> на траци алата да додате још светских места"
