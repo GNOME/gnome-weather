@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-08 11:52+0000\n"
-"PO-Revision-Date: 2013-08-10 06:37+0200\n"
+"POT-Creation-Date: 2013-08-31 19:57+0000\n"
+"PO-Revision-Date: 2013-09-05 12:27+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -46,13 +46,24 @@ msgstr "O aplikaci Počasí"
 msgid "Quit"
 msgstr "Ukončit"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "Počasí"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Zobrazit povětrnostní podmínky a předpověď"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Malá aplikace, díky které můžete sledovat aktuální povětrnostní podmínky ve "
+"svém městě nebo kdekoliv na světě a dozvíte se předpověď počasí až na 7 dní "
+"dopředu z různých zdrojů na Internetu."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -147,6 +158,11 @@ msgstr "%H:%M"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -300,13 +316,13 @@ msgstr[0] "%d vybraná"
 msgstr[1] "%d vybrané"
 msgstr[2] "%d vybraných"
 
-#: ../src/window.js:293
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr ""
 "Adam Matoušek <adamatousek@gmail.com>\n"
 "Daniel Puncman <puncmdan@fel.cvut.cz>"
 
-#: ../src/window.js:295
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "Aplikace Počasí"
 
