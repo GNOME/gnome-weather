@@ -70,10 +70,10 @@ const Application = new Lang.Class({
         return true;
     },
 
-    vfunc_dbus_unregister: function(connection) {
+    vfunc_dbus_unregister: function(connection, path) {
         this._searchProvider.unexport(connection);
 
-        this.parent(connection);
+        this.parent(connection, path);
     },
 
     vfunc_startup: function() {
