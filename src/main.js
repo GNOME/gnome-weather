@@ -38,6 +38,12 @@ const Window = imports.window;
 const World = imports.world;
 const SearchProvider = imports.searchProvider;
 
+function initEnvironment() {
+    window.getApp = function() {
+        return Gio.Application.get_default();
+    };
+}
+
 const Application = new Lang.Class({
     Name: 'WeatherApplication',
     Extends: Gtk.Application,
@@ -116,5 +122,7 @@ const Application = new Lang.Class({
 });
 
 function main(argv) {
+    initEnvironment();
+
     return (new Application()).run(argv);
 }
