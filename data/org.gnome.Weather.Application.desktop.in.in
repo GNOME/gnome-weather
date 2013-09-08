@@ -5,3 +5,4 @@ _Comment=Show weather conditions and forecast
 Icon=@PACKAGE_NAME@
 Exec=@pkgdatadir@/@PACKAGE_NAME@
 DBusActivatable=true
+StartupNotify=true
