@@ -120,7 +120,16 @@ const Application = new Lang.Class({
     },
 
     vfunc_activate: function() {
-        (new Window.MainWindow({ application: this })).show();
+        let win = new Window.MainWindow({ application: this });
+
+        if (this.model.loading) {
+            let id = this.model.connect('notify::loading', function(model) {
+                model.disconnect(id);
+                win.show();
+            });
+        } else {
+            win.show();
+        }
     },
 
     vfunc_shutdown: function() {
