@@ -38,6 +38,9 @@ const WorldModel = new Lang.Class({
     Signals: {
         'updated': { param_types: [ GWeather.Info ] }
     },
+    Properties: {
+        'loading': GObject.ParamSpec.boolean('loading', '', '', GObject.ParamFlags.READABLE, false)
+    },
 
     _init: function(world) {
         this.parent();
@@ -63,6 +66,8 @@ const WorldModel = new Lang.Class({
                 GWeather.Provider.OWM;
         }
 
+        this._loadingCount = 0;
+
         let locations = this._settings.get_value('locations').deep_unpack();
         for (let i = 0; i < locations.length; i++) {
             let variant = locations[i];
@@ -71,6 +76,24 @@ const WorldModel = new Lang.Class({
         }
 
         this._settings.connect('changed::locations', Lang.bind(this, this._onChanged));
+    },
+
+    _updateLoadingCount: function(delta) {
+        let wasLoading = this._loadingCount > 0;
+        this._loadingCount += delta;
+        let isLoading = this._loadingCount > 0;
+
+        if (wasLoading != isLoading)
+            this.notify('loading');
+    },
+
+    updateInfo: function(info) {
+        info.update();
+        this._updateLoadingCount(+1);
+    },
+
+    get loading() {
+        return this._loadingCount > 0;
     },
 
     _addLocationInternal: function(location) {
@@ -84,9 +107,10 @@ const WorldModel = new Lang.Class({
                      [Columns.ICON, Columns.SECONDARY_TEXT],
                      [icon, secondary_text]);
 
+            this._updateLoadingCount(-1);
             this.emit('updated', info);
         }));
-        info.update();
+        this.updateInfo(info);
 
         let primary_text = location.get_city_name();
         let icon = Util.loadIcon('view-refresh-symbolic', ICON_SIZE);

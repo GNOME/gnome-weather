@@ -163,7 +163,7 @@ const WeatherView = new Lang.Class({
         this._spinner.start();
         this._infoPage.clear();
 
-        this._info.update();
+        getApp().model.updateInfo(this._info);
     },
 
     _onUpdate: function(info) {
