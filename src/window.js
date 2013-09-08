@@ -299,7 +299,7 @@ const MainWindow = new Lang.Class({
               comments: _("A weather application"),
               copyright: 'Copyright 2013 The Weather Developers',
               license_type: Gtk.License.GPL_2_0,
-              logo_icon_name: 'gnome-weather',
+              logo_icon_name: 'org.gnome.Weather.Application',
               version: pkg.version,
               website: 'https://live.gnome.org/Design/Apps/Weather',
               wrap_license: true,
