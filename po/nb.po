@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 3.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-08 21:00+0200\n"
-"PO-Revision-Date: 2013-08-08 21:00+0200\n"
+"POT-Creation-Date: 2013-09-08 19:34+0200\n"
+"PO-Revision-Date: 2013-09-08 19:34+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -41,13 +41,21 @@ msgstr "Om vær"
 msgid "Quit"
 msgstr "Avslutt"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "Vær"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Vis værforhold og værmelding"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -139,6 +147,11 @@ msgstr "%H.%M"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -291,19 +304,19 @@ msgid_plural "%d selected"
 msgstr[0] "%d valgt"
 msgstr[1] "%d valgt"
 
-#: ../src/window.js:293
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: ../src/window.js:295
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "Et program for vær"
 
-#: ../src/world.js:217
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "Legg til lokasjoner"
 
-#: ../src/world.js:220
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Bruk <b>Ny</b>-knappen på verktøylinjen for å legge til flere lokasjoner i "
