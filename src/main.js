@@ -94,6 +94,15 @@ const Application = new Lang.Class({
         this.world = GWeather.Location.get_world();
         this.model = new World.WorldModel(this.world);
 
+        this.model.connect('notify::loading', Lang.bind(this, function() {
+            if (this.model.loading)
+                this.mark_busy();
+            else
+                this.unmark_busy();
+        }));
+        if (this.model.loading)
+            this.mark_busy();
+
         Util.initActions(this,
                          [{ name: 'quit',
                             activate: this._onQuit }]);
