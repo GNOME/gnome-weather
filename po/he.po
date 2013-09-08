@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-09 12:29+0300\n"
-"PO-Revision-Date: 2013-08-09 12:30+0200\n"
+"POT-Creation-Date: 2013-09-08 19:07+0300\n"
+"PO-Revision-Date: 2013-09-08 19:09+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <sh.yaron@gmail.com>\n"
 "Language: he\n"
@@ -43,13 +43,24 @@ msgstr "על אודות מזג האוויר"
 msgid "Quit"
 msgstr "יציאה"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "מזג האוויר"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "הצגת תנאים ואת תחזית מזג האוויר"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"יישום קטן שמאפשר לך לצפות בתנאי מזג האוויר הנוכחיים באזורך או בכל מקום אחר "
+"בעולם לרבות גישה לתחזיות מעודכנות עד שבוע מראש באמצעות מגוון שירותים ברחבי "
+"האינטרנט."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -141,6 +152,11 @@ msgstr "%H∶%M"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -293,11 +309,11 @@ msgid_plural "%d selected"
 msgstr[0] "נבחרה אחת"
 msgstr[1] "נבחרו %d"
 
-#: ../src/window.js:293
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr "ירון שהרבני <sh.yaron@gmail.com>"
 
-#: ../src/window.js:295
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "יישום מזג אוויר"
 
