@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-01-24 21:10+0000\n"
-"PO-Revision-Date: 2013-03-03 07:51+0530\n"
+"POT-Creation-Date: 2013-08-31 19:57+0000\n"
+"PO-Revision-Date: 2013-09-09 14:04-0500\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
@@ -19,179 +19,324 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: ../data/gnome-weather.desktop.in.h:1
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "ਨਵਾਂ(_N)"
+
+#: ../data/app-menu.ui.h:2
+#| msgid "Temperature: "
+msgid "Temperature unit"
+msgstr "ਤਾਪਮਾਨ ਇਕਾਈ"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "ਸੈਲਸੀਅਸ"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "ਫਾਰਨਹੀਟ"
+
+#: ../data/app-menu.ui.h:5
+#| msgid "Weather"
+msgid "About Weather"
+msgstr "ਮੌਸਮ"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "ਬਾਹਰ"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "ਮੌਸਮ"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "ਮੌਸਮ ਹਾਲਤ ਅਤੇ ਭਵਿੱਖਬਾਣੀ ਵੇਖੋ"
 
-#: ../src/widget.py:34
-msgid "Location: "
-msgstr "ਟਿਕਾਣਾ: "
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"ਇੱਕ ਛੋਟੀ ਐਪਲੀਕੇਸ਼ਨ, ਜੋ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਸ਼ਹਿਰ ਜਾਂ ਸੰਸਾਰ ਵਿੱਚੋਂ ਹੋਰ ਥਾਵਾਂ ਲਈ "
+"ਮੌਜੂਦਾ "
+"ਮੌਸਮ ਦਾ ਧਿਆਨ ਰੱਖਣ ਤੇ ਭਵਿੱਖਬਾਣੀਆਂ, 7 ਦਿਨਾਂ ਤੱਕ, ਲੈਣ ਲਈ ਸਹਾਇਕ ਹੈ, ਜੋ "
+"ਕਿ ਵੱਖ ਵੱਖ ਇੰਟਰਨੈੱਟ ਸੇਵਾਵਾਂ ਰਾਹੀਂ ਉਪਲੱਬਧ ਹਨ।"
 
-#: ../src/conditions.py:26
-msgid "Current conditions:"
-msgstr "ਮੌਜੂਦਾ ਹਾਲਤ:"
+#: ../data/new-location-dialog.ui.h:1
+#| msgid "Location: "
+msgid "New Location"
+msgstr "ਨਵਾਂ ਟਿਕਾਣਾ"
 
-#: ../src/conditions.py:47
-msgid "Temperature: "
-msgstr "ਤਾਪਮਾਨ: "
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "ਸ਼ਹਿਰ ਲਈ ਖੋਜ:"
 
-#: ../src/conditions.py:49
-msgid "Wind: "
-msgstr "ਹਵਾ: "
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "ਤਹਿ ਕੀਤੇ ਸ਼ਹਿਰ ਮੌਸਮ ਵੇਖਾਉਂਦੇ ਹਨ"
 
-#: ../src/forecast.py:86
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"ਗਨੋਮ-ਮੌਸਮ ਦੀ ਸੰਸਾਰ ਝਲਕ ਵਿੱਚ ਟਿਕਾਣੇ ਵੇਖਾਏ ਜਾਂਦੇ ਹਨ। ਹਰ ਮੁੱਲ ਨੂੰ "
+"gweather_location_serialize() "
+"ਰਾਹੀਂ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।"
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "ਸਭ ਚੁਣੋ"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "ਕੋਈ ਨਾ ਚੁਣੋ"
+
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
+msgstr "ਟਿਕਾਣਿਆਂ ਨੂੰ ਚੁਣਨ ਲਈ ਟਿਕਾਣਿਆਂ ਉੱਤੇ ਕਲਿੱਕ ਕਰੋ"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "ਨਵਾਂ"
+
+#: ../data/window.ui.h:5
+#| msgid "Weather"
+msgid "World Weather"
+msgstr "ਸੰਸਾਰ ਮੌਸਮ"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "ਰੱਦ ਕਰੋ"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "ਹਟਾਓ"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "...ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
+
+#: ../src/forecast.js:112
 msgid "Today"
 msgstr "ਅੱਜ"
 
-#: ../src/forecast.py:91
+#: ../src/forecast.js:118
 msgid "Tomorrow"
 msgstr "ਭਲਕ"
 
-#: ../src/strings.py:22
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "…ਹੋਰ"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "ਅੱਜ ਲਈ ਭਵਿੱਖਬਾਣੀ"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "ਭਲਕ ਲਈ ਭਵਿੱਖਬਾਣੀ"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%d %B"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
 msgid "Monday night"
 msgstr "ਸੋਮਵਾਰ ਰਾਤ"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday morning"
 msgstr "ਸੋਮਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday afternoon"
 msgstr "ਸੋਮਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
 
-#: ../src/strings.py:22
+#: ../src/strings.js:22
 msgid "Monday evening"
 msgstr "ਸੋਮਵਾਰ ਆਥਣ"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday night"
 msgstr "ਮੰਗਲਵਾਰ ਰਾਤ"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday morning"
 msgstr "ਮੰਗਲਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday afternoon"
 msgstr "ਮੰਗਲਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
 
-#: ../src/strings.py:23
+#: ../src/strings.js:23
 msgid "Tuesday evening"
 msgstr "ਮੰਗਲਵਾਰ ਆਥਣ"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday night"
 msgstr "ਬੁੱਧਵਾਰ ਰਾਤ"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday morning"
 msgstr "ਬੁੱਧਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday afternoon"
 msgstr "ਬੁੱਧਵਾਰ ਬਾਅਦ-ਦੁਪੈਹਰ"
 
-#: ../src/strings.py:24
+#: ../src/strings.js:24
 msgid "Wednesday evening"
 msgstr "ਬੁੱਧਵਾਰ ਆਥਣ"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday night"
 msgstr "ਵੀਰਵਾਰ ਰਾਤ"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday morning"
 msgstr "ਵੀਰਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday afternoon"
 msgstr "ਵੀਰਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
 
-#: ../src/strings.py:25
+#: ../src/strings.js:25
 msgid "Thursday evening"
 msgstr "ਵੀਰਵਾਰ ਆਥਣ"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday night"
 msgstr "ਸ਼ੁੱਕਰਵਾਰ ਰਾਤ"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday morning"
 msgstr "ਸ਼ੁੱਕਰਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday afternoon"
 msgstr "ਸ਼ੁੱਕਰਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
 
-#: ../src/strings.py:26
+#: ../src/strings.js:26
 msgid "Friday evening"
 msgstr "ਸ਼ੁੱਕਰਵਾਰ ਆਥਣ"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday night"
 msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਰਾਤ"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday morning"
 msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday afternoon"
 msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
 
-#: ../src/strings.py:27
+#: ../src/strings.js:27
 msgid "Saturday evening"
 msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਆਥਣ"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday night"
 msgstr "ਐਤਵਾਰ ਰਾਤ"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday morning"
 msgstr "ਐਤਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday afternoon"
 msgstr "ਐਤਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
 
-#: ../src/strings.py:28
+#: ../src/strings.js:28
 msgid "Sunday evening"
 msgstr "ਐਤਵਾਰ ਆਥਣ"
 
-#: ../src/strings.py:31
-msgid "This night"
+#: ../src/strings.js:31
+#| msgid "This night"
+msgid "Tonight"
 msgstr "ਅੱਜ ਰਾਤ"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This morning"
 msgstr "ਅੱਜ ਸਵੇਰ"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This afternoon"
 msgstr "ਅੱਜ ਬਾਅਦ ਦੁਪੈਹਰ"
 
-#: ../src/strings.py:31
+#: ../src/strings.js:31
 msgid "This evening"
 msgstr "ਅੱਜ ਆਥਣ"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow night"
 msgstr "ਭਲਕੇ ਰਾਤ"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow morning"
 msgstr "ਭਲਕੇ ਸਵੇਰ"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow afternoon"
 msgstr "ਭਲਕੇ ਬਾਅਦ-ਦੁਪੈਹਰ"
 
-#: ../src/strings.py:32
+#: ../src/strings.js:32
 msgid "Tomorrow evening"
 msgstr "ਭਲਕੇ ਆਥਣ"
 
+#: ../src/window.js:182
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d ਚੁਣਿਆ"
+msgstr[1] "%d ਚੁਣੇ"
+
+#: ../src/window.js:297
+msgid "translator-credits"
+msgstr ""
+"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ\n"
+"ਪੰਜਾਬੀ ਓਪਨਸੋਰਸ ਟੀਮ (POST)"
+
+#: ../src/window.js:299
+msgid "A weather application"
+msgstr "ਮੌਸਮ ਐਪਲੀਕੇਸ਼ਨ"
+
+#: ../src/world.js:217
+#| msgid "Location: "
+msgid "Add locations"
+msgstr "ਟਿਕਾਣੇ ਸ਼ਾਮਿਲ"
+
+#: ../src/world.js:220
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr "ਹੋਰ ਸੰਸਾਰ ਦੇ ਸਥਾਨ ਜੋੜਨ ਲਈ ਟੂਲਬਾਰ ਉੱਤੇ <b>ਨਵਾਂ</b> ਬਟਨ ਵਰਤੋਂ"
+
+#~ msgid "Current conditions:"
+#~ msgstr "ਮੌਜੂਦਾ ਹਾਲਤ:"
+
+#~ msgid "Wind: "
+#~ msgstr "ਹਵਾ: "
