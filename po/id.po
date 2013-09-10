@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-06-29 16:36+0000\n"
-"PO-Revision-Date: 2013-07-04 10:19+0700\n"
+"POT-Creation-Date: 2013-08-31 19:57+0000\n"
+"PO-Revision-Date: 2013-09-10 10:37+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -43,15 +43,31 @@ msgstr "Tentang Cuaca"
 msgid "Quit"
 msgstr "Keluar"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:284
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "Cuaca"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Tampilkan kondisi dan ramalan cuaca"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Aplikasi kecil yang memungkinkan Anda memantau kondisi cuaca saat ini untuk "
+"kota Anda, atau dimanapun di dunia dan untuk mengakses prakiraan cuaca yang "
+"termutakhirkan, sampai dengan 7 hari, yang disediakan oleh berbagai layanan "
+"internt."
+
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Lokasi Baru"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "Cari kota:"
 
@@ -75,7 +91,7 @@ msgstr "Pilih Semua"
 msgid "Select None"
 msgstr "Pilih Tak Satupun"
 
-#: ../data/window.ui.h:3 ../src/window.js:180
+#: ../data/window.ui.h:3 ../src/window.js:187
 msgid "Click on locations to select them"
 msgstr "Klik pada lokasi untuk memilihnya"
 
@@ -137,6 +153,11 @@ msgstr "%l∶%M %p"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -282,25 +303,25 @@ msgstr "Besok siang"
 msgid "Tomorrow evening"
 msgstr "Besok sore"
 
-#: ../src/window.js:176
+#: ../src/window.js:182
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d dipilih"
 
-#: ../src/window.js:283
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr "Andika Triwidada <andika@gmail.com>, 2013"
 
-#: ../src/window.js:285
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "Aplikasi cuaca"
 
-#: ../src/world.js:211
+#: ../src/world.js:217
 msgid "Add locations"
 msgstr "Tambah lokasi"
 
-#: ../src/world.js:214
+#: ../src/world.js:220
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Gunakan tombol <b>Baru</b> pada bilah alat untuk menambah lebih banyak lokasi"
