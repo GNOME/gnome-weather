@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-11 22:32+0200\n"
-"PO-Revision-Date: 2013-09-10 22:17+0100\n"
+"POT-Creation-Date: 2013-09-13 22:19+0200\n"
+"PO-Revision-Date: 2013-09-11 23:22+0100\n"
 "Last-Translator: Kris Thomsen <mail@kristhomsen.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -22,18 +22,16 @@ msgid "_New"
 msgstr "_Ny"
 
 #: ../data/app-menu.ui.h:2
-#, fuzzy
 msgid "Temperature unit"
-msgstr "Temperaturenhed:"
+msgstr "Temperaturenhed"
 
 #: ../data/app-menu.ui.h:3
 msgid "Celsius"
-msgstr ""
+msgstr "Celsius"
 
 #: ../data/app-menu.ui.h:4
-#, fuzzy
 msgid "Fahrenheit"
-msgstr "Fahrenheit (°F)"
+msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
 msgid "About Weather"
@@ -58,6 +56,9 @@ msgid ""
 "conditions for your city, or anywhere in the world and to access updated "
 "forecasts, up to 7 days, provided by various internet services."
 msgstr ""
+"En lille applikation, som giver dig mulighed for at overvåge de nuværende "
+"vejrforhold i din by, eller hvor som helst i verden og til at se opdaterede "
+"vejrudsigter i op til syv dage, udbudt af forskellige internettjenester."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -101,7 +102,7 @@ msgstr "Verdensvejr"
 
 #: ../data/window.ui.h:6
 msgid "Cancel"
-msgstr ""
+msgstr "Annullér"
 
 #: ../data/window.ui.h:7
 msgid "Delete"
@@ -153,7 +154,7 @@ msgstr "%R"
 #: ../src/searchProvider.js:161
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
