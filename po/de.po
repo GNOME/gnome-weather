@@ -4,14 +4,15 @@
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2013.
 # Christian Kirbach <christian.kirbach@gmail.com>, 2013.
 # Benjamin Steinwender <b@stbe.at>, 2013.
+# Tobias Endrigkeit <tobiasendrigkeit@outlook.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-06-18 14:30+0000\n"
-"PO-Revision-Date: 2013-06-28 05:16+0100\n"
+"POT-Creation-Date: 2013-09-13 20:19+0000\n"
+"PO-Revision-Date: 2013-09-14 19:42+0100\n"
 "Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -45,15 +46,31 @@ msgstr "Info zu Wetter"
 msgid "Quit"
 msgstr "Beenden"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:284
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "Wetter"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Wetterberichte und -vorhersagen anzeigen"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Eine kleine Anwendung, welche es Ihnen erlaubt, das aktuelle Wetter für Ihre "
+"Stadt, oder für einen beliebigen Ort auf der Welt zu betrachten. Ebenfalls "
+"ermöglicht es Ihnen den Zugang zu der aktualisierten Wettervorhersage für "
+"bis zu sieben Tage mit Hilfe von verschiedenen Internetdiensten."
+
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Neuer Ort"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "Nach einer Stadt suchen:"
 
@@ -77,7 +94,7 @@ msgstr "Alle auswählen"
 msgid "Select None"
 msgstr "Nichts auswählen"
 
-#: ../data/window.ui.h:3 ../src/window.js:180
+#: ../data/window.ui.h:3 ../src/window.js:187
 msgid "Click on locations to select them"
 msgstr "Klicken Sie auf Orte, um diese auszuwählen"
 
@@ -140,6 +157,11 @@ msgstr "%l∶%M %p"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -286,26 +308,26 @@ msgstr "Morgen Nachmittag"
 msgid "Tomorrow evening"
 msgstr "Morgen Abend"
 
-#: ../src/window.js:176
+#: ../src/window.js:182
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d ausgewählt"
 msgstr[1] "%d ausgewählt"
 
-#: ../src/window.js:283
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr "Christian Kirbach <christian.kirbach@gmail.com>, 2013"
 
-#: ../src/window.js:285
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "Eine Wetter-Anwendung"
 
-#: ../src/world.js:211
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "Orte hinzufügen"
 
-#: ../src/world.js:214
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Verwenden Sie den »Neu«-Knopf auf der Werkzeugleiste, um weitere Orte "
@@ -316,9 +338,6 @@ msgstr ""
 
 #~ msgid "Click on items to select them"
 #~ msgstr "Klicken Sie auf Objekte, um diese auszuwählen"
-
-#~ msgid "%s, %s"
-#~ msgstr "%s, %s"
 
 #~ msgid "Current conditions:"
 #~ msgstr "Momentane Bedingungen:"
