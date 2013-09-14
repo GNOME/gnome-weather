@@ -1,0 +1,334 @@
+# Basque translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+#
+# Asier Sarasua Garmendia <asiersar@yahoo.com>, 2013.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-14 13:03+0200\n"
+"PO-Revision-Date: 2013-09-14 13:16+0200\n"
+"Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
+"Language-Team: Basque <librezale@librezale.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.4\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Berria"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Tenperaturaren unitatea"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "Eguraldiari buruz"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Irten"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:298
+msgid "Weather"
+msgstr "Eguraldia"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Erakutsi eguraldiaren egoera eta iragarpena"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Aplikazio txiki bat zure herriko, edo munduko beste leku bateko, "
+"uneko eguraldiaren jarraipena egiteko eta 7 egunetarako "
+"iragarpen eguneratuak jasotzeko (interneteko zerbitzu batzuk eskainita)."
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Kokaleku berria"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "Bilatu herria:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Konfiguratutako herriak (haien eguraldia erakusteko)"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Gnome-weather aplikazioaren munduaren ikuspegian erakutsitako kokalekuak. "
+"Balio bakoitza gweather_location_serialize() funtzioak itzulitako GVariant "
+"bat da."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Hautatu dena"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Hautatu bat ere ez"
+
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
+msgstr "Egin klik kokalekuen gainean hautatzeko"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Berria"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr "Munduko eguraldia"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "Utzi"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "Ezabatu"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "Kargatzen…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Gaur"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Bihar"
+
+#: ../src/forecast.js:132
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Gehiago…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Gaurko iragarpena"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Biharko iragarpena"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Astelehen gaua"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Astelehen goiza"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Astelehen arratsaldea"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Astelehen iluntzea"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Astearte gaua"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Astearte goiza"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Astearte arratsaldea"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Astearte iluntzea"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Asteazken gaua"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Asteazken goiza"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Asteazken arratsaldea"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Asteazken iluntzea"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Ostegun gaua"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Ostegun goiza"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Ostegun arratsaldea"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Ostegun iluntzea"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Ostiral gaua"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Ostiral goiza"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Ostiral arratsaldea"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Ostiral iluntzea"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Larunbat gaua"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Larunbat goiza"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Larunbat arratsaldea"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Larunbat iluntzea"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Igande gaua"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Igande goiza"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Igande arratsaldea"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Igande iluntzea"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Gauean"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Gaur goizean"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Gaur arratsaldean"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Gaur iluntzean"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Bihar gauean"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Bihar goizean"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Bihar arratsaldean"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Bihar iluntzean"
+
+#: ../src/window.js:182
+#, javascript-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "hautatuta %d"
+msgstr[1] "%d hautatuta"
+
+#: ../src/window.js:297
+msgid "translator-credits"
+msgstr ""
+"Asier Sarasua Garmendia <asiersar@yahoo.com>\n"
+"Iñaki Larrañaga Murgoitio <dooteo@zundan.com>"
+
+#: ../src/window.js:299
+msgid "A weather application"
+msgstr "Eguraldiaren aplikazio bat"
+
+#: ../src/world.js:241
+msgid "Add locations"
+msgstr "Gehitu Kokalekuak"
+
+#: ../src/world.js:244
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"Erabili tresna-barrako <b>Berria</b> botoia munduko beste kokalekuak gehitzeko"
+
+#~ msgid "Current conditions:"
+#~ msgstr "Uneko egoera:"
+
+#~ msgid "Wind: "
+#~ msgstr "Haizea: "
