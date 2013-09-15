@@ -8,35 +8,32 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-06-16 07:49+0000\n"
-"PO-Revision-Date: 2013-04-29 22:46+0900\n"
+"POT-Creation-Date: 2013-09-14 17:44+0000\n"
+"PO-Revision-Date: 2013-09-16 04:13+0900\n"
 "Last-Translator: Jinkyu Yi <jincreator@jincreator.net>\n"
-"Language-Team: Korean <gnome-kr@googlegroups.com>\n"
+"Language-Team: 한국어 <Korean <gnome-kr@googlegroups.com>>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
 msgstr "새 날씨(_N)"
 
 #: ../data/app-menu.ui.h:2
-#, fuzzy
-#| msgid "Temperature unit:"
 msgid "Temperature unit"
-msgstr "온도 단위:"
+msgstr "온도 단위"
 
 #: ../data/app-menu.ui.h:3
 msgid "Celsius"
-msgstr ""
+msgstr "섭씨 온도(℃)"
 
 #: ../data/app-menu.ui.h:4
-#, fuzzy
-#| msgid "Fahrenheit (°F)"
 msgid "Fahrenheit"
-msgstr "화씨 온도(°F)"
+msgstr "화씨 온도(℉)"
 
 #: ../data/app-menu.ui.h:5
 msgid "About Weather"
@@ -46,15 +43,29 @@ msgstr "날씨 정보"
 msgid "Quit"
 msgstr "끝내기"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:284
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "날씨"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "날씨와 일기 예보 보기"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"당신이 사는 도시를 비롯하여 전세계 모든 곳의 현재 날씨와 최고 7일 뒤의 일기 "
+"예보를 여러 인터넷 서비스에서 가져와 보여주는 작은 프로그램입니다."
+
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "새 지역"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "도시로 검색:"
 
@@ -78,7 +89,7 @@ msgstr "모두 선택"
 msgid "Select None"
 msgstr "모두 선택 해제"
 
-#: ../data/window.ui.h:3 ../src/window.js:180
+#: ../data/window.ui.h:3 ../src/window.js:187
 msgid "Click on locations to select them"
 msgstr "지역을 눌러서 선택"
 
@@ -92,7 +103,7 @@ msgstr "세계 날씨"
 
 #: ../data/window.ui.h:6
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 #: ../data/window.ui.h:7
 msgid "Delete"
@@ -140,6 +151,11 @@ msgstr "%l∶%M %p"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -285,96 +301,24 @@ msgstr "내일 점심"
 msgid "Tomorrow evening"
 msgstr "내일 저녁"
 
-#: ../src/window.js:176
+#: ../src/window.js:182
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d개 선택함"
 
-#: ../src/window.js:283
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr "Jinkyu Yi <jincreator@jincreator.net>"
 
-#: ../src/window.js:285
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "날씨 프로그램"
 
-#: ../src/world.js:211
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "지역 추가"
 
-#: ../src/world.js:214
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr "도구 모음의 <b>새 날씨</b> 단추를 눌러 다른 세계 지역 추가"
-
-#~ msgid "_Preferences"
-#~ msgstr "기본 설정(_P)"
-
-#~ msgid "Meters (m)"
-#~ msgstr "미터(m)"
-
-#~ msgid "Kilometers (km)"
-#~ msgstr "킬로미터(km)"
-
-#~ msgid "Miles (mi)"
-#~ msgstr "마일(mi)"
-
-#~ msgid "Preferences"
-#~ msgstr "기본 설정"
-
-#~ msgid "Speed unit:"
-#~ msgstr "속도 단위:"
-
-#~ msgid "Distance unit:"
-#~ msgstr "거리 단위:"
-
-#~ msgid "Pressure unit:"
-#~ msgstr "압력 단위:"
-
-#~ msgid "Kilopascal (kPa)"
-#~ msgstr "킬로파스칼(kPa)"
-
-#~ msgid "Hectopascal (hPa)"
-#~ msgstr "헥토파스칼(hPa)"
-
-#~ msgid "Millibar (mbar)"
-#~ msgstr "밀리바(mbar)"
-
-#~ msgid "Millimeters of mercury (mmHg)"
-#~ msgstr "수은 기둥의 밀리미터 단위 높이(mmHg)"
-
-#~ msgid "Inches of mercury (inchHg)"
-#~ msgstr "수은 기둥의 인치 단위 높이(inchHg)"
-
-#~ msgid "Atmosphere (atm)"
-#~ msgstr "기압(atm)"
-
-#~ msgid "Meters per second (m/s)"
-#~ msgstr "초당 미터(m/s)"
-
-#~ msgid "Kilometers per hour (km/h)"
-#~ msgstr "시간당 킬로미터(km/h)"
-
-#~ msgid "Miles per hour (mph)"
-#~ msgstr "시간당 마일(mph)"
-
-#~ msgid "Knots"
-#~ msgstr "노트"
-
-#~ msgid "Beaufort scale"
-#~ msgstr "보퍼트 계급"
-
-#~ msgid "Kelvin (K)"
-#~ msgstr "켈빈(K)"
-
-#~ msgid "Centigrade (°C)"
-#~ msgstr "섭씨 온도(°C)"
-
-#~ msgid "Done"
-#~ msgstr "완료"
-
-#~ msgid "Click on items to select them"
-#~ msgstr "항목을 눌러서 선택"
-
-#~ msgid "New Location"
-#~ msgstr "새 지역"
