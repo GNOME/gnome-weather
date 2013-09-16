@@ -1,3 +1,11 @@
+3.9.92
+======
+* We now delay showing the window until the view is fully
+  loaded
+* We make use of the spinner next to the app menu when
+  refreshing the forecasts
+* Translation updates
+
 3.9.91
 ======
 * Further update the UI to match the selection mode mockups
