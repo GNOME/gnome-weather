@@ -1,0 +1,329 @@
+# gnome-weather's Portuguese translation.
+# Copyright © 2013 gnome-weather
+# This file is distributed under the same license as the gnome-weather package.
+# Fernando Carvalho <phaetonkde@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 3.10\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-19 00:54+0100\n"
+"PO-Revision-Date: 2013-06-20 07:20+0200\n"
+"Last-Translator: Fernando Carvalho <phaetonkde@gmail.com>\n"
+"Language-Team: Gnome Traducao portugues\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.0\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Novo"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Unidade de temperatura"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "Sobre o Metereologia"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Sair"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:298
+msgid "Weather"
+msgstr "Metereologia"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Apresenta as condições metereológicas e previsões"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Uma pequena aplicação que lhe permite monitorizar as condições atmosféricas "
+"atuais da sua cidade, ou qualquer outro local no mundo, e aceder a "
+"previsões atualizadas, até 7 dias, disponibilizadas por vários serviços na "
+"internet."
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Novo Local"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "Procurar uma cidade:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Cidades configuradas para as quais apresentar a metereologia"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Os locais apresentados na visão de mundo do gnome-weather. Cada valor é um "
+"GVariant devolvido por gweather_location_serialize()."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Selecionar Tudo"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Não Selecionar Nenhum"
+
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
+msgstr "Clique nos itens para os selecionar"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Novo"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr "Meteorologia Mundial"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "Apagar"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "A Ler…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Hoje"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Amanhã"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Mais…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "Previsão para Hoje"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "Previsão para Amanhã"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Segunda-feira à noite"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Segunda-feira de manhã"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Segunda-feira de tarde"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Segunda-feira ao fim do dia"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Terça-feira à noite"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Terça-feira de manhã"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Terça-feira à tarde"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Terça-feira ao fim do dia"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Quarta-feira à noite"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Quarta-feira de manhã"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Quarta-feira à tarde"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Quarta-feira ao fim do dia"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Quinta-feira à noite"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Quinta-feira de manhã"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Quinta-feira à tarde"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Quinta-feira ao fim do dia"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Sexta-feira à noite"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Sexta-feira de manhã"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Sexta-feira à tarde"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Sexta-feira ao fim do dia"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Sábado à noite"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Sábado de manhã"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Sábado à tarde"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Sábado ao fim do dia"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Domingo à noite"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Domingo de manhã"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Domingo à tarde"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Domingo ao fim do dia"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Esta noite"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Esta manhã"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Esta tarde"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Ao fim do dia de hoje"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Amanhã à noite"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Amanhã de manhã"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Amanhã à tarde"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Amanhã ao fim do dia"
+
+#: ../src/window.js:182
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d selecionado"
+msgstr[1] "%d selecionados"
+
+#: ../src/window.js:297
+msgid "translator-credits"
+msgstr "Fernando Carvalho <phaetonkde@gmail.com>"
+
+#: ../src/window.js:299
+msgid "A weather application"
+msgstr "Uma aplicação de meteorologia"
+
+#: ../src/world.js:241
+msgid "Add locations"
+msgstr "Adicionar locais"
+
+#: ../src/world.js:244
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"Utilizar o botão <b>Novo</b> na barra de ferramentas para adicionar mais locais "
+"do mundo"
