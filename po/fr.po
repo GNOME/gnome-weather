@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-31 19:57+0000\n"
-"PO-Revision-Date: 2013-09-12 18:50+0200\n"
+"POT-Creation-Date: 2013-09-14 17:44+0000\n"
+"PO-Revision-Date: 2013-09-20 17:47+0200\n"
 "Last-Translator: Alain Lojewski <allomervan@gmail.com>\n"
 "Language-Team: French <gnomefr@traduc.org>\n"
 "Language: fr\n"
@@ -43,7 +43,7 @@ msgstr "À propos de Météo"
 msgid "Quit"
 msgstr "Quitter"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
 #: ../src/window.js:298
 msgid "Weather"
 msgstr "Météo"
@@ -58,6 +58,9 @@ msgid ""
 "conditions for your city, or anywhere in the world and to access updated "
 "forecasts, up to 7 days, provided by various internet services."
 msgstr ""
+"Une petite application qui vous permet de surveiller les conditions dans "
+"votre ville ou n'importe où dans le monde et d'accéder à des prévisions à "
+"jour, jusqu'à 7 jours, fournies par divers services sur Internet."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -314,11 +317,11 @@ msgstr "Alain Lojewski <allomervan@gmail.com>, 2012-2013"
 msgid "A weather application"
 msgstr "Une application de prédictions météo"
 
-#: ../src/world.js:217
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "Ajouter des lieux"
 
-#: ../src/world.js:220
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Utiliser le bouton <b>Nouveau</b> de la barre d'outils pour ajouter des "
