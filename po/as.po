@@ -1,0 +1,331 @@
+# Assamese translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+#
+# ngoswami <ngoswami@redhat.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-09-19 00:02+0000\n"
+"PO-Revision-Date: 2013-09-20 15:51+0530\n"
+"Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
+"Language-Team: Assamese <kde-i18n-doc@kde.org>\n"
+"Language: as\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "নতুন (_N)"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "তাপমাত্ৰাৰ একক"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "বতৰৰ বিষয়ে"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "প্ৰস্থান কৰক"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:298
+msgid "Weather"
+msgstr "বতৰ"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "বতৰৰ অৱস্থা আৰু পূৰ্বানুমান দেখুৱাওক"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"এটা সৰু এপ্লিকেচন যি আপোনাক আপোনাৰ নগৰ, অথবা পৃথিৱীৰ যিকোনো ঠাইত বৰ্তমান বতৰ "
+"অৱস্থা "
+"পৰ্যবেক্ষণ কৰাৰ আৰু বিভিন্ন ইন্টাৰনেট সেৱাসমূহ দ্বাৰা প্ৰদান কৰা, আপডেইটেড "
+"পূৰ্বানুমান, ৭ দিনলৈ, "
+"অভিগম কৰাৰ অনুমতি দিয়ে।"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "নতুন অবস্থান"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "এটা নগৰৰ বাবে সন্ধান কৰক:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "বতৰ দেখুৱাবলৈ সংৰূপিত নগৰসমূহ"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"gnome-weather ৰ বিশ্ব দৰ্শনত দেখুৱা অৱস্থানসমূহ। প্ৰত্যকটো মান "
+"gweather_location_serialize() "
+"দ্বাৰা ঘুৰাই দিয়া এটা GVariant।"
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "সকলো বাছক"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "একো নাবাছিব"
+
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
+msgstr "অৱস্থানসমূহ নিৰ্বাচন কৰিবলে সিহতত ক্লিক কৰক"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "নতুন"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr "বিশ্বৰ বতৰ"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "বাতিল কৰক"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "মচি পেলাওক"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "ল'ড কৰা হৈছে…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "আজি"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "অহাকালি"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "অধিক…"
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr "আজিৰ পূৰ্বানুমান"
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr "অহাকালিৰ পূৰ্বানুমান"
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "সোমবাৰ ৰাতি"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "সোমবাৰ ৰাতিপুৱা"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "সোমবাৰ আবেলি"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "সোমবাৰ গধূলি"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "মঙলবাৰ ৰাতি"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "মঙলবাৰ ৰাতিপুৱা"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "মঙলবাৰ আবেলি"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "মঙলবাৰ গধূলি"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "বুধবাৰ ৰাতি"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "বুধবাৰ ৰাতিপুৱা"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "বুধবাৰ আবেলি"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "বুধবাৰ গধূলি"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "বৃহষ্পতিবাৰ ৰাতি"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "বৃহষ্পতিবাৰ ৰাতিপুৱা"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "বৃহষ্পতিবাৰ আবেলি"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "বৃহষ্পতিবাৰ গধূলি"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "শুক্ৰবাৰ ৰাতি"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "শুক্ৰবাৰ ৰাতিপুৱা"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "শুক্ৰবাৰ আবেলি"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "শুক্ৰবাৰ গধূলি"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "শনিবাৰ ৰাতি"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "শনিবাৰ ৰাতিপুৱা"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "শনিবাৰ আবেলি"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "শনিবাৰ গধূলি"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "দেওবাৰ ৰাতি"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "দেওবাৰ ৰাতিপুৱা"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "দেওবাৰ আবেলি"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "দেওবাৰ গধূলি"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "আজি ৰাতি"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "আজি ৰাতিপুৱা"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "আজি আবেলি"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "আজি গধূলি"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "অহাকালি ৰাতি"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "অহাকালি ৰাতিপুৱা"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "অহাকালি আবেলি"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "অহাকালি গধূলি"
+
+#: ../src/window.js:182
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d নিৰ্বাচিত"
+msgstr[1] "%d নিৰ্বাচিত"
+
+#: ../src/window.js:297
+msgid "translator-credits"
+msgstr "নীলমদ্যুতি গোস্বামী (ngoswami@redhat.com)"
+
+#: ../src/window.js:299
+msgid "A weather application"
+msgstr "এটা বতৰ এপ্লিকেচন"
+
+#: ../src/world.js:241
+msgid "Add locations"
+msgstr "অবস্থানসমূহ যোগ কৰক"
+
+#: ../src/world.js:244
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"অধিক বিশ্বৰ অৱস্থানসমূহ যোগ কৰিবলৈ টুলবাৰত <b>নতুন</b> বুটাম ব্যৱহাৰ কৰক"
+
