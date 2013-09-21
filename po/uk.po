@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-31 13:41+0300\n"
-"PO-Revision-Date: 2013-08-31 14:02+0300\n"
+"POT-Creation-Date: 2013-09-21 20:26+0300\n"
+"PO-Revision-Date: 2013-09-21 20:26+0300\n"
 "Last-Translator: Daniel Korostil <ted.korostiled@gmail.com>\n"
 "Language-Team: linux.org.ua\n"
 "Language: uk\n"
@@ -42,8 +42,8 @@ msgstr "Про програму"
 msgid "Quit"
 msgstr "Вийти"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:46
-#: ../src/window.js:294
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "Погода"
 
@@ -149,6 +149,11 @@ msgstr "%l∶%M %p"
 #: ../src/forecast.js:303
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:161
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -302,18 +307,19 @@ msgstr[0] "%d вибрано"
 msgstr[1] "%d вибрано"
 msgstr[2] "%d вибрано"
 
-#: ../src/window.js:293
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr "Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: ../src/window.js:295
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "Погодна програма"
 
-#: ../src/world.js:217
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "Додати місце"
 
-#: ../src/world.js:220
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr "Натисніть кнопку <b>Додати</b> на панелі, щоб розширити кількість місць"
+msgstr ""
+"Натисніть кнопку <b>Додати</b> на панелі, щоб розширити кількість місць"
