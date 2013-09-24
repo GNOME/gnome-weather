@@ -1,4 +1,4 @@
-<schemalist gettext-domain="gnome-weather">
+<schemalist gettext-domain="org.gnome.Weather.Application">
   <schema id="org.gnome.Weather.Application" path="/org/gnome/Weather/Application/">
     <key name="locations" type="av">
       <default>[]</default>
