@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 3.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-08 19:34+0200\n"
-"PO-Revision-Date: 2013-09-08 19:34+0200\n"
+"POT-Creation-Date: 2013-09-25 23:19+0200\n"
+"PO-Revision-Date: 2013-09-25 23:19+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -55,7 +55,7 @@ msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world and to access updated "
 "forecasts, up to 7 days, provided by various internet services."
-msgstr ""
+msgstr "Et lite program som lar deg overvåke værforholdene for din by eller hvor som helst i verden og se på oppdaterte værmeldinger opp til syv dager fra ulike tjenester på internett."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -117,38 +117,44 @@ msgstr "I dag"
 msgid "Tomorrow"
 msgstr "I morgen"
 
-#: ../src/forecast.js:132
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: ../src/forecast.js:135
 #, c-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:182
 msgid "More…"
 msgstr "Mer …"
 
-#: ../src/forecast.js:257
+#: ../src/forecast.js:261
 msgid "Forecast for Today"
 msgstr "Værmelding for i dag"
 
-#: ../src/forecast.js:259
+#: ../src/forecast.js:263
 msgid "Forecast for Tomorrow"
 msgstr "Værmelding for i morgen"
 
-#: ../src/forecast.js:263
+#: ../src/forecast.js:267
 msgid "%B %d"
 msgstr "%B %d"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:304
 msgid "%l∶%M %p"
 msgstr "%H.%M"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:307
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/searchProvider.js:164
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
