@@ -158,6 +158,9 @@ const SearchProvider = new Lang.Class({
             let name = model.get_value(iter, World.Columns.PRIMARY_TEXT);
             let conditions = model.get_value(iter, World.Columns.SECONDARY_TEXT);
 
+            // TRANSLATORS: this is the description shown in the overview search
+            // It's the current weather conditions followed by the temperature,
+            // like "Clear sky, 14 °C"
             let summary = _("%s, %s").format(conditions, info.get_temp());
             ret.push({ name: new GLib.Variant('s', name),
                        id: new GLib.Variant('s', identifiers[i]),
