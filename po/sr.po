@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-31 19:57+0000\n"
-"PO-Revision-Date: 2013-09-05 11:32+0200\n"
+"POT-Creation-Date: 2013-10-02 20:21+0000\n"
+"PO-Revision-Date: 2013-10-05 06:22+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -43,7 +43,7 @@ msgstr "О Времену"
 msgid "Quit"
 msgstr "Изађи"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
 #: ../src/window.js:298
 msgid "Weather"
 msgstr "Време"
@@ -59,8 +59,8 @@ msgid ""
 "forecasts, up to 7 days, provided by various internet services."
 msgstr ""
 "Програмче које вам омогућава да надгледате тренутне временске прилике за ваш "
-"град, или било где у свету и да приступите освеженој временској прогнози, "
-"до 7 дана, коју обезбеђују разне услуге интернета."
+"град, или било где у свету и да приступите освеженој временској прогнози, до "
+"7 дана, коју обезбеђују разне услуге интернета."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -122,39 +122,37 @@ msgstr "Данас"
 msgid "Tomorrow"
 msgstr "Сутра"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:135
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:182
 msgid "More…"
 msgstr "Још…"
 
-#: ../src/forecast.js:257
+#: ../src/forecast.js:261
 msgid "Forecast for Today"
 msgstr "Прогноза за данас"
 
-#: ../src/forecast.js:259
+#: ../src/forecast.js:263
 msgid "Forecast for Tomorrow"
 msgstr "Прогноза за сутра"
 
-#: ../src/forecast.js:263
+#: ../src/forecast.js:267
 msgid "%B %d"
 msgstr "%B %d"
 
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:304
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:307
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/searchProvider.js:164
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -303,10 +301,12 @@ msgid "Tomorrow evening"
 msgstr "Сутра увече"
 
 #: ../src/window.js:182
-#, c-format
+#, javascript-format
+#| msgid "%d selected"
+#| msgid_plural "%d selected"
 msgid "%d selected"
 msgid_plural "%d selected"
-msgstr[0] "%d изабрано"
+msgstr[0] "%d изабран"
 msgstr[1] "%d изабрана"
 msgstr[2] "%d изабраних"
 msgstr[3] "Једно изабрано"
@@ -322,11 +322,11 @@ msgstr ""
 msgid "A weather application"
 msgstr "Програм за временске прилике"
 
-#: ../src/world.js:217
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "Додајте места"
 
-#: ../src/world.js:220
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Користите дугме <b>Ново</b> на траци алата да додате још светских места"
