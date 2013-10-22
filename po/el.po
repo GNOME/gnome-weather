@@ -3,21 +3,23 @@
 # This file is distributed under the same license as the gnome-weather package.
 # Dimitris Spingos <dmtrs32@gmail.com>, 2013.
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013.
+# Efstathios Iosifidis <iosifidis@opensuse.org>, 2013.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-06-05 19:34+0000\n"
-"PO-Revision-Date: 2013-06-06 09:54+0300\n"
-"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
-"Language-Team: team@gnome.gr\n"
+"POT-Creation-Date: 2013-10-15 21:02+0000\n"
+"PO-Revision-Date: 2013-10-19 13:05+0300\n"
+"Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
+"Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Gtranslator 2.91.6\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -44,15 +46,31 @@ msgstr "Για τον καιρό"
 msgid "Quit"
 msgstr "Έξοδος"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "Καιρός"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Εμφάνιση συνθηκών καιρού και πρόβλεψης"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Μια μικρή εφαρμογή που σας επιτρέπει να παρακολουθείτε τις τρέχουσες "
+"καιρικές συνθήκες για την πόλη σας ή για οποιοδήποτε άλλη τοποθεσία στον "
+"κόσμο και να έχετε ενημερώσεις για τις προβλέψεις, μέχρι και 7 ημέρες, από "
+"ποικίλες υπηρεσίες στο Internet."
+
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Νέα Τοποθεσία"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "Αναζήτηση πόλης:"
 
@@ -76,7 +94,7 @@ msgstr "Επιλογή όλων"
 msgid "Select None"
 msgstr "Επιλογή κανενός"
 
-#: ../data/window.ui.h:3 ../src/window.js:190
+#: ../data/window.ui.h:3 ../src/window.js:187
 msgid "Click on locations to select them"
 msgstr "Πατήστε στις τοποθεσίες για να τις επιλέξετε"
 
@@ -108,36 +126,39 @@ msgstr "Σήμερα"
 msgid "Tomorrow"
 msgstr "Αύριο"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:135
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:182
 msgid "More…"
 msgstr "Περισσότερα…"
 
-#: ../src/forecast.js:257
+#: ../src/forecast.js:261
 msgid "Forecast for Today"
 msgstr "Πρόβλεψη για σήμερα"
 
-#: ../src/forecast.js:259
+#: ../src/forecast.js:263
 msgid "Forecast for Tomorrow"
 msgstr "Πρόβλεψη για αύριο"
 
-#: ../src/forecast.js:263
+#: ../src/forecast.js:267
 msgid "%B %d"
 msgstr "%B %d"
 
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:304
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:307
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:164
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -283,29 +304,30 @@ msgstr "Αύριο το απόγευμα"
 msgid "Tomorrow evening"
 msgstr "Αύριο το βράδυ"
 
-#: ../src/window.js:186
-#, c-format
+#: ../src/window.js:182
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d επιλεγμένο"
 msgstr[1] "%d επιλεγμένα"
 
-#: ../src/window.js:293
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα του Gnome  \n"
 " Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
+" Ευστάθιος Ιωσηφίδης <iosifidis@opensuse.org>\n"
 "Για περισσότερα δείτε: http://gnome.gr"
 
-#: ../src/window.js:295
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "Μια εφαρμογή καιρού"
 
-#: ../src/world.js:211
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "Προσθήκη τοποθεσιών"
 
-#: ../src/world.js:214
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Χρησιμοποιήστε το κουμπί <b>Νέο</b> στην εργαλειοθήκη για την προσθήκη "
