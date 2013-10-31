@@ -9,47 +9,70 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-29 22:15+0000\n"
-"PO-Revision-Date: 2013-04-01 23:16+0800\n"
-"Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
+"POT-Creation-Date: 2013-10-22 08:14+0000\n"
+"PO-Revision-Date: 2013-10-22 22:47+0800\n"
+"Last-Translator: tuhaihe <1132321739qq@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
 msgstr "新建(_N)"
 
 #: ../data/app-menu.ui.h:2
-msgid "_Preferences"
-msgstr "首选项(_P)"
+msgid "Temperature unit"
+msgstr "温度单位"
 
 #: ../data/app-menu.ui.h:3
-msgid "About Weather"
-msgstr "关于 天气"
+msgid "Celsius"
+msgstr "摄氏度"
 
 #: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "华氏度"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "关于天气"
+
+#: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "退出"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:341
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "天气"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "显示天气状况和天气预报"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"一个小程序，允许您通过各种网络服务来监控您所在城市或世界各地的当前天气状况，"
+"并可获取长达 7 天的天气预报。"
+
 #: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "新建位置"
+
+#: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
 msgstr "搜索城市："
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
-msgstr "已配置的显示天气的城市"
+msgstr "已配置要显示天气的城市"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:2
 msgid ""
@@ -59,94 +82,6 @@ msgstr ""
 "gnome-weather 的世界视图中显示的位置。每个值都是由 "
 "gweather_location_serialize() 返回的 GVariant 值。"
 
-#: ../data/preferences.ui.h:1
-msgid "Meters (m)"
-msgstr "米(m)"
-
-#: ../data/preferences.ui.h:2
-msgid "Kilometers (km)"
-msgstr "千米(km)"
-
-#: ../data/preferences.ui.h:3
-msgid "Miles (mi)"
-msgstr "英里(mi)"
-
-#: ../data/preferences.ui.h:4
-msgid "Preferences"
-msgstr "首选项"
-
-#: ../data/preferences.ui.h:5
-msgid "Temperature unit:"
-msgstr "温度单位："
-
-#: ../data/preferences.ui.h:6
-msgid "Speed unit:"
-msgstr "速度单位："
-
-#: ../data/preferences.ui.h:7
-msgid "Distance unit:"
-msgstr "距离单位："
-
-#: ../data/preferences.ui.h:8
-msgid "Pressure unit:"
-msgstr "压力单位："
-
-#: ../data/preferences.ui.h:9
-msgid "Kilopascal (kPa)"
-msgstr "千帕(kPa)"
-
-#: ../data/preferences.ui.h:10
-msgid "Hectopascal (hPa)"
-msgstr "百帕(hPa)"
-
-#: ../data/preferences.ui.h:11
-msgid "Millibar (mbar)"
-msgstr "毫巴(mbar)"
-
-#: ../data/preferences.ui.h:12
-msgid "Millimeters of mercury (mmHg)"
-msgstr "毫米汞柱(mmHg)"
-
-#: ../data/preferences.ui.h:13
-msgid "Inches of mercury (inchHg)"
-msgstr "英寸汞柱(inchHg)"
-
-#: ../data/preferences.ui.h:14
-msgid "Atmosphere (atm)"
-msgstr "大气(atm)"
-
-#: ../data/preferences.ui.h:15
-msgid "Meters per second (m/s)"
-msgstr "米每秒(m/s)"
-
-#: ../data/preferences.ui.h:16
-msgid "Kilometers per hour (km/h)"
-msgstr "千米每小时(km/h)"
-
-#: ../data/preferences.ui.h:17
-msgid "Miles per hour (mph)"
-msgstr "英里每小时(mph)"
-
-#: ../data/preferences.ui.h:18
-msgid "Knots"
-msgstr ""
-
-#: ../data/preferences.ui.h:19
-msgid "Beaufort scale"
-msgstr "蒲福风级"
-
-#: ../data/preferences.ui.h:20
-msgid "Kelvin (K)"
-msgstr "开尔文(K)"
-
-#: ../data/preferences.ui.h:21
-msgid "Centigrade (°C)"
-msgstr "摄氏度(°C)"
-
-#: ../data/preferences.ui.h:22
-msgid "Fahrenheit (°F)"
-msgstr "华氏度(°F)"
-
 #: ../data/window.ui.h:1
 msgid "Select All"
 msgstr "全选"
@@ -155,19 +90,27 @@ msgstr "全选"
 msgid "Select None"
 msgstr "全不选"
 
-#: ../data/window.ui.h:3
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
+msgstr "点击位置选择它们"
+
+#: ../data/window.ui.h:4
 msgid "New"
 msgstr "新建"
 
-#: ../data/window.ui.h:4
+#: ../data/window.ui.h:5
 msgid "World Weather"
 msgstr "世界天气"
 
-#: ../data/window.ui.h:5
-msgid "Done"
-msgstr "完成"
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "取消"
 
-#: ../src/city.js:154
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "删除"
+
+#: ../src/city.js:119
 msgid "Loading…"
 msgstr "正在加载..."
 
@@ -179,36 +122,39 @@ msgstr "今日"
 msgid "Tomorrow"
 msgstr "明日"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:135
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:182
 msgid "More…"
 msgstr "更多..."
 
-#: ../src/forecast.js:257
+#: ../src/forecast.js:261
 msgid "Forecast for Today"
 msgstr "今日预报"
 
-#: ../src/forecast.js:259
+#: ../src/forecast.js:263
 msgid "Forecast for Tomorrow"
 msgstr "明日预报"
 
-#: ../src/forecast.js:263
+#: ../src/forecast.js:267
 msgid "%B %d"
 msgstr "%B %d"
 
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:304
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:307
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:164
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -354,45 +300,96 @@ msgstr "明天下午"
 msgid "Tomorrow evening"
 msgstr "明晚"
 
-#: ../src/window.js:54
-msgid "Delete"
-msgstr "删除"
-
-#: ../src/window.js:144
-msgid "Click on items to select them"
-msgstr "点击项目来选择它们"
-
-#: ../src/window.js:198
-msgid "Click on locations to select them"
-msgstr "点击位置来选择它们"
-
-#: ../src/window.js:201
-#, c-format
+#: ../src/window.js:182
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "已选择 %d 项"
 
-#: ../src/window.js:278
-msgid "New Location"
-msgstr "新建位置"
-
-#: ../src/window.js:340
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr ""
 "tuhaihe <1132321739qq@gmail.com>, 2013\n"
-"Wylmer Wang <wantinghard@gmail.com>, 2013"
+"Wylmer Wang <wantinghard@gmail.com>, 2013\n"
+"甘露(Gan Lu) <rhythm.gan@gmail.com>, 2013"
 
-#: ../src/window.js:342
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "一款天气应用"
 
-#: ../src/world.js:213
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "添加位置"
 
-#: ../src/world.js:216
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr "使用工具栏上的<b>新建</b>按钮来添加更多世界位置"
+
+#~ msgid "_Preferences"
+#~ msgstr "首选项(_P)"
+
+#~ msgid "Meters (m)"
+#~ msgstr "米(m)"
+
+#~ msgid "Kilometers (km)"
+#~ msgstr "千米(km)"
+
+#~ msgid "Miles (mi)"
+#~ msgstr "英里(mi)"
+
+#~ msgid "Preferences"
+#~ msgstr "首选项"
+
+#~ msgid "Speed unit:"
+#~ msgstr "速度单位："
+
+#~ msgid "Distance unit:"
+#~ msgstr "距离单位："
+
+#~ msgid "Pressure unit:"
+#~ msgstr "压力单位："
+
+#~ msgid "Kilopascal (kPa)"
+#~ msgstr "千帕(kPa)"
+
+#~ msgid "Hectopascal (hPa)"
+#~ msgstr "百帕(hPa)"
+
+#~ msgid "Millibar (mbar)"
+#~ msgstr "毫巴(mbar)"
+
+#~ msgid "Millimeters of mercury (mmHg)"
+#~ msgstr "毫米汞柱(mmHg)"
+
+#~ msgid "Inches of mercury (inchHg)"
+#~ msgstr "英寸汞柱(inchHg)"
+
+#~ msgid "Atmosphere (atm)"
+#~ msgstr "大气(atm)"
+
+#~ msgid "Meters per second (m/s)"
+#~ msgstr "米每秒(m/s)"
+
+#~ msgid "Kilometers per hour (km/h)"
+#~ msgstr "千米每小时(km/h)"
+
+#~ msgid "Miles per hour (mph)"
+#~ msgstr "英里每小时(mph)"
+
+#~ msgid "Beaufort scale"
+#~ msgstr "蒲福风级"
+
+#~ msgid "Kelvin (K)"
+#~ msgstr "开尔文(K)"
+
+#~ msgid "Centigrade (°C)"
+#~ msgstr "摄氏度(°C)"
+
+#~ msgid "Done"
+#~ msgstr "完成"
+
+#~ msgid "Click on items to select them"
+#~ msgstr "点击项目来选择它们"
 
 #~ msgid "Current conditions:"
 #~ msgstr "当前状况："
