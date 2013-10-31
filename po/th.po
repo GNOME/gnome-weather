@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-08 11:52+0000\n"
-"PO-Revision-Date: 2013-08-10 19:14+0700\n"
+"POT-Creation-Date: 2013-10-15 21:02+0000\n"
+"PO-Revision-Date: 2013-10-31 19:56+0700\n"
 "Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -42,13 +43,23 @@ msgstr "เกี่ยวกับ รายงานอากาศ"
 msgid "Quit"
 msgstr "_ออก"
 
-#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:294
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:298
 msgid "Weather"
 msgstr "รายงานอากาศ"
 
-#: ../data/gnome-weather.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "แสดงสภาพอากาศและการพยากรณ์"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"โปรแกรมเล็กๆ ที่ช่วยคุณติดตามสภาพอากาศปัจจุบันของเมืองของคุณ หรือที่ใดๆ ในโลก "
+"และเข้าถึงข้อมูลพยากรณ์อากาศ 7 วันข้างหน้าที่ทันเหตุการณ์ จากบริการต่างๆ หลายแหล่งในอินเทอร์เน็ต"
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -110,36 +121,39 @@ msgstr "วันนี้"
 msgid "Tomorrow"
 msgstr "พรุ่งนี้"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:135
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:182
 msgid "More…"
 msgstr "เพิ่มเติม…"
 
-#: ../src/forecast.js:257
+#: ../src/forecast.js:261
 msgid "Forecast for Today"
 msgstr "พยากรณ์อากาศวันนี้"
 
-#: ../src/forecast.js:259
+#: ../src/forecast.js:263
 msgid "Forecast for Tomorrow"
 msgstr "พยากรณ์อากาศพรุ่งนี้"
 
-#: ../src/forecast.js:263
+#: ../src/forecast.js:267
 msgid "%B %d"
 msgstr "%d %B"
 
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:304
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:307
 msgid "%R"
 msgstr "%R"
+
+#: ../src/searchProvider.js:164
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
 
 #: ../src/strings.js:22
 msgid "Monday night"
@@ -286,23 +300,23 @@ msgid "Tomorrow evening"
 msgstr "เย็นพรุ่งนี้"
 
 #: ../src/window.js:182
-#, c-format
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "เลือกอยู่ %d รายการ"
 
-#: ../src/window.js:293
+#: ../src/window.js:297
 msgid "translator-credits"
 msgstr "Akom Chotiphantawanon"
 
-#: ../src/window.js:295
+#: ../src/window.js:299
 msgid "A weather application"
 msgstr "โปรแกรมรายงานอากาศ"
 
-#: ../src/world.js:217
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "เพิ่มตำแหน่งที่ตั้ง"
 
-#: ../src/world.js:220
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr "ใช้ปุ่ม <b>ใหม่</b>  บนแถบเครื่องมือในการเพิ่มตำแหน่งที่ตั้งบนโลกเพิ่มเติม"
