@@ -1,0 +1,322 @@
+# Esperanto translation for gnome-weather.
+# Copyright (C) 2013 Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-weather package.
+# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-10-15 21:02+0000\n"
+"PO-Revision-Date: 2013-11-24 01:01+0100\n"
+"Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
+"Language-Team: Esperanto <gnome-l10n-eo@lists.launchpad.net>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Nova"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Temperatura unuo"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsiuso"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Farenhejto"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr "Pri Vetero"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Ĉesi"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:298
+msgid "Weather"
+msgstr "Vetero"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Montras veterajn statojn kaj prognozojn"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Eta aplikaĵo kiu permesas al vi observi la nunan veterajn statojn de via "
+"urbo, aŭ ie ajn en la mondo kaj atingi ĝisdatigitajn prognozojn, ĝis sep "
+"tagoj, provizitajn de diversaj retaj servoj."
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Nova loko"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "Serĉi urbon:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Agorditaj urboj por kiuj montri la veteron"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"La montritaj lokoj de la monda vido de gnome-weather. Ĉiu valoro estas "
+"GVariant-liverita de gweather_location_serialize()."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Elekti ĉiujn"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Elekti neniun"
+
+#: ../data/window.ui.h:3 ../src/window.js:187
+msgid "Click on locations to select them"
+msgstr "Klaki sur lokoj por elekti ilin"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Nova"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr "Monda vetero"
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "Nuligi"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "Forigi"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "Ŝargante…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Hodiaŭ"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Morgaŭ"
+
+#: ../src/forecast.js:135
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:182
+msgid "More…"
+msgstr "Pli…"
+
+#: ../src/forecast.js:261
+msgid "Forecast for Today"
+msgstr "Prognozo por hodiaŭ"
+
+#: ../src/forecast.js:263
+msgid "Forecast for Tomorrow"
+msgstr "Prognozo por morgaŭ"
+
+#: ../src/forecast.js:267
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/forecast.js:304
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: ../src/forecast.js:307
+msgid "%R"
+msgstr "%R"
+
+#: ../src/searchProvider.js:164
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Lundo nokte"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Lundo matene"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Lundo posttagmeze"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Lundo vespere"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Mardo nokte"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Mardo matene"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Mardo posttagmeze"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Mardo vespere"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Merkredo nokte"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Merkredo matene"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Merkredo posttagmeze"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Merkredo vespere"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Ĵaŭdo nokte"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Ĵaŭdo matene"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Ĵaŭdo posttagmeze"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Ĵaŭdo vespere"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Vendredo nokte"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Vendredo matene"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Vendredo posttagmeze"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Vendredo vespere"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Sabato nokte"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Sabato matene"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Sabato posttagmeze"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Sabato vespere"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Dimanĉo nokte"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Dimanĉo matene"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Dimanĉo posttagmeze"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Dimanĉo vespere"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Ĉi-nokte"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Ĉi-matene"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Ĉi-posttagmeze"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Ĉi-vespere"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Morgaŭ nokte"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Morgaŭ matene"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Morgaŭ posttagmeze"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Morgaŭ vespere"
+
+#: ../src/window.js:182
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d elektite"
+msgstr[1] "%d elektite"
+
+#: ../src/window.js:297
+msgid "translator-credits"
+msgstr "Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>"
+
+#: ../src/window.js:299
+msgid "A weather application"
+msgstr "Vetera aplikaĵo"
+
+#: ../src/world.js:241
+msgid "Add locations"
+msgstr "Aldoni lokojn"
+
+#: ../src/world.js:244
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"Uzu la <b>Nova</b>-butono sur la ilobreto por aldoni pluajn mondajn lokojn"
