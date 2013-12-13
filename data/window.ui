@@ -76,11 +76,19 @@
       <object class="GtkButton" id="world-button">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
-        <property name="label" translatable="yes">World Weather</property>
+        <property name="action-name">win.go-world</property>
         <property name="valign">center</property>
         <style>
-          <class name="text-button"/>
+          <class name="image-button"/>
         </style>
+        <child>
+          <object class="GtkImage" id="world-button-image">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="icon-name">go-previous-symbolic</property>
+            <property name="icon-size">1</property>
+          </object>
+        </child>
       </object>
       <packing>
         <property name="pack_type">start</property>

@@ -93,6 +93,8 @@ const MainWindow = new Lang.Class({
                             activate: this._setSelectionMode,
                             parameter_type: new GLib.VariantType('b'),
                             state: new GLib.Variant('b', false) },
+                          { name: 'go-world',
+                            activate: this._goWorld },
                           { name: 'select-all',
                             activate: this._selectAll },
                           { name: 'select-none',
@@ -116,7 +118,6 @@ const MainWindow = new Lang.Class({
         this._pageWidgets[Page.WORLD].push(newButton);
 
         let goWorldButton = builder.get_object('world-button');
-        goWorldButton.connect('clicked', Lang.bind(this, this._goWorld));
         this._pageWidgets[Page.CITY].push(goWorldButton);
 
         let select = builder.get_object('select-button');
