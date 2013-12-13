@@ -31,32 +31,40 @@ const DAY_PARTS = [
 const TODAY_PARTS = [N_("Tonight"), N_("This morning"), N_("This afternoon"), N_("This evening")];
 const TOMORROW_PARTS = [N_("Tomorrow night"), N_("Tomorrow morning"), N_("Tomorrow afternoon"), N_("Tomorrow evening")];
 
-function _getDatetimePart(datetime) {
+function getDatetimePart(datetime) {
     let h = datetime.get_hour();
 
-    if (h < 6 || h >= 21)
-        return 0;
+    // 0-5: late night -> filtered out
+    // 5-12: morning
+    // 12-18: afternoon
+    // 18-21: evening
+    // 21-24: night
+
+    if (h < 5)
+        return -1;
     else if (h < 12)
         return 1;
     else if (h < 18)
         return 2;
-    else
+    else if (h < 21)
         return 3;
+    else
+        return 0;
 }
 
 function formatToday(datetime) {
-    let part = _getDatetimePart(datetime);
+    let part = getDatetimePart(datetime);
     return Gettext.gettext(TODAY_PARTS[part]);
 }
 
 function formatTomorrow(datetime) {
-    let part = _getDatetimePart(datetime);
+    let part = getDatetimePart(datetime);
     return Gettext.gettext(TOMORROW_PARTS[part]);
 }
 
 function formatDayPart(datetime) {
     let day = datetime.get_day_of_week() - 1;
-    let part = _getDatetimePart(datetime);
+    let part = getDatetimePart(datetime);
 
     return Gettext.gettext(DAY_PARTS[day][part]);
 }

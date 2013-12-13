@@ -51,8 +51,10 @@ const ForecastBox = new Lang.Class({
         });
 
         let subday = this._hasSubdayResolution(dates);
+        this._today = GLib.DateTime.new_now_local();
+        this._tomorrow = this._today.add_days(1);
 
-        let current;
+        let current, currentPart;
         let n = 0;
         // limit to 5 infos max
         for (let i = 0; i < dates.length && n < 5; i++) {
@@ -62,7 +64,15 @@ const ForecastBox = new Lang.Class({
             // at least 12 hours
             let [ok, date] = info.get_value_update();
             let datetime = GLib.DateTime.new_from_unix_local(date);
-            if (current && datetime.difference(current) < TWELVE_HOURS)
+            let part = Strings.getDatetimePart(datetime);
+
+            // Filter out "uninteresting" times (ie, during the night)
+            if (part == -1)
+                continue;
+
+            // Filter two datetime that would give the same "Day Part" string
+            if (current && part == currentPart &&
+                Util.arrayEqual(current.get_ymd(), datetime.get_ymd()))
                 continue;
 
             let text = '<b>' + this._getDate(datetime, subday) + '</b>';
@@ -82,6 +92,7 @@ const ForecastBox = new Lang.Class({
             this._grid.attach(temperature, n, 2, 1, 1);
 
             current = datetime;
+            currentPart = part;
             n++;
         }
     },
@@ -101,16 +112,13 @@ const ForecastBox = new Lang.Class({
     },
 
     _getDate: function(datetime, subday) {
-        let now = GLib.DateTime.new_now_local();
-        let tomorrow = now.add_days(1);
-
-        if (Util.arrayEqual(now.get_ymd(),
+        if (Util.arrayEqual(this._today.get_ymd(),
                             datetime.get_ymd())) {
             if (subday)
                 return Strings.formatToday(datetime);
             else
                 return _("Today");
-        } else if (Util.arrayEqual(tomorrow.get_ymd(),
+        } else if (Util.arrayEqual(this._tomorrow.get_ymd(),
                                    datetime.get_ymd())) {
             if (subday)
                 return Strings.formatTomorrow(datetime);
