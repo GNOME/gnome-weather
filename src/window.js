@@ -305,7 +305,7 @@ const MainWindow = new Lang.Class({
               license_type: Gtk.License.GPL_2_0,
               logo_icon_name: 'org.gnome.Weather.Application',
               version: pkg.version,
-              website: 'https://live.gnome.org/Design/Apps/Weather',
+              website: 'https://wiki.gnome.org/Apps/Weather',
               wrap_license: true,
               modal: true,
               transient_for: this

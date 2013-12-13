@@ -2,7 +2,7 @@ AC_PREREQ(2.63)
 AC_INIT([org.gnome.Weather.Application],[3.10.1],
 	[https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather],
 	[gnome-weather],
-	[https://live.gnome.org/Design/Apps/Weather])
+	[https://wiki.gnome.org/Apps/Weather])
 
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
