@@ -108,6 +108,9 @@ const MainWindow = new Lang.Class({
         let grid = builder.get_object('main-panel');
         this._header = builder.get_object('header-bar');
         this.set_titlebar(this._header);
+        let [title, subtitle] = this._getTitle();
+        this._header.title = title;
+        this._header.subtitle = subtitle;
 
         let newButton = builder.get_object('new-button');
         this._pageWidgets[Page.WORLD].push(newButton);
@@ -205,7 +208,7 @@ const MainWindow = new Lang.Class({
 
     _getTitle: function() {
         if (this._currentPage == Page.WORLD)
-            return ['', null];
+            return [_("World Weather"), null];
 
         let location = this._cityView.info.location;
         let city = location;
