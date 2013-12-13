@@ -178,12 +178,12 @@ const TodaySidebar = new Lang.Class({
                                             use_markup: true });
         box.pack_end(this._attribution, false, false, 0);
 
-        this._hasMore = false;
         this._moreButton = new Gtk.Button({ label: _("More…"),
                                             margin_top: 4,
                                             halign: Gtk.Align.END,
                                             visible: true });
-        this._moreButton.connect('clicked', Lang.bind(this, this._showMore));
+        this._moreButton.connect('clicked', Lang.bind(this, this._changeView));
+        this._tomorrow = false;
 
         this._infoWidgets = [];
         this._trimmedIndex = -1;
@@ -193,10 +193,8 @@ const TodaySidebar = new Lang.Class({
         this._infoWidgets.forEach(function(w) { w.destroy(); });
         this._infoWidgets = [];
 
-        if (this._hasMore) {
+        if (this._moreButton.get_parent())
             this._grid.remove(this._moreButton);
-            this._hasMore = false;
-        }
     },
 
     // Ensure that infos are sufficiently spaced, and
@@ -217,8 +215,7 @@ const TodaySidebar = new Lang.Class({
             let [ok, date] = info.get_value_update();
             let datetime = GLib.DateTime.new_from_unix_local(date);
 
-            if (Util.arrayEqual(now.get_ymd(),
-                                datetime.get_ymd())) {
+            if (Util.arrayEqual(now.get_ymd(), datetime.get_ymd())) {
                 current = datetime;
                 break;
             }
@@ -251,23 +248,17 @@ const TodaySidebar = new Lang.Class({
         let now = GLib.DateTime.new_now_local();
         let first = GLib.DateTime.new_from_unix_local(v_first);
 
-        let sameDay = Util.arrayEqual(now.get_ymd(),
-                                      first.get_ymd());
+        this._trimmedToday = this._preprocess(now, infos);
+        this._trimmedTomorrow = this._preprocess(now.add_days(1), infos);
 
-        // Show today if we have it (sameDay), and if it's
-        // worth it, ie. it's not after 9pm (as the weather at
-        // point is unlikely to change)
-        if (sameDay && now.get_hour() < 21) {
-            this._headline.label = '<b>' + _("Forecast for Today") + '</b>';
-        } else {
-            this._headline.label = '<b>' + _("Forecast for Tomorrow") + '</b>';
-            now = now.add_days(1);
-        }
+        let hasToday = this._trimmedToday.length > 0;
+        let hasTomorrow = this._trimmedTomorrow.length > 0;
 
-        this._subline.label = now.format(_("%B %d"));
+        this._tomorrow = !hasToday;
+        this._updateHeadline();
 
-        infos = this._preprocess(now, infos);
         let i;
+        let infos = hasToday ? this._trimmedToday : this._trimmedTomorrow;
 
         // Show at most 6 hours now, we'll show more with the ... button
         for (i = 0; i < Math.min(infos.length, 6); i++) {
@@ -275,13 +266,20 @@ const TodaySidebar = new Lang.Class({
             this._addOneInfo(info, i + 2);
         }
 
-        this._trimmedIndex = i;
-        if (this._trimmedIndex < infos.length) {
-            this._grid.attach(this._moreButton, 2, i+2, 1, 1);
-            this._hasMore = true;
-        }
+        this._grid.attach(this._moreButton, 2, i+2, 1, 1);
 
-        this._infos = infos;
+        this._trimmedIndex = i;
+        this._hasMore = false;
+        if (this._trimmedIndex < infos.length) {
+            this._hasMore = true;
+            this._moreButton.label = _("More…");
+            this._moreButton.show();
+        } else if (hasToday && hasTomorrow) {
+            this._moreButton.show();
+            this._moreButton.label = _("Tomorrow");
+        } else {
+            this._moreButton.hide();
+        }
 
         let attr = info.get_attribution();
         if (attr) {
@@ -327,18 +325,82 @@ const TodaySidebar = new Lang.Class({
         this._infoWidgets.push(conditions);
     },
 
-    _showMore: function() {
-        if (!this._hasMore) {
-            log('_showMore called when _hasMore is false, this should not happen');
-            return;
-        }
+    _updateHeadline: function() {
+        // Show today if we have it
 
-        this._grid.remove(this._moreButton);
-        this._hasMore = false;
+        let date = GLib.DateTime.new_now_local();
+        if (this._tomorrow)
+            date = date.add_days(1);
 
-        for (let i = this._trimmedIndex; i < this._infos.length; i++) {
-            let info = this._infos[i];
-            this._addOneInfo(info, i + 2);
+        if (this._tomorrow)
+            this._headline.label = '<b>' + _("Forecast for Tomorrow") + '</b>';
+        else
+            this._headline.label = '<b>' + _("Forecast for Today") + '</b>';
+
+        this._subline.label = date.format(_("%B %d"));
+    },
+
+    _changeView: function() {
+        if (this._hasMore) {
+            this._hasMore = false;
+            this._grid.remove(this._moreButton);
+
+            let hasToday = this._trimmedToday.length > 0;
+            let hasTomorrow = this._trimmedTomorrow.length > 0;
+
+            let infos = hasToday ? this._trimmedToday : this._trimmedTomorrow;
+
+            let i;
+            for (i = this._trimmedIndex; i < infos.length; i++) {
+                let info = infos[i];
+                this._addOneInfo(info, i + 2);
+            }
+            this._trimmedIndex = i;
+
+            this._grid.attach(this._moreButton, 2, i+2, 1, 1);
+
+            if (hasToday && hasTomorrow) {
+                this._moreButton.show();
+                this._moreButton.label = _("Tomorrow");
+            } else {
+                this._moreButton.hide();
+            }
+        } else {
+            this.clear();
+
+            let hasToday = this._trimmedToday.length > 0;
+            let hasTomorrow = this._trimmedTomorrow.length > 0;
+            let infos;
+
+            if (this._tomorrow && hasToday) {
+                infos = this._trimmedToday;
+                this._tomorrow = false;
+            } else if (!this._tomorrow && hasTomorrow) {
+                infos = this._trimmedTomorrow;
+                this._tomorrow = true;
+            }
+            this._updateHeadline();
+
+            let i;
+            for (i = 0; i < infos.length; i++) {
+                let info = infos[i];
+                this._addOneInfo(info, i + 2);
+            }
+            this._trimmedIndex = i;
+
+            this._grid.attach(this._moreButton, 2, i+2, 1, 1);
+
+            if (hasToday && hasTomorrow) {
+                this._moreButton.show();
+
+                if (this._tomorrow)
+                    this._moreButton.label = _("Today");
+                else
+                    this._moreButton.label = _("Tomorrow");
+            } else {
+                this._moreButton.hide();
+            }
+
         }
     },
 });
