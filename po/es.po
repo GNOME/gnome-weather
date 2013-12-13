@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-31 19:57+0000\n"
-"PO-Revision-Date: 2013-09-02 16:29+0200\n"
+"POT-Creation-Date: 2013-12-13 16:17+0000\n"
+"PO-Revision-Date: 2013-12-13 17:20+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -37,15 +37,15 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Acerca de Meteorología"
+msgid "About"
+msgstr "Acerca de"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Salir"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
-#: ../src/window.js:298
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:302
 msgid "Weather"
 msgstr "Meteorología"
 
@@ -91,7 +91,7 @@ msgstr "Seleccionar todo"
 msgid "Select None"
 msgstr "Seleccionar nada"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:191
 msgid "Click on locations to select them"
 msgstr "Pulse sobre las ubicaciones para seleccionarlas"
 
@@ -100,14 +100,10 @@ msgid "New"
 msgstr "Nueva"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Meteorología del mundo"
-
-#: ../data/window.ui.h:6
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:6
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -123,39 +119,35 @@ msgstr "Hoy"
 msgid "Tomorrow"
 msgstr "Mañana"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:135
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:182
 msgid "More…"
 msgstr "Más…"
 
-#: ../src/forecast.js:257
+#: ../src/forecast.js:261
 msgid "Forecast for Today"
 msgstr "Previsión para hoy"
 
-#: ../src/forecast.js:259
+#: ../src/forecast.js:263
 msgid "Forecast for Tomorrow"
 msgstr "Previsión para mañana"
 
-#: ../src/forecast.js:263
+#: ../src/forecast.js:267
 msgid "%B %d"
 msgstr "%B %d"
 
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:304
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:307
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/searchProvider.js:164
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -303,30 +295,36 @@ msgstr "Mañana por la tarde"
 msgid "Tomorrow evening"
 msgstr "Mañana a medianoche"
 
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:186
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionada"
 msgstr[1] "%d seleccionadas"
 
-#: ../src/window.js:297
+#: ../src/window.js:212
+msgid "World Weather"
+msgstr "Meteorología del mundo"
+
+#: ../src/window.js:301
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013"
 
-#: ../src/window.js:299
+#: ../src/window.js:303
 msgid "A weather application"
 msgstr "Una aplicación de meteorología"
 
-#: ../src/world.js:217
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "Añadir ubicaciones"
 
-#: ../src/world.js:220
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Use el botón <b>Nueva</b> en la barra de herramientas para añadir más "
 "ubicaciones mundiales."
+
+#~ msgid "About Weather"
+#~ msgstr "Acerca de Meteorología"
 
 #~ msgid "Click on items to select them"
 #~ msgstr "Pulse sobre los elementos para seleccionarlos"
