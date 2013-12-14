@@ -6,3 +6,4 @@ Icon=@PACKAGE_NAME@
 Exec=@pkgdatadir@/@PACKAGE_NAME@
 DBusActivatable=true
 StartupNotify=true
+Categories=GNOME;GTK;Utility;Core;
