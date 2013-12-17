@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-14 17:44+0000\n"
-"PO-Revision-Date: 2013-09-16 15:45+0500\n"
+"POT-Creation-Date: 2013-12-13 17:51+0000\n"
+"PO-Revision-Date: 2013-12-17 16:54+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <tg@li.org>\n"
 "Language: tg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.2\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -36,15 +36,15 @@ msgid "Fahrenheit"
 msgstr "Фаҳренгейт"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Дар бораи барномаи Обу ҳаво"
+msgid "About"
+msgstr "Дар бораи барнома"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Тарк кардан"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:298
+#: ../src/window.js:302
 msgid "Weather"
 msgstr "Обу ҳаво"
 
@@ -92,7 +92,7 @@ msgstr "Ҳамаро интихоб кардан"
 msgid "Select None"
 msgstr "Лағв кардани интихоб"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:191
 msgid "Click on locations to select them"
 msgstr "Барои интихоби объект ба ҷойришавӣ зер кунед"
 
@@ -101,14 +101,10 @@ msgid "New"
 msgstr "Нав"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Обу ҳавои ҷаҳон"
-
-#: ../data/window.ui.h:6
 msgid "Cancel"
 msgstr "Бекор кардан"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:6
 msgid "Delete"
 msgstr "Нест кардан"
 
@@ -116,47 +112,46 @@ msgstr "Нест кардан"
 msgid "Loading…"
 msgstr "Бор шуда истодааст..."
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:120 ../src/forecast.js:405
 msgid "Today"
 msgstr "Имрӯз"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:126 ../src/forecast.js:287 ../src/forecast.js:372
+#: ../src/forecast.js:407
 msgid "Tomorrow"
 msgstr "Пагоҳ"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:143
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:189 ../src/forecast.js:283
 msgid "More…"
 msgstr "Бештар…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Обу ҳаво барои имрӯз"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Обу ҳаво барои пагоҳ"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%B %d"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:310
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:313
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/forecast.js:344
+msgid "Forecast for Tomorrow"
+msgstr "Обу ҳаво барои пагоҳ"
+
+#: ../src/forecast.js:346
+msgid "Forecast for Today"
+msgstr "Обу ҳаво барои имрӯз"
+
+#: ../src/forecast.js:348
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/searchProvider.js:164
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -304,18 +299,22 @@ msgstr "Пешинии пагоҳ"
 msgid "Tomorrow evening"
 msgstr "Бегоҳии пагоҳ"
 
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:186
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d интихоб шудааст"
 msgstr[1] "%d интихоб шудаанд"
 
-#: ../src/window.js:297
+#: ../src/window.js:212
+msgid "World Weather"
+msgstr "Обу ҳавои ҷаҳон"
+
+#: ../src/window.js:301
 msgid "translator-credits"
 msgstr "Victor Ibragimov, victor.ibragimov@gmail.com"
 
-#: ../src/window.js:299
+#: ../src/window.js:303
 msgid "A weather application"
 msgstr "Барномаи обу ҳаво"
 
@@ -328,3 +327,6 @@ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Барои илова кардани бештар ҷойгиршавиҳои ҷаҳон, тугмаи <b>Нав</b>-ро дар "
 "навори абзор истифода баред"
+
+#~ msgid "About Weather"
+#~ msgstr "Дар бораи барномаи Обу ҳаво"
