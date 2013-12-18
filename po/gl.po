@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-01 18:44+0200\n"
-"PO-Revision-Date: 2013-09-01 18:44+0200\n"
+"POT-Creation-Date: 2013-12-18 23:47+0100\n"
+"PO-Revision-Date: 2013-12-18 23:47+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -36,15 +36,15 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Sobre Tempo"
+msgid "About"
+msgstr "Sobre"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Saír"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
-#: ../src/window.js:298
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:302
 msgid "Weather"
 msgstr "O tempo"
 
@@ -91,7 +91,7 @@ msgstr "Seleccoinar todo"
 msgid "Select None"
 msgstr "Deseleccionar todo"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:191
 msgid "Click on locations to select them"
 msgstr "Prema nas localizacións para seleccionalas"
 
@@ -100,14 +100,10 @@ msgid "New"
 msgstr "Novo"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Tempo mundial"
-
-#: ../data/window.ui.h:6
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:6
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -115,46 +111,53 @@ msgstr "Eliminar"
 msgid "Loading…"
 msgstr "Cargando…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:120 ../src/forecast.js:405
 msgid "Today"
 msgstr "Hoxe"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:126 ../src/forecast.js:287 ../src/forecast.js:372
+#: ../src/forecast.js:407
 msgid "Tomorrow"
 msgstr "Mañá"
 
-#: ../src/forecast.js:132
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: ../src/forecast.js:143
 #, c-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:189 ../src/forecast.js:283
 msgid "More…"
 msgstr "Máis…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Predición par hoxe"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Predición para mañá"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%B %d"
-
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:310
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:313
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
+#: ../src/forecast.js:344
+msgid "Forecast for Tomorrow"
+msgstr "Predición para mañá"
+
+#: ../src/forecast.js:346
+msgid "Forecast for Today"
+msgstr "Predición par hoxe"
+
+#: ../src/forecast.js:348
+msgid "%B %d"
+msgstr "%B %d"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/searchProvider.js:164
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
@@ -303,30 +306,37 @@ msgstr "Mañá á tarde"
 msgid "Tomorrow evening"
 msgstr "Mañá á noitiña"
 
-#: ../src/window.js:182
+#: ../src/window.js:186
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionada"
 msgstr[1] "%d seleccionadas"
 
-#: ../src/window.js:297
+#: ../src/window.js:212
+msgid "World Weather"
+msgstr "Tempo mundial"
+
+#: ../src/window.js:301
 msgid "translator-credits"
 msgstr "Fran Dieguez <frandieguez@gnome.org>, 2013."
 
-#: ../src/window.js:299
+#: ../src/window.js:303
 msgid "A weather application"
 msgstr "Un aplicativo do tempo"
 
-#: ../src/world.js:217
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "Engadir localizacións"
 
-#: ../src/world.js:220
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Use o botón <b>Nova</b> na barra de ferramentas para engadir máis "
 "localizacións mundiais"
+
+#~ msgid "About Weather"
+#~ msgstr "Sobre Tempo"
 
 #~ msgid "Click on items to select them"
 #~ msgstr "Prema nos elementos para seleccionalos"
