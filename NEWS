@@ -1,3 +1,15 @@
+3.11.3
+======
+* Always show a title in the header bar [#720322]
+* CityView is now consistent with other apps wrt the back
+  button [#720321]
+* We now follow the HIGs for standard items in the app menu
+* The sidebar can show forecast for today and tomorrow at
+  all times
+* We no longer show the night before the day, which was reported
+  as confusing
+* Translation updates
+
 3.10.1
 ======
 * Translation updates and fixes
