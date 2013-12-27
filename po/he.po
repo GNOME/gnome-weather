@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-08 19:07+0300\n"
-"PO-Revision-Date: 2013-09-08 19:09+0200\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"POT-Creation-Date: 2013-12-27 15:14+0200\n"
+"PO-Revision-Date: 2013-12-27 15:14+0200\n"
+"Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: Hebrew <sh.yaron@gmail.com>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -36,15 +36,15 @@ msgid "Fahrenheit"
 msgstr "פרנהייט"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "על אודות מזג האוויר"
+msgid "About"
+msgstr "על אודות"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "יציאה"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
-#: ../src/window.js:298
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:306
 msgid "Weather"
 msgstr "מזג האוויר"
 
@@ -90,7 +90,7 @@ msgstr "בחירת הכול"
 msgid "Select None"
 msgstr "בחירת כלום"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:195
 msgid "Click on locations to select them"
 msgstr "יש ללחוץ על מיקומים כדי לבחור אותם"
 
@@ -99,62 +99,57 @@ msgid "New"
 msgstr "חדש"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "מזג האוויר בעולם"
-
-#: ../data/window.ui.h:6
 msgid "Cancel"
 msgstr "ביטול"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:6
 msgid "Delete"
 msgstr "מחיקה"
 
-#: ../src/city.js:119
+#: ../src/city.js:123
 msgid "Loading…"
 msgstr "בטעינה…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:120 ../src/forecast.js:405
 msgid "Today"
 msgstr "היום"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:126 ../src/forecast.js:287 ../src/forecast.js:372
+#: ../src/forecast.js:407
 msgid "Tomorrow"
 msgstr "מחר"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:143
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:189 ../src/forecast.js:283
 msgid "More…"
 msgstr "עוד…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "תחזית להיום"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "תחזית למחר"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%B %d"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:310
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:313
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/forecast.js:344
+msgid "Forecast for Tomorrow"
+msgstr "תחזית למחר"
+
+#: ../src/forecast.js:346
+msgid "Forecast for Today"
+msgstr "תחזית להיום"
+
+#: ../src/forecast.js:348
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/searchProvider.js:164
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -302,29 +297,36 @@ msgstr "מחר אחה״צ"
 msgid "Tomorrow evening"
 msgstr "מחר בערב"
 
-#: ../src/window.js:182
+#: ../src/window.js:190
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "נבחרה אחת"
 msgstr[1] "נבחרו %d"
 
-#: ../src/window.js:297
+#: ../src/window.js:216
+msgid "World Weather"
+msgstr "מזג האוויר בעולם"
+
+#: ../src/window.js:305
 msgid "translator-credits"
 msgstr "ירון שהרבני <sh.yaron@gmail.com>"
 
-#: ../src/window.js:299
+#: ../src/window.js:307
 msgid "A weather application"
 msgstr "יישום מזג אוויר"
 
-#: ../src/world.js:217
+#: ../src/world.js:241
 msgid "Add locations"
 msgstr "הוספת מיקומים"
 
-#: ../src/world.js:220
+#: ../src/world.js:244
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "יש להשתמש בלחצן <b>חדש</b> בסרגל הכלים כדי להוסיף מיקומים נוספים ברחבי העולם"
+
+#~ msgid "About Weather"
+#~ msgstr "על אודות מזג האוויר"
 
 #~ msgid "Current conditions:"
 #~ msgstr "התנאים הנוכחיים:"
