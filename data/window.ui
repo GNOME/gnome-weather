@@ -85,7 +85,6 @@
           <object class="GtkImage" id="world-button-image">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="icon-name">go-previous-symbolic</property>
             <property name="icon-size">1</property>
           </object>
         </child>
