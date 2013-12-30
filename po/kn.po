@@ -1,0 +1,332 @@
+# Kannada translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+#
+# , 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-12-28 12:10+0000\n"
+"PO-Revision-Date: 2013-12-30 16:11+0630\n"
+"Last-Translator: \n"
+"Language-Team: Kannada <kde-i18n-doc@kde.org>\n"
+"Language: kn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "ಹೊಸ (_N)"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "ಉಷ್ಣತೆಯ ಏಕಮಾನ"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "ಸೆಲ್ಸಿಯಸ್"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "ಫ್ಯಾರೆನ್‍ಹೀಟ್"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "ಕುರಿತು"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "ನಿರ್ಗಮಿಸು"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
+#: ../src/window.js:306
+msgid "Weather"
+msgstr "ಹವಾಮಾನ"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "ಹೊಸ ಸ್ಥಳ"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "ಒಂದು ಊರಿಗಾಗಿ ಹುಡುಕು:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "ಎಲ್ಲವನ್ನೂ ಆರಿಸು"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "ಏನನ್ನೂ ಆರಿಸಬೇಡ"
+
+#: ../data/window.ui.h:3 ../src/window.js:195
+msgid "Click on locations to select them"
+msgstr "ಸ್ಥಳಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಲು ಅವುಗಳ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "ಹೊಸ"
+
+#: ../data/window.ui.h:5
+msgid "Cancel"
+msgstr "ರದ್ದುಗೊಳಿಸು"
+
+#: ../data/window.ui.h:6
+msgid "Delete"
+msgstr "ಅಳಿಸು"
+
+#: ../src/city.js:123
+msgid "Loading…"
+msgstr "ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ…"
+
+#: ../src/forecast.js:120 ../src/forecast.js:405
+msgid "Today"
+msgstr "ಇಂದು"
+
+#: ../src/forecast.js:126 ../src/forecast.js:287 ../src/forecast.js:372
+#: ../src/forecast.js:407
+msgid "Tomorrow"
+msgstr "ನಾಳೆ"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: ../src/forecast.js:143
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:189 ../src/forecast.js:283
+msgid "More…"
+msgstr "ಇನ್ನಷ್ಟು …"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:310
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:313
+msgid "%R"
+msgstr "%R"
+
+#: ../src/forecast.js:344
+msgid "Forecast for Tomorrow"
+msgstr "ನಾಳೆಗಾಗಿನ ಹವಾಮಾನ ಮುನ್ಸೂಚನೆ"
+
+#: ../src/forecast.js:346
+msgid "Forecast for Today"
+msgstr "ಇಂದಿಗಾಗಿನ ಹವಾಮಾನ ಮುನ್ಸೂಚನೆ"
+
+#: ../src/forecast.js:348
+msgid "%B %d"
+msgstr "%B %d"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/searchProvider.js:164
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "ಸೋಮವಾರ ರಾತ್ರಿ"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "ಸೋಮವಾರ ಬೆಳಿಗ್ಗೆ"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "ಸೋಮವಾರ ಮಧ್ಯಾಹ್ನ"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "ಸೋಮವಾರ ಸಂಜೆ"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "ಮಂಗಳವಾರ ರಾತ್ರಿ"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "ಮಂಗಳವಾರ ಬೆಳಿಗ್ಗೆ"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "ಮಂಗಳವಾರ ಮಧ್ಯಾಹ್ನ"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "ಮಂಗಳವಾರ ಸಂಜೆ"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "ಬುಧವಾರ ರಾತ್ರಿ"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "ಬುಧವಾರ ಬೆಳಿಗ್ಗೆ"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "ಬುಧವಾರ ಮಧ್ಯಾಹ್ನ"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "ಬುಧವಾರ ಸಂಜೆ"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "ಗುರುವಾರ ರಾತ್ರಿ"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "ಗುರುವಾರ ಬೆಳಿಗ್ಗೆ"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "ಗುರುವಾರ ಮಧ್ಯಾಹ್ನ"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "ಗುರುವಾರ ಸಂಜೆ"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "ಶುಕ್ರವಾರ ರಾತ್ರಿ"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "ಶುಕ್ರವಾರ ಬೆಳಿಗ್ಗೆ"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "ಶುಕ್ರವಾರ ಮಧ್ಯಾಹ್ನ"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "ಶುಕ್ರವಾರ ಸಂಜೆ"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "ಶನಿವಾರ ರಾತ್ರಿ"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "ಶನಿವಾರ ಬೆಳಿಗ್ಗೆ"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "ಶನಿವಾರ ಮಧ್ಯಾಹ್ನ"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "ಶನಿವಾರ ಸಂಜೆ"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "ಭಾನುವಾರ ರಾತ್ರಿ"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "ಭಾನುವಾರ ಬೆಳಿಗ್ಗೆ"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "ಭಾನುವಾರ ಮಧ್ಯಾಹ್ನ"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "ಭಾನುವಾರ ಸಂಜೆ"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "ಇಂದು ರಾತ್ರಿ"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "ಇಂದು ಬೆಳಿಗ್ಗೆ"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "ಇಂದು ಮಧ್ಯಾಹ್ನ"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "ಇಂದು ಸಂಜೆ"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "ಇಂದು ರಾತ್ರಿ"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "ನಾಳೆ ಬೆಳಿಗ್ಗೆ"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "ನಾಳೆ ಮಧ್ಯಾಹ್ನ"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "ನಾಳೆ ಸಂಜೆ"
+
+#: ../src/window.js:190
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d ಆರಿಸಲಾಗಿದೆ"
+msgstr[1] "%d ಆರಿಸಲಾಗಿವೆ"
+
+#: ../src/window.js:216
+msgid "World Weather"
+msgstr "ಪ್ರಪಂಚದ ಹವಾಮಾನ"
+
+#: ../src/window.js:305
+msgid "translator-credits"
+msgstr ""
+"ಪ್ರಬೋಧ್ ಸಿ. ಪಿ  <prabodhcp AT gmail DOT com> ಶಂಕರ್ ಪ್ರಸಾದ್ <"
+"svenkate@redhat.com>"
+
+#: ../src/window.js:307
+msgid "A weather application"
+msgstr "ಹವಾಮಾನದ ಅನ್ವಯ"
+
+#: ../src/world.js:241
+msgid "Add locations"
+msgstr "ಸ್ಥಳಗಳನ್ನು ಸೇರಿಸಿ"
+
+#: ../src/world.js:244
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+
+
