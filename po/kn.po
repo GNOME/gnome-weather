@@ -1,7 +1,7 @@
 # Kannada translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-#
+# prabodhcp <prabodhcp@gmail.com>, 2013
 # Shankar Prasad <svenkate AT redhat Dot com>, 2013.
 msgid ""
 msgstr ""
