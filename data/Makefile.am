@@ -30,12 +30,6 @@ $(PACKAGE_NAME).service: $(PACKAGE_NAME).service.in
 		-e "s|[@]pkglibdir@|$(pkglibdir)|g" \
 		$< > $@
 
-$(PACKAGE_NAME).desktop.in: $(PACKAGE_NAME).desktop.in.in
-	$(AM_V_GEN) sed \
-		-e "s|[@]PACKAGE_NAME@|$(PACKAGE_NAME)|g" \
-		-e "s|[@]pkgdatadir@|$(pkgdatadir)|g" \
-		-e "s|[@]pkglibdir@|$(pkglibdir)|g" \
-		$< > $@
 
 servicedir = $(datadir)/dbus-1/services
 service_DATA = $(PACKAGE_NAME).service
@@ -45,7 +39,7 @@ dist_searchprovider_DATA = org.gnome.Weather.Application.search-provider.ini
 
 EXTRA_DIST = \
 	CREDITS \
-	$(PACKAGE_NAME).desktop.in.in \
+	$(PACKAGE_NAME).desktop.in \
 	$(PACKAGE_NAME).service.in \
 	$(PACKAGE_NAME).gresource.xml \
 	$(gsettings_SCHEMAS) \
@@ -54,7 +48,6 @@ EXTRA_DIST = \
 	$(NULL)
 
 CLEANFILES = \
-	$(PACKAGE_NAME).desktop.in \
 	$(PACKAGE_NAME).service \
 	$(PACKAGE_NAME).gresource \
 	$(PACKAGE_NAME).appdata.xml \

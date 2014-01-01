@@ -2,8 +2,8 @@
 Type=Application
 _Name=Weather
 _Comment=Show weather conditions and forecast
-Icon=@PACKAGE_NAME@
-Exec=@pkgdatadir@/@PACKAGE_NAME@
+Icon=org.gnome.Weather.Application
+Exec=gapplication launch org.gnome.Weather.Application
 DBusActivatable=true
 StartupNotify=true
 Categories=GNOME;GTK;Utility;Core;
