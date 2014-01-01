@@ -1,0 +1,11 @@
+[Unit]
+# Optional
+Description=org.gnome.Weather.Application
+# Optional (obviously)
+Documentation=https://wiki.gnome.org/Apps/Weather
+
+[BusName]
+# Optional
+Name=org.gnome.Weather.Application
+# Optional
+Service=org.gnome.Weather.Application.service

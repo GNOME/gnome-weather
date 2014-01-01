@@ -1,3 +1,9 @@
-[D-BUS Service]
-Name=@PACKAGE_NAME@
-Exec=@pkgdatadir@/@PACKAGE_NAME@
+[Unit]
+Description=GNOME Weather
+Documentation=https://wiki.gnome.org/Apps/Weather
+
+[Service]
+BusName=org.gnome.Weather.Application
+ExecStart=@pkgdatadir@/org.gnome.Weather.Application
+#Type=application
+ExecStop=@GAPPLICATION@ action org.gnome.Weather.Application quit

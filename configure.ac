@@ -39,6 +39,7 @@ PKG_CHECK_MODULES([DEPS], [gdk-3.0
                            gweather-3.0 >= 3.9.5])
 
 AC_PATH_PROG([GJS],[gjs])
+AC_PATH_PROG([GAPPLICATION], [gapplication])
 
 GLIB_COMPILE_RESOURCES=`$PKG_CONFIG --variable glib_compile_resources gio-2.0`
 AC_SUBST(GLIB_COMPILE_RESOURCES)

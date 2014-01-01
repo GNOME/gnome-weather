@@ -28,11 +28,18 @@ $(PACKAGE_NAME).service: $(PACKAGE_NAME).service.in
 		-e "s|[@]PACKAGE_NAME@|$(PACKAGE_NAME)|g" \
 		-e "s|[@]pkgdatadir@|$(pkgdatadir)|g" \
 		-e "s|[@]pkglibdir@|$(pkglibdir)|g" \
+		-e "s|[@]GAPPLICATION@|$(GAPPLICATION)|g" \
 		$< > $@
 
+servicedir = $(prefix)/lib/systemd/user
+service_DATA = $(PACKAGE_NAME).service $(PACKAGE_NAME).busname
 
-servicedir = $(datadir)/dbus-1/services
-service_DATA = $(PACKAGE_NAME).service
+install-data-hook:
+	$(MKDIR_P) $(DESTDIR)$(servicedir)/busnames.target.wants
+	$(LN_S) ../$(PACKAGE_NAME).busname $(DESTDIR)$(servicedir)/busnames.target.wants/$(PACKAGE_NAME).busname
+
+uninstall-hook:
+	rm -f $(DESTDIR)$(servicedir)/busnames.target.wants/$(PACKAGE_NAME).busname
 
 searchproviderdir = $(datadir)/gnome-shell/search-providers
 dist_searchprovider_DATA = org.gnome.Weather.Application.search-provider.ini
