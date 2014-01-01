@@ -16,7 +16,11 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+const Gtk = imports.gi.Gtk;
+const Lang = imports.lang;
+
 const Forecast = imports.forecast;
+const Params = imports.params;
 const Util = imports.util;
 
 const SPINNER_SIZE = 128;

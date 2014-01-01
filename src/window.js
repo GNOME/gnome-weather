@@ -16,7 +16,14 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+const GLib = imports.gi.GLib;
+const GObject = imports.gi.GObject;
+const Gtk = imports.gi.Gtk;
+const GWeather = imports.gi.GWeather;
+const Lang = imports.lang;
+
 const City = imports.city;
+const Params = imports.params;
 const World = imports.world;
 const Util = imports.util;
 

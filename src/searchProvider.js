@@ -16,6 +16,11 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+const Gio = imports.gi.Gio;
+const GLib = imports.gi.GLib;
+const GWeather = imports.gi.GWeather;
+const Lang = imports.lang;
+
 const Util = imports.util;
 const Window = imports.window;
 const World = imports.world;

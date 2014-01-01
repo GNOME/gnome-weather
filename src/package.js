@@ -33,6 +33,7 @@ const Gettext = imports.gettext;
 /*< public >*/
 var name;
 var version;
+var appFlags;
 var prefix;
 var datadir;
 var libdir;
@@ -45,17 +46,13 @@ var localedir;
 let _base;
 let _requires;
 
-function _runningFromSource(name) {
-    if (System.version >= 13600) {
-        let fileName = System.programInvocationName;
+function _runningFromSource() {
+    let fileName = System.programInvocationName;
+    let prgName = GLib.path_get_basename(fileName);
 
-        let binary = Gio.File.new_for_path(fileName);
-        let sourceBinary = Gio.File.new_for_path('./src/' + name);
-        return binary.equal(sourceBinary);
-    } else {
-        return GLib.file_test(name + '.doap',
-                              GLib.FileTest.EXISTS);
-    }
+    let binary = Gio.File.new_for_path(fileName);
+    let sourceBinary = Gio.File.new_for_path('./src/' + prgName);
+    return binary.equal(sourceBinary);
 }
 
 /**
@@ -103,6 +100,7 @@ function init(params) {
     window.pkg = imports.package;
     name = params.name;
     version = params.version;
+    appFlags = params.flags;
 
     // Must call it first, because it can only be called
     // once, and other library calls might have it as a
@@ -114,7 +112,7 @@ function init(params) {
     datadir = GLib.build_filenamev([prefix, 'share']);
     let libpath, girpath;
 
-    if (_runningFromSource(name)) {
+    if (_runningFromSource()) {
         log('Running from source tree, using local files');
         // Running from source directory
         _base = GLib.get_current_dir();
@@ -125,6 +123,8 @@ function init(params) {
         localedir = GLib.build_filenamev([_base, 'po']);
         moduledir = GLib.build_filenamev([_base, 'src']);
     } else {
+	appFlags |= Gio.ApplicationFlags.IS_SERVICE;
+
         _base = prefix;
         pkglibdir = GLib.build_filenamev([libdir, name]);
         libpath = pkglibdir;
@@ -148,10 +148,12 @@ function init(params) {
  * You must define a main(ARGV) function inside a main.js
  * module in moduledir.
  */
-function start(params) {
+function start(params, args) {
+    params.flags = params.flags || 0;
+    args = args || ARGV;
     init(params);
 
-    return imports.main.main(ARGV);
+    return imports.main.main(args);
 }
 
 function _checkVersion(required, current) {
@@ -180,47 +182,6 @@ function _checkVersion(required, current) {
     return true;
 }
 
-function _isGjsModule(name, version) {
-    // This is a subset of the JS modules we offer,
-    // it includes only those that makes sense to use
-    // standalone and in a general app.
-    //
-    // You will not find Gettext or Format here, use
-    // the package functions instead. And Package, obviously,
-    // because it's available as window.package.
-    //
-    // cairo is also a JS module, but the version checking
-    // differs, see _isForeignModule()
-    //
-    // FIXME: Mainloop might be better as a GLib override?
-    // FIXME: Signals should be an extension to Lang
-    const RECOGNIZED_MODULE_NAMES = ['Lang',
-                                     'Mainloop',
-                                     'Signals',
-                                     'System',
-                                     'Params'];
-    for (let i = 0; i < RECOGNIZED_MODULE_NAMES.length; i++) {
-        let module = RECOGNIZED_MODULE_NAMES[i];
-
-        if (module == name) {
-            let actualModule = imports[module.toLowerCase()];
-            let required = version.split('.');
-
-            if (!_checkVersion(required, actualModule.$API_VERSION)) {
-                printerr('Unsatisfied dependency: requested GJS module at version '
-                         + version + ', but only ' + (actualModule.$API_VERSION.join('.'))
-                         + ' is available');
-                System.exit(1);
-            } else {
-                window[module] = actualModule;
-                return true;
-            }
-        }
-    }
-
-    return false;
-}
-
 /**
  * require:
  * @libs: the external dependencies to import
@@ -230,9 +191,6 @@ function _isGjsModule(name, version) {
  * @libs must be an object whose keys are a typelib name,
  * and values are the respective version. The empty string
  * indicates any version.
- *
- * If dependencies are statisfied, require() will make
- * the module objects available as global names.
  */
 function require(libs) {
     _requires = libs;
@@ -240,21 +198,11 @@ function require(libs) {
     for (let l in libs) {
         let version = libs[l];
 
-        if (_isGjsModule(l, version))
-            continue;
-
         if (version != '')
             imports.gi.versions[l] = version;
 
         try {
-            if (name == 'cairo') {
-                // Import the GI package to check the version,
-                // but then load the JS one
-                imports.gi.cairo;
-                window.cairo = imports.cairo;
-            } else {
-                window[l] = imports.gi[l];
-            }
+            imports.gi[l];
         } catch(e) {
             printerr('Unsatisfied dependency: ' + e.message);
             System.exit(1);
@@ -300,11 +248,61 @@ function initResources() {
     resource._register();
 }
 
+// Launcher support
+
+function _launcherUsage(flags) {
+    print('Usage:');
+
+    let name = GLib.path_get_basename(System.programInvocationName);
+    if (flags & Gio.ApplicationFlags.HANDLES_OPEN)
+	print('  ' + name + ' [OPTION...] [FILE...]\n');
+    else
+	print('  ' + name + ' [OPTION...]\n');
+
+    print('Options:');
+    print('  -h, --help   Show this help message');
+    print('  --version    Show the application version');
+}
+
+function _parseLaunchArgs(args, params) {
+    let newArgs = [];
+
+    for (let i = 0; i < args.length; i++) {
+	switch (args[i]) {
+	case '--':
+	    newArgs.concat(args.slice(i));
+	    return newArgs;
+
+	case '--help':
+	case '-h':
+	    _launcherUsage(params.flags);
+	    System.exit(0);
+	    break;
+
+	case '--version':
+	    print(params.name + ' ' + params.version);
+	    System.exit(0);
+	    break;
+
+	default:
+	    newArgs.push(args[i]);
+	}
+    }
+
+    return newArgs;
+}
+
 function launch(params) {
     params.flags = params.flags || 0;
-    let app = new Gio.Application({ application_id: params.name,
-                                    flags: (Gio.ApplicationFlags.IS_LAUNCHER |
-                                            params.flags),
-                                  });
-    return app.run(ARGV);
+    let args = _parseLaunchArgs(ARGV, params);
+
+    if (_runningFromSource()) {
+	return start(params, args);
+    } else {
+	params.flags |= Gio.ApplicationFlags.IS_LAUNCHER;
+
+	let app = new Gio.Application({ application_id: params.name,
+					flags: params.flags });
+	return app.run(args);
+    }
 }

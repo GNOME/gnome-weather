@@ -27,11 +27,15 @@ pkg.require({ 'Gd': '1.0',
               'GLib': '2.0',
               'GObject': '2.0',
               'Gtk': '3.0',
-              'GWeather': '3.0',
-              'Lang': '',
-              'Mainloop': '',
-              'Params': '1.0',
-              'System': '' });
+              'GWeather': '3.0' });
+
+const Gd = imports.gi.Gd;
+const Gdk = imports.gi.Gdk;
+const Gio = imports.gi.Gio;
+const GLib = imports.gi.GLib;
+const Gtk = imports.gi.Gtk;
+const GWeather = imports.gi.GWeather;
+const Lang = imports.lang;
 
 const Util = imports.util;
 const Window = imports.window;
