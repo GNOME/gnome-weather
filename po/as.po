@@ -2,14 +2,14 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 #
-# ngoswami <ngoswami@redhat.com>, 2013.
+# ngoswami <ngoswami@redhat.com>, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-19 00:02+0000\n"
-"PO-Revision-Date: 2013-09-20 15:51+0530\n"
+"POT-Creation-Date: 2013-12-19 13:11+0000\n"
+"PO-Revision-Date: 2014-01-06 18:09+0630\n"
 "Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
 "Language-Team: Assamese <kde-i18n-doc@kde.org>\n"
 "Language: as\n"
@@ -36,15 +36,15 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "বতৰৰ বিষয়ে"
+msgid "About"
+msgstr "বিষয়ে"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "প্ৰস্থান কৰক"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:298
+#: ../src/window.js:302
 msgid "Weather"
 msgstr "বতৰ"
 
@@ -59,10 +59,9 @@ msgid ""
 "forecasts, up to 7 days, provided by various internet services."
 msgstr ""
 "এটা সৰু এপ্লিকেচন যি আপোনাক আপোনাৰ নগৰ, অথবা পৃথিৱীৰ যিকোনো ঠাইত বৰ্তমান বতৰ "
-"অৱস্থা "
-"পৰ্যবেক্ষণ কৰাৰ আৰু বিভিন্ন ইন্টাৰনেট সেৱাসমূহ দ্বাৰা প্ৰদান কৰা, আপডেইটেড "
-"পূৰ্বানুমান, ৭ দিনলৈ, "
-"অভিগম কৰাৰ অনুমতি দিয়ে।"
+"অৱস্থা পৰ্যবেক্ষণ কৰাৰ আৰু বিভিন্ন ইন্টাৰনেট সেৱাসমূহ দ্বাৰা প্ৰদান কৰা, "
+"আপডেইটেড "
+"পূৰ্বানুমান, ৭ দিনলৈ, অভিগম কৰাৰ অনুমতি দিয়ে।"
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -82,8 +81,7 @@ msgid ""
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
 "gnome-weather ৰ বিশ্ব দৰ্শনত দেখুৱা অৱস্থানসমূহ। প্ৰত্যকটো মান "
-"gweather_location_serialize() "
-"দ্বাৰা ঘুৰাই দিয়া এটা GVariant।"
+"gweather_location_serialize() দ্বাৰা ঘুৰাই দিয়া এটা GVariant।"
 
 #: ../data/window.ui.h:1
 msgid "Select All"
@@ -93,7 +91,7 @@ msgstr "সকলো বাছক"
 msgid "Select None"
 msgstr "একো নাবাছিব"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:191
 msgid "Click on locations to select them"
 msgstr "অৱস্থানসমূহ নিৰ্বাচন কৰিবলে সিহতত ক্লিক কৰক"
 
@@ -102,14 +100,10 @@ msgid "New"
 msgstr "নতুন"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "বিশ্বৰ বতৰ"
-
-#: ../data/window.ui.h:6
 msgid "Cancel"
 msgstr "বাতিল কৰক"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:6
 msgid "Delete"
 msgstr "মচি পেলাওক"
 
@@ -117,46 +111,53 @@ msgstr "মচি পেলাওক"
 msgid "Loading…"
 msgstr "ল'ড কৰা হৈছে…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:120 ../src/forecast.js:405
 msgid "Today"
 msgstr "আজি"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:126 ../src/forecast.js:287 ../src/forecast.js:372
+#: ../src/forecast.js:407
 msgid "Tomorrow"
 msgstr "অহাকালি"
 
-#: ../src/forecast.js:132
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: ../src/forecast.js:143
 #, c-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:189 ../src/forecast.js:283
 msgid "More…"
 msgstr "অধিক…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "আজিৰ পূৰ্বানুমান"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "অহাকালিৰ পূৰ্বানুমান"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%B %d"
-
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:310
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:313
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
+#: ../src/forecast.js:344
+msgid "Forecast for Tomorrow"
+msgstr "অহাকালিৰ পূৰ্বানুমান"
+
+#: ../src/forecast.js:346
+msgid "Forecast for Today"
+msgstr "আজিৰ পূৰ্বানুমান"
+
+#: ../src/forecast.js:348
+msgid "%B %d"
+msgstr "%B %d"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/searchProvider.js:164
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
@@ -305,18 +306,22 @@ msgstr "অহাকালি আবেলি"
 msgid "Tomorrow evening"
 msgstr "অহাকালি গধূলি"
 
-#: ../src/window.js:182
+#: ../src/window.js:186
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d নিৰ্বাচিত"
 msgstr[1] "%d নিৰ্বাচিত"
 
-#: ../src/window.js:297
+#: ../src/window.js:212
+msgid "World Weather"
+msgstr "বিশ্বৰ বতৰ"
+
+#: ../src/window.js:301
 msgid "translator-credits"
 msgstr "নীলমদ্যুতি গোস্বামী (ngoswami@redhat.com)"
 
-#: ../src/window.js:299
+#: ../src/window.js:303
 msgid "A weather application"
 msgstr "এটা বতৰ এপ্লিকেচন"
 
@@ -329,3 +334,5 @@ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "অধিক বিশ্বৰ অৱস্থানসমূহ যোগ কৰিবলৈ টুলবাৰত <b>নতুন</b> বুটাম ব্যৱহাৰ কৰক"
 
+#~ msgid "About Weather"
+#~ msgstr "বতৰৰ বিষয়ে"
