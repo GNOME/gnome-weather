@@ -35,7 +35,7 @@ PKG_CHECK_MODULES([DEPS], [gdk-3.0
                            gio-2.0
                            glib-2.0
                            gobject-2.0
-                           gtk+-3.0 >= 3.9.4
+                           gtk+-3.0 >= 3.11.4
                            gweather-3.0 >= 3.9.5])
 
 AC_PATH_PROG([GJS],[gjs])
