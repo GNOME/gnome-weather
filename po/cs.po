@@ -4,15 +4,15 @@
 #
 # Adam Matoušek <adamatousek@gmail.com>, 2013.
 # Daniel Puncman <puncmdan@fel.cvut.cz>, 2013.
-# Marek Černocký <marek@manet.cz>, 2013.
+# Marek Černocký <marek@manet.cz>, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-31 19:57+0000\n"
-"PO-Revision-Date: 2013-09-05 12:27+0200\n"
+"POT-Creation-Date: 2014-01-07 20:49+0000\n"
+"PO-Revision-Date: 2014-01-12 09:32+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -39,15 +39,15 @@ msgid "Fahrenheit"
 msgstr "Stupně Fahrenheita"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "O aplikaci Počasí"
+msgid "About"
+msgstr "O aplikaci"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Ukončit"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
-#: ../src/window.js:298
+#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:59
+#: ../src/window.js:313
 msgid "Weather"
 msgstr "Počasí"
 
@@ -96,7 +96,7 @@ msgstr "Vybrat vše"
 msgid "Select None"
 msgstr "Zrušit výběr"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:202
 msgid "Click on locations to select them"
 msgstr "Kliknutím na místa je vyberete"
 
@@ -105,62 +105,55 @@ msgid "New"
 msgstr "Nové"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Počasí ve světě"
-
-#: ../data/window.ui.h:6
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:6
 msgid "Delete"
 msgstr "Smazat"
 
-#: ../src/city.js:119
+#: ../src/city.js:127
 msgid "Loading…"
 msgstr "Načítá se…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:127 ../src/forecast.js:412
 msgid "Today"
 msgstr "Dnes"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:133 ../src/forecast.js:294 ../src/forecast.js:379
+#: ../src/forecast.js:414
 msgid "Tomorrow"
 msgstr "Zítra"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:150
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:196 ../src/forecast.js:290
 msgid "More…"
 msgstr "Více…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Předpověď na dnes"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Předpověď na zítra"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%e. %B"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:317
 msgid "%l∶%M %p"
 msgstr "%H:%M"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:320
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/forecast.js:351
+msgid "Forecast for Tomorrow"
+msgstr "Předpověď na zítra"
+
+#: ../src/forecast.js:353
+msgid "Forecast for Today"
+msgstr "Předpověď na dnes"
+
+#: ../src/forecast.js:355
+msgid "%B %d"
+msgstr "%e. %B"
+
+#: ../src/searchProvider.js:169
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -308,29 +301,32 @@ msgstr "Zítra odpoledne"
 msgid "Tomorrow evening"
 msgstr "Zítra večer"
 
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:197
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d vybraná"
 msgstr[1] "%d vybrané"
 msgstr[2] "%d vybraných"
 
-#: ../src/window.js:297
+#: ../src/window.js:223
+msgid "World Weather"
+msgstr "Počasí ve světě"
+
+#: ../src/window.js:312
 msgid "translator-credits"
 msgstr ""
 "Adam Matoušek <adamatousek@gmail.com>\n"
 "Daniel Puncman <puncmdan@fel.cvut.cz>"
 
-#: ../src/window.js:299
+#: ../src/window.js:314
 msgid "A weather application"
 msgstr "Aplikace Počasí"
 
-#: ../src/world.js:217
+#: ../src/world.js:250
 msgid "Add locations"
 msgstr "Přidejte místo"
 
-#: ../src/world.js:220
+#: ../src/world.js:253
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Použitím tlačítka <b>Nové</b> z lišty nástrojů přidáte více zeměpisných míst"
