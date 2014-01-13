@@ -1,3 +1,14 @@
+3.11.4
+======
+* Fixes for RTL layouts [Yosef Or Boczko, #721123]
+* Updates to the packaging system
+* Added the ability to build an RPM from the upstream tarball.
+* Replaced GtkHeaderBar with GtkActionBar (and gtk+ dependency
+  raised)
+* Fixed the .desktop file for legacy environments (not using
+  GIO to launch the application)
+* Translation updates
+
 3.11.3
 ======
 * Always show a title in the header bar [#720322]
