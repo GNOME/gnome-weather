@@ -19,7 +19,6 @@
 pkg.initSubmodule('libgd');
 pkg.initGettext();
 pkg.initFormat();
-pkg.initResources();
 pkg.require({ 'Gd': '1.0',
               'Gdk': '3.0',
               'GdkPixbuf': '2.0',
@@ -119,7 +118,7 @@ const Application = new Lang.Class({
         this.add_accelerator("Escape", "win.selection-mode(false)", null);
         this.add_accelerator("<Primary>a", "win.select-all", null);
 
-        if (pkg.pkgdatadir != pkg.moduledir) // running from source
+        if (!pkg.moduledir.startsWith('resource://')) // running from source
             this.activate();
     },
 

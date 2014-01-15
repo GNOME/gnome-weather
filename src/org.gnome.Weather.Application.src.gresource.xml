@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/Weather/Application/js">
+    <file>city.js</file>
+    <file>forecast.js</file>
+    <file>main.js</file>
+    <file>params.js</file>
+    <file>searchProvider.js</file>
+    <file>strings.js</file>
+    <file>util.js</file>
+    <file>window.js</file>
+    <file>world.js</file>
+  </gresource>
+</gresources>
