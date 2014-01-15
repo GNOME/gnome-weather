@@ -37,7 +37,7 @@ const WeatherWidget = new Lang.Class({
         this._currentStyle = null;
 
         let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/weather/city.ui');
+        builder.add_from_resource('/org/gnome/Weather/Application/city.ui');
 
         let rtl = this.get_direction() == Gtk.TextDirection.RTL;
 

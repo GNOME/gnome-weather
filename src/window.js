@@ -41,7 +41,7 @@ const NewLocationController = new Lang.Class({
     _init: function(parentWindow, worldModel) {
         this._worldModel = worldModel;
 
-        let builder = Util.loadUI('/org/gnome/weather/new-location-dialog.ui',
+        let builder = Util.loadUI('/org/gnome/Weather/Application/new-location-dialog.ui',
                                   { 'parent-window': parentWindow });
 
         let dialog = builder.get_object('location-dialog');
@@ -112,7 +112,7 @@ const MainWindow = new Lang.Class({
                             activate: this.update }]);
 
         let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/weather/window.ui');
+        builder.add_from_resource('/org/gnome/Weather/Application/window.ui');
 
         let grid = builder.get_object('main-panel');
         this._header = builder.get_object('header-bar');
