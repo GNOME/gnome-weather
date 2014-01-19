@@ -319,7 +319,8 @@ const MainWindow = new Lang.Class({
               website: 'https://wiki.gnome.org/Apps/Weather',
               wrap_license: true,
               modal: true,
-              transient_for: this
+              transient_for: this,
+              use_header_bar: true
             });
 
         aboutDialog.show();
