@@ -40,14 +40,14 @@ const Columns = {
     INFO: Gd.MainColumns.LAST+1
 };
 const ColumnTypes = {
-    ID: GObject.TYPE_STRING,
-    URI: GObject.TYPE_STRING,
-    PRIMARY_TEXT: GObject.TYPE_STRING,
-    SECONDARY_TEXT: GObject.TYPE_STRING,
+    ID: String,
+    URI: String,
+    PRIMARY_TEXT: String,
+    SECONDARY_TEXT: String,
     ICON: GdkPixbuf.Pixbuf,
-    MTIME: GObject.TYPE_INT,
-    SELECTED: GObject.TYPE_BOOLEAN,
-    PULSE: GObject.TYPE_UINT,
+    MTIME: GObject.Int,
+    SELECTED: Boolean,
+    PULSE: GObject.UInt,
     LOCATION: GWeather.Location,
     INFO: GWeather.Info
 };
