@@ -35,9 +35,24 @@ const Columns = {
     ICON: Gd.MainColumns.ICON,
     MTIME: Gd.MainColumns.MTIME,
     SELECTED: Gd.MainColumns.SELECTED,
-    LOCATION: 7,
-    INFO: 8
+    PULSE: Gd.MainColumns.PULSE,
+    LOCATION: Gd.MainColumns.LAST,
+    INFO: Gd.MainColumns.LAST+1
 };
+const ColumnTypes = {
+    ID: GObject.TYPE_STRING,
+    URI: GObject.TYPE_STRING,
+    PRIMARY_TEXT: GObject.TYPE_STRING,
+    SECONDARY_TEXT: GObject.TYPE_STRING,
+    ICON: GdkPixbuf.Pixbuf,
+    MTIME: GObject.TYPE_INT,
+    SELECTED: GObject.TYPE_BOOLEAN,
+    PULSE: GObject.TYPE_UINT,
+    LOCATION: GWeather.Location,
+    INFO: GWeather.Info
+};
+Util.assertEqual(Object.keys(Columns).length, Object.keys(ColumnTypes).length);
+Util.assertEqual(Gd.MainColumns.LAST+2, Object.keys(ColumnTypes).length);
 
 const ICON_SIZE = 128;
 
@@ -53,16 +68,7 @@ const WorldModel = new Lang.Class({
 
     _init: function(world) {
         this.parent();
-        this.set_column_types([GObject.TYPE_STRING,
-                               GObject.TYPE_STRING,
-                               GObject.TYPE_STRING,
-                               GObject.TYPE_STRING,
-                               GdkPixbuf.Pixbuf,
-                               GObject.TYPE_INT,
-                               GObject.TYPE_BOOLEAN,
-                               GWeather.Location,
-                               GWeather.Info]);
-
+        this.set_column_types([ColumnTypes[c] for (c in ColumnTypes)]);
         this._world = world;
 
         this._settings = Util.getSettings('org.gnome.Weather.Application');

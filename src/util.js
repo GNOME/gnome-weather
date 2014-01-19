@@ -146,3 +146,8 @@ function normalizeCasefoldAndUnaccent(str) {
      */
     return str.replace(/[\u0300-\u036f]|[\u1dc0-\u1dff]|[\u20d0-\u20ff]|[\ufe20-\ufe2f]/, '');
 }
+
+function assertEqual(one, two) {
+    if (one != two)
+        throw Error('Assertion failed: ' + one + ' != ' + two);
+}
