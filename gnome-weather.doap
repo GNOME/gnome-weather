@@ -16,10 +16,12 @@
 
   <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
 
+  <programming-language>JS</programming-language>
+
   <maintainer>
     <foaf:Person>
       <foaf:name>Giovanni Campagna</foaf:name>
-      <foaf:mbox rdf:resource="mailto:scampa.giovanni@gmail.com" />
+      <foaf:mbox rdf:resource="mailto:gcampagna@src.gnome.org" />
       <gnome:userid>gcampagna</gnome:userid>
     </foaf:Person>
   </maintainer>
