@@ -277,13 +277,15 @@ const WorldContentView = new Lang.Class({
         else
             this.add(this._placeHolder);
         this._empty = !ok;
+
+        this.connect('destroy', Lang.bind(this, this._onDestroy));
     },
 
     get empty() {
         return this._empty;
     },
 
-    vfunc_destroy: function() {
+    _onDestroy: function() {
         if (this._rowInsertedId) {
             this.model.disconnect(this._rowInsertedId);
             this._rowInsertedId = 0;
@@ -292,8 +294,6 @@ const WorldContentView = new Lang.Class({
             this.model.disconnect(this._rowDeletedId);
             this._rowDeletedId = 0;
         }
-
-        this.parent();
     },
 
     _updateEmpty: function() {

@@ -140,6 +140,8 @@ const WeatherView = new Lang.Class({
 
         this._info = null;
         this._updateId = 0;
+
+        this.connect('destroy', Lang.bind(this, this._onDestroy));
     },
 
     get info() {
@@ -164,13 +166,11 @@ const WeatherView = new Lang.Class({
         }
     },
 
-    vfunc_destroy: function() {
+    _onDestroy: function() {
         if (this._updateId) {
             this._info.disconnect(this._updateId);
             this._updateId = 0;
         }
-
-        this.parent();
     },
 
     update: function() {
