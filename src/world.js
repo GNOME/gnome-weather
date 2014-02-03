@@ -211,6 +211,7 @@ const WorldIconView = new Lang.Class({
     _init: function(params) {
         params = Params.fill(params, { view_type: Gd.MainViewType.ICON });
         this.parent(params);
+        this.get_accessible().accessible_name = _("Cities");
 
         this.connect('selection-mode-request', Lang.bind(this, function() {
             this.selection_mode = true;
@@ -227,6 +228,7 @@ const WorldContentView = new Lang.Class({
         params = Params.fill(params, { hexpand: true, vexpand: true,
                                        halign: Gtk.Align.FILL, valign: Gtk.Align.FILL });
         this.parent(params);
+        this.get_accessible().accessible_name = _("World view");
 
         this.iconView = new WorldIconView({ model: model, visible: true });
 

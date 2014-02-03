@@ -29,6 +29,11 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="column_spacing">20</property>
+                    <child internal-child="accessible">
+                      <object class="AtkObject" id="conditions-grid-a11y">
+                        <property name="accessible-name" translatable="yes">Current conditions</property>
+                      </object>
+                    </child>
                     <child>
                       <object class="GtkImage" id="conditions-image">
                         <property name="name">conditions-image</property>
@@ -110,6 +115,12 @@
               <class name="image-button"/>
               <class name="osd"/>
             </style>
+            <child internal-child="accessible">
+              <object class="AtkObject" id="reveal-button-a11y">
+                <property name="accessible-name" translatable="yes">Detailed forecast</property>
+                <property name="accessible-role">7</property><!-- check_box -->
+              </object>
+            </child>
             <child>
               <object class="GtkImage" id="reveal-button-image">
                 <property name="visible">True</property>

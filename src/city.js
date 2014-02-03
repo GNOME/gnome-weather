@@ -16,6 +16,8 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+const Atk = imports.gi.Atk;
+const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 const Lang = imports.lang;
 
@@ -39,8 +41,6 @@ const WeatherWidget = new Lang.Class({
         let builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/Weather/Application/city.ui');
 
-        let rtl = this.get_direction() == Gtk.TextDirection.RTL;
-
         let outerBox = builder.get_object('outer-box');
         this._contentFrame = builder.get_object('content-frame');
         let outerGrid = builder.get_object('outer-grid');
@@ -50,8 +50,6 @@ const WeatherWidget = new Lang.Class({
         this._revealButton = builder.get_object('reveal-button');
         this._revealer = builder.get_object('revealer');
 
-        this._revealButton.get_child().icon_name = rtl ? 'go-previous-rtl-symbolic' : 'go-previous-symbolic';
-
         this._forecasts = new Forecast.ForecastBox({ hexpand: true });
         outerGrid.attach(this._forecasts, 0, 1, 1, 1);
 
@@ -60,16 +58,24 @@ const WeatherWidget = new Lang.Class({
         this._revealer.child = this._today;
 
         this._revealButton.connect('clicked', Lang.bind(this, function() {
-            if (this._revealer.reveal_child) {
-                this._revealer.reveal_child = false;
-                this._revealButton.get_child().icon_name = rtl ? 'go-previous-rtl-symbolic' : 'go-previous-symbolic';
-            } else {
-                this._revealer.reveal_child = true;
-                this._revealButton.get_child().icon_name = rtl ? 'go-next-rtl-symbolic' : 'go-next-symbolic';
-            }
+            this._revealer.reveal_child = !this._revealer.reveal_child;
+            this._syncRevealButton();
         }));
+        this._syncRevealButton();
 
         this.add(outerBox);
+    },
+
+    _syncRevealButton: function() {
+        let rtl = this.get_direction() == Gtk.TextDirection.RTL;
+
+        if (this._revealer.reveal_child) {
+            this._revealButton.get_child().icon_name = rtl ? 'go-next-rtl-symbolic' : 'go-next-symbolic';
+            this._revealButton.get_accessible().ref_state_set().add_state(Atk.StateType.CHECKED);
+        } else {
+            this._revealButton.get_child().icon_name = rtl ? 'go-previous-rtl-symbolic' : 'go-previous-symbolic';
+            this._revealButton.get_accessible().ref_state_set().remove_state(Atk.StateType.CHECKED);
+        }
     },
 
     clear: function() {
@@ -116,6 +122,7 @@ const WeatherView = new Lang.Class({
 
     _init: function(params) {
         this.parent(params);
+        this.get_accessible().accessible_name = _("City view");
 
         let loadingPage = new Gtk.Grid({ orientation: Gtk.Orientation.VERTICAL,
                                          halign: Gtk.Align.CENTER,

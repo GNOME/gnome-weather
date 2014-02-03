@@ -81,6 +81,11 @@
         <style>
           <class name="image-button"/>
         </style>
+        <child internal-child="accessible">
+          <object class="AtkObject" id="world-button-a11y">
+            <property name="accessible-name" translatable="yes">Back</property>
+          </object>
+        </child>
         <child>
           <object class="GtkImage" id="world-button-image">
             <property name="visible">True</property>
@@ -103,6 +108,11 @@
         <style>
           <class name="image-button"/>
         </style>
+        <child internal-child="accessible">
+          <object class="AtkObject" id="select-button-a11y">
+            <property name="accessible-name" translatable="yes">Select</property>
+          </object>
+        </child>
         <child>
           <object class="GtkImage" id="select-button-image">
             <property name="visible">True</property>
@@ -140,8 +150,13 @@
         <property name="action-name">win.refresh</property>
         <property name="valign">center</property>
         <style>
-              <class name="image-button"/>
+          <class name="image-button"/>
         </style>
+        <child internal-child="accessible">
+          <object class="AtkObject" id="refresh-button-a11y">
+            <property name="accessible-name" translatable="yes">Refresh</property>
+          </object>
+        </child>
         <child>
           <object class="GtkImage" id="refresh-button-image">
             <property name="visible">True</property>

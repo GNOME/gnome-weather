@@ -38,6 +38,7 @@ const ForecastBox = new Lang.Class({
     _init: function(params) {
         params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE });
         this.parent(params);
+        this.get_accessible().accessible_name = _("Forecast");
 
         this._grid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
                                     column_spacing: 24,
