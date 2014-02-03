@@ -39,7 +39,7 @@ def _do_bus_call(method, params):
 
 def start():
     _do_bus_call("Activate", GLib.Variant('(a{sv})', ([],)))
-    utils.doDelay(2)
+    utils.doDelay(3)
 
     app = tree.root.application(APPLICATION_ID)
     focus.application(APPLICATION_ID)
