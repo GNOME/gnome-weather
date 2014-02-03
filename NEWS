@@ -1,3 +1,12 @@
+3.11.5
+======
+* JS sources are now loaded from a GResource, which should
+  improve startup times as it requires fewer seeks on disk
+* All dialogs were converted to use a header bar
+* A new infrastructure for application tests exists, and
+  minimal automated testing for the world view is included
+* Translation updates
+
 3.11.4
 ======
 * Fixes for RTL layouts [Yosef Or Boczko, #721123]
