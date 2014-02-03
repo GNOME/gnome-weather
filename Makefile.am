@@ -17,7 +17,13 @@ MAINTAINERCLEANFILES = \
 	$(srcdir)/missing \
 	$(srcdir)/mkinstalldirs
 
-GITIGNOREFILES = .anjuta .anjuta_sym_db.db rpms/
+GITIGNOREFILES = \
+	.anjuta \
+	.anjuta_sym_db.db \
+	m4/intltool.m4 \
+	m4/libtool.m4 \
+	m4/lt* \
+	rpms/
 
 distdir = $(PACKAGE_TARNAME)-$(VERSION)
 
