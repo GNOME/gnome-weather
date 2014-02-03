@@ -1,6 +1,6 @@
-ACLOCAL_AMFLAGS = -I m4 -I libgd
+ACLOCAL_AMFLAGS = -I m4 -I libgd ${ACLOCAL_FLAGS}
 
-SUBDIRS = po data libgd src
+SUBDIRS = po data libgd src tests
 
 MAINTAINERCLEANFILES = \
 	$(srcdir)/INSTALL \
@@ -17,7 +17,7 @@ MAINTAINERCLEANFILES = \
 	$(srcdir)/missing \
 	$(srcdir)/mkinstalldirs
 
-GITIGNOREFILES = .anjuta .anjuta_sym_db.db m4/ rpms/
+GITIGNOREFILES = .anjuta .anjuta_sym_db.db rpms/
 
 distdir = $(PACKAGE_TARNAME)-$(VERSION)
 

@@ -7,7 +7,7 @@ AC_INIT([org.gnome.Weather.Application],[3.11.4],
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([1.11 dist-xz foreign tar-ustar no-define -Wno-portability])
+AM_INIT_AUTOMAKE([1.11 dist-xz foreign tar-ustar no-define serial-tests -Wno-portability])
 # revert automake using PACKAGE_TARNAME instead of PACKAGE_NAME
 AC_SUBST([PACKAGE], [$PACKAGE_NAME])
 
@@ -40,6 +40,14 @@ PKG_CHECK_MODULES([DEPS], [gdk-3.0
 
 AC_PATH_PROG([GJS],[gjs])
 
+AC_ARG_ENABLE(dogtail,
+              [AS_HELP_STRING([--enable-dogtail],
+                              [test using dogtail [default=yes]])],,
+              enable_dogtail=yes)
+AM_CONDITIONAL(ENABLE_DOGTAIL, test "$enable_dogtail" != no)
+
+GLIB_TESTS
+
 GLIB_COMPILE_RESOURCES=`$PKG_CONFIG --variable glib_compile_resources gio-2.0`
 AC_SUBST(GLIB_COMPILE_RESOURCES)
 
@@ -49,6 +57,7 @@ AC_CONFIG_FILES([
   data/icons/Makefile
   libgd/Makefile
   src/Makefile
+  tests/Makefile
   po/Makefile.in
 ])
 AC_OUTPUT
