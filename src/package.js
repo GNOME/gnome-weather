@@ -100,7 +100,7 @@ function _makeNamePath(name) {
  *
  * As a side effect, init() calls GLib.set_prgname().
  */
-function init(params) {
+function init(params, fromLauncher) {
     window.pkg = imports.package;
     name = params.name;
     version = params.version;
@@ -116,6 +116,9 @@ function init(params) {
     datadir = GLib.build_filenamev([prefix, 'share']);
     let libpath, girpath;
 
+    if (!fromLauncher)
+	appFlags |= Gio.ApplicationFlags.IS_SERVICE;
+
     if (_runningFromSource()) {
         log('Running from source tree, using local files');
         // Running from source directory
@@ -127,8 +130,6 @@ function init(params) {
         localedir = GLib.build_filenamev([_base, 'po']);
         moduledir = GLib.build_filenamev([_base, 'src']);
     } else {
-	appFlags |= Gio.ApplicationFlags.IS_SERVICE;
-
         _base = prefix;
         pkglibdir = GLib.build_filenamev([libdir, name]);
         libpath = pkglibdir;
@@ -167,10 +168,11 @@ function init(params) {
  * You must define a main(ARGV) function inside a main.js
  * module in moduledir.
  */
-function start(params, args) {
+function start(params, args, fromLauncher) {
     params.flags = params.flags || 0;
     args = args || ARGV;
-    init(params);
+    fromLauncher = !!fromLauncher;
+    init(params, fromLauncher);
 
     return imports.main.main(args);
 }
@@ -310,7 +312,7 @@ function launch(params) {
     let args = _parseLaunchArgs(ARGV, params);
 
     if (_runningFromSource()) {
-	return start(params, args);
+	return start(params, args, true);
     } else {
 	params.flags |= Gio.ApplicationFlags.IS_LAUNCHER;
 
