@@ -3,6 +3,8 @@ include $(top_srcdir)/glib-tap.mk
 dogtail_tests = \
 	world_view.py
 
+TESTS_ENVIRONMENT += LC_ALL=C
+
 if ENABLE_DOGTAIL
 dist_test_scripts = $(dogtail_tests)
 dist_test_data = testutil.py
@@ -11,9 +13,10 @@ CLEANFILES += *.pyc
 
 if ENABLE_COVERAGE
 lcov:
-	( cd $(abs_top_builddir) ; $(TEST_ENVIRONMENT) $(GJS) --coverage-output=$(abs_builddir) \
+	( cd $(abs_top_builddir) ; $(TESTS_ENVIRONMENT) $(GJS) --coverage-output=$(abs_builddir) \
 	$(foreach source,$(wildcard $(abs_top_srcdir)/src/*.js),-C $(abs_top_srcdir)/src/$(notdir $(source))) \
-	$(abs_top_builddir)/src/org.gnome.Weather.Application ) & sleep 2 && $(MAKE) $(AM_MAKEFLAGS) check
+	$(abs_top_builddir)/src/org.gnome.Weather.Application --gapplication-service ) & \
+	sleep 2 && TESTUTIL_DONT_START=1 $(MAKE) $(AM_MAKEFLAGS) check
 	$(GENHTML) $(builddir)/coverage.lcov
 
 clean-local:

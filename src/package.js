@@ -33,7 +33,6 @@ const Gettext = imports.gettext;
 /*< public >*/
 var name;
 var version;
-var appFlags;
 var prefix;
 var datadir;
 var libdir;
@@ -44,7 +43,6 @@ var localedir;
 
 /*< private >*/
 let _base;
-let _requires;
 
 function _runningFromSource() {
     let fileName = System.programInvocationName;
@@ -100,11 +98,10 @@ function _makeNamePath(name) {
  *
  * As a side effect, init() calls GLib.set_prgname().
  */
-function init(params, fromLauncher) {
+function init(params) {
     window.pkg = imports.package;
     name = params.name;
     version = params.version;
-    appFlags = params.flags;
 
     // Must call it first, because it can only be called
     // once, and other library calls might have it as a
@@ -115,9 +112,6 @@ function init(params, fromLauncher) {
     libdir = params.libdir;
     datadir = GLib.build_filenamev([prefix, 'share']);
     let libpath, girpath;
-
-    if (!fromLauncher)
-	appFlags |= Gio.ApplicationFlags.IS_SERVICE;
 
     if (_runningFromSource()) {
         log('Running from source tree, using local files');
@@ -168,39 +162,10 @@ function init(params, fromLauncher) {
  * You must define a main(ARGV) function inside a main.js
  * module in moduledir.
  */
-function start(params, args, fromLauncher) {
-    params.flags = params.flags || 0;
-    args = args || ARGV;
-    fromLauncher = !!fromLauncher;
-    init(params, fromLauncher);
+function start(params) {
+    init(params);
 
-    return imports.main.main(args);
-}
-
-function _checkVersion(required, current) {
-    if (required == '') {
-        // No requirement
-        return true;
-    }
-
-    // Major version must match, it's used for API
-    // incompatible changes.
-    // The rest just needs to be less or equal to
-    // current. The code is generic, but gjs modules
-    // should use only [major, minor]
-    if (required[0] != current[0])
-        return false;
-
-    for (let i = 1; i < Math.min(current.length, required.length); i++) {
-        if (required[i] > current[i])
-            return false;
-        if (required[i] < current[i])
-            return true;
-
-        // else they're equal, go on
-    }
-
-    return true;
+    return imports.main.main([System.programInvocationName].concat(ARGV));
 }
 
 /**
@@ -214,8 +179,6 @@ function _checkVersion(required, current) {
  * indicates any version.
  */
 function require(libs) {
-    _requires = libs;
-
     for (let l in libs) {
         let version = libs[l];
 
@@ -229,10 +192,6 @@ function require(libs) {
             System.exit(1);
         }
     }
-}
-
-function dumpRequires() {
-    print(JSON.stringify(_requires));
 }
 
 function initGettext() {
@@ -260,64 +219,5 @@ function initSubmodule(name) {
         GIRepository.Repository.prepend_library_path(libpath);
     } else {
         // Running installed, submodule is in $(pkglibdir), nothing to do
-    }
-}
-
-// Launcher support
-
-function _launcherUsage(flags) {
-    print('Usage:');
-
-    let name = GLib.path_get_basename(System.programInvocationName);
-    if (flags & Gio.ApplicationFlags.HANDLES_OPEN)
-	print('  ' + name + ' [OPTION...] [FILE...]\n');
-    else
-	print('  ' + name + ' [OPTION...]\n');
-
-    print('Options:');
-    print('  -h, --help   Show this help message');
-    print('  --version    Show the application version');
-}
-
-function _parseLaunchArgs(args, params) {
-    let newArgs = [];
-
-    for (let i = 0; i < args.length; i++) {
-	switch (args[i]) {
-	case '--':
-	    newArgs.concat(args.slice(i));
-	    return newArgs;
-
-	case '--help':
-	case '-h':
-	    _launcherUsage(params.flags);
-	    System.exit(0);
-	    break;
-
-	case '--version':
-	    print(params.name + ' ' + params.version);
-	    System.exit(0);
-	    break;
-
-	default:
-	    newArgs.push(args[i]);
-	}
-    }
-
-    return newArgs;
-}
-
-function launch(params) {
-    params.flags = params.flags || 0;
-    let args = _parseLaunchArgs(ARGV, params);
-
-    if (_runningFromSource()) {
-	return start(params, args, true);
-    } else {
-	params.flags |= Gio.ApplicationFlags.IS_LAUNCHER;
-
-	let app = new Gio.Application({ application_id: params.name,
-					flags: params.flags });
-	return app.run(args);
     }
 }

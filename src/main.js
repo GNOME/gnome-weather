@@ -53,10 +53,7 @@ const Application = new Lang.Class({
 
     _init: function() {
         this.parent({ application_id: pkg.name,
-                      flags: pkg.appFlags,
                       inactivity_timeout: 60000 });
-        if (this.flags & Gio.ApplicationFlags.IS_SERVICE)
-            this.inactivity_timeout = 60000;
         GLib.set_application_name(_("Weather"));
 
         this._searchProvider = new SearchProvider.SearchProvider(this);

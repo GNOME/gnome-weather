@@ -1,0 +1,2 @@
+#!/bin/sh
+exec gapplication launch org.gnome.Weather.Application

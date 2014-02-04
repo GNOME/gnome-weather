@@ -1,4 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4 -I libgd ${ACLOCAL_FLAGS}
+DISTCHECK_CONFIGURE_FLAGS = --disable-dogtail
 
 SUBDIRS = po data libgd src tests
 

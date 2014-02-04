@@ -6,6 +6,9 @@ from dogtail import utils
 from dogtail.predicate import *
 from dogtail.procedural import *
 
+import os, sys
+import subprocess
+
 APPLICATION_ID = "org.gnome.Weather.Application"
 
 _bus = None
@@ -38,7 +41,12 @@ def _do_bus_call(method, params):
                    -1, None)
 
 def start():
-    _do_bus_call("Activate", GLib.Variant('(a{sv})', ([],)))
+    builddir = os.environ.get('G_TEST_BUILDDIR', None)
+    if builddir and not 'TESTUTIL_DONT_START' in os.environ:
+        subprocess.Popen([os.path.join(builddir, '..', 'src', APPLICATION_ID)],
+                         cwd=os.path.join(builddir, '..'))
+    else:
+        _do_bus_call("Activate", GLib.Variant('(a{sv})', ([],)))
     utils.doDelay(3)
 
     app = tree.root.application(APPLICATION_ID)
