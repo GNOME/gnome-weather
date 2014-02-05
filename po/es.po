@@ -2,15 +2,15 @@
 # Copyright (C) 2012 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012, 2013.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-12-13 16:17+0000\n"
-"PO-Revision-Date: 2013-12-13 17:20+0100\n"
+"POT-Creation-Date: 2014-02-05 09:41+0000\n"
+"PO-Revision-Date: 2014-02-05 13:14+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -44,14 +44,23 @@ msgstr "Acerca de"
 msgid "Quit"
 msgstr "Salir"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:302
+#: ../data/city.ui.h:1
+#| msgid "Current conditions:"
+msgid "Current conditions"
+msgstr "Condiciones actuales"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Pronóstico detallado"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
+#: ../src/window.js:313
 msgid "Weather"
 msgstr "Meteorología"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
-msgstr "Mostrar las condiciones meteorológicas y la predicción"
+msgstr "Mostrar las condiciones meteorológicas y el pronóstico"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 msgid ""
@@ -60,8 +69,8 @@ msgid ""
 "forecasts, up to 7 days, provided by various internet services."
 msgstr ""
 "Una pequeña aplicación que le permite monitorizar el tiempo actual en su "
-"ciudad, o en cualquier lugar del mundo y acceder a predicciones "
-"actualizadas, hasta 7 días, proporcionadas por varios servicios en Internet."
+"ciudad, o en cualquier lugar del mundo y acceder a pronósticos actualizados, "
+"hasta 7 días, proporcionadas por varios servicios en Internet."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -91,7 +100,7 @@ msgstr "Seleccionar todo"
 msgid "Select None"
 msgstr "Seleccionar nada"
 
-#: ../data/window.ui.h:3 ../src/window.js:191
+#: ../data/window.ui.h:3 ../src/window.js:202
 msgid "Click on locations to select them"
 msgstr "Pulse sobre las ubicaciones para seleccionarlas"
 
@@ -100,54 +109,77 @@ msgid "New"
 msgstr "Nueva"
 
 #: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Atrás"
+
+#: ../data/window.ui.h:6
+#| msgid "Select All"
+msgid "Select"
+msgstr "Seleccionar"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../data/window.ui.h:6
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Eliminar"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Vista de la ciudad"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Cargando…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "Pronóstico"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Hoy"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Mañana"
 
-#: ../src/forecast.js:135
+#: ../src/forecast.js:151
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:182
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Más…"
 
-#: ../src/forecast.js:261
-msgid "Forecast for Today"
-msgstr "Previsión para hoy"
-
-#: ../src/forecast.js:263
-msgid "Forecast for Tomorrow"
-msgstr "Previsión para mañana"
-
-#: ../src/forecast.js:267
-msgid "%B %d"
-msgstr "%B %d"
-
-#: ../src/forecast.js:304
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:307
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:164
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Pronóstico para mañana"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Pronóstico para hoy"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/searchProvider.js:169
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -295,29 +327,38 @@ msgstr "Mañana por la tarde"
 msgid "Tomorrow evening"
 msgstr "Mañana a medianoche"
 
-#: ../src/window.js:186
+#: ../src/window.js:197
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionada"
 msgstr[1] "%d seleccionadas"
 
-#: ../src/window.js:212
+#: ../src/window.js:223
 msgid "World Weather"
 msgstr "Meteorología del mundo"
 
-#: ../src/window.js:301
+#: ../src/window.js:312
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013"
 
-#: ../src/window.js:303
+#: ../src/window.js:314
 msgid "A weather application"
 msgstr "Una aplicación de meteorología"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Ciudades"
+
+#: ../src/world.js:231
+#| msgid "World Weather"
+msgid "World view"
+msgstr "Vista mundial"
+
+#: ../src/world.js:258
 msgid "Add locations"
 msgstr "Añadir ubicaciones"
 
-#: ../src/world.js:244
+#: ../src/world.js:261
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Use el botón <b>Nueva</b> en la barra de herramientas para añadir más "
@@ -394,9 +435,6 @@ msgstr ""
 
 #~ msgid "Done"
 #~ msgstr "Hecho"
-
-#~ msgid "Current conditions:"
-#~ msgstr "Condiciones actuales:"
 
 #~ msgid "Wind: "
 #~ msgstr "Viento: "
