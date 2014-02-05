@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-12-13 17:51+0000\n"
-"PO-Revision-Date: 2013-12-17 16:54+0500\n"
+"POT-Creation-Date: 2014-02-05 09:41+0000\n"
+"PO-Revision-Date: 2014-02-05 16:49+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <tg@li.org>\n"
 "Language: tg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.2\n"
+"X-Generator: Poedit 1.6.3\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -43,12 +43,20 @@ msgstr "Дар бораи барнома"
 msgid "Quit"
 msgstr "Тарк кардан"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:302
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Шароитҳои обу ҳавои ҷорӣ"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Пешгӯии ботафсил"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
+#: ../src/window.js:313
 msgid "Weather"
 msgstr "Обу ҳаво"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Намоиш додани шароит ва пешгӯии обу ҳаво"
 
@@ -92,7 +100,7 @@ msgstr "Ҳамаро интихоб кардан"
 msgid "Select None"
 msgstr "Лағв кардани интихоб"
 
-#: ../data/window.ui.h:3 ../src/window.js:191
+#: ../data/window.ui.h:3 ../src/window.js:202
 msgid "Click on locations to select them"
 msgstr "Барои интихоби объект ба ҷойришавӣ зер кунед"
 
@@ -101,56 +109,78 @@ msgid "New"
 msgstr "Нав"
 
 #: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Қафо"
+
+#: ../data/window.ui.h:6
+#| msgid "Select All"
+msgid "Select"
+msgstr "Интихоб кардан"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Бекор кардан"
 
-#: ../data/window.ui.h:6
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Навсозӣ кардан"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Нест кардан"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Намоиши шаҳрҳо"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Бор шуда истодааст..."
 
-#: ../src/forecast.js:120 ../src/forecast.js:405
+#: ../src/forecast.js:41
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "Пешгӯии обу ҳаво"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Имрӯз"
 
-#: ../src/forecast.js:126 ../src/forecast.js:287 ../src/forecast.js:372
-#: ../src/forecast.js:407
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Пагоҳ"
 
-#: ../src/forecast.js:143
+#: ../src/forecast.js:151
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:189 ../src/forecast.js:283
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Бештар…"
 
-#: ../src/forecast.js:310
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:313
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:344
+#: ../src/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "Обу ҳаво барои пагоҳ"
 
-#: ../src/forecast.js:346
+#: ../src/forecast.js:354
 msgid "Forecast for Today"
 msgstr "Обу ҳаво барои имрӯз"
 
-#: ../src/forecast.js:348
+#: ../src/forecast.js:356
 msgid "%B %d"
 msgstr "%B %d"
 
-#: ../src/searchProvider.js:164
+#: ../src/searchProvider.js:169
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
@@ -299,30 +329,39 @@ msgstr "Пешинии пагоҳ"
 msgid "Tomorrow evening"
 msgstr "Бегоҳии пагоҳ"
 
-#: ../src/window.js:186
+#: ../src/window.js:197
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d интихоб шудааст"
 msgstr[1] "%d интихоб шудаанд"
 
-#: ../src/window.js:212
+#: ../src/window.js:223
 msgid "World Weather"
 msgstr "Обу ҳавои ҷаҳон"
 
-#: ../src/window.js:301
+#: ../src/window.js:312
 msgid "translator-credits"
 msgstr "Victor Ibragimov, victor.ibragimov@gmail.com"
 
-#: ../src/window.js:303
+#: ../src/window.js:314
 msgid "A weather application"
 msgstr "Барномаи обу ҳаво"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Шаҳрҳо"
+
+#: ../src/world.js:231
+#| msgid "World Weather"
+msgid "World view"
+msgstr "Намоиши ҷаҳон"
+
+#: ../src/world.js:258
 msgid "Add locations"
 msgstr "Илова кардани ҷойгиршавӣ"
 
-#: ../src/world.js:244
+#: ../src/world.js:261
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Барои илова кардани бештар ҷойгиршавиҳои ҷаҳон, тугмаи <b>Нав</b>-ро дар "
