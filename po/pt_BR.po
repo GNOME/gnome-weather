@@ -1,7 +1,7 @@
 # Brazilian Portuguese translation for gnome-weather.
-# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# Copyright (C) 2014 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Enrico Nicoletto <liverig@gmail.com>, 2013.
+# Enrico Nicoletto <liverig@gmail.com>, 2013, 2014.
 # Rafael Ferreira <rafael.f.f1@gmail.com>, 2013.
 # Georges Basile Stavracas Neto <georges.stavracas@gmail.com>, 2013.
 #
@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-01 17:22+0000\n"
-"PO-Revision-Date: 2013-12-17 19:04-0300\n"
-"Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
+"POT-Creation-Date: 2014-02-06 09:40+0000\n"
+"PO-Revision-Date: 2014-02-06 17:13-0300\n"
+"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.3\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -45,12 +45,21 @@ msgstr "Sobre"
 msgid "Quit"
 msgstr "Sair"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:59
+#: ../data/city.ui.h:1
+#| msgid "Current conditions:"
+msgid "Current conditions"
+msgstr "Condições atuais"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Previsão de tempo detalhada"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
 #: ../src/window.js:313
 msgid "Weather"
 msgstr "Meteorologia"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Mostra condições meteorológicas e previsão do tempo"
 
@@ -102,52 +111,74 @@ msgid "New"
 msgstr "Novo"
 
 #: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Retornar"
+
+#: ../data/window.ui.h:6
+#| msgid "Select All"
+msgid "Select"
+msgstr "Selecionar"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../data/window.ui.h:6
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Atualizar"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Excluir"
 
-#: ../src/city.js:127
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Visão da cidade"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Carregando…"
 
-#: ../src/forecast.js:127 ../src/forecast.js:412
+#: ../src/forecast.js:41
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "Previsão do tempo"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Hoje"
 
-#: ../src/forecast.js:133 ../src/forecast.js:294 ../src/forecast.js:379
-#: ../src/forecast.js:414
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Amanhã"
 
-#: ../src/forecast.js:150
+#: ../src/forecast.js:151
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:196 ../src/forecast.js:290
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Mais…"
 
-#: ../src/forecast.js:317
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
-#: ../src/forecast.js:320
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:351
+#: ../src/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "Previsão do tempo para amanhã"
 
-#: ../src/forecast.js:353
+#: ../src/forecast.js:354
 msgid "Forecast for Today"
 msgstr "Previsão do tempo para hoje"
 
-#: ../src/forecast.js:355
+#: ../src/forecast.js:356
 msgid "%B %d"
 msgstr "%e de %B"
 
@@ -322,11 +353,20 @@ msgstr ""
 msgid "A weather application"
 msgstr "Um aplicativo de meteorologia"
 
-#: ../src/world.js:250
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Cidades"
+
+#: ../src/world.js:231
+#| msgid "World Weather"
+msgid "World view"
+msgstr "Visão mundial"
+
+#: ../src/world.js:258
 msgid "Add locations"
 msgstr "Adicionar localizações"
 
-#: ../src/world.js:253
+#: ../src/world.js:261
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Use o botão <b>Nova</b> na barra de ferramentas para adicionar mais "
@@ -403,9 +443,6 @@ msgstr ""
 
 #~ msgid "Done"
 #~ msgstr "Feito"
-
-#~ msgid "Current conditions:"
-#~ msgstr "Condições atuais:"
 
 #~ msgid "Wind: "
 #~ msgstr "Vento: "
