@@ -2,13 +2,13 @@
 # Copyright (C) 2012 THE gnome-weather'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Fran Diéguez <frandieguez@gnome.org>, 2012.
-# Fran Dieguez <frandieguez@gnome.org>, 2012, 2013.
+# Fran Dieguez <frandieguez@gnome.org>, 2012, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-18 23:47+0100\n"
-"PO-Revision-Date: 2013-12-18 23:47+0200\n"
+"POT-Creation-Date: 2014-02-07 01:01+0100\n"
+"PO-Revision-Date: 2014-02-07 01:02+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -43,12 +43,20 @@ msgstr "Sobre"
 msgid "Quit"
 msgstr "Saír"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:302
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Condicións actuais"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Predición meteorolóxica detallada"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
+#: ../src/window.js:313
 msgid "Weather"
 msgstr "O tempo"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Mostrar as condicións e predicións do tempo"
 
@@ -91,7 +99,7 @@ msgstr "Seleccoinar todo"
 msgid "Select None"
 msgstr "Deseleccionar todo"
 
-#: ../data/window.ui.h:3 ../src/window.js:191
+#: ../data/window.ui.h:3 ../src/window.js:202
 msgid "Click on locations to select them"
 msgstr "Prema nas localizacións para seleccionalas"
 
@@ -100,64 +108,84 @@ msgid "New"
 msgstr "Novo"
 
 #: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Atrás"
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Seleccionar"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: ../data/window.ui.h:6
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Eliminar"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Ver cidade"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Cargando…"
 
-#: ../src/forecast.js:120 ../src/forecast.js:405
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Predición meteorolóxica"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Hoxe"
 
-#: ../src/forecast.js:126 ../src/forecast.js:287 ../src/forecast.js:372
-#: ../src/forecast.js:407
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Mañá"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: ../src/forecast.js:143
+#: ../src/forecast.js:151
 #, c-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:189 ../src/forecast.js:283
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Máis…"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:310
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:313
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:344
+#: ../src/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "Predición para mañá"
 
-#: ../src/forecast.js:346
+#: ../src/forecast.js:354
 msgid "Forecast for Today"
 msgstr "Predición par hoxe"
 
-#: ../src/forecast.js:348
+#: ../src/forecast.js:356
 msgid "%B %d"
 msgstr "%B %d"
 
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/searchProvider.js:164
+#: ../src/searchProvider.js:169
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
@@ -306,30 +334,38 @@ msgstr "Mañá á tarde"
 msgid "Tomorrow evening"
 msgstr "Mañá á noitiña"
 
-#: ../src/window.js:186
+#: ../src/window.js:197
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionada"
 msgstr[1] "%d seleccionadas"
 
-#: ../src/window.js:212
+#: ../src/window.js:223
 msgid "World Weather"
 msgstr "Tempo mundial"
 
-#: ../src/window.js:301
+#: ../src/window.js:312
 msgid "translator-credits"
 msgstr "Fran Dieguez <frandieguez@gnome.org>, 2013."
 
-#: ../src/window.js:303
+#: ../src/window.js:314
 msgid "A weather application"
 msgstr "Un aplicativo do tempo"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Cidades"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Vista mundial"
+
+#: ../src/world.js:258
 msgid "Add locations"
 msgstr "Engadir localizacións"
 
-#: ../src/world.js:244
+#: ../src/world.js:261
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Use o botón <b>Nova</b> na barra de ferramentas para engadir máis "
@@ -340,9 +376,6 @@ msgstr ""
 
 #~ msgid "Click on items to select them"
 #~ msgstr "Prema nos elementos para seleccionalos"
-
-#~ msgid "Current conditions:"
-#~ msgstr "Condicións actuais:"
 
 #~ msgid "Wind: "
 #~ msgstr "Vento:"
