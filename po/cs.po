@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-07 20:49+0000\n"
-"PO-Revision-Date: 2014-01-12 09:32+0100\n"
+"POT-Creation-Date: 2014-02-07 21:37+0000\n"
+"PO-Revision-Date: 2014-02-08 07:45+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -46,12 +46,20 @@ msgstr "O aplikaci"
 msgid "Quit"
 msgstr "Ukončit"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:59
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Současné podmínky"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Podrobná předpověď"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
 #: ../src/window.js:313
 msgid "Weather"
 msgstr "Počasí"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Zobrazit povětrnostní podmínky a předpověď"
 
@@ -105,55 +113,77 @@ msgid "New"
 msgstr "Nové"
 
 #: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Zpět"
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Vybrat"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: ../data/window.ui.h:6
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Aktualizovat"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Smazat"
 
-#: ../src/city.js:127
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Zobrazení města"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Načítá se…"
 
-#: ../src/forecast.js:127 ../src/forecast.js:412
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Předpověď počasí"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Dnes"
 
-#: ../src/forecast.js:133 ../src/forecast.js:294 ../src/forecast.js:379
-#: ../src/forecast.js:414
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Zítra"
 
-#: ../src/forecast.js:150
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:196 ../src/forecast.js:290
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Více…"
 
-#: ../src/forecast.js:317
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%H:%M"
 
-#: ../src/forecast.js:320
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:351
+#: ../src/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "Předpověď na zítra"
 
-#: ../src/forecast.js:353
+#: ../src/forecast.js:354
 msgid "Forecast for Today"
 msgstr "Předpověď na dnes"
 
-#: ../src/forecast.js:355
+#: ../src/forecast.js:356
 msgid "%B %d"
 msgstr "%e. %B"
 
 #: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -302,6 +332,7 @@ msgid "Tomorrow evening"
 msgstr "Zítra večer"
 
 #: ../src/window.js:197
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d vybraná"
@@ -322,11 +353,19 @@ msgstr ""
 msgid "A weather application"
 msgstr "Aplikace Počasí"
 
-#: ../src/world.js:250
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Města"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Zobrazení světa"
+
+#: ../src/world.js:258
 msgid "Add locations"
 msgstr "Přidejte místo"
 
-#: ../src/world.js:253
+#: ../src/world.js:261
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Použitím tlačítka <b>Nové</b> z lišty nástrojů přidáte více zeměpisných míst"
