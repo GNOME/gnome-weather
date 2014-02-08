@@ -1,7 +1,7 @@
 NULL =
 
-dist_bin_SCRIPTS = gnome-weather
-nodist_pkgdata_SCRIPTS = org.gnome.Weather.Application
+appdir = $(pkgdatadir)
+nodist_app_SCRIPTS = org.gnome.Weather.Application
 
 resource_files = $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/$(PACKAGE_NAME).src.gresource.xml)
 $(PACKAGE_NAME).src.gresource: $(PACKAGE_NAME).src.gresource.xml $(resource_files)
@@ -34,5 +34,11 @@ CLEANFILES = \
 	$(PACKAGE_NAME) \
 	$(PACKAGE_NAME).src.gresource \
 	$(NULL)
+
+install-exec-hook:
+	$(MKDIR_P) $(DESTDIR)$(bindir)
+	$(LN_S) $(pkglibdir)/$(PACKAGE_NAME) $(DESTDIR)$(bindir)/$(PACKAGE_TARNAME)
+uninstall-hook:
+	-rm -f $(DESTDIR)$(bindir)/$(PACKAGE_NAME)
 
 -include $(top_srcdir)/git.mk
