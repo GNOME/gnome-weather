@@ -6,17 +6,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-06 09:28+0100\n"
-"PO-Revision-Date: 2014-01-06 09:28+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-02-09 09:09+0000\n"
+"PO-Revision-Date: 2014-02-09 16:13+0100\n"
 "Last-Translator: Milo Casagrande <milo@ubuntu.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
-"Language: Italan\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8-bit\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Poedit 1.6.4\n"
 
 # posizione
 #: ../data/app-menu.ui.h:1
@@ -43,12 +44,20 @@ msgstr "Informazioni"
 msgid "Quit"
 msgstr "Esci"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:59
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Condizioni attuali"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Previsioni dettagliate"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
 #: ../src/window.js:313
 msgid "Weather"
 msgstr "Meteo"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Mostra condizioni e previsioni meteo"
 
@@ -104,65 +113,79 @@ msgid "New"
 msgstr "Nuova"
 
 #: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Indietro"
+
+#: ../data/window.ui.h:6
+#| msgid "Select All"
+msgid "Select"
+msgstr "Seleziona"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Annulla"
 
-#: ../data/window.ui.h:6
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Aggiorna"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Elimina"
 
-#: ../src/city.js:127
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Vista città"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Caricamento…"
 
-#: ../src/forecast.js:127 ../src/forecast.js:412
+#: ../src/forecast.js:41
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "Previsioni"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Oggi"
 
-#: ../src/forecast.js:133 ../src/forecast.js:294 ../src/forecast.js:379
-#: ../src/forecast.js:414
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Domani"
 
-#. TRANSLATORS: this is the temperature string, minimum and maximum.
-#. The two values are already formatted, so it would be something like
-#. "7 °C / 19 °C"
-#: ../src/forecast.js:150
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:196 ../src/forecast.js:290
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Altro…"
 
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:317
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l.%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:320
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%k.%M"
 
-#: ../src/forecast.js:351
+#: ../src/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "Previsioni per domani"
 
-#: ../src/forecast.js:353
+#: ../src/forecast.js:354
 msgid "Forecast for Today"
 msgstr "Previsioni per oggi"
 
-#: ../src/forecast.js:355
+#: ../src/forecast.js:356
 msgid "%B %d"
 msgstr "%d %B"
 
-#. TRANSLATORS: this is the description shown in the overview search
-#. It's the current weather conditions followed by the temperature,
-#. like "Clear sky, 14 °C"
 #: ../src/searchProvider.js:169
-#, c-format
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -311,7 +334,7 @@ msgid "Tomorrow evening"
 msgstr "Domani sera"
 
 #: ../src/window.js:197
-#, c-format
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d selezionata"
@@ -332,11 +355,20 @@ msgstr ""
 msgid "A weather application"
 msgstr "Un'applicazione per il meteo"
 
-#: ../src/world.js:250
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Città"
+
+#: ../src/world.js:231
+#| msgid "World Weather"
+msgid "World view"
+msgstr "Vista mondiale"
+
+#: ../src/world.js:258
 msgid "Add locations"
 msgstr "Aggiungi località"
 
-#: ../src/world.js:253
+#: ../src/world.js:261
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Usare il pulsante <b>Nuova</b> nella barra strumenti per aggiungere località "
