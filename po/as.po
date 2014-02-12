@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-12-19 13:11+0000\n"
-"PO-Revision-Date: 2014-01-06 18:09+0630\n"
+"POT-Creation-Date: 2014-02-12 09:11+0000\n"
+"PO-Revision-Date: 2014-02-12 15:41+0630\n"
 "Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
 "Language-Team: Assamese <kde-i18n-doc@kde.org>\n"
 "Language: as\n"
@@ -43,12 +43,20 @@ msgstr "বিষয়ে"
 msgid "Quit"
 msgstr "প্ৰস্থান কৰক"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:302
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "বৰ্তমান চৰ্তসমূহ"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "বিৱৰিত প্ৰাককলন"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
+#: ../src/window.js:313
 msgid "Weather"
 msgstr "বতৰ"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "বতৰৰ অৱস্থা আৰু পূৰ্বানুমান দেখুৱাওক"
 
@@ -91,7 +99,7 @@ msgstr "সকলো বাছক"
 msgid "Select None"
 msgstr "একো নাবাছিব"
 
-#: ../data/window.ui.h:3 ../src/window.js:191
+#: ../data/window.ui.h:3 ../src/window.js:202
 msgid "Click on locations to select them"
 msgstr "অৱস্থানসমূহ নিৰ্বাচন কৰিবলে সিহতত ক্লিক কৰক"
 
@@ -100,65 +108,79 @@ msgid "New"
 msgstr "নতুন"
 
 #: ../data/window.ui.h:5
+msgid "Back"
+msgstr "পিছলৈ"
+
+#: ../data/window.ui.h:6
+#| msgid "Select All"
+msgid "Select"
+msgstr "বাছক"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "বাতিল কৰক"
 
-#: ../data/window.ui.h:6
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "সতেজ কৰক"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "মচি পেলাওক"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "নগৰ দৰ্শন"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "ল'ড কৰা হৈছে…"
 
-#: ../src/forecast.js:120 ../src/forecast.js:405
+#: ../src/forecast.js:41
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "প্ৰাককলন"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "আজি"
 
-#: ../src/forecast.js:126 ../src/forecast.js:287 ../src/forecast.js:372
-#: ../src/forecast.js:407
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "অহাকালি"
 
-#. TRANSLATORS: this is the temperature string, minimum and maximum.
-#. The two values are already formatted, so it would be something like
-#. "7 °C / 19 °C"
-#: ../src/forecast.js:143
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:189 ../src/forecast.js:283
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "অধিক…"
 
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:310
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:313
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:344
+#: ../src/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "অহাকালিৰ পূৰ্বানুমান"
 
-#: ../src/forecast.js:346
+#: ../src/forecast.js:354
 msgid "Forecast for Today"
 msgstr "আজিৰ পূৰ্বানুমান"
 
-#: ../src/forecast.js:348
+#: ../src/forecast.js:356
 msgid "%B %d"
 msgstr "%B %d"
 
-#. TRANSLATORS: this is the description shown in the overview search
-#. It's the current weather conditions followed by the temperature,
-#. like "Clear sky, 14 °C"
-#: ../src/searchProvider.js:164
-#, c-format
+#: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -306,30 +328,39 @@ msgstr "অহাকালি আবেলি"
 msgid "Tomorrow evening"
 msgstr "অহাকালি গধূলি"
 
-#: ../src/window.js:186
-#, c-format
+#: ../src/window.js:197
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d নিৰ্বাচিত"
 msgstr[1] "%d নিৰ্বাচিত"
 
-#: ../src/window.js:212
+#: ../src/window.js:223
 msgid "World Weather"
 msgstr "বিশ্বৰ বতৰ"
 
-#: ../src/window.js:301
+#: ../src/window.js:312
 msgid "translator-credits"
 msgstr "নীলমদ্যুতি গোস্বামী (ngoswami@redhat.com)"
 
-#: ../src/window.js:303
+#: ../src/window.js:314
 msgid "A weather application"
 msgstr "এটা বতৰ এপ্লিকেচন"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "নগৰবোৰ"
+
+#: ../src/world.js:231
+#| msgid "World Weather"
+msgid "World view"
+msgstr "বিশ্ব দৰ্শন"
+
+#: ../src/world.js:258
 msgid "Add locations"
 msgstr "অবস্থানসমূহ যোগ কৰক"
 
-#: ../src/world.js:244
+#: ../src/world.js:261
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "অধিক বিশ্বৰ অৱস্থানসমূহ যোগ কৰিবলৈ টুলবাৰত <b>নতুন</b> বুটাম ব্যৱহাৰ কৰক"
