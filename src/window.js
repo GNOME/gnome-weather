@@ -140,7 +140,7 @@ const MainWindow = new Lang.Class({
         let selectDone = builder.get_object('done-button');
         this._pageWidgets[Page.WORLD].push(selectDone);
 
-        let selectionBarRevealer = builder.get_object('selection-bar-revealer');
+        let selectionBar = builder.get_object('selection-bar');
         let selectionMenu = builder.get_object("selection-menu");
 
         this._selectionMenuButton = builder.get_object('selection-menu-button');
@@ -180,7 +180,7 @@ const MainWindow = new Lang.Class({
                                GObject.BindingFlags.INVERT_BOOLEAN);
         iconView.bind_property('selection-mode', selectDone, 'visible',
                                GObject.BindingFlags.SYNC_CREATE);
-        iconView.bind_property('selection-mode', selectionBarRevealer, 'reveal-child',
+        iconView.bind_property('selection-mode', selectionBar, 'visible',
                                GObject.BindingFlags.SYNC_CREATE);
         this._worldView.bind_property('empty', this.lookup_action('selection-mode'), 'enabled',
                                       GObject.BindingFlags.SYNC_CREATE |

@@ -193,30 +193,25 @@
       </packing>
     </child>
     <child>
-      <object class="GtkRevealer" id="selection-bar-revealer">
+      <object class="GtkActionBar" id="selection-bar">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="no-show-all">True</property>
         <child>
-          <object class="GtkActionBar" id="selection-bar">
+          <object class="GtkButton" id="delete-button">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <child>
-              <object class="GtkButton" id="delete-button">
-                <property name="visible">True</property>
-                <property name="sensitive">False</property>
-                <property name="can_focus">True</property>
-                <property name="label" translatable="yes">Delete</property>
-                <property name="action-name">win.delete-selected</property>
-                <property name="valign">center</property>
-                <style>
-                  <class name="text-button"/>
-                </style>
-              </object>
-              <packing>
-                <property name="pack_type">end</property>
-              </packing>
-            </child>
+            <property name="sensitive">False</property>
+            <property name="can_focus">True</property>
+            <property name="label" translatable="yes">Delete</property>
+            <property name="action-name">win.delete-selected</property>
+            <property name="valign">center</property>
+            <style>
+              <class name="text-button"/>
+            </style>
           </object>
+          <packing>
+            <property name="pack_type">end</property>
+          </packing>
         </child>
       </object>
       <packing>
