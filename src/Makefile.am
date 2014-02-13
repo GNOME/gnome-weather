@@ -37,7 +37,7 @@ CLEANFILES = \
 
 install-exec-hook:
 	$(MKDIR_P) $(DESTDIR)$(bindir)
-	$(LN_S) $(pkglibdir)/$(PACKAGE_NAME) $(DESTDIR)$(bindir)/$(PACKAGE_TARNAME)
+	$(LN_S) $(appdir)/$(PACKAGE_NAME) $(DESTDIR)$(bindir)/$(PACKAGE_TARNAME)
 uninstall-hook:
 	-rm -f $(DESTDIR)$(bindir)/$(PACKAGE_NAME)
 
