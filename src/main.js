@@ -52,9 +52,10 @@ const Application = new Lang.Class({
     Extends: Gtk.Application,
 
     _init: function() {
-        this.parent({ application_id: pkg.name,
-                      inactivity_timeout: 60000 });
+        this.parent({ application_id: pkg.name });
         GLib.set_application_name(_("Weather"));
+        if (pkg.moduledir.startsWith('resource:///'))
+            this.set_inactivity_timeout(60000);
 
         this._searchProvider = new SearchProvider.SearchProvider(this);
     },
