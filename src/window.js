@@ -52,6 +52,7 @@ const NewLocationController = new Lang.Class({
         dialog.set_default_response(Gtk.ResponseType.OK);
 
         dialog.connect('response', Lang.bind(this, this._onResponse));
+        entry.connect('notify::location', Lang.bind(this, this._locationChanged));
 
         this._dialog = dialog;
         this._entry = entry;
@@ -59,6 +60,7 @@ const NewLocationController = new Lang.Class({
 
     run: function() {
         this._dialog.show();
+        this._locationChanged(this._entry);
     },
 
     _onResponse: function(dialog, response) {
@@ -72,6 +74,10 @@ const NewLocationController = new Lang.Class({
             return;
 
         this._worldModel.addLocation(location);
+    },
+
+    _locationChanged: function(entry) {
+	this._dialog.set_response_sensitive(Gtk.ResponseType.OK, entry.location != null);
     }
 });
 
