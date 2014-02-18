@@ -123,8 +123,18 @@ const Application = new Lang.Class({
         let win = new Window.MainWindow({ application: this });
 
         if (this.model.loading) {
-            let id = this.model.connect('notify::loading', function(model) {
-                model.disconnect(id);
+            let timeoutId, notifyId;
+            let model = this.model;
+
+            timeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, function() {
+                log('Timeout during model load, perhaps the network is not available?');
+                model.disconnect(notifyId);
+                win.show();
+                return false;
+            });
+            notifyId = this.model.connect('notify::loading', function(model) {
+                model.disconnect(notifyId);
+                GLib.source_remove(timeoutId);
                 win.show();
             });
         } else {
