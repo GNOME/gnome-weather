@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 3.11.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-22 22:08+0100\n"
-"PO-Revision-Date: 2014-01-22 22:08+0100\n"
+"POT-Creation-Date: 2014-02-19 20:51+0100\n"
+"PO-Revision-Date: 2014-02-19 20:51+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -41,8 +41,16 @@ msgstr "Om"
 msgid "Quit"
 msgstr "Avslutt"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:58
-#: ../src/window.js:313
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Nåværende forhold"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Detaljert værmelding"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Vær"
 
@@ -88,7 +96,7 @@ msgstr "Velg alle"
 msgid "Select None"
 msgstr "Velg ingen"
 
-#: ../data/window.ui.h:3 ../src/window.js:202
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Klikk på lokasjoner for å velge dem"
 
@@ -97,52 +105,72 @@ msgid "New"
 msgstr "Ny"
 
 #: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Tilbake"
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Velg"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: ../data/window.ui.h:6
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Oppdater"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Slett"
 
-#: ../src/city.js:127
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Byvisning"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Laster …"
 
-#: ../src/forecast.js:127 ../src/forecast.js:412
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Værmelding"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "I dag"
 
-#: ../src/forecast.js:133 ../src/forecast.js:294 ../src/forecast.js:379
-#: ../src/forecast.js:414
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "I morgen"
 
-#: ../src/forecast.js:150
+#: ../src/forecast.js:151
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:196 ../src/forecast.js:290
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Mer …"
 
-#: ../src/forecast.js:317
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%H.%M"
 
-#: ../src/forecast.js:320
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:351
+#: ../src/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "Værmelding for i morgen"
 
-#: ../src/forecast.js:353
+#: ../src/forecast.js:354
 msgid "Forecast for Today"
 msgstr "Værmelding for i dag"
 
-#: ../src/forecast.js:355
+#: ../src/forecast.js:356
 msgid "%B %d"
 msgstr "%B %d"
 
@@ -295,30 +323,38 @@ msgstr "I morgen ettermiddag"
 msgid "Tomorrow evening"
 msgstr "I morgen kveld"
 
-#: ../src/window.js:197
+#: ../src/window.js:203
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d valgt"
 msgstr[1] "%d valgt"
 
-#: ../src/window.js:223
+#: ../src/window.js:229
 msgid "World Weather"
 msgstr "Været i verden"
 
-#: ../src/window.js:312
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: ../src/window.js:314
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Et program for vær"
 
-#: ../src/world.js:256
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Byer"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Verdensvisning"
+
+#: ../src/world.js:258
 msgid "Add locations"
 msgstr "Legg til lokasjoner"
 
-#: ../src/world.js:259
+#: ../src/world.js:261
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Bruk <b>Ny</b>-knappen på verktøylinjen for å legge til flere lokasjoner i "
