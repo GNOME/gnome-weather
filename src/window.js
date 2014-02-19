@@ -273,6 +273,7 @@ const MainWindow = new Lang.Class({
 
     showInfo: function(info) {
         this._cityView.info = info;
+        this._cityView._connectClock();
         this._stack.set_visible_child(this._cityView);
         this._goToPage(Page.CITY);
     },
@@ -280,6 +281,7 @@ const MainWindow = new Lang.Class({
     _goWorld: function() {
         this._stack.set_visible_child(this._worldView);
         this._goToPage(Page.WORLD);
+        this._cityView._disconnectClock();
     },
 
     _newLocation: function() {

@@ -19,6 +19,8 @@
 const Atk = imports.gi.Atk;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
+const GLib = imports.gi.GLib;
+const Gnome = imports.gi.GnomeDesktop;
 const Lang = imports.lang;
 
 const Forecast = imports.forecast;
@@ -49,9 +51,10 @@ const WeatherWidget = new Lang.Class({
         this._conditions = builder.get_object('conditions-label');
         this._revealButton = builder.get_object('reveal-button');
         this._revealer = builder.get_object('revealer');
+        this._time = builder.get_object('time-label');
 
         this._forecasts = new Forecast.ForecastBox({ hexpand: true });
-        outerGrid.attach(this._forecasts, 0, 1, 1, 1);
+        outerGrid.attach(this._forecasts, 0, 2, 1, 1);
 
         this._today = new Forecast.TodaySidebar({ vexpand: true,
                                                   name: 'today-sidebar' });
@@ -184,7 +187,31 @@ const WeatherView = new Lang.Class({
     _onUpdate: function(info) {
         this._infoPage.clear();
         this._infoPage.update(info);
+        this._updateTime();
         this._spinner.stop();
         this.visible_child_name = 'info';
+    },
+
+    _connectClock: function() {
+        this._wallClock = new Gnome.WallClock();
+        this._clockHandlerId = this._wallClock.connect('notify::clock', Lang.bind(this, this._updateTime));
+    },
+
+    _updateTime: function() {
+        this._infoPage._time.label = this._getTime();
+    },
+
+    _getTime: function() {
+        if (this._info != null) {
+            let location = this._info.location;
+            let tz = GLib.TimeZone.new(location.get_timezone().get_tzid());
+            let dt = GLib.DateTime.new_now(tz);
+            return dt.format("%H:%M");
+        }
+        return null;
+    },
+
+    _disconnectClock: function() {
+        this._wallClock.disconnect(this._clockHandlerId);
     }
 });
