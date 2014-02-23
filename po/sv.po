@@ -1,0 +1,365 @@
+# Swedish translation for gnome-weather.
+# Copyright (C) 2014 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Marcus Lundblad <ml@update.uu.se>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-02-05 12:48+0000\n"
+"PO-Revision-Date: 2014-02-19 21:45+0100\n"
+"Last-Translator: Marcus Lundblad <ml@update.uu.se>\n"
+"Language-Team: svenska <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Ny"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Temperaturenhet"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "Om"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Avsluta"
+
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Aktuella förhållanden"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Detaljerad prognos"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
+#: ../src/window.js:313
+msgid "Weather"
+msgstr "Väder"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Visar prognoser och väderförhållanden"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Ett litet program som låter dig hålla koll på aktuella väderförhållanden för "
+"din stad eller andra platser i världen och ha tillgång till uppdaterade "
+"prognoser, upp till 7 dagar, tillhandahållna av olika internettjänster."
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Ny plats"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "Sök efter en stad:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Konfigurerade städer att visa väder för"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Platser som visas i världsvyn i gnome-weather. Vardera värde är en GVariant "
+"som returneras av gweather_location_serialize()."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Välj alla"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Välj ingen"
+
+#: ../data/window.ui.h:3 ../src/window.js:202
+msgid "Click on locations to select them"
+msgstr "Klicka på platser för att välja dem"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Ny"
+
+#: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Tillbaka"
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Välj"
+
+#: ../data/window.ui.h:7
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Uppdatera"
+
+#: ../data/window.ui.h:9
+msgid "Delete"
+msgstr "Radera"
+
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Stadsvy"
+
+#: ../src/city.js:134
+msgid "Loading…"
+msgstr "Laddar…"
+
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Prognos"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
+msgid "Today"
+msgstr "Idag"
+
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
+msgid "Tomorrow"
+msgstr "Imorgon"
+
+#: ../src/forecast.js:151
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:197 ../src/forecast.js:291
+msgid "More…"
+msgstr "Mer…"
+
+#: ../src/forecast.js:318
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: ../src/forecast.js:321
+msgid "%R"
+msgstr "%R"
+
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Prognos för imorgon"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Prognos för idag"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%d %B"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Måndag natt"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Måndag morgon"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Måndag eftermiddag"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Måndag kväll"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Tisdag natt"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Tisdag morgon"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Tisdag eftermiddag"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Tisdag kväll"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Onsdag natt"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Onsdag morgon"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Onsdag eftermiddag"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Onsdag kväll"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Torsdag natt"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Torsdag morgon"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Torsdag eftermiddag"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Torsdag kväll"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Fredag natt"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Fredag morgon"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Fredag eftermiddag"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Fredag kväll"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Lördag natt"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Lördag morgon"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Lördag eftermiddag"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Lördag kväll"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Söndag natt"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Söndag morgon"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Söndag eftermiddag"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Söndag kväll"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Inatt"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Imorse"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "I eftermiddag"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Ikväll"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Imorgon natt"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Imorgon på morgonen"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Imorgon eftermiddag"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Imorgon kväll"
+
+#: ../src/window.js:197
+#, javascript-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d vald"
+msgstr[1] "%d valda"
+
+#: ../src/window.js:223
+msgid "World Weather"
+msgstr "Världsväder"
+
+#: ../src/window.js:312
+msgid "translator-credits"
+msgstr ""
+"Marcus Lundblad <ml@update.uu.se>\n"
+"Skicka synpunkter på översättningen till\n"
+"<tp-sv@listor.tp-sv.se>."
+
+#: ../src/window.js:314
+msgid "A weather application"
+msgstr "Ett väderprogram"
+
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Städer"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Världsvy"
+
+#: ../src/world.js:258
+msgid "Add locations"
+msgstr "Lägg till platser"
+
+#: ../src/world.js:261
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"Använd <b>Ny</b>-knappen i verktygsraden för att lägga till platser i världen"
