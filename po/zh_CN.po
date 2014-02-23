@@ -4,15 +4,16 @@
 # tuhaihe <1132321739qq@gmail.com>, 2013.
 # Wylmer Wang <wantinghard@gmail.com>, 2013.
 # Tong Hui <tonghuix@gmail.com>, 2013.
+# Sphinx Jiang <yishanj@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-12-27 13:18+0000\n"
-"PO-Revision-Date: 2013-12-28 01:16+0800\n"
-"Last-Translator: Tong Hui <tonghuix@gmail.com>\n"
+"POT-Creation-Date: 2014-02-21 21:09+0000\n"
+"PO-Revision-Date: 2014-02-23 18:37+0800\n"
+"Last-Translator: Sphinx Jiang <yishanj@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -45,12 +46,20 @@ msgstr "关于"
 msgid "Quit"
 msgstr "退出"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:306
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "当前状况"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "详细预报"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "天气"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "显示天气状况和天气预报"
 
@@ -91,7 +100,7 @@ msgstr "全选"
 msgid "Select None"
 msgstr "全不选"
 
-#: ../data/window.ui.h:3 ../src/window.js:195
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "点击位置选择它们"
 
@@ -100,65 +109,77 @@ msgid "New"
 msgstr "新建"
 
 #: ../data/window.ui.h:5
+msgid "Back"
+msgstr "后退"
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "选择"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "取消"
 
-#: ../data/window.ui.h:6
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "刷新"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "删除"
 
-#: ../src/city.js:123
+#: ../src/city.js:125
+msgid "City view"
+msgstr "城市视图"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "正在加载..."
 
-#: ../src/forecast.js:120 ../src/forecast.js:405
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "预报"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "今日"
 
-#: ../src/forecast.js:126 ../src/forecast.js:287 ../src/forecast.js:372
-#: ../src/forecast.js:407
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "明日"
 
-#. TRANSLATORS: this is the temperature string, minimum and maximum.
-#. The two values are already formatted, so it would be something like
-#. "7 °C / 19 °C"
-#: ../src/forecast.js:143
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:189 ../src/forecast.js:283
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "更多..."
 
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:310
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:313
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:344
+#: ../src/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "明日预报"
 
-#: ../src/forecast.js:346
+#: ../src/forecast.js:354
 msgid "Forecast for Today"
 msgstr "今日预报"
 
-#: ../src/forecast.js:348
+#: ../src/forecast.js:356
 msgid "%B %d"
 msgstr "%B %d"
 
-#. TRANSLATORS: this is the description shown in the overview search
-#. It's the current weather conditions followed by the temperature,
-#. like "Clear sky, 14 °C"
-#: ../src/searchProvider.js:164
-#, c-format
+#: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -306,17 +327,17 @@ msgstr "明天下午"
 msgid "Tomorrow evening"
 msgstr "明晚"
 
-#: ../src/window.js:190
-#, c-format
+#: ../src/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "已选择 %d 项"
 
-#: ../src/window.js:216
+#: ../src/window.js:229
 msgid "World Weather"
 msgstr "世界天气"
 
-#: ../src/window.js:305
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr ""
 "tuhaihe <1132321739qq@gmail.com>, 2013\n"
@@ -324,15 +345,23 @@ msgstr ""
 "甘露(Gan Lu) <rhythm.gan@gmail.com>, 2013\n"
 "Tong Hui <tonghuix@gmail.com>, 2013"
 
-#: ../src/window.js:307
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "一款天气应用"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "城市"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "全球视图"
+
+#: ../src/world.js:258
 msgid "Add locations"
 msgstr "添加位置"
 
-#: ../src/world.js:244
+#: ../src/world.js:261
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr "使用工具栏上的<b>新建</b>按钮来添加更多世界位置"
 
@@ -404,9 +433,6 @@ msgstr "使用工具栏上的<b>新建</b>按钮来添加更多世界位置"
 
 #~ msgid "Click on items to select them"
 #~ msgstr "点击项目来选择它们"
-
-#~ msgid "Current conditions:"
-#~ msgstr "当前状况："
 
 #~ msgid "Wind: "
 #~ msgstr "风："
