@@ -1,6 +1,11 @@
 # -*- mode: python -*-
 
 from gi.repository import GLib, Gio
+
+from dogtail.utils import isA11yEnabled, enableA11y
+if not isA11yEnabled():
+    enableA11y(True)
+
 from dogtail import tree
 from dogtail import utils
 from dogtail.predicate import *
