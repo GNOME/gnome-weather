@@ -1,0 +1,361 @@
+# Kazakh translation for gnome-weather.
+# Copyright (C) 2014 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-02-26 09:08+0000\n"
+"PO-Revision-Date: 2014-02-26 22:33+0600\n"
+"Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
+"Language-Team: Kazakh <kk@li.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "Ж_аңа"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Температураның өлшем бірлігі"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Цельсий"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Фаренгейт"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "Осы туралы"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Шығу"
+
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Ағымдағы күйі"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Толығырақ болжам"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
+msgid "Weather"
+msgstr "Ауа райы"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Ауа райының күйін және болжамын көрсету"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Өз қалаңыз, немесе әлемнің басқа жерлері үшін ағымдағы ауа райы жағадайын "
+"көрсететін, және жаңартылатын, интернеттің бірнеше көздері ұсынатын, 7 күнге "
+"дейін алға ауа райы болжамдарын қарауды мүмкін қылатын кішігірім қолданба."
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Жаңа орналасу"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "Қаланы іздеу:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Ауа райы көрсетілетін қалалар"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Орналасулар gnome-weather қолданбасының әлемдік көрінісінде көрсетіледі. Әр "
+"мән gweather_location_serialize() қайтаратын GVariant болып табылады."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Барлығын таңдау"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Ештеңе таңдамау"
+
+#: ../data/window.ui.h:3 ../src/window.js:208
+msgid "Click on locations to select them"
+msgstr "Орналасуды таңдау үшін оған шертіңіз"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Жаңа"
+
+#: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Кері"
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Таңдау"
+
+#: ../data/window.ui.h:7
+msgid "Cancel"
+msgstr "Бас тарту"
+
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Жаңарту"
+
+#: ../data/window.ui.h:9
+msgid "Delete"
+msgstr "Өшіру"
+
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Қалалар көрінісі"
+
+#: ../src/city.js:134
+msgid "Loading…"
+msgstr "Жүктелуде…"
+
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Болжам"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
+msgid "Today"
+msgstr "Бүгiн"
+
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
+msgid "Tomorrow"
+msgstr "Ертең"
+
+#: ../src/forecast.js:151
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:197 ../src/forecast.js:291
+msgid "More…"
+msgstr "Көбірек..."
+
+#: ../src/forecast.js:318
+msgid "%l∶%M %p"
+msgstr "%H∶%M"
+
+#: ../src/forecast.js:321
+msgid "%R"
+msgstr "%R"
+
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Ертеңге болжам"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Бүгінге болжам"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Дүйсенбі түнде"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Дүйсенбі таңертең"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Дүйсенбі түстен кейін"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Дүйсенбі кеші"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Сейсенбі түнде"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Сейсенбі таңертең"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Сейсенбі түстен кейін"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Сейсенбі кеші"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Сәрсенбі түнде"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Сәрсенбі таңертең"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Сәрсенбі түстен кейін"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Сәрсенбі кеші"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Бейсенбі түнде"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Бейсенбі таңертең"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Бейсенбі түстен кейін"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Бейсенбі кеші"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Жұма түнде"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Жұма таңертең"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Жұма түстен кейін"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Жұма кеші"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Сенбі түнде"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Сенбі таңертең"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Сенбі түстен кейін"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Сенбі кеші"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Жексенбі түнде"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Жексенбі таңертең"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Жексенбі түстен кейін"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Жексенбі кеші"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Бүгін түнде"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Бүгін таңертең"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Бүгін түстен кейін"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Бүгін кешке"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Ертең түнде"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Ертең таңертең"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Ертең түстен кейін"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Ертең кешке"
+
+#: ../src/window.js:203
+#, javascript-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d таңдалды"
+
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Әлем ауа райы"
+
+#: ../src/window.js:318
+msgid "translator-credits"
+msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
+
+#: ../src/window.js:320
+msgid "A weather application"
+msgstr "Ауа райы қолданбасы"
+
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Қалалар"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Әлемдік көрініс"
+
+#: ../src/world.js:258
+msgid "Add locations"
+msgstr "Орналасуларды қосу"
+
+#: ../src/world.js:261
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"Көбірек әлемдік орналасуларды қосу үшін, <b>Жаңа</b> батырмасын қолданыңыз"
