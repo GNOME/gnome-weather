@@ -1,15 +1,15 @@
 # Lithuanian translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Aurimas Černius <aurisc4@gmail.com>, 2013.
+# Aurimas Černius <aurisc4@gmail.com>, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-31 19:57+0000\n"
-"PO-Revision-Date: 2013-09-01 23:06+0300\n"
+"POT-Creation-Date: 2014-02-27 09:09+0000\n"
+"PO-Revision-Date: 2014-02-27 23:11+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -37,19 +37,27 @@ msgid "Fahrenheit"
 msgstr "Farenheitas"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Apie orus"
+msgid "About"
+msgstr "Apie"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Išeiti"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Dabartinės sąlygos"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Detali prognozė"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Orai"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Rodyti orų sąlygas ir prognozes"
 
@@ -91,7 +99,7 @@ msgstr "Žymėti visus"
 msgid "Select None"
 msgstr "Nežymėti nieko"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Spauskite ant vietų joms pažymėti"
 
@@ -100,62 +108,79 @@ msgid "New"
 msgstr "Nauja"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Pasaulio orai"
+msgid "Back"
+msgstr "Atgal"
 
 #: ../data/window.ui.h:6
+#| msgid "Select All"
+msgid "Select"
+msgstr "Žymėti"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Atsisakyti"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Atnaujinti"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Ištrinti"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Miestų vaizdas"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Įkeliama…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "Prognozė"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Šiandien"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Rytoj"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Daugiau…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Šiandienos prognozė"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Rytojaus prognozė"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%B %d"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Rytojaus prognozė"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Šiandienos prognozė"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -303,28 +328,42 @@ msgstr "Rytojaus diena"
 msgid "Tomorrow evening"
 msgstr "Rytojaus vakaras"
 
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d pažymėtas"
 msgstr[1] "%d pažymėti"
 msgstr[2] "%d pažymėtų"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Pasaulio orai"
+
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr ""
 "išvertė:\n"
 "Aurimas Černius <aurisc4@gmail.com>"
 
-#: ../src/window.js:299
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Orų programa"
 
-#: ../src/world.js:217
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Miestai"
+
+#: ../src/world.js:231
+#| msgid "World Weather"
+msgid "World view"
+msgstr "Pasaulio vaizdas"
+
+#: ../src/world.js:258
 msgid "Add locations"
 msgstr "Pridėti vietų"
 
-#: ../src/world.js:220
+#: ../src/world.js:261
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr "Naudokite įrankinės mygtuką <b>Nauja</b> pasaulio vietoms pridėti"
+
