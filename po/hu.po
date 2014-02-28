@@ -2,14 +2,14 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 #
-# Balázs Úr <urbalazs at gmail dot com>, 2013.
+# Balázs Úr <urbalazs at gmail dot com>, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-31 19:57+0000\n"
-"PO-Revision-Date: 2013-09-03 20:08+0200\n"
+"POT-Creation-Date: 2014-02-28 09:09+0000\n"
+"PO-Revision-Date: 2014-02-28 21:08+0100\n"
 "Last-Translator: Balázs Úr <urbalazs at gmail dot com>\n"
 "Language-Team: Hungarian <gnome-hu-list@gnome.org>\n"
 "Language: hu\n"
@@ -36,19 +36,27 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Az Időjárás névjegye"
+msgid "About"
+msgstr "Névjegy"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Kilépés"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Jelenlegi időjárás"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Részletes előrejelzés"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Időjárás"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Időjárási viszonyok és előrejelzés megjelenítése"
 
@@ -91,7 +99,7 @@ msgstr "Összes kijelölése"
 msgid "Select None"
 msgstr "Kijelölés megszüntetése"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Kattintson a helyekre a kiválasztásukhoz"
 
@@ -100,62 +108,79 @@ msgid "New"
 msgstr "Új"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Világ időjárás"
+msgid "Back"
+msgstr "Vissza"
 
 #: ../data/window.ui.h:6
+#| msgid "Select All"
+msgid "Select"
+msgstr "Kijelölés"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Mégse"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Frissítés"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Törlés"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Város nézet"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Betöltés…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "Előrejelzés"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Ma"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Holnap"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Több…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Mai előrejelzés"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Holnapi előrejelzés"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%B %d."
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%p %l.%M"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Holnapi előrejelzés"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Mai előrejelzés"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%B %d."
+
+#: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -303,30 +328,46 @@ msgstr "Holnap délután"
 msgid "Tomorrow evening"
 msgstr "Holnap este"
 
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d kiválasztva"
 msgstr[1] "%d kiválasztva"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Világ időjárás"
+
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr "Úr Balázs <urbalazs@gmail.com>"
 
-#: ../src/window.js:299
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Egy időjárás alkalmazás"
 
-#: ../src/world.js:217
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Városok"
+
+#: ../src/world.js:231
+#| msgid "World Weather"
+msgid "World view"
+msgstr "Világ nézet"
+
+#: ../src/world.js:258
 msgid "Add locations"
 msgstr "Helyek hozzáadása"
 
-#: ../src/world.js:220
+#: ../src/world.js:261
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Használja az <b>Új</b> gombot az eszköztáron további világhelyek "
 "hozzáadásához"
+
+#~ msgid "About Weather"
+#~ msgstr "Az Időjárás névjegye"
 
 #~ msgid "_Preferences"
 #~ msgstr "_Beállítások"
