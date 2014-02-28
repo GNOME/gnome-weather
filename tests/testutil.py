@@ -71,7 +71,7 @@ def reset_settings():
 def init():
     global settings, _previous_locations
 
-    settings = Gio.Settings(schema_id="org.gnome.Weather.Application")
+    settings = Gio.Settings("org.gnome.Weather.Application")
     _previous_locations = settings.get_value("locations")
     reset_settings()
 
