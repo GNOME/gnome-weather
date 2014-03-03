@@ -1,3 +1,11 @@
+3.11.91
+=======
+* Fix problem loading the app without network connectivity
+* Fix running tests with a11y disabled [Vadim Rutkovsky, #725152]
+* Fix running tests against old pygobject+glib [Shivani Poddar, #725398]
+* Fix automake requirement [Pranav Kant, #725427]
+* Translation updates
+
 3.11.90
 =======
 * Fixed a crash at shutdown, caused by a destroy vfunc
