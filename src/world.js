@@ -238,7 +238,8 @@ const WorldContentView = new Lang.Class({
                                            column_spacing: 6 });
         this._placeHolder.get_style_context().add_class('dim-label');
 
-        let iconGrid = new Gtk.Grid({ row_spacing: 4, column_spacing: 4 });
+        let iconGrid = new Gtk.Grid({ row_spacing: 4, column_spacing: 4,
+                                      valign: Gtk.Align.CENTER });
         iconGrid.attach(new Gtk.Image({ icon_name: 'weather-overcast-symbolic',
                                         icon_size: Gtk.IconSize.LARGE_TOOLBAR }),
                         0, 0, 1, 1);
@@ -262,6 +263,7 @@ const WorldContentView = new Lang.Class({
                                                  use_markup: true,
                                                  max_width_chars: 30,
                                                  wrap: true,
+                                                 xalign: 0.0,
                                                  halign: Gtk.Align.START,
                                                  valign: Gtk.Align.START }),
                                  1, 1, 1, 1);
