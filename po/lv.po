@@ -1,14 +1,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2013.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-14 17:44+0000\n"
-"PO-Revision-Date: 2013-10-02 23:16+0300\n"
+"POT-Creation-Date: 2014-03-07 09:11+0000\n"
+"PO-Revision-Date: 2014-03-07 17:45+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -36,19 +36,27 @@ msgid "Fahrenheit"
 msgstr "Fārenheiti"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Par Laikapstākļiem"
+msgid "About"
+msgstr "Par"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Iziet"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Pašreizējie apstākļi"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Detalizēta prognoze"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Laikapstākļi"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Rādīt laikapstākļu prognozi"
 
@@ -90,7 +98,7 @@ msgstr "Izvēlēties visu"
 msgid "Select None"
 msgstr "Iezīmēt neko"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Spiediet uz atrašanās vietām, lai tos izvēlētos"
 
@@ -99,62 +107,79 @@ msgid "New"
 msgstr "Jauns"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Pasaules laikapstākļi"
+msgid "Back"
+msgstr "Atpakaļ"
 
 #: ../data/window.ui.h:6
+#| msgid "Select All"
+msgid "Select"
+msgstr "Izvēlēties"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Atcelt"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Atsvaidzināt"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Dzēst"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Pilsētas skats"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Ielādē…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "Prognoze"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Šodien"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Rīt"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Vairāk…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Šodienas prognoze"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Rītdienas prognoze"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%d. %B"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%H.%M"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Rītdienas prognoze"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Šodienas prognoze"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%d. %B"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -302,28 +327,43 @@ msgstr "Rītdienas pēcpusdiena"
 msgid "Tomorrow evening"
 msgstr "Rītdienas vakars"
 
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d izvēlēts"
 msgstr[1] "%d izvēlēti"
 msgstr[2] "%d izvēlētu"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Pasaules laikapstākļi"
+
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: ../src/window.js:299
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Laikapstākļu lietotne"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Pilsētas"
+
+#: ../src/world.js:231
+#| msgid "World Weather"
+msgid "World view"
+msgstr "Pasaules skats"
+
+#: ../src/world.js:259
 msgid "Add locations"
 msgstr "Pievienot vietas"
 
-#: ../src/world.js:244
+#: ../src/world.js:262
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Lietojiet rīkjoslas pogu <b>Jauna</b>, lai pievienotu vairāk vietas pasaulē"
 
+#~ msgid "About Weather"
+#~ msgstr "Par Laikapstākļiem"
