@@ -26,6 +26,7 @@ const Lang = imports.lang;
 
 const Params = imports.params;
 const Util = imports.util;
+const CurrentLocationController = imports.currentLocationController;
 
 const Columns = {
     ID: Gd.MainColumns.ID,
@@ -37,7 +38,8 @@ const Columns = {
     SELECTED: Gd.MainColumns.SELECTED,
     PULSE: Gd.MainColumns.PULSE,
     LOCATION: Gd.MainColumns.LAST,
-    INFO: Gd.MainColumns.LAST+1
+    INFO: Gd.MainColumns.LAST+1,
+    AUTOMATIC: Gd.MainColumns.LAST+2
 };
 const ColumnTypes = {
     ID: String,
@@ -49,10 +51,11 @@ const ColumnTypes = {
     SELECTED: Boolean,
     PULSE: GObject.UInt,
     LOCATION: GWeather.Location,
-    INFO: GWeather.Info
+    INFO: GWeather.Info,
+    AUTOMATIC: Boolean
 };
 Util.assertEqual(Object.keys(Columns).length, Object.keys(ColumnTypes).length);
-Util.assertEqual(Gd.MainColumns.LAST+2, Object.keys(ColumnTypes).length);
+Util.assertEqual(Gd.MainColumns.LAST+3, Object.keys(ColumnTypes).length);
 
 const ICON_SIZE = 128;
 
@@ -87,10 +90,14 @@ const WorldModel = new Lang.Class({
         for (let i = 0; i < locations.length; i++) {
             let variant = locations[i];
             let location = this._world.deserialize(variant);
-            this._addLocationInternal(location);
+            this._addLocationInternal(location, false);
         }
 
         this._settings.connect('changed::locations', Lang.bind(this, this._onChanged));
+
+        let currentLocationController = new CurrentLocationController.CurrentLocationController(Lang.bind(this,
+                                                                                                          this._addCurrentLocation));
+        this._currentLocationController = currentLocationController;
     },
 
     _updateLoadingCount: function(delta) {
@@ -111,7 +118,7 @@ const WorldModel = new Lang.Class({
         return this._loadingCount > 0;
     },
 
-    _addLocationInternal: function(location) {
+    _addLocationInternal: function(location, automatic) {
         let info = new GWeather.Info({ location: location,
                                        enabled_providers: this._providers });
         let iter;
@@ -134,11 +141,13 @@ const WorldModel = new Lang.Class({
                                         [Columns.PRIMARY_TEXT,
                                          Columns.ICON,
                                          Columns.LOCATION,
-                                         Columns.INFO],
+                                         Columns.INFO,
+                                         Columns.AUTOMATIC],
                                         [primary_text,
                                          icon,
                                          location,
-                                         info]);
+                                         info,
+                                         automatic]);
     },
 
     _onChanged: function() {
@@ -147,6 +156,11 @@ const WorldModel = new Lang.Class({
 
         let [ok, iter] = this.get_iter_first();
         while (ok) {
+            let auto = this.get_value(iter, Columns.AUTOMATIC);
+            if (auto) {
+                ok = this.iter_next(iter);
+                continue;
+            }
             let location = this.get_value(iter, Columns.LOCATION);
 
             let found = false;
@@ -179,7 +193,7 @@ const WorldModel = new Lang.Class({
                 continue;
 
             let newLocation = this._world.deserialize(variant);
-            this._addLocationInternal(newLocation);
+            this._addLocationInternal(newLocation, false);
         }
     },
 
@@ -189,17 +203,40 @@ const WorldModel = new Lang.Class({
         this._settings.set_value('locations', new GLib.Variant('av', newLocations));
     },
 
+    _addCurrentLocation: function(currentLocation) {
+        let locations = this._settings.get_value('locations').deep_unpack();
+
+        for (let i = 0; i < locations.length; i++) {
+            let variant = locations[i];
+            if (variant == null)
+                continue;
+
+            let location = this._world.deserialize(variant);
+            if (this._currentLocationController.isLocationSimilar(location))
+                return;
+        }
+        this._addLocationInternal(currentLocation, true);
+    },
+
     removeLocation: function(iter) {
+        let auto = this.get_value(iter, Columns.AUTOMATIC);
+        if (auto) {
+            this.remove(iter);
+            return;
+        }
+
         let location = this.get_value(iter, Columns.LOCATION);
         let variant = location.serialize();
 
         let newLocations = this._settings.get_value('locations').deep_unpack();
+
         for (let i = 0; i < newLocations.length; i++) {
             if (newLocations[i].equal(variant)) {
                 newLocations.splice(i, 1);
                 break;
             }
         }
+
         this._settings.set_value('locations', new GLib.Variant('av', newLocations));
     },
 });

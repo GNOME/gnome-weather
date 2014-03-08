@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/org/gnome/Weather/Application/js">
     <file>city.js</file>
+    <file>currentLocationController.js</file>
     <file>forecast.js</file>
     <file>main.js</file>
     <file>params.js</file>
