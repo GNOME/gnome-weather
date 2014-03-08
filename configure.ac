@@ -29,13 +29,14 @@ PKG_PROG_PKG_CONFIG([0.22])
 
 GLIB_GSETTINGS
 GOBJECT_INTROSPECTION_REQUIRE([1.35.9])
-
+GJS_MIN_VERSION=1.39.91
 PKG_CHECK_MODULES([DEPS], [gdk-3.0
                            gdk-pixbuf-2.0
                            gio-2.0
                            glib-2.0
                            gobject-2.0
                            gtk+-3.0 >= 3.11.4
+                           gjs-1.0 >= $GJS_MIN_VERSION
                            gweather-3.0 >= 3.9.5])
 
 AC_PATH_PROG([GJS],[gjs])
