@@ -5,14 +5,15 @@
 # gnomepl@aviary.pl
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Piotr Drąg <piotrdrag@gmail.com>, 2012-2013.
-# Aviary.pl <gnomepl@aviary.pl>, 2012-2013.
+# Paweł Żołnowski <pawel@zolnowski.name>, 2014.
+# Aviary.pl <gnomepl@aviary.pl>, 2012-2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-31 23:13+0200\n"
-"PO-Revision-Date: 2013-08-31 23:15+0200\n"
-"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"POT-Creation-Date: 2014-03-10 18:08+0100\n"
+"PO-Revision-Date: 2014-03-09 23:52+0100\n"
+"Last-Translator: Paweł Żołnowski <pawel@zolnowski.name>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -40,19 +41,27 @@ msgid "Fahrenheit"
 msgstr "Stopnie Fahrenheita"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
+msgid "About"
 msgstr "O programie"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Zakończ"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Obecne warunki pogodowe"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Szczegółowa prognoza"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Pogoda"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Wyświetlanie warunków pogodowych i prognozy"
 
@@ -94,7 +103,7 @@ msgstr "Zaznacz wszystko"
 msgid "Select None"
 msgstr "Odznacz wszystko"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Kliknięcie położenia zaznacza je"
 
@@ -103,62 +112,77 @@ msgid "New"
 msgstr "Nowe"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Pogoda na świecie"
+msgid "Back"
+msgstr "Wstecz"
 
 #: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Wybierz"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Odśwież"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Usuń"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Widok miasta"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Wczytywanie…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Prognoza"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Dzisiaj"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Jutro"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Więcej…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Prognoza na dzisiaj"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Prognoza na jutro"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%d %B"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%H∶%M"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Prognoza na jutro"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Prognoza na dzisiaj"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%d %B"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -172,7 +196,7 @@ msgstr "Poniedziałek rano"
 
 #: ../src/strings.js:22
 msgid "Monday afternoon"
-msgstr "Poniedziałek popołudniu"
+msgstr "Poniedziałek po południu"
 
 #: ../src/strings.js:22
 msgid "Monday evening"
@@ -188,7 +212,7 @@ msgstr "Wtorek rano"
 
 #: ../src/strings.js:23
 msgid "Tuesday afternoon"
-msgstr "Wtorek popołudniu"
+msgstr "Wtorek po południu"
 
 #: ../src/strings.js:23
 msgid "Tuesday evening"
@@ -204,7 +228,7 @@ msgstr "Środa rano"
 
 #: ../src/strings.js:24
 msgid "Wednesday afternoon"
-msgstr "Środa popołudniu"
+msgstr "Środa po południu"
 
 #: ../src/strings.js:24
 msgid "Wednesday evening"
@@ -220,7 +244,7 @@ msgstr "Czwartek rano"
 
 #: ../src/strings.js:25
 msgid "Thursday afternoon"
-msgstr "Czwartek popołudniu"
+msgstr "Czwartek po południu"
 
 #: ../src/strings.js:25
 msgid "Thursday evening"
@@ -236,7 +260,7 @@ msgstr "Piątek rano"
 
 #: ../src/strings.js:26
 msgid "Friday afternoon"
-msgstr "Piątek popołudniu"
+msgstr "Piątek po południu"
 
 #: ../src/strings.js:26
 msgid "Friday evening"
@@ -252,7 +276,7 @@ msgstr "Sobota rano"
 
 #: ../src/strings.js:27
 msgid "Saturday afternoon"
-msgstr "Sobota popołudniu"
+msgstr "Sobota po południu"
 
 #: ../src/strings.js:27
 msgid "Saturday evening"
@@ -268,7 +292,7 @@ msgstr "Niedziela rano"
 
 #: ../src/strings.js:28
 msgid "Sunday afternoon"
-msgstr "Niedziela popołudniu"
+msgstr "Niedziela po południu"
 
 #: ../src/strings.js:28
 msgid "Sunday evening"
@@ -284,11 +308,11 @@ msgstr "Dzisiaj rano"
 
 #: ../src/strings.js:31
 msgid "This afternoon"
-msgstr "Dzisiejsze popołudnie"
+msgstr "Dzisiaj po południu"
 
 #: ../src/strings.js:31
 msgid "This evening"
-msgstr "Dzisiejszy wieczór"
+msgstr "Dzisiaj wieczorem"
 
 #: ../src/strings.js:32
 msgid "Tomorrow night"
@@ -300,34 +324,47 @@ msgstr "Jutro rano"
 
 #: ../src/strings.js:32
 msgid "Tomorrow afternoon"
-msgstr "Jutro popołudniu"
+msgstr "Jutro po południu"
 
 #: ../src/strings.js:32
 msgid "Tomorrow evening"
 msgstr "Jutro wieczorem"
 
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "Zaznaczono: %d"
 msgstr[1] "Zaznaczono: %d"
 msgstr[2] "Zaznaczono: %d"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Pogoda na świecie"
+
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2012-2013\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2012-2013"
+"Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2012-2014"
 
-#: ../src/window.js:299
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Prognoza pogody"
 
-#: ../src/world.js:217
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Miasta"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Widok świata"
+
+#: ../src/world.js:259
 msgid "Add locations"
 msgstr "Dodaj położenia"
 
-#: ../src/world.js:220
+#: ../src/world.js:262
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr "Przycisk <b>Nowe</b> na pasku narzędziowym dodaje więcej położeń"
