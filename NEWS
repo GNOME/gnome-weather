@@ -1,3 +1,9 @@
+3.11.92
+=======
+* Fix alignment of placeholder text for first run [#721732]
+* Build fixes [Shivani Poddar, #725942]
+* Translation updates
+
 3.11.91
 =======
 * Fix problem loading the app without network connectivity
