@@ -2,14 +2,14 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 #
-# A S Alam <aalam@users.sf.net>, 2013.
+# A S Alam <aalam@users.sf.net>, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-31 19:57+0000\n"
-"PO-Revision-Date: 2013-09-09 14:04-0500\n"
+"POT-Creation-Date: 2014-03-18 09:12+0000\n"
+"PO-Revision-Date: 2014-03-18 18:33-0500\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
@@ -24,7 +24,6 @@ msgid "_New"
 msgstr "ਨਵਾਂ(_N)"
 
 #: ../data/app-menu.ui.h:2
-#| msgid "Temperature: "
 msgid "Temperature unit"
 msgstr "ਤਾਪਮਾਨ ਇਕਾਈ"
 
@@ -37,20 +36,28 @@ msgid "Fahrenheit"
 msgstr "ਫਾਰਨਹੀਟ"
 
 #: ../data/app-menu.ui.h:5
-#| msgid "Weather"
-msgid "About Weather"
-msgstr "ਮੌਸਮ"
+msgid "About"
+msgstr "ਇਸ ਬਾਰੇ"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "ਬਾਹਰ"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+#| msgid "Current conditions:"
+msgid "Current conditions"
+msgstr "ਮੌਜੂਦਾ ਹਾਲਤ"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "ਵੇਰਵੇ ਸਮੇਤ ਭਵਿੱਖਬਾਣੀ"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "ਮੌਸਮ"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "ਮੌਸਮ ਹਾਲਤ ਅਤੇ ਭਵਿੱਖਬਾਣੀ ਵੇਖੋ"
 
@@ -61,12 +68,11 @@ msgid ""
 "forecasts, up to 7 days, provided by various internet services."
 msgstr ""
 "ਇੱਕ ਛੋਟੀ ਐਪਲੀਕੇਸ਼ਨ, ਜੋ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਸ਼ਹਿਰ ਜਾਂ ਸੰਸਾਰ ਵਿੱਚੋਂ ਹੋਰ ਥਾਵਾਂ ਲਈ "
-"ਮੌਜੂਦਾ "
-"ਮੌਸਮ ਦਾ ਧਿਆਨ ਰੱਖਣ ਤੇ ਭਵਿੱਖਬਾਣੀਆਂ, 7 ਦਿਨਾਂ ਤੱਕ, ਲੈਣ ਲਈ ਸਹਾਇਕ ਹੈ, ਜੋ "
-"ਕਿ ਵੱਖ ਵੱਖ ਇੰਟਰਨੈੱਟ ਸੇਵਾਵਾਂ ਰਾਹੀਂ ਉਪਲੱਬਧ ਹਨ।"
+"ਮੌਜੂਦਾ ਮੌਸਮ ਦਾ ਧਿਆਨ ਰੱਖਣ "
+"ਤੇ ਭਵਿੱਖਬਾਣੀਆਂ, 7 ਦਿਨਾਂ ਤੱਕ, ਲੈਣ ਲਈ ਸਹਾਇਕ ਹੈ, ਜੋ ਕਿ ਵੱਖ ਵੱਖ ਇੰਟਰਨੈੱਟ ਸੇਵਾਵਾਂ "
+"ਰਾਹੀਂ ਉਪਲੱਬਧ ਹਨ।"
 
 #: ../data/new-location-dialog.ui.h:1
-#| msgid "Location: "
 msgid "New Location"
 msgstr "ਨਵਾਂ ਟਿਕਾਣਾ"
 
@@ -84,8 +90,7 @@ msgid ""
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
 "ਗਨੋਮ-ਮੌਸਮ ਦੀ ਸੰਸਾਰ ਝਲਕ ਵਿੱਚ ਟਿਕਾਣੇ ਵੇਖਾਏ ਜਾਂਦੇ ਹਨ। ਹਰ ਮੁੱਲ ਨੂੰ "
-"gweather_location_serialize() "
-"ਰਾਹੀਂ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।"
+"gweather_location_serialize() ਰਾਹੀਂ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।"
 
 #: ../data/window.ui.h:1
 msgid "Select All"
@@ -95,7 +100,7 @@ msgstr "ਸਭ ਚੁਣੋ"
 msgid "Select None"
 msgstr "ਕੋਈ ਨਾ ਚੁਣੋ"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "ਟਿਕਾਣਿਆਂ ਨੂੰ ਚੁਣਨ ਲਈ ਟਿਕਾਣਿਆਂ ਉੱਤੇ ਕਲਿੱਕ ਕਰੋ"
 
@@ -104,63 +109,79 @@ msgid "New"
 msgstr "ਨਵਾਂ"
 
 #: ../data/window.ui.h:5
-#| msgid "Weather"
-msgid "World Weather"
-msgstr "ਸੰਸਾਰ ਮੌਸਮ"
+msgid "Back"
+msgstr "ਪਿੱਛੇ"
 
 #: ../data/window.ui.h:6
+#| msgid "Select All"
+msgid "Select"
+msgstr "ਚੁਣੋ"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "ਰੱਦ ਕਰੋ"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "ਤਾਜ਼ਾ"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "ਹਟਾਓ"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "ਸ਼ਹਿਰ ਝਲਕ"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "...ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "ਭਵਿੱਖਬਾਣੀ"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "ਅੱਜ"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "ਭਲਕ"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "…ਹੋਰ"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "ਅੱਜ ਲਈ ਭਵਿੱਖਬਾਣੀ"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "ਭਲਕ ਲਈ ਭਵਿੱਖਬਾਣੀ"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%d %B"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "ਭਲਕ ਲਈ ਭਵਿੱਖਬਾਣੀ"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "ਅੱਜ ਲਈ ਭਵਿੱਖਬਾਣੀ"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%d %B"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -277,7 +298,6 @@ msgid "Sunday evening"
 msgstr "ਐਤਵਾਰ ਆਥਣ"
 
 #: ../src/strings.js:31
-#| msgid "This night"
 msgid "Tonight"
 msgstr "ਅੱਜ ਰਾਤ"
 
@@ -309,34 +329,47 @@ msgstr "ਭਲਕੇ ਬਾਅਦ-ਦੁਪੈਹਰ"
 msgid "Tomorrow evening"
 msgstr "ਭਲਕੇ ਆਥਣ"
 
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d ਚੁਣਿਆ"
 msgstr[1] "%d ਚੁਣੇ"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "ਸੰਸਾਰ ਮੌਸਮ"
+
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr ""
 "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ\n"
 "ਪੰਜਾਬੀ ਓਪਨਸੋਰਸ ਟੀਮ (POST)"
 
-#: ../src/window.js:299
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "ਮੌਸਮ ਐਪਲੀਕੇਸ਼ਨ"
 
-#: ../src/world.js:217
-#| msgid "Location: "
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "ਸ਼ਹਿਰ"
+
+#: ../src/world.js:231
+#| msgid "World Weather"
+msgid "World view"
+msgstr "]ਸੰਸਾਰ ਝਲਕ"
+
+#: ../src/world.js:259
 msgid "Add locations"
 msgstr "ਟਿਕਾਣੇ ਸ਼ਾਮਿਲ"
 
-#: ../src/world.js:220
+#: ../src/world.js:262
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr "ਹੋਰ ਸੰਸਾਰ ਦੇ ਸਥਾਨ ਜੋੜਨ ਲਈ ਟੂਲਬਾਰ ਉੱਤੇ <b>ਨਵਾਂ</b> ਬਟਨ ਵਰਤੋਂ"
 
-#~ msgid "Current conditions:"
-#~ msgstr "ਮੌਜੂਦਾ ਹਾਲਤ:"
+#~| msgid "Weather"
+#~ msgid "About Weather"
+#~ msgstr "ਮੌਸਮ"
 
 #~ msgid "Wind: "
 #~ msgstr "ਹਵਾ: "
