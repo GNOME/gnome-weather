@@ -1,15 +1,15 @@
 # Indonesian translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Andika Triwidada <andika@gmail.com>, 2013.
+# Andika Triwidada <andika@gmail.com>, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-31 19:57+0000\n"
-"PO-Revision-Date: 2013-09-10 10:37+0700\n"
+"POT-Creation-Date: 2014-03-20 09:11+0000\n"
+"PO-Revision-Date: 2014-03-20 22:00+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -36,19 +36,27 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Tentang Cuaca"
+msgid "About"
+msgstr "Tentang"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Keluar"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:49
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Kondisi saat ini"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Prakiraan terrinci"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Cuaca"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Tampilkan kondisi dan ramalan cuaca"
 
@@ -91,7 +99,7 @@ msgstr "Pilih Semua"
 msgid "Select None"
 msgstr "Pilih Tak Satupun"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Klik pada lokasi untuk memilihnya"
 
@@ -100,62 +108,77 @@ msgid "New"
 msgstr "Baru"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Cuaca Dunia"
+msgid "Back"
+msgstr "Mundur"
 
 #: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Pilih"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Batal"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Segarkan"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Hapus"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Tilikan kota"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Memuat..."
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Prakiraan"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Hari Ini"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Besok"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Lebih Banyak..."
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Ramalan Hari Ini"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Ramalan Besok"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%d %B"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Ramalan Besok"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Ramalan Hari Ini"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%d %B"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -303,25 +326,37 @@ msgstr "Besok siang"
 msgid "Tomorrow evening"
 msgstr "Besok sore"
 
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d dipilih"
 
-#: ../src/window.js:297
-msgid "translator-credits"
-msgstr "Andika Triwidada <andika@gmail.com>, 2013"
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Cuaca Dunia"
 
-#: ../src/window.js:299
+#: ../src/window.js:318
+msgid "translator-credits"
+msgstr "Andika Triwidada <andika@gmail.com>, 2013, 2014"
+
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Aplikasi cuaca"
 
-#: ../src/world.js:217
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Kota"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Tilikan dunia"
+
+#: ../src/world.js:259
 msgid "Add locations"
 msgstr "Tambah lokasi"
 
-#: ../src/world.js:220
+#: ../src/world.js:262
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Gunakan tombol <b>Baru</b> pada bilah alat untuk menambah lebih banyak lokasi"
