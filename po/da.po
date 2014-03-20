@@ -1,15 +1,17 @@
 # Danish translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
+#
 # Kris Thomsen <mail@kristhomsen.dk>, 2013.
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-13 22:19+0200\n"
-"PO-Revision-Date: 2013-09-11 23:22+0100\n"
-"Last-Translator: Kris Thomsen <mail@kristhomsen.dk>\n"
+"POT-Creation-Date: 2014-03-20 21:09+0100\n"
+"PO-Revision-Date: 2014-03-16 00:40+0100\n"
+"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -34,19 +36,27 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Om Vejr"
+msgid "About"
+msgstr "Om"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Afslut"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Nuværende forhold"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Detaljeret vejrudsigt"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Vejr"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Vis vejrforhold og -udsigt"
 
@@ -88,7 +98,7 @@ msgstr "Vælg alle"
 msgid "Select None"
 msgstr "Vælg ingen"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Klik på lokationer for at vælge dem"
 
@@ -97,61 +107,84 @@ msgid "New"
 msgstr "Ny"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Verdensvejr"
+msgid "Back"
+msgstr "Tilbage"
 
 #: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Vælg"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Annullér"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Opdatér"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Slet"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Byvisning"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Indlæser…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Vejrudsigt"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "I dag"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "I morgen"
 
-#: ../src/forecast.js:132
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: ../src/forecast.js:151
 #, c-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Flere…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Vejrudsigt for i dag"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Vejrudsigt for i morgen"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%B %d"
-
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Vejrudsigt for i morgen"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Vejrudsigt for i dag"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%B %d"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/searchProvider.js:169
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
@@ -300,34 +333,50 @@ msgstr "I morgen eftermiddag"
 msgid "Tomorrow evening"
 msgstr "I morgen aften"
 
-#: ../src/window.js:182
+#: ../src/window.js:203
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d valgt"
 msgstr[1] "%d valgte"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Verdensvejr"
+
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr ""
 "Kris Thomsen\n"
+"Ask Hjorth Larsen\n"
 "\n"
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/window.js:299
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Et vejr-program"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Byer"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Verdensvisning"
+
+#: ../src/world.js:259
 msgid "Add locations"
 msgstr "Tilføj lokation"
 
-#: ../src/world.js:244
+#: ../src/world.js:262
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Brug knappen <b>Ny</b> i værktøjslinjen for at tilføje flere "
 "verdenslokationer"
+
+#~ msgid "About Weather"
+#~ msgstr "Om Vejr"
 
 #~ msgid "_Preferences"
 #~ msgstr "_Egenskaber"
