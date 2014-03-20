@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: libgweather\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=libgwe"
-"ather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-06 09:59+0000\n"
-"PO-Revision-Date: 2014-02-06 10:00+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-02-23 09:09+0000\n"
+"PO-Revision-Date: 2014-02-23 14:26+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig http://www.foramnagaidhlig.net\n"
 "Language: gd\n"
@@ -22,740 +22,846 @@ msgstr ""
 "X-Launchpad-Export-Date: 2014-02-06 09:48+0000\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/glade/libgweather.xml.in.h:1
-msgid "Location Entry"
-msgstr "Cur a-steach an ionaid"
-
-#: ../data/glade/libgweather.xml.in.h:2
-msgid "Timezone Menu"
-msgstr "Clàr-taice roinne-tìde"
-
-#: ../data/glade/libgweather.xml.in.h:3
-msgid "Timezone"
-msgstr "Roinn-tìde"
-
-#: ../data/glade/libgweather.xml.in.h:4
-msgid "GWeather"
-msgstr "GWeather"
-
-#: ../libgweather/gweather-timezone.c:338
-msgid "Greenwich Mean Time"
-msgstr "Greenwich Mean Time"
-
-#: ../libgweather/timezone-menu.c:275
-msgctxt "timezone"
-msgid "Unknown"
-msgstr "Chan eil fhios"
-
-#: ../libgweather/weather.c:114
-msgid "Variable"
-msgstr "Caochlaideach"
-
-#: ../libgweather/weather.c:115
-msgid "North"
-msgstr "Tuath"
-
-#: ../libgweather/weather.c:115
-msgid "North - NorthEast"
-msgstr "Tuath - Ear-thuath"
-
-#: ../libgweather/weather.c:115
-msgid "Northeast"
-msgstr "Ear-thuath"
-
-#: ../libgweather/weather.c:115
-msgid "East - NorthEast"
-msgstr "Ear - Ear-thuath"
-
-#: ../libgweather/weather.c:116
-msgid "East"
-msgstr "Ear"
-
-#: ../libgweather/weather.c:116
-msgid "East - Southeast"
-msgstr "Ear - Ear-dheas"
-
-#: ../libgweather/weather.c:116
-msgid "Southeast"
-msgstr "Ear-dheas"
-
-#: ../libgweather/weather.c:116
-msgid "South - Southeast"
-msgstr "Deas - Ear-dheas"
-
-#: ../libgweather/weather.c:117
-msgid "South"
-msgstr "Deas"
-
-#: ../libgweather/weather.c:117
-msgid "South - Southwest"
-msgstr "Deas - Iar-dheas"
-
-#: ../libgweather/weather.c:117
-msgid "Southwest"
-msgstr "Iar-dheas"
-
-#: ../libgweather/weather.c:117
-msgid "West - Southwest"
-msgstr "Iar - Iar-dheas"
-
-#: ../libgweather/weather.c:118
-msgid "West"
-msgstr "Iar"
-
-#: ../libgweather/weather.c:118
-msgid "West - Northwest"
-msgstr "Iar - Iar-thuath"
-
-#: ../libgweather/weather.c:118
-msgid "Northwest"
-msgstr "Iar-thuath"
-
-#: ../libgweather/weather.c:118
-msgid "North - Northwest"
-msgstr "Tuath - Iar-thuath"
-
-#: ../libgweather/weather.c:125
-msgctxt "wind direction"
-msgid "Invalid"
-msgstr "Mì-dhligheach"
-
-#: ../libgweather/weather.c:131
-msgid "Clear Sky"
-msgstr "Adhar soilleir"
-
-#: ../libgweather/weather.c:132
-msgid "Broken clouds"
-msgstr "Sgòthach gu ìre"
-
-#: ../libgweather/weather.c:133
-msgid "Scattered clouds"
-msgstr "Corra sgòth"
-
-#: ../libgweather/weather.c:134
-msgid "Few clouds"
-msgstr "Grunn sgòthan"
-
-#: ../libgweather/weather.c:135
-msgid "Overcast"
-msgstr "Dùmhail"
-
-#: ../libgweather/weather.c:142 ../libgweather/weather.c:214
-msgctxt "sky conditions"
-msgid "Invalid"
-msgstr "Mì-dhligheach"
-
-#. TRANSLATOR: If you want to know what "blowing" "shallow" "partial"
-#. * etc means, you can go to http://www.weather.com/glossary/ and
-#. * http://www.crh.noaa.gov/arx/wx.tbl.php
-#. NONE
-#: ../libgweather/weather.c:174 ../libgweather/weather.c:176
-msgid "Thunderstorm"
-msgstr "Gailleann"
-
-#. DRIZZLE
-#: ../libgweather/weather.c:175
-msgid "Drizzle"
-msgstr "Ceòbhran"
-
-#: ../libgweather/weather.c:175
-msgid "Light drizzle"
-msgstr "Ceòbran aotrom"
-
-#: ../libgweather/weather.c:175
-msgid "Moderate drizzle"
-msgstr "Ceòbran meadhanach"
-
-#: ../libgweather/weather.c:175
-msgid "Heavy drizzle"
-msgstr "Ceòbran trom"
-
-#: ../libgweather/weather.c:175
-msgid "Freezing drizzle"
-msgstr "Ceòbhran a' reòthadh"
-
-#. RAIN
-#: ../libgweather/weather.c:176
-msgid "Rain"
-msgstr "Uisge"
-
-#: ../libgweather/weather.c:176
-msgid "Light rain"
-msgstr "Uisge aotrom"
-
-#: ../libgweather/weather.c:176
-msgid "Moderate rain"
-msgstr "Uisge meadhanach"
-
-#: ../libgweather/weather.c:176
-msgid "Heavy rain"
-msgstr "Uisge trom"
-
-#: ../libgweather/weather.c:176
-msgid "Rain showers"
-msgstr "Frasan"
-
-#: ../libgweather/weather.c:176
-msgid "Freezing rain"
-msgstr "An t-uisge a' reòthadh"
-
-#. SNOW
-#: ../libgweather/weather.c:177
-msgid "Snow"
-msgstr "Sneachda"
-
-#: ../libgweather/weather.c:177
-msgid "Light snow"
-msgstr "Sneachda aotrom"
-
-#: ../libgweather/weather.c:177
-msgid "Moderate snow"
-msgstr "Sneachd meadhanach"
-
-#: ../libgweather/weather.c:177
-msgid "Heavy snow"
-msgstr "Sneachd trom"
-
-#: ../libgweather/weather.c:177
-msgid "Snowstorm"
-msgstr "Stoirm-shneachda"
-
-#: ../libgweather/weather.c:177
-msgid "Blowing snowfall"
-msgstr "Sneachd 'ga shèideadh"
-
-#: ../libgweather/weather.c:177
-msgid "Snow showers"
-msgstr "Frasan sneachda"
-
-#: ../libgweather/weather.c:177
-msgid "Drifting snow"
-msgstr "Sneachd a' cathadh"
-
-#. SNOW_GRAINS
-#: ../libgweather/weather.c:178
-msgid "Snow grains"
-msgstr "Gràinnean sneachda"
-
-#: ../libgweather/weather.c:178
-msgid "Light snow grains"
-msgstr "Gràinnean sneachda aotrom"
-
-#: ../libgweather/weather.c:178
-msgid "Moderate snow grains"
-msgstr "Gràinnean sneachda meadhanach"
-
-#: ../libgweather/weather.c:178
-msgid "Heavy snow grains"
-msgstr "Gràinnean sneachda troma"
-
-#. ICE_CRYSTALS
-#: ../libgweather/weather.c:179
-msgid "Ice crystals"
-msgstr "Criostalan-deighe"
-
-#. ICE_PELLETS
-#: ../libgweather/weather.c:180
-msgid "Sleet"
-msgstr "Flinne"
-
-#: ../libgweather/weather.c:180
-msgid "Little sleet"
-msgstr "Beagan flinne"
-
-#: ../libgweather/weather.c:180
-msgid "Moderate sleet"
-msgstr "Flinne meadhanach"
-
-#: ../libgweather/weather.c:180
-msgid "Heavy sleet"
-msgstr "Flinne trom"
-
-#: ../libgweather/weather.c:180
-msgid "Sleet storm"
-msgstr "Gailleann flinne"
-
-#: ../libgweather/weather.c:180
-msgid "Showers of sleet"
-msgstr "Frasan flinne"
-
-#. HAIL
-#: ../libgweather/weather.c:181
-msgid "Hail"
-msgstr "Clachan-meallain"
-
-#: ../libgweather/weather.c:181
-msgid "Hailstorm"
-msgstr "Stoirm chlachan-meallain"
-
-#: ../libgweather/weather.c:181
-msgid "Hail showers"
-msgstr "Frasan chlachan-meallain"
-
-#. SMALL_HAIL
-#: ../libgweather/weather.c:182
-msgid "Small hail"
-msgstr "Clachan-meallain beaga"
-
-#: ../libgweather/weather.c:182
-msgid "Small hailstorm"
-msgstr "Stoirm bheag chlachan-meallain"
-
-#: ../libgweather/weather.c:182
-msgid "Showers of small hail"
-msgstr "Frasan de chlachan-meallain beaga"
-
-#. PRECIPITATION
-#: ../libgweather/weather.c:183
-msgid "Unknown precipitation"
-msgstr "Sileach ach chan eil fhios dè seòrsa"
-
-#. MIST
-#: ../libgweather/weather.c:184
-msgid "Mist"
-msgstr "Ceò"
-
-#. FOG
-#: ../libgweather/weather.c:185
-msgid "Fog"
-msgstr "Ceò"
-
-#: ../libgweather/weather.c:185
-msgid "Fog in the vicinity"
-msgstr "Ceò am fagas"
-
-#: ../libgweather/weather.c:185
-msgid "Shallow fog"
-msgstr "Ceò aotrom"
-
-#: ../libgweather/weather.c:185
-msgid "Patches of fog"
-msgstr "Meallan ceòtha"
-
-#: ../libgweather/weather.c:185
-msgid "Partial fog"
-msgstr "Ceòthach gu ìre"
-
-#: ../libgweather/weather.c:185
-msgid "Freezing fog"
-msgstr "Ceò a' reòthadh"
-
-#. SMOKE
-#: ../libgweather/weather.c:186
-msgid "Smoke"
-msgstr "Toit"
-
-#. VOLCANIC_ASH
-#: ../libgweather/weather.c:187
-msgid "Volcanic ash"
-msgstr "Luaithre beinne-teine"
-
-#. SAND
-#: ../libgweather/weather.c:188
-msgid "Sand"
-msgstr "Gainmhich"
-
-#: ../libgweather/weather.c:188
-msgid "Blowing sand"
-msgstr "A' sèideadh gainmheach"
-
-#: ../libgweather/weather.c:188
-msgid "Drifting sand"
-msgstr "Gainmheach a' cathadh"
-
-#. HAZE
-#: ../libgweather/weather.c:189
-msgid "Haze"
-msgstr "Sgeò"
-
-#. SPRAY
-#: ../libgweather/weather.c:190
-msgid "Blowing sprays"
-msgstr "Smùid na mara"
-
-#. DUST
-#: ../libgweather/weather.c:191
-msgid "Dust"
-msgstr "Duslach"
-
-#: ../libgweather/weather.c:191
-msgid "Blowing dust"
-msgstr "A' sèideadh duslach"
-
-#: ../libgweather/weather.c:191
-msgid "Drifting dust"
-msgstr "Duslach a' cathadh"
-
-#. SQUALL
-#: ../libgweather/weather.c:192
-msgid "Squall"
-msgstr "Siantan"
-
-#. SANDSTORM
-#: ../libgweather/weather.c:193
-msgid "Sandstorm"
-msgstr "Stoirm-ghainmhich"
-
-#: ../libgweather/weather.c:193
-msgid "Sandstorm in the vicinity"
-msgstr "Stoirm-ghainmhich am fagas"
-
-#: ../libgweather/weather.c:193
-msgid "Heavy sandstorm"
-msgstr "Stoirm-ghainmhich throm"
-
-#. DUSTSTORM
-#: ../libgweather/weather.c:194
-msgid "Duststorm"
-msgstr "Gailleann-dhuslaich"
-
-#: ../libgweather/weather.c:194
-msgid "Duststorm in the vicinity"
-msgstr "Gailleann-dhuslaich am fagas"
-
-#: ../libgweather/weather.c:194
-msgid "Heavy duststorm"
-msgstr "Gailleann-dhuslaich throm"
-
-#. FUNNEL_CLOUD
-#: ../libgweather/weather.c:195
-msgid "Funnel cloud"
-msgstr "Sgòth fuinill"
-
-#. TORNADO
-#: ../libgweather/weather.c:196
-msgid "Tornado"
-msgstr "Cuairt-ghaoth mhòr"
-
-#. DUST_WHIRLS
-#: ../libgweather/weather.c:197
-msgid "Dust whirls"
-msgstr "Cuairtean duslaich"
-
-#: ../libgweather/weather.c:197
-msgid "Dust whirls in the vicinity"
-msgstr "Cuairtean duslaich am fagas"
-
-#: ../libgweather/weather.c:670
-msgid "%a, %b %d / %H∶%M"
-msgstr "%a, %d %b / %H∶%M"
-
-#: ../libgweather/weather.c:676
-msgid "Unknown observation time"
-msgstr "Chan eil fhios cuin a chunnacas"
-
-#: ../libgweather/weather.c:688
-msgctxt "sky conditions"
-msgid "Unknown"
-msgstr "Chan eil fhios"
-
-#. Translate to the default units to use for presenting
-#. * lengths to the user. Translate to default:inch if you
-#. * want inches, otherwise translate to default:mm.
-#. * Do *not* translate it to "predefinito:mm", if it
-#. * it isn't default:mm or default:inch it will not work
-#.
-#: ../libgweather/weather.c:710
-msgid "default:mm"
-msgstr "default:inch"
-
-#. TRANSLATOR: This is the temperature in degrees Fahrenheit (\302\260 is U+00B0 DEGREE SIGN)
-#: ../libgweather/weather.c:755
-#, c-format
-msgid "%.1f °F"
-msgstr "%.1f °F"
-
-#. TRANSLATOR: This is the temperature in degrees Fahrenheit (\302\260 is U+00B0 DEGREE SIGN)
-#: ../libgweather/weather.c:758
-#, c-format
-msgid "%d °F"
-msgstr "%d °F"
-
-#. TRANSLATOR: This is the temperature in degrees Celsius (\302\260 is U+00B0 DEGREE SIGN)
-#: ../libgweather/weather.c:764
-#, c-format
-msgid "%.1f °C"
-msgstr "%.1f °C"
-
-#. TRANSLATOR: This is the temperature in degrees Celsius (\302\260 is U+00B0 DEGREE SIGN)
-#: ../libgweather/weather.c:767
-#, c-format
-msgid "%d °C"
-msgstr "%d °C"
-
-#. TRANSLATOR: This is the temperature in kelvin
-#: ../libgweather/weather.c:773
-#, c-format
-msgid "%.1f K"
-msgstr "%.1f K"
-
-#. TRANSLATOR: This is the temperature in kelvin
-#: ../libgweather/weather.c:776
-#, c-format
-msgid "%d K"
-msgstr "%d K"
-
-#: ../libgweather/weather.c:799 ../libgweather/weather.c:815
-#: ../libgweather/weather.c:831 ../libgweather/weather.c:893
-msgctxt "temperature"
-msgid "Unknown"
-msgstr "Chan eil fhios"
-
-#: ../libgweather/weather.c:853
-msgctxt "dew"
-msgid "Unknown"
-msgstr "Chan eil fhios"
-
-#: ../libgweather/weather.c:873
-msgctxt "humidity"
-msgid "Unknown"
-msgstr "Chan eil fhios"
-
-#. TRANSLATOR: This is the humidity in percent
-#: ../libgweather/weather.c:876
-#, c-format
-msgid "%.f%%"
-msgstr "%.f%%"
-
-#. TRANSLATOR: This is the wind speed in knots
-#: ../libgweather/weather.c:922
-#, c-format
-msgid "%0.1f knots"
-msgstr "%0.1f mìle mara san uair"
-
-#. TRANSLATOR: This is the wind speed in miles per hour
-#: ../libgweather/weather.c:925
-#, c-format
-msgid "%.1f mph"
-msgstr "%.1f mph"
-
-#. TRANSLATOR: This is the wind speed in kilometers per hour
-#: ../libgweather/weather.c:928
-#, c-format
-msgid "%.1f km/h"
-msgstr "%.1f km/h"
-
-#. TRANSLATOR: This is the wind speed in meters per second
-#: ../libgweather/weather.c:931
-#, c-format
-msgid "%.1f m/s"
-msgstr "%.1f m/s"
-
-#. TRANSLATOR: This is the wind speed as a Beaufort force factor
-#. * (commonly used in nautical wind estimation).
-#.
-#: ../libgweather/weather.c:936
-#, c-format
-msgid "Beaufort force %.1f"
-msgstr "Forsa Beaufort %.1f"
-
-#: ../libgweather/weather.c:957
-msgctxt "wind speed"
-msgid "Unknown"
-msgstr "Chan eil fhios"
-
-#: ../libgweather/weather.c:959
-msgid "Calm"
-msgstr "Fèath"
-
-#. TRANSLATOR: This is 'wind direction' / 'wind speed'
-#: ../libgweather/weather.c:967
-#, c-format
-msgid "%s / %s"
-msgstr "%s / %s"
-
-#: ../libgweather/weather.c:1003
-msgctxt "pressure"
-msgid "Unknown"
-msgstr "Chan eil fhios"
-
-#. TRANSLATOR: This is pressure in inches of mercury
-#: ../libgweather/weather.c:1009
-#, c-format
-msgid "%.2f inHg"
-msgstr "%.2f inHg"
-
-#. TRANSLATOR: This is pressure in millimeters of mercury
-#: ../libgweather/weather.c:1012
-#, c-format
-msgid "%.1f mmHg"
-msgstr "%.1f mmHg"
-
-#. TRANSLATOR: This is pressure in kiloPascals
-#: ../libgweather/weather.c:1015
-#, c-format
-msgid "%.2f kPa"
-msgstr "%.2f kPa"
-
-#. TRANSLATOR: This is pressure in hectoPascals
-#: ../libgweather/weather.c:1018
-#, c-format
-msgid "%.2f hPa"
-msgstr "%.2f hPa"
-
-#. TRANSLATOR: This is pressure in millibars
-#: ../libgweather/weather.c:1021
-#, c-format
-msgid "%.2f mb"
-msgstr "%.2f mb"
-
-#. TRANSLATOR: This is pressure in atmospheres
-#: ../libgweather/weather.c:1024
-#, c-format
-msgid "%.3f atm"
-msgstr "%.3f atm"
-
-#: ../libgweather/weather.c:1062
-msgctxt "visibility"
-msgid "Unknown"
-msgstr "Chan eil fhios"
-
-#. TRANSLATOR: This is the visibility in miles
-#: ../libgweather/weather.c:1068
-#, c-format
-msgid "%.1f miles"
-msgstr "%.1f mìle"
-
-#. TRANSLATOR: This is the visibility in kilometers
-#: ../libgweather/weather.c:1071
-#, c-format
-msgid "%.1f km"
-msgstr "%.1f km"
-
-#. TRANSLATOR: This is the visibility in meters
-#: ../libgweather/weather.c:1074
-#, c-format
-msgid "%.0fm"
-msgstr "%.0fm"
-
-#: ../libgweather/weather.c:1102 ../libgweather/weather.c:1127
-msgid "%H∶%M"
-msgstr "%H∶%M"
-
-#: ../libgweather/weather.c:1221
-msgid "Retrieval failed"
-msgstr "Cha b' urrainn dhuinn fhaighinn dhut"
-
-#. Translators: %d is an error code, and %s the error string
-#: ../libgweather/weather-metar.c:573
-#, c-format
-msgid "Failed to get METAR data: %d %s.\n"
-msgstr "Cha b' urrainn dhuinn an dàta METAR fhaighinn dhut: %d %s.\n"
-
-#: ../libgweather/weather-owm.c:385
-msgid ""
-"Weather data from the <a href=\"http://openweathermap.org\">Open Weather Map "
-"project</a>"
-msgstr ""
-"Dàta an aimsir on <a href=\"http://openweathermap.org\">phròiseact Open "
-"Weather Map</a>"
-
-#. The new (documented but not advertised) API is less strict in the
-#. format of the attribution, and just requires a generic CC-BY compatible
-#. attribution with a link to their service.
-#.
-#. That's very nice of them!
-#.
-#: ../libgweather/weather-yrno.c:445
-msgid ""
-"Weather data from the <a href=\"http://yr.no/\">Norwegian Meteorological "
-"Institute</a>"
-msgstr ""
-"Dàta na h-aimsire le <a href=\"http://yr.no/\">Instituid na h-Aimsire san "
-"Nirribhidh</a>"
-
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:1
-msgid "URL for the radar map"
-msgstr "An URL airson mapa an rèideir"
-
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:2
-msgid ""
-"The custom URL from where to retrieve a radar map, or empty for disabling "
-"radar maps."
-msgstr ""
-"An URL gnàthaichte on a gheibhear mapaichean rèideir no fàg bàn seo gus na "
-"mapaichean rèideir a chur à comas."
-
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:3
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "Ù_r"
+
+#: ../data/app-menu.ui.h:2
 msgid "Temperature unit"
 msgstr "Aonad na teothachd"
 
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:4
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+#| msgid "'fahrenheit'"
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "Mu dhèidhinn"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Fàg an-seo"
+
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "An aimsir an-dràsta"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Ro-aithris mionaideach"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
+#| msgid "GWeather"
+msgid "Weather"
+msgstr "Aimsir"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Seall an aimsir an-dràsta agus ro-aithris"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 msgid ""
-"The unit of temperature used for showing weather. Valid values are 'kelvin', "
-"'centigrade' and 'fahrenheit'."
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
 msgstr ""
-"Dè aonad na teothachd a chithear ann an aithrisean na h-aimsire. Tha \"kelvin"
-"\", \"centigrade\" agus \"fahrenheit\" ceadaichte."
+"Aplacaid bheag a leigeas leat sùil a chumail air staid na h-aimsire sa "
+"bhaile agad no àite sam bith air an t-saoghal agus a bheir dhut ro-aithris "
+"ùr suas gu 7 làithean le taic caochladh sheirbheisean eadar-lìn."
 
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:5
-msgid "Distance unit"
-msgstr "Aonad an astair"
+#: ../data/new-location-dialog.ui.h:1
+#| msgid "Default location"
+msgid "New Location"
+msgstr "Ionad ùr"
 
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:6
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "Lorg baile:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Chaidh na bailtean a rèiteachadh gus an aimsir a shealltainn airson"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
 msgid ""
-"The unit of distance used for showing weather (for example for visibility or "
-"for distance of important events). Valid values are 'meters', 'km' and "
-"'miles'."
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Dè aonad an astair a chithear ann an aithrisean na h-aimsire (mar eisimpleir "
-"dè cho fad às a chithear rudan no an t-astar air a bheil tachartasan "
-"cudromach).  Tha \"meatairean\", \"km\" agus \"mìltean\" ceadaichte an-seo."
+"Na h-ionadan a thèid a shealltainn ann an sealladh an t-saoghail aig gnome-"
+"weather. 'S e GVariant a th' anns gach luach a thèid a thilleadh le "
+"gweather_location_serialize()."
 
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:7
-msgid "Speed unit"
-msgstr "Aonad an luaiths"
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Tagh na h-uile"
 
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:8
-msgid ""
-"The unit of speed used for showing weather (for example for wind speed). "
-"Valid values are 'ms' (meters per second), 'kph' (kilometers per hour), "
-"'mph' (miles per hour), 'knots' and 'bft' (Beaufort scale)."
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Na tagh gin"
+
+#: ../data/window.ui.h:3 ../src/window.js:208
+msgid "Click on locations to select them"
+msgstr "Briog air ionadan gus an taghadh"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Ùr"
+
+#: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Air ais"
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Tagh"
+
+#: ../data/window.ui.h:7
+msgid "Cancel"
+msgstr "Sguir dheth"
+
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Ath-nuadhaich"
+
+#: ../data/window.ui.h:9
+msgid "Delete"
+msgstr "Sguab às"
+
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Sealladh baile"
+
+#: ../src/city.js:134
+msgid "Loading…"
+msgstr "'Ga luchdadh…"
+
+#: ../src/forecast.js:41
+#| msgid "Overcast"
+msgid "Forecast"
+msgstr "Ro-aithris"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
+msgid "Today"
+msgstr "An-diugh"
+
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
+msgid "Tomorrow"
+msgstr "A-màireach"
+
+#: ../src/forecast.js:151
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:197 ../src/forecast.js:291
+msgid "More…"
+msgstr "Barrachd…"
+
+#: ../src/forecast.js:318
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: ../src/forecast.js:321
+msgid "%R"
+msgstr "%R"
+
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Ro-aithris airson a-màireach"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Ro-aithris airson an-diugh"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Oidhche Luain"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Madainn DiLuain"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Coin-fheasgar DiLuain"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Àrd-fheasgar DiLuain"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Oidhche Mhàirt"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Madainn DiMàirt"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Coin-fheasgar DiMàrt"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Àrd-fheasgar DiMàirt"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Oidhche Chiadain"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Madainn DiCiadain"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Coin-fheasgar DiCiadain"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Àrd-fheasgar DiCiadain"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Oidhche ArDaoin"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Madainn DiarDaoin"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Coin-fheasgar DiarDaoin"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Àrd-fheasgar DiarDaoin"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Oidhche hAoine"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Madainn DihAoine"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Coin-fheasgar DihAoine"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Àrd-fheasgar DihAoine"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Oidhche Shathairne"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Madainn DiSathairne"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Coin-fheasgar DiSathairne"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Àrd-fheasgar DiSathairne"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Oidhche Dhòmhnaich"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Madainn DiDòmhnaich"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Coin-fheasgar DiDòmhnaich"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Àrd-fheasgar DiDòmhnaich"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "A-nochd"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Madainn an-diugh"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Coin-fheasgar an-diugh"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Àrd-fheasgar an-diugh"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "An ath-oidhche"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Sa mhadainn a-màireach"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Sa coin-fheasgar a-màireach"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "San àrd-fheasgar a-màireach"
+
+#: ../src/window.js:203
+#, javascript-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d air a thaghadh"
+msgstr[1] "%d air an taghadh"
+msgstr[2] "%d air an taghadh"
+msgstr[3] "%d air an taghadh"
+
+#: ../src/window.js:229
+#| msgid "GWeather"
+msgid "World Weather"
+msgstr "Aimsir an t-saoghail"
+
+#: ../src/window.js:318
+msgid "translator-credits"
+msgstr "GunChleoc http://www.foramnagaidhlig.net"
+
+#: ../src/window.js:320
+msgid "A weather application"
+msgstr "Aplacaid aimsire"
+
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Bailtean"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Sealladh an t-saoghail"
+
+#: ../src/world.js:258
+#| msgid "Default location"
+msgid "Add locations"
+msgstr "Cuir ionadan ris"
+
+#: ../src/world.js:261
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
-"Dè aonad a chithear ann an aithrisean na h-aimsire airson luaths (mar "
-"eisimpleir luaths na gaoithe). Tha \"ms\" (meatair gach diog), \"kph"
-"\" (cilemeatair gach uair), \"mph\" (mìltean gach uair), \"mìltean mara gach "
-"uair\" agus \"bft\" (sgèile Beaufort scale) ceadaichte an-seo."
+"Cleachd am putan <b>Ùr</b> air a' bhàr-inneal gus barrachd ionadan an "
+"t-saoghail a chur ris"
 
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:9
-msgid "Pressure unit"
-msgstr "Aonad a' bhrùthaidh"
+#~ msgid "Location Entry"
+#~ msgstr "Cur a-steach an ionaid"
 
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:10
-msgid ""
-"The unit of pressure used for showing weather. Valid values are "
-"'kpa' (kilopascal), 'hpa' (hectopascal), 'mb' (millibar, mathematically "
-"equivalent to 1 hPa but shown differently), 'mm-hg' (millimiters of "
-"mercury), 'inch-hg' (inches of mercury), 'atm' (atmospheres)."
-msgstr ""
-"Aonad a' bhrùthaidh a chithear ann an aithrisean na h-aimsire. Tha \"kpa"
-"\" (kilopascal), \"hpa\" (hectopascal), \"mb\" (millibar, a thaobh "
-"matamataig, tha seo co-ionnann ri 1 hPa ach 'ga shealltainn air dòigh eile), "
-"\"mm-hg\" (millemeatair de dh'airgead beò), \"òirleach-hg\" (òirlich a "
-"dh'airgead beò), \"atm\" (brùthaidhean-àile) ceadaichte an-seo."
+#~ msgid "Timezone Menu"
+#~ msgstr "Clàr-taice roinne-tìde"
 
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:11
-msgid "Default location"
-msgstr "An t-àite bunaiteach"
+#~ msgid "Timezone"
+#~ msgstr "Roinn-tìde"
 
-#: ../schemas/org.gnome.GWeather.gschema.xml.h:12
-msgid ""
-"The default location for the weather applet. The first field is the name "
-"that will be shown. If empty, it will be taken from the locations database. "
-"The second field is the METAR code for the default weather station. It must "
-"not be empty and must correspond to a &lt;code&gt; tag in the Locations.xml "
-"file. The third field is a tuple of (latitude, longitude), to override the "
-"value taken from the database. This is only used for sunrise and moon phase "
-"calculations, not for weather forecast."
-msgstr ""
-"Seo àite bunaiteach aig applet na h-aimsire. 'S e an raon a chithear a tha "
-"sa chiad raon. Ma dh'fhàgas tu bàn seo, glacaidh sinn seo o stòr-dàta nan "
-"àitichean. Tha an còd METAR airson stèisean bunaiteach na h-aimsire san "
-"dàrna raon. Chan fhaod seo a bhith bàn agus feumaidh e freagairt ri &lt;"
-"còd&gt; taga san fhaidhle Locations.xml. Tha an treas raon 'na phaidhir, "
-"domhan-leud is domhan-fhad, gus an luach a fhuaras on stòr-dàta a thar-"
-"àithneadh. Cha dèid seo a chleachdadh ach airson àireamhachadh èirigh na "
-"grèine is mùthadh na gealaich is chan ann airson aithris na h-aimsire."
+#~ msgid "Greenwich Mean Time"
+#~ msgstr "Greenwich Mean Time"
+
+#~ msgctxt "timezone"
+#~ msgid "Unknown"
+#~ msgstr "Chan eil fhios"
+
+#~ msgid "Variable"
+#~ msgstr "Caochlaideach"
+
+#~ msgid "North"
+#~ msgstr "Tuath"
+
+#~ msgid "North - NorthEast"
+#~ msgstr "Tuath - Ear-thuath"
+
+#~ msgid "Northeast"
+#~ msgstr "Ear-thuath"
+
+#~ msgid "East - NorthEast"
+#~ msgstr "Ear - Ear-thuath"
+
+#~ msgid "East"
+#~ msgstr "Ear"
+
+#~ msgid "East - Southeast"
+#~ msgstr "Ear - Ear-dheas"
+
+#~ msgid "Southeast"
+#~ msgstr "Ear-dheas"
+
+#~ msgid "South - Southeast"
+#~ msgstr "Deas - Ear-dheas"
+
+#~ msgid "South"
+#~ msgstr "Deas"
+
+#~ msgid "South - Southwest"
+#~ msgstr "Deas - Iar-dheas"
+
+#~ msgid "Southwest"
+#~ msgstr "Iar-dheas"
+
+#~ msgid "West - Southwest"
+#~ msgstr "Iar - Iar-dheas"
+
+#~ msgid "West"
+#~ msgstr "Iar"
+
+#~ msgid "West - Northwest"
+#~ msgstr "Iar - Iar-thuath"
+
+#~ msgid "Northwest"
+#~ msgstr "Iar-thuath"
+
+#~ msgid "North - Northwest"
+#~ msgstr "Tuath - Iar-thuath"
+
+#~ msgctxt "wind direction"
+#~ msgid "Invalid"
+#~ msgstr "Mì-dhligheach"
+
+#~ msgid "Clear Sky"
+#~ msgstr "Adhar soilleir"
+
+#~ msgid "Broken clouds"
+#~ msgstr "Sgòthach gu ìre"
+
+#~ msgid "Scattered clouds"
+#~ msgstr "Corra sgòth"
+
+#~ msgid "Few clouds"
+#~ msgstr "Grunn sgòthan"
+
+#~ msgctxt "sky conditions"
+#~ msgid "Invalid"
+#~ msgstr "Mì-dhligheach"
+
+#~ msgid "Thunderstorm"
+#~ msgstr "Gailleann"
+
+#~ msgid "Drizzle"
+#~ msgstr "Ceòbhran"
+
+#~ msgid "Light drizzle"
+#~ msgstr "Ceòbran aotrom"
+
+#~ msgid "Moderate drizzle"
+#~ msgstr "Ceòbran meadhanach"
+
+#~ msgid "Heavy drizzle"
+#~ msgstr "Ceòbran trom"
+
+#~ msgid "Freezing drizzle"
+#~ msgstr "Ceòbhran a' reòthadh"
+
+#~ msgid "Rain"
+#~ msgstr "Uisge"
+
+#~ msgid "Light rain"
+#~ msgstr "Uisge aotrom"
+
+#~ msgid "Moderate rain"
+#~ msgstr "Uisge meadhanach"
+
+#~ msgid "Heavy rain"
+#~ msgstr "Uisge trom"
+
+#~ msgid "Rain showers"
+#~ msgstr "Frasan"
+
+#~ msgid "Freezing rain"
+#~ msgstr "An t-uisge a' reòthadh"
+
+#~ msgid "Snow"
+#~ msgstr "Sneachda"
+
+#~ msgid "Light snow"
+#~ msgstr "Sneachda aotrom"
+
+#~ msgid "Moderate snow"
+#~ msgstr "Sneachd meadhanach"
+
+#~ msgid "Heavy snow"
+#~ msgstr "Sneachd trom"
+
+#~ msgid "Snowstorm"
+#~ msgstr "Stoirm-shneachda"
+
+#~ msgid "Blowing snowfall"
+#~ msgstr "Sneachd 'ga shèideadh"
+
+#~ msgid "Snow showers"
+#~ msgstr "Frasan sneachda"
+
+#~ msgid "Drifting snow"
+#~ msgstr "Sneachd a' cathadh"
+
+#~ msgid "Snow grains"
+#~ msgstr "Gràinnean sneachda"
+
+#~ msgid "Light snow grains"
+#~ msgstr "Gràinnean sneachda aotrom"
+
+#~ msgid "Moderate snow grains"
+#~ msgstr "Gràinnean sneachda meadhanach"
+
+#~ msgid "Heavy snow grains"
+#~ msgstr "Gràinnean sneachda troma"
+
+#~ msgid "Ice crystals"
+#~ msgstr "Criostalan-deighe"
+
+#~ msgid "Sleet"
+#~ msgstr "Flinne"
+
+#~ msgid "Little sleet"
+#~ msgstr "Beagan flinne"
+
+#~ msgid "Moderate sleet"
+#~ msgstr "Flinne meadhanach"
+
+#~ msgid "Heavy sleet"
+#~ msgstr "Flinne trom"
+
+#~ msgid "Sleet storm"
+#~ msgstr "Gailleann flinne"
+
+#~ msgid "Showers of sleet"
+#~ msgstr "Frasan flinne"
+
+#~ msgid "Hail"
+#~ msgstr "Clachan-meallain"
+
+#~ msgid "Hailstorm"
+#~ msgstr "Stoirm chlachan-meallain"
+
+#~ msgid "Hail showers"
+#~ msgstr "Frasan chlachan-meallain"
+
+#~ msgid "Small hail"
+#~ msgstr "Clachan-meallain beaga"
+
+#~ msgid "Small hailstorm"
+#~ msgstr "Stoirm bheag chlachan-meallain"
+
+#~ msgid "Showers of small hail"
+#~ msgstr "Frasan de chlachan-meallain beaga"
+
+#~ msgid "Unknown precipitation"
+#~ msgstr "Sileach ach chan eil fhios dè seòrsa"
+
+#~ msgid "Mist"
+#~ msgstr "Ceò"
+
+#~ msgid "Fog"
+#~ msgstr "Ceò"
+
+#~ msgid "Fog in the vicinity"
+#~ msgstr "Ceò am fagas"
+
+#~ msgid "Shallow fog"
+#~ msgstr "Ceò aotrom"
+
+#~ msgid "Patches of fog"
+#~ msgstr "Meallan ceòtha"
+
+#~ msgid "Partial fog"
+#~ msgstr "Ceòthach gu ìre"
+
+#~ msgid "Freezing fog"
+#~ msgstr "Ceò a' reòthadh"
+
+#~ msgid "Smoke"
+#~ msgstr "Toit"
+
+#~ msgid "Volcanic ash"
+#~ msgstr "Luaithre beinne-teine"
+
+#~ msgid "Sand"
+#~ msgstr "Gainmhich"
+
+#~ msgid "Blowing sand"
+#~ msgstr "A' sèideadh gainmheach"
+
+#~ msgid "Drifting sand"
+#~ msgstr "Gainmheach a' cathadh"
+
+#~ msgid "Haze"
+#~ msgstr "Sgeò"
+
+#~ msgid "Blowing sprays"
+#~ msgstr "Smùid na mara"
+
+#~ msgid "Dust"
+#~ msgstr "Duslach"
+
+#~ msgid "Blowing dust"
+#~ msgstr "A' sèideadh duslach"
+
+#~ msgid "Drifting dust"
+#~ msgstr "Duslach a' cathadh"
+
+#~ msgid "Squall"
+#~ msgstr "Siantan"
+
+#~ msgid "Sandstorm"
+#~ msgstr "Stoirm-ghainmhich"
+
+#~ msgid "Sandstorm in the vicinity"
+#~ msgstr "Stoirm-ghainmhich am fagas"
+
+#~ msgid "Heavy sandstorm"
+#~ msgstr "Stoirm-ghainmhich throm"
+
+#~ msgid "Duststorm"
+#~ msgstr "Gailleann-dhuslaich"
+
+#~ msgid "Duststorm in the vicinity"
+#~ msgstr "Gailleann-dhuslaich am fagas"
+
+#~ msgid "Heavy duststorm"
+#~ msgstr "Gailleann-dhuslaich throm"
+
+#~ msgid "Funnel cloud"
+#~ msgstr "Sgòth fuinill"
+
+#~ msgid "Tornado"
+#~ msgstr "Cuairt-ghaoth mhòr"
+
+#~ msgid "Dust whirls"
+#~ msgstr "Cuairtean duslaich"
+
+#~ msgid "Dust whirls in the vicinity"
+#~ msgstr "Cuairtean duslaich am fagas"
+
+#~ msgid "%a, %b %d / %H∶%M"
+#~ msgstr "%a, %d %b / %H∶%M"
+
+#~ msgid "Unknown observation time"
+#~ msgstr "Chan eil fhios cuin a chunnacas"
+
+#~ msgctxt "sky conditions"
+#~ msgid "Unknown"
+#~ msgstr "Chan eil fhios"
+
+#~ msgid "default:mm"
+#~ msgstr "default:inch"
+
+#~ msgid "%.1f °F"
+#~ msgstr "%.1f °F"
+
+#~ msgid "%d °F"
+#~ msgstr "%d °F"
+
+#~ msgid "%.1f °C"
+#~ msgstr "%.1f °C"
+
+#~ msgid "%d °C"
+#~ msgstr "%d °C"
+
+#~ msgid "%.1f K"
+#~ msgstr "%.1f K"
+
+#~ msgid "%d K"
+#~ msgstr "%d K"
+
+#~ msgctxt "temperature"
+#~ msgid "Unknown"
+#~ msgstr "Chan eil fhios"
+
+#~ msgctxt "dew"
+#~ msgid "Unknown"
+#~ msgstr "Chan eil fhios"
+
+#~ msgctxt "humidity"
+#~ msgid "Unknown"
+#~ msgstr "Chan eil fhios"
+
+#~ msgid "%.f%%"
+#~ msgstr "%.f%%"
+
+#~ msgid "%0.1f knots"
+#~ msgstr "%0.1f mìle mara san uair"
+
+#~ msgid "%.1f mph"
+#~ msgstr "%.1f mph"
+
+#~ msgid "%.1f km/h"
+#~ msgstr "%.1f km/h"
+
+#~ msgid "%.1f m/s"
+#~ msgstr "%.1f m/s"
+
+#~ msgid "Beaufort force %.1f"
+#~ msgstr "Forsa Beaufort %.1f"
+
+#~ msgctxt "wind speed"
+#~ msgid "Unknown"
+#~ msgstr "Chan eil fhios"
+
+#~ msgid "Calm"
+#~ msgstr "Fèath"
+
+#~ msgctxt "pressure"
+#~ msgid "Unknown"
+#~ msgstr "Chan eil fhios"
+
+#~ msgid "%.2f inHg"
+#~ msgstr "%.2f inHg"
+
+#~ msgid "%.1f mmHg"
+#~ msgstr "%.1f mmHg"
+
+#~ msgid "%.2f kPa"
+#~ msgstr "%.2f kPa"
+
+#~ msgid "%.2f hPa"
+#~ msgstr "%.2f hPa"
+
+#~ msgid "%.2f mb"
+#~ msgstr "%.2f mb"
+
+#~ msgid "%.3f atm"
+#~ msgstr "%.3f atm"
+
+#~ msgctxt "visibility"
+#~ msgid "Unknown"
+#~ msgstr "Chan eil fhios"
+
+#~ msgid "%.1f miles"
+#~ msgstr "%.1f mìle"
+
+#~ msgid "%.1f km"
+#~ msgstr "%.1f km"
+
+#~ msgid "%.0fm"
+#~ msgstr "%.0fm"
+
+#~ msgid "%H∶%M"
+#~ msgstr "%H∶%M"
+
+#~ msgid "Retrieval failed"
+#~ msgstr "Cha b' urrainn dhuinn fhaighinn dhut"
+
+#~ msgid "Failed to get METAR data: %d %s.\n"
+#~ msgstr "Cha b' urrainn dhuinn an dàta METAR fhaighinn dhut: %d %s.\n"
+
+#~ msgid ""
+#~ "Weather data from the <a href=\"http://openweathermap.org\">Open Weather "
+#~ "Map project</a>"
+#~ msgstr ""
+#~ "Dàta an aimsir on <a href=\"http://openweathermap.org\">phròiseact Open "
+#~ "Weather Map</a>"
+
+#~ msgid ""
+#~ "Weather data from the <a href=\"http://yr.no/\">Norwegian Meteorological "
+#~ "Institute</a>"
+#~ msgstr ""
+#~ "Dàta na h-aimsire le <a href=\"http://yr.no/\">Instituid na h-Aimsire san "
+#~ "Nirribhidh</a>"
+
+#~ msgid "URL for the radar map"
+#~ msgstr "An URL airson mapa an rèideir"
+
+#~ msgid ""
+#~ "The custom URL from where to retrieve a radar map, or empty for disabling "
+#~ "radar maps."
+#~ msgstr ""
+#~ "An URL gnàthaichte on a gheibhear mapaichean rèideir no fàg bàn seo gus "
+#~ "na mapaichean rèideir a chur à comas."
+
+#~ msgid ""
+#~ "The unit of temperature used for showing weather. Valid values are "
+#~ "'kelvin', 'centigrade' and 'fahrenheit'."
+#~ msgstr ""
+#~ "Dè aonad na teothachd a chithear ann an aithrisean na h-aimsire. Tha "
+#~ "\"kelvin\", \"centigrade\" agus \"fahrenheit\" ceadaichte."
+
+#~ msgid "Distance unit"
+#~ msgstr "Aonad an astair"
+
+#~ msgid ""
+#~ "The unit of distance used for showing weather (for example for visibility "
+#~ "or for distance of important events). Valid values are 'meters', 'km' and "
+#~ "'miles'."
+#~ msgstr ""
+#~ "Dè aonad an astair a chithear ann an aithrisean na h-aimsire (mar "
+#~ "eisimpleir dè cho fad às a chithear rudan no an t-astar air a bheil "
+#~ "tachartasan cudromach).  Tha \"meatairean\", \"km\" agus \"mìltean\" "
+#~ "ceadaichte an-seo."
+
+#~ msgid "Speed unit"
+#~ msgstr "Aonad an luaiths"
+
+#~ msgid ""
+#~ "The unit of speed used for showing weather (for example for wind speed). "
+#~ "Valid values are 'ms' (meters per second), 'kph' (kilometers per hour), "
+#~ "'mph' (miles per hour), 'knots' and 'bft' (Beaufort scale)."
+#~ msgstr ""
+#~ "Dè aonad a chithear ann an aithrisean na h-aimsire airson luaths (mar "
+#~ "eisimpleir luaths na gaoithe). Tha \"ms\" (meatair gach diog), \"kph"
+#~ "\" (cilemeatair gach uair), \"mph\" (mìltean gach uair), \"mìltean mara "
+#~ "gach uair\" agus \"bft\" (sgèile Beaufort scale) ceadaichte an-seo."
+
+#~ msgid "Pressure unit"
+#~ msgstr "Aonad a' bhrùthaidh"
+
+#~ msgid ""
+#~ "The unit of pressure used for showing weather. Valid values are "
+#~ "'kpa' (kilopascal), 'hpa' (hectopascal), 'mb' (millibar, mathematically "
+#~ "equivalent to 1 hPa but shown differently), 'mm-hg' (millimiters of "
+#~ "mercury), 'inch-hg' (inches of mercury), 'atm' (atmospheres)."
+#~ msgstr ""
+#~ "Aonad a' bhrùthaidh a chithear ann an aithrisean na h-aimsire. Tha \"kpa"
+#~ "\" (kilopascal), \"hpa\" (hectopascal), \"mb\" (millibar, a thaobh "
+#~ "matamataig, tha seo co-ionnann ri 1 hPa ach 'ga shealltainn air dòigh "
+#~ "eile), \"mm-hg\" (millemeatair de dh'airgead beò), \"òirleach-hg"
+#~ "\" (òirlich a dh'airgead beò), \"atm\" (brùthaidhean-àile) ceadaichte an-"
+#~ "seo."
+
+#~ msgid ""
+#~ "The default location for the weather applet. The first field is the name "
+#~ "that will be shown. If empty, it will be taken from the locations "
+#~ "database. The second field is the METAR code for the default weather "
+#~ "station. It must not be empty and must correspond to a &lt;code&gt; tag "
+#~ "in the Locations.xml file. The third field is a tuple of (latitude, "
+#~ "longitude), to override the value taken from the database. This is only "
+#~ "used for sunrise and moon phase calculations, not for weather forecast."
+#~ msgstr ""
+#~ "Seo àite bunaiteach aig applet na h-aimsire. 'S e an raon a chithear a "
+#~ "tha sa chiad raon. Ma dh'fhàgas tu bàn seo, glacaidh sinn seo o stòr-dàta "
+#~ "nan àitichean. Tha an còd METAR airson stèisean bunaiteach na h-aimsire "
+#~ "san dàrna raon. Chan fhaod seo a bhith bàn agus feumaidh e freagairt ri "
+#~ "&lt;còd&gt; taga san fhaidhle Locations.xml. Tha an treas raon 'na "
+#~ "phaidhir, domhan-leud is domhan-fhad, gus an luach a fhuaras on stòr-dàta "
+#~ "a thar-àithneadh. Cha dèid seo a chleachdadh ach airson àireamhachadh "
+#~ "èirigh na grèine is mùthadh na gealaich is chan ann airson aithris na h-"
+#~ "aimsire."
 
 #~ msgid ""
 #~ "Weather data from the <a href=\"%s\">Norwegian Meteorological Institute</"
@@ -796,9 +902,6 @@ msgstr ""
 #~ msgctxt "pressure unit"
 #~ msgid "Unknown"
 #~ msgstr "Chan eil fhios"
-
-#~ msgid "'fahrenheit'"
-#~ msgstr "\"fahrenheit\""
 
 #~ msgid "'miles'"
 #~ msgstr "\"mìltean\""
