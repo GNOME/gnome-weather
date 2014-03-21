@@ -1,0 +1,360 @@
+# Telugu translation for gnome-weather.
+# Copyright (C) 2014 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Praveen Illa <mail2ipn@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-03-21 09:17+0000\n"
+"PO-Revision-Date: 2014-03-21 23:40+0530\n"
+"Last-Translator: Praveen Illa <mail2ipn@gmail.com>\n"
+"Language-Team: indlinux-telugu@lists.sourceforge.net\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "కొత్తది (_N)"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "ఉష్ణోగ్రత ప్రమాణం"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "సెల్సియస్"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "ఫారెన్‌హీట్"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "గురించి"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "నిష్క్రమించు"
+
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "ప్రస్తుత పరిస్థితులు"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "వివరణాత్మకమైన వాతావరణ సూచన"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
+msgid "Weather"
+msgstr "వాతావరణం"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "వాతావరణ పరిస్థితులను, సూచినలను చూపించు"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"వివిధ అంతర్జాల సేవలు సమకూర్చిన తాజా వాతావరణ సూచనలను ప్రాప్యించుటకు, 7 రోజుల వరకూ, మీ పట్టణం లేదా "
+"ప్రపంచంలో ఎక్కడైనా ప్రస్తుత వాతావరణ పరిస్థితులను పర్యవేక్షించుటకు అనుమతించే ఒక చిన్ని అనువర్తనం"
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "కొత్త స్థానము"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "నగరానికై వెతకండి:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "వీటి కోసం వాతావరణం చూపించుటకు స్వరూపించబడిన పట్టణాలు"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"గ్నోమ్-వాతావరణం యొక్క ప్రపంచ వీక్షణంలో చూపించిన ప్రాంతాలు. ప్రతీ విలువ "
+"gweather_location_serialize() ఇచ్చిన ఒక GVariant."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "అన్నీ ఎంచుకోండి"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "ఎంపిక రద్దు"
+
+#: ../data/window.ui.h:3 ../src/window.js:208
+msgid "Click on locations to select them"
+msgstr "స్థానములను ఎంచుకోవడానికి వాటిపై నొక్కండి"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "కొత్తది"
+
+#: ../data/window.ui.h:5
+msgid "Back"
+msgstr "వెనక్కి"
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "ఎంచుకోండి"
+
+#: ../data/window.ui.h:7
+msgid "Cancel"
+msgstr "రద్దుచేయి"
+
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "తాజాపరుచు"
+
+#: ../data/window.ui.h:9
+msgid "Delete"
+msgstr "తొలగించు"
+
+#: ../src/city.js:125
+msgid "City view"
+msgstr "నగర వీక్షణం"
+
+#: ../src/city.js:134
+msgid "Loading…"
+msgstr "నింపుతూంది..."
+
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "వాతావరణసూచిక"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
+msgid "Today"
+msgstr "నేడు"
+
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
+msgid "Tomorrow"
+msgstr "రేపు"
+
+#: ../src/forecast.js:151
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:197 ../src/forecast.js:291
+msgid "More…"
+msgstr "మరిన్ని…"
+
+#: ../src/forecast.js:318
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: ../src/forecast.js:321
+msgid "%R"
+msgstr "%R"
+
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "రేపటి వాతావరణసూచిక"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "నేటి వాతావరణసూచిక"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "సోమవారం రాత్రి"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "సోమవారం ఉదయం"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "సోమవారం మధ్యాహ్నం"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "సోమవారం సాయంత్రం"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "మంగళవారం రాత్రి"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "మంగళవారం ఉదయం"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "మంగళవారం మధ్యాహ్నం"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "మంగళవారం సాయంత్రం"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "బుధవారం రాత్రి"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "బుధవారం ఉదయం"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "బుధవారం మధ్యాహ్నం"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "బుధవారం సాయంత్రం"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "గురువారం రాత్రి"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "గురువారం ఉదయం"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "గురువారం మధ్యాహ్నం"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "గురువారం సాయంత్రం"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "శుక్రవారం రాత్రి"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "శుక్రవారం ఉదయం"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "శుక్రవారం మధ్యాహ్నం"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "శుక్రవారం సాయంత్రం"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "శనివారం రాత్రి"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "శనివారం ఉదయం"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "శనివారం మధ్యాహ్నం"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "శనివారం సాయంత్రం"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "శనివారం రాత్రి"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "ఆదివారం ఉదయం"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "ఆదివారం మధ్యాహ్నం"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "ఆదివారం సాయంత్రం"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "ఈరాత్రి"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "ఈ ఉదయం"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "ఈ మధ్యాహ్నం"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "ఈ సాయంత్రం"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "రేపు రాత్రి"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "రేపు ఉదయం"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "రేపు మధ్యాహ్నం"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "రేపు సాయంత్రం"
+
+#: ../src/window.js:203
+#, javascript-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d ఎంచుకోబడింది"
+msgstr[1] "%d ఎంచుకోబడ్డాయి"
+
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "ప్రపంచ వాతావరణం"
+
+#: ../src/window.js:318
+msgid "translator-credits"
+msgstr "Praveen Illa <mail2ipn@gmail.com>, 2014."
+
+#: ../src/window.js:320
+msgid "A weather application"
+msgstr "ఒక వాతావరణ అనువర్తనం"
+
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "పట్టణాలు"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "ప్రపంచ వీక్షణం"
+
+#: ../src/world.js:259
+msgid "Add locations"
+msgstr "స్థానములను జతచేయండి"
+
+#: ../src/world.js:262
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr "మరిన్ని ప్రపంచ స్థానములను జతచేయుటకు పనిముట్లపట్టీ పై ఉన్న <b>కొత్తది</b> బొత్తాన్ని వాడండి"
