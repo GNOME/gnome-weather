@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the gnome-weather package.
 #
 # Asier Sarasua Garmendia <asiersar@yahoo.com>, 2013.
-# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2013.
+# Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2013, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-14 13:03+0200\n"
-"PO-Revision-Date: 2013-09-14 13:16+0200\n"
+"POT-Creation-Date: 2014-03-22 20:48+0100\n"
+"PO-Revision-Date: 2014-03-22 20:50+0100\n"
 "Last-Translator: Iñaki Larrañaga Murgoitio <dooteo@zundan.com>\n"
 "Language-Team: Basque <librezale@librezale.org>\n"
 "Language: eu\n"
@@ -36,19 +36,27 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Eguraldiari buruz"
+msgid "About"
+msgstr "Honi buruz"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Irten"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Uneko baldintzak"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Iragarpen xehea"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Eguraldia"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Erakutsi eguraldiaren egoera eta iragarpena"
 
@@ -58,9 +66,9 @@ msgid ""
 "conditions for your city, or anywhere in the world and to access updated "
 "forecasts, up to 7 days, provided by various internet services."
 msgstr ""
-"Aplikazio txiki bat zure herriko, edo munduko beste leku bateko, "
-"uneko eguraldiaren jarraipena egiteko eta 7 egunetarako "
-"iragarpen eguneratuak jasotzeko (interneteko zerbitzu batzuk eskainita)."
+"Aplikazio txiki bat zure herriko, edo munduko beste leku bateko, uneko "
+"eguraldiaren jarraipena egiteko eta 7 egunetarako iragarpen eguneratuak "
+"jasotzeko (interneteko zerbitzu batzuk eskainita)."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -91,7 +99,7 @@ msgstr "Hautatu dena"
 msgid "Select None"
 msgstr "Hautatu bat ere ez"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Egin klik kokalekuen gainean hautatzeko"
 
@@ -100,60 +108,85 @@ msgid "New"
 msgstr "Berria"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Munduko eguraldia"
+msgid "Back"
+msgstr "Atzera"
 
 #: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Hautatu"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Utzi"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Freskatu"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Hiriaren ikuspegia"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Kargatzen…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Iragarpena"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Gaur"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Bihar"
 
-#: ../src/forecast.js:132
-#, javascript-format
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: ../src/forecast.js:151
+#, c-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Gehiago…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Gaurko iragarpena"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Biharko iragarpena"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%B %d"
-
-#: ../src/forecast.js:300
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:303
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, javascript-format
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Biharko iragarpena"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Gaurko iragarpena"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%B %d"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/searchProvider.js:169
+#, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -301,34 +334,47 @@ msgstr "Bihar arratsaldean"
 msgid "Tomorrow evening"
 msgstr "Bihar iluntzean"
 
-#: ../src/window.js:182
-#, javascript-format
+#: ../src/window.js:203
+#, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "hautatuta %d"
 msgstr[1] "%d hautatuta"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Munduko eguraldia"
+
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr ""
 "Asier Sarasua Garmendia <asiersar@yahoo.com>\n"
 "Iñaki Larrañaga Murgoitio <dooteo@zundan.com>"
 
-#: ../src/window.js:299
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Eguraldiaren aplikazio bat"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Hiriak"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Munduaren ikuspegia"
+
+#: ../src/world.js:259
 msgid "Add locations"
 msgstr "Gehitu Kokalekuak"
 
-#: ../src/world.js:244
+#: ../src/world.js:262
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
-"Erabili tresna-barrako <b>Berria</b> botoia munduko beste kokalekuak gehitzeko"
+"Erabili tresna-barrako <b>Berria</b> botoia munduko beste kokalekuak "
+"gehitzeko"
 
-#~ msgid "Current conditions:"
-#~ msgstr "Uneko egoera:"
+#~ msgid "About Weather"
+#~ msgstr "Eguraldiari buruz"
 
 #~ msgid "Wind: "
 #~ msgstr "Haizea: "
