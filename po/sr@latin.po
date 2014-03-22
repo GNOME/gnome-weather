@@ -1,22 +1,22 @@
 # Serbian translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2013.
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2013—2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-10-05 04:26+0000\n"
-"PO-Revision-Date: 2013-10-05 06:22+0200\n"
+"POT-Creation-Date: 2014-03-22 09:20+0000\n"
+"PO-Revision-Date: 2014-03-22 11:26+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
+"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -36,19 +36,27 @@ msgid "Fahrenheit"
 msgstr "Farenhajti"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "O Vremenu"
+msgid "About"
+msgstr "O programu"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Izađi"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Tekuće prilike"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Opširna prognoza"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Vreme"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Prikažite vremenske prilike i prognozu"
 
@@ -90,7 +98,7 @@ msgstr "Izaberi sve"
 msgid "Select None"
 msgstr "Poništi izbor"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Kliknite na mesta da ih izaberete"
 
@@ -99,59 +107,78 @@ msgid "New"
 msgstr "Novo"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Svetsko vreme"
+msgid "Back"
+msgstr "Nazad"
 
 #: ../data/window.ui.h:6
+#| msgid "Select All"
+msgid "Select"
+msgstr "Izaberi"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Otkaži"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Osveži"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Obriši"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Pregled grada"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Učitavam…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "Prognoza"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Danas"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Sutra"
 
-#: ../src/forecast.js:135
+#: ../src/forecast.js:151
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:182
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Još…"
 
-#: ../src/forecast.js:261
-msgid "Forecast for Today"
-msgstr "Prognoza za danas"
-
-#: ../src/forecast.js:263
-msgid "Forecast for Tomorrow"
-msgstr "Prognoza za sutra"
-
-#: ../src/forecast.js:267
-msgid "%B %d"
-msgstr "%B %d"
-
-#: ../src/forecast.js:304
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:307
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:164
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Prognoza za sutra"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Prognoza za danas"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/searchProvider.js:169
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
@@ -300,7 +327,7 @@ msgstr "Sutra popodne"
 msgid "Tomorrow evening"
 msgstr "Sutra uveče"
 
-#: ../src/window.js:182
+#: ../src/window.js:203
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -309,22 +336,38 @@ msgstr[1] "%d izabrana"
 msgstr[2] "%d izabranih"
 msgstr[3] "%d izabran"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Svetsko vreme"
+
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr ""
 "  Miroslav Nikolić\n"
 "\n"
 "  http://prevod.org — prevod na srpski jezik"
 
-#: ../src/window.js:299
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Program za vremenske prilike"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Gradovi"
+
+#: ../src/world.js:231
+#| msgid "World Weather"
+msgid "World view"
+msgstr "Pregled sveta"
+
+#: ../src/world.js:259
 msgid "Add locations"
 msgstr "Dodajte mesta"
 
-#: ../src/world.js:244
+#: ../src/world.js:262
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Koristite dugme <b>Novo</b> na traci alata da dodate još svetskih mesta"
+
+#~ msgid "About Weather"
+#~ msgstr "O Vremenu"
