@@ -1,15 +1,15 @@
 # Thai translation for gnome-weather.
 # Copyright (C) 2013-2014 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-weather package.
-# Akom Chotiphantawanon <knight2000@gmail.com>, 2013-2014.
 #
+# Akom Chotiphantawanon <knight2000@gmail.com>, 2013-2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-11 19:40+0000\n"
-"PO-Revision-Date: 2014-01-18 20:43+0700\n"
+"POT-Creation-Date: 2014-03-07 09:11+0000\n"
+"PO-Revision-Date: 2014-03-07 19:12+0700\n"
 "Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
@@ -43,8 +43,16 @@ msgstr "เกี่ยวกับ"
 msgid "Quit"
 msgstr "_ออก"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:59
-#: ../src/window.js:313
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "สภาพปัจจุบัน"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "รายละเอียดการพยากรณ์"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "รายงานอากาศ"
 
@@ -89,7 +97,7 @@ msgstr "เลือกทั้งหมด"
 msgid "Select None"
 msgstr "ล้างการเลือก"
 
-#: ../data/window.ui.h:3 ../src/window.js:202
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "คลิกตำแหน่งเพื่อเลือก"
 
@@ -98,52 +106,72 @@ msgid "New"
 msgstr "ใหม่"
 
 #: ../data/window.ui.h:5
+msgid "Back"
+msgstr "กลับ"
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "เลือก"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "ยกเลิก"
 
-#: ../data/window.ui.h:6
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "เรียกใหม่"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "ลบ"
 
-#: ../src/city.js:127
+#: ../src/city.js:125
+msgid "City view"
+msgstr "มุมมองเมือง"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "กำลังโหลด…"
 
-#: ../src/forecast.js:127 ../src/forecast.js:412
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "การพยากรณ์"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "วันนี้"
 
-#: ../src/forecast.js:133 ../src/forecast.js:294 ../src/forecast.js:379
-#: ../src/forecast.js:414
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "พรุ่งนี้"
 
-#: ../src/forecast.js:150
+#: ../src/forecast.js:151
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:196 ../src/forecast.js:290
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "เพิ่มเติม…"
 
-#: ../src/forecast.js:317
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:320
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:351
+#: ../src/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "พยากรณ์อากาศพรุ่งนี้"
 
-#: ../src/forecast.js:353
+#: ../src/forecast.js:354
 msgid "Forecast for Today"
 msgstr "พยากรณ์อากาศวันนี้"
 
-#: ../src/forecast.js:355
+#: ../src/forecast.js:356
 msgid "%B %d"
 msgstr "%d %B"
 
@@ -296,29 +324,37 @@ msgstr "บ่ายพรุ่งนี้"
 msgid "Tomorrow evening"
 msgstr "เย็นพรุ่งนี้"
 
-#: ../src/window.js:197
+#: ../src/window.js:203
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "เลือกอยู่ %d รายการ"
 
-#: ../src/window.js:223
+#: ../src/window.js:229
 msgid "World Weather"
 msgstr "สภาพอากาศโลก"
 
-#: ../src/window.js:312
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr "Akom Chotiphantawanon"
 
-#: ../src/window.js:314
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "โปรแกรมรายงานอากาศ"
 
-#: ../src/world.js:250
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "เมือง"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "มุมมองโลก"
+
+#: ../src/world.js:259
 msgid "Add locations"
 msgstr "เพิ่มตำแหน่งที่ตั้ง"
 
-#: ../src/world.js:253
+#: ../src/world.js:262
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr "ใช้ปุ่ม <b>ใหม่</b>  บนแถบเครื่องมือในการเพิ่มตำแหน่งที่ตั้งบนโลกเพิ่มเติม"
 
