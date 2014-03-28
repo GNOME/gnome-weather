@@ -1,0 +1,368 @@
+# Arabic translation for gnome-weather.
+# Copyright (C) 2014 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Ibrahim Saed <ibraheem5000@gmail.com>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-03-28 09:40+0000\n"
+"PO-Revision-Date: 2014-03-28 15:30+0200\n"
+"Last-Translator: Ibrahim Saed <ibraheem5000@gmail.com>\n"
+"Language-Team: Arabic <doc@arabeyes.org>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_جديد"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "وحدة الحرارة"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "مئوية"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "فهرنهايت"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "عن"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr ""
+
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "الظروف الحالية"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "توقعات مُفصّلة"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
+msgid "Weather"
+msgstr "الطقس"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "عرض ظروف الطقس والتوقعات"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"تطبيق صغير يتيح لك مراقبة حالات الطقس الحالية لمدينتك أو أي مدينة تريدها في "
+"العالم والوصول لتوقعات مُحدّثة حتى 7 أيام قادمة، من خلال خدمات مختلفة على "
+"الإنترنت."
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "منطقة جديدة"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "ابحث عن مدينة:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "اختر الكل"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "لا تختر شيء"
+
+#: ../data/window.ui.h:3 ../src/window.js:208
+msgid "Click on locations to select them"
+msgstr "انقر على المناطق لاختيارها"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "جديد"
+
+#: ../data/window.ui.h:5
+msgid "Back"
+msgstr ""
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "اختر"
+
+#: ../data/window.ui.h:7
+msgid "Cancel"
+msgstr "ألغِ"
+
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "حدّث"
+
+#: ../data/window.ui.h:9
+msgid "Delete"
+msgstr "احذف"
+
+#: ../src/city.js:125
+msgid "City view"
+msgstr "مشهد مدينة"
+
+#: ../src/city.js:134
+msgid "Loading…"
+msgstr "يُحمّل…"
+
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "التوقعات"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
+msgid "Today"
+msgstr "اليوم"
+
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
+msgid "Tomorrow"
+msgstr "غدًا"
+
+#: ../src/forecast.js:151
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:197 ../src/forecast.js:291
+msgid "More…"
+msgstr "المزيد…"
+
+#: ../src/forecast.js:318
+msgid "%l∶%M %p"
+msgstr ""
+
+#: ../src/forecast.js:321
+msgid "%R"
+msgstr ""
+
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "التوقعات ليوم غد"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "التوقعات لليوم"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr ""
+
+#: ../src/searchProvider.js:169
+#, javascript-format
+msgid "%s, %s"
+msgstr ""
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "ليلة الإثنين"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "صباح الإثنين"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "ظهر الإثنين"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "مساء الإثنين"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "ليلة الثلاثاء"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "صباح الثلاثاء"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "ظهر الثلاثاء"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "مساء الثلاثاء"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "ليلة الأربعاء"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "صباح الأربعاء"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "ظهر الأربعاء"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "مساء الأربعاء"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "ليلة الخميس"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "صباح الخميس"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "ظهر الخميس"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "مساء الخميس"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "ليلة الجمعة"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "صباح الجمعة"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "ظهر الجمعة"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "مساء الجمعة"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "ليلة السبت"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "صباح السبت"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "ظهر السبت"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "مساء السبت"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "ليلة الأحد"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "صباح الأحد"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "ظهر الأحد"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "مساء الأحد"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "الليلة"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "هذا الصباح"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "ظهر اليوم"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "هذا المساء"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "ليلة الغد"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "صباح الغد"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "ظهر الغد"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "مساء الغد"
+
+#: ../src/window.js:203
+#, javascript-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "لا عناصر مختارة (%d)"
+msgstr[1] "عنصر واحد مختار (%d)"
+msgstr[2] "عنصران مختاران (%d)"
+msgstr[3] "%d عناصر مختارة"
+msgstr[4] "%d عنصرًا مختارًا"
+msgstr[5] "%d عنصر مختار"
+
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "طقس العالم"
+
+#: ../src/window.js:318
+msgid "translator-credits"
+msgstr ""
+"فريق عربآيز للترجمة http://www.arabeyes.org :\n"
+"إبراهيم سعيد\t<ibraheem5000@gmail.com>"
+
+#: ../src/window.js:320
+msgid "A weather application"
+msgstr "تطبيق الطقس الجوي"
+
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "المُدن"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "مشهد العالم"
+
+#: ../src/world.js:259
+msgid "Add locations"
+msgstr "أضف مناطق"
+
+#: ../src/world.js:262
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"استخدم زرّ <b>جديد</b> الموجود في شريط الأدوات لإضافة المزيد من المناطق في "
+"العالم"
