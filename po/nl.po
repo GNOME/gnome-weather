@@ -1,22 +1,23 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Dutch translation of Gnome Weather
+# Copyright (C) 2014
+# This file is distributed under the same license as the Gnome Weather package.
 # Reinout van Schouwen <reinouts@gnome.org>, 2013.
+# Erwin Poeze <donnut@outlook.com>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gnome Weather\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-15 19:40+0000\n"
-"PO-Revision-Date: 2013-09-17 23:41+0200\n"
-"Last-Translator: Reinout van Schouwen <reinouts@gnome.org>\n"
+"POT-Creation-Date: 2014-03-25 09:37+0000\n"
+"PO-Revision-Date: 2014-03-25 16:52+0100\n"
+"Last-Translator: Erwin Poeze <donnut@outlook.com>\n"
 "Language-Team: Dutch <vertaling@vrijschrift.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 1.5.4\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -36,19 +37,27 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Over Weer"
+msgid "About"
+msgstr "Info"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Huidige omstandigheden"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Uitgebreide verwachting"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Weer"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Weersomstandigheden en -verwachtingen tonen"
 
@@ -58,9 +67,9 @@ msgid ""
 "conditions for your city, or anywhere in the world and to access updated "
 "forecasts, up to 7 days, provided by various internet services."
 msgstr ""
-"Een kleine toepassing die u de huidige weersomstandigheden voor uw "
-"woonplaats laat observeren, of waar ook ter wereld. Verder kunt u actuele "
-"weersvoorspellingen inzien, tot aan 7 dagen vooruit, geleverd door diverse "
+"Een kleine toepassing die u de huidige weersomstandigheden laat bijhouden "
+"voor uw woonplaats, of waar ook ter wereld. Verder kunt u actuele "
+"weersverwachtingen inzien, tot aan 7 dagen vooruit, geleverd door diverse "
 "internetdiensten."
 
 #: ../data/new-location-dialog.ui.h:1
@@ -73,7 +82,7 @@ msgstr "Naar een stad zoeken:"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
-msgstr "Het weer tonen van de geconfigureerde steden"
+msgstr "Geconfigureerde steden om het weer van te tonen"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:2
 msgid ""
@@ -91,7 +100,7 @@ msgstr "Alles selecteren"
 msgid "Select None"
 msgstr "Niets selecteren"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Klik op locaties om ze te selecteren"
 
@@ -100,62 +109,77 @@ msgid "New"
 msgstr "Nieuw"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Weer wereldwijd"
+msgid "Back"
+msgstr "Terug"
 
 #: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Selecteren"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Verversen"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Stadsoverzicht"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Laden…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Verwachtingen"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Vandaag"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Morgen"
 
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Meer…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Verwachtingen voor vandaag"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Verwachtingen voor morgen"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%d %B"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Verwachtingen voor morgen"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Verwachtingen voor vandaag"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%d %B"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -303,27 +327,42 @@ msgstr "Morgenmiddag"
 msgid "Tomorrow evening"
 msgstr "Morgenavond"
 
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d geselecteerd"
 msgstr[1] "%d geselecteerd"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Weer wereldwijd"
+
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr "Erwin Poeze <donnut@outlook.com>"
 
-#: ../src/window.js:299
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Een weertoepassing"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Steden"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Wereldoverzicht"
+
+#: ../src/world.js:259
 msgid "Add locations"
 msgstr "Locaties toevoegen"
 
-#: ../src/world.js:244
+#: ../src/world.js:262
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Gebruik de knop <b>Nieuw</b> op de werkbalk om meer wereldlocaties toe te "
 "voegen"
+
+#~ msgid "About Weather"
+#~ msgstr "Over Weer"
