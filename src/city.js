@@ -192,7 +192,7 @@ const WeatherView = new Lang.Class({
         this.visible_child_name = 'info';
     },
 
-    _connectClock: function() {
+    connectClock: function() {
         this._wallClock = new Gnome.WallClock();
         this._clockHandlerId = this._wallClock.connect('notify::clock', Lang.bind(this, this._updateTime));
     },
@@ -206,12 +206,12 @@ const WeatherView = new Lang.Class({
             let location = this._info.location;
             let tz = GLib.TimeZone.new(location.get_timezone().get_tzid());
             let dt = GLib.DateTime.new_now(tz);
-            return dt.format("%H:%M");
+            return dt.format(_("%H:%M"));
         }
         return null;
     },
 
-    _disconnectClock: function() {
+    disconnectClock: function() {
         this._wallClock.disconnect(this._clockHandlerId);
     }
 });
