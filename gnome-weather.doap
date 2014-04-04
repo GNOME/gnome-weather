@@ -13,7 +13,8 @@
   </description>
 
   <homepage rdf:resource="https://wiki.gnome.org/Apps/Weather" />
-  <bug-database rdf:resource="http://bugzilla.gnome.org/browse.cgi?product=gnome-weather" />
+  <download-page rdf:resource="http://download.gnome.org/sources/gnome-weather/" />
+  <bug-database rdf:resource="https://bugzilla.gnome.org/browse.cgi?product=gnome-weather" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
   <programming-language>JS</programming-language>
 
