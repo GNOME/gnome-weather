@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-01-12 08:32+0000\n"
-"PO-Revision-Date: 2014-01-11 16:50+0300\n"
-"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"POT-Creation-Date: 2014-04-01 21:10+0000\n"
+"PO-Revision-Date: 2014-04-18 19:36+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: www.gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -45,8 +45,20 @@ msgstr "Περί"
 msgid "Quit"
 msgstr "Έξοδος"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:59
-#: ../src/window.js:313
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Παρούσες συνθήκες"
+
+#: ../data/city.ui.h:2
+msgid "label"
+msgstr "ετικέτα"
+
+#: ../data/city.ui.h:3
+msgid "Detailed forecast"
+msgstr "Αναλυτική πρόγνωση"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:321
 msgid "Weather"
 msgstr "Καιρός"
 
@@ -61,13 +73,13 @@ msgid ""
 "forecasts, up to 7 days, provided by various internet services."
 msgstr ""
 "Μια μικρή εφαρμογή που σας επιτρέπει να παρακολουθείτε τις τρέχουσες "
-"καιρικές συνθήκες για την πόλη σας ή για οποιοδήποτε άλλη τοποθεσία στον "
-"κόσμο και να έχετε ενημερώσεις για τις προβλέψεις, μέχρι και 7 ημέρες, από "
+"καιρικές συνθήκες για την πόλη σας, ή για οποιαδήποτε άλλη τοποθεσία στον "
+"κόσμο, και να έχετε ενημερώσεις για τις προβλέψεις, μέχρι και 7 ημέρες, από "
 "ποικίλες υπηρεσίες στο Internet."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
-msgstr "Νέα Τοποθεσία"
+msgstr "Νέα τοποθεσία"
 
 #: ../data/new-location-dialog.ui.h:2
 msgid "Search for a city:"
@@ -75,15 +87,16 @@ msgstr "Αναζήτηση πόλης:"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
-msgstr "Ρυθμισμένες πόλεις για την εμφάνιση καιρού"
+msgstr "Ρυθμισμένες πόλεις για τις οποίες θα εμφανίζεται ο καιρός"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:2
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Οι εμφανιζόμενες τοποθεσίες στην παγκόσμια προβολή του καιρού gnome. Κάθε "
-"τιμή είναι η επιστρεφόμενη GVariant από το gweather_location_serialize()."
+"Οι εμφανιζόμενες τοποθεσίες στην παγκόσμια προβολή του προγράμματος gnome-"
+"weather. Κάθε τιμή είναι μια μεταβλητή GVariant που επιστρέφεται από το "
+"gweather_location_serialize()."
 
 #: ../data/window.ui.h:1
 msgid "Select All"
@@ -93,7 +106,7 @@ msgstr "Επιλογή όλων"
 msgid "Select None"
 msgstr "Επιλογή κανενός"
 
-#: ../data/window.ui.h:3 ../src/window.js:202
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Πατήστε στις τοποθεσίες για να τις επιλέξετε"
 
@@ -102,52 +115,76 @@ msgid "New"
 msgstr "Νέο"
 
 #: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Πίσω"
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Επιλογή"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: ../data/window.ui.h:6
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Ανανέωση"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: ../src/city.js:127
+#: ../src/city.js:128
+msgid "City view"
+msgstr "Εμφάνιση πόλης"
+
+#: ../src/city.js:137
 msgid "Loading…"
 msgstr "Φορτώνεται…"
 
-#: ../src/forecast.js:127 ../src/forecast.js:412
+#: ../src/city.js:209
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Πρόγνωση"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Σήμερα"
 
-#: ../src/forecast.js:133 ../src/forecast.js:294 ../src/forecast.js:379
-#: ../src/forecast.js:414
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Αύριο"
 
-#: ../src/forecast.js:150
+#: ../src/forecast.js:151
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:196 ../src/forecast.js:290
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Περισσότερα…"
 
-#: ../src/forecast.js:317
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:320
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:351
+#: ../src/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "Πρόβλεψη για αύριο"
 
-#: ../src/forecast.js:353
+#: ../src/forecast.js:354
 msgid "Forecast for Today"
 msgstr "Πρόβλεψη για σήμερα"
 
-#: ../src/forecast.js:355
+#: ../src/forecast.js:356
 msgid "%B %d"
 msgstr "%B %d"
 
@@ -300,37 +337,46 @@ msgstr "Αύριο το απόγευμα"
 msgid "Tomorrow evening"
 msgstr "Αύριο το βράδυ"
 
-#: ../src/window.js:197
+#: ../src/window.js:203
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d επιλεγμένο"
 msgstr[1] "%d επιλεγμένα"
 
-#: ../src/window.js:223
+#: ../src/window.js:229
 msgid "World Weather"
 msgstr "Παγκόσμιος καιρός"
 
-#: ../src/window.js:312
+#: ../src/window.js:320
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα του Gnome  \n"
 " Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
 " Ευστάθιος Ιωσηφίδης <iosifidis@opensuse.org>\n"
+" Μαρία Θουκυδίδου <marablack3@gmail.com>\n"
 "Για περισσότερα δείτε: http://gnome.gr"
 
-#: ../src/window.js:314
+#: ../src/window.js:322
 msgid "A weather application"
-msgstr "Μια εφαρμογή καιρού"
+msgstr "Μια εφαρμογή για τον καιρό"
 
-#: ../src/world.js:250
+#: ../src/world.js:251
+msgid "Cities"
+msgstr "Πόλεις"
+
+#: ../src/world.js:268
+msgid "World view"
+msgstr "Εμφάνιση παγκόσμιου καιρού"
+
+#: ../src/world.js:296
 msgid "Add locations"
 msgstr "Προσθήκη τοποθεσιών"
 
-#: ../src/world.js:253
+#: ../src/world.js:299
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
-"Χρησιμοποιήστε το κουμπί <b>Νέο</b> στην εργαλειοθήκη για την προσθήκη "
+"Χρησιμοποιήστε το κουμπί <b>Νέο</b> στην εργαλειοθήκη, για την προσθήκη "
 "περισσότερων παγκόσμιων τοποθεσιών"
 
 #~ msgid "About Weather"
