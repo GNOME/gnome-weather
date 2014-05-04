@@ -1,14 +1,14 @@
 # Belarusian translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2013.
+# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-10-15 17:54+0000\n"
+"POT-Creation-Date: 2014-05-04 08:10+0000\n"
 "PO-Revision-Date: 2013-10-15 17:54+0000\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
@@ -16,7 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -35,19 +36,27 @@ msgid "Fahrenheit"
 msgstr "Градусы Фарэнгейта"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Аб Надвор'і"
+msgid "About"
+msgstr "Аб праграме"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Выйсці"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Бягучае становішча"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Падрабязны прагноз"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Надвор'е"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Прагляд звестак аб надвор'і і яго прагноз"
 
@@ -57,7 +66,9 @@ msgid ""
 "conditions for your city, or anywhere in the world and to access updated "
 "forecasts, up to 7 days, provided by various internet services."
 msgstr ""
-"Маленькая праграма, якая дазваляе сачыць за ўмовамі надвор'я ў вашым горадзе ці ў любым іншым месцы ў свеце, а таксама чытаць свежыя прагнозы да 7 дзён ад разнастайных сеціўных службаў."
+"Маленькая праграма, якая дазваляе сачыць за ўмовамі надвор'я ў вашым горадзе "
+"ці ў любым іншым месцы ў свеце, а таксама чытаць свежыя прагнозы да 7 дзён "
+"ад разнастайных сеціўных службаў."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -76,8 +87,8 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Месцапалажэнні, паказаныя ў сусветным рэжыме прагляду. Кожнае значэнне прадстаўляе "
-"GVariant, вернуты функцыяй gweather_location_serialize()."
+"Месцапалажэнні, паказаныя ў сусветным рэжыме прагляду. Кожнае значэнне "
+"прадстаўляе GVariant, вернуты функцыяй gweather_location_serialize()."
 
 #: ../data/window.ui.h:1
 msgid "Select All"
@@ -87,7 +98,7 @@ msgstr "Вылучыць усё"
 msgid "Select None"
 msgstr "Скасаваць вылучэнне"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Каб вылучыць месцазнаходжанні, пстрыкніце ў іх"
 
@@ -96,59 +107,76 @@ msgid "New"
 msgstr "Новы"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Надвор'е ў свеце"
+msgid "Back"
+msgstr "Назад"
 
 #: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Вылучыць"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Скасаваць"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Абнавіць"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Выдаліць"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Гарады"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Загрузка..."
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Прагноз"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Сёння"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Заўтра"
 
-#: ../src/forecast.js:135
+#: ../src/forecast.js:151
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:182
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Болей..."
 
-#: ../src/forecast.js:261
-msgid "Forecast for Today"
-msgstr "Прагноз на сёння"
-
-#: ../src/forecast.js:263
-msgid "Forecast for Tomorrow"
-msgstr "Прагноз на заўтра"
-
-#: ../src/forecast.js:267
-msgid "%B %d"
-msgstr "%d %B"
-
-#: ../src/forecast.js:304
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:307
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/searchProvider.js:164
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Прагноз на заўтра"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Прагноз на сёння"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%d %B"
+
+#: ../src/searchProvider.js:169
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
@@ -297,7 +325,7 @@ msgstr "Заўтра апоўдні"
 msgid "Tomorrow evening"
 msgstr "Заўтра ўвечары"
 
-#: ../src/window.js:182
+#: ../src/window.js:203
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -305,18 +333,32 @@ msgstr[0] "вылучана: %d"
 msgstr[1] "вылучана: %d"
 msgstr[2] "вылучана: %d"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Надвор'е ў свеце"
+
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr "Ігар Грачышка <ihar.hrachyshka@gmail.com>"
 
-#: ../src/window.js:299
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Праграма надвор'я"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Гарады"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Свет"
+
+#: ../src/world.js:259
 msgid "Add locations"
 msgstr "Дадаць месцапалажэнні"
 
-#: ../src/world.js:244
+#: ../src/world.js:262
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr "Каб дадаць новыя месцапалажэнні на карту свету, ужыйце кнопку <b>Новы</b>"
+msgstr ""
+"Каб дадаць новыя месцапалажэнні на карту свету, ужыйце кнопку <b>Новы</b>"
+
