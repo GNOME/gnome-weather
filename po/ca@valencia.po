@@ -7,16 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-06 22:04+0200\n"
-"PO-Revision-Date: 2013-09-15 23:59+0100\n"
-"Last-Translator: Josep Sànchez Mesegué <papapep@gmx.com>\n"
+"POT-Creation-Date: 2014-05-09 00:35+0200\n"
+"PO-Revision-Date: 2014-03-02 18:17+0100\n"
+"Last-Translator: Pau Iranzo <paugnu@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca-XV\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -35,19 +34,31 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Quant al Weather"
+msgid "About"
+msgstr "Quant a"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Ix"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Condicions actuals"
+
+#: ../data/city.ui.h:2
+msgid "label"
+msgstr ""
+
+#: ../data/city.ui.h:3
+msgid "Detailed forecast"
+msgstr "Pronòstic detallat"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:321
 msgid "Weather"
 msgstr "Weather"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Mostra les condicions actuals i la previsió meteorològica"
 
@@ -90,7 +101,7 @@ msgstr "Selecciona-ho tot"
 msgid "Select None"
 msgstr "No seleccionis res"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Feu clic a ubicacions per seleccionar-les"
 
@@ -99,68 +110,81 @@ msgid "New"
 msgstr "Nova"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Meteorologia mundial"
+msgid "Back"
+msgstr "Arrere"
 
 #: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Selecciona"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Actualitza"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: ../src/city.js:119
+#: ../src/city.js:128
+msgid "City view"
+msgstr "Visualització de ciutat"
+
+#: ../src/city.js:137
 msgid "Loading…"
 msgstr "S'està carregant…"
 
-#: ../src/forecast.js:112
+#: ../src/city.js:209
+msgid "%H:%M"
+msgstr ""
+
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Predicció"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Hui"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Demà"
 
-#. TRANSLATORS: this is the temperature string, minimum and maximum.
-#. The two values are already formatted, so it would be something like
-#. "7 °C / 19 °C"
-#: ../src/forecast.js:135
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:182
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Més…"
 
-#: ../src/forecast.js:261
-msgid "Forecast for Today"
-msgstr "Predicció per hui"
-
-#: ../src/forecast.js:263
-msgid "Forecast for Tomorrow"
-msgstr "Predicció per demà"
-
-#: ../src/forecast.js:267
-msgid "%B %d"
-msgstr "%B %d"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:304
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:307
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#. TRANSLATORS: this is the description shown in the overview search
-#. It's the current weather conditions followed by the temperature,
-#. like "Clear sky, 14 °C"
-#: ../src/searchProvider.js:164
-#, c-format
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Predicció per demà"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Predicció per hui"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -308,27 +332,42 @@ msgstr "Demà per la tarda"
 msgid "Tomorrow evening"
 msgstr "Demà pel vespre"
 
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionada"
 msgstr[1] "%d seleccionades"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Meteorologia mundial"
+
+#: ../src/window.js:320
 msgid "translator-credits"
 msgstr "Josep Sanchez Mesegue <papapep@gmx.com>"
 
-#: ../src/window.js:299
+#: ../src/window.js:322
 msgid "A weather application"
 msgstr "Un programa sobre meteorologia"
 
-#: ../src/world.js:241
+#: ../src/world.js:251
+msgid "Cities"
+msgstr "Ciutats"
+
+#: ../src/world.js:268
+msgid "World view"
+msgstr "Visualització mundial"
+
+#: ../src/world.js:296
 msgid "Add locations"
 msgstr "Afig una ubicació"
 
-#: ../src/world.js:244
+#: ../src/world.js:299
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Empreu el botó <b>Nova</b> de la barra d'eines per a afegir més ubicacions "
 "mundials"
+
+#~ msgid "About Weather"
+#~ msgstr "Quant al Weather"
