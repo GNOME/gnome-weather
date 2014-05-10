@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-05 09:41+0000\n"
-"PO-Revision-Date: 2014-02-05 13:14+0100\n"
+"POT-Creation-Date: 2014-05-08 08:06+0000\n"
+"PO-Revision-Date: 2014-05-10 18:52+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -45,16 +45,19 @@ msgid "Quit"
 msgstr "Salir"
 
 #: ../data/city.ui.h:1
-#| msgid "Current conditions:"
 msgid "Current conditions"
 msgstr "Condiciones actuales"
 
 #: ../data/city.ui.h:2
+msgid "label"
+msgstr "etiqueta"
+
+#: ../data/city.ui.h:3
 msgid "Detailed forecast"
 msgstr "Pronóstico detallado"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
-#: ../src/window.js:313
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:321
 msgid "Weather"
 msgstr "Meteorología"
 
@@ -100,7 +103,7 @@ msgstr "Seleccionar todo"
 msgid "Select None"
 msgstr "Seleccionar nada"
 
-#: ../data/window.ui.h:3 ../src/window.js:202
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Pulse sobre las ubicaciones para seleccionarlas"
 
@@ -113,7 +116,6 @@ msgid "Back"
 msgstr "Atrás"
 
 #: ../data/window.ui.h:6
-#| msgid "Select All"
 msgid "Select"
 msgstr "Seleccionar"
 
@@ -129,16 +131,19 @@ msgstr "Actualizar"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: ../src/city.js:125
+#: ../src/city.js:128
 msgid "City view"
 msgstr "Vista de la ciudad"
 
-#: ../src/city.js:134
+#: ../src/city.js:137
 msgid "Loading…"
 msgstr "Cargando…"
 
+#: ../src/city.js:209
+msgid "%H:%M"
+msgstr "%H:%M"
+
 #: ../src/forecast.js:41
-#| msgid "Forecast for Today"
 msgid "Forecast"
 msgstr "Pronóstico"
 
@@ -152,6 +157,7 @@ msgid "Tomorrow"
 msgstr "Mañana"
 
 #: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
@@ -180,6 +186,7 @@ msgid "%B %d"
 msgstr "%B %d"
 
 #: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -327,38 +334,38 @@ msgstr "Mañana por la tarde"
 msgid "Tomorrow evening"
 msgstr "Mañana a medianoche"
 
-#: ../src/window.js:197
+#: ../src/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionada"
 msgstr[1] "%d seleccionadas"
 
-#: ../src/window.js:223
+#: ../src/window.js:229
 msgid "World Weather"
 msgstr "Meteorología del mundo"
 
-#: ../src/window.js:312
+#: ../src/window.js:320
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013"
 
-#: ../src/window.js:314
+#: ../src/window.js:322
 msgid "A weather application"
 msgstr "Una aplicación de meteorología"
 
-#: ../src/world.js:214
+#: ../src/world.js:251
 msgid "Cities"
 msgstr "Ciudades"
 
-#: ../src/world.js:231
-#| msgid "World Weather"
+#: ../src/world.js:268
 msgid "World view"
 msgstr "Vista mundial"
 
-#: ../src/world.js:258
+#: ../src/world.js:296
 msgid "Add locations"
 msgstr "Añadir ubicaciones"
 
-#: ../src/world.js:261
+#: ../src/world.js:299
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Use el botón <b>Nueva</b> en la barra de herramientas para añadir más "
