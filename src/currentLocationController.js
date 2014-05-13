@@ -88,7 +88,7 @@ const CurrentLocationController = new Lang.Class({
         this._clientProxy = new ClientProxy(Gio.DBus.system,
                                             "org.freedesktop.GeoClue2",
                                             clientPath);
-        this._clientProxy.DesktopId = "gnome-weather";
+        this._clientProxy.DesktopId = pkg.name;
         this._clientProxy.RequestedAccuracyLevel = AccuracyLevel.CITY;
         this._clientProxy.DistanceThreshold = 100;
 
