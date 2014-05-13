@@ -42,14 +42,20 @@ var moduledir;
 var localedir;
 
 /*< private >*/
+let _pkgname;
 let _base;
 
-function _runningFromSource() {
-    let fileName = System.programInvocationName;
-    let prgName = GLib.path_get_basename(fileName);
+function _findEffectiveEntryPointName() {
+    let entryPoint = System.programInvocationName;
+    while (GLib.file_test(entryPoint, GLib.FileTest.IS_SYMLINK))
+        entryPoint = GLib.file_read_link(entryPoint);
 
-    let binary = Gio.File.new_for_path(fileName);
-    let sourceBinary = Gio.File.new_for_path('./src/' + prgName);
+    return GLib.path_get_basename(entryPoint);
+}
+
+function _runningFromSource() {
+    let binary = Gio.File.new_for_path(System.programInvocationName);
+    let sourceBinary = Gio.File.new_for_path('./src/' + name);
     return binary.equal(sourceBinary);
 }
 
@@ -64,7 +70,8 @@ function _makeNamePath(name) {
  * Initialize directories and global variables. Must be called
  * before any of other API in Package is used.
  * @params must be an object with at least the following keys:
- *  - name: the package name ($(PACKAGE_NAME) in autotools)
+ *  - name: the package name ($(PACKAGE_NAME) in autotools,
+ *          eg. org.foo.Bar)
  *  - version: the package version
  *  - prefix: the installation prefix
  *
@@ -74,7 +81,8 @@ function _makeNamePath(name) {
  * At the end, the global variable 'pkg' will contain the
  * Package module (imports.package). Additionally, the following
  * module variables will be available:
- *  - name, version: same as in @params
+ *  - name: the base name of the entry point (eg. org.foo.Bar.App)
+ *  - version: same as in @params
  *  - prefix: the installation prefix (as passed in @params)
  *  - datadir, libdir: the final datadir and libdir when installed;
  *                     usually, these would be prefix + '/share' and
@@ -100,7 +108,8 @@ function _makeNamePath(name) {
  */
 function init(params) {
     window.pkg = imports.package;
-    name = params.name;
+    _pkgname = params.name;
+    name = _findEffectiveEntryPointName();
     version = params.version;
 
     // Must call it first, because it can only be called
@@ -125,18 +134,18 @@ function init(params) {
         moduledir = GLib.build_filenamev([_base, 'src']);
     } else {
         _base = prefix;
-        pkglibdir = GLib.build_filenamev([libdir, name]);
+        pkglibdir = GLib.build_filenamev([libdir, _pkgname]);
         libpath = pkglibdir;
         girpath = GLib.build_filenamev([pkglibdir, 'girepository-1.0']);
-        pkgdatadir = GLib.build_filenamev([datadir, name]);
+        pkgdatadir = GLib.build_filenamev([datadir, _pkgname]);
         localedir = GLib.build_filenamev([datadir, 'locale']);
 
         try {
-            let resource = Gio.Resource.load(GLib.build_filenamev([pkg.pkgdatadir,
-                                                                   pkg.name + '.src.gresource']));
+            let resource = Gio.Resource.load(GLib.build_filenamev([pkgdatadir,
+                                                                   name + '.src.gresource']));
             resource._register();
 
-            moduledir = 'resource://' + _makeNamePath(pkg.name) + '/js';
+            moduledir = 'resource://' + _makeNamePath(name) + '/js';
         } catch(e) {
             moduledir = pkgdatadir;
         }
@@ -147,8 +156,8 @@ function init(params) {
     GIRepository.Repository.prepend_library_path(libpath);
 
     try {
-        let resource = Gio.Resource.load(GLib.build_filenamev([pkg.pkgdatadir,
-                                                               pkg.name + '.data.gresource']));
+        let resource = Gio.Resource.load(GLib.build_filenamev([pkgdatadir,
+                                                               name + '.data.gresource']));
         resource._register();
     } catch(e) { }
 }
@@ -164,8 +173,23 @@ function init(params) {
  */
 function start(params) {
     init(params);
+    run(imports.main);
+}
 
-    return imports.main.main([System.programInvocationName].concat(ARGV));
+/**
+ * run:
+ * @module: the module to run
+ *
+ * This is the function to use if you want to have multiple
+ * entry points in one package.
+ * You must define a main(ARGV) function inside the passed
+ * in module, and then the launcher would be
+ *
+ * imports.package.init(...);
+ * imports.package.run(imports.entrypoint);
+ */
+function run(module) {
+    return module.main([System.programInvocationName].concat(ARGV));
 }
 
 /**
@@ -195,8 +219,8 @@ function require(libs) {
 }
 
 function initGettext() {
-    Gettext.bindtextdomain(name, localedir);
-    Gettext.textdomain(name);
+    Gettext.bindtextdomain(_pkgname, localedir);
+    Gettext.textdomain(_pkgname);
 
     let gettext = imports.gettext;
     window._ = gettext.gettext;
