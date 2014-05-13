@@ -1,3 +1,3 @@
 [D-BUS Service]
-Name=@PACKAGE_NAME@
-Exec=@pkgdatadir@/@PACKAGE_NAME@ --gapplication-service
+Name=@PACKAGE_NAME@.Application
+Exec=@pkgdatadir@/@PACKAGE_NAME@.Application --gapplication-service

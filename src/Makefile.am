@@ -3,12 +3,12 @@ NULL =
 appdir = $(pkgdatadir)
 nodist_app_SCRIPTS = org.gnome.Weather.Application
 
-resource_files = $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/$(PACKAGE_NAME).src.gresource.xml)
-$(PACKAGE_NAME).src.gresource: $(PACKAGE_NAME).src.gresource.xml $(resource_files)
+resource_files = $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/$(PACKAGE_NAME).Application.src.gresource.xml)
+$(PACKAGE_NAME).Application.src.gresource: $(PACKAGE_NAME).Application.src.gresource.xml $(resource_files)
 	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) $<
 
 resourcedir = $(pkgdatadir)
-resource_DATA = $(PACKAGE_NAME).src.gresource
+resource_DATA = $(PACKAGE_NAME).Application.src.gresource
 
 # Legacy, until we can depend on package.js provided by gjs
 jsdir = $(pkgdatadir)
@@ -25,20 +25,20 @@ org.gnome.Weather.Application: org.gnome.Weather.Application.in
 	@chmod +x $@
 
 EXTRA_DIST = \
-	$(PACKAGE_NAME).in \
-	$(PACKAGE_NAME).src.gresource.xml \
+	$(PACKAGE_NAME).Application.in \
+	$(PACKAGE_NAME).Application.src.gresource.xml \
 	$(resource_files) \
 	$(NULL)
 
 CLEANFILES = \
-	$(PACKAGE_NAME) \
-	$(PACKAGE_NAME).src.gresource \
+	$(PACKAGE_NAME).Application \
+	$(PACKAGE_NAME).Application.src.gresource \
 	$(NULL)
 
 install-exec-hook:
 	$(MKDIR_P) $(DESTDIR)$(bindir)
-	$(LN_S) $(appdir)/$(PACKAGE_NAME) $(DESTDIR)$(bindir)/$(PACKAGE_TARNAME)
+	$(LN_S) $(appdir)/$(PACKAGE_NAME).Application $(DESTDIR)$(bindir)/$(PACKAGE_TARNAME)
 uninstall-hook:
-	-rm -f $(DESTDIR)$(bindir)/$(PACKAGE_NAME)
+	-rm -f $(DESTDIR)$(bindir)/$(PACKAGE_TARNAME)
 
 -include $(top_srcdir)/git.mk

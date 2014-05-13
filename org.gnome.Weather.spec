@@ -24,13 +24,13 @@ make %{?_smp_mflags}
 make install DESTDIR=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 rm -fR $RPM_BUILD_ROOT/%{_bindir}
-desktop-file-edit $RPM_BUILD_ROOT/%{_datadir}/applications/%{name}.desktop \
+desktop-file-edit $RPM_BUILD_ROOT/%{_datadir}/applications/%{name}.Application.desktop \
     --set-key=X-AppInstall-Package --set-value=%{name}
 
 %find_lang %{name}
 
 %check
-desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/%{name}.desktop
+desktop-file-validate $RPM_BUILD_ROOT/%{_datadir}/applications/%{name}.Application.desktop
 
 %post
 touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
@@ -48,11 +48,11 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %files -f %{name}.lang
 %doc NEWS COPYING
-%{_datadir}/appdata/%{name}.appdata.xml
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/dbus-1/services/%{name}.service
-%{_datadir}/glib-2.0/schemas/%{name}.gschema.xml
-%{_datadir}/gnome-shell/search-providers/%{name}.search-provider.ini
-%{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_datadir}/appdata/%{name}.Application.appdata.xml
+%{_datadir}/applications/%{name}.Application.desktop
+%{_datadir}/dbus-1/services/%{name}.Application.service
+%{_datadir}/glib-2.0/schemas/%{name}.Application.gschema.xml
+%{_datadir}/gnome-shell/search-providers/%{name}.Application.search-provider.ini
+%{_datadir}/icons/hicolor/*/apps/%{name}.Application.png
 %{_datadir}/%{name}/
 %{_libdir}/%{name}/
