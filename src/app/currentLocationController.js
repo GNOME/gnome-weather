@@ -68,8 +68,8 @@ const LocationProxy = Gio.DBusProxy.makeProxyWrapper(LocationInterface);
 const CurrentLocationController = new Lang.Class({
     Name: 'CurrentLocationController',
 
-    _init: function(callback) {
-        this._callback = callback;
+    _init: function(world) {
+        this._world = world;
         this._managerProxy = new ManagerProxy(Gio.DBus.system,
                                                "org.freedesktop.GeoClue2",
                                                "/org/freedesktop/GeoClue2/Manager");
@@ -117,11 +117,21 @@ const CurrentLocationController = new Lang.Class({
                                               description: geoclueLocation.Description });
 
         this.currentLocation = GWeather.Location.get_world().find_nearest_city (location.latitude, location.longitude);
-        if (this.currentLocation)
-            this._callback(this.currentLocation);
+        this._addCurrentLocation();
     },
 
-    isLocationSimilar: function(location) {
+    _addCurrentLocation: function() {
+        let allLocations = this._world.getAllSavedLocations();
+        let isSimilar = Lang.bind(this, function(location) {
+            return this._isLocationSimilar(location);
+        });
+        if (allLocations.some(isSimilar))
+            return;
+
+        this._world.addLocation(this.currentLocation, false);
+    },
+
+    _isLocationSimilar: function(location) {
         if (this.currentLocation != null) {
             let station_code = location.get_code ();
             let currentLocationCode = this.currentLocation.get_code();

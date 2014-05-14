@@ -4,4 +4,4 @@ imports.package.init({ name: "org.gnome.Weather",
                         version: "@PACKAGE_VERSION@",
                         prefix: "@prefix@",
                         libdir: "@libdir@" });
-imports.package.run(imports.app.main);
+imports.package.run(imports.service.main);

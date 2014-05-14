@@ -24,9 +24,8 @@ const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
 const Lang = imports.lang;
 
-const Params = imports.params;
-const Util = imports.util;
-const CurrentLocationController = imports.currentLocationController;
+const Params = imports.misc.params;
+const Util = imports.misc.util;
 
 const Columns = {
     ID: Gd.MainColumns.ID,
@@ -69,7 +68,7 @@ const WorldModel = new Lang.Class({
         'loading': GObject.ParamSpec.boolean('loading', '', '', GObject.ParamFlags.READABLE, false)
     },
 
-    _init: function(world) {
+    _init: function(world, enableGtk) {
         this.parent();
         this.set_column_types([ColumnTypes[c] for (c in ColumnTypes)]);
         this._world = world;
@@ -95,9 +94,7 @@ const WorldModel = new Lang.Class({
 
         this._settings.connect('changed::locations', Lang.bind(this, this._onChanged));
 
-        let currentLocationController = new CurrentLocationController.CurrentLocationController(Lang.bind(this,
-                                                                                                          this._addCurrentLocation));
-        this._currentLocationController = currentLocationController;
+        this._enableGtk = enableGtk;
     },
 
     _updateLoadingCount: function(delta) {
@@ -123,11 +120,15 @@ const WorldModel = new Lang.Class({
                                        enabled_providers: this._providers });
         let iter;
         info.connect('updated', Lang.bind(this, function(info) {
-            let icon = Util.loadIcon(info.get_symbolic_icon_name(), ICON_SIZE);
             let secondary_text = Util.getWeatherConditions(info);
-            this.set(iter,
-                     [Columns.ICON, Columns.SECONDARY_TEXT],
-                     [icon, secondary_text]);
+            if (this._enableGtk) {
+                let icon = Util.loadIcon(info.get_symbolic_icon_name(), ICON_SIZE);
+                this.set(iter,
+                         [Columns.ICON, Columns.SECONDARY_TEXT],
+                         [icon, secondary_text]);
+            } else {
+                this.set_value(iter, Columns.SECONDARY_TEXT, secondary_text);
+            }
 
             this._updateLoadingCount(-1);
             this.emit('updated', info);
@@ -135,19 +136,21 @@ const WorldModel = new Lang.Class({
         this.updateInfo(info);
 
         let primary_text = location.get_city_name();
-        let icon = Util.loadIcon('view-refresh-symbolic', ICON_SIZE);
 
         iter = this.insert_with_valuesv(-1,
                                         [Columns.PRIMARY_TEXT,
-                                         Columns.ICON,
                                          Columns.LOCATION,
                                          Columns.INFO,
                                          Columns.AUTOMATIC],
                                         [primary_text,
-                                         icon,
                                          location,
                                          info,
                                          automatic]);
+
+        if (this._enableGtk) {
+            let icon = Util.loadIcon('view-refresh-symbolic', ICON_SIZE);
+            this.set_value(iter, Columns.ICON, icon);
+        }
     },
 
     _onChanged: function() {
@@ -197,25 +200,47 @@ const WorldModel = new Lang.Class({
         }
     },
 
-    addLocation: function(location) {
+    _addSavedLocation: function(location) {
         let newLocations = this._settings.get_value('locations').deep_unpack();
         newLocations.push(location.serialize());
         this._settings.set_value('locations', new GLib.Variant('av', newLocations));
     },
 
-    _addCurrentLocation: function(currentLocation) {
+    getAllSavedLocations: function() {
         let locations = this._settings.get_value('locations').deep_unpack();
+        let returnValue = [];
 
         for (let i = 0; i < locations.length; i++) {
             let variant = locations[i];
-            if (variant == null)
+            if (variant == null) {
+                log('null stored in GSettings?');
                 continue;
+            }
 
-            let location = this._world.deserialize(variant);
-            if (this._currentLocationController.isLocationSimilar(location))
-                return;
+            returnValue.push(this._world.deserialize(variant));
         }
-        this._addLocationInternal(currentLocation, true);
+
+        return returnValue;
+    },
+
+    getLocationInfo: function(location) {
+        let [ok, iter] = this.get_iter_first();
+        while (ok) {
+            let storedLocation = this.get_value(iter, Columns.LOCATION);
+            if (storedLocation.equal(location))
+                return this.get_value(iter, Columns.INFO);
+
+            ok = this.iter_next(iter);
+        }
+
+        return null;
+    },
+
+    addLocation: function(location, saved) {
+        if (saved)
+            this._addSavedLocation(location);
+        else
+            this._addLocationInternal(location, true);
     },
 
     removeLocation: function(iter) {

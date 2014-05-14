@@ -23,9 +23,9 @@ const GLib = imports.gi.GLib;
 const Gnome = imports.gi.GnomeDesktop;
 const Lang = imports.lang;
 
-const Forecast = imports.forecast;
-const Params = imports.params;
-const Util = imports.util;
+const Forecast = imports.app.forecast;
+const Params = imports.misc.params;
+const Util = imports.misc.util;
 
 const SPINNER_SIZE = 128;
 

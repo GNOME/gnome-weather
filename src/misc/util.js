@@ -30,7 +30,7 @@ const GLib = imports.gi.GLib;
 const Gtk = imports.gi.Gtk;
 const System = imports.system;
 
-const Params = imports.params;
+const Params = imports.misc.params;
 
 function loadUI(resourcePath, objects) {
     let ui = new Gtk.Builder();

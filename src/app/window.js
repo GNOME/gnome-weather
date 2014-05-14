@@ -22,10 +22,10 @@ const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
 const Lang = imports.lang;
 
-const City = imports.city;
-const Params = imports.params;
-const World = imports.world;
-const Util = imports.util;
+const City = imports.app.city;
+const Params = imports.misc.params;
+const World = imports.shared.world;
+const Util = imports.misc.util;
 
 const Gettext = imports.gettext;
 const Tweener = imports.tweener.tweener;
@@ -73,11 +73,11 @@ const NewLocationController = new Lang.Class({
         if (!location)
             return;
 
-        this._worldModel.addLocation(location);
+        this._worldModel.addLocation(location, true);
     },
 
     _locationChanged: function(entry) {
-	this._dialog.set_response_sensitive(Gtk.ResponseType.OK, entry.location != null);
+	    this._dialog.set_response_sensitive(Gtk.ResponseType.OK, entry.location != null);
     }
 });
 

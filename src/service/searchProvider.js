@@ -21,9 +21,8 @@ const GLib = imports.gi.GLib;
 const GWeather = imports.gi.GWeather;
 const Lang = imports.lang;
 
-const Util = imports.util;
-const Window = imports.window;
-const World = imports.world;
+const Util = imports.misc.util;
+const World = imports.shared.world;
 
 const SearchProviderInterface = Gio.resources_lookup_data('/org/gnome/shell/ShellSearchProvider2.xml', 0).toArray().toString();
 
@@ -179,20 +178,54 @@ const SearchProvider = new Lang.Class({
         return ret;
     },
 
+    _getPlatformData: function(timestamp) {
+        return {'desktop-startup-id': new GLib.Variant('s', '_TIME' + timestamp) };
+    },
+
+    _activateAction: function(action, parameter, timestamp) {
+        let wrappedParam;
+        if (parameter)
+            wrappedParam = [parameter];
+        else
+            wrappedParam = [];
+
+        Gio.DBus.session.call('org.gnome.Weather.Application',
+                              '/org/gnome/Weather/Application',
+                              'org.freedesktop.Application',
+                              'ActivateAction',
+                              new GLib.Variant('(sava{sv})', [action, wrappedParam,
+                                                              this._getPlatformData(timestamp)]),
+                              null,
+                              Gio.DBusCallFlags.NONE,
+                              -1, null, Lang.bind(this, function(connection, result) {
+                                  try {
+                                      connection.call_finish(result);
+                                  } catch(e) {
+                                      log('Failed to launch application: ' + e);
+                                  }
+
+                                  this._app.release();
+                              }));
+    },
+
     ActivateResult: function(id, terms, timestamp) {
         this._app.hold();
 
         let model = this._app.model;
         let [ok, iter] = model.get_iter_from_string(id);
-        if (!ok)
+        if (!ok) {
+            this._app.release();
             return;
+        }
 
         let info = model.get_value(iter, World.Columns.INFO);
-        let win = new Window.MainWindow({ application: this._app });
+        let location = info.get_location().serialize();
 
-        win.showInfo(info);
-        win.present_with_time(timestamp);
+        this._activateAction('show-location', new GLib.Variant('v', location), timestamp);
+    },
 
-        this._app.release();
-    }
+    LaunchSearch: function(terms, timestamp) {
+        this._app.hold();
+        this._activateAction('new-location', null, timestamp);
+    },
 });

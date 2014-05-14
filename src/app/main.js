@@ -36,10 +36,10 @@ const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
 const Lang = imports.lang;
 
-const Util = imports.util;
-const Window = imports.window;
-const World = imports.world;
-const SearchProvider = imports.searchProvider;
+const Util = imports.misc.util;
+const Window = imports.app.window;
+const World = imports.shared.world;
+const CurrentLocationController = imports.app.currentLocationController;
 
 function initEnvironment() {
     window.getApp = function() {
@@ -54,14 +54,31 @@ const Application = new Lang.Class({
     _init: function() {
         this.parent({ application_id: pkg.name });
         GLib.set_application_name(_("Weather"));
-        if (pkg.moduledir.startsWith('resource:///'))
-            this.set_inactivity_timeout(60000);
-
-        this._searchProvider = new SearchProvider.SearchProvider(this);
     },
 
     _onQuit: function() {
         this.quit();
+    },
+
+    _onShowLocation: function(action, parameter) {
+        let location = this.world.deserialize(parameter.deep_unpack());
+        let win = this._createWindow();
+
+        let info = this.model.getLocationInfo(location);
+        if (!info) {
+            this.model.addLocation(location, false);
+            info = this.model.getLocationInfo(location);
+        }
+
+        win.showInfo(info);
+    },
+
+    _onNewLocation: function(action, parameter) {
+        let win = this.get_active_window();
+        if (!win)
+            win = this._createWindow();
+
+        win.activate_action('new-location', null);
     },
 
     _initAppMenu: function() {
@@ -70,19 +87,6 @@ const Application = new Lang.Class({
 
         let menu = builder.get_object('app-menu');
         this.set_app_menu(menu);
-    },
-
-    vfunc_dbus_register: function(connection, path) {
-        this.parent(connection, path);
-
-        this._searchProvider.export(connection, path);
-        return true;
-    },
-
-    vfunc_dbus_unregister: function(connection, path) {
-        this._searchProvider.unexport(connection);
-
-        this.parent(connection, path);
     },
 
     vfunc_startup: function() {
@@ -95,7 +99,8 @@ const Application = new Lang.Class({
         settings.gtk_application_prefer_dark_theme = true;
 
         this.world = GWeather.Location.get_world();
-        this.model = new World.WorldModel(this.world);
+        this.model = new World.WorldModel(this.world, true);
+        this._currentLocationController = new CurrentLocationController.CurrentLocationController(this.model);
 
         this.model.connect('notify::loading', Lang.bind(this, function() {
             if (this.model.loading)
@@ -108,7 +113,12 @@ const Application = new Lang.Class({
 
         Util.initActions(this,
                          [{ name: 'quit',
-                            activate: this._onQuit }]);
+                            activate: this._onQuit },
+                          { name: 'show-location',
+                            activate: this._onShowLocation,
+                            parameter_type: new GLib.VariantType('v') },
+                          { name: 'new-location',
+                            activate: this._onNewLocation }]);
 
         let gwSettings = new Gio.Settings({ schema: 'org.gnome.GWeather' });
         this.add_action(gwSettings.create_action('temperature-unit'));
@@ -119,7 +129,7 @@ const Application = new Lang.Class({
         this.add_accelerator("<Primary>a", "win.select-all", null);
     },
 
-    vfunc_activate: function() {
+    _createWindow: function() {
         let win = new Window.MainWindow({ application: this });
 
         if (this.model.loading) {
@@ -140,6 +150,12 @@ const Application = new Lang.Class({
         } else {
             win.show();
         }
+
+        return win;
+    },
+
+    vfunc_activate: function() {
+        this._createWindow();
     },
 
     vfunc_shutdown: function() {

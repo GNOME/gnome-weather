@@ -22,9 +22,9 @@ const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
 const Lang = imports.lang;
 
-const Params = imports.params;
-const Strings = imports.strings;
-const Util = imports.util;
+const Params = imports.misc.params;
+const Strings = imports.shared.strings;
+const Util = imports.misc.util;
 
 // In microseconds
 const ONE_DAY = 24*3600*1000*1000;
