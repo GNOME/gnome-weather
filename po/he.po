@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-03 18:12+0200\n"
-"PO-Revision-Date: 2014-02-03 18:15+0200\n"
-"Last-Translator: Yosef Or Boczko <yoseforb@gnome.org>\n"
+"POT-Creation-Date: 2014-05-16 05:15+0300\n"
+"PO-Revision-Date: 2014-05-16 05:16+0300\n"
+"Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -49,11 +49,15 @@ msgid "Current conditions"
 msgstr "תנאים נוכחיים"
 
 #: ../data/city.ui.h:2
+msgid "label"
+msgstr "תווית"
+
+#: ../data/city.ui.h:3
 msgid "Detailed forecast"
 msgstr "תחזית מפורטת"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:58
-#: ../src/window.js:313
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:56
+#: ../src/app/window.js:321
 msgid "Weather"
 msgstr "מזג האוויר"
 
@@ -99,7 +103,7 @@ msgstr "בחירת הכול"
 msgid "Select None"
 msgstr "בחירת כלום"
 
-#: ../data/window.ui.h:3 ../src/window.js:202
+#: ../data/window.ui.h:3 ../src/app/window.js:208
 msgid "Click on locations to select them"
 msgstr "יש ללחוץ על מיקומים כדי לבחור אותם"
 
@@ -127,239 +131,243 @@ msgstr "רענון"
 msgid "Delete"
 msgstr "מחיקה"
 
-#: ../src/city.js:125
+#: ../src/app/city.js:128
 msgid "City view"
 msgstr "תצוגת עיר"
 
-#: ../src/city.js:134
+#: ../src/app/city.js:137
 msgid "Loading…"
 msgstr "בטעינה…"
 
-#: ../src/forecast.js:41
+#: ../src/app/city.js:209
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:41
 msgid "Forecast"
 msgstr "תחזית"
 
-#: ../src/forecast.js:128 ../src/forecast.js:413
+#: ../src/app/forecast.js:128 ../src/app/forecast.js:413
 msgid "Today"
 msgstr "היום"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
+#: ../src/app/forecast.js:134 ../src/app/forecast.js:295
+#: ../src/app/forecast.js:380 ../src/app/forecast.js:415
 msgid "Tomorrow"
 msgstr "מחר"
 
-#: ../src/forecast.js:151
+#: ../src/app/forecast.js:151
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:197 ../src/forecast.js:291
+#: ../src/app/forecast.js:197 ../src/app/forecast.js:291
 msgid "More…"
 msgstr "עוד…"
 
-#: ../src/forecast.js:318
+#: ../src/app/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
-#: ../src/forecast.js:321
+#: ../src/app/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:352
+#: ../src/app/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "תחזית למחר"
 
-#: ../src/forecast.js:354
+#: ../src/app/forecast.js:354
 msgid "Forecast for Today"
 msgstr "תחזית להיום"
 
-#: ../src/forecast.js:356
+#: ../src/app/forecast.js:356
 msgid "%B %d"
 msgstr "%B %d"
 
-#: ../src/searchProvider.js:169
-#, javascript-format
-msgid "%s, %s"
-msgstr "%s, %s"
-
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "יום שני בלילה"
-
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "יום שני בבוקר"
-
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "יום שני אחה״צ"
-
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "יום שני בערב"
-
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "יום שלישי בלילה"
-
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "יום שלישי בבוקר"
-
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "יום שלישי אחה״צ"
-
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "יום שלישי בערב"
-
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "יום רביעי בלילה"
-
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "יום רביעי בבוקר"
-
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "יום רביעי אחה״צ"
-
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "יום רביעי בערב"
-
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "יום חמישי בלילה"
-
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "יום חמישי בבוקר"
-
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "יום חמישי אחה״צ"
-
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "יום חמישי בערב"
-
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "יום שישי בלילה"
-
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "יום שישי בבוקר"
-
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "יום שישי אחה״צ"
-
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "יום שישי בערב"
-
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "יום שבת בלילה"
-
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "יום שבת בבוקר"
-
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "יום שבת אחה״צ"
-
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "יום שישי בערב"
-
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "יום ראשון בלילה"
-
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "יום ראשון בבוקר"
-
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "יום ראשון אחה״צ"
-
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "יום ראשון בערב"
-
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "הלילה"
-
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "הבוקר"
-
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "היום אחה״צ"
-
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "הערב"
-
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "מחר בלילה"
-
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "מחר בבוקר"
-
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "מחר אחה״צ"
-
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "מחר בערב"
-
-#: ../src/window.js:197
+#: ../src/app/window.js:203
 #, c-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "נבחרה אחת"
 msgstr[1] "נבחרו %d"
 
-#: ../src/window.js:223
+#: ../src/app/window.js:229
 msgid "World Weather"
 msgstr "מזג האוויר בעולם"
 
-#: ../src/window.js:312
+#: ../src/app/window.js:320
 msgid "translator-credits"
 msgstr ""
 "ירון שהרבני <sh.yaron@gmail.com>\n"
 "יוסף אור בוצ׳קו <yoseforb@gnome.org>"
 
-#: ../src/window.js:314
+#: ../src/app/window.js:322
 msgid "A weather application"
 msgstr "יישום מזג אוויר"
 
-#: ../src/world.js:214
+#: ../src/service/searchProvider.js:168
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/shared/strings.js:22
+msgid "Monday night"
+msgstr "יום שני בלילה"
+
+#: ../src/shared/strings.js:22
+msgid "Monday morning"
+msgstr "יום שני בבוקר"
+
+#: ../src/shared/strings.js:22
+msgid "Monday afternoon"
+msgstr "יום שני אחה״צ"
+
+#: ../src/shared/strings.js:22
+msgid "Monday evening"
+msgstr "יום שני בערב"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday night"
+msgstr "יום שלישי בלילה"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday morning"
+msgstr "יום שלישי בבוקר"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "יום שלישי אחה״צ"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday evening"
+msgstr "יום שלישי בערב"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday night"
+msgstr "יום רביעי בלילה"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday morning"
+msgstr "יום רביעי בבוקר"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "יום רביעי אחה״צ"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday evening"
+msgstr "יום רביעי בערב"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday night"
+msgstr "יום חמישי בלילה"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday morning"
+msgstr "יום חמישי בבוקר"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday afternoon"
+msgstr "יום חמישי אחה״צ"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday evening"
+msgstr "יום חמישי בערב"
+
+#: ../src/shared/strings.js:26
+msgid "Friday night"
+msgstr "יום שישי בלילה"
+
+#: ../src/shared/strings.js:26
+msgid "Friday morning"
+msgstr "יום שישי בבוקר"
+
+#: ../src/shared/strings.js:26
+msgid "Friday afternoon"
+msgstr "יום שישי אחה״צ"
+
+#: ../src/shared/strings.js:26
+msgid "Friday evening"
+msgstr "יום שישי בערב"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday night"
+msgstr "יום שבת בלילה"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday morning"
+msgstr "יום שבת בבוקר"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday afternoon"
+msgstr "יום שבת אחה״צ"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday evening"
+msgstr "יום שישי בערב"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday night"
+msgstr "יום ראשון בלילה"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday morning"
+msgstr "יום ראשון בבוקר"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday afternoon"
+msgstr "יום ראשון אחה״צ"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday evening"
+msgstr "יום ראשון בערב"
+
+#: ../src/shared/strings.js:31
+msgid "Tonight"
+msgstr "הלילה"
+
+#: ../src/shared/strings.js:31
+msgid "This morning"
+msgstr "הבוקר"
+
+#: ../src/shared/strings.js:31
+msgid "This afternoon"
+msgstr "היום אחה״צ"
+
+#: ../src/shared/strings.js:31
+msgid "This evening"
+msgstr "הערב"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow night"
+msgstr "מחר בלילה"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow morning"
+msgstr "מחר בבוקר"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "מחר אחה״צ"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow evening"
+msgstr "מחר בערב"
+
+#: ../src/shared/world.js:276
 msgid "Cities"
 msgstr "ערים"
 
-#: ../src/world.js:231
+#: ../src/shared/world.js:293
 msgid "World view"
 msgstr "תצוגת עולם"
 
-#: ../src/world.js:258
+#: ../src/shared/world.js:321
 msgid "Add locations"
 msgstr "הוספת מיקומים"
 
-#: ../src/world.js:261
+#: ../src/shared/world.js:324
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "יש להשתמש בלחצן <b>חדש</b> בסרגל הכלים כדי להוסיף מיקומים נוספים ברחבי העולם"
