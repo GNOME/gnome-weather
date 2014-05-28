@@ -1,3 +1,14 @@
+3.13.2
+======
+* Appdata metadata was updated to the new specification
+* The installation folder for the application was renamed
+  to $(datadir)/org.gnome.Weather, removing the final .Application
+  part
+* The search provided was split into a background service,
+  to avoid triggering geolocation without the user consent
+  (only the frontend application does it now)
+* Translation updates
+
 3.13.1
 ======
 * Show local time in city view [Saurabh_P, #705050]
