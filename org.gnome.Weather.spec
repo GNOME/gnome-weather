@@ -8,6 +8,9 @@ URL:		http://wiki.gnome.org/Apps/Weather
 Source0:        %{_distdir}-%{version}.tar.xz
 BuildArch:      x86_64 i686
 
+Provides:       org.gnome.Weather.Application = %{_version}
+Obsoletes:      org.gnome.Weather.Application < 1.13.1
+
 %description
 A small application that allows you to monitor the current weather
 conditions for your city, or anywhere in the world and to access
@@ -24,6 +27,7 @@ make %{?_smp_mflags}
 make install DESTDIR=$RPM_BUILD_ROOT
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 rm -fR $RPM_BUILD_ROOT/%{_bindir}
+rm -fR $RPM_BUILD_ROOT/%{_datadir}/org.gnome.Weather/gir-1.0
 desktop-file-edit $RPM_BUILD_ROOT/%{_datadir}/applications/%{name}.Application.desktop \
     --set-key=X-AppInstall-Package --set-value=%{name}
 
