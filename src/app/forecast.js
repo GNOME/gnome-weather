@@ -353,6 +353,8 @@ const TodaySidebar = new Lang.Class({
         else
             this._headline.label = '<b>' + _("Forecast for Today") + '</b>';
 
+        // Translators: this is the date format for the sidebar date
+        // It's a long date (explicit day name), relative to this week
         this._subline.label = date.format(_("%B %d"));
     },
 
