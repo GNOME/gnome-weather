@@ -29,7 +29,6 @@ const Gd = imports.gi.Gd;
 const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
-const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
 const Lang = imports.lang;
 
