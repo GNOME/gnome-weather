@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application>
-  <id type="desktop">org.gnome.Weather.Application.desktop</id>
+<!-- Copyright 2014 Giovanni Campagna -->
+<component type="desktop">
+  <id>org.gnome.Weather.Application.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+ and CC-BY-2.0 and CC-BY-SA-2.0</project_license>
   <description>
     <_p>
       A small application that allows you to monitor the current weather
-      conditions for your city, or anywhere in the world and to access
-      updated forecasts, up to 7 days, provided by various internet services.
+      conditions for your city, or anywhere in the world.
+    </_p>
+    <_p>
+      It provides access to detailed forecasts, up to 7 days, with hourly
+      details for the current and next day, using various internet services.
+    </_p>
+    <_p>
+      It also integrates with the GNOME Shell, allowing you see the
+      current conditions of any configured city by just typing its name
+      in the Activities Overview.
     </_p>
   </description>
   <screenshots>
-    <screenshot type="default" width="940" height="529">https://help.gnome.org/misc/release-notes/3.8/figures/weather-zurich.png</screenshot>
+    <screenshot type="default">
+      <image width="1002" height="564">https://git.gnome.org/browse/gnome-weather/plain/misc/screenshots/city-view.png</image>
+    </screenshot>
+    <screenshot>
+      <image width="1002" height="564">https://git.gnome.org/browse/gnome-weather/plain/misc/screenshots/world-view.png</image>
+    </screenshot>
+    <screenshot>
+      <image width="1002" height="564">https://git.gnome.org/browse/gnome-weather/plain/misc/screenshots/city-view-sidebar.png</image>
+    </screenshot>
   </screenshots>
   <url type="homepage">https://wiki.gnome.org/Apps/Weather</url>
+  <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather</url>
   <updatecontact>gcampagna_at_src.gnome.org</updatecontact>
-</application>
+</component>

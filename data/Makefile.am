@@ -21,9 +21,9 @@ gsettings_SCHEMAS = $(PACKAGE_NAME).Application.gschema.xml
 
 @GSETTINGS_RULES@
 
-appdatadir = $(datadir)/appdata
-appdata_DATA = $(PACKAGE_NAME).Application.appdata.xml
+appstream_XML = $(PACKAGE_NAME).Application.appdata.xml
 
+@APPSTREAM_XML_RULES@
 @INTLTOOL_XML_RULE@
 
 $(PACKAGE_NAME).Application.service: $(PACKAGE_NAME).Application.service.in
@@ -65,6 +65,7 @@ CLEANFILES = \
 	$(PACKAGE_NAME).Application.data.gresource \
 	$(PACKAGE_NAME).BackgroundService.data.gresource \
 	$(PACKAGE_NAME).Application.appdata.xml \
+	$(PACKAGE_NAME).Application.appdata.valid \
 	$(apps_DATA) \
 	*.valid \
 	gschemas.compiled \
