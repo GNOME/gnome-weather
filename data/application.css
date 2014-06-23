@@ -1,6 +1,6 @@
 #weather-page {
-    text-shadow: inset 1px 1px 3px black;
-    icon-shadow: inset 1px 1px 3px black;
+    text-shadow: 1px 1px 3px black;
+    icon-shadow: 1px 1px 3px black;
 }
 
 #weather-page-placeholder-title {
