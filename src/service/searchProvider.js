@@ -126,11 +126,11 @@ const SearchProvider = new Lang.Class({
             let country = Util.normalizeCasefoldAndUnaccent(getCountryName(location));
             let good = true;
             for (let j = 0; j < terms.length && good; j++) {
-                terms[i] = Util.normalizeCasefoldAndUnaccent(terms[j]);
+                terms[j] = Util.normalizeCasefoldAndUnaccent(terms[j]);
 
-                good = (name.indexOf(terms[i]) >= 0) ||
-                    (city.indexOf(terms[i]) >= 0) ||
-                    (country.indexOf(terms[i]) >= 0);
+                good = (name.indexOf(terms[j]) >= 0) ||
+                    (city.indexOf(terms[j]) >= 0) ||
+                    (country.indexOf(terms[j]) >= 0);
 
                 //log ('Comparing %s against (%s, %s, %s): %s'.format(terms[i],
                 //                                                    name, city, country, good));
