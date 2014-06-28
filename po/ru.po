@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-10 09:14+0000\n"
-"PO-Revision-Date: 2014-03-10 15:09+0300\n"
-"Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
+"POT-Creation-Date: 2014-06-28 08:10+0000\n"
+"PO-Revision-Date: 2014-06-28 21:48+0400\n"
+"Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -52,8 +52,8 @@ msgstr "Текущие условия"
 msgid "Detailed forecast"
 msgstr "Подробный прогноз"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
-#: ../src/window.js:319
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:56
+#: ../src/app/window.js:321
 msgid "Weather"
 msgstr "Погода"
 
@@ -62,15 +62,33 @@ msgid "Show weather conditions and forecast"
 msgstr "Показать погодные условия и прогноз"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#| msgid ""
+#| "A small application that allows you to monitor the current weather "
+#| "conditions for your city, or anywhere in the world and to access updated "
+#| "forecasts, up to 7 days, provided by various internet services."
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
 "Небольшое приложение, которое позволяет отслеживать текущее состояние погоды "
-"для вашего города или любой точки мира, а также предоставляет доступ к "
-"обновляемым прогнозам, до 7 дней, предоставленных различными интернет-"
-"сервисами."
+"для вашего города или любой точки мира."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Оно также предоставляет доступ к подробному прогнозу погоды (до 7 дней) от "
+"различных Интернет-служб."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also integrates with the GNOME Shell, allowing you see the current "
+"conditions of any configured city by just typing its name in the Activities "
+"Overview."
+msgstr ""
+"Приложение обеспечивает интеграцию с GNOME Shell, показывая текущую погоду "
+"для выбранного города (название города вводится в режиме обзора)."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -100,7 +118,7 @@ msgstr "Выбрать все"
 msgid "Select None"
 msgstr "Снять выбор"
 
-#: ../data/window.ui.h:3 ../src/window.js:208
+#: ../data/window.ui.h:3 ../src/app/window.js:208
 msgid "Click on locations to select them"
 msgstr "Нажмите для выбора местоположения"
 
@@ -113,7 +131,6 @@ msgid "Back"
 msgstr "Назад"
 
 #: ../data/window.ui.h:6
-#| msgid "Select All"
 msgid "Select"
 msgstr "Выбрать"
 
@@ -129,239 +146,244 @@ msgstr "Обновить"
 msgid "Delete"
 msgstr "Удалить"
 
-#: ../src/city.js:125
+#: ../src/app/city.js:128
 msgid "City view"
 msgstr "Городской режим просмотра"
 
-#: ../src/city.js:134
+#: ../src/app/city.js:137
 msgid "Loading…"
 msgstr "Загрузка…"
 
-#: ../src/forecast.js:41
-#| msgid "Forecast for Today"
+#: ../src/app/city.js:209
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:41
 msgid "Forecast"
 msgstr "Прогноз"
 
-#: ../src/forecast.js:128 ../src/forecast.js:413
+#: ../src/app/forecast.js:128 ../src/app/forecast.js:415
 msgid "Today"
 msgstr "Сегодня"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
+#: ../src/app/forecast.js:134 ../src/app/forecast.js:295
+#: ../src/app/forecast.js:382 ../src/app/forecast.js:417
 msgid "Tomorrow"
 msgstr "Завтра"
 
-#: ../src/forecast.js:151
+#: ../src/app/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:197 ../src/forecast.js:291
+#: ../src/app/forecast.js:197 ../src/app/forecast.js:291
 msgid "More…"
 msgstr "Ещё…"
 
-#: ../src/forecast.js:318
+#: ../src/app/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:321
+#: ../src/app/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:352
+#: ../src/app/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "Прогноз на завтра"
 
-#: ../src/forecast.js:354
+#: ../src/app/forecast.js:354
 msgid "Forecast for Today"
 msgstr "Прогноз на сегодня"
 
-#: ../src/forecast.js:356
+#: ../src/app/forecast.js:358
 msgid "%B %d"
 msgstr "%d %B"
 
-#: ../src/searchProvider.js:169
-msgid "%s, %s"
-msgstr "%s, %s"
-
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "В понедельник ночью"
-
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "В понедельник утром"
-
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "В понедельник днём"
-
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "В понедельник вечером"
-
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "Во вторник ночью"
-
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "Во вторник утром"
-
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Во вторник днём"
-
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "Во вторник вечером"
-
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "В среду ночью"
-
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "В среду утром"
-
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "В среду днём"
-
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "В среду вечером"
-
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "В четверг ночью"
-
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "В четверг утром"
-
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "В четверг днём"
-
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "В четверг вечером"
-
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "В пятницу ночью"
-
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "В пятницу утром"
-
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "В пятницу днём"
-
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "В пятницу вечером"
-
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "В субботу ночью"
-
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "В субботу утром"
-
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "В субботу днём"
-
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "В субботу вечером"
-
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "В воскресенье ночью"
-
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "В воскресенье утром"
-
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "В воскресенье днём"
-
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "В воскресенье вечером"
-
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "Сегодня ночью"
-
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "Сегодня утром"
-
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "Сегодня днём"
-
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "Сегодня вечером"
-
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "Завтра ночью"
-
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Завтра утром"
-
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Завтра днём"
-
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Завтра вечером"
-
-#: ../src/window.js:203
+#: ../src/app/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "Выделен %d"
 msgstr[1] "Выделено %d"
 msgstr[2] "Выделено %d"
 
-#: ../src/window.js:229
+#: ../src/app/window.js:229
 msgid "World Weather"
 msgstr "Мировая погода"
 
-#: ../src/window.js:318
+#: ../src/app/window.js:320
 msgid "translator-credits"
 msgstr ""
 "Stas Solovey <whats_up@tut.by>, 2012, 2013.Юрий Мясоедов <ymyasoedov@yandex."
 "ru>, 2014."
 
-#: ../src/window.js:320
+#: ../src/app/window.js:322
 msgid "A weather application"
 msgstr "Программа прогноза погоды"
 
-#: ../src/world.js:214
+#: ../src/service/searchProvider.js:168
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/shared/strings.js:22
+msgid "Monday night"
+msgstr "В понедельник ночью"
+
+#: ../src/shared/strings.js:22
+msgid "Monday morning"
+msgstr "В понедельник утром"
+
+#: ../src/shared/strings.js:22
+msgid "Monday afternoon"
+msgstr "В понедельник днём"
+
+#: ../src/shared/strings.js:22
+msgid "Monday evening"
+msgstr "В понедельник вечером"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday night"
+msgstr "Во вторник ночью"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday morning"
+msgstr "Во вторник утром"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Во вторник днём"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday evening"
+msgstr "Во вторник вечером"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday night"
+msgstr "В среду ночью"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday morning"
+msgstr "В среду утром"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "В среду днём"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday evening"
+msgstr "В среду вечером"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday night"
+msgstr "В четверг ночью"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday morning"
+msgstr "В четверг утром"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday afternoon"
+msgstr "В четверг днём"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday evening"
+msgstr "В четверг вечером"
+
+#: ../src/shared/strings.js:26
+msgid "Friday night"
+msgstr "В пятницу ночью"
+
+#: ../src/shared/strings.js:26
+msgid "Friday morning"
+msgstr "В пятницу утром"
+
+#: ../src/shared/strings.js:26
+msgid "Friday afternoon"
+msgstr "В пятницу днём"
+
+#: ../src/shared/strings.js:26
+msgid "Friday evening"
+msgstr "В пятницу вечером"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday night"
+msgstr "В субботу ночью"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday morning"
+msgstr "В субботу утром"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday afternoon"
+msgstr "В субботу днём"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday evening"
+msgstr "В субботу вечером"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday night"
+msgstr "В воскресенье ночью"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday morning"
+msgstr "В воскресенье утром"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday afternoon"
+msgstr "В воскресенье днём"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday evening"
+msgstr "В воскресенье вечером"
+
+#: ../src/shared/strings.js:31
+msgid "Tonight"
+msgstr "Сегодня ночью"
+
+#: ../src/shared/strings.js:31
+msgid "This morning"
+msgstr "Сегодня утром"
+
+#: ../src/shared/strings.js:31
+msgid "This afternoon"
+msgstr "Сегодня днём"
+
+#: ../src/shared/strings.js:31
+msgid "This evening"
+msgstr "Сегодня вечером"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow night"
+msgstr "Завтра ночью"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Завтра утром"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Завтра днём"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Завтра вечером"
+
+#: ../src/shared/world.js:276
 msgid "Cities"
 msgstr "Города"
 
-#: ../src/world.js:231
-#| msgid "World Weather"
+#: ../src/shared/world.js:293
 msgid "World view"
 msgstr "Мировой режим просмотра"
 
-#: ../src/world.js:259
+#: ../src/shared/world.js:321
 msgid "Add locations"
 msgstr "Добавить местоположения"
 
-#: ../src/world.js:262
+#: ../src/shared/world.js:324
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Для добавления дополнительных местоположений используйте кнопку <b>Создать</"
