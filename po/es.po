@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-05-08 08:06+0000\n"
-"PO-Revision-Date: 2014-05-10 18:52+0200\n"
+"POT-Creation-Date: 2014-06-30 08:13+0000\n"
+"PO-Revision-Date: 2014-06-30 12:51+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -49,15 +49,11 @@ msgid "Current conditions"
 msgstr "Condiciones actuales"
 
 #: ../data/city.ui.h:2
-msgid "label"
-msgstr "etiqueta"
-
-#: ../data/city.ui.h:3
 msgid "Detailed forecast"
 msgstr "Pronóstico detallado"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
-#: ../src/window.js:321
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:56
+#: ../src/app/window.js:321
 msgid "Weather"
 msgstr "Meteorología"
 
@@ -66,14 +62,35 @@ msgid "Show weather conditions and forecast"
 msgstr "Mostrar las condiciones meteorológicas y el pronóstico"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#| msgid ""
+#| "A small application that allows you to monitor the current weather "
+#| "conditions for your city, or anywhere in the world and to access updated "
+#| "forecasts, up to 7 days, provided by various internet services."
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
 "Una pequeña aplicación que le permite monitorizar el tiempo actual en su "
-"ciudad, o en cualquier lugar del mundo y acceder a pronósticos actualizados, "
-"hasta 7 días, proporcionadas por varios servicios en Internet."
+"ciudad, o en cualquier lugar del mundo."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Proporciona acceso a pronósticos actualizados, hasta 7 días, con detalles "
+"cada hora para el día actual y el siguiente, usando varios servicios de "
+"Internet."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also integrates with the GNOME Shell, allowing you see the current "
+"conditions of any configured city by just typing its name in the Activities "
+"Overview."
+msgstr ""
+"También se integra con GNOME Shell, permitiéndole ver las condiciones "
+"actuales de cualquier ciudad configurada simplemente escribiendo su nombre "
+"en la vista de actividades."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -103,7 +120,7 @@ msgstr "Seleccionar todo"
 msgid "Select None"
 msgstr "Seleccionar nada"
 
-#: ../data/window.ui.h:3 ../src/window.js:208
+#: ../data/window.ui.h:3 ../src/app/window.js:208
 msgid "Click on locations to select them"
 msgstr "Pulse sobre las ubicaciones para seleccionarlas"
 
@@ -131,245 +148,248 @@ msgstr "Actualizar"
 msgid "Delete"
 msgstr "Eliminar"
 
-#: ../src/city.js:128
+#: ../src/app/city.js:128
 msgid "City view"
 msgstr "Vista de la ciudad"
 
-#: ../src/city.js:137
+#: ../src/app/city.js:137
 msgid "Loading…"
 msgstr "Cargando…"
 
-#: ../src/city.js:209
+#: ../src/app/city.js:209
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/forecast.js:41
+#: ../src/app/forecast.js:41
 msgid "Forecast"
 msgstr "Pronóstico"
 
-#: ../src/forecast.js:128 ../src/forecast.js:413
+#: ../src/app/forecast.js:128 ../src/app/forecast.js:415
 msgid "Today"
 msgstr "Hoy"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
+#: ../src/app/forecast.js:134 ../src/app/forecast.js:295
+#: ../src/app/forecast.js:382 ../src/app/forecast.js:417
 msgid "Tomorrow"
 msgstr "Mañana"
 
-#: ../src/forecast.js:151
+#: ../src/app/forecast.js:151
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:197 ../src/forecast.js:291
+#: ../src/app/forecast.js:197 ../src/app/forecast.js:291
 msgid "More…"
 msgstr "Más…"
 
-#: ../src/forecast.js:318
+#: ../src/app/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:321
+#: ../src/app/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:352
+#: ../src/app/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "Pronóstico para mañana"
 
-#: ../src/forecast.js:354
+#: ../src/app/forecast.js:354
 msgid "Forecast for Today"
 msgstr "Pronóstico para hoy"
 
-#: ../src/forecast.js:356
+#: ../src/app/forecast.js:358
 msgid "%B %d"
 msgstr "%B %d"
 
-#: ../src/searchProvider.js:169
-#, javascript-format
-msgid "%s, %s"
-msgstr "%s, %s"
-
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "Lunes por la noche"
-
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "Lunes por la mañana"
-
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "Lunes por la tarde"
-
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "Lunes a medianoche"
-
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "Martes por la noche"
-
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "Martes por la mañana"
-
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Martes por la tarde"
-
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "Martes a medianoche"
-
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "Miércoles por la noche"
-
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "Miércoles por la mañana"
-
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "Miércoles por la tarde"
-
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "Miércoles a medianoche"
-
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "Jueves por la noche"
-
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "Jueves por la mañana"
-
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "Jueves por la tarde"
-
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "Jueves a medianoche"
-
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "Viernes por la noche"
-
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "Viernes por la mañana"
-
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "Viernes por la tarde"
-
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "Viernes a medianoche"
-
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "Sábado por la noche"
-
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "Sábado por la mañana"
-
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "Sábado por la tarde"
-
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "Sábado a medianoche"
-
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "Domingo por la noche"
-
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "Domingo por la mañana"
-
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "Domingo por la tarde"
-
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "Domingo a medianoche"
-
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "Esta noche"
-
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "Esta mañana"
-
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "Esta tarde"
-
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "Esta noche"
-
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "Mañana por la noche"
-
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Mañana por la mañana"
-
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Mañana por la tarde"
-
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Mañana a medianoche"
-
-#: ../src/window.js:203
+#: ../src/app/window.js:203
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d seleccionada"
 msgstr[1] "%d seleccionadas"
 
-#: ../src/window.js:229
+#: ../src/app/window.js:229
 msgid "World Weather"
 msgstr "Meteorología del mundo"
 
-#: ../src/window.js:320
+#: ../src/app/window.js:320
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013"
 
-#: ../src/window.js:322
+#: ../src/app/window.js:322
 msgid "A weather application"
 msgstr "Una aplicación de meteorología"
 
-#: ../src/world.js:251
+#: ../src/service/searchProvider.js:168
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/shared/strings.js:22
+msgid "Monday night"
+msgstr "Lunes por la noche"
+
+#: ../src/shared/strings.js:22
+msgid "Monday morning"
+msgstr "Lunes por la mañana"
+
+#: ../src/shared/strings.js:22
+msgid "Monday afternoon"
+msgstr "Lunes por la tarde"
+
+#: ../src/shared/strings.js:22
+msgid "Monday evening"
+msgstr "Lunes a medianoche"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday night"
+msgstr "Martes por la noche"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday morning"
+msgstr "Martes por la mañana"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Martes por la tarde"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday evening"
+msgstr "Martes a medianoche"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday night"
+msgstr "Miércoles por la noche"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday morning"
+msgstr "Miércoles por la mañana"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Miércoles por la tarde"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday evening"
+msgstr "Miércoles a medianoche"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday night"
+msgstr "Jueves por la noche"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday morning"
+msgstr "Jueves por la mañana"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Jueves por la tarde"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday evening"
+msgstr "Jueves a medianoche"
+
+#: ../src/shared/strings.js:26
+msgid "Friday night"
+msgstr "Viernes por la noche"
+
+#: ../src/shared/strings.js:26
+msgid "Friday morning"
+msgstr "Viernes por la mañana"
+
+#: ../src/shared/strings.js:26
+msgid "Friday afternoon"
+msgstr "Viernes por la tarde"
+
+#: ../src/shared/strings.js:26
+msgid "Friday evening"
+msgstr "Viernes a medianoche"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday night"
+msgstr "Sábado por la noche"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday morning"
+msgstr "Sábado por la mañana"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Sábado por la tarde"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday evening"
+msgstr "Sábado a medianoche"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday night"
+msgstr "Domingo por la noche"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday morning"
+msgstr "Domingo por la mañana"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Domingo por la tarde"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday evening"
+msgstr "Domingo a medianoche"
+
+#: ../src/shared/strings.js:31
+msgid "Tonight"
+msgstr "Esta noche"
+
+#: ../src/shared/strings.js:31
+msgid "This morning"
+msgstr "Esta mañana"
+
+#: ../src/shared/strings.js:31
+msgid "This afternoon"
+msgstr "Esta tarde"
+
+#: ../src/shared/strings.js:31
+msgid "This evening"
+msgstr "Esta noche"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow night"
+msgstr "Mañana por la noche"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Mañana por la mañana"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Mañana por la tarde"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Mañana a medianoche"
+
+#: ../src/shared/world.js:276
 msgid "Cities"
 msgstr "Ciudades"
 
-#: ../src/world.js:268
+#: ../src/shared/world.js:293
 msgid "World view"
 msgstr "Vista mundial"
 
-#: ../src/world.js:296
+#: ../src/shared/world.js:321
 msgid "Add locations"
 msgstr "Añadir ubicaciones"
 
-#: ../src/world.js:299
+#: ../src/shared/world.js:324
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Use el botón <b>Nueva</b> en la barra de herramientas para añadir más "
 "ubicaciones mundiales."
+
+#~ msgid "label"
+#~ msgstr "etiqueta"
 
 #~ msgid "About Weather"
 #~ msgstr "Acerca de Meteorología"
