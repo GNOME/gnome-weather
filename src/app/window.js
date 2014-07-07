@@ -133,10 +133,6 @@ const MainWindow = new Lang.Class({
         let goWorldButton = builder.get_object('world-button');
         this._pageWidgets[Page.CITY].push(goWorldButton);
 
-        let goWorldButtonImage = builder.get_object('world-button-image');
-        goWorldButtonImage.icon_name = (goWorldButton.get_direction() == Gtk.TextDirection.RTL ?
-                                        'go-previous-rtl-symbolic' : 'go-previous-symbolic');
-
         let select = builder.get_object('select-button');
         this._pageWidgets[Page.WORLD].push(select);
 

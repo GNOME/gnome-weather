@@ -70,13 +70,11 @@ const WeatherWidget = new Lang.Class({
     },
 
     _syncRevealButton: function() {
-        let rtl = this.get_direction() == Gtk.TextDirection.RTL;
-
         if (this._revealer.reveal_child) {
-            this._revealButton.get_child().icon_name = rtl ? 'go-next-rtl-symbolic' : 'go-next-symbolic';
+            this._revealButton.get_child().icon_name = 'go-next-symbolic';
             this._revealButton.get_accessible().ref_state_set().add_state(Atk.StateType.CHECKED);
         } else {
-            this._revealButton.get_child().icon_name = rtl ? 'go-previous-rtl-symbolic' : 'go-previous-symbolic';
+            this._revealButton.get_child().icon_name = 'go-previous-symbolic';
             this._revealButton.get_accessible().ref_state_set().remove_state(Atk.StateType.CHECKED);
         }
     },
