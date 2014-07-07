@@ -14,10 +14,6 @@ $(PACKAGE_NAME).BackgroundService.src.gresource: $(PACKAGE_NAME).BackgroundServi
 resourcedir = $(pkgdatadir)
 resource_DATA = $(PACKAGE_NAME).Application.src.gresource $(PACKAGE_NAME).BackgroundService.src.gresource
 
-# Legacy, until we can depend on package.js provided by gjs
-jsdir = $(pkgdatadir)
-dist_js_DATA = package.js
-
 org.gnome.Weather.Application: org.gnome.Weather.Application.in
 	$(AM_V_GEN) sed \
 		-e "s|[@]GJS@|$(GJS)|g" \
