@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: libgweather\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-23 09:09+0000\n"
-"PO-Revision-Date: 2014-02-23 14:26+0100\n"
+"POT-Creation-Date: 2014-07-11 08:08+0000\n"
+"PO-Revision-Date: 2014-07-11 12:13+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig http://www.foramnagaidhlig.net\n"
 "Language: gd\n"
@@ -35,7 +35,6 @@ msgid "Celsius"
 msgstr "Celsius"
 
 #: ../data/app-menu.ui.h:4
-#| msgid "'fahrenheit'"
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
@@ -55,9 +54,8 @@ msgstr "An aimsir an-dràsta"
 msgid "Detailed forecast"
 msgstr "Ro-aithris mionaideach"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
-#: ../src/window.js:319
-#| msgid "GWeather"
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:56
+#: ../src/app/window.js:321
 msgid "Weather"
 msgstr "Aimsir"
 
@@ -66,17 +64,37 @@ msgid "Show weather conditions and forecast"
 msgstr "Seall an aimsir an-dràsta agus ro-aithris"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#| msgid ""
+#| "A small application that allows you to monitor the current weather "
+#| "conditions for your city, or anywhere in the world and to access updated "
+#| "forecasts, up to 7 days, provided by various internet services."
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
 "Aplacaid bheag a leigeas leat sùil a chumail air staid na h-aimsire sa "
-"bhaile agad no àite sam bith air an t-saoghal agus a bheir dhut ro-aithris "
-"ùr suas gu 7 làithean le taic caochladh sheirbheisean eadar-lìn."
+"bhaile agad no àite sam bith air an t-saoghal."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Bheir e dhut ro-aithris mionaideach suas gu 7 làithean le fiosrachadh airson "
+"gach uair airson an diugh 's a-màireach le taic o chaochladh sheirbheisean "
+"eadar-lìn."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also integrates with the GNOME Shell, allowing you see the current "
+"conditions of any configured city by just typing its name in the Activities "
+"Overview."
+msgstr ""
+"Gabhaidh amalachadh leis an t-slige GNOME 's mar sin cha leig thu leas ach "
+"ainm baile a sgrìobhadh ann am foir-shealladh nan gnìomhachdan ach am faic "
+"thu an aimsir airson a' bhaile ud."
 
 #: ../data/new-location-dialog.ui.h:1
-#| msgid "Default location"
 msgid "New Location"
 msgstr "Ionad ùr"
 
@@ -105,7 +123,7 @@ msgstr "Tagh na h-uile"
 msgid "Select None"
 msgstr "Na tagh gin"
 
-#: ../data/window.ui.h:3 ../src/window.js:208
+#: ../data/window.ui.h:3 ../src/app/window.js:208
 msgid "Click on locations to select them"
 msgstr "Briog air ionadan gus an taghadh"
 
@@ -133,207 +151,61 @@ msgstr "Ath-nuadhaich"
 msgid "Delete"
 msgstr "Sguab às"
 
-#: ../src/city.js:125
+#: ../src/app/city.js:128
 msgid "City view"
 msgstr "Sealladh baile"
 
-#: ../src/city.js:134
+#: ../src/app/city.js:137
 msgid "Loading…"
 msgstr "'Ga luchdadh…"
 
-#: ../src/forecast.js:41
-#| msgid "Overcast"
+#: ../src/app/city.js:209
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:41
 msgid "Forecast"
 msgstr "Ro-aithris"
 
-#: ../src/forecast.js:128 ../src/forecast.js:413
+#: ../src/app/forecast.js:128 ../src/app/forecast.js:415
 msgid "Today"
 msgstr "An-diugh"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
+#: ../src/app/forecast.js:134 ../src/app/forecast.js:295
+#: ../src/app/forecast.js:382 ../src/app/forecast.js:417
 msgid "Tomorrow"
 msgstr "A-màireach"
 
-#: ../src/forecast.js:151
+#: ../src/app/forecast.js:151
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:197 ../src/forecast.js:291
+#: ../src/app/forecast.js:197 ../src/app/forecast.js:291
 msgid "More…"
 msgstr "Barrachd…"
 
-#: ../src/forecast.js:318
+#: ../src/app/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:321
+#: ../src/app/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:352
+#: ../src/app/forecast.js:352
 msgid "Forecast for Tomorrow"
 msgstr "Ro-aithris airson a-màireach"
 
-#: ../src/forecast.js:354
+#: ../src/app/forecast.js:354
 msgid "Forecast for Today"
 msgstr "Ro-aithris airson an-diugh"
 
-#: ../src/forecast.js:356
+#: ../src/app/forecast.js:358
 msgid "%B %d"
 msgstr "%B %d"
 
-#: ../src/searchProvider.js:169
-#, javascript-format
-msgid "%s, %s"
-msgstr "%s, %s"
-
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "Oidhche Luain"
-
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "Madainn DiLuain"
-
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "Coin-fheasgar DiLuain"
-
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "Àrd-fheasgar DiLuain"
-
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "Oidhche Mhàirt"
-
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "Madainn DiMàirt"
-
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Coin-fheasgar DiMàrt"
-
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "Àrd-fheasgar DiMàirt"
-
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "Oidhche Chiadain"
-
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "Madainn DiCiadain"
-
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "Coin-fheasgar DiCiadain"
-
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "Àrd-fheasgar DiCiadain"
-
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "Oidhche ArDaoin"
-
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "Madainn DiarDaoin"
-
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "Coin-fheasgar DiarDaoin"
-
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "Àrd-fheasgar DiarDaoin"
-
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "Oidhche hAoine"
-
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "Madainn DihAoine"
-
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "Coin-fheasgar DihAoine"
-
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "Àrd-fheasgar DihAoine"
-
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "Oidhche Shathairne"
-
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "Madainn DiSathairne"
-
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "Coin-fheasgar DiSathairne"
-
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "Àrd-fheasgar DiSathairne"
-
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "Oidhche Dhòmhnaich"
-
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "Madainn DiDòmhnaich"
-
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "Coin-fheasgar DiDòmhnaich"
-
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "Àrd-fheasgar DiDòmhnaich"
-
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "A-nochd"
-
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "Madainn an-diugh"
-
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "Coin-fheasgar an-diugh"
-
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "Àrd-fheasgar an-diugh"
-
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "An ath-oidhche"
-
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Sa mhadainn a-màireach"
-
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Sa coin-fheasgar a-màireach"
-
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "San àrd-fheasgar a-màireach"
-
-#: ../src/window.js:203
+#: ../src/app/window.js:203
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
@@ -342,37 +214,184 @@ msgstr[1] "%d air an taghadh"
 msgstr[2] "%d air an taghadh"
 msgstr[3] "%d air an taghadh"
 
-#: ../src/window.js:229
-#| msgid "GWeather"
+#: ../src/app/window.js:229
 msgid "World Weather"
 msgstr "Aimsir an t-saoghail"
 
-#: ../src/window.js:318
+#: ../src/app/window.js:320
 msgid "translator-credits"
 msgstr "GunChleoc http://www.foramnagaidhlig.net"
 
-#: ../src/window.js:320
+#: ../src/app/window.js:322
 msgid "A weather application"
 msgstr "Aplacaid aimsire"
 
-#: ../src/world.js:214
+#: ../src/service/searchProvider.js:168
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/shared/strings.js:22
+msgid "Monday night"
+msgstr "Oidhche Luain"
+
+#: ../src/shared/strings.js:22
+msgid "Monday morning"
+msgstr "Madainn DiLuain"
+
+#: ../src/shared/strings.js:22
+msgid "Monday afternoon"
+msgstr "Coin-fheasgar DiLuain"
+
+#: ../src/shared/strings.js:22
+msgid "Monday evening"
+msgstr "Àrd-fheasgar DiLuain"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday night"
+msgstr "Oidhche Mhàirt"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday morning"
+msgstr "Madainn DiMàirt"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Coin-fheasgar DiMàrt"
+
+#: ../src/shared/strings.js:23
+msgid "Tuesday evening"
+msgstr "Àrd-fheasgar DiMàirt"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday night"
+msgstr "Oidhche Chiadain"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday morning"
+msgstr "Madainn DiCiadain"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Coin-fheasgar DiCiadain"
+
+#: ../src/shared/strings.js:24
+msgid "Wednesday evening"
+msgstr "Àrd-fheasgar DiCiadain"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday night"
+msgstr "Oidhche ArDaoin"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday morning"
+msgstr "Madainn DiarDaoin"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Coin-fheasgar DiarDaoin"
+
+#: ../src/shared/strings.js:25
+msgid "Thursday evening"
+msgstr "Àrd-fheasgar DiarDaoin"
+
+#: ../src/shared/strings.js:26
+msgid "Friday night"
+msgstr "Oidhche hAoine"
+
+#: ../src/shared/strings.js:26
+msgid "Friday morning"
+msgstr "Madainn DihAoine"
+
+#: ../src/shared/strings.js:26
+msgid "Friday afternoon"
+msgstr "Coin-fheasgar DihAoine"
+
+#: ../src/shared/strings.js:26
+msgid "Friday evening"
+msgstr "Àrd-fheasgar DihAoine"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday night"
+msgstr "Oidhche Shathairne"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday morning"
+msgstr "Madainn DiSathairne"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Coin-fheasgar DiSathairne"
+
+#: ../src/shared/strings.js:27
+msgid "Saturday evening"
+msgstr "Àrd-fheasgar DiSathairne"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday night"
+msgstr "Oidhche Dhòmhnaich"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday morning"
+msgstr "Madainn DiDòmhnaich"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Coin-fheasgar DiDòmhnaich"
+
+#: ../src/shared/strings.js:28
+msgid "Sunday evening"
+msgstr "Àrd-fheasgar DiDòmhnaich"
+
+#: ../src/shared/strings.js:31
+msgid "Tonight"
+msgstr "A-nochd"
+
+#: ../src/shared/strings.js:31
+msgid "This morning"
+msgstr "Madainn an-diugh"
+
+#: ../src/shared/strings.js:31
+msgid "This afternoon"
+msgstr "Coin-fheasgar an-diugh"
+
+#: ../src/shared/strings.js:31
+msgid "This evening"
+msgstr "Àrd-fheasgar an-diugh"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow night"
+msgstr "An ath-oidhche"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Sa mhadainn a-màireach"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Sa coin-fheasgar a-màireach"
+
+#: ../src/shared/strings.js:32
+msgid "Tomorrow evening"
+msgstr "San àrd-fheasgar a-màireach"
+
+#: ../src/shared/world.js:276
 msgid "Cities"
 msgstr "Bailtean"
 
-#: ../src/world.js:231
+#: ../src/shared/world.js:293
 msgid "World view"
 msgstr "Sealladh an t-saoghail"
 
-#: ../src/world.js:258
-#| msgid "Default location"
+#: ../src/shared/world.js:321
 msgid "Add locations"
 msgstr "Cuir ionadan ris"
 
-#: ../src/world.js:261
+#: ../src/shared/world.js:324
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
-"Cleachd am putan <b>Ùr</b> air a' bhàr-inneal gus barrachd ionadan an "
-"t-saoghail a chur ris"
+"Cleachd am putan <b>Ùr</b> air a' bhàr-inneal gus barrachd ionadan an t-"
+"saoghail a chur ris"
 
 #~ msgid "Location Entry"
 #~ msgstr "Cur a-steach an ionaid"
