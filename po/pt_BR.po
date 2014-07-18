@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-05-21 07:52+0000\n"
-"PO-Revision-Date: 2014-05-21 13:47-0300\n"
+"POT-Creation-Date: 2014-07-17 13:46+0000\n"
+"PO-Revision-Date: 2014-07-18 14:28-0300\n"
 "Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -54,7 +54,7 @@ msgid "Detailed forecast"
 msgstr "Previsão de tempo detalhada"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:56
-#: ../src/app/window.js:321
+#: ../src/app/window.js:317
 msgid "Weather"
 msgstr "Meteorologia"
 
@@ -65,13 +65,29 @@ msgstr "Mostra condições meteorológicas e previsão do tempo"
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
 "Um pequeno aplicativo que permite a você monitorar as atuais condições "
-"meteorológicas da sua cidade, ou qualquer lugar do mundo, e acessar "
-"previsões do tempo, de até 7 dias, oferecidas por vários serviços da "
+"meteorológicas da sua cidade, ou qualquer lugar do mundo."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Fornece acesso a previsões de tempo detalhadas, de até 7 dias, com detalhes "
+"de hora em hora para o dia atual e para o próximo, usando vários serviços da "
 "internet."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also integrates with the GNOME Shell, allowing you see the current "
+"conditions of any configured city by just typing its name in the Activities "
+"Overview."
+msgstr ""
+"Ele também integra-se com o GNOME Shell, permitindo que você veja as "
+"condições atuais de qualquer cidade configurada, bastando digitar o nome "
+"dela no Panorama de Atividades."
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -101,7 +117,7 @@ msgstr "Selecionar todos"
 msgid "Select None"
 msgstr "Selecionar nenhum"
 
-#: ../data/window.ui.h:3 ../src/app/window.js:208
+#: ../data/window.ui.h:3 ../src/app/window.js:204
 msgid "Click on locations to select them"
 msgstr "Clique nas localizações para selecioná-las"
 
@@ -129,15 +145,15 @@ msgstr "Atualizar"
 msgid "Delete"
 msgstr "Excluir"
 
-#: ../src/app/city.js:128
+#: ../src/app/city.js:126
 msgid "City view"
 msgstr "Visão da cidade"
 
-#: ../src/app/city.js:137
+#: ../src/app/city.js:135
 msgid "Loading…"
 msgstr "Carregando…"
 
-#: ../src/app/city.js:209
+#: ../src/app/city.js:207
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -145,12 +161,12 @@ msgstr "%H:%M"
 msgid "Forecast"
 msgstr "Previsão do tempo"
 
-#: ../src/app/forecast.js:128 ../src/app/forecast.js:413
+#: ../src/app/forecast.js:128 ../src/app/forecast.js:415
 msgid "Today"
 msgstr "Hoje"
 
 #: ../src/app/forecast.js:134 ../src/app/forecast.js:295
-#: ../src/app/forecast.js:380 ../src/app/forecast.js:415
+#: ../src/app/forecast.js:382 ../src/app/forecast.js:417
 msgid "Tomorrow"
 msgstr "Amanhã"
 
@@ -179,28 +195,28 @@ msgstr "Previsão do tempo para amanhã"
 msgid "Forecast for Today"
 msgstr "Previsão do tempo para hoje"
 
-#: ../src/app/forecast.js:356
+#: ../src/app/forecast.js:358
 msgid "%B %d"
 msgstr "%e de %B"
 
-#: ../src/app/window.js:203
+#: ../src/app/window.js:199
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d selecionada"
 msgstr[1] "%d selecionadas"
 
-#: ../src/app/window.js:229
+#: ../src/app/window.js:225
 msgid "World Weather"
 msgstr "Meteorologia mundial"
 
-#: ../src/app/window.js:320
+#: ../src/app/window.js:316
 msgid "translator-credits"
 msgstr ""
 "Enrico Nicoletto <liverig@gmail.com>\n"
 "Rafael Ferreira <rafael.f.f1@gmail.com>"
 
-#: ../src/app/window.js:322
+#: ../src/app/window.js:318
 msgid "A weather application"
 msgstr "Um aplicativo de meteorologia"
 
