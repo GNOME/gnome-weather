@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-05-18 11:12+0000\n"
-"PO-Revision-Date: 2014-06-19 16:49+0700\n"
+"POT-Creation-Date: 2014-07-17 13:46+0000\n"
+"PO-Revision-Date: 2014-07-19 17:08+0700\n"
 "Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
@@ -52,7 +52,7 @@ msgid "Detailed forecast"
 msgstr "รายละเอียดการพยากรณ์"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:56
-#: ../src/app/window.js:321
+#: ../src/app/window.js:317
 msgid "Weather"
 msgstr "รายงานอากาศ"
 
@@ -63,11 +63,26 @@ msgstr "แสดงสภาพอากาศและการพยากร
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
+msgstr "โปรแกรมเล็กๆ ที่ช่วยคุณติดตามสภาพอากาศปัจจุบันของเมืองของคุณ หรือที่ใดๆ ในโลก"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
 msgstr ""
-"โปรแกรมเล็กๆ ที่ช่วยคุณติดตามสภาพอากาศปัจจุบันของเมืองของคุณ หรือที่ใดๆ ในโลก "
-"และเข้าถึงข้อมูลพยากรณ์อากาศ 7 วันข้างหน้าที่ทันเหตุการณ์ จากบริการต่างๆ หลายแหล่งในอินเทอร์เน็ต"
+"คุณจะสามารถเข้าถึงข้อมูลพยากรณ์อากาศ 7 วันข้างหน้า "
+"พร้อมรายละเอียดเป็นรายชั่วโมงสำหรับวันปัจจุบันและวันถัดไป จากบริการต่างๆ "
+"หลายแหล่งในอินเทอร์เน็ต"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also integrates with the GNOME Shell, allowing you see the current "
+"conditions of any configured city by just typing its name in the Activities "
+"Overview."
+msgstr ""
+"นอกจากนี้ยังเชื่อมรวมกับเชลล์ GNOME ทำให้คุณเห็นสภาพปัจจุบันของเมืองใดๆ ที่ตั้งค่าไว้ "
+"โดยเพียงพิมพ์ชื่อเมืองในภาพรวมกิจกรรม"
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "New Location"
@@ -97,7 +112,7 @@ msgstr "เลือกทั้งหมด"
 msgid "Select None"
 msgstr "ล้างการเลือก"
 
-#: ../data/window.ui.h:3 ../src/app/window.js:208
+#: ../data/window.ui.h:3 ../src/app/window.js:204
 msgid "Click on locations to select them"
 msgstr "คลิกตำแหน่งเพื่อเลือก"
 
@@ -125,15 +140,15 @@ msgstr "เรียกใหม่"
 msgid "Delete"
 msgstr "ลบ"
 
-#: ../src/app/city.js:128
+#: ../src/app/city.js:126
 msgid "City view"
 msgstr "มุมมองเมือง"
 
-#: ../src/app/city.js:137
+#: ../src/app/city.js:135
 msgid "Loading…"
 msgstr "กำลังโหลด…"
 
-#: ../src/app/city.js:209
+#: ../src/app/city.js:207
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -141,12 +156,12 @@ msgstr "%H:%M"
 msgid "Forecast"
 msgstr "การพยากรณ์"
 
-#: ../src/app/forecast.js:128 ../src/app/forecast.js:413
+#: ../src/app/forecast.js:128 ../src/app/forecast.js:415
 msgid "Today"
 msgstr "วันนี้"
 
 #: ../src/app/forecast.js:134 ../src/app/forecast.js:295
-#: ../src/app/forecast.js:380 ../src/app/forecast.js:415
+#: ../src/app/forecast.js:382 ../src/app/forecast.js:417
 msgid "Tomorrow"
 msgstr "พรุ่งนี้"
 
@@ -175,25 +190,25 @@ msgstr "พยากรณ์อากาศพรุ่งนี้"
 msgid "Forecast for Today"
 msgstr "พยากรณ์อากาศวันนี้"
 
-#: ../src/app/forecast.js:356
+#: ../src/app/forecast.js:358
 msgid "%B %d"
 msgstr "%d %B"
 
-#: ../src/app/window.js:203
+#: ../src/app/window.js:199
 #, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "เลือกอยู่ %d รายการ"
 
-#: ../src/app/window.js:229
+#: ../src/app/window.js:225
 msgid "World Weather"
 msgstr "สภาพอากาศโลก"
 
-#: ../src/app/window.js:320
+#: ../src/app/window.js:316
 msgid "translator-credits"
 msgstr "Akom Chotiphantawanon"
 
-#: ../src/app/window.js:322
+#: ../src/app/window.js:318
 msgid "A weather application"
 msgstr "โปรแกรมรายงานอากาศ"
 
