@@ -1,3 +1,10 @@
+3.13.4
+======
+* We now use package.js from gjs upstream
+* Fixed search-provider [Debarshi Ray, #732344]
+* Misc fixes
+* Translation updates
+
 3.13.3
 ======
 * Updates to the appstream metadata, and new screenshots
