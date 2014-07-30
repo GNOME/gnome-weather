@@ -16,8 +16,6 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const GLib = imports.gi.GLib;
-const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
 const Lang = imports.lang;
@@ -27,59 +25,10 @@ const Params = imports.misc.params;
 const World = imports.shared.world;
 const Util = imports.misc.util;
 
-const Gettext = imports.gettext;
-const Tweener = imports.tweener.tweener;
-
 const Page = {
     WORLD: 0,
     CITY: 1
 };
-
-const NewLocationController = new Lang.Class({
-    Name: 'NewLocationController',
-
-    _init: function(parentWindow, worldModel) {
-        this._worldModel = worldModel;
-
-        let builder = Util.loadUI('/org/gnome/Weather/Application/new-location-dialog.ui',
-                                  { 'parent-window': parentWindow });
-
-        let dialog = builder.get_object('location-dialog');
-        let entry = builder.get_object('location-entry');
-
-        dialog.add_button(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL);
-        dialog.add_button(Gtk.STOCK_ADD, Gtk.ResponseType.OK);
-        dialog.set_default_response(Gtk.ResponseType.OK);
-
-        dialog.connect('response', Lang.bind(this, this._onResponse));
-        entry.connect('notify::location', Lang.bind(this, this._locationChanged));
-
-        this._dialog = dialog;
-        this._entry = entry;
-    },
-
-    run: function() {
-        this._dialog.show();
-        this._locationChanged(this._entry);
-    },
-
-    _onResponse: function(dialog, response) {
-        dialog.destroy();
-
-        if (response != Gtk.ResponseType.OK)
-            return;
-
-        let location = this._entry.location;
-        if (!location)
-            return;
-
-        this._worldModel.addLocation(location, true);
-    },
-
-    _locationChanged: function(entry) {
-	    this._dialog.set_response_sensitive(Gtk.ResponseType.OK, entry.location != null);
-    }
-});
 
 const MainWindow = new Lang.Class({
     Name: 'MainWindow',
@@ -96,24 +45,10 @@ const MainWindow = new Lang.Class({
         this._pageWidgets = [[],[]];
 
         Util.initActions(this,
-                         [{ name: 'new-location',
-                            activate: this._newLocation },
-                          { name: 'about',
+                         [{ name: 'about',
                             activate: this._showAbout },
                           { name: 'close',
                             activate: this._close },
-                          { name: 'selection-mode',
-                            activate: this._setSelectionMode,
-                            parameter_type: new GLib.VariantType('b'),
-                            state: new GLib.Variant('b', false) },
-                          { name: 'go-world',
-                            activate: this._goWorld },
-                          { name: 'select-all',
-                            activate: this._selectAll },
-                          { name: 'select-none',
-                            activate: this._selectNone },
-                          { name: 'delete-selected',
-                            activate: this._deleteSelected },
                           { name: 'refresh',
                             activate: this.update }]);
 
@@ -127,93 +62,46 @@ const MainWindow = new Lang.Class({
         this._header.title = title;
         this._header.subtitle = subtitle;
 
-        let newButton = builder.get_object('new-button');
-        this._pageWidgets[Page.WORLD].push(newButton);
+        this._worldView = new World.WorldContentView(this.application, { visible: true });
+        this._worldView.hide();
 
-        let goWorldButton = builder.get_object('world-button');
-        this._pageWidgets[Page.CITY].push(goWorldButton);
+        this._model = this._worldView.model;
+        this._model.connect('show-info', Lang.bind(this, function(model, info) {
+            this.showInfo(info);
+        }));
+        this._model.connect('no-cityview', Lang.bind(this, function() {
+            for (let i = 0; i < this._pageWidgets[Page.WORLD].length; i++)
+                this._pageWidgets[Page.WORLD][i].show_all();
+        }));
 
-        let select = builder.get_object('select-button');
-        this._pageWidgets[Page.WORLD].push(select);
+        this._initialGrid = this._worldView.initialGrid;
+        this._pageWidgets[Page.WORLD].push(this._initialGrid);
+
+        let placesButton = builder.get_object('places-button');
+        this._pageWidgets[Page.CITY].push(placesButton);
+
+        placesButton.set_popover(this._worldView);
 
         let refresh = builder.get_object('refresh-button');
         this._pageWidgets[Page.CITY].push(refresh);
 
-        let selectDone = builder.get_object('done-button');
-        this._pageWidgets[Page.WORLD].push(selectDone);
-
-        let selectionBar = builder.get_object('selection-bar');
-        let selectionMenu = builder.get_object("selection-menu");
-
-        this._selectionMenuButton = builder.get_object('selection-menu-button');
-        this._selectionMenuButtonLabel = builder.get_object('selection-menu-button-label');
         this._stack = builder.get_object('main-stack');
-
-        this._deleteButton = builder.get_object('delete-button');
 
         this._cityView = new City.WeatherView({ hexpand: true,
                                                 vexpand: true });
         this._stack.add(this._cityView);
 
-        this._worldView = new World.WorldContentView(this.application.model, { visible: true });
-        let iconView = this._worldView.iconView;
-        this._stack.add(this._worldView);
+        this._stack.add(this._initialGrid);
 
-        iconView.connect('item-activated', Lang.bind(this, this._itemActivated));
-
-        iconView.connect('notify::selection-mode', Lang.bind(this, function() {
-            if (iconView.selection_mode) {
-                this._header.get_style_context().add_class('selection-mode');
-                this._header.set_custom_title(this._selectionMenuButton);
-            } else {
-                this._header.get_style_context().remove_class('selection-mode');
-                this._header.set_custom_title(null);
-            }
-
-            let selectionState = new GLib.Variant('b', iconView.selection_mode);
-            this.lookup_action('selection-mode').set_state(selectionState);
-        }));
-
-        iconView.bind_property('selection-mode', newButton, 'visible',
-                               GObject.BindingFlags.INVERT_BOOLEAN);
-        iconView.bind_property('selection-mode', this._header, 'show-close-button',
-                               GObject.BindingFlags.INVERT_BOOLEAN);
-        iconView.bind_property('selection-mode', select, 'visible',
-                               GObject.BindingFlags.INVERT_BOOLEAN);
-        iconView.bind_property('selection-mode', selectDone, 'visible',
-                               GObject.BindingFlags.SYNC_CREATE);
-        iconView.bind_property('selection-mode', selectionBar, 'visible',
-                               GObject.BindingFlags.SYNC_CREATE);
-        this._worldView.bind_property('empty', this.lookup_action('selection-mode'), 'enabled',
-                                      GObject.BindingFlags.SYNC_CREATE |
-                                      GObject.BindingFlags.INVERT_BOOLEAN);
-
-        this._stack.set_visible_child(this._worldView);
-
-        iconView.connect('view-selection-changed', Lang.bind(this, function() {
-            let items = iconView.get_selection();
-            let label;
-            let sensitive;
-
-            if (items.length > 0) {
-                label = Gettext.ngettext("%d selected",
-                                         "%d selected",
-                                         items.length).format(items.length);
-                sensitive = true;
-            } else {
-                label = _("Click on locations to select them");
-                sensitive = false;
-            }
-
-            this._selectionMenuButtonLabel.label = label;
-            this._deleteButton.sensitive = sensitive;
-        }));
+        this._stack.set_visible_child(this._initialGrid);
 
         this.add(grid);
         grid.show_all();
 
         for (let i = 0; i < this._pageWidgets[Page.CITY].length; i++)
             this._pageWidgets[Page.CITY][i].hide();
+
+        this._model.fillCityView(this.application.currentLocationController.autoLocation);
     },
 
     update: function() {
@@ -222,7 +110,7 @@ const MainWindow = new Lang.Class({
 
     _getTitle: function() {
         if (this._currentPage == Page.WORLD)
-            return [_("World Weather"), null];
+            return [_("Select Location"), null];
 
         let location = this._cityView.info.location;
         let city = location;
@@ -241,9 +129,6 @@ const MainWindow = new Lang.Class({
     },
 
     _goToPage: function(page) {
-        if (page == this._currentPage)
-            return;
-
         for (let i = 0; i < this._pageWidgets[this._currentPage].length; i++)
             this._pageWidgets[this._currentPage][i].hide();
 
@@ -260,45 +145,22 @@ const MainWindow = new Lang.Class({
         this._header.subtitle = subtitle;
     },
 
-    _itemActivated: function(view, id, path) {
-        let [ok, iter] = view.model.get_iter(path);
-        let info = view.model.get_value(iter, World.Columns.INFO);
-
-        this.showInfo(info);
-    },
-
     showInfo: function(info) {
         this._cityView.info = info;
-        this._cityView.connectClock();
+        this._cityView.disconnectClock();
+        let isCurrentLocation = false;
+        let currentLocation = this.application.currentLocationController.currentLocation;
+        if (currentLocation) {
+            isCurrentLocation = currentLocation.get_timezone().get_tzid() == info.location.get_timezone().get_tzid();
+        }
+        if (isCurrentLocation) {
+            this._cityView.infoPage.timeGrid.hide();
+        } else {
+            this._cityView.connectClock();
+            this._cityView.infoPage.timeGrid.show();
+        }
         this._stack.set_visible_child(this._cityView);
         this._goToPage(Page.CITY);
-    },
-
-    _goWorld: function() {
-        this._stack.set_visible_child(this._worldView);
-        this._goToPage(Page.WORLD);
-        this._cityView.disconnectClock();
-    },
-
-    _newLocation: function() {
-        let controller = new NewLocationController(this.get_toplevel(),
-                                                   this._worldView.model);
-
-        controller.run();
-    },
-
-    _setSelectionMode: function(action, param) {
-        this._worldView.iconView.selection_mode = param.get_boolean();
-        this._deleteButton.sensitive = false;
-    },
-
-    _selectAll: function() {
-        this._worldView.iconView.selection_mode = true;
-        this._worldView.iconView.select_all();
-    },
-
-    _selectNone: function() {
-        this._worldView.iconView.unselect_all();
     },
 
     _showAbout: function() {
@@ -331,19 +193,6 @@ const MainWindow = new Lang.Class({
         aboutDialog.connect('response', function() {
             aboutDialog.destroy();
         });
-    },
-
-    _deleteSelected: function() {
-        let items = this._worldView.iconView.get_selection();
-        let model = this._worldView.iconView.model;
-
-        for (let i = items.length - 1; i >= 0; i--) {
-            let [res, iter] = model.get_iter(items[i]);
-            if (res)
-                model.removeLocation(iter);
-        }
-
-        this._worldView.iconView.selection_mode = false;
     },
 
     _close: function() {

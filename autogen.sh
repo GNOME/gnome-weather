@@ -4,7 +4,6 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
-ACLOCAL_FLAGS="-I libgd ${ACLOCAL_FLAGS}"
 PKG_NAME="gnome-weather"
 
 test -f $srcdir/configure.ac || {
@@ -21,6 +20,5 @@ which gnome-autogen.sh || {
 
 (cd "$srcdir" ;
 test -d m4 || mkdir m4/ ;
-git submodule update --init --recursive ;
 )
 . gnome-autogen.sh

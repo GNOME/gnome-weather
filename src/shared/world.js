@@ -16,8 +16,6 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const Gd = imports.gi.Gd;
-const GdkPixbuf = imports.gi.GdkPixbuf;
 const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
@@ -27,42 +25,22 @@ const Lang = imports.lang;
 const Params = imports.misc.params;
 const Util = imports.misc.util;
 
-const Columns = {
-    ID: Gd.MainColumns.ID,
-    URI: Gd.MainColumns.URI,
-    PRIMARY_TEXT: Gd.MainColumns.PRIMARY_TEXT,
-    SECONDARY_TEXT: Gd.MainColumns.SECONDARY_TEXT,
-    ICON: Gd.MainColumns.ICON,
-    MTIME: Gd.MainColumns.MTIME,
-    SELECTED: Gd.MainColumns.SELECTED,
-    PULSE: Gd.MainColumns.PULSE,
-    LOCATION: Gd.MainColumns.LAST,
-    INFO: Gd.MainColumns.LAST+1,
-    AUTOMATIC: Gd.MainColumns.LAST+2
-};
-const ColumnTypes = {
-    ID: String,
-    URI: String,
-    PRIMARY_TEXT: String,
-    SECONDARY_TEXT: String,
-    ICON: GdkPixbuf.Pixbuf,
-    MTIME: GObject.Int,
-    SELECTED: Boolean,
-    PULSE: GObject.UInt,
-    LOCATION: GWeather.Location,
-    INFO: GWeather.Info,
-    AUTOMATIC: Boolean
-};
-Util.assertEqual(Object.keys(Columns).length, Object.keys(ColumnTypes).length);
-Util.assertEqual(Gd.MainColumns.LAST+3, Object.keys(ColumnTypes).length);
-
-const ICON_SIZE = 128;
+function getLabelFromRow(row) {
+    let grid = row.get_child();
+    let cityGrid = grid.get_child_at(0, 0);
+    let label = cityGrid.get_child_at(0, 0);
+    return label.get_text();
+}
 
 const WorldModel = new Lang.Class({
     Name: 'WorldModel',
-    Extends: Gtk.ListStore,
+    Extends: GObject.Object,
     Signals: {
-        'updated': { param_types: [ GWeather.Info ] }
+        'updated': { param_types: [ GWeather.Info ] },
+        'no-cityview': { param_types: [] },
+        'show-info': { param_types: [ GWeather.Info ] },
+        'current-location-changed': { param_types: [ GWeather.Location ] },
+        'validate-listbox': { param_types: [ GWeather.Location ] }
     },
     Properties: {
         'loading': GObject.ParamSpec.boolean('loading', '', '', GObject.ParamFlags.READABLE, false)
@@ -70,31 +48,100 @@ const WorldModel = new Lang.Class({
 
     _init: function(world, enableGtk) {
         this.parent();
-        this.set_column_types([ColumnTypes[c] for (c in ColumnTypes)]);
+
         this._world = world;
 
         this._settings = Util.getSettings('org.gnome.Weather.Application');
 
-        let provider_override = GLib.getenv('GWEATHER_DEBUG_BACKEND');
-        if (provider_override) {
-            this._providers = GWeather.Provider.METAR | GWeather.Provider[provider_override];
-        } else {
-            this._providers = GWeather.Provider.METAR | GWeather.Provider.YR_NO |
-                GWeather.Provider.OWM;
-        }
+        this._providers = Util.getEnabledProviders();
 
         this._loadingCount = 0;
 
-        let locations = this._settings.get_value('locations').deep_unpack();
-        for (let i = 0; i < locations.length; i++) {
-            let variant = locations[i];
-            let location = this._world.deserialize(variant);
-            this._addLocationInternal(location, false);
-        }
-
-        this._settings.connect('changed::locations', Lang.bind(this, this._onChanged));
+        this._infoList = [];
 
         this._enableGtk = enableGtk;
+
+        this._currentLocationInfo = null;
+
+        this.currentlyLoadedInfo = null;
+
+        this.addedCurrentLocation = false;
+    },
+
+    currentLocationChanged: function(location) {
+        if (location) {
+            this._newCurrentLocationInfo = new GWeather.Info({ location: location,
+                                                               enabled_providers: this._providers });
+            if (this._currentLocationInfo) {
+                if (!this._currentLocationInfo.location.equal(location)) {
+                    this._newCurrentLocationInfo.connect('updated', Lang.bind(this, function(info) {
+                        this._updateLoadingCount(-1);
+                        this.emit('updated', this._newCurrentLocationInfo);
+                    }));
+                    this.updateInfo(this._newCurrentLocationInfo);
+                    this._currentLocationInfo = this._newCurrentLocationInfo;
+                }
+            } else {
+                this._newCurrentLocationInfo.connect('updated', Lang.bind(this, function(info) {
+                    this._updateLoadingCount(-1);
+                    this.emit('updated', this._newCurrentLocationInfo);
+                }));
+                this.updateInfo(this._newCurrentLocationInfo);
+                this._currentLocationInfo = this._newCurrentLocationInfo;
+            }
+        }
+
+        this.emit('current-location-changed', location);
+    },
+
+    rowActivated: function(listbox, row) {
+        let cityName = getLabelFromRow(row);
+        this.emit('show-info', this._infoList[cityName]);
+        this.currentlyLoadedInfo = this._infoList[cityName];
+        this.emit('validate-listbox', this.currentlyLoadedInfo.location);
+    },
+
+    showRecent: function(listbox) {
+        let row = listbox.get_row_at_index(0);
+        if (row) {
+            this.rowActivated(null, row);
+            return;
+        } else
+            this.emit('no-cityview');
+    },
+
+    _showCurrentLocation: function() {
+        if (this._currentLocationInfo) {
+            this.emit('show-info', this._currentLocationInfo);
+            this.currentlyLoadedInfo = this._currentLocationInfo;
+        }
+    },
+
+    fillListbox: function (listbox) {
+        let locations = this._settings.get_value('locations').deep_unpack();
+        if (locations.length != 0) {
+            for (let i = 0; i < locations.length && i < 5; i++) {
+                let variant = locations[i];
+                let location = this._world.deserialize(variant);
+                this._addLocationInternal(location, listbox, false);
+            }
+        }
+    },
+
+    fillCityView: function(autoLocation) {
+        let locations = this._settings.get_value('locations').deep_unpack();
+
+        if (!autoLocation) {
+            if (locations.length > 0) {
+                let variant = locations[locations.length-1];
+                let location = this._world.deserialize(variant);
+                this.emit('show-info', this._infoList[location.get_city_name()]);
+                this.currentlyLoadedInfo = this._infoList[location.get_city_name()];
+                this.emit('validate-listbox', this.currentlyLoadedInfo.location);
+            } else {
+                this.emit('no-cityview');
+            }
+        }
     },
 
     _updateLoadingCount: function(delta) {
@@ -115,265 +162,245 @@ const WorldModel = new Lang.Class({
         return this._loadingCount > 0;
     },
 
-    _addLocationInternal: function(location, automatic) {
+    _addLocationInternal: function(location, listbox, isCurrentLocation) {
+        let grid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
+                                  column_spacing: 12,
+                                  margin: 12 });
+
+        let name = location.get_city_name();
+        let locationGrid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
+                                          column_spacing: 12,
+                                          halign: Gtk.Align.START,
+                                          hexpand: true,
+                                          visible: true });
+        let locationLabel = new Gtk.Label({ label: name,
+                                            use_markup: true,
+                                            halign: Gtk.Align.START,
+                                            visible: true });
+        locationGrid.attach(locationLabel, 0, 0, 1, 1);
+        grid.attach(locationGrid, 0, 0, 1, 1);
+
+        let tempLabel = new Gtk.Label({ use_markup: true,
+                                        halign: Gtk.Align.END,
+                                        margin_start: 12,
+                                        visible: true });
+        grid.attach(tempLabel, 1, 0, 1, 1);
+
+        if (isCurrentLocation) {
+            let image = new Gtk.Image({ icon_size: Gtk.IconSize.LARGE_TOOLBAR,
+                                        icon_name: 'mark-location-symbolic',
+                                        use_fallback: true,
+                                        halign: Gtk.Align.START,
+                                        visible: true });
+            locationGrid.attach(image, 1, 0, 1, 1);
+        }
+
+        let image = new Gtk.Image({ icon_size: Gtk.IconSize.LARGE_TOOLBAR,
+                                    use_fallback: true,
+                                    halign: Gtk.Align.END,
+                                    visible: true });
+        grid.attach(image, 2, 0, 1, 1);
+
+        grid.show();
+        if(isCurrentLocation) {
+            if (this.addedCurrentLocation) {
+                let children = listbox.get_children();
+                children[0].destroy();
+            }
+            listbox.insert(grid, 0);
+        } else {
+            if (this.addedCurrentLocation)
+                listbox.insert(grid, 1);
+            else
+                listbox.insert(grid, 0);
+        }
+
         let info = new GWeather.Info({ location: location,
                                        enabled_providers: this._providers });
-        let iter;
+
+        this._infoList[locationLabel.get_label()] = info;
+
         info.connect('updated', Lang.bind(this, function(info) {
-            let secondary_text = Util.getWeatherConditions(info);
-            if (this._enableGtk) {
-                let icon = Util.loadIcon(info.get_symbolic_icon_name(), ICON_SIZE);
-                this.set(iter,
-                         [Columns.ICON, Columns.SECONDARY_TEXT],
-                         [icon, secondary_text]);
-            } else {
-                this.set_value(iter, Columns.SECONDARY_TEXT, secondary_text);
-            }
+            tempLabel.label = info.get_temp_summary();
+            image.icon_name = info.get_symbolic_icon_name();
 
             this._updateLoadingCount(-1);
             this.emit('updated', info);
         }));
         this.updateInfo(info);
-
-        let primary_text = location.get_city_name();
-
-        iter = this.insert_with_valuesv(-1,
-                                        [Columns.PRIMARY_TEXT,
-                                         Columns.LOCATION,
-                                         Columns.INFO,
-                                         Columns.AUTOMATIC],
-                                        [primary_text,
-                                         location,
-                                         info,
-                                         automatic]);
-
-        if (this._enableGtk) {
-            let icon = Util.loadIcon('view-refresh-symbolic', ICON_SIZE);
-            this.set_value(iter, Columns.ICON, icon);
-        }
     },
 
-    _onChanged: function() {
-        let newLocations = this._settings.get_value('locations').deep_unpack();
-        let toErase = [];
+    addNewLocation: function(newLocation, listbox, isCurrentLocation) {
+        if (newLocation) {
+            let locations = this._settings.get_value('locations').deep_unpack();
 
-        let [ok, iter] = this.get_iter_first();
-        while (ok) {
-            let auto = this.get_value(iter, Columns.AUTOMATIC);
-            if (auto) {
-                ok = this.iter_next(iter);
-                continue;
-            }
-            let location = this.get_value(iter, Columns.LOCATION);
-
-            let found = false;
-            for (let j = 0; j < newLocations.length; j++) {
-                let variant = newLocations[j];
-                if (variant == null)
-                    continue;
-
-                let newLocation = this._world.deserialize(variant);
-
-                if (location.equal(newLocation)) {
-                    newLocations[j] = null;
-                    found = true;
-                    break;
+            if (!isCurrentLocation) {
+                for (let i = 0; i < locations.length; i++) {
+                    let location = this._world.deserialize(locations[i]);
+                    if (location.equal(newLocation)) {
+                        this.emit('show-info', this._infoList[location.get_city_name()]);
+                        this.currentlyLoadedInfo = this._infoList[location.get_city_name()];
+                        this.emit('validate-listbox', this.currentlyLoadedInfo.location);
+                        return;
+                    }
                 }
+
+                locations.push(newLocation.serialize());
+
+                if (locations.length > 5) {
+                    let children = listbox.get_children();
+                    children[children.length-1].destroy();
+                }
+
+                this._settings.set_value('locations', new GLib.Variant('av', locations));
             }
 
-            if (!found)
-                toErase.push(iter.copy());
-
-            ok = this.iter_next(iter);
-        }
-
-        for (let i = 0; i < toErase.length; i++)
-            this.remove(toErase[i]);
-
-        for (let i = 0; i < newLocations.length; i++) {
-            let variant = newLocations[i];
-            if (variant == null)
-                continue;
-
-            let newLocation = this._world.deserialize(variant);
-            this._addLocationInternal(newLocation, false);
-        }
-    },
-
-    _addSavedLocation: function(location) {
-        let newLocations = this._settings.get_value('locations').deep_unpack();
-        newLocations.push(location.serialize());
-        this._settings.set_value('locations', new GLib.Variant('av', newLocations));
-    },
-
-    getAllSavedLocations: function() {
-        let locations = this._settings.get_value('locations').deep_unpack();
-        let returnValue = [];
-
-        for (let i = 0; i < locations.length; i++) {
-            let variant = locations[i];
-            if (variant == null) {
-                log('null stored in GSettings?');
-                continue;
+            this._addLocationInternal(newLocation, listbox, isCurrentLocation);
+            if (!isCurrentLocation) {
+                this.emit('show-info', this._infoList[newLocation.get_city_name()]);
+                this.currentlyLoadedInfo = this._infoList[newLocation.get_city_name()];
+                this.emit('validate-listbox', this.currentlyLoadedInfo.location);
             }
-
-            returnValue.push(this._world.deserialize(variant));
-        }
-
-        return returnValue;
-    },
-
-    getLocationInfo: function(location) {
-        let [ok, iter] = this.get_iter_first();
-        while (ok) {
-            let storedLocation = this.get_value(iter, Columns.LOCATION);
-            if (storedLocation.equal(location))
-                return this.get_value(iter, Columns.INFO);
-
-            ok = this.iter_next(iter);
-        }
-
-        return null;
-    },
-
-    addLocation: function(location, saved) {
-        if (saved)
-            this._addSavedLocation(location);
-        else
-            this._addLocationInternal(location, true);
-    },
-
-    removeLocation: function(iter) {
-        let auto = this.get_value(iter, Columns.AUTOMATIC);
-        if (auto) {
-            this.remove(iter);
-            return;
-        }
-
-        let location = this.get_value(iter, Columns.LOCATION);
-        let variant = location.serialize();
-
-        let newLocations = this._settings.get_value('locations').deep_unpack();
-
-        for (let i = 0; i < newLocations.length; i++) {
-            if (newLocations[i].equal(variant)) {
-                newLocations.splice(i, 1);
-                break;
+            else {
+                if(!this.addedCurrentLocation) {
+                    this.emit('show-info', this._currentLocationInfo);
+                    this.currentlyLoadedInfo = this._currentLocationInfo;
+                    this.emit('validate-listbox', this.currentlyLoadedInfo.location);
+                }
+                this.addedCurrentLocation = true;
             }
         }
-
-        this._settings.set_value('locations', new GLib.Variant('av', newLocations));
-    },
-});
-
-const WorldIconView = new Lang.Class({
-    Name: 'WorldView',
-    Extends: Gd.MainView,
-
-    _init: function(params) {
-        params = Params.fill(params, { view_type: Gd.MainViewType.ICON });
-        this.parent(params);
-        this.get_accessible().accessible_name = _("Cities");
-
-        this.connect('selection-mode-request', Lang.bind(this, function() {
-            this.selection_mode = true;
-        }));
     }
 });
 
 const WorldContentView = new Lang.Class({
     Name: 'WorldContentView',
-    Extends: Gtk.Bin,
-    Properties: { 'empty': GObject.ParamSpec.boolean('empty', '', '', GObject.ParamFlags.READABLE, false) },
+    Extends: Gtk.Popover,
 
-    _init: function(model, params) {
-        params = Params.fill(params, { hexpand: true, vexpand: true,
-                                       halign: Gtk.Align.FILL, valign: Gtk.Align.FILL });
+    _init: function(application, params) {
+        params = Params.fill(params, { hexpand: false, vexpand: false });
         this.parent(params);
+
         this.get_accessible().accessible_name = _("World view");
 
-        this.iconView = new WorldIconView({ model: model, visible: true });
+        let builder = new Gtk.Builder();
+        builder.add_from_resource('/org/gnome/Weather/Application/places-popover.ui');
 
-        this._placeHolder = new Gtk.Grid({ halign: Gtk.Align.CENTER,
-                                           valign: Gtk.Align.CENTER,
-                                           name: 'weather-page-placeholder',
-                                           column_spacing: 6 });
-        this._placeHolder.get_style_context().add_class('dim-label');
+        let grid = builder.get_object('popover-grid');
+        this.add(grid);
 
-        let iconGrid = new Gtk.Grid({ row_spacing: 4, column_spacing: 4,
-                                      valign: Gtk.Align.CENTER });
-        iconGrid.attach(new Gtk.Image({ icon_name: 'weather-overcast-symbolic',
-                                        icon_size: Gtk.IconSize.LARGE_TOOLBAR }),
-                        0, 0, 1, 1);
-        iconGrid.attach(new Gtk.Image({ icon_name: 'weather-few-clouds-symbolic',
-                                        icon_size: Gtk.IconSize.LARGE_TOOLBAR }),
-                        1, 0, 1, 1);
-        iconGrid.attach(new Gtk.Image({ icon_name: 'weather-clear-symbolic',
-                                        icon_size: Gtk.IconSize.LARGE_TOOLBAR }),
-                        0, 1, 1, 1);
-        iconGrid.attach(new Gtk.Image({ icon_name: 'weather-showers-symbolic',
-                                        icon_size: Gtk.IconSize.LARGE_TOOLBAR }),
-                        1, 1, 1, 1);
+        this.initialGrid = builder.get_object('initial-grid');
 
-        this._placeHolder.attach(iconGrid, 0, 0, 1, 2);
+        let stackPopover = builder.get_object('popover-stack');
 
-        this._placeHolder.attach(new Gtk.Label({ name: 'weather-page-placeholder-title',
-                                                 label: _("Add locations"),
-                                                 xalign: 0.0 }),
-                                 1, 0, 1, 1);
-        this._placeHolder.attach(new Gtk.Label({ label: _("Use the <b>New</b> button on the toolbar to add more world locations"),
-                                                 use_markup: true,
-                                                 max_width_chars: 30,
-                                                 wrap: true,
-                                                 xalign: 0.0,
-                                                 halign: Gtk.Align.START,
-                                                 valign: Gtk.Align.START }),
-                                 1, 1, 1, 1);
-        this._placeHolder.show_all();
+        this.model = application.model;
 
-        this.model = model;
-        this._rowInsertedId = model.connect('row-inserted', Lang.bind(this, this._updateEmpty));
-        this._rowDeletedId = model.connect('row-deleted', Lang.bind(this, this._updateEmpty));
-
-        let [ok, ] = model.get_iter_first();
-        if (ok)
-            this.add(this.iconView);
-        else
-            this.add(this._placeHolder);
-        this._empty = !ok;
-
-        this.connect('destroy', Lang.bind(this, this._onDestroy));
-    },
-
-    get empty() {
-        return this._empty;
-    },
-
-    _onDestroy: function() {
-        if (this._rowInsertedId) {
-            this.model.disconnect(this._rowInsertedId);
-            this._rowInsertedId = 0;
-        }
-        if (this._rowDeletedId) {
-            this.model.disconnect(this._rowDeletedId);
-            this._rowDeletedId = 0;
-        }
-    },
-
-    _updateEmpty: function() {
-        let [ok, iter] = this.model.get_iter_first();
-
-        if (!ok != this._empty) {
-            if (ok) {
-                this.remove(this._placeHolder);
-                this.add(this.iconView);
-            } else {
-                this.remove(this.iconView);
-                this.add(this._placeHolder);
+        let listbox = builder.get_object('locations-list-box');
+        listbox.set_header_func(function (row, previous) {
+            let hasHeader = row.get_header() != null;
+            let shouldHaveHeader = previous != null;
+            if (hasHeader != shouldHaveHeader) {
+                if (shouldHaveHeader)
+                    row.set_header(new Gtk.Separator());
+                else
+                    row.set_header(null);
             }
+        });
 
-            this._empty = !ok;
-            this.notify('empty');
+        let initialGridLocEntry = builder.get_object('initial-grid-location-entry');
+        initialGridLocEntry.connect('notify::location', Lang.bind(this, function(entry) {
+            this._locationChanged(entry, listbox);
+        }));
+
+        let locationEntry = builder.get_object('location-entry');
+        locationEntry.connect('notify::location', Lang.bind(this, function(entry) {
+            this._locationChanged(entry, listbox)
+        }));
+
+        this.model.fillListbox(listbox);
+
+        this.connect('notify::visible', Lang.bind(this, function() {
+            listbox.set_selection_mode(0);
+            locationEntry.grab_focus();
+            listbox.set_selection_mode(1);
+        }));
+
+        let autoLocStack = builder.get_object('auto-location-stack');
+
+        let autoLocSwitch = builder.get_object('auto-location-switch');
+
+        let currentLocationController = application.currentLocationController;
+
+        let handlerId = autoLocSwitch.connect('notify::active', Lang.bind(this, function() {
+            currentLocationController.setAutoLocation(autoLocSwitch.get_active());
+
+            if (autoLocSwitch.get_active() && !this.model.addedCurrentLocation)
+                autoLocStack.set_visible_child_name('locating-label');
+
+            this.hide();
+        }));
+
+        if(currentLocationController.autoLocation)
+            autoLocStack.set_visible_child_name('locating-label');
+        else {
+            autoLocStack.set_visible_child_name('auto-location-switch-grid');
+            GObject.signal_handler_block(autoLocSwitch, handlerId);
+            autoLocSwitch.set_active(false);
+            GObject.signal_handler_unblock(autoLocSwitch, handlerId);
+        }
+
+        listbox.connect('row-activated', Lang.bind(this, function(listbox, row) {
+            this.hide();
+            this.model.rowActivated(listbox, row);
+        }));
+
+        this.model.connect('current-location-changed', Lang.bind(this, function(model, location) {
+            autoLocStack.set_visible_child_name('auto-location-switch-grid');
+            if (location) {
+                this.model.addNewLocation(location, listbox, true);
+
+                GObject.signal_handler_block(autoLocSwitch, handlerId);
+                autoLocSwitch.set_active(true);
+                GObject.signal_handler_unblock(autoLocSwitch, handlerId);
+            } else {
+                if (!this.model.addedCurrentLocation)
+                    this.model.showRecent(listbox);
+
+                GObject.signal_handler_block(autoLocSwitch, handlerId);
+                autoLocSwitch.set_active(false);
+                GObject.signal_handler_unblock(autoLocSwitch, handlerId);
+
+                autoLocSwitch.set_sensitive(false);
+            }
+        }));
+
+        this.model.connect('validate-listbox', Lang.bind(this, function() {
+            listbox.invalidate_filter();
+            let children = listbox.get_children();
+            if (children.length == 1) {
+                stackPopover.set_visible_child_name("search-grid");
+                return;
+            }
+            stackPopover.set_visible_child_name("locations-grid");
+        }));
+
+        listbox.set_filter_func(Lang.bind(this, this._filterListbox, this.model));
+    },
+
+    _filterListbox: function(row, model) {
+        if(model.currentlyLoadedInfo) {
+            let cityName = getLabelFromRow(row);
+            let loadedCity = model.currentlyLoadedInfo.location.get_city_name();
+            return (cityName != loadedCity);
+        }
+        return true;
+    },
+
+    _locationChanged: function(entry, listbox) {
+        if (entry.location) {
+            this.model.addNewLocation(entry.location, listbox, false);
+            this.hide();
+            entry.location = null;
         }
     }
 });

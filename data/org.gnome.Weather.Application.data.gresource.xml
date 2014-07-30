@@ -3,8 +3,8 @@
   <gresource prefix="/org/gnome/Weather/Application">
     <file preprocess="xml-stripblanks">app-menu.ui</file>
     <file preprocess="xml-stripblanks">window.ui</file>
-    <file preprocess="xml-stripblanks">new-location-dialog.ui</file>
     <file preprocess="xml-stripblanks">city.ui</file>
+    <file preprocess="xml-stripblanks">places-popover.ui</file>
     <file>application.css</file>
     <file>weather-clear.jpg</file>
     <file>weather-clear-night.jpg</file>

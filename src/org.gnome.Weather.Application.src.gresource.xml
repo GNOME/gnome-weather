@@ -4,6 +4,7 @@
     <file>app/city.js</file>
     <file>app/currentLocationController.js</file>
     <file>app/forecast.js</file>
+    <file>app/weeklyForecast.js</file>
     <file>app/main.js</file>
     <file>app/window.js</file>
     <file>misc/params.js</file>

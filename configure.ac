@@ -23,8 +23,6 @@ AC_PROG_CC
 AM_PROG_CC_C_O
 LT_INIT([disable-static])
 
-LIBGD_INIT([main-view gir])
-
 PKG_PROG_PKG_CONFIG([0.22])
 
 APPSTREAM_XML
@@ -63,12 +61,6 @@ if test x$enable_coverage = xyes; then
     if test x$LCOV = x || test x$GENHTML = x; then
         AC_MSG_ERROR([lcov and genhtml are required for --enable-coverage])
     fi
-
-    # only enable these if we ever want code coverage for libgd
-    # (which we don't)
-    #CFLAGS="$CFLAGS -g -O0 --coverage"
-    #CXXFLAGS="$CXXFLAGS -g -O0 --coverage"
-    #LIBS="$LIBS -lgcov"
 fi
 AM_CONDITIONAL([ENABLE_COVERAGE], [test x$enable_coverage = xyes])
 
@@ -81,7 +73,6 @@ AC_CONFIG_FILES([
   Makefile
   data/Makefile
   data/icons/Makefile
-  libgd/Makefile
   src/Makefile
   tests/Makefile
   po/Makefile.in

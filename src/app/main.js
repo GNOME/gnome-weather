@@ -16,19 +16,15 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-pkg.initSubmodule('libgd');
 pkg.initGettext();
 pkg.initFormat();
-pkg.require({ 'Gd': '1.0',
-              'Gdk': '3.0',
-              'GdkPixbuf': '2.0',
+pkg.require({ 'Gdk': '3.0',
               'Gio': '2.0',
               'GLib': '2.0',
               'GObject': '2.0',
               'Gtk': '3.0',
               'GWeather': '3.0' });
 
-const Gd = imports.gi.Gd;
 const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
@@ -91,7 +87,6 @@ const Application = new Lang.Class({
 
     vfunc_startup: function() {
         this.parent();
-        Gd.ensure_types();
 
         Util.loadStyleSheet('/org/gnome/Weather/Application/application.css');
 
@@ -100,7 +95,7 @@ const Application = new Lang.Class({
 
         this.world = GWeather.Location.get_world();
         this.model = new World.WorldModel(this.world, true);
-        this._currentLocationController = new CurrentLocationController.CurrentLocationController(this.model);
+        this.currentLocationController = new CurrentLocationController.CurrentLocationController(this.model);
 
         this.model.connect('notify::loading', Lang.bind(this, function() {
             if (this.model.loading)
@@ -120,7 +115,7 @@ const Application = new Lang.Class({
                           { name: 'new-location',
                             activate: this._onNewLocation }]);
 
-        let gwSettings = new Gio.Settings({ schema: 'org.gnome.GWeather' });
+        let gwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather' });
         this.add_action(gwSettings.create_action('temperature-unit'));
 
         this._initAppMenu();
@@ -131,24 +126,42 @@ const Application = new Lang.Class({
 
     _createWindow: function() {
         let win = new Window.MainWindow({ application: this });
+        let notifyId;
 
-        if (this.model.loading) {
-            let timeoutId, notifyId;
-            let model = this.model;
+        if (!this.currentLocationController.autoLocation) {
+            if (this.model.loading) {
+                let timeoutId;
+                let model = this.model;
 
-            timeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, function() {
-                log('Timeout during model load, perhaps the network is not available?');
-                model.disconnect(notifyId);
+                timeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, function() {
+                    log('Timeout during model load, perhaps the network is not available?');
+                    model.disconnect(notifyId);
+                    win.show();
+                    return false;
+                });
+                notifyId = this.model.connect('notify::loading', function(model) {
+                    if (model.loading)
+                        return;
+
+                    model.disconnect(notifyId);
+                    GLib.source_remove(timeoutId);
+                    win.show();
+                });
+            } else {
                 win.show();
-                return false;
-            });
-            notifyId = this.model.connect('notify::loading', function(model) {
-                model.disconnect(notifyId);
-                GLib.source_remove(timeoutId);
-                win.show();
-            });
+            }
         } else {
-            win.show();
+            if (this.model.loading) {
+                notifyId = this.model.connect('notify::loading', Lang.bind(this, function(model) {
+                    if (model.loading)
+                        return;
+
+                    model.disconnect(notifyId);
+                    win.show();
+                }));
+            } else {
+                win.show();
+            }
         }
 
         return win;
