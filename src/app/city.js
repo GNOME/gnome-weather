@@ -104,7 +104,7 @@ const WeatherWidget = new Lang.Class({
                 this._rightButton.set_sensitive(true);
 
             this._start = new Date().getTime();
-            this._end = this._start + 700;
+            this._end = this._start + 328;
             this._tickId = this._forecastGrid.add_tick_callback(Lang.bind(this, this._animate));
         }));
 
@@ -117,7 +117,7 @@ const WeatherWidget = new Lang.Class({
                 this._leftButton.set_sensitive(true);
 
             this._start = new Date().getTime();
-            this._end = this._start + 700;
+            this._end = this._start + 328;
             this._tickId = this._forecastGrid.add_tick_callback(Lang.bind(this, this._animate));
         }));
 

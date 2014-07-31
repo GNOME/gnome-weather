@@ -45,7 +45,7 @@
 #weather-page-content-view.weather-showers,
 #weather-page-content-view.weather-showers-scattered {
     background-image: url("weather-showers.jpg");
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,1.0);
 }
 
 #weather-page-content-view.weather-snow {

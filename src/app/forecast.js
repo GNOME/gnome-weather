@@ -40,7 +40,7 @@ const ForecastBox = new Lang.Class({
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
         this._grid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
-                                    column_spacing: 32,
+                                    column_spacing: 18,
                                     row_spacing: 6,
                                     margin_top: 12,
                                     margin_bottom: 12,
@@ -136,6 +136,8 @@ const ForecastBox = new Lang.Class({
 
         let image = new Gtk.Image({ icon_name: info.get_symbolic_icon_name(),
                                     pixel_size: 32,
+                                    margin_start: 10,
+                                    margin_end: 10,
                                     use_fallback: true,
                                     visible: true });
         this._grid.attach(image, col, 1, 1, 1);
