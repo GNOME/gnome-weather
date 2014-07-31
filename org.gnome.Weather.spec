@@ -6,7 +6,7 @@ Summary:	GNOME Weather
 License:	GPLv2+ and LGPLv2+ and MIT and CC-BY and CC-BY-SA
 URL:		http://wiki.gnome.org/Apps/Weather
 Source0:        %{_distdir}-%{version}.tar.xz
-BuildArch:      x86_64 i686
+BuildArch:      noarch
 
 Provides:       org.gnome.Weather.Application = %{_version}
 Obsoletes:      org.gnome.Weather.Application < 1.13.1
@@ -25,7 +25,6 @@ make %{?_smp_mflags}
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
-find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 rm -fR $RPM_BUILD_ROOT/%{_bindir}
 rm -fR $RPM_BUILD_ROOT/%{_datadir}/org.gnome.Weather/gir-1.0
 desktop-file-edit $RPM_BUILD_ROOT/%{_datadir}/applications/%{name}.Application.desktop \
@@ -59,4 +58,3 @@ gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 %{_datadir}/gnome-shell/search-providers/%{name}.Application.search-provider.ini
 %{_datadir}/icons/hicolor/*/apps/%{name}.Application.png
 %{_datadir}/%{name}/
-%{_libdir}/%{name}/

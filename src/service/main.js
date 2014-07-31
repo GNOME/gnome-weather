@@ -16,17 +16,13 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-pkg.initSubmodule('libgd');
 pkg.initGettext();
 pkg.initFormat();
-pkg.require({ 'Gd': '1.0',
-              'Gio': '2.0',
+pkg.require({ 'Gio': '2.0',
               'GLib': '2.0',
               'GObject': '2.0',
               'GWeather': '3.0' });
 
-const Gd = imports.gi.Gd;
-const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const GWeather = imports.gi.GWeather;
