@@ -40,7 +40,8 @@ const WorldModel = new Lang.Class({
         'no-cityview': { param_types: [] },
         'show-info': { param_types: [ GWeather.Info ] },
         'current-location-changed': { param_types: [ GWeather.Location ] },
-        'validate-listbox': { param_types: [ GWeather.Location ] }
+        'validate-listbox': { param_types: [ GWeather.Location ] },
+        'update-listbox': { param_types: [ GWeather.Location, GWeather.Info, GObject.Boolean ] }
     },
     Properties: {
         'loading': GObject.ParamSpec.boolean('loading', '', '', GObject.ParamFlags.READABLE, false)
@@ -66,6 +67,8 @@ const WorldModel = new Lang.Class({
         this.currentlyLoadedInfo = null;
 
         this.addedCurrentLocation = false;
+
+        this.numberOfLocations = 0;
     },
 
     currentLocationChanged: function(location) {
@@ -117,13 +120,24 @@ const WorldModel = new Lang.Class({
         }
     },
 
-    fillListbox: function (listbox) {
+    fillListbox: function () {
         let locations = this._settings.get_value('locations').deep_unpack();
+        this.numberOfLocations = locations.length;
         if (locations.length != 0) {
             for (let i = 0; i < locations.length && i < 5; i++) {
                 let variant = locations[i];
                 let location = this._world.deserialize(variant);
-                this._addLocationInternal(location, listbox, false);
+                let info = new GWeather.Info({ location: location,
+                                               enabled_providers: this._providers });
+
+                this._infoList[location.get_city_name()] = info;
+
+                info.connect('updated', Lang.bind(this, function(info) {
+                    this._updateLoadingCount(-1);
+                    this.emit('updated', info);
+                }));
+                this.updateInfo(info);
+                this.emit('update-listbox', location, info, false);
             }
         }
     },
@@ -162,7 +176,191 @@ const WorldModel = new Lang.Class({
         return this._loadingCount > 0;
     },
 
-    _addLocationInternal: function(location, listbox, isCurrentLocation) {
+    addNewLocation: function(newLocation, isCurrentLocation) {
+        if (newLocation) {
+            let locations = this._settings.get_value('locations').deep_unpack();
+
+            if (!isCurrentLocation) {
+                for (let i = 0; i < locations.length; i++) {
+                    let location = this._world.deserialize(locations[i]);
+                    if (location.equal(newLocation)) {
+                        this.emit('show-info', this._infoList[location.get_city_name()]);
+                        this.currentlyLoadedInfo = this._infoList[location.get_city_name()];
+                        this.emit('validate-listbox', this.currentlyLoadedInfo.location);
+                        return;
+                    }
+                }
+
+                locations.push(newLocation.serialize());
+
+                this.numberOfLocations = locations.length;
+
+                this._settings.set_value('locations', new GLib.Variant('av', locations));
+            }
+
+            let info = new GWeather.Info({ location: newLocation,
+                                           enabled_providers: this._providers });
+
+            this._infoList[newLocation.get_city_name()] = info;
+
+            info.connect('updated', Lang.bind(this, function(info) {
+                this._updateLoadingCount(-1);
+                this.emit('updated', info);
+            }));
+            this.updateInfo(info);
+
+            this.emit('update-listbox', newLocation, info, isCurrentLocation);
+            if (!isCurrentLocation) {
+                this.emit('show-info', this._infoList[newLocation.get_city_name()]);
+                this.currentlyLoadedInfo = this._infoList[newLocation.get_city_name()];
+                this.emit('validate-listbox', this.currentlyLoadedInfo.location);
+            }
+            else {
+                if(!this.addedCurrentLocation) {
+                    this.emit('show-info', this._currentLocationInfo);
+                    this.currentlyLoadedInfo = this._currentLocationInfo;
+                    this.emit('validate-listbox', this.currentlyLoadedInfo.location);
+                }
+                this.addedCurrentLocation = true;
+            }
+        }
+    }
+});
+
+const WorldContentView = new Lang.Class({
+    Name: 'WorldContentView',
+    Extends: Gtk.Popover,
+
+    _init: function(application, params) {
+        params = Params.fill(params, { hexpand: false, vexpand: false });
+        this.parent(params);
+
+        this.get_accessible().accessible_name = _("World view");
+
+        let builder = new Gtk.Builder();
+        builder.add_from_resource('/org/gnome/Weather/Application/places-popover.ui');
+
+        let grid = builder.get_object('popover-grid');
+        this.add(grid);
+
+        this.initialGrid = builder.get_object('initial-grid');
+
+        let stackPopover = builder.get_object('popover-stack');
+
+        this.model = application.model;
+
+        this._listbox = builder.get_object('locations-list-box');
+        this._listbox.set_header_func(function (row, previous) {
+            let hasHeader = row.get_header() != null;
+            let shouldHaveHeader = previous != null;
+            if (hasHeader != shouldHaveHeader) {
+                if (shouldHaveHeader)
+                    row.set_header(new Gtk.Separator());
+                else
+                    row.set_header(null);
+            }
+        });
+
+        let initialGridLocEntry = builder.get_object('initial-grid-location-entry');
+        initialGridLocEntry.connect('notify::location', Lang.bind(this, function(entry) {
+            this._locationChanged(entry);
+        }));
+
+        let locationEntry = builder.get_object('location-entry');
+        locationEntry.connect('notify::location', Lang.bind(this, function(entry) {
+            this._locationChanged(entry)
+        }));
+
+        this.connect('notify::visible', Lang.bind(this, function() {
+            this._listbox.set_selection_mode(0);
+            locationEntry.grab_focus();
+            this._listbox.set_selection_mode(1);
+        }));
+
+        let autoLocStack = builder.get_object('auto-location-stack');
+
+        let autoLocSwitch = builder.get_object('auto-location-switch');
+
+        let currentLocationController = application.currentLocationController;
+
+        let handlerId = autoLocSwitch.connect('notify::active', Lang.bind(this, function() {
+            currentLocationController.setAutoLocation(autoLocSwitch.get_active());
+
+            if (autoLocSwitch.get_active() && !this.model.addedCurrentLocation)
+                autoLocStack.set_visible_child_name('locating-label');
+
+            this.hide();
+        }));
+
+        if(currentLocationController.autoLocation)
+            autoLocStack.set_visible_child_name('locating-label');
+        else {
+            autoLocStack.set_visible_child_name('auto-location-switch-grid');
+            GObject.signal_handler_block(autoLocSwitch, handlerId);
+            autoLocSwitch.set_active(false);
+            GObject.signal_handler_unblock(autoLocSwitch, handlerId);
+        }
+
+        this._listbox.connect('row-activated', Lang.bind(this, function(listbox, row) {
+            this.hide();
+            this.model.rowActivated(listbox, row);
+        }));
+
+        this.model.connect('current-location-changed', Lang.bind(this, function(model, location) {
+            autoLocStack.set_visible_child_name('auto-location-switch-grid');
+            if (location) {
+                this.model.addNewLocation(location, true);
+
+                GObject.signal_handler_block(autoLocSwitch, handlerId);
+                autoLocSwitch.set_active(true);
+                GObject.signal_handler_unblock(autoLocSwitch, handlerId);
+            } else {
+                if (!this.model.addedCurrentLocation)
+                    this.model.showRecent(this._listbox);
+
+                GObject.signal_handler_block(autoLocSwitch, handlerId);
+                autoLocSwitch.set_active(false);
+                GObject.signal_handler_unblock(autoLocSwitch, handlerId);
+
+                autoLocSwitch.set_sensitive(false);
+            }
+        }));
+
+        this.model.connect('validate-listbox', Lang.bind(this, function() {
+            this._listbox.invalidate_filter();
+            let children = this._listbox.get_children();
+            if (children.length == 1) {
+                stackPopover.set_visible_child_name("search-grid");
+                return;
+            }
+            stackPopover.set_visible_child_name("locations-grid");
+        }));
+
+        this._listbox.set_filter_func(Lang.bind(this, this._filterListbox, this.model));
+
+        this.model.connect('update-listbox', Lang.bind(this, this._addLocationInternal));
+
+        this.model.fillListbox();
+    },
+
+    _filterListbox: function(row, model) {
+        if(model.currentlyLoadedInfo) {
+            let cityName = getLabelFromRow(row);
+            let loadedCity = model.currentlyLoadedInfo.location.get_city_name();
+            return (cityName != loadedCity);
+        }
+        return true;
+    },
+
+    _locationChanged: function(entry) {
+        if (entry.location) {
+            this.model.addNewLocation(entry.location, false);
+            this.hide();
+            entry.location = null;
+        }
+    },
+
+    _addLocationInternal: function(model, location, info, isCurrentLocation) {
         let grid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
                                   column_spacing: 12,
                                   margin: 12 });
@@ -203,204 +401,25 @@ const WorldModel = new Lang.Class({
 
         grid.show();
         if(isCurrentLocation) {
-            if (this.addedCurrentLocation) {
-                let children = listbox.get_children();
+            if (model.addedCurrentLocation) {
+                let children = this._listbox.get_children();
                 children[0].destroy();
             }
-            listbox.insert(grid, 0);
+            this._listbox.insert(grid, 0);
         } else {
-            if (this.addedCurrentLocation)
-                listbox.insert(grid, 1);
+            if (model.addedCurrentLocation)
+                this._listbox.insert(grid, 1);
             else
-                listbox.insert(grid, 0);
+                this._listbox.insert(grid, 0);
         }
-
-        let info = new GWeather.Info({ location: location,
-                                       enabled_providers: this._providers });
-
-        this._infoList[locationLabel.get_label()] = info;
+        if (model.numberOfLocations > 5) {
+            let children = this._listbox.get_children();
+            children[children.length-1].destroy();
+        }
 
         info.connect('updated', Lang.bind(this, function(info) {
             tempLabel.label = info.get_temp_summary();
             image.icon_name = info.get_symbolic_icon_name();
-
-            this._updateLoadingCount(-1);
-            this.emit('updated', info);
         }));
-        this.updateInfo(info);
     },
-
-    addNewLocation: function(newLocation, listbox, isCurrentLocation) {
-        if (newLocation) {
-            let locations = this._settings.get_value('locations').deep_unpack();
-
-            if (!isCurrentLocation) {
-                for (let i = 0; i < locations.length; i++) {
-                    let location = this._world.deserialize(locations[i]);
-                    if (location.equal(newLocation)) {
-                        this.emit('show-info', this._infoList[location.get_city_name()]);
-                        this.currentlyLoadedInfo = this._infoList[location.get_city_name()];
-                        this.emit('validate-listbox', this.currentlyLoadedInfo.location);
-                        return;
-                    }
-                }
-
-                locations.push(newLocation.serialize());
-
-                if (locations.length > 5) {
-                    let children = listbox.get_children();
-                    children[children.length-1].destroy();
-                }
-
-                this._settings.set_value('locations', new GLib.Variant('av', locations));
-            }
-
-            this._addLocationInternal(newLocation, listbox, isCurrentLocation);
-            if (!isCurrentLocation) {
-                this.emit('show-info', this._infoList[newLocation.get_city_name()]);
-                this.currentlyLoadedInfo = this._infoList[newLocation.get_city_name()];
-                this.emit('validate-listbox', this.currentlyLoadedInfo.location);
-            }
-            else {
-                if(!this.addedCurrentLocation) {
-                    this.emit('show-info', this._currentLocationInfo);
-                    this.currentlyLoadedInfo = this._currentLocationInfo;
-                    this.emit('validate-listbox', this.currentlyLoadedInfo.location);
-                }
-                this.addedCurrentLocation = true;
-            }
-        }
-    }
-});
-
-const WorldContentView = new Lang.Class({
-    Name: 'WorldContentView',
-    Extends: Gtk.Popover,
-
-    _init: function(application, params) {
-        params = Params.fill(params, { hexpand: false, vexpand: false });
-        this.parent(params);
-
-        this.get_accessible().accessible_name = _("World view");
-
-        let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/Weather/Application/places-popover.ui');
-
-        let grid = builder.get_object('popover-grid');
-        this.add(grid);
-
-        this.initialGrid = builder.get_object('initial-grid');
-
-        let stackPopover = builder.get_object('popover-stack');
-
-        this.model = application.model;
-
-        let listbox = builder.get_object('locations-list-box');
-        listbox.set_header_func(function (row, previous) {
-            let hasHeader = row.get_header() != null;
-            let shouldHaveHeader = previous != null;
-            if (hasHeader != shouldHaveHeader) {
-                if (shouldHaveHeader)
-                    row.set_header(new Gtk.Separator());
-                else
-                    row.set_header(null);
-            }
-        });
-
-        let initialGridLocEntry = builder.get_object('initial-grid-location-entry');
-        initialGridLocEntry.connect('notify::location', Lang.bind(this, function(entry) {
-            this._locationChanged(entry, listbox);
-        }));
-
-        let locationEntry = builder.get_object('location-entry');
-        locationEntry.connect('notify::location', Lang.bind(this, function(entry) {
-            this._locationChanged(entry, listbox)
-        }));
-
-        this.model.fillListbox(listbox);
-
-        this.connect('notify::visible', Lang.bind(this, function() {
-            listbox.set_selection_mode(0);
-            locationEntry.grab_focus();
-            listbox.set_selection_mode(1);
-        }));
-
-        let autoLocStack = builder.get_object('auto-location-stack');
-
-        let autoLocSwitch = builder.get_object('auto-location-switch');
-
-        let currentLocationController = application.currentLocationController;
-
-        let handlerId = autoLocSwitch.connect('notify::active', Lang.bind(this, function() {
-            currentLocationController.setAutoLocation(autoLocSwitch.get_active());
-
-            if (autoLocSwitch.get_active() && !this.model.addedCurrentLocation)
-                autoLocStack.set_visible_child_name('locating-label');
-
-            this.hide();
-        }));
-
-        if(currentLocationController.autoLocation)
-            autoLocStack.set_visible_child_name('locating-label');
-        else {
-            autoLocStack.set_visible_child_name('auto-location-switch-grid');
-            GObject.signal_handler_block(autoLocSwitch, handlerId);
-            autoLocSwitch.set_active(false);
-            GObject.signal_handler_unblock(autoLocSwitch, handlerId);
-        }
-
-        listbox.connect('row-activated', Lang.bind(this, function(listbox, row) {
-            this.hide();
-            this.model.rowActivated(listbox, row);
-        }));
-
-        this.model.connect('current-location-changed', Lang.bind(this, function(model, location) {
-            autoLocStack.set_visible_child_name('auto-location-switch-grid');
-            if (location) {
-                this.model.addNewLocation(location, listbox, true);
-
-                GObject.signal_handler_block(autoLocSwitch, handlerId);
-                autoLocSwitch.set_active(true);
-                GObject.signal_handler_unblock(autoLocSwitch, handlerId);
-            } else {
-                if (!this.model.addedCurrentLocation)
-                    this.model.showRecent(listbox);
-
-                GObject.signal_handler_block(autoLocSwitch, handlerId);
-                autoLocSwitch.set_active(false);
-                GObject.signal_handler_unblock(autoLocSwitch, handlerId);
-
-                autoLocSwitch.set_sensitive(false);
-            }
-        }));
-
-        this.model.connect('validate-listbox', Lang.bind(this, function() {
-            listbox.invalidate_filter();
-            let children = listbox.get_children();
-            if (children.length == 1) {
-                stackPopover.set_visible_child_name("search-grid");
-                return;
-            }
-            stackPopover.set_visible_child_name("locations-grid");
-        }));
-
-        listbox.set_filter_func(Lang.bind(this, this._filterListbox, this.model));
-    },
-
-    _filterListbox: function(row, model) {
-        if(model.currentlyLoadedInfo) {
-            let cityName = getLabelFromRow(row);
-            let loadedCity = model.currentlyLoadedInfo.location.get_city_name();
-            return (cityName != loadedCity);
-        }
-        return true;
-    },
-
-    _locationChanged: function(entry, listbox) {
-        if (entry.location) {
-            this.model.addNewLocation(entry.location, listbox, false);
-            this.hide();
-            entry.location = null;
-        }
-    }
 });
