@@ -31,10 +31,10 @@ const WeeklyForecastFrame = new Lang.Class({
 
     _init: function(params) {
         params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE,
-                                       name: _("weekly-forecast-frame"),
+                                       name: 'weekly-forecast-frame',
                                        width_request: 220 });
         this.parent(params);
-        this.get_accessible().accessible_name = _("WeeklyForecast");
+        this.get_accessible().accessible_name = _("Weekly Forecast");
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
