@@ -51,17 +51,34 @@ const SearchProvider = new Lang.Class({
         return this._impl.unexport_from_connection(connection);
     },
 
-    GetInitialResultSet: function(terms) {
+    GetInitialResultSetAsync: function(params, invocation) {
         this._app.hold();
 
+        let terms = params[0];
         let model = this._app.model;
+
+        if (model.loading) {
+            let notifyId = model.connect('notify::loading', Lang.bind(this, function(model) {
+                if (!model.loading) {
+                    model.disconnect(notifyId);
+                    this._runQuery(terms, invocation);
+                }
+            }));
+        } else {
+            this._runQuery(terms, invocation);
+        }
+    },
+
+    _runQuery: function(terms, invocation) {
         let nameRet = [];
         let cityRet = [];
         let countryRet = [];
 
-        let [ok, iter] = model.get_iter_first();
-        while (ok) {
-            let location = model.get_value(iter, World.Columns.LOCATION);
+        let model = this._app.model;
+
+        let index = 0;
+        for (let info of model.getAll()) {
+            let location = info.location;
 
             let name = Util.normalizeCasefoldAndUnaccent(location.get_name());
             let city = Util.normalizeCasefoldAndUnaccent(location.get_city_name());
@@ -89,7 +106,7 @@ const SearchProvider = new Lang.Class({
             }
 
             if (good) {
-                let path = model.get_path(iter).to_string();
+                let path = index.toString();
 
                 if (nameMatch)
                     nameRet.push(path);
@@ -98,13 +115,13 @@ const SearchProvider = new Lang.Class({
                 else
                     countryRet.push(path);
             }
-
-            ok = model.iter_next(iter);
         }
 
         this._app.release();
 
-        return nameRet.concat(cityRet).concat(countryRet);
+        let result = nameRet.concat(cityRet).concat(countryRet);
+        log(result);
+        invocation.return_value(new GLib.Variant('(as)', [result]));
     },
 
     GetSubsearchResultSet: function(previous, terms) {
@@ -114,17 +131,16 @@ const SearchProvider = new Lang.Class({
         let ret = [];
 
         for (let i = 0; i < previous.length; i++) {
-            let [ok, iter] = model.get_iter_from_string(previous[i]);
-
-            if (!ok)
+            let info = model.getAtIndex(parseInt(previous[i]));
+            if (!info)
                 continue;
 
-            let location = model.get_value(iter, World.Columns.LOCATION);
-
+            let location = info.location;
             let name = Util.normalizeCasefoldAndUnaccent(location.get_name());
             let city = Util.normalizeCasefoldAndUnaccent(location.get_city_name());
             let country = Util.normalizeCasefoldAndUnaccent(getCountryName(location));
             let good = true;
+
             for (let j = 0; j < terms.length && good; j++) {
                 terms[j] = Util.normalizeCasefoldAndUnaccent(terms[j]);
 
@@ -152,15 +168,13 @@ const SearchProvider = new Lang.Class({
         let ret = [];
 
         for (let i = 0; i < identifiers.length; i++) {
-            let [ok, iter] = model.get_iter_from_string(identifiers[i]);
-
-            if (!ok)
+            let info = model.getAtIndex(parseInt(identifiers[i]));
+            if (!info)
                 continue;
 
-            let location = model.get_value(iter, World.Columns.LOCATION);
-            let info = model.get_value(iter, World.Columns.INFO);
-            let name = model.get_value(iter, World.Columns.PRIMARY_TEXT);
-            let conditions = model.get_value(iter, World.Columns.SECONDARY_TEXT);
+            let location = info.location;
+            let name = location.get_city_name();
+            let conditions = Util.getWeatherConditions(info);
 
             // TRANSLATORS: this is the description shown in the overview search
             // It's the current weather conditions followed by the temperature,
@@ -211,21 +225,22 @@ const SearchProvider = new Lang.Class({
     ActivateResult: function(id, terms, timestamp) {
         this._app.hold();
 
+        log('Activating ' + id);
+
         let model = this._app.model;
-        let [ok, iter] = model.get_iter_from_string(id);
-        if (!ok) {
+        let info = model.getAtIndex(parseInt(id));
+        if (!info) {
             this._app.release();
             return;
         }
 
-        let info = model.get_value(iter, World.Columns.INFO);
-        let location = info.get_location().serialize();
+        log('Activating ' + info.get_location_name());
 
+        let location = info.location.serialize();
         this._activateAction('show-location', new GLib.Variant('v', location), timestamp);
     },
 
     LaunchSearch: function(terms, timestamp) {
-        this._app.hold();
-        this._activateAction('new-location', null, timestamp);
+        // not implemented
     },
 });

@@ -62,6 +62,10 @@ const WorldModel = new Lang.Class({
         return [].concat(this._infoList);
     },
 
+    getAtIndex: function(index) {
+        return this._infoList[index];
+    },
+
     currentLocationChanged: function(location) {
         if (location) {
             this.addNewLocation(location, true);

@@ -77,6 +77,7 @@ const BackgroundService = new Lang.Class({
 
         this.world = GWeather.Location.get_world();
         this.model = new World.WorldModel(this.world, false);
+        this.model.load();
 
         Util.initActions(this,
                          [{ name: 'quit',
