@@ -10,7 +10,6 @@
     <file>app/world.js</file>
     <file>misc/params.js</file>
     <file>misc/util.js</file>
-    <file>shared/strings.js</file>
     <file>shared/world.js</file>
   </gresource>
 </gresources>
