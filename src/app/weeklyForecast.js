@@ -22,7 +22,6 @@ const Gtk = imports.gi.Gtk;
 const Lang = imports.lang;
 
 const Params = imports.misc.params;
-const Strings = imports.shared.strings;
 const Util = imports.misc.util;
 
 const WeeklyForecastFrame = new Lang.Class({
