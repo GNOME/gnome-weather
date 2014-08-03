@@ -2,13 +2,17 @@
 [type: gettext/glade]data/city.ui
 data/org.gnome.Weather.Application.desktop.in
 data/org.gnome.Weather.Application.appdata.xml.in
-[type: gettext/glade]data/new-location-dialog.ui
 data/org.gnome.Weather.Application.gschema.xml
+[type: gettext/glade]data/places-popover.ui
 [type: gettext/glade]data/window.ui
 src/app/city.js
+src/app/currentLocationController.js
 src/app/forecast.js
 src/app/main.js
+src/app/weeklyForecast.js
 src/app/window.js
+src/app/world.js
+src/misc/util.js
+src/service/main.js
 src/service/searchProvider.js
-src/shared/strings.js
 src/shared/world.js
