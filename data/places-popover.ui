@@ -198,6 +198,7 @@
                     <property name="can-focus">False</property>
                     <property name="hexpand">True</property>
                     <property name="vexpand">False</property>
+                    <property name="selection-mode">none</property>
                   </object>
                 </child>
               </object>
@@ -220,80 +221,6 @@
         <property name="width">1</property>
         <property name="height">1</property>
       </packing>
-    </child>
-  </object>
-  <object class="GtkGrid" id="initial-grid">
-    <property name="visible">True</property>
-    <property name="name">initial-grid</property>
-    <property name="can_focus">False</property>
-    <property name="orientation">vertical</property>
-    <property name="margin_top">25</property>
-    <property name="margin_bottom">25</property>
-    <property name="halign">center</property>
-    <property name="valign">center</property>
-    <property name="row_homogeneous">True</property>
-    <property name="vexpand">False</property>
-    <child>
-      <object class="GtkImage" id="mark-location-image">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="icon_name">mark-location-symbolic</property>
-        <property name="icon_size">6</property>
-        <property name="use_fallback">True</property>
-        <property name="halign">center</property>
-        <property name="valign">center</property>
-        <property name="vexpand">False</property>
-      </object>
-      <packing>
-        <property name="left_attach">0</property>
-        <property name="top_attach">0</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkLabel" id="search-location-label">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="label">Search for a location</property>
-        <property name="halign">center</property>
-        <property name="valign">center</property>
-        <property name="vexpand">False</property>
-      </object>
-      <packing>
-        <property name="left_attach">0</property>
-        <property name="top_attach">1</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
-    </child>
-        <child>
-      <object class="GtkLabel" id="search-nereby-location-label">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="label">To see weather information, enter the name of a city.</property>
-        <property name="halign">center</property>
-        <property name="valign">center</property>
-        <property name="vexpand">False</property>
-      </object>
-      <packing>
-        <property name="left_attach">0</property>
-        <property name="top_attach">2</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
-    </child>
-    <child>
-    <object class="GWeatherLocationEntry" id="initial-grid-location-entry">
-      <property name="visible">True</property>
-      <property name="can_focus">True</property>
-    </object>
-    <packing>
-      <property name="left_attach">0</property>
-      <property name="top_attach">3</property>
-      <property name="width">1</property>
-      <property name="height">1</property>
-    </packing>
     </child>
   </object>
 </interface>

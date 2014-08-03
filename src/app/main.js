@@ -60,21 +60,7 @@ const Application = new Lang.Class({
         let location = this.world.deserialize(parameter.deep_unpack());
         let win = this._createWindow();
 
-        let info = this.model.getLocationInfo(location);
-        if (!info) {
-            this.model.addLocation(location, false);
-            info = this.model.getLocationInfo(location);
-        }
-
-        win.showInfo(info);
-    },
-
-    _onNewLocation: function(action, parameter) {
-        let win = this.get_active_window();
-        if (!win)
-            win = this._createWindow();
-
-        win.activate_action('new-location', null);
+        this.model.addNewLocation(location, false);
     },
 
     _initAppMenu: function() {
@@ -111,9 +97,7 @@ const Application = new Lang.Class({
                             activate: this._onQuit },
                           { name: 'show-location',
                             activate: this._onShowLocation,
-                            parameter_type: new GLib.VariantType('v') },
-                          { name: 'new-location',
-                            activate: this._onNewLocation }]);
+                            parameter_type: new GLib.VariantType('v') }]);
 
         let gwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather' });
         this.add_action(gwSettings.create_action('temperature-unit'));
@@ -128,40 +112,26 @@ const Application = new Lang.Class({
         let win = new Window.MainWindow({ application: this });
         let notifyId;
 
-        if (!this.currentLocationController.autoLocation) {
-            if (this.model.loading) {
-                let timeoutId;
-                let model = this.model;
+        if (this.model.loading) {
+            let timeoutId;
+            let model = this.model;
 
-                timeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, function() {
-                    log('Timeout during model load, perhaps the network is not available?');
-                    model.disconnect(notifyId);
-                    win.show();
-                    return false;
-                });
-                notifyId = this.model.connect('notify::loading', function(model) {
-                    if (model.loading)
-                        return;
-
-                    model.disconnect(notifyId);
-                    GLib.source_remove(timeoutId);
-                    win.show();
-                });
-            } else {
+            timeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, function() {
+                log('Timeout during model load, perhaps the network is not available?');
+                model.disconnect(notifyId);
                 win.show();
-            }
+                return false;
+            });
+            notifyId = this.model.connect('notify::loading', function(model) {
+                if (model.loading)
+                    return;
+
+                model.disconnect(notifyId);
+                GLib.source_remove(timeoutId);
+                win.show();
+            });
         } else {
-            if (this.model.loading) {
-                notifyId = this.model.connect('notify::loading', Lang.bind(this, function(model) {
-                    if (model.loading)
-                        return;
-
-                    model.disconnect(notifyId);
-                    win.show();
-                }));
-            } else {
-                win.show();
-            }
+            win.show();
         }
 
         return win;

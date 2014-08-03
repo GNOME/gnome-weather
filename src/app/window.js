@@ -23,10 +23,11 @@ const Lang = imports.lang;
 const City = imports.app.city;
 const Params = imports.misc.params;
 const World = imports.shared.world;
+const WorldView = imports.app.world;
 const Util = imports.misc.util;
 
 const Page = {
-    WORLD: 0,
+    SEARCH: 0,
     CITY: 1
 };
 
@@ -41,7 +42,7 @@ const MainWindow = new Lang.Class({
 
         this._world = this.application.world;
         this._currentInfo = null;
-        this._currentPage = Page.WORLD;
+        this._currentPage = Page.SEARCH;
         this._pageWidgets = [[],[]];
 
         Util.initActions(this,
@@ -62,20 +63,21 @@ const MainWindow = new Lang.Class({
         this._header.title = title;
         this._header.subtitle = subtitle;
 
-        this._worldView = new World.WorldContentView(this.application, { visible: true });
+        this._worldView = new WorldView.WorldContentView(this.application, { visible: true });
         this._worldView.hide();
 
         this._model = this._worldView.model;
         this._model.connect('show-info', Lang.bind(this, function(model, info) {
-            this.showInfo(info);
-        }));
-        this._model.connect('no-cityview', Lang.bind(this, function() {
-            for (let i = 0; i < this._pageWidgets[Page.WORLD].length; i++)
-                this._pageWidgets[Page.WORLD][i].show_all();
+            if (info)
+                this.showInfo(info);
+            else
+                this.showSearch(info);
         }));
 
-        this._initialGrid = this._worldView.initialGrid;
-        this._pageWidgets[Page.WORLD].push(this._initialGrid);
+        let initialGrid = builder.get_object('initial-grid');
+
+        let initialGridLocEntry = builder.get_object('initial-grid-location-entry');
+        initialGridLocEntry.connect('notify::location', Lang.bind(this, this._initialLocationChanged));
 
         let placesButton = builder.get_object('places-button');
         this._pageWidgets[Page.CITY].push(placesButton);
@@ -91,9 +93,7 @@ const MainWindow = new Lang.Class({
                                                 vexpand: true });
         this._stack.add(this._cityView);
 
-        this._stack.add(this._initialGrid);
-
-        this._stack.set_visible_child(this._initialGrid);
+        this._stack.set_visible_child(initialGrid);
 
         this.add(grid);
         grid.show_all();
@@ -101,15 +101,22 @@ const MainWindow = new Lang.Class({
         for (let i = 0; i < this._pageWidgets[Page.CITY].length; i++)
             this._pageWidgets[Page.CITY][i].hide();
 
-        this._model.fillCityView(this.application.currentLocationController.autoLocation);
+        let autoLocation = this.application.currentLocationController.autoLocation;
+        if (!autoLocation)
+            this._model.showRecent();
     },
 
     update: function() {
         this._cityView.update();
     },
 
+    _initialLocationChanged: function(entry) {
+        if (entry.location)
+            this._model.addNewLocation(entry.location, false);
+    },
+
     _getTitle: function() {
-        if (this._currentPage == Page.WORLD)
+        if (this._currentPage == Page.SEARCH)
             return [_("Select Location"), null];
 
         let location = this._cityView.info.location;
@@ -145,9 +152,14 @@ const MainWindow = new Lang.Class({
         this._header.subtitle = subtitle;
     },
 
+    showSearch: function() {
+        this._goToPage(Page.SEARCH);
+    },
+
     showInfo: function(info) {
         this._cityView.info = info;
         this._cityView.disconnectClock();
+
         let isCurrentLocation = false;
         let currentLocation = this.application.currentLocationController.currentLocation;
         if (currentLocation) {
@@ -159,6 +171,7 @@ const MainWindow = new Lang.Class({
             this._cityView.connectClock();
             this._cityView.infoPage.timeGrid.show();
         }
+
         this._stack.set_visible_child(this._cityView);
         this._goToPage(Page.CITY);
     },

@@ -7,6 +7,7 @@
     <file>app/weeklyForecast.js</file>
     <file>app/main.js</file>
     <file>app/window.js</file>
+    <file>app/world.js</file>
     <file>misc/params.js</file>
     <file>misc/util.js</file>
     <file>shared/strings.js</file>
