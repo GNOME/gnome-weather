@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-10 21:10+0000\n"
+"POT-Creation-Date: 2014-08-08 08:16+0000\n"
 "PO-Revision-Date: 2014-02-11 10:58+0100\n"
 "Last-Translator: Jonatan Zeidler <jonatan_zeidler@gmx.de>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
@@ -47,16 +47,11 @@ msgid "Quit"
 msgstr "Beenden"
 
 #: ../data/city.ui.h:1
-#| msgid "Current conditions:"
 msgid "Current conditions"
 msgstr "Momentane Bedingungen:"
 
-#: ../data/city.ui.h:2
-msgid "Detailed forecast"
-msgstr "Detaillierte Vorhersage"
-
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
-#: ../src/window.js:313
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Wetter"
 
@@ -67,21 +62,29 @@ msgstr "Wetterberichte und -vorhersagen anzeigen"
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
 "Eine kleine Anwendung, welche es Ihnen erlaubt, das aktuelle Wetter für Ihre "
-"Stadt, oder für einen beliebigen Ort auf der Welt zu betrachten. Ebenfalls "
-"ermöglicht es Ihnen den Zugang zu der aktualisierten Wettervorhersage für "
-"bis zu sieben Tage mit Hilfe von verschiedenen Internetdiensten."
+"Stadt, oder für einen beliebigen Ort auf der Welt zu betrachten."
 
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "Neuer Ort"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Bietet Zugang zu detaillierter Wettervorhersage über bis zu 7 Tage mit "
+"stündlichen Details für den laufenden und den folgenden Tag auf Basis "
+"mehrerer Internetdienste"
 
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "Nach einer Stadt suchen:"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also integrates with the GNOME Shell, allowing you see the current "
+"conditions of any configured city by just typing its name in the Activities "
+"Overview."
+msgstr ""
+"Lässt sich in die GNOME-Shell einbinden, so dass sie sich über das aktuelle "
+"Wetter jeder eingegebenen Stadt informieren können, indem sie ihren Namen "
+"in die Aktivitätenübersicht eingeben."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -95,279 +98,263 @@ msgstr ""
 "Die in der Weltansicht von gnome-weather angezeigten Orte. Jeder Wert ist "
 "ein GVariant, das von gweather_location_serialize() zurückgegeben wurde."
 
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "automatischer Ort"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"Die Einstellung »automatischer Ort« legt fest, ob automatisch das Wetter "
+"des aktuellen Ortes angezeigt werden soll."
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "automatischer Ort"
+
 #: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "Alle auswählen"
+msgid "Places"
+msgstr "Orte"
 
 #: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "Nichts auswählen"
-
-#: ../data/window.ui.h:3 ../src/window.js:202
-msgid "Click on locations to select them"
-msgstr "Klicken Sie auf Orte, um diese auszuwählen"
-
-#: ../data/window.ui.h:4
-msgid "New"
-msgstr "Neu"
-
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "Zurück"
-
-#: ../data/window.ui.h:6
-#| msgid "Select All"
-msgid "Select"
-msgstr "Auswählen"
-
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: ../data/window.ui.h:8
 msgid "Refresh"
 msgstr "Aktualisieren"
 
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "Löschen"
-
-#: ../src/city.js:125
+#: ../src/app/city.js:190
 msgid "City view"
 msgstr "Stadtansicht"
 
-#: ../src/city.js:134
+#: ../src/app/city.js:199
 msgid "Loading…"
 msgstr "Laden …"
 
-#: ../src/forecast.js:41
-#| msgid "Forecast for Today"
+#: ../src/app/city.js:273
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Vorhersage"
 
-#: ../src/forecast.js:128 ../src/forecast.js:413
-msgid "Today"
-msgstr "Heute"
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "Vorhersage nicht verfügbar"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
-msgid "Tomorrow"
-msgstr "Morgen"
-
-#: ../src/forecast.js:151
-msgid "%s / %s"
-msgstr "%s / %s"
-
-#: ../src/forecast.js:197 ../src/forecast.js:291
-msgid "More…"
-msgstr "Weitere …"
-
-#: ../src/forecast.js:318
+#: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:321
+#: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "Vorhersage für morgen"
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Vorhersage für die Woche"
 
-#: ../src/forecast.js:354
-msgid "Forecast for Today"
-msgstr "Vorhersage für heute"
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
 
-# http://php.net/manual/de/function.strftime.php
-#: ../src/forecast.js:356
-msgid "%B %d"
-msgstr "%d. %B"
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "Ort wählen"
 
-#: ../src/searchProvider.js:169
-msgid "%s, %s"
-msgstr "%s, %s"
-
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "Montagnacht"
-
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "Montagmorgen"
-
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "Montagnachmittag"
-
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "Montagabend"
-
-# http://www.duden.de/rechtschreibung/Dienstagnacht
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "Dienstagnacht"
-
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "Dienstagmorgen"
-
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Dienstagnachmittag"
-
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "Donnerstagabend"
-
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "Mittwochnacht"
-
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "Mittwochmorgen"
-
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "Mittwochnachmittag"
-
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "Mittwochabend"
-
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "Donnerstagnacht"
-
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "Donnerstagmorgen"
-
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "Donnerstagnachmittag"
-
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "Donnerstagabend"
-
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "Freitagnacht"
-
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "Freitagmorgen"
-
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "Freitagnachmittag"
-
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "Freitagabend"
-
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "Samstagnacht"
-
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "Samstagmorgen"
-
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "Samstagnachmittag"
-
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "Samstagabend"
-
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "Sonntagnacht"
-
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "Sonntagmorgen"
-
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "Sonntagnachmittag"
-
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "Sonntagabend"
-
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "Heute Abend"
-
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "Heute Morgen"
-
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "Heute Nachmittag"
-
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "Heute Abend"
-
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "Morgen Nacht"
-
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Morgen früh"
-
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Morgen Nachmittag"
-
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Morgen Abend"
-
-#: ../src/window.js:197
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d ausgewählt"
-msgstr[1] "%d ausgewählt"
-
-#: ../src/window.js:223
-msgid "World Weather"
-msgstr "Weltwetter"
-
-#: ../src/window.js:312
+#: ../src/app/window.js:191
 msgid "translator-credits"
 msgstr "Christian Kirbach <christian.kirbach@gmail.com>, 2013"
 
-#: ../src/window.js:314
+#: ../src/app/window.js:193
 msgid "A weather application"
 msgstr "Eine Wetter-Anwendung"
 
-#: ../src/world.js:214
-msgid "Cities"
-msgstr "Städte"
-
-#: ../src/world.js:231
-#| msgid "World Weather"
+#: ../src/app/world.js:38
 msgid "World view"
 msgstr "Weltansicht"
 
-#: ../src/world.js:258
-msgid "Add locations"
-msgstr "Orte hinzufügen"
+#: ../src/misc/util.js:159
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
 
-#: ../src/world.js:261
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr ""
-"Verwenden Sie den »Neu«-Knopf auf der Werkzeugleiste, um weitere Orte "
-"hinzuzufügen"
+#: ../src/service/searchProvider.js:182
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#~ msgid "Detailed forecast"
+#~ msgstr "Detaillierte Vorhersage"
+
+#~ msgid "Search for a city:"
+#~ msgstr "Nach einer Stadt suchen:"
+
+#~ msgid "Select All"
+#~ msgstr "Alle auswählen"
+
+#~ msgid "Select None"
+#~ msgstr "Nichts auswählen"
+
+#~ msgid "Click on locations to select them"
+#~ msgstr "Klicken Sie auf Orte, um diese auszuwählen"
+
+#~ msgid "New"
+#~ msgstr "Neu"
+
+#~ msgid "Back"
+#~ msgstr "Zurück"
+
+#~| msgid "Select All"
+#~ msgid "Select"
+#~ msgstr "Auswählen"
+
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
+
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+
+#~ msgid "Today"
+#~ msgstr "Heute"
+
+#~ msgid "Tomorrow"
+#~ msgstr "Morgen"
+
+#~ msgid "More…"
+#~ msgstr "Weitere …"
+
+#~ msgid "Forecast for Tomorrow"
+#~ msgstr "Vorhersage für morgen"
+
+# http://php.net/manual/de/function.strftime.php
+#~ msgid "%B %d"
+#~ msgstr "%d. %B"
+
+#~ msgid "Monday night"
+#~ msgstr "Montagnacht"
+
+#~ msgid "Monday morning"
+#~ msgstr "Montagmorgen"
+
+#~ msgid "Monday afternoon"
+#~ msgstr "Montagnachmittag"
+
+#~ msgid "Monday evening"
+#~ msgstr "Montagabend"
+
+# http://www.duden.de/rechtschreibung/Dienstagnacht
+#~ msgid "Tuesday night"
+#~ msgstr "Dienstagnacht"
+
+#~ msgid "Tuesday morning"
+#~ msgstr "Dienstagmorgen"
+
+#~ msgid "Tuesday afternoon"
+#~ msgstr "Dienstagnachmittag"
+
+#~ msgid "Tuesday evening"
+#~ msgstr "Donnerstagabend"
+
+#~ msgid "Wednesday night"
+#~ msgstr "Mittwochnacht"
+
+#~ msgid "Wednesday morning"
+#~ msgstr "Mittwochmorgen"
+
+#~ msgid "Wednesday afternoon"
+#~ msgstr "Mittwochnachmittag"
+
+#~ msgid "Wednesday evening"
+#~ msgstr "Mittwochabend"
+
+#~ msgid "Thursday night"
+#~ msgstr "Donnerstagnacht"
+
+#~ msgid "Thursday morning"
+#~ msgstr "Donnerstagmorgen"
+
+#~ msgid "Thursday afternoon"
+#~ msgstr "Donnerstagnachmittag"
+
+#~ msgid "Thursday evening"
+#~ msgstr "Donnerstagabend"
+
+#~ msgid "Friday night"
+#~ msgstr "Freitagnacht"
+
+#~ msgid "Friday morning"
+#~ msgstr "Freitagmorgen"
+
+#~ msgid "Friday afternoon"
+#~ msgstr "Freitagnachmittag"
+
+#~ msgid "Friday evening"
+#~ msgstr "Freitagabend"
+
+#~ msgid "Saturday night"
+#~ msgstr "Samstagnacht"
+
+#~ msgid "Saturday morning"
+#~ msgstr "Samstagmorgen"
+
+#~ msgid "Saturday afternoon"
+#~ msgstr "Samstagnachmittag"
+
+#~ msgid "Saturday evening"
+#~ msgstr "Samstagabend"
+
+#~ msgid "Sunday night"
+#~ msgstr "Sonntagnacht"
+
+#~ msgid "Sunday morning"
+#~ msgstr "Sonntagmorgen"
+
+#~ msgid "Sunday afternoon"
+#~ msgstr "Sonntagnachmittag"
+
+#~ msgid "Sunday evening"
+#~ msgstr "Sonntagabend"
+
+#~ msgid "Tonight"
+#~ msgstr "Heute Abend"
+
+#~ msgid "This morning"
+#~ msgstr "Heute Morgen"
+
+#~ msgid "This afternoon"
+#~ msgstr "Heute Nachmittag"
+
+#~ msgid "This evening"
+#~ msgstr "Heute Abend"
+
+#~ msgid "Tomorrow night"
+#~ msgstr "Morgen Nacht"
+
+#~ msgid "Tomorrow morning"
+#~ msgstr "Morgen früh"
+
+#~ msgid "Tomorrow afternoon"
+#~ msgstr "Morgen Nachmittag"
+
+#~ msgid "Tomorrow evening"
+#~ msgstr "Morgen Abend"
+
+#~ msgid "%d selected"
+#~ msgid_plural "%d selected"
+#~ msgstr[0] "%d ausgewählt"
+#~ msgstr[1] "%d ausgewählt"
+
+#~ msgid "World Weather"
+#~ msgstr "Weltwetter"
+
+#~ msgid "Cities"
+#~ msgstr "Städte"
+
+#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+#~ msgstr ""
+#~ "Verwenden Sie den »Neu«-Knopf auf der Werkzeugleiste, um weitere Orte "
+#~ "hinzuzufügen"
 
 #~ msgid "About Weather"
 #~ msgstr "Info zu Wetter"
