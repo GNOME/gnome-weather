@@ -1,3 +1,10 @@
+3.13.90
+=======
+* Completely redesign the application [Saurabh, #733236]
+* Remove libgd submodule and make the application noarch
+* Disable the search provider by default [#734048]
+* Translation updates
+
 3.13.4
 ======
 * We now use package.js from gjs upstream
