@@ -118,7 +118,7 @@
                           </object>
                           <packing>
                             <property name="name">today-button</property>
-                            <property name="title">Today</property>
+                            <property name="title" translatable="yes">Today</property>
                           </packing>
                         </child>
                         <child>
@@ -127,7 +127,7 @@
                           </object>
                           <packing>
                             <property name="name">tomorrow-button</property>
-                            <property name="title">Tomorrow</property>
+                            <property name="title" translatable="yes">Tomorrow</property>
                           </packing>
                         </child>
                       </object>

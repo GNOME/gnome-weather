@@ -169,7 +169,7 @@
               <object class="GtkLabel" id="recently-viewed-label">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label">Viewed Recently</property>
+                <property name="label" translatable="yes">Viewed Recently</property>
                 <property name="halign">start</property>
                 <property name="vexpand">False</property>
                 <attributes>
