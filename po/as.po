@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-18 08:14+0000\n"
-"PO-Revision-Date: 2014-08-18 18:07+0530\n"
+"POT-Creation-Date: 2014-08-19 14:26+0000\n"
+"PO-Revision-Date: 2014-08-19 20:40+0530\n"
 "Last-Translator: Nilamdyuti Goswami <ngoswami@redhat.com>\n"
 "Language-Team: Assamese <kde-i18n-doc@kde.org>\n"
 "Language: as\n"
@@ -47,6 +47,14 @@ msgstr "প্ৰস্থান কৰক"
 msgid "Current conditions"
 msgstr "বৰ্তমান চৰ্তসমূহ"
 
+#: ../data/city.ui.h:2
+msgid "Today"
+msgstr "আজি"
+
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "অহাকালি"
+
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
 #: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
@@ -57,10 +65,6 @@ msgid "Show weather conditions and forecast"
 msgstr "বতৰৰ অৱস্থা আৰু পূৰ্বানুমান দেখুৱাওক"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#| msgid ""
-#| "A small application that allows you to monitor the current weather "
-#| "conditions for your city, or anywhere in the world and to access updated "
-#| "forecasts, up to 7 days, provided by various internet services."
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -74,17 +78,23 @@ msgid ""
 "for the current and next day, using various internet services."
 msgstr ""
 "ই বিভিন্ন ইন্টাৰনেট সেৱাসমূহ ব্যৱহাৰ কৰি বৰ্তমান আৰু পৰৱৰ্তী দিনৰ বাবে প্ৰতি "
-"ঘন্টা বিৱৰণসমূহৰ সৈতে, "
-"৭ দিন লৈকে, বিৱৰিত আগজাননী প্ৰদান কৰে।"
+"ঘন্টা "
+"বিৱৰণসমূহৰ সৈতে, ৭ দিন লৈকে, বিৱৰিত আগজাননী প্ৰদান কৰে।"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#| msgid ""
+#| "It also integrates with the GNOME Shell, allowing you see the current "
+#| "conditions of any configured city by just typing its name in the "
+#| "Activities Overview."
 msgid ""
-"It also integrates with the GNOME Shell, allowing you see the current "
-"conditions of any configured city by just typing its name in the Activities "
-"Overview."
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
 msgstr ""
-"ই লগতে GNOME শ্বেলৰ সৈতে অনুকলন কৰে, যাৰ বাবে আপুনি কাৰ্য্যসমূহ অভাৰভিউত "
-"এটা সংৰূপিত নগৰৰ নাম টাইপ কৰি তাৰ বৰ্তমান অৱস্থা চাব পাৰিব।"
+"ই লগতে বিকল্পভাৱে GNOME শ্বেলৰ সৈতে অনুকলন কৰে, যাৰ বাবে আপুনি কাৰ্য্যসমূহ "
+"অভাৰভিউত এটা "
+"আটাইতকৈ শেহতীয়াভাৱে সন্ধান কৰা নগৰসমূহৰ কেৱল নাম টাইপ কৰি তাৰ বৰ্তমান অৱস্থা "
+"চাব পাৰিব।"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -99,7 +109,6 @@ msgstr ""
 "gweather_location_serialize() দ্বাৰা ঘুৰাই দিয়া এটা GVariant।"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "স্বচালিত অবস্থান"
 
@@ -109,12 +118,16 @@ msgid ""
 "decides whether to fetch current location or not."
 msgstr ""
 "স্বচালিত অৱস্থান হল স্বচালিত-অৱস্থান চুইচৰ মান যি বৰ্তমান অৱস্থা প্ৰাপ্ত কৰা "
-"হব নে নহয় নিৰ্ধাৰণ কৰে।"
+"হব নে "
+"নহয় নিৰ্ধাৰণ কৰে।"
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "স্বচালিত অবস্থান"
+
+#: ../data/places-popover.ui.h:2
+msgid "Viewed Recently"
+msgstr "শেহতীয়াভাৱে দৰ্শন কৰা"
 
 #: ../data/window.ui.h:1
 msgid "Places"
@@ -141,7 +154,6 @@ msgid "Forecast"
 msgstr "প্ৰাককলন"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "আগজাননী উপলব্ধ নহয়"
 
@@ -154,7 +166,6 @@ msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "সাপ্তাহিক আগজাননী"
 
@@ -163,7 +174,6 @@ msgid "%A"
 msgstr "%A"
 
 #: ../src/app/window.js:120
-#| msgid "New Location"
 msgid "Select Location"
 msgstr "অবস্থান বাছক"
 
@@ -219,12 +229,6 @@ msgstr "%s, %s"
 
 #~ msgid "Delete"
 #~ msgstr "মচি পেলাওক"
-
-#~ msgid "Today"
-#~ msgstr "আজি"
-
-#~ msgid "Tomorrow"
-#~ msgstr "অহাকালি"
 
 #~ msgid "More…"
 #~ msgstr "অধিক…"
