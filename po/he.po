@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-19 17:12+0300\n"
-"PO-Revision-Date: 2014-08-19 17:15+0300\n"
-"Last-Translator: Yosef Or Boczko <yoseforb@gnome.org>\n"
+"POT-Creation-Date: 2014-08-19 17:23+0300\n"
+"PO-Revision-Date: 2014-08-19 17:24+0300\n"
+"Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -47,6 +47,14 @@ msgstr "יציאה"
 #: ../data/city.ui.h:1
 msgid "Current conditions"
 msgstr "תנאים נוכחיים"
+
+#: ../data/city.ui.h:2
+msgid "Today"
+msgstr "היום"
+
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "מחר"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
 #: ../src/app/window.js:192 ../src/service/main.js:49
@@ -107,6 +115,10 @@ msgstr ""
 #: ../data/places-popover.ui.h:1
 msgid "Automatic Location"
 msgstr "מיקום אוטומטי"
+
+#: ../data/places-popover.ui.h:2
+msgid "Viewed Recently"
+msgstr "נצפה לאחרונה"
 
 #: ../data/window.ui.h:1
 msgid "Places"
@@ -221,12 +233,6 @@ msgstr "%s, %s"
 
 #~ msgid "Delete"
 #~ msgstr "מחיקה"
-
-#~ msgid "Today"
-#~ msgstr "היום"
-
-#~ msgid "Tomorrow"
-#~ msgstr "מחר"
 
 #~ msgid "More…"
 #~ msgstr "עוד…"
