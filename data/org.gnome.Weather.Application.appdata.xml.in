@@ -14,9 +14,9 @@
       details for the current and next day, using various internet services.
     </_p>
     <_p>
-      It also integrates with the GNOME Shell, allowing you see the
-      current conditions of any configured city by just typing its name
-      in the Activities Overview.
+      It also optionally integrates with the GNOME Shell, allowing you see
+      the current conditions of the most recently searched cities by just
+      typing its name in the Activities Overview.
     </_p>
   </description>
   <screenshots>
@@ -24,10 +24,7 @@
       <image width="1002" height="564">https://git.gnome.org/browse/gnome-weather/plain/misc/screenshots/city-view.png</image>
     </screenshot>
     <screenshot>
-      <image width="1002" height="564">https://git.gnome.org/browse/gnome-weather/plain/misc/screenshots/world-view.png</image>
-    </screenshot>
-    <screenshot>
-      <image width="1002" height="564">https://git.gnome.org/browse/gnome-weather/plain/misc/screenshots/city-view-sidebar.png</image>
+      <image width="1002" height="564">https://git.gnome.org/browse/gnome-weather/plain/misc/screenshots/world-popover.png</image>
     </screenshot>
   </screenshots>
   <url type="homepage">https://wiki.gnome.org/Apps/Weather</url>
