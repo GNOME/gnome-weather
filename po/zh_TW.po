@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-05-18 11:12+0000\n"
-"PO-Revision-Date: 2014-06-22 16:41+0800\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
+"POT-Creation-Date: 2014-08-20 20:16+0000\n"
+"PO-Revision-Date: 2014-08-21 11:41+0800\n"
+"Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (Taiwan) <chinese-l10n@googlegroups.com>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.5\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -48,11 +48,15 @@ msgid "Current conditions"
 msgstr "目前情況"
 
 #: ../data/city.ui.h:2
-msgid "Detailed forecast"
-msgstr "詳細預報"
+msgid "Today"
+msgstr "今天"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:56
-#: ../src/app/window.js:321
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "明天"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "天氣"
 
@@ -61,21 +65,31 @@ msgid "Show weather conditions and forecast"
 msgstr "顯示天氣狀況與氣象預報"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#| msgid ""
+#| "A small application that allows you to monitor the current weather "
+#| "conditions for your city, or anywhere in the world and to access updated "
+#| "forecasts, up to 7 days, provided by various internet services."
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
+msgstr "一個小型應用程式，允許您監控您的城市或是世界中任一地區目前的天氣狀況。"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
 msgstr ""
-"一個小型應用程式，允許您監控您的城市或是世界中任一地區目前的天氣狀況，並存取"
-"更新的氣象預報，可達 7 天，由多種網際網路服務所提供。"
+"它提供了詳細的天氣預報，最多達 7 天，有每小時針對目前與明天的詳細資料，使用各"
+"種網際網路服務提供。"
 
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "新增位置"
-
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "搜尋城市："
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+"它也可以選擇性與 GNOME Shell 整合，允許您在活動概覽中輸入名稱就可以搜尋最近尋"
+"找過的城市並查看它目前的天氣狀況。"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -89,279 +103,258 @@ msgstr ""
 "位置顯示於 gnome-weather 的世界檢視。每個數值都是由 "
 "gweather_location_serialize() 傳回的 GVariant。"
 
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+#| msgid "Add locations"
+msgid "Automatic location"
+msgstr "自動位置"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr "自動位置是 automatic-location 開關的數值，它決定是否要取得目前的位置。"
+
+#: ../data/places-popover.ui.h:1
+#| msgid "New Location"
+msgid "Automatic Location"
+msgstr "自動位置"
+
+#: ../data/places-popover.ui.h:2
+msgid "Viewed Recently"
+msgstr "最近查詢過"
+
 #: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "全部選取"
+msgid "Places"
+msgstr "位置"
 
 #: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "都不選取"
-
-#: ../data/window.ui.h:3 ../src/app/window.js:208
-msgid "Click on locations to select them"
-msgstr "點擊位置來選取它們"
-
-#: ../data/window.ui.h:4
-msgid "New"
-msgstr "新增"
-
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "返回"
-
-#: ../data/window.ui.h:6
-msgid "Select"
-msgstr "選取"
-
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "取消"
-
-#: ../data/window.ui.h:8
 msgid "Refresh"
 msgstr "重新整理"
 
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "刪除"
-
-#: ../src/app/city.js:128
+#: ../src/app/city.js:190
 msgid "City view"
 msgstr "城市檢視"
 
-#: ../src/app/city.js:137
+#: ../src/app/city.js:199
 msgid "Loading…"
 msgstr "載入中…"
 
-#: ../src/app/city.js:209
+#: ../src/app/city.js:273
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/app/forecast.js:41
+#: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "預報"
 
-#: ../src/app/forecast.js:128 ../src/app/forecast.js:413
-msgid "Today"
-msgstr "今天"
+#: ../src/app/forecast.js:110
+#| msgid "Forecast for Today"
+msgid "Forecast not available"
+msgstr "天氣預報無法使用"
 
-#: ../src/app/forecast.js:134 ../src/app/forecast.js:295
-#: ../src/app/forecast.js:380 ../src/app/forecast.js:415
-msgid "Tomorrow"
-msgstr "明天"
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%p %l∶%M"
 
-#: ../src/app/forecast.js:151
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+#| msgid "Forecast"
+msgid "Weekly Forecast"
+msgstr "每週天氣"
+
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+#| msgid "New Location"
+msgid "Select Location"
+msgstr "選取位置"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr "Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>, 2013"
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "天氣應用程式"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "世界檢視"
+
+#: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/app/forecast.js:197 ../src/app/forecast.js:291
-msgid "More…"
-msgstr "更多…"
-
-#: ../src/app/forecast.js:318
-msgid "%l∶%M %p"
-msgstr "%p %l∶%M"
-
-#: ../src/app/forecast.js:321
-msgid "%R"
-msgstr "%R"
-
-#: ../src/app/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "明日天氣預報"
-
-#: ../src/app/forecast.js:354
-msgid "Forecast for Today"
-msgstr "今日天氣預報"
-
-#: ../src/app/forecast.js:356
-msgid "%B %d"
-msgstr "%b%e日"
-
-#: ../src/app/window.js:203
-#, javascript-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "已選擇 %d 個"
-
-#: ../src/app/window.js:229
-msgid "World Weather"
-msgstr "世界天氣"
-
-#: ../src/app/window.js:320
-msgid "translator-credits"
-msgstr "Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>, 2013"
-
-#: ../src/app/window.js:322
-msgid "A weather application"
-msgstr "天氣應用程式"
-
-#: ../src/service/searchProvider.js:168
+#: ../src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s，%s"
 
-#: ../src/shared/strings.js:22
-msgid "Monday night"
-msgstr "星期一晚上"
+#~ msgid "Detailed forecast"
+#~ msgstr "詳細預報"
 
-#: ../src/shared/strings.js:22
-msgid "Monday morning"
-msgstr "星期一早上"
+#~ msgid "Search for a city:"
+#~ msgstr "搜尋城市："
 
-#: ../src/shared/strings.js:22
-msgid "Monday afternoon"
-msgstr "星期一下午"
+#~ msgid "Select All"
+#~ msgstr "全部選取"
 
-#: ../src/shared/strings.js:22
-msgid "Monday evening"
-msgstr "星期一傍晚"
+#~ msgid "Select None"
+#~ msgstr "都不選取"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday night"
-msgstr "星期二晚上"
+#~ msgid "Click on locations to select them"
+#~ msgstr "點擊位置來選取它們"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday morning"
-msgstr "星期二早上"
+#~ msgid "New"
+#~ msgstr "新增"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "星期二下午"
+#~ msgid "Back"
+#~ msgstr "返回"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday evening"
-msgstr "星期二傍晚"
+#~ msgid "Select"
+#~ msgstr "選取"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday night"
-msgstr "星期三晚上"
+#~ msgid "Cancel"
+#~ msgstr "取消"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday morning"
-msgstr "星期三早上"
+#~ msgid "Delete"
+#~ msgstr "刪除"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "星期三下午"
+#~ msgid "More…"
+#~ msgstr "更多…"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday evening"
-msgstr "星期三傍晚"
+#~ msgid "Forecast for Tomorrow"
+#~ msgstr "明日天氣預報"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday night"
-msgstr "星期四晚上"
+#~ msgid "%B %d"
+#~ msgstr "%b%e日"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday morning"
-msgstr "星期四早上"
+#~ msgid "%d selected"
+#~ msgid_plural "%d selected"
+#~ msgstr[0] "已選擇 %d 個"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday afternoon"
-msgstr "星期四下午"
+#~ msgid "World Weather"
+#~ msgstr "世界天氣"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday evening"
-msgstr "星期四傍晚"
+#~ msgid "Monday night"
+#~ msgstr "星期一晚上"
 
-#: ../src/shared/strings.js:26
-msgid "Friday night"
-msgstr "星期五晚上"
+#~ msgid "Monday morning"
+#~ msgstr "星期一早上"
 
-#: ../src/shared/strings.js:26
-msgid "Friday morning"
-msgstr "星期五早上"
+#~ msgid "Monday afternoon"
+#~ msgstr "星期一下午"
 
-#: ../src/shared/strings.js:26
-msgid "Friday afternoon"
-msgstr "星期五下午"
+#~ msgid "Monday evening"
+#~ msgstr "星期一傍晚"
 
-#: ../src/shared/strings.js:26
-msgid "Friday evening"
-msgstr "星期五傍晚"
+#~ msgid "Tuesday night"
+#~ msgstr "星期二晚上"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday night"
-msgstr "星期六晚上"
+#~ msgid "Tuesday morning"
+#~ msgstr "星期二早上"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday morning"
-msgstr "星期六早上"
+#~ msgid "Tuesday afternoon"
+#~ msgstr "星期二下午"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday afternoon"
-msgstr "星期六下午"
+#~ msgid "Tuesday evening"
+#~ msgstr "星期二傍晚"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday evening"
-msgstr "星期六傍晚"
+#~ msgid "Wednesday night"
+#~ msgstr "星期三晚上"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday night"
-msgstr "星期日晚上"
+#~ msgid "Wednesday morning"
+#~ msgstr "星期三早上"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday morning"
-msgstr "星期日早上"
+#~ msgid "Wednesday afternoon"
+#~ msgstr "星期三下午"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday afternoon"
-msgstr "星期日下午"
+#~ msgid "Wednesday evening"
+#~ msgstr "星期三傍晚"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday evening"
-msgstr "星期日傍晚"
+#~ msgid "Thursday night"
+#~ msgstr "星期四晚上"
 
-#: ../src/shared/strings.js:31
-msgid "Tonight"
-msgstr "今天晚上"
+#~ msgid "Thursday morning"
+#~ msgstr "星期四早上"
 
-#: ../src/shared/strings.js:31
-msgid "This morning"
-msgstr "今天早上"
+#~ msgid "Thursday afternoon"
+#~ msgstr "星期四下午"
 
-#: ../src/shared/strings.js:31
-msgid "This afternoon"
-msgstr "今天下午"
+#~ msgid "Thursday evening"
+#~ msgstr "星期四傍晚"
 
-#: ../src/shared/strings.js:31
-msgid "This evening"
-msgstr "今天傍晚"
+#~ msgid "Friday night"
+#~ msgstr "星期五晚上"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow night"
-msgstr "明天晚上"
+#~ msgid "Friday morning"
+#~ msgstr "星期五早上"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow morning"
-msgstr "明天早上"
+#~ msgid "Friday afternoon"
+#~ msgstr "星期五下午"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "明天下午"
+#~ msgid "Friday evening"
+#~ msgstr "星期五傍晚"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow evening"
-msgstr "明天傍晚"
+#~ msgid "Saturday night"
+#~ msgstr "星期六晚上"
 
-#: ../src/shared/world.js:276
-msgid "Cities"
-msgstr "城市"
+#~ msgid "Saturday morning"
+#~ msgstr "星期六早上"
 
-#: ../src/shared/world.js:293
-#| msgid "World Weather"
-msgid "World view"
-msgstr "世界檢視"
+#~ msgid "Saturday afternoon"
+#~ msgstr "星期六下午"
 
-#: ../src/shared/world.js:321
-msgid "Add locations"
-msgstr "加入位置"
+#~ msgid "Saturday evening"
+#~ msgstr "星期六傍晚"
 
-#: ../src/shared/world.js:324
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr "使用工具列上的 <b>新增</b> 按鈕來加入更多世界位置"
+#~ msgid "Sunday night"
+#~ msgstr "星期日晚上"
+
+#~ msgid "Sunday morning"
+#~ msgstr "星期日早上"
+
+#~ msgid "Sunday afternoon"
+#~ msgstr "星期日下午"
+
+#~ msgid "Sunday evening"
+#~ msgstr "星期日傍晚"
+
+#~ msgid "Tonight"
+#~ msgstr "今天晚上"
+
+#~ msgid "This morning"
+#~ msgstr "今天早上"
+
+#~ msgid "This afternoon"
+#~ msgstr "今天下午"
+
+#~ msgid "This evening"
+#~ msgstr "今天傍晚"
+
+#~ msgid "Tomorrow night"
+#~ msgstr "明天晚上"
+
+#~ msgid "Tomorrow morning"
+#~ msgstr "明天早上"
+
+#~ msgid "Tomorrow afternoon"
+#~ msgstr "明天下午"
+
+#~ msgid "Tomorrow evening"
+#~ msgstr "明天傍晚"
+
+#~ msgid "Cities"
+#~ msgstr "城市"
+
+#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+#~ msgstr "使用工具列上的 <b>新增</b> 按鈕來加入更多世界位置"
 
 #~ msgid "About Weather"
 #~ msgstr "關於 Weather"
