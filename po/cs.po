@@ -5,22 +5,23 @@
 # Adam Matoušek <adamatousek@gmail.com>, 2013.
 # Daniel Puncman <puncmdan@fel.cvut.cz>, 2013.
 # Marek Černocký <marek@manet.cz>, 2013, 2014.
+# František Zatloukal <Zatloukal.Frantisek@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-04-23 08:24+0000\n"
-"PO-Revision-Date: 2014-04-23 22:00+0200\n"
-"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"POT-Creation-Date: 2014-08-24 08:20+0000\n"
+"PO-Revision-Date: 2014-08-24 21:57+0100\n"
+"Last-Translator: František Zatloukal <Zatloukal.Frantisek@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -51,15 +52,15 @@ msgid "Current conditions"
 msgstr "Současné podmínky"
 
 #: ../data/city.ui.h:2
-msgid "label"
-msgstr ""
+msgid "Today"
+msgstr "Dnes"
 
 #: ../data/city.ui.h:3
-msgid "Detailed forecast"
-msgstr "Podrobná předpověď"
+msgid "Tomorrow"
+msgstr "Zítra"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
-#: ../src/window.js:321
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Počasí"
 
@@ -70,21 +71,28 @@ msgstr "Zobrazit povětrnostní podmínky a předpověď"
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
 "Malá aplikace, díky které můžete sledovat aktuální povětrnostní podmínky ve "
-"svém městě nebo kdekoliv na světě a dozvíte se předpověď počasí až na 7 dní "
-"dopředu z různých zdrojů na Internetu."
+"svém městě nebo kdekoliv na světě."
 
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "Nové místo"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Díky využití několika internetových služeb poskytuje podrobnou předpověď až "
+"na 7 dní, pro dnešek a zítřek s detaily po hodinách."
 
-# label
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "Vyhledat město:"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+"Umí se integrovat do prostředím GNOME Shell, takže si můžete zobrazit "
+"aktuální počasí v nedávno vyhledaných městech napsaním jejich názvu v "
+"přehledu činností."
 
 # summary
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
@@ -100,280 +108,94 @@ msgstr ""
 "Místa zobrazená na mapě světa v aplikaci Počasí pro prostředí Gnome. Každá "
 "hodnota reprezentuje GVariant vrácený službou gweather_location_serialize()."
 
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "Automatické místo"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"Automatické místo je hodnota přepínače automatic-location, který rozhoduje, "
+"jestli zjišťovat aktuální místo nebo ne."
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "Automatické místo"
+
+#: ../data/places-popover.ui.h:2
+msgid "Viewed Recently"
+msgstr "Naposledy zobrazené"
+
 #: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "Vybrat vše"
+msgid "Places"
+msgstr "Místa"
 
 #: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "Zrušit výběr"
-
-#: ../data/window.ui.h:3 ../src/window.js:208
-msgid "Click on locations to select them"
-msgstr "Kliknutím na místa je vyberete"
-
-#: ../data/window.ui.h:4
-msgid "New"
-msgstr "Nové"
-
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "Zpět"
-
-#: ../data/window.ui.h:6
-msgid "Select"
-msgstr "Vybrat"
-
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: ../data/window.ui.h:8
 msgid "Refresh"
 msgstr "Aktualizovat"
 
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "Smazat"
-
-#: ../src/city.js:128
+#: ../src/app/city.js:190
 msgid "City view"
 msgstr "Zobrazení města"
 
-#: ../src/city.js:137
+#: ../src/app/city.js:199
 msgid "Loading…"
 msgstr "Načítá se…"
 
-#: ../src/city.js:209
+#: ../src/app/city.js:273
 msgid "%H:%M"
 msgstr "%k∶%M"
 
-#: ../src/forecast.js:41
+#: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Předpověď počasí"
 
-#: ../src/forecast.js:128 ../src/forecast.js:413
-msgid "Today"
-msgstr "Dnes"
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "Předpověď není dostupná"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
-msgid "Tomorrow"
-msgstr "Zítra"
-
-#: ../src/forecast.js:151
-#, javascript-format
-msgid "%s / %s"
-msgstr "%s / %s"
-
-#: ../src/forecast.js:197 ../src/forecast.js:291
-msgid "More…"
-msgstr "Více…"
-
-#: ../src/forecast.js:318
+#: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:321
+#: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "Předpověď na zítra"
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Týdenní předpověď počasí"
 
-#: ../src/forecast.js:354
-msgid "Forecast for Today"
-msgstr "Předpověď na dnes"
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
 
-#: ../src/forecast.js:356
-msgid "%B %d"
-msgstr "%e. %B"
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "Vybrat místo"
 
-#: ../src/searchProvider.js:169
-#, javascript-format
-msgid "%s, %s"
-msgstr "%s, %s"
-
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "Pondělí v noci"
-
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "Pondělí ráno"
-
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "Pondělí odpoledne"
-
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "Pondělí večer"
-
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "Úterý v noci"
-
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "Úterý ráno"
-
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Úterý odpoledne"
-
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "Úterý večer"
-
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "Středa v noci"
-
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "Středa ráno"
-
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "Středa odpoledne"
-
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "Středa večer"
-
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "Čtvrtek v noci"
-
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "Čtvrtek ráno"
-
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "Čtvrtek odpoledne"
-
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "Čtvrtek večer"
-
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "Pátek v noci"
-
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "Pátek ráno"
-
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "Pátek odpoledne"
-
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "Pátek večer"
-
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "Sobota v noci"
-
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "Sobota ráno"
-
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "Sobota odpoledne"
-
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "Sobota večer"
-
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "Neděle v noci"
-
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "Neděle ráno"
-
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "Neděle odpoledne"
-
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "Neděle večer"
-
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "Dnes v noci"
-
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "Dnes ráno"
-
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "Dnes odpoledne"
-
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "Dnes večer"
-
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "Zítra v noci"
-
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Zítra ráno"
-
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Zítra odpoledne"
-
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Zítra večer"
-
-#: ../src/window.js:203
-#, javascript-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d vybraná"
-msgstr[1] "%d vybrané"
-msgstr[2] "%d vybraných"
-
-#: ../src/window.js:229
-msgid "World Weather"
-msgstr "Počasí ve světě"
-
-#: ../src/window.js:320
+#: ../src/app/window.js:191
 msgid "translator-credits"
 msgstr ""
 "Adam Matoušek <adamatousek@gmail.com>\n"
 "Daniel Puncman <puncmdan@fel.cvut.cz>"
 
-#: ../src/window.js:322
+#: ../src/app/window.js:193
 msgid "A weather application"
 msgstr "Aplikace Počasí"
 
-#: ../src/world.js:251
-msgid "Cities"
-msgstr "Města"
-
-#: ../src/world.js:268
+#: ../src/app/world.js:38
 msgid "World view"
 msgstr "Zobrazení světa"
 
-#: ../src/world.js:296
-msgid "Add locations"
-msgstr "Přidejte místo"
+#: ../src/misc/util.js:159
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
 
-#: ../src/world.js:299
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr ""
-"Použitím tlačítka <b>Nové</b> z lišty nástrojů přidáte více zeměpisných míst"
+#: ../src/service/searchProvider.js:182
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
