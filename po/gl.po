@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-01 21:46+0200\n"
-"PO-Revision-Date: 2014-07-01 21:48+0200\n"
+"POT-Creation-Date: 2014-08-25 13:25+0200\n"
+"PO-Revision-Date: 2014-08-25 13:28+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -48,11 +48,15 @@ msgid "Current conditions"
 msgstr "Condicións actuais"
 
 #: ../data/city.ui.h:2
-msgid "Detailed forecast"
-msgstr "Predición meteorolóxica detallada"
+msgid "Today"
+msgstr "Hoxe"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:56
-#: ../src/app/window.js:321
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "Mañá"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "O tempo"
 
@@ -78,21 +82,13 @@ msgstr ""
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
-"It also integrates with the GNOME Shell, allowing you see the current "
-"conditions of any configured city by just typing its name in the Activities "
-"Overview."
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
 msgstr ""
-"Tamén se integra con GNOME Shell o que lle permite ver as condicións actuais "
-"para calquera cidade configurada simplemente escribindo o seu nome na vista "
-"de Actividades."
-
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "Nova localización"
-
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "Buscar unha cidade:"
+"Tamén se integra con GNOME Shell o que lle permite ver as condicións "
+"meteorolóxicas actuais das cidades máis buscadas recentemente escribindo o "
+"seu nome na Vista de actividades."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -106,281 +102,258 @@ msgstr ""
 "As localizacións mostradas na vista do mundo de gnome-weather. Cada valor é "
 "un GVariant devolto por gweather_location_serialize()."
 
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "Localización automática"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"A localización automática é o valor da configuración automatic-location que "
+"decide se obter a localización automaticamente ou non"
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "Localización automática"
+
+#: ../data/places-popover.ui.h:2
+msgid "Viewed Recently"
+msgstr "Visto recentemente"
+
 #: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "Seleccoinar todo"
+msgid "Places"
+msgstr "Lugares"
 
 #: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "Deseleccionar todo"
-
-#: ../data/window.ui.h:3 ../src/app/window.js:208
-msgid "Click on locations to select them"
-msgstr "Prema nas localizacións para seleccionalas"
-
-#: ../data/window.ui.h:4
-msgid "New"
-msgstr "Novo"
-
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "Atrás"
-
-#: ../data/window.ui.h:6
-msgid "Select"
-msgstr "Seleccionar"
-
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: ../data/window.ui.h:8
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "Eliminar"
-
-#: ../src/app/city.js:128
+#: ../src/app/city.js:190
 msgid "City view"
 msgstr "Ver cidade"
 
-#: ../src/app/city.js:137
+#: ../src/app/city.js:199
 msgid "Loading…"
 msgstr "Cargando…"
 
-#: ../src/app/city.js:209
+#: ../src/app/city.js:273
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/app/forecast.js:41
+#: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Predición meteorolóxica"
 
-#: ../src/app/forecast.js:128 ../src/app/forecast.js:415
-msgid "Today"
-msgstr "Hoxe"
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "Predición non dispoñíbel"
 
-#: ../src/app/forecast.js:134 ../src/app/forecast.js:295
-#: ../src/app/forecast.js:382 ../src/app/forecast.js:417
-msgid "Tomorrow"
-msgstr "Mañá"
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
 
-#: ../src/app/forecast.js:151
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Predición semanal"
+
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "Seleccione a localización"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr "Fran Dieguez <frandieguez@gnome.org>, 2013."
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "Un aplicativo do tempo"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "Vista mundial"
+
+#: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/app/forecast.js:197 ../src/app/forecast.js:291
-msgid "More…"
-msgstr "Máis…"
-
-#: ../src/app/forecast.js:318
-msgid "%l∶%M %p"
-msgstr "%l∶%M %p"
-
-#: ../src/app/forecast.js:321
-msgid "%R"
-msgstr "%R"
-
-#: ../src/app/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "Predición para mañá"
-
-#: ../src/app/forecast.js:354
-msgid "Forecast for Today"
-msgstr "Predición par hoxe"
-
-#: ../src/app/forecast.js:358
-msgid "%B %d"
-msgstr "%B %d"
-
-#: ../src/app/window.js:203
-#, javascript-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d seleccionada"
-msgstr[1] "%d seleccionadas"
-
-#: ../src/app/window.js:229
-msgid "World Weather"
-msgstr "Tempo mundial"
-
-#: ../src/app/window.js:320
-msgid "translator-credits"
-msgstr "Fran Dieguez <frandieguez@gnome.org>, 2013."
-
-#: ../src/app/window.js:322
-msgid "A weather application"
-msgstr "Un aplicativo do tempo"
-
-#: ../src/service/searchProvider.js:168
+#: ../src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: ../src/shared/strings.js:22
-msgid "Monday night"
-msgstr "Luns á noite"
+#~ msgid "Detailed forecast"
+#~ msgstr "Predición meteorolóxica detallada"
 
-#: ../src/shared/strings.js:22
-msgid "Monday morning"
-msgstr "Luns á mañá"
+#~ msgid "Search for a city:"
+#~ msgstr "Buscar unha cidade:"
 
-#: ../src/shared/strings.js:22
-msgid "Monday afternoon"
-msgstr "Luns á tarde"
+#~ msgid "Select All"
+#~ msgstr "Seleccoinar todo"
 
-#: ../src/shared/strings.js:22
-msgid "Monday evening"
-msgstr "Luns á noitiña"
+#~ msgid "Select None"
+#~ msgstr "Deseleccionar todo"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday night"
-msgstr "Martes á noite"
+#~ msgid "Click on locations to select them"
+#~ msgstr "Prema nas localizacións para seleccionalas"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday morning"
-msgstr "Martes á mañá"
+#~ msgid "New"
+#~ msgstr "Novo"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Martes á tarde"
+#~ msgid "Back"
+#~ msgstr "Atrás"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday evening"
-msgstr "Martes á noitiña"
+#~ msgid "Select"
+#~ msgstr "Seleccionar"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday night"
-msgstr "Mércores á noite"
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday morning"
-msgstr "Mércores á mañá"
+#~ msgid "Delete"
+#~ msgstr "Eliminar"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "Mércores á tarde"
+#~ msgid "More…"
+#~ msgstr "Máis…"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday evening"
-msgstr "Mércores á noitiña"
+#~ msgid "Forecast for Tomorrow"
+#~ msgstr "Predición para mañá"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday night"
-msgstr "Xoves á noite"
+#~ msgid "%B %d"
+#~ msgstr "%B %d"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday morning"
-msgstr "Xoves á mañá"
+#~ msgid "%d selected"
+#~ msgid_plural "%d selected"
+#~ msgstr[0] "%d seleccionada"
+#~ msgstr[1] "%d seleccionadas"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday afternoon"
-msgstr "Xoves á tarde"
+#~ msgid "World Weather"
+#~ msgstr "Tempo mundial"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday evening"
-msgstr "Xoves á tardiña"
+#~ msgid "Monday night"
+#~ msgstr "Luns á noite"
 
-#: ../src/shared/strings.js:26
-msgid "Friday night"
-msgstr "Venres á noite"
+#~ msgid "Monday morning"
+#~ msgstr "Luns á mañá"
 
-#: ../src/shared/strings.js:26
-msgid "Friday morning"
-msgstr "Venres á mañá"
+#~ msgid "Monday afternoon"
+#~ msgstr "Luns á tarde"
 
-#: ../src/shared/strings.js:26
-msgid "Friday afternoon"
-msgstr "Venres á tarde"
+#~ msgid "Monday evening"
+#~ msgstr "Luns á noitiña"
 
-#: ../src/shared/strings.js:26
-msgid "Friday evening"
-msgstr "Venres á tardiña"
+#~ msgid "Tuesday night"
+#~ msgstr "Martes á noite"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday night"
-msgstr "Sábado á noite"
+#~ msgid "Tuesday morning"
+#~ msgstr "Martes á mañá"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday morning"
-msgstr "Sábado á mañá"
+#~ msgid "Tuesday afternoon"
+#~ msgstr "Martes á tarde"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday afternoon"
-msgstr "Sábado á tarde"
+#~ msgid "Tuesday evening"
+#~ msgstr "Martes á noitiña"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday evening"
-msgstr "Sábado á noitiña"
+#~ msgid "Wednesday night"
+#~ msgstr "Mércores á noite"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday night"
-msgstr "Domingo á noite"
+#~ msgid "Wednesday morning"
+#~ msgstr "Mércores á mañá"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday morning"
-msgstr "Domingo á mañá"
+#~ msgid "Wednesday afternoon"
+#~ msgstr "Mércores á tarde"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday afternoon"
-msgstr "Domingo á tarde"
+#~ msgid "Wednesday evening"
+#~ msgstr "Mércores á noitiña"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday evening"
-msgstr "Domingo á noitiña"
+#~ msgid "Thursday night"
+#~ msgstr "Xoves á noite"
 
-#: ../src/shared/strings.js:31
-msgid "Tonight"
-msgstr "Esta noite"
+#~ msgid "Thursday morning"
+#~ msgstr "Xoves á mañá"
 
-#: ../src/shared/strings.js:31
-msgid "This morning"
-msgstr "Esta mañá"
+#~ msgid "Thursday afternoon"
+#~ msgstr "Xoves á tarde"
 
-#: ../src/shared/strings.js:31
-msgid "This afternoon"
-msgstr "Esta tarde"
+#~ msgid "Thursday evening"
+#~ msgstr "Xoves á tardiña"
 
-#: ../src/shared/strings.js:31
-msgid "This evening"
-msgstr "Esta noitiña"
+#~ msgid "Friday night"
+#~ msgstr "Venres á noite"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow night"
-msgstr "Mañá á noite"
+#~ msgid "Friday morning"
+#~ msgstr "Venres á mañá"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Mañá á mañá"
+#~ msgid "Friday afternoon"
+#~ msgstr "Venres á tarde"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Mañá á tarde"
+#~ msgid "Friday evening"
+#~ msgstr "Venres á tardiña"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Mañá á noitiña"
+#~ msgid "Saturday night"
+#~ msgstr "Sábado á noite"
 
-#: ../src/shared/world.js:276
-msgid "Cities"
-msgstr "Cidades"
+#~ msgid "Saturday morning"
+#~ msgstr "Sábado á mañá"
 
-#: ../src/shared/world.js:293
-msgid "World view"
-msgstr "Vista mundial"
+#~ msgid "Saturday afternoon"
+#~ msgstr "Sábado á tarde"
 
-#: ../src/shared/world.js:321
-msgid "Add locations"
-msgstr "Engadir localizacións"
+#~ msgid "Saturday evening"
+#~ msgstr "Sábado á noitiña"
 
-#: ../src/shared/world.js:324
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr ""
-"Use o botón <b>Nova</b> na barra de ferramentas para engadir máis "
-"localizacións mundiais"
+#~ msgid "Sunday night"
+#~ msgstr "Domingo á noite"
+
+#~ msgid "Sunday morning"
+#~ msgstr "Domingo á mañá"
+
+#~ msgid "Sunday afternoon"
+#~ msgstr "Domingo á tarde"
+
+#~ msgid "Sunday evening"
+#~ msgstr "Domingo á noitiña"
+
+#~ msgid "Tonight"
+#~ msgstr "Esta noite"
+
+#~ msgid "This morning"
+#~ msgstr "Esta mañá"
+
+#~ msgid "This afternoon"
+#~ msgstr "Esta tarde"
+
+#~ msgid "This evening"
+#~ msgstr "Esta noitiña"
+
+#~ msgid "Tomorrow night"
+#~ msgstr "Mañá á noite"
+
+#~ msgid "Tomorrow morning"
+#~ msgstr "Mañá á mañá"
+
+#~ msgid "Tomorrow afternoon"
+#~ msgstr "Mañá á tarde"
+
+#~ msgid "Tomorrow evening"
+#~ msgstr "Mañá á noitiña"
+
+#~ msgid "Cities"
+#~ msgstr "Cidades"
+
+#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+#~ msgstr ""
+#~ "Use o botón <b>Nova</b> na barra de ferramentas para engadir máis "
+#~ "localizacións mundiais"
 
 #~ msgid "About Weather"
 #~ msgstr "Sobre Tempo"
