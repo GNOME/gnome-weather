@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-07 08:12+0000\n"
-"PO-Revision-Date: 2014-08-07 12:48+0200\n"
+"POT-Creation-Date: 2014-08-26 08:20+0000\n"
+"PO-Revision-Date: 2014-08-26 17:41+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -48,6 +48,14 @@ msgstr "Salir"
 msgid "Current conditions"
 msgstr "Condiciones actuales"
 
+#: ../data/city.ui.h:2
+msgid "Today"
+msgstr "Hoy"
+
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "Mañana"
+
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
 #: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
@@ -75,14 +83,18 @@ msgstr ""
 "Internet."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#| msgid ""
+#| "It also integrates with the GNOME Shell, allowing you see the current "
+#| "conditions of any configured city by just typing its name in the "
+#| "Activities Overview."
 msgid ""
-"It also integrates with the GNOME Shell, allowing you see the current "
-"conditions of any configured city by just typing its name in the Activities "
-"Overview."
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
 msgstr ""
-"También se integra con GNOME Shell, permitiéndole ver las condiciones "
-"actuales de cualquier ciudad configurada simplemente escribiendo su nombre "
-"en la vista de actividades."
+"También se integra opcionalmente con GNOME Shell, permitiéndole ver las "
+"condiciones actuales de cualquier ciudad buscada recientemente simplemente "
+"escribiendo su nombre en la vista de actividades."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -97,7 +109,6 @@ msgstr ""
 "es un GVariant devuelto por gweather_location_serialize()."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "Ubicación automática"
 
@@ -110,9 +121,12 @@ msgstr ""
 "decide si se debe o no obtener la ubicación actual."
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "Ubicación automática"
+
+#: ../data/places-popover.ui.h:2
+msgid "Viewed Recently"
+msgstr "Vistas recientemente"
 
 #: ../data/window.ui.h:1
 msgid "Places"
@@ -139,7 +153,6 @@ msgid "Forecast"
 msgstr "Pronóstico"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "Pronóstico no disponible"
 
@@ -152,7 +165,6 @@ msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "Pronóstico semanal"
 
@@ -161,7 +173,6 @@ msgid "%A"
 msgstr "%A"
 
 #: ../src/app/window.js:120
-#| msgid "New Location"
 msgid "Select Location"
 msgstr "Seleccionar ubicación"
 
@@ -216,12 +227,6 @@ msgstr "%s, %s"
 
 #~ msgid "Delete"
 #~ msgstr "Eliminar"
-
-#~ msgid "Today"
-#~ msgstr "Hoy"
-
-#~ msgid "Tomorrow"
-#~ msgstr "Mañana"
 
 #~ msgid "More…"
 #~ msgstr "Más…"
