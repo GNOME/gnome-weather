@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-03 13:39+0000\n"
-"PO-Revision-Date: 2014-08-03 23:04+0200\n"
-"Last-Translator: Maria Mavridou <mavridou@gmail.com>\n"
+"POT-Creation-Date: 2014-08-28 08:21+0000\n"
+"PO-Revision-Date: 2014-08-28 22:52+0200\n"
+"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: www.gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -49,6 +49,14 @@ msgstr "Έξοδος"
 msgid "Current conditions"
 msgstr "Παρούσες συνθήκες"
 
+#: ../data/city.ui.h:2
+msgid "Today"
+msgstr "Σήμερα"
+
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "Αύριο"
+
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
 #: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
@@ -77,14 +85,18 @@ msgstr ""
 "υπηρεσιών διαδικτύου."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#| msgid ""
+#| "It also integrates with the GNOME Shell, allowing you see the current "
+#| "conditions of any configured city by just typing its name in the "
+#| "Activities Overview."
 msgid ""
-"It also integrates with the GNOME Shell, allowing you see the current "
-"conditions of any configured city by just typing its name in the Activities "
-"Overview."
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
 msgstr ""
-"Ενσωματώνεται επίσης με το GNOME Shell, επιτρέποντάς σας να δείτε τις "
-"τρέχουσες συνθήκες οποιασδήποτε πόλης έχει ρυθμιστεί απλά πληκτρολογώντας το "
-"όνομα στην επισκόπιση δραστηριοτήτων."
+"Επίσης ενσωματώνεται προαιρετικά με το GNOME Shell, επιτρέποντάς σας να "
+"δείτε τις τρέχουσες συνθήκες οποιασδήποτε πόλης έχει ρυθμιστεί απλά "
+"πληκτρολογώντας το όνομα στην επισκόπιση Δραστηριότητες."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -100,7 +112,6 @@ msgstr ""
 "gweather_location_serialize()."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "Αυτόματη τοποθεσία"
 
@@ -113,9 +124,12 @@ msgstr ""
 "αποφασίζει εάν θα ανακτηθεί η τρέχουσα τοποθεσία ή όχι."
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "Αυτόματη τοποθεσία"
+
+#: ../data/places-popover.ui.h:2
+msgid "Viewed Recently"
+msgstr "Πρόσφατα"
 
 #: ../data/window.ui.h:1
 msgid "Places"
@@ -137,34 +151,31 @@ msgstr "Φορτώνεται…"
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/app/forecast.js:38
+#: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Πρόγνωση"
 
-#: ../src/app/forecast.js:111
-#| msgid "Forecast for Today"
+#: ../src/app/forecast.js:110
 msgid "Forecast not available"
 msgstr "Η πρόγνωση δεν είναι διαθέσιμη"
 
-#: ../src/app/forecast.js:127
+#: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/app/forecast.js:130
+#: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%R"
 
-#: ../src/app/weeklyForecast.js:37
-#| msgid "Forecast"
+#: ../src/app/weeklyForecast.js:36
 msgid "Weekly Forecast"
 msgstr "Εβδομαδιαία πρόγνωση"
 
-#: ../src/app/weeklyForecast.js:108
+#: ../src/app/weeklyForecast.js:107
 msgid "%A"
 msgstr "%A"
 
 #: ../src/app/window.js:120
-#| msgid "New Location"
 msgid "Select Location"
 msgstr "Επιλογή τοποθεσίας"
 
@@ -227,12 +238,6 @@ msgstr "%s, %s"
 
 #~ msgid "Delete"
 #~ msgstr "Διαγραφή"
-
-#~ msgid "Today"
-#~ msgstr "Σήμερα"
-
-#~ msgid "Tomorrow"
-#~ msgstr "Αύριο"
 
 #~ msgid "More…"
 #~ msgstr "Περισσότερα…"
