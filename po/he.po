@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-19 17:23+0300\n"
-"PO-Revision-Date: 2014-08-19 17:24+0300\n"
-"Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
+"POT-Creation-Date: 2014-08-28 17:25+0300\n"
+"PO-Revision-Date: 2014-08-28 17:32+0300\n"
+"Last-Translator: Yosef Or Boczko <yoseforb@gnome.org>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -66,20 +66,20 @@ msgid "Show weather conditions and forecast"
 msgstr "הצגת תנאים ואת תחזית מזג האוויר"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#, fuzzy
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
 msgstr ""
-"יישום קטן שמאפשר לך לצפות בתנאי מזג האוויר הנוכחיים באזורך או בכל מקום אחר "
-"בעולם לרבות גישה לתחזיות מעודכנות עד שבוע מראש באמצעות מגוון שירותים ברחבי "
-"האינטרנט."
+"יישום קטן המאפשר לך לצפות בתנאי מזג האוויר הנוכחיים בעיר שלך או בכל מקום אחר "
+"בעולם."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
+"הוא מספק גישה לתחזיות מפורטות, עד לשבוע ימים, פרטים לפי שעה ליום הנוכחי ולזה "
+"שלאחריו, באמצעות שרתי אינטרנט שונים."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
@@ -87,6 +87,8 @@ msgid ""
 "current conditions of the most recently searched cities by just typing its "
 "name in the Activities Overview."
 msgstr ""
+"כמו כן הוא ניתן לשילוב עם מעטפת GNOME, המאפשר לך לראות את תנאי מזג האוויר של "
+"רוב הערים שחיפשת לאחרונה, רק בהקלדת שם בסקירת פעילויות."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
