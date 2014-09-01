@@ -1,3 +1,8 @@
+3.13.91
+=======
+* Added high contrast icon [Andreas Nilsson, #707286]
+* Translation updates
+
 3.13.90
 =======
 * Completely redesign the application [Saurabh, #733236]
