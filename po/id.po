@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-05-22 20:08+0000\n"
-"PO-Revision-Date: 2014-05-23 10:57+0700\n"
+"POT-Creation-Date: 2014-09-02 08:21+0000\n"
+"PO-Revision-Date: 2014-09-03 15:17+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.9\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -48,11 +48,15 @@ msgid "Current conditions"
 msgstr "Kondisi saat ini"
 
 #: ../data/city.ui.h:2
-msgid "Detailed forecast"
-msgstr "Prakiraan terrinci"
+msgid "Today"
+msgstr "Hari Ini"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:56
-#: ../src/app/window.js:321
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "Besok"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Cuaca"
 
@@ -63,21 +67,28 @@ msgstr "Tampilkan kondisi dan ramalan cuaca"
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
 "Aplikasi kecil yang memungkinkan Anda memantau kondisi cuaca saat ini untuk "
-"kota Anda, atau dimanapun di dunia dan untuk mengakses prakiraan cuaca yang "
-"termutakhirkan, sampai dengan 7 hari, yang disediakan oleh berbagai layanan "
-"internt."
+"kota Anda, atau dimanapun di dunia."
 
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "Lokasi Baru"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Ini memberikan akses ke ramalan cuaca terrinci, sampai dengan 7 hari, dengan "
+"rincian per jam bagi hari ini dan besok, memakai berbagai layanan internet."
 
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "Cari kota:"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+"Ini secara opsional juga terintegrasi dengan GNOME Shell, memungkinkan Anda "
+"melihat kondisi saat ini dari kota yang baru-baru ini dicari hanya dengan "
+"mengetikkan namanya dalam Ringkasan Aktivitas."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -91,276 +102,92 @@ msgstr ""
 "Lokasi ditunjukkan dalam tampilan dunia gnome-weather. Setiap nilai adalah "
 "GVariant yang dikembalikan oleh gweather_location_serialize()."
 
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "Lokasi otomatis"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"Lokasi otomatis adalah nilai dari dari saklar automatic-location yang "
+"menentukan apakah akan mengambil lokasi saat ini atau tidak."
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "Lokasi Otomatis"
+
+#: ../data/places-popover.ui.h:2
+msgid "Viewed Recently"
+msgstr "Akhir-akhir Ini Dilihat"
+
 #: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "Pilih Semua"
+msgid "Places"
+msgstr "Tempat"
 
 #: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "Pilih Tak Satupun"
-
-#: ../data/window.ui.h:3 ../src/app/window.js:208
-msgid "Click on locations to select them"
-msgstr "Klik pada lokasi untuk memilihnya"
-
-#: ../data/window.ui.h:4
-msgid "New"
-msgstr "Baru"
-
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "Mundur"
-
-#: ../data/window.ui.h:6
-msgid "Select"
-msgstr "Pilih"
-
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "Batal"
-
-#: ../data/window.ui.h:8
 msgid "Refresh"
 msgstr "Segarkan"
 
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "Hapus"
-
-#: ../src/app/city.js:128
+#: ../src/app/city.js:190
 msgid "City view"
 msgstr "Tilikan kota"
 
-#: ../src/app/city.js:137
+#: ../src/app/city.js:199
 msgid "Loading…"
 msgstr "Memuat..."
 
-#: ../src/app/city.js:209
+#: ../src/app/city.js:273
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/app/forecast.js:41
+#: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Prakiraan"
 
-#: ../src/app/forecast.js:128 ../src/app/forecast.js:413
-msgid "Today"
-msgstr "Hari Ini"
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "Ramalan cuaca tak tersedia"
 
-#: ../src/app/forecast.js:134 ../src/app/forecast.js:295
-#: ../src/app/forecast.js:380 ../src/app/forecast.js:415
-msgid "Tomorrow"
-msgstr "Besok"
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
 
-#: ../src/app/forecast.js:151
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Ramalan Cuaca Mingguan"
+
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "Pilih Lokasi"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr "Andika Triwidada <andika@gmail.com>, 2013, 2014"
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "Aplikasi cuaca"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "Tilikan dunia"
+
+#: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/app/forecast.js:197 ../src/app/forecast.js:291
-msgid "More…"
-msgstr "Lebih Banyak..."
-
-#: ../src/app/forecast.js:318
-msgid "%l∶%M %p"
-msgstr "%l∶%M %p"
-
-#: ../src/app/forecast.js:321
-msgid "%R"
-msgstr "%R"
-
-#: ../src/app/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "Ramalan Besok"
-
-#: ../src/app/forecast.js:354
-msgid "Forecast for Today"
-msgstr "Ramalan Hari Ini"
-
-#: ../src/app/forecast.js:356
-msgid "%B %d"
-msgstr "%d %B"
-
-#: ../src/app/window.js:203
-#, javascript-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d dipilih"
-
-#: ../src/app/window.js:229
-msgid "World Weather"
-msgstr "Cuaca Dunia"
-
-#: ../src/app/window.js:320
-msgid "translator-credits"
-msgstr "Andika Triwidada <andika@gmail.com>, 2013, 2014"
-
-#: ../src/app/window.js:322
-msgid "A weather application"
-msgstr "Aplikasi cuaca"
-
-#: ../src/service/searchProvider.js:168
+#: ../src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
-#: ../src/shared/strings.js:22
-msgid "Monday night"
-msgstr "Senin malam"
-
-#: ../src/shared/strings.js:22
-msgid "Monday morning"
-msgstr "Senin pagi"
-
-#: ../src/shared/strings.js:22
-msgid "Monday afternoon"
-msgstr "Senin siang"
-
-#: ../src/shared/strings.js:22
-msgid "Monday evening"
-msgstr "Senin sore"
-
-#: ../src/shared/strings.js:23
-msgid "Tuesday night"
-msgstr "Selasa malam"
-
-#: ../src/shared/strings.js:23
-msgid "Tuesday morning"
-msgstr "Selasa pagi"
-
-#: ../src/shared/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Selasa siang"
-
-#: ../src/shared/strings.js:23
-msgid "Tuesday evening"
-msgstr "Selasa sore"
-
-#: ../src/shared/strings.js:24
-msgid "Wednesday night"
-msgstr "Rabu malam"
-
-#: ../src/shared/strings.js:24
-msgid "Wednesday morning"
-msgstr "Rabu pagi"
-
-#: ../src/shared/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "Rabu siang"
-
-#: ../src/shared/strings.js:24
-msgid "Wednesday evening"
-msgstr "Rabu sore"
-
-#: ../src/shared/strings.js:25
-msgid "Thursday night"
-msgstr "Kamis malam"
-
-#: ../src/shared/strings.js:25
-msgid "Thursday morning"
-msgstr "Kamis pagi"
-
-#: ../src/shared/strings.js:25
-msgid "Thursday afternoon"
-msgstr "Kamis siang"
-
-#: ../src/shared/strings.js:25
-msgid "Thursday evening"
-msgstr "Kamis sore"
-
-#: ../src/shared/strings.js:26
-msgid "Friday night"
-msgstr "Jumat malam"
-
-#: ../src/shared/strings.js:26
-msgid "Friday morning"
-msgstr "Jumat pagi"
-
-#: ../src/shared/strings.js:26
-msgid "Friday afternoon"
-msgstr "Jumat siang"
-
-#: ../src/shared/strings.js:26
-msgid "Friday evening"
-msgstr "Jumat sore"
-
-#: ../src/shared/strings.js:27
-msgid "Saturday night"
-msgstr "Sabtu malam"
-
-#: ../src/shared/strings.js:27
-msgid "Saturday morning"
-msgstr "Sabtu pagi"
-
-#: ../src/shared/strings.js:27
-msgid "Saturday afternoon"
-msgstr "Sabtu siang"
-
-#: ../src/shared/strings.js:27
-msgid "Saturday evening"
-msgstr "Sabtu sore"
-
-#: ../src/shared/strings.js:28
-msgid "Sunday night"
-msgstr "Minggu malam"
-
-#: ../src/shared/strings.js:28
-msgid "Sunday morning"
-msgstr "Minggu pagi"
-
-#: ../src/shared/strings.js:28
-msgid "Sunday afternoon"
-msgstr "Minggu siang"
-
-#: ../src/shared/strings.js:28
-msgid "Sunday evening"
-msgstr "Minggu sore"
-
-#: ../src/shared/strings.js:31
-msgid "Tonight"
-msgstr "Malam ini"
-
-#: ../src/shared/strings.js:31
-msgid "This morning"
-msgstr "Pagi ini"
-
-#: ../src/shared/strings.js:31
-msgid "This afternoon"
-msgstr "Siang ini"
-
-#: ../src/shared/strings.js:31
-msgid "This evening"
-msgstr "Sore ini"
-
-#: ../src/shared/strings.js:32
-msgid "Tomorrow night"
-msgstr "Besok malam"
-
-#: ../src/shared/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Besok pagi"
-
-#: ../src/shared/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Besok siang"
-
-#: ../src/shared/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Besok sore"
-
-#: ../src/shared/world.js:276
-msgid "Cities"
-msgstr "Kota"
-
-#: ../src/shared/world.js:293
-msgid "World view"
-msgstr "Tilikan dunia"
-
-#: ../src/shared/world.js:321
-msgid "Add locations"
-msgstr "Tambah lokasi"
-
-#: ../src/shared/world.js:324
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr ""
-"Gunakan tombol <b>Baru</b> pada bilah alat untuk menambah lebih banyak lokasi"
