@@ -2,21 +2,22 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Josep Sanchez <papapep@gmx.com>, 2013.
+# Gil Forcada <gilforcada@guifi.net>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-06 13:37+0000\n"
-"PO-Revision-Date: 2014-03-02 18:17+0100\n"
-"Last-Translator: Pau Iranzo <paugnu@gmail.com>\n"
+"POT-Creation-Date: 2014-09-06 20:20+0000\n"
+"PO-Revision-Date: 2014-09-07 00:23+0200\n"
+"Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -47,11 +48,15 @@ msgid "Current conditions"
 msgstr "Condicions actuals"
 
 #: ../data/city.ui.h:2
-msgid "Detailed forecast"
-msgstr "Pronòstic detallat"
+msgid "Today"
+msgstr "Avui"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
-#: ../src/window.js:319
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "Demà"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Weather"
 
@@ -62,21 +67,29 @@ msgstr "Mostra les condicions actuals i la previsió meteorològica"
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
-"Un programa petit que permet que feu un seguiment de les condicions "
-"meteorològiques actuals a la vostra ciutat o a qualsevol lloc del món. També "
-"podeu accedir a les previsions actualitzades de fins a 7 dies, "
-"proporcionades per diversos serveis d'Internet."
+"Un programa petit que us permet fer un seguiment de les condicions "
+"meteorològiques actuals a la vostra ciutat o a qualsevol lloc del món."
 
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "Ubicació nova"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"També podeu accedir a les previsions actualitzades de fins a 7 dies i per "
+"hores per el dia actual i l'endemà. Proporcionades per diversos serveis "
+"d'Internet."
 
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "Cerqueu una ciutat:"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+"Opcionalment també es pot integrar amb el GNOME Shell de manera que vegeu "
+"les condicions actuals de les últimes ciutats que hagueu cercat teclejant el "
+"seu nom al resum d'activitats."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -90,277 +103,258 @@ msgstr ""
 "La ubicació mostrada a la vista mundial del gnome-weather. Cada valor és un "
 "GVariant retornat per gweather_location_serialize()."
 
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "Ubicació automàtica"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"La ubicació automàtica és el valor del commutador de la ubicació automàtica "
+"que decideix si s'ha de recollir la ubicació automàtica."
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "Ubicació automàtica"
+
+#: ../data/places-popover.ui.h:2
+msgid "Viewed Recently"
+msgstr "Consultats recentment"
+
 #: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "Selecciona-ho tot"
+msgid "Places"
+msgstr "Llocs"
 
 #: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "No seleccionis res"
-
-#: ../data/window.ui.h:3 ../src/window.js:208
-msgid "Click on locations to select them"
-msgstr "Feu clic a ubicacions per seleccionar-les"
-
-#: ../data/window.ui.h:4
-msgid "New"
-msgstr "Nova"
-
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "Enrere"
-
-#: ../data/window.ui.h:6
-msgid "Select"
-msgstr "Selecciona"
-
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "Cancel·la"
-
-#: ../data/window.ui.h:8
 msgid "Refresh"
 msgstr "Actualitza"
 
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "Suprimeix"
-
-#: ../src/city.js:125
+#: ../src/app/city.js:190
 msgid "City view"
 msgstr "Visualització de ciutat"
 
-#: ../src/city.js:134
+#: ../src/app/city.js:199
 msgid "Loading…"
 msgstr "S'està carregant…"
 
-#: ../src/forecast.js:41
+#: ../src/app/city.js:273
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Predicció"
 
-#: ../src/forecast.js:128 ../src/forecast.js:413
-msgid "Today"
-msgstr "Avui"
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "La predicció està disponible"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
-msgid "Tomorrow"
-msgstr "Demà"
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:151
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Predicció de la setmana"
+
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "Seleccioneu una ubicació"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr "Josep Sanchez Mesegue <papapep@gmx.com>"
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "Un programa sobre meteorologia"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "Visualització mundial"
+
+#: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:197 ../src/forecast.js:291
-msgid "More…"
-msgstr "Més…"
-
-#: ../src/forecast.js:318
-msgid "%l∶%M %p"
-msgstr "%l∶%M %p"
-
-#: ../src/forecast.js:321
-msgid "%R"
-msgstr "%R"
-
-#: ../src/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "Predicció per demà"
-
-#: ../src/forecast.js:354
-msgid "Forecast for Today"
-msgstr "Predicció per avui"
-
-#: ../src/forecast.js:356
-msgid "%B %d"
-msgstr "%B %d"
-
-#: ../src/searchProvider.js:169
+#: ../src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "Dilluns per la nit"
+#~ msgid "Detailed forecast"
+#~ msgstr "Pronòstic detallat"
 
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "Dilluns pel matí"
+#~ msgid "Search for a city:"
+#~ msgstr "Cerqueu una ciutat:"
 
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "Dilluns per la tarda"
+#~ msgid "Select All"
+#~ msgstr "Selecciona-ho tot"
 
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "Dilluns pel vespre"
+#~ msgid "Select None"
+#~ msgstr "No seleccionis res"
 
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "Dimarts per la nit"
+#~ msgid "Click on locations to select them"
+#~ msgstr "Feu clic a ubicacions per seleccionar-les"
 
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "Dimarts pel matí"
+#~ msgid "New"
+#~ msgstr "Nova"
 
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Dimarts per la tarda"
+#~ msgid "Back"
+#~ msgstr "Enrere"
 
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "Dimarts pel vespre"
+#~ msgid "Select"
+#~ msgstr "Selecciona"
 
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "Dimecres per la nit"
+#~ msgid "Cancel"
+#~ msgstr "Cancel·la"
 
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "Dimecres pel matí"
+#~ msgid "Delete"
+#~ msgstr "Suprimeix"
 
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "Dimecres per la tarda"
+#~ msgid "More…"
+#~ msgstr "Més…"
 
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "Dimecres pel vespre"
+#~ msgid "Forecast for Tomorrow"
+#~ msgstr "Predicció per demà"
 
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "Dijous per la nit"
+#~ msgid "%B %d"
+#~ msgstr "%B %d"
 
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "Dijous pel matí"
+#~ msgid "Monday night"
+#~ msgstr "Dilluns per la nit"
 
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "Dijous per la tarda"
+#~ msgid "Monday morning"
+#~ msgstr "Dilluns pel matí"
 
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "Dijous pel vespre"
+#~ msgid "Monday afternoon"
+#~ msgstr "Dilluns per la tarda"
 
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "Divendres per la nit"
+#~ msgid "Monday evening"
+#~ msgstr "Dilluns pel vespre"
 
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "Divendres pel matí"
+#~ msgid "Tuesday night"
+#~ msgstr "Dimarts per la nit"
 
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "Divendres per la tarda"
+#~ msgid "Tuesday morning"
+#~ msgstr "Dimarts pel matí"
 
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "Divendres pel vespre"
+#~ msgid "Tuesday afternoon"
+#~ msgstr "Dimarts per la tarda"
 
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "Dissabte per la nit"
+#~ msgid "Tuesday evening"
+#~ msgstr "Dimarts pel vespre"
 
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "Dissabte pel matí"
+#~ msgid "Wednesday night"
+#~ msgstr "Dimecres per la nit"
 
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "Dissabte per la tarda"
+#~ msgid "Wednesday morning"
+#~ msgstr "Dimecres pel matí"
 
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "Dissabte pel vespre"
+#~ msgid "Wednesday afternoon"
+#~ msgstr "Dimecres per la tarda"
 
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "Diumenge per la nit"
+#~ msgid "Wednesday evening"
+#~ msgstr "Dimecres pel vespre"
 
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "Diumenge pel matí"
+#~ msgid "Thursday night"
+#~ msgstr "Dijous per la nit"
 
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "Diumenge per la tarda"
+#~ msgid "Thursday morning"
+#~ msgstr "Dijous pel matí"
 
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "Diumenge pel vespre"
+#~ msgid "Thursday afternoon"
+#~ msgstr "Dijous per la tarda"
 
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "Aquesta nit"
+#~ msgid "Thursday evening"
+#~ msgstr "Dijous pel vespre"
 
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "Aquest matí"
+#~ msgid "Friday night"
+#~ msgstr "Divendres per la nit"
 
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "Aquesta tarda"
+#~ msgid "Friday morning"
+#~ msgstr "Divendres pel matí"
 
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "Aquest vespre"
+#~ msgid "Friday afternoon"
+#~ msgstr "Divendres per la tarda"
 
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "Demà per la nit"
+#~ msgid "Friday evening"
+#~ msgstr "Divendres pel vespre"
 
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Demà pel matí"
+#~ msgid "Saturday night"
+#~ msgstr "Dissabte per la nit"
 
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Demà per la tarda"
+#~ msgid "Saturday morning"
+#~ msgstr "Dissabte pel matí"
 
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Demà pel vespre"
+#~ msgid "Saturday afternoon"
+#~ msgstr "Dissabte per la tarda"
 
-#: ../src/window.js:203
-#, javascript-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d seleccionada"
-msgstr[1] "%d seleccionades"
+#~ msgid "Saturday evening"
+#~ msgstr "Dissabte pel vespre"
 
-#: ../src/window.js:229
-msgid "World Weather"
-msgstr "Meteorologia mundial"
+#~ msgid "Sunday night"
+#~ msgstr "Diumenge per la nit"
 
-#: ../src/window.js:318
-msgid "translator-credits"
-msgstr "Josep Sanchez Mesegue <papapep@gmx.com>"
+#~ msgid "Sunday morning"
+#~ msgstr "Diumenge pel matí"
 
-#: ../src/window.js:320
-msgid "A weather application"
-msgstr "Un programa sobre meteorologia"
+#~ msgid "Sunday afternoon"
+#~ msgstr "Diumenge per la tarda"
 
-#: ../src/world.js:214
-msgid "Cities"
-msgstr "Ciutats"
+#~ msgid "Sunday evening"
+#~ msgstr "Diumenge pel vespre"
 
-#: ../src/world.js:231
-msgid "World view"
-msgstr "Visualització mundial"
+#~ msgid "Tonight"
+#~ msgstr "Aquesta nit"
 
-#: ../src/world.js:259
-msgid "Add locations"
-msgstr "Afegeix una ubicació"
+#~ msgid "This morning"
+#~ msgstr "Aquest matí"
 
-#: ../src/world.js:262
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr ""
-"Empreu el botó <b>Nova</b> de la barra d'eines per a afegir més ubicacions "
-"mundials"
+#~ msgid "This afternoon"
+#~ msgstr "Aquesta tarda"
+
+#~ msgid "This evening"
+#~ msgstr "Aquest vespre"
+
+#~ msgid "Tomorrow night"
+#~ msgstr "Demà per la nit"
+
+#~ msgid "Tomorrow morning"
+#~ msgstr "Demà pel matí"
+
+#~ msgid "Tomorrow afternoon"
+#~ msgstr "Demà per la tarda"
+
+#~ msgid "Tomorrow evening"
+#~ msgstr "Demà pel vespre"
+
+#~ msgid "%d selected"
+#~ msgid_plural "%d selected"
+#~ msgstr[0] "%d seleccionada"
+#~ msgstr[1] "%d seleccionades"
+
+#~ msgid "World Weather"
+#~ msgstr "Meteorologia mundial"
+
+#~ msgid "Cities"
+#~ msgstr "Ciutats"
+
+#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+#~ msgstr ""
+#~ "Empreu el botó <b>Nova</b> de la barra d'eines per a afegir més "
+#~ "ubicacions mundials"
 
 #~ msgid "About Weather"
 #~ msgstr "Quant al Weather"
