@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-09-08 16:53+0000\n"
-"PO-Revision-Date: 2013-09-03 11:34+0100\n"
+"POT-Creation-Date: 2014-05-09 20:07+0000\n"
+"PO-Revision-Date: 2014-05-10 09:35+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -36,19 +36,27 @@ msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "O programe Počasie"
+msgid "About"
+msgstr "O programe"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Ukončiť"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:55
-#: ../src/window.js:298
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Aktuálne podmienky"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Podrobná predpoveď"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
 msgid "Weather"
 msgstr "Počasie"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Zobrazuje poveternostné podmienky a predpoveď počasia"
 
@@ -93,7 +101,7 @@ msgstr "Vybrať všetko"
 msgid "Select None"
 msgstr "Zrušiť výber"
 
-#: ../data/window.ui.h:3 ../src/window.js:187
+#: ../data/window.ui.h:3 ../src/window.js:208
 msgid "Click on locations to select them"
 msgstr "Kliknutím na polohy ich vyberiete"
 
@@ -102,66 +110,83 @@ msgid "New"
 msgstr "Nové"
 
 #: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Počasie vo svete"
+msgid "Back"
+msgstr "Späť"
 
 #: ../data/window.ui.h:6
+#| msgid "Select All"
+msgid "Select"
+msgstr "Vybrať"
+
+#: ../data/window.ui.h:7
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: ../data/window.ui.h:7
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Obnoviť"
+
+#: ../data/window.ui.h:9
 msgid "Delete"
 msgstr "Odstrániť"
 
-#: ../src/city.js:119
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Zobrazenie mesta"
+
+#: ../src/city.js:134
 msgid "Loading…"
 msgstr "Načítava sa…"
 
-#: ../src/forecast.js:112
+#: ../src/forecast.js:41
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "Predpoveď"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
 msgid "Today"
 msgstr "Dnes"
 
-#: ../src/forecast.js:118
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
 msgid "Tomorrow"
 msgstr "Zajtra"
 
 # *https://bugzilla.gnome.org/show_bug.cgi?id=707881
 # DK: prve %s=min. teplota
 # druhe %s=max. teplota
-#: ../src/forecast.js:132
-#, c-format
+#: ../src/forecast.js:151
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:178
+#: ../src/forecast.js:197 ../src/forecast.js:291
 msgid "More…"
 msgstr "Viac…"
 
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Predpoveď na dnes"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Predpoveď na zajtra"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%e. %B"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/forecast.js:318
 msgid "%l∶%M %p"
 msgstr "%H:%M"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/forecast.js:321
 msgid "%R"
 msgstr "%R"
 
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Predpoveď na zajtra"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Predpoveď na dnes"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%e. %B"
+
 # *https://bugzilla.gnome.org/show_bug.cgi?id=707881
-#: ../src/searchProvider.js:161
-#, c-format
+#: ../src/searchProvider.js:169
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
@@ -310,31 +335,47 @@ msgid "Tomorrow evening"
 msgstr "Zajtra večer"
 
 # DK: poloha
-#: ../src/window.js:182
-#, c-format
+#: ../src/window.js:203
+#, javascript-format
 msgid "%d selected"
 msgid_plural "%d selected"
 msgstr[0] "%d vybraných"
 msgstr[1] "%d vybraná"
 msgstr[2] "%d vybrané"
 
-#: ../src/window.js:297
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Počasie vo svete"
+
+#: ../src/window.js:318
 msgid "translator-credits"
 msgstr "Dušan Kazik <prescott66@gmail.com>"
 
-#: ../src/window.js:299
+#: ../src/window.js:320
 msgid "A weather application"
 msgstr "Aplikácia Počasie"
 
-#: ../src/world.js:241
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Mestá"
+
+#: ../src/world.js:231
+#| msgid "World Weather"
+msgid "World view"
+msgstr "Zobrazenie sveta"
+
+#: ../src/world.js:259
 msgid "Add locations"
 msgstr "Pridajte polohy"
 
-#: ../src/world.js:244
+#: ../src/world.js:262
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
 "Použitím tlačidla <b>Nové</b> z lišty nástrojov pridáte viac zemepisných "
 "polôh"
+
+#~ msgid "About Weather"
+#~ msgstr "O programe Počasie"
 
 #~ msgid "Click on items to select them"
 #~ msgstr "Kliknutím na položky ich vyberiete"
