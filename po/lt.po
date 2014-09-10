@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-15 20:16+0000\n"
-"PO-Revision-Date: 2014-08-15 23:35+0300\n"
+"POT-Creation-Date: 2014-09-10 08:19+0000\n"
+"PO-Revision-Date: 2014-09-10 19:40+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -48,6 +48,14 @@ msgstr "Išeiti"
 msgid "Current conditions"
 msgstr "Dabartinės sąlygos"
 
+#: ../data/city.ui.h:2
+msgid "Today"
+msgstr "Šiandien"
+
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "Rytoj"
+
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
 #: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
@@ -74,13 +82,18 @@ msgstr ""
 "teikiamą įvairių interneto tarnybų."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#| msgid ""
+#| "It also integrates with the GNOME Shell, allowing you see the current "
+#| "conditions of any configured city by just typing its name in the "
+#| "Activities Overview."
 msgid ""
-"It also integrates with the GNOME Shell, allowing you see the current "
-"conditions of any configured city by just typing its name in the Activities "
-"Overview."
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
 msgstr ""
 "Ji taip pat integruojasi su GNOME Shell, leisdama matyti orų sąlygas bet "
-"kuriama nustatytame mieste tiesiog įvedant jo pavadinimą veiklų apžvalgoje."
+"paskutiniuose ieškotuose miestuose tiesiog įvedant jų pavadinimus veiklų "
+"apžvalgoje."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -95,7 +108,6 @@ msgstr ""
 "gweather_location_serialize() grąžintas GVariant."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "Automatinė vieta"
 
@@ -108,9 +120,12 @@ msgstr ""
 "ar gauti dabartinę vietą."
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "Automatinė vieta"
+
+#: ../data/places-popover.ui.h:2
+msgid "Viewed Recently"
+msgstr "Rodyti paskutinius"
 
 #: ../data/window.ui.h:1
 msgid "Places"
@@ -137,7 +152,6 @@ msgid "Forecast"
 msgstr "Prognozė"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "Prognozė neprieinama"
 
@@ -150,7 +164,6 @@ msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "Savaitinė prognozė"
 
@@ -159,7 +172,6 @@ msgid "%A"
 msgstr "%A"
 
 #: ../src/app/window.js:120
-#| msgid "New Location"
 msgid "Select Location"
 msgstr "Pasirinkti vietą"
 
@@ -186,4 +198,3 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
