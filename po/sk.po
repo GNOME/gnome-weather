@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-19 14:26+0000\n"
-"PO-Revision-Date: 2014-09-09 19:52+0100\n"
+"POT-Creation-Date: 2014-09-15 19:35+0000\n"
+"PO-Revision-Date: 2014-09-15 21:42+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -66,10 +66,6 @@ msgid "Show weather conditions and forecast"
 msgstr "Zobrazuje poveternostné podmienky a predpoveď počasia"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#| msgid ""
-#| "A small application that allows you to monitor the current weather "
-#| "conditions for your city, or anywhere in the world and to access updated "
-#| "forecasts, up to 7 days, provided by various internet services."
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -111,7 +107,6 @@ msgstr ""
 "hodnota reprezentuje GVariant vrátený službou gweather_location_serialize()."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "Automatická poloha"
 
@@ -124,11 +119,20 @@ msgstr ""
 "či sa má získať aktuálna poloha alebo nie."
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "Automatická poloha"
 
 #: ../data/places-popover.ui.h:2
+#| msgid "Loading…"
+msgid "Locating…"
+msgstr "Vyhľadáva sa umiestnenie…"
+
+# label
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Vyhľadajte mesto"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Nedávno zobrazené"
 
@@ -139,6 +143,16 @@ msgstr "Miesta"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "Obnoviť"
+
+# label
+#: ../data/window.ui.h:3
+#| msgid "A weather application"
+msgid "Search for a location"
+msgstr "Vyhľadajte umiestnenie"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Na zobrazenie informácií o počasí zadajte názov mesta."
 
 #: ../src/app/city.js:190
 msgid "City view"
@@ -157,7 +171,6 @@ msgid "Forecast"
 msgstr "Predpoveď"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "Predpoveď nie je dostupná"
 
@@ -170,7 +183,6 @@ msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "Predpoveď na týždeň"
 
@@ -180,7 +192,6 @@ msgstr "%A"
 
 # DK:window title
 #: ../src/app/window.js:120
-#| msgid "New Location"
 msgid "Select Location"
 msgstr "Výber polohy"
 
