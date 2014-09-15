@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-25 13:25+0200\n"
-"PO-Revision-Date: 2014-08-25 13:28+0200\n"
+"POT-Creation-Date: 2014-09-15 21:41+0200\n"
+"PO-Revision-Date: 2014-09-15 21:42+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -119,6 +119,14 @@ msgid "Automatic Location"
 msgstr "Localización automática"
 
 #: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "Localizando…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Buscar por unha cidade"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Visto recentemente"
 
@@ -129,6 +137,14 @@ msgstr "Lugares"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "Actualizar"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Buscar unha localización"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Para ver información do tempo, escriba o nome dunha cidade."
 
 #: ../src/app/city.js:190
 msgid "City view"
@@ -150,10 +166,12 @@ msgstr "Predición meteorolóxica"
 msgid "Forecast not available"
 msgstr "Predición non dispoñíbel"
 
+#. Translators: this is a time format without date used for AM/PM
 #: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
+#. Translators: this is a time format without date used for 24h mode
 #: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%R"
@@ -162,6 +180,7 @@ msgstr "%R"
 msgid "Weekly Forecast"
 msgstr "Predición semanal"
 
+#. Translators: this is the time format for full weekday name according to the current locale
 #: ../src/app/weeklyForecast.js:107
 msgid "%A"
 msgstr "%A"
@@ -182,11 +201,17 @@ msgstr "Un aplicativo do tempo"
 msgid "World view"
 msgstr "Vista mundial"
 
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
 #: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
 #: ../src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
@@ -194,9 +219,6 @@ msgstr "%s, %s"
 
 #~ msgid "Detailed forecast"
 #~ msgstr "Predición meteorolóxica detallada"
-
-#~ msgid "Search for a city:"
-#~ msgstr "Buscar unha cidade:"
 
 #~ msgid "Select All"
 #~ msgstr "Seleccoinar todo"
