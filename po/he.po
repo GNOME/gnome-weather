@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-28 17:25+0300\n"
-"PO-Revision-Date: 2014-08-28 17:32+0300\n"
-"Last-Translator: Yosef Or Boczko <yoseforb@gnome.org>\n"
+"POT-Creation-Date: 2014-09-15 22:41+0300\n"
+"PO-Revision-Date: 2014-09-15 23:52+0300\n"
+"Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -119,6 +119,14 @@ msgid "Automatic Location"
 msgstr "מיקום אוטומטי"
 
 #: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "בטעינה…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "חיפוש אחר עיר"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "נצפה לאחרונה"
 
@@ -129,6 +137,14 @@ msgstr "מקומות"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "רענון"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "חיפוש אחר מקום"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "כדי לראות מידע על מזג אוויר, יש להזין שם של עיר"
 
 #: ../src/app/city.js:190
 msgid "City view"
@@ -208,9 +224,6 @@ msgstr "%s, %s"
 
 #~ msgid "Detailed forecast"
 #~ msgstr "תחזית מפורטת"
-
-#~ msgid "Search for a city:"
-#~ msgstr "חיפוש אחר עיר:"
 
 #~ msgid "Select All"
 #~ msgstr "בחירת הכול"
