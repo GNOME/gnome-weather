@@ -12,8 +12,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-19 20:16+0000\n"
-"PO-Revision-Date: 2014-08-21 15:20+0200\n"
+"POT-Creation-Date: 2014-09-15 20:14+0000\n"
+"PO-Revision-Date: 2014-09-16 01:04+0200\n"
 "Last-Translator: Guillaume Bernard <>\n"
 "Language-Team: français <gnomefr@traduc.org>\n"
 "Language: fr\n"
@@ -90,9 +90,9 @@ msgid ""
 "current conditions of the most recently searched cities by just typing its "
 "name in the Activities Overview."
 msgstr ""
-"Elle peut également s'intégrer à GNOME Shell, permettant de voir les conditions "
-"actuelles de n'importe quelle ville configurée en tapant simplement son nom "
-"dans la vue d'ensemble des activités."
+"Elle peut également s'intégrer à GNOME Shell, permettant de voir les "
+"conditions actuelles de n'importe quelle ville configurée en tapant "
+"simplement son nom dans la vue d'ensemble des activités."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -123,6 +123,14 @@ msgid "Automatic Location"
 msgstr "Lieu automatique"
 
 #: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "Localisation en cours…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Rechercher une ville"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Consultées récemment"
 
@@ -133,6 +141,14 @@ msgstr "Emplacements"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "Actualiser"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Rechercher un emplacement"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Pour voir les informations météorologiques, saisissez le nom d'une ville."
 
 #: ../src/app/city.js:190
 msgid "City view"
@@ -201,9 +217,6 @@ msgstr "%s, %s"
 
 #~ msgid "Detailed forecast"
 #~ msgstr "Prévisions détaillées"
-
-#~ msgid "Search for a city:"
-#~ msgstr "Rechercher une ville :"
 
 #~ msgid "Select All"
 #~ msgstr "Tout sélectionner"
