@@ -80,7 +80,7 @@
           <object class="GtkLabel" id="locating-label">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
-            <property name="label">Locating....</property>
+            <property name="label" translatable="yes">Locating…</property>
             <property name="halign">center</property>
             <property name="valign">center</property>
             <property name="vexpand">False</property>
@@ -137,7 +137,7 @@
               <object class="GtkLabel" id="search-label">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label">Search for a city</property>
+                <property name="label" translatable="yes">Search for a city</property>
                 <property name="halign">center</property>
                 <property name="valign">center</property>
                 <property name="vexpand">False</property>
