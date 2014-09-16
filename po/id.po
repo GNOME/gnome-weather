@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-02 08:21+0000\n"
-"PO-Revision-Date: 2014-09-03 15:17+0700\n"
+"POT-Creation-Date: 2014-09-15 20:14+0000\n"
+"PO-Revision-Date: 2014-09-16 10:02+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -119,6 +119,14 @@ msgid "Automatic Location"
 msgstr "Lokasi Otomatis"
 
 #: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "Mencari…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Cari kota"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Akhir-akhir Ini Dilihat"
 
@@ -129,6 +137,14 @@ msgstr "Tempat"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "Segarkan"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Mencari sebuah lokasi"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Untuk melihat informasi cuaca, masukkan nama sebuah kota."
 
 #: ../src/app/city.js:190
 msgid "City view"
