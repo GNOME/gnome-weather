@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-18 16:41+0000\n"
-"PO-Revision-Date: 2014-03-19 03:33+0900\n"
+"POT-Creation-Date: 2014-09-16 03:15+0000\n"
+"PO-Revision-Date: 2014-09-16 14:50+0900\n"
 "Last-Translator: Jinkyu Yi <jincreator@jincreator.net>\n"
-"Language-Team: Korean <gnome-kr@googlegroups.com>\n"
+"Language-Team: 한국어 <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -48,11 +48,15 @@ msgid "Current conditions"
 msgstr "현재 날씨"
 
 #: ../data/city.ui.h:2
-msgid "Detailed forecast"
-msgstr "예보 자세히 보기"
+msgid "Today"
+msgstr "오늘"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
-#: ../src/window.js:319
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "내일"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "날씨"
 
@@ -63,19 +67,27 @@ msgstr "날씨와 일기 예보 보기"
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
-"당신이 사는 도시를 비롯하여 전세계 모든 곳의 현재 날씨와 최고 7일 뒤의 일기 "
-"예보를 여러 인터넷 서비스에서 가져와 보여주는 작은 프로그램입니다."
+"당신이 사는 도시를 비롯하여 전세계 모든 곳의 현재 날씨를 알게 해주는 작은 프"
+"로그램입니다."
 
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "새 지역"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"여러 인터넷 서비스에서 일주일까지의 자세한 일기 예보를 가져와 알려드리며, 오"
+"늘과 내일 날씨는 시간별로도 알 수 있게 해드립니다."
 
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "도시로 검색:"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+"그놈 쉘에 붙어 자주 찾은 도시의 이름을 현재 활동에 치는 것만으로 현재 날씨를 "
+"보여드릴 수도 있습니다."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -89,271 +101,108 @@ msgstr ""
 "gnome-weather의 세계 보기에 나오는 지역입니다. 각 값은 "
 "gweather_location_serialize()에서 반환한 GVariant형입니다."
 
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "지역 알아서 찾기"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"지역 알아서 찾기는 현재 위치를 스스로 받아올지 말지 고른 automatic-location "
+"스위치의 값입니다."
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "지역 알아서 찾기"
+
+#: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "지역 찾는 중…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "도시로 검색"
+
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "최근에 봄"
+
 #: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "모두 선택"
+msgid "Places"
+msgstr "장소"
 
 #: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "모두 선택 해제"
-
-#: ../data/window.ui.h:3 ../src/window.js:208
-msgid "Click on locations to select them"
-msgstr "지역을 눌러서 선택"
-
-#: ../data/window.ui.h:4
-msgid "New"
-msgstr "새 날씨"
-
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "뒤로"
-
-#: ../data/window.ui.h:6
-msgid "Select"
-msgstr "선택"
-
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "취소"
-
-#: ../data/window.ui.h:8
 msgid "Refresh"
 msgstr "새로 고침"
 
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "삭제"
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "위치로 검색"
 
-#: ../src/city.js:125
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "날씨 정보를 볼 도시 이름을 넣어주십시오."
+
+#: ../src/app/city.js:190
 msgid "City view"
 msgstr "도시 보기"
 
-#: ../src/city.js:134
+#: ../src/app/city.js:199
 msgid "Loading…"
 msgstr "읽어오는 중…"
 
-#: ../src/forecast.js:41
+#: ../src/app/city.js:273
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "예보"
 
-#: ../src/forecast.js:128 ../src/forecast.js:413
-msgid "Today"
-msgstr "오늘"
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "일기예보를 알 수 없음"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
-msgid "Tomorrow"
-msgstr "내일"
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%p %l∶%M"
 
-#: ../src/forecast.js:151
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "주간 예보"
+
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "지역 선택"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr "Jinkyu Yi <jincreator@jincreator.net>"
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "날씨 프로그램"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "세계 날씨 보기"
+
+#: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:197 ../src/forecast.js:291
-msgid "More…"
-msgstr "더 보기…"
-
-#: ../src/forecast.js:318
-msgid "%l∶%M %p"
-msgstr "%p %l∶%M"
-
-#: ../src/forecast.js:321
-msgid "%R"
-msgstr "%R"
-
-#: ../src/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "내일의 날씨"
-
-#: ../src/forecast.js:354
-msgid "Forecast for Today"
-msgstr "오늘의 날씨"
-
-#: ../src/forecast.js:356
-msgid "%B %d"
-msgstr "%B %d일"
-
-#: ../src/searchProvider.js:169
+#: ../src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "월요일 밤"
-
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "월요일 아침"
-
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "월요일 점심"
-
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "월요일 저녁"
-
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "화요일 밤"
-
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "화요일 아침"
-
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "화요일 점심"
-
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "화요일 저녁"
-
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "수요일 밤"
-
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "수요일 아침"
-
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "수요일 점심"
-
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "수요일 저녁"
-
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "목요일 밤"
-
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "목요일 아침"
-
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "목요일 점심"
-
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "목요일 저녁"
-
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "금요일 밤"
-
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "금요일 아침"
-
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "금요일 점심"
-
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "금요일 저녁"
-
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "토요일 밤"
-
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "토요일 아침"
-
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "토요일 점심"
-
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "토요일 저녁"
-
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "일요일 밤"
-
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "일요일 아침"
-
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "일요일 점심"
-
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "일요일 저녁"
-
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "오늘밤"
-
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "오늘 아침"
-
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "오늘 점심"
-
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "오늘 저녁"
-
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "내일 밤"
-
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "내일 아침"
-
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "내일 점심"
-
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "내일 저녁"
-
-#: ../src/window.js:203
-#, javascript-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d개 선택함"
-
-#: ../src/window.js:229
-msgid "World Weather"
-msgstr "세계 날씨"
-
-#: ../src/window.js:318
-msgid "translator-credits"
-msgstr "Jinkyu Yi <jincreator@jincreator.net>"
-
-#: ../src/window.js:320
-msgid "A weather application"
-msgstr "날씨 프로그램"
-
-#: ../src/world.js:214
-msgid "Cities"
-msgstr "도시"
-
-#: ../src/world.js:231
-msgid "World view"
-msgstr "세계 날씨 보기"
-
-#: ../src/world.js:259
-msgid "Add locations"
-msgstr "지역 추가"
-
-#: ../src/world.js:262
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr "도구 모음의 <b>새 날씨</b> 단추를 눌러 다른 세계 지역 추가"
