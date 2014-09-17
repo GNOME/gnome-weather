@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-05 08:18+0000\n"
-"PO-Revision-Date: 2014-09-05 21:25+0400\n"
+"POT-Creation-Date: 2014-09-17 08:18+0000\n"
+"PO-Revision-Date: 2014-09-17 20:56+0400\n"
 "Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
 "Language-Team: русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -43,7 +43,7 @@ msgstr "О приложении"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
-msgstr "Закончить"
+msgstr "Завершить"
 
 #: ../data/city.ui.h:1
 msgid "Current conditions"
@@ -83,10 +83,6 @@ msgstr ""
 "различных Интернет-служб."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
-#| msgid ""
-#| "It also integrates with the GNOME Shell, allowing you see the current "
-#| "conditions of any configured city by just typing its name in the "
-#| "Activities Overview."
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -108,7 +104,6 @@ msgstr ""
 "возвращается gweather_location_serialize ()."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "Автоматическое местоположение"
 
@@ -121,11 +116,19 @@ msgstr ""
 "location», который определяет, нужно получать ли текущее местоположение."
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "Автоматическое местоположение"
 
 #: ../data/places-popover.ui.h:2
+#| msgid "Loading…"
+msgid "Locating…"
+msgstr "Определение местоположения…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Найти город"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Недавно просмотренные"
 
@@ -136,6 +139,15 @@ msgstr "Местоположения"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "Обновить"
+
+#: ../data/window.ui.h:3
+#| msgid "A weather application"
+msgid "Search for a location"
+msgstr "Найти местоположение"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Чтобы показать информацию о погоде, введите название города."
 
 #: ../src/app/city.js:190
 msgid "City view"
@@ -154,7 +166,6 @@ msgid "Forecast"
 msgstr "Прогноз"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "Прогноз недоступен"
 
@@ -167,7 +178,6 @@ msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "Прогноз на неделю"
 
@@ -176,7 +186,6 @@ msgid "%A"
 msgstr "%A"
 
 #: ../src/app/window.js:120
-#| msgid "New Location"
 msgid "Select Location"
 msgstr "Выбрать местоположение"
 
