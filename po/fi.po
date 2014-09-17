@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-06 08:18+0000\n"
-"PO-Revision-Date: 2014-09-06 14:32+0300\n"
+"POT-Creation-Date: 2014-09-15 20:14+0000\n"
+"PO-Revision-Date: 2014-09-16 09:37+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -65,10 +65,6 @@ msgid "Show weather conditions and forecast"
 msgstr "Näytä säätiedot ja -ennuste"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#| msgid ""
-#| "A small application that allows you to monitor the current weather "
-#| "conditions for your city, or anywhere in the world and to access updated "
-#| "forecasts, up to 7 days, provided by various internet services."
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -108,7 +104,6 @@ msgstr ""
 "on gweather_location_serialize() -toiminnon palauttama GVariant-muuttuja."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "Automaattinen sijainti"
 
@@ -121,11 +116,20 @@ msgstr ""
 "haetaanko nykyinen sijainti vai ei."
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "Automaattinen sijainti"
 
 #: ../data/places-popover.ui.h:2
+#| msgid "Loading…"
+msgid "Locating…"
+msgstr "Paikannetaan…"
+
+#: ../data/places-popover.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a city"
+msgstr "Etsi kaupunkia"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Viimeksi katsottu"
 
@@ -136,6 +140,15 @@ msgstr "Sijainnit"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "Päivitä"
+
+#: ../data/window.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a location"
+msgstr "Etsi sijaintia"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Kirjoita paikkakunnan nimi nähdäksesi säätiedot."
 
 #: ../src/app/city.js:190
 msgid "City view"
@@ -154,7 +167,6 @@ msgid "Forecast"
 msgstr "Ennuste"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "Ennustetta ei ole saatavilla"
 
@@ -167,7 +179,6 @@ msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "Viikon ennuste"
 
@@ -176,7 +187,6 @@ msgid "%A"
 msgstr "%A"
 
 #: ../src/app/window.js:120
-#| msgid "New Location"
 msgid "Select Location"
 msgstr "Valitse sijainti"
 
@@ -204,9 +214,6 @@ msgstr "%s, %s"
 
 #~ msgid "Detailed forecast"
 #~ msgstr "Yksityiskohtainen ennuste"
-
-#~ msgid "Search for a city:"
-#~ msgstr "Etsi kaupunkia:"
 
 #~ msgid "Select All"
 #~ msgstr "Valitse kaikki"
