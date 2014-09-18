@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-30 20:21+0000\n"
-"PO-Revision-Date: 2014-09-06 21:34+0100\n"
-"Last-Translator: Sebastian Rasmussen <sebras@gmail.com>\n"
+"POT-Creation-Date: 2014-09-16 08:20+0000\n"
+"PO-Revision-Date: 2014-09-16 20:30+0100\n"
+"Last-Translator: Mattias Eriksson <snaggen@gmail.com>\n"
 "Language-Team: svenska <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
@@ -121,6 +121,15 @@ msgid "Automatic Location"
 msgstr "Automatisk Plats"
 
 #: ../data/places-popover.ui.h:2
+#| msgid "Loading…"
+msgid "Locating…"
+msgstr "Söker plats…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Sök efter en stad"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Senast besökta"
 
@@ -131,6 +140,15 @@ msgstr "Platser"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "Uppdatera"
+
+#: ../data/window.ui.h:3
+#| msgid "A weather application"
+msgid "Search for a location"
+msgstr "Sök efter en plats"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Fyll i namnet på en stad för att se väderinformation."
 
 #: ../src/app/city.js:190
 msgid "City view"
