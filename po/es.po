@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-26 08:20+0000\n"
-"PO-Revision-Date: 2014-08-26 17:41+0200\n"
+"POT-Creation-Date: 2014-09-20 08:24+0000\n"
+"PO-Revision-Date: 2014-09-20 19:02+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -83,10 +83,6 @@ msgstr ""
 "Internet."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
-#| msgid ""
-#| "It also integrates with the GNOME Shell, allowing you see the current "
-#| "conditions of any configured city by just typing its name in the "
-#| "Activities Overview."
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -125,6 +121,16 @@ msgid "Automatic Location"
 msgstr "Ubicación automática"
 
 #: ../data/places-popover.ui.h:2
+#| msgid "Loading…"
+msgid "Locating…"
+msgstr "Buscando…"
+
+#: ../data/places-popover.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a city"
+msgstr "Buscar una ciudad"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Vistas recientemente"
 
@@ -135,6 +141,16 @@ msgstr "Lugares"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "Actualizar"
+
+#: ../data/window.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a location"
+msgstr "Buscar una ubicación"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr ""
+"Para ver la información sobre el tiempo, introduzca el nombre de una ciudad."
 
 #: ../src/app/city.js:190
 msgid "City view"
@@ -200,9 +216,6 @@ msgstr "%s, %s"
 
 #~ msgid "Detailed forecast"
 #~ msgstr "Pronóstico detallado"
-
-#~ msgid "Search for a city:"
-#~ msgstr "Buscar una ciudad:"
 
 #~ msgid "Select All"
 #~ msgstr "Seleccionar todo"
