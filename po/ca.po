@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-06 20:20+0000\n"
-"PO-Revision-Date: 2014-09-07 00:23+0200\n"
+"POT-Creation-Date: 2014-09-20 08:24+0000\n"
+"PO-Revision-Date: 2014-09-20 22:20+0200\n"
 "Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
@@ -120,6 +120,14 @@ msgid "Automatic Location"
 msgstr "Ubicació automàtica"
 
 #: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "S'està ubicant…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Cerqueu una ciutat"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Consultats recentment"
 
@@ -130,6 +138,14 @@ msgstr "Llocs"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "Actualitza"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Cerqueu una ubicació"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Per veure la informació meteorològica, introduïu el nom d'una ciutat."
 
 #: ../src/app/city.js:190
 msgid "City view"
@@ -192,169 +208,3 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
-#~ msgid "Detailed forecast"
-#~ msgstr "Pronòstic detallat"
-
-#~ msgid "Search for a city:"
-#~ msgstr "Cerqueu una ciutat:"
-
-#~ msgid "Select All"
-#~ msgstr "Selecciona-ho tot"
-
-#~ msgid "Select None"
-#~ msgstr "No seleccionis res"
-
-#~ msgid "Click on locations to select them"
-#~ msgstr "Feu clic a ubicacions per seleccionar-les"
-
-#~ msgid "New"
-#~ msgstr "Nova"
-
-#~ msgid "Back"
-#~ msgstr "Enrere"
-
-#~ msgid "Select"
-#~ msgstr "Selecciona"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
-
-#~ msgid "Delete"
-#~ msgstr "Suprimeix"
-
-#~ msgid "More…"
-#~ msgstr "Més…"
-
-#~ msgid "Forecast for Tomorrow"
-#~ msgstr "Predicció per demà"
-
-#~ msgid "%B %d"
-#~ msgstr "%B %d"
-
-#~ msgid "Monday night"
-#~ msgstr "Dilluns per la nit"
-
-#~ msgid "Monday morning"
-#~ msgstr "Dilluns pel matí"
-
-#~ msgid "Monday afternoon"
-#~ msgstr "Dilluns per la tarda"
-
-#~ msgid "Monday evening"
-#~ msgstr "Dilluns pel vespre"
-
-#~ msgid "Tuesday night"
-#~ msgstr "Dimarts per la nit"
-
-#~ msgid "Tuesday morning"
-#~ msgstr "Dimarts pel matí"
-
-#~ msgid "Tuesday afternoon"
-#~ msgstr "Dimarts per la tarda"
-
-#~ msgid "Tuesday evening"
-#~ msgstr "Dimarts pel vespre"
-
-#~ msgid "Wednesday night"
-#~ msgstr "Dimecres per la nit"
-
-#~ msgid "Wednesday morning"
-#~ msgstr "Dimecres pel matí"
-
-#~ msgid "Wednesday afternoon"
-#~ msgstr "Dimecres per la tarda"
-
-#~ msgid "Wednesday evening"
-#~ msgstr "Dimecres pel vespre"
-
-#~ msgid "Thursday night"
-#~ msgstr "Dijous per la nit"
-
-#~ msgid "Thursday morning"
-#~ msgstr "Dijous pel matí"
-
-#~ msgid "Thursday afternoon"
-#~ msgstr "Dijous per la tarda"
-
-#~ msgid "Thursday evening"
-#~ msgstr "Dijous pel vespre"
-
-#~ msgid "Friday night"
-#~ msgstr "Divendres per la nit"
-
-#~ msgid "Friday morning"
-#~ msgstr "Divendres pel matí"
-
-#~ msgid "Friday afternoon"
-#~ msgstr "Divendres per la tarda"
-
-#~ msgid "Friday evening"
-#~ msgstr "Divendres pel vespre"
-
-#~ msgid "Saturday night"
-#~ msgstr "Dissabte per la nit"
-
-#~ msgid "Saturday morning"
-#~ msgstr "Dissabte pel matí"
-
-#~ msgid "Saturday afternoon"
-#~ msgstr "Dissabte per la tarda"
-
-#~ msgid "Saturday evening"
-#~ msgstr "Dissabte pel vespre"
-
-#~ msgid "Sunday night"
-#~ msgstr "Diumenge per la nit"
-
-#~ msgid "Sunday morning"
-#~ msgstr "Diumenge pel matí"
-
-#~ msgid "Sunday afternoon"
-#~ msgstr "Diumenge per la tarda"
-
-#~ msgid "Sunday evening"
-#~ msgstr "Diumenge pel vespre"
-
-#~ msgid "Tonight"
-#~ msgstr "Aquesta nit"
-
-#~ msgid "This morning"
-#~ msgstr "Aquest matí"
-
-#~ msgid "This afternoon"
-#~ msgstr "Aquesta tarda"
-
-#~ msgid "This evening"
-#~ msgstr "Aquest vespre"
-
-#~ msgid "Tomorrow night"
-#~ msgstr "Demà per la nit"
-
-#~ msgid "Tomorrow morning"
-#~ msgstr "Demà pel matí"
-
-#~ msgid "Tomorrow afternoon"
-#~ msgstr "Demà per la tarda"
-
-#~ msgid "Tomorrow evening"
-#~ msgstr "Demà pel vespre"
-
-#~ msgid "%d selected"
-#~ msgid_plural "%d selected"
-#~ msgstr[0] "%d seleccionada"
-#~ msgstr[1] "%d seleccionades"
-
-#~ msgid "World Weather"
-#~ msgstr "Meteorologia mundial"
-
-#~ msgid "Cities"
-#~ msgstr "Ciutats"
-
-#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-#~ msgstr ""
-#~ "Empreu el botó <b>Nova</b> de la barra d'eines per a afegir més "
-#~ "ubicacions mundials"
-
-#~ msgid "About Weather"
-#~ msgstr "Quant al Weather"
