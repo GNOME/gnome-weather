@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master \n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-09-18 08:24+0000\n"
+"PO-Revision-Date: 2014-09-20 16:34+0400\n"
+"Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
+"Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2;plural=(n!=1);\n"
+"X-Poedit-Language: Nepali\n"
+"X-Poedit-Country: NEPAL\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "नयाँ"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "तापक्रम एकाइ"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "सेल्सियस"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "फरेनहाइट"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "बारेमा"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "अन्त्य गर्नुहोस्"
+
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "हालको अवस्था"
+
+#: ../data/city.ui.h:2
+msgid "Today"
+msgstr "आज"
+
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "भोलि"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1
+#: ../src/app/main.js:52
+#: ../src/app/window.js:192
+#: ../src/service/main.js:49
+msgid "Weather"
+msgstr "मौसम"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "हालको मौसम अवस्था अनुगमन गर्दछ, र पूर्वानुमान गर्दछ"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid "A small application that allows you to monitor the current weather conditions for your city, or anywhere in the world."
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid "It provides access to detailed forecasts, up to 7 days, with hourly details for the current and next day, using various internet services."
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid "It also optionally integrates with the GNOME Shell, allowing you see the current conditions of the most recently searched cities by just typing its name in the Activities Overview."
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid "The locations shown in the world view of gnome-weather. Each value is a GVariant returned by gweather_location_serialize()."
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "स्वत: स्थान"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid "The automatic location is the value of automatic-location switch which decides whether to fetch current location or not."
+msgstr ""
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "स्वत: स्थान"
+
+#: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "फेला पार्दै"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "शहर खोज्नुहोस्"
+
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "हालै हेरिसकेको"
+
+#: ../data/window.ui.h:1
+msgid "Places"
+msgstr "स्थानहरू"
+
+#: ../data/window.ui.h:2
+msgid "Refresh"
+msgstr "ताजा पार्नुहोस्"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "स्थानको लागि खोजि गर्नुहोस्..."
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr ""
+
+#: ../src/app/city.js:190
+msgid "City view"
+msgstr "शहरी दृश्य"
+
+#: ../src/app/city.js:199
+msgid "Loading…"
+msgstr "लोड गर्दै..."
+
+#: ../src/app/city.js:273
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:37
+msgid "Forecast"
+msgstr "पूर्वानुमान"
+
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "पूर्वानुमान उपलब्ध छैन"
+
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "हप्ताको पूर्वानुमान"
+
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "_स्थान छान्नुहोस्"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr "Pawan Chitrakar < chautari@gmail.com >"
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "मौसम अनुप्रयोग"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "विश्व दृश्य"
+
+#: ../src/misc/util.js:159
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/service/searchProvider.js:182
+msgid "%s, %s"
+msgstr "%s, %s"
+
