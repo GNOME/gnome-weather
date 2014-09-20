@@ -5,18 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-10 09:07+0000\n"
-"PO-Revision-Date: 2014-02-10 13:03+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-20 19:47+0300\n"
+"PO-Revision-Date: 2014-09-19 12:58+0300\n"
 "Last-Translator: Daniel Korostil <ted.korostiled@gmail.com>\n"
 "Language-Team: linux.org.ua\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Virtaal 0.7.1\n"
 "X-Project-Style: gnome\n"
 
@@ -49,11 +48,15 @@ msgid "Current conditions"
 msgstr "Поточні погодні умови"
 
 #: ../data/city.ui.h:2
-msgid "Detailed forecast"
-msgstr "Детальний прогноз погоди"
+msgid "Today"
+msgstr "Сьогодні"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
-#: ../src/window.js:313
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "Завтра"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Погода"
 
@@ -64,20 +67,29 @@ msgstr "Показувати погодні умови і прогноз"
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
 "Маленька програма, яка дозволяє стежити за поточними погодними умовами "
-"вашого міста або будь-де в світі та слідкувати за прогнозом до семи днів, "
-"які надають різні служби в інтернеті."
+"вашого міста або будь-де в світі."
 
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "Додати місце"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Програма надає доступ до детального прогнозу, до семи днів, з погодинними "
+"подробицями для поточного і наступного дня, використовуючи різні служби в "
+"інтернеті."
 
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "Пошук за містом:"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+"Також необов'язково вбудовується в GNOME Shell, дозволяючи бачити поточні "
+"погодні умови найнедавніших міст просто ввівши його назву в огляді "
+"діяльності."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -91,280 +103,281 @@ msgstr ""
 "Місця показані в світовому перегляді. Кожне значення — це GVariant, який "
 "повертає gweather_location_serialize()."
 
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "Автоматичне знаходження місця"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"Автоматичне знаходження місця — значення, яке визначає, чи шукати поточне "
+"місце перебування, чи ні."
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "Автоматичне знаходження місця"
+
+#: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "Знаходження…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Пошук міста"
+
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "Недавно переглянуті"
+
 #: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "Вибрати все"
+msgid "Places"
+msgstr "Місця"
 
 #: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "Зняти вибране"
-
-#: ../data/window.ui.h:3 ../src/window.js:202
-msgid "Click on locations to select them"
-msgstr "Натисніть на міста, щоб їх вибрати"
-
-#: ../data/window.ui.h:4
-msgid "New"
-msgstr "Додати"
-
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "Назад"
-
-#: ../data/window.ui.h:6
-#| msgid "Select All"
-msgid "Select"
-msgstr "Вибрати"
-
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "Скасувати"
-
-#: ../data/window.ui.h:8
 msgid "Refresh"
 msgstr "Оновити"
 
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "Вилучити"
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Пошук місцевості"
 
-#: ../src/city.js:125
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Уведіть назву міста, щоб побачити інформацію про погоду."
+
+#: ../src/app/city.js:190
 msgid "City view"
 msgstr "Огляд міста"
 
-#: ../src/city.js:134
+#: ../src/app/city.js:199
 msgid "Loading…"
 msgstr "Завантаження…"
 
-#: ../src/forecast.js:41
-#| msgid "Forecast for Today"
+#: ../src/app/city.js:273
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Прогноз погоди"
 
-#: ../src/forecast.js:128 ../src/forecast.js:413
-msgid "Today"
-msgstr "Сьогодні"
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "Прогноз недоступний"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
-msgid "Tomorrow"
-msgstr "Завтра"
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:151
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Тижневий прогноз"
+
+#. Translators: this is the time format for full weekday name according to the current locale
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "Вибрати місцевість"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr "Daniel Korostil <ted.korostiled@gmail.com>"
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "Погодна програма"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "Світовий огляд"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:197 ../src/forecast.js:291
-msgid "More…"
-msgstr "Ще…"
-
-#: ../src/forecast.js:318
-msgid "%l∶%M %p"
-msgstr "%l∶%M %p"
-
-#: ../src/forecast.js:321
-msgid "%R"
-msgstr "%R"
-
-#: ../src/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "Прогноз на завтра"
-
-#: ../src/forecast.js:354
-msgid "Forecast for Today"
-msgstr "Прогноз на сьогодні"
-
-#: ../src/forecast.js:356
-msgid "%B %d"
-msgstr "%B %d"
-
-#: ../src/searchProvider.js:169
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "Ніч понеділок"
+#~ msgid "Detailed forecast"
+#~ msgstr "Детальний прогноз погоди"
 
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "Ранок понеділок"
+#~ msgid "Select All"
+#~ msgstr "Вибрати все"
 
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "По обіді понеділок"
+#~ msgid "Select None"
+#~ msgstr "Зняти вибране"
 
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "Вечір понеділок"
+#~ msgid "Click on locations to select them"
+#~ msgstr "Натисніть на міста, щоб їх вибрати"
 
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "Ніч вівторок"
+#~ msgid "New"
+#~ msgstr "Додати"
 
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "Ранок вівторок"
+#~ msgid "Back"
+#~ msgstr "Назад"
 
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "По обіді вівторок"
+#~| msgid "Select All"
+#~ msgid "Select"
+#~ msgstr "Вибрати"
 
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "Вечір вівторок"
+#~ msgid "Cancel"
+#~ msgstr "Скасувати"
 
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "Ніч середа"
+#~ msgid "Delete"
+#~ msgstr "Вилучити"
 
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "Ранок середа"
+#~ msgid "More…"
+#~ msgstr "Ще…"
 
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "По обіді середа"
+#~ msgid "Forecast for Tomorrow"
+#~ msgstr "Прогноз на завтра"
 
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "Вечір середа"
+#~ msgid "%B %d"
+#~ msgstr "%B %d"
 
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "Ніч четвер"
+#~ msgid "Monday night"
+#~ msgstr "Ніч понеділок"
 
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "Ранок четвер"
+#~ msgid "Monday morning"
+#~ msgstr "Ранок понеділок"
 
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "По обіді четвер"
+#~ msgid "Monday afternoon"
+#~ msgstr "По обіді понеділок"
 
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "Вечір четвер"
+#~ msgid "Monday evening"
+#~ msgstr "Вечір понеділок"
 
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "Ніч п'ятниця"
+#~ msgid "Tuesday night"
+#~ msgstr "Ніч вівторок"
 
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "Ранок п'ятниця"
+#~ msgid "Tuesday morning"
+#~ msgstr "Ранок вівторок"
 
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "По обіді п'ятниця"
+#~ msgid "Tuesday afternoon"
+#~ msgstr "По обіді вівторок"
 
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "Вечір п'ятниця"
+#~ msgid "Tuesday evening"
+#~ msgstr "Вечір вівторок"
 
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "Ніч субота"
+#~ msgid "Wednesday night"
+#~ msgstr "Ніч середа"
 
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "Ранок субота"
+#~ msgid "Wednesday morning"
+#~ msgstr "Ранок середа"
 
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "По обіді субота"
+#~ msgid "Wednesday afternoon"
+#~ msgstr "По обіді середа"
 
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "Вечір неділя"
+#~ msgid "Wednesday evening"
+#~ msgstr "Вечір середа"
 
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "Ніч неділя"
+#~ msgid "Thursday night"
+#~ msgstr "Ніч четвер"
 
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "Ранок неділя"
+#~ msgid "Thursday morning"
+#~ msgstr "Ранок четвер"
 
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "По обіді неділя"
+#~ msgid "Thursday afternoon"
+#~ msgstr "По обіді четвер"
 
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "Вечір неділя"
+#~ msgid "Thursday evening"
+#~ msgstr "Вечір четвер"
 
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "Вночі"
+#~ msgid "Friday night"
+#~ msgstr "Ніч п'ятниця"
 
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "Зранку"
+#~ msgid "Friday morning"
+#~ msgstr "Ранок п'ятниця"
 
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "По обіді"
+#~ msgid "Friday afternoon"
+#~ msgstr "По обіді п'ятниця"
 
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "Вечором"
+#~ msgid "Friday evening"
+#~ msgstr "Вечір п'ятниця"
 
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "Завтра вночі"
+#~ msgid "Saturday night"
+#~ msgstr "Ніч субота"
 
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Завтра зранку"
+#~ msgid "Saturday morning"
+#~ msgstr "Ранок субота"
 
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Завтра по обіді"
+#~ msgid "Saturday afternoon"
+#~ msgstr "По обіді субота"
 
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Завтра вечором"
+#~ msgid "Saturday evening"
+#~ msgstr "Вечір неділя"
 
-#: ../src/window.js:197
-#, javascript-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d вибрано"
-msgstr[1] "%d вибрано"
-msgstr[2] "%d вибрано"
+#~ msgid "Sunday night"
+#~ msgstr "Ніч неділя"
 
-#: ../src/window.js:223
-msgid "World Weather"
-msgstr "Світова погода"
+#~ msgid "Sunday morning"
+#~ msgstr "Ранок неділя"
 
-#: ../src/window.js:312
-msgid "translator-credits"
-msgstr "Daniel Korostil <ted.korostiled@gmail.com>"
+#~ msgid "Sunday afternoon"
+#~ msgstr "По обіді неділя"
 
-#: ../src/window.js:314
-msgid "A weather application"
-msgstr "Погодна програма"
+#~ msgid "Sunday evening"
+#~ msgstr "Вечір неділя"
 
-#: ../src/world.js:214
-msgid "Cities"
-msgstr "Міста"
+#~ msgid "Tonight"
+#~ msgstr "Вночі"
 
-#: ../src/world.js:231
-#| msgid "World Weather"
-msgid "World view"
-msgstr "Світовий огляд"
+#~ msgid "This morning"
+#~ msgstr "Зранку"
 
-#: ../src/world.js:258
-msgid "Add locations"
-msgstr "Додати місце"
+#~ msgid "This afternoon"
+#~ msgstr "По обіді"
 
-#: ../src/world.js:261
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr ""
-"Натисніть кнопку <b>Додати</b> на панелі, щоб розширити кількість місць"
+#~ msgid "This evening"
+#~ msgstr "Вечором"
+
+#~ msgid "Tomorrow night"
+#~ msgstr "Завтра вночі"
+
+#~ msgid "Tomorrow morning"
+#~ msgstr "Завтра зранку"
+
+#~ msgid "Tomorrow afternoon"
+#~ msgstr "Завтра по обіді"
+
+#~ msgid "Tomorrow evening"
+#~ msgstr "Завтра вечором"
+
+#~ msgid "%d selected"
+#~ msgid_plural "%d selected"
+#~ msgstr[0] "%d вибрано"
+#~ msgstr[1] "%d вибрано"
+#~ msgstr[2] "%d вибрано"
+
+#~ msgid "World Weather"
+#~ msgstr "Світова погода"
+
+#~ msgid "Cities"
+#~ msgstr "Міста"
+
+#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+#~ msgstr ""
+#~ "Натисніть кнопку <b>Додати</b> на панелі, щоб розширити кількість місць"
 
 #~ msgid "About Weather"
 #~ msgstr "Про програму"
