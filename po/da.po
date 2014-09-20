@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-16 21:00+0200\n"
-"PO-Revision-Date: 2014-09-07 22:32+0200\n"
+"POT-Creation-Date: 2014-09-20 09:40+0200\n"
+"PO-Revision-Date: 2014-09-17 18:57+0200\n"
 "Last-Translator: Kris Thomsen <mail@kristhomsen.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -119,14 +119,12 @@ msgid "Automatic Location"
 msgstr "Automatisk placering"
 
 #: ../data/places-popover.ui.h:2
-#, fuzzy
 msgid "Locating…"
-msgstr "Indlæser…"
+msgstr "Finder…"
 
 #: ../data/places-popover.ui.h:3
-#, fuzzy
 msgid "Search for a city"
-msgstr "Søg efter en by:"
+msgstr "Søg efter en by"
 
 #: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
@@ -141,13 +139,12 @@ msgid "Refresh"
 msgstr "Opdatér"
 
 #: ../data/window.ui.h:3
-#, fuzzy
 msgid "Search for a location"
-msgstr "Søg efter en by:"
+msgstr "Søg efter en placering"
 
 #: ../data/window.ui.h:4
 msgid "To see weather information, enter the name of a city."
-msgstr ""
+msgstr "Indtast et bynavn for at få vejrinformation."
 
 #: ../src/app/city.js:190
 msgid "City view"
