@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-18 09:12+0000\n"
-"PO-Revision-Date: 2014-03-18 18:33-0500\n"
+"POT-Creation-Date: 2014-09-21 08:13+0000\n"
+"PO-Revision-Date: 2014-09-21 08:15-0500\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
@@ -44,16 +44,19 @@ msgid "Quit"
 msgstr "ਬਾਹਰ"
 
 #: ../data/city.ui.h:1
-#| msgid "Current conditions:"
 msgid "Current conditions"
 msgstr "ਮੌਜੂਦਾ ਹਾਲਤ"
 
 #: ../data/city.ui.h:2
-msgid "Detailed forecast"
-msgstr "ਵੇਰਵੇ ਸਮੇਤ ਭਵਿੱਖਬਾਣੀ"
+msgid "Today"
+msgstr "ਅੱਜ"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
-#: ../src/window.js:319
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "ਭਲਕ"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "ਮੌਸਮ"
 
@@ -62,27 +65,40 @@ msgid "Show weather conditions and forecast"
 msgstr "ਮੌਸਮ ਹਾਲਤ ਅਤੇ ਭਵਿੱਖਬਾਣੀ ਵੇਖੋ"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#| msgid ""
+#| "A small application that allows you to monitor the current weather "
+#| "conditions for your city, or anywhere in the world and to access updated "
+#| "forecasts, up to 7 days, provided by various internet services."
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
 "ਇੱਕ ਛੋਟੀ ਐਪਲੀਕੇਸ਼ਨ, ਜੋ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਸ਼ਹਿਰ ਜਾਂ ਸੰਸਾਰ ਵਿੱਚੋਂ ਹੋਰ ਥਾਵਾਂ ਲਈ "
-"ਮੌਜੂਦਾ ਮੌਸਮ ਦਾ ਧਿਆਨ ਰੱਖਣ "
-"ਤੇ ਭਵਿੱਖਬਾਣੀਆਂ, 7 ਦਿਨਾਂ ਤੱਕ, ਲੈਣ ਲਈ ਸਹਾਇਕ ਹੈ, ਜੋ ਕਿ ਵੱਖ ਵੱਖ ਇੰਟਰਨੈੱਟ ਸੇਵਾਵਾਂ "
-"ਰਾਹੀਂ ਉਪਲੱਬਧ ਹਨ।"
+"ਮੌਜੂਦਾ ਮੌਸਮ "
+"ਦਾ ਧਿਆਨ ਰੱਖਣ ਲਈ ਸਹਾਇਕ ਹੈ।"
 
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "ਨਵਾਂ ਟਿਕਾਣਾ"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"ਇਹ ਵੱਖ-ਵੱਖ ਇੰਟਰਨੈੱਟ ਸੇਵਾਵਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ 7 ਦਿਨਾਂ ਤੱਕ ਦੀ ਵੇਰਵੇ ਸਮੇਤ ਭਵਿੱਖਬਾਣੀ "
+"ਦਿੰਦੀ ਹੈ, "
+"ਇਸ ਤੋਂ ਇਲਾਵਾ ਅੱਜ ਅਤੇ ਭਲਕ ਲਈ ਘੰਟਿਆਂ ਦੇ ਮੁਤਾਬਕ ਵੇਰਵਾ ਵੀ ਮੌਜੂਦ ਰਹਿੰਦਾ ਹੈ।"
 
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "ਸ਼ਹਿਰ ਲਈ ਖੋਜ:"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+"ਇਹ ਚੋਣਵੇਂ ਰੂਪ ਵਿੱਚ ਗਨੋਮ ਸ਼ੈੱਲ ਨਾਲ ਵੀ ਜੁੜਿਆ ਹੋਈ ਹੈ, ਜਿਸ ਨਾਲ ਤੁਸੀਂ ਸਰਗਰਮੀ ਸੰਖੇਪ "
+"ਵਿੱਚ "
+"ਕਿਸੇ ਲੱਭੇ ਗਏ ਸ਼ਹਿਰਾਂ ਦਾ ਕੇਵਲ ਨਾਂ ਲਿਖ ਕੇ ਹੀ ਮੌਜੂਦਾ ਹਾਲਤ ਨੂੰ ਵੇਖਣ ਸਕਦੇ ਹੋ।"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
-msgstr "ਤਹਿ ਕੀਤੇ ਸ਼ਹਿਰ ਮੌਸਮ ਵੇਖਾਉਂਦੇ ਹਨ"
+msgstr "ਮੌਸਮ ਵਿਖਾਉਣ ਲਈ ਤਹਿ ਕੀਤੇ ਸ਼ਹਿਰ"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:2
 msgid ""
@@ -92,280 +108,281 @@ msgstr ""
 "ਗਨੋਮ-ਮੌਸਮ ਦੀ ਸੰਸਾਰ ਝਲਕ ਵਿੱਚ ਟਿਕਾਣੇ ਵੇਖਾਏ ਜਾਂਦੇ ਹਨ। ਹਰ ਮੁੱਲ ਨੂੰ "
 "gweather_location_serialize() ਰਾਹੀਂ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।"
 
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+#| msgid "Add locations"
+msgid "Automatic location"
+msgstr "ਆਟੋਮੈਟਿਕ ਟਿਕਾਣਾ"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"ਆਟੋਮੈਟਿਕ ਟਿਕਾਣਾ ਉਹ ਹੈ, ਜਿਸ ਨੂੰ automatic-location ਸਵਿੱਚਰਾਹੀਂ ਪ੍ਰਾਪਤ ਕੀਤਾ "
+"ਜਾਂਦਾ ਹੈ, ਜੋ ਕਿ ਤਹਿ ਕਰਦੀ ਹੈ ਕਿ ਮੌਜੂਦਾ ਟਿਕਾਣਾ ਪ੍ਰਾਪਤ ਕਰਨਾ ਹੈ ਜਾਂ ਨਹੀਂ।"
+
+#: ../data/places-popover.ui.h:1
+#| msgid "New Location"
+msgid "Automatic Location"
+msgstr "ਆਟੋਮੈਟਿਕ ਟਿਕਾਣਾ"
+
+#: ../data/places-popover.ui.h:2
+#| msgid "Loading…"
+msgid "Locating…"
+msgstr "...ਲੱਭਿਆ ਜਾ ਰਿਹਾ ਹੈ"
+
+#: ../data/places-popover.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a city"
+msgstr "ਸ਼ਹਿਰ ਲਈ ਖੋਜ"
+
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "ਤਾਜ਼ਾ ਵੇਖੇ"
+
 #: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "ਸਭ ਚੁਣੋ"
+msgid "Places"
+msgstr "ਥਾਵਾਂ"
 
 #: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "ਕੋਈ ਨਾ ਚੁਣੋ"
+msgid "Refresh"
+msgstr "ਤਾਜ਼ਾ ਕਰੋ"
 
-#: ../data/window.ui.h:3 ../src/window.js:208
-msgid "Click on locations to select them"
-msgstr "ਟਿਕਾਣਿਆਂ ਨੂੰ ਚੁਣਨ ਲਈ ਟਿਕਾਣਿਆਂ ਉੱਤੇ ਕਲਿੱਕ ਕਰੋ"
+#: ../data/window.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a location"
+msgstr "ਟਿਕਾਣੇ ਲਈ ਖੋਜ ਕਰੋ"
 
 #: ../data/window.ui.h:4
-msgid "New"
-msgstr "ਨਵਾਂ"
+msgid "To see weather information, enter the name of a city."
+msgstr "ਮੌਸਮ ਜਾਣਕਾਰੀ ਵੇਖਣ ਲਈ ਸ਼ਹਿਰ ਦਾ ਨਾਂ ਦਿਉ।"
 
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "ਪਿੱਛੇ"
-
-#: ../data/window.ui.h:6
-#| msgid "Select All"
-msgid "Select"
-msgstr "ਚੁਣੋ"
-
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "ਰੱਦ ਕਰੋ"
-
-#: ../data/window.ui.h:8
-msgid "Refresh"
-msgstr "ਤਾਜ਼ਾ"
-
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "ਹਟਾਓ"
-
-#: ../src/city.js:125
+#: ../src/app/city.js:190
 msgid "City view"
 msgstr "ਸ਼ਹਿਰ ਝਲਕ"
 
-#: ../src/city.js:134
+#: ../src/app/city.js:199
 msgid "Loading…"
 msgstr "...ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: ../src/forecast.js:41
-#| msgid "Forecast for Today"
+#: ../src/app/city.js:273
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "ਭਵਿੱਖਬਾਣੀ"
 
-#: ../src/forecast.js:128 ../src/forecast.js:413
-msgid "Today"
-msgstr "ਅੱਜ"
+#: ../src/app/forecast.js:110
+#| msgid "Forecast for Today"
+msgid "Forecast not available"
+msgstr "ਭਵਿੱਖਬਾਣੀ ਮੌਜੂਦ ਨਹੀਂ ਹੈ"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
-msgid "Tomorrow"
-msgstr "ਭਲਕ"
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:151
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+#| msgid "Forecast"
+msgid "Weekly Forecast"
+msgstr "ਹਫ਼ਤੇ ਲਈ ਭਵਿੱਖਬਾਣੀ"
+
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+#| msgid "New Location"
+msgid "Select Location"
+msgstr "ਟਿਕਾਣਾ ਚੁਣੋ"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr ""
+"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ\n"
+"ਪੰਜਾਬੀ ਓਪਨਸੋਰਸ ਟੀਮ (POST)\n"
+"https://plus.google.com/u/0/communities/115252305373832476712"
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "ਮੌਸਮ ਐਪਲੀਕੇਸ਼ਨ"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "ਸੰਸਾਰ ਝਲਕ"
+
+#: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:197 ../src/forecast.js:291
-msgid "More…"
-msgstr "…ਹੋਰ"
-
-#: ../src/forecast.js:318
-msgid "%l∶%M %p"
-msgstr "%l∶%M %p"
-
-#: ../src/forecast.js:321
-msgid "%R"
-msgstr "%R"
-
-#: ../src/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "ਭਲਕ ਲਈ ਭਵਿੱਖਬਾਣੀ"
-
-#: ../src/forecast.js:354
-msgid "Forecast for Today"
-msgstr "ਅੱਜ ਲਈ ਭਵਿੱਖਬਾਣੀ"
-
-#: ../src/forecast.js:356
-msgid "%B %d"
-msgstr "%d %B"
-
-#: ../src/searchProvider.js:169
+#: ../src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "ਸੋਮਵਾਰ ਰਾਤ"
+#~ msgid "Detailed forecast"
+#~ msgstr "ਵੇਰਵੇ ਸਮੇਤ ਭਵਿੱਖਬਾਣੀ"
 
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "ਸੋਮਵਾਰ ਸਵੇਰ"
+#~ msgid "Select All"
+#~ msgstr "ਸਭ ਚੁਣੋ"
 
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "ਸੋਮਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
+#~ msgid "Select None"
+#~ msgstr "ਕੋਈ ਨਾ ਚੁਣੋ"
 
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "ਸੋਮਵਾਰ ਆਥਣ"
+#~ msgid "Click on locations to select them"
+#~ msgstr "ਟਿਕਾਣਿਆਂ ਨੂੰ ਚੁਣਨ ਲਈ ਟਿਕਾਣਿਆਂ ਉੱਤੇ ਕਲਿੱਕ ਕਰੋ"
 
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "ਮੰਗਲਵਾਰ ਰਾਤ"
+#~ msgid "New"
+#~ msgstr "ਨਵਾਂ"
 
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "ਮੰਗਲਵਾਰ ਸਵੇਰ"
+#~ msgid "Back"
+#~ msgstr "ਪਿੱਛੇ"
 
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "ਮੰਗਲਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
+#~| msgid "Select All"
+#~ msgid "Select"
+#~ msgstr "ਚੁਣੋ"
 
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "ਮੰਗਲਵਾਰ ਆਥਣ"
+#~ msgid "Cancel"
+#~ msgstr "ਰੱਦ ਕਰੋ"
 
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "ਬੁੱਧਵਾਰ ਰਾਤ"
+#~ msgid "Delete"
+#~ msgstr "ਹਟਾਓ"
 
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "ਬੁੱਧਵਾਰ ਸਵੇਰ"
+#~ msgid "More…"
+#~ msgstr "…ਹੋਰ"
 
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "ਬੁੱਧਵਾਰ ਬਾਅਦ-ਦੁਪੈਹਰ"
+#~ msgid "Forecast for Tomorrow"
+#~ msgstr "ਭਲਕ ਲਈ ਭਵਿੱਖਬਾਣੀ"
 
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "ਬੁੱਧਵਾਰ ਆਥਣ"
+#~ msgid "%B %d"
+#~ msgstr "%d %B"
 
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "ਵੀਰਵਾਰ ਰਾਤ"
+#~ msgid "Monday night"
+#~ msgstr "ਸੋਮਵਾਰ ਰਾਤ"
 
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "ਵੀਰਵਾਰ ਸਵੇਰ"
+#~ msgid "Monday morning"
+#~ msgstr "ਸੋਮਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "ਵੀਰਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
+#~ msgid "Monday afternoon"
+#~ msgstr "ਸੋਮਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
 
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "ਵੀਰਵਾਰ ਆਥਣ"
+#~ msgid "Monday evening"
+#~ msgstr "ਸੋਮਵਾਰ ਆਥਣ"
 
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "ਸ਼ੁੱਕਰਵਾਰ ਰਾਤ"
+#~ msgid "Tuesday night"
+#~ msgstr "ਮੰਗਲਵਾਰ ਰਾਤ"
 
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "ਸ਼ੁੱਕਰਵਾਰ ਸਵੇਰ"
+#~ msgid "Tuesday morning"
+#~ msgstr "ਮੰਗਲਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "ਸ਼ੁੱਕਰਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
+#~ msgid "Tuesday afternoon"
+#~ msgstr "ਮੰਗਲਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
 
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "ਸ਼ੁੱਕਰਵਾਰ ਆਥਣ"
+#~ msgid "Tuesday evening"
+#~ msgstr "ਮੰਗਲਵਾਰ ਆਥਣ"
 
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਰਾਤ"
+#~ msgid "Wednesday night"
+#~ msgstr "ਬੁੱਧਵਾਰ ਰਾਤ"
 
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਸਵੇਰ"
+#~ msgid "Wednesday morning"
+#~ msgstr "ਬੁੱਧਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
+#~ msgid "Wednesday afternoon"
+#~ msgstr "ਬੁੱਧਵਾਰ ਬਾਅਦ-ਦੁਪੈਹਰ"
 
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਆਥਣ"
+#~ msgid "Wednesday evening"
+#~ msgstr "ਬੁੱਧਵਾਰ ਆਥਣ"
 
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "ਐਤਵਾਰ ਰਾਤ"
+#~ msgid "Thursday night"
+#~ msgstr "ਵੀਰਵਾਰ ਰਾਤ"
 
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "ਐਤਵਾਰ ਸਵੇਰ"
+#~ msgid "Thursday morning"
+#~ msgstr "ਵੀਰਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "ਐਤਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
+#~ msgid "Thursday afternoon"
+#~ msgstr "ਵੀਰਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
 
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "ਐਤਵਾਰ ਆਥਣ"
+#~ msgid "Thursday evening"
+#~ msgstr "ਵੀਰਵਾਰ ਆਥਣ"
 
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "ਅੱਜ ਰਾਤ"
+#~ msgid "Friday night"
+#~ msgstr "ਸ਼ੁੱਕਰਵਾਰ ਰਾਤ"
 
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "ਅੱਜ ਸਵੇਰ"
+#~ msgid "Friday morning"
+#~ msgstr "ਸ਼ੁੱਕਰਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "ਅੱਜ ਬਾਅਦ ਦੁਪੈਹਰ"
+#~ msgid "Friday afternoon"
+#~ msgstr "ਸ਼ੁੱਕਰਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
 
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "ਅੱਜ ਆਥਣ"
+#~ msgid "Friday evening"
+#~ msgstr "ਸ਼ੁੱਕਰਵਾਰ ਆਥਣ"
 
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "ਭਲਕੇ ਰਾਤ"
+#~ msgid "Saturday night"
+#~ msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਰਾਤ"
 
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "ਭਲਕੇ ਸਵੇਰ"
+#~ msgid "Saturday morning"
+#~ msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਸਵੇਰ"
 
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "ਭਲਕੇ ਬਾਅਦ-ਦੁਪੈਹਰ"
+#~ msgid "Saturday afternoon"
+#~ msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਬਾਅਦ ਦੁਪੈਹਰ"
 
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "ਭਲਕੇ ਆਥਣ"
+#~ msgid "Saturday evening"
+#~ msgstr "ਸ਼ਨਿੱਚਰਵਾਰ ਆਥਣ"
 
-#: ../src/window.js:203
-#, javascript-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d ਚੁਣਿਆ"
-msgstr[1] "%d ਚੁਣੇ"
+#~ msgid "Sunday night"
+#~ msgstr "ਐਤਵਾਰ ਰਾਤ"
 
-#: ../src/window.js:229
-msgid "World Weather"
-msgstr "ਸੰਸਾਰ ਮੌਸਮ"
+#~ msgid "Sunday morning"
+#~ msgstr "ਐਤਵਾਰ ਸਵੇਰ"
 
-#: ../src/window.js:318
-msgid "translator-credits"
-msgstr ""
-"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ\n"
-"ਪੰਜਾਬੀ ਓਪਨਸੋਰਸ ਟੀਮ (POST)"
+#~ msgid "Sunday afternoon"
+#~ msgstr "ਐਤਵਾਰ ਬਾਅਦ ਦੁਪਹਿਰ"
 
-#: ../src/window.js:320
-msgid "A weather application"
-msgstr "ਮੌਸਮ ਐਪਲੀਕੇਸ਼ਨ"
+#~ msgid "Sunday evening"
+#~ msgstr "ਐਤਵਾਰ ਆਥਣ"
 
-#: ../src/world.js:214
-msgid "Cities"
-msgstr "ਸ਼ਹਿਰ"
+#~ msgid "Tonight"
+#~ msgstr "ਅੱਜ ਰਾਤ"
 
-#: ../src/world.js:231
-#| msgid "World Weather"
-msgid "World view"
-msgstr "]ਸੰਸਾਰ ਝਲਕ"
+#~ msgid "This morning"
+#~ msgstr "ਅੱਜ ਸਵੇਰ"
 
-#: ../src/world.js:259
-msgid "Add locations"
-msgstr "ਟਿਕਾਣੇ ਸ਼ਾਮਿਲ"
+#~ msgid "This afternoon"
+#~ msgstr "ਅੱਜ ਬਾਅਦ ਦੁਪੈਹਰ"
 
-#: ../src/world.js:262
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr "ਹੋਰ ਸੰਸਾਰ ਦੇ ਸਥਾਨ ਜੋੜਨ ਲਈ ਟੂਲਬਾਰ ਉੱਤੇ <b>ਨਵਾਂ</b> ਬਟਨ ਵਰਤੋਂ"
+#~ msgid "This evening"
+#~ msgstr "ਅੱਜ ਆਥਣ"
+
+#~ msgid "Tomorrow night"
+#~ msgstr "ਭਲਕੇ ਰਾਤ"
+
+#~ msgid "Tomorrow morning"
+#~ msgstr "ਭਲਕੇ ਸਵੇਰ"
+
+#~ msgid "Tomorrow afternoon"
+#~ msgstr "ਭਲਕੇ ਬਾਅਦ-ਦੁਪੈਹਰ"
+
+#~ msgid "Tomorrow evening"
+#~ msgstr "ਭਲਕੇ ਆਥਣ"
+
+#~ msgid "%d selected"
+#~ msgid_plural "%d selected"
+#~ msgstr[0] "%d ਚੁਣਿਆ"
+#~ msgstr[1] "%d ਚੁਣੇ"
+
+#~ msgid "World Weather"
+#~ msgstr "ਸੰਸਾਰ ਮੌਸਮ"
+
+#~ msgid "Cities"
+#~ msgstr "ਸ਼ਹਿਰ"
+
+#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+#~ msgstr "ਹੋਰ ਸੰਸਾਰ ਦੇ ਸਥਾਨ ਜੋੜਨ ਲਈ ਟੂਲਬਾਰ ਉੱਤੇ <b>ਨਵਾਂ</b> ਬਟਨ ਵਰਤੋਂ"
 
 #~| msgid "Weather"
 #~ msgid "About Weather"
