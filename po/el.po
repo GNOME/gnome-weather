@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-28 08:21+0000\n"
-"PO-Revision-Date: 2014-08-28 22:52+0200\n"
-"Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
+"POT-Creation-Date: 2014-09-18 20:21+0000\n"
+"PO-Revision-Date: 2014-09-19 09:16+0200\n"
+"Last-Translator: Maria Mavridou <mavridou@gmail.com>\n"
 "Language-Team: www.gnome.gr\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -85,10 +85,6 @@ msgstr ""
 "υπηρεσιών διαδικτύου."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
-#| msgid ""
-#| "It also integrates with the GNOME Shell, allowing you see the current "
-#| "conditions of any configured city by just typing its name in the "
-#| "Activities Overview."
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -128,6 +124,16 @@ msgid "Automatic Location"
 msgstr "Αυτόματη τοποθεσία"
 
 #: ../data/places-popover.ui.h:2
+#| msgid "Loading…"
+msgid "Locating…"
+msgstr "Εντοπισμός…"
+
+#: ../data/places-popover.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a city"
+msgstr "Αναζήτηση πόλης"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Πρόσφατα"
 
@@ -138,6 +144,16 @@ msgstr "Τοποθεσίες"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "Ανανέωση"
+
+#: ../data/window.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a location"
+msgstr "Αναζήτηση τοποθεσίας"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr ""
+"Για να δείτε πληροφορίες για τον καιρό, πληκτρολογήστε το όνομα μιας πόλης."
 
 #: ../src/app/city.js:190
 msgid "City view"
@@ -211,9 +227,6 @@ msgstr "%s, %s"
 
 #~ msgid "Detailed forecast"
 #~ msgstr "Αναλυτική πρόγνωση"
-
-#~ msgid "Search for a city:"
-#~ msgstr "Αναζήτηση πόλης:"
 
 #~ msgid "Select All"
 #~ msgstr "Επιλογή όλων"
