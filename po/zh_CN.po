@@ -12,15 +12,15 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2014-09-15 19:35+0000\n"
-"PO-Revision-Date: 2014-08-17 23:15+0800\n"
-"Last-Translator: irisgyq <gouyingqiyanxuan321@gmail.com>\n"
+"PO-Revision-Date: 2014-09-24 23:52+0800\n"
+"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.9\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -82,18 +82,13 @@ msgstr ""
 "个小时的具体天气。"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
-#, fuzzy
-#| msgid ""
-#| "It also integrates with the GNOME Shell, allowing you see the current "
-#| "conditions of any configured city by just typing its name in the "
-#| "Activities Overview."
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
 "name in the Activities Overview."
 msgstr ""
-"它也集成了GNOME Shell，允许你通过在活动概览中输入名字来查看当前已配置的城市的"
-"状况。"
+"它也集成到了 GNOME Shell，允许你通过在活动概览中输入名字来查看最近搜索的城市"
+"的当前状况。"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -122,20 +117,16 @@ msgid "Automatic Location"
 msgstr "自动位置"
 
 #: ../data/places-popover.ui.h:2
-#, fuzzy
-#| msgid "Loading…"
 msgid "Locating…"
-msgstr "正在加载..."
+msgstr "正在定位..."
 
 #: ../data/places-popover.ui.h:3
-#, fuzzy
-#| msgid "Search for a city:"
 msgid "Search for a city"
-msgstr "搜索城市："
+msgstr "根据城市搜索"
 
 #: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
-msgstr ""
+msgstr "最近查看"
 
 #: ../data/window.ui.h:1
 msgid "Places"
@@ -146,14 +137,12 @@ msgid "Refresh"
 msgstr "刷新"
 
 #: ../data/window.ui.h:3
-#, fuzzy
-#| msgid "Search for a city:"
 msgid "Search for a location"
-msgstr "搜索城市："
+msgstr "根据位置搜索"
 
 #: ../data/window.ui.h:4
 msgid "To see weather information, enter the name of a city."
-msgstr ""
+msgstr "要查看天气信息，请输入城市的名称。"
 
 #: ../src/app/city.js:190
 msgid "City view"
