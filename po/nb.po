@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 3.13.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-23 13:40+0200\n"
-"PO-Revision-Date: 2014-08-23 11:31+0200\n"
+"POT-Creation-Date: 2014-09-26 17:28+0200\n"
+"PO-Revision-Date: 2014-09-26 17:29+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -116,6 +116,14 @@ msgid "Automatic Location"
 msgstr "Automatisk lokasjon"
 
 #: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "Finner …"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Søk etter en by"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Nylig vist"
 
@@ -126,6 +134,14 @@ msgstr "Steder"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "Oppdater"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Søk etter en lokasjon"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Oppgi navnet på en by for å se informasjon om vær."
 
 #: ../src/app/city.js:190
 msgid "City view"
