@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-08-20 20:16+0000\n"
-"PO-Revision-Date: 2014-08-21 11:41+0800\n"
-"Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
+"POT-Creation-Date: 2014-10-02 08:28+0000\n"
+"PO-Revision-Date: 2014-10-02 20:45+0800\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <chinese-l10n@googlegroups.com>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -65,10 +65,6 @@ msgid "Show weather conditions and forecast"
 msgstr "顯示天氣狀況與氣象預報"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#| msgid ""
-#| "A small application that allows you to monitor the current weather "
-#| "conditions for your city, or anywhere in the world and to access updated "
-#| "forecasts, up to 7 days, provided by various internet services."
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -104,7 +100,6 @@ msgstr ""
 "gweather_location_serialize() 傳回的 GVariant。"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "自動位置"
 
@@ -115,11 +110,20 @@ msgid ""
 msgstr "自動位置是 automatic-location 開關的數值，它決定是否要取得目前的位置。"
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "自動位置"
 
 #: ../data/places-popover.ui.h:2
+#| msgid "Loading…"
+msgid "Locating…"
+msgstr "定位中…"
+
+#: ../data/places-popover.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a city"
+msgstr "搜尋城市"
+
+#: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "最近查詢過"
 
@@ -130,6 +134,15 @@ msgstr "位置"
 #: ../data/window.ui.h:2
 msgid "Refresh"
 msgstr "重新整理"
+
+#: ../data/window.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a location"
+msgstr "搜尋位置"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "若要查看天氣資訊，請輸入城市名稱。"
 
 #: ../src/app/city.js:190
 msgid "City view"
@@ -148,7 +161,6 @@ msgid "Forecast"
 msgstr "預報"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "天氣預報無法使用"
 
@@ -161,7 +173,6 @@ msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "每週天氣"
 
@@ -170,7 +181,6 @@ msgid "%A"
 msgstr "%A"
 
 #: ../src/app/window.js:120
-#| msgid "New Location"
 msgid "Select Location"
 msgstr "選取位置"
 
@@ -198,9 +208,6 @@ msgstr "%s，%s"
 
 #~ msgid "Detailed forecast"
 #~ msgstr "詳細預報"
-
-#~ msgid "Search for a city:"
-#~ msgstr "搜尋城市："
 
 #~ msgid "Select All"
 #~ msgstr "全部選取"
