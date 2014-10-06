@@ -73,6 +73,8 @@ const Application = new Lang.Class({
 
     vfunc_startup: function() {
         this.parent();
+        // ensure the type before we call to GtkBuilder
+        GWeather.LocationEntry;
 
         Util.loadStyleSheet('/org/gnome/Weather/Application/application.css');
 
