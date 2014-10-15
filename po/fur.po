@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2014-10-06 20:26+0000\n"
-"PO-Revision-Date: 2014-10-15 12:42+0100\n"
+"PO-Revision-Date: 2014-10-16 00:32+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -69,12 +69,16 @@ msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
 msgstr ""
+"Une piçule aplicazion che a permet di tegnî di voli lis condizions meteo "
+"atuâi de tô citât, o cualsisei puest intal mont."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
+"Al furnìs acès a previsions in detai (fin a 7 dîs), cun detais oraris par "
+"vuê e pal prossim dì, doprant plui servizis internet."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
@@ -82,6 +86,9 @@ msgid ""
 "current conditions of the most recently searched cities by just typing its "
 "name in the Activities Overview."
 msgstr ""
+"Volint ancje a si integre cun GNOME Shell, permetint di viodi lis condizions "
+"meteo atuâi des citâts plui cirudis di recent, dome scrivint il lôr non inte "
+"panoramiche \"Ativitâts\"."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -92,6 +99,8 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
+"Lis posizions mostradis inte viodude mondiâl di gnome-weather. Ogni valôr al "
+"è un GVariant tornât di gweather_location_serialize()."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
 #| msgid "Add locations"
@@ -103,6 +112,8 @@ msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 msgstr ""
+"Le posizion automatiche a je il valôr dal control automatic-location che al "
+"dîs se cjatâ la posizion atuâl o no."
 
 #: ../data/places-popover.ui.h:1
 #| msgid "New Location"
@@ -134,7 +145,7 @@ msgstr "Inzorne"
 #: ../data/window.ui.h:3
 #| msgid "Search for a city:"
 msgid "Search for a location"
-msgstr "Cîr un lûc"
+msgstr "Cîr une posizion"
 
 #: ../data/window.ui.h:4
 msgid "To see weather information, enter the name of a city."
