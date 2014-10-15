@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-08-19 20:27+0000\n"
-"PO-Revision-Date: 2013-08-20 11:23+0100\n"
+"POT-Creation-Date: 2014-10-06 20:26+0000\n"
+"PO-Revision-Date: 2014-10-15 12:42+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -29,36 +29,59 @@ msgstr "Unitât di temperadure"
 
 #: ../data/app-menu.ui.h:3
 msgid "Celsius"
-msgstr ""
+msgstr "Celsius"
 
 #: ../data/app-menu.ui.h:4
 msgid "Fahrenheit"
-msgstr ""
+msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
-msgid "About Weather"
-msgstr "Informazions su Meteo"
+msgid "About"
+msgstr "Informazions"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
 msgstr "Jes"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:1 ../src/main.js:46
-#: ../src/window.js:294
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Condizions atuâi"
+
+#: ../data/city.ui.h:2
+msgid "Today"
+msgstr "Vuê"
+
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "Doman"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Meteo"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Mostre condizions e previsions meteo"
 
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "Gnove localitât"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
 
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "Cîr une citât:"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -70,242 +93,258 @@ msgid ""
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
 
-#: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "Selezione dut"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+#| msgid "Add locations"
+msgid "Automatic location"
+msgstr "Posizion automatiche"
 
-#: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "Selezione nuie"
-
-#: ../data/window.ui.h:3 ../src/window.js:187
-msgid "Click on locations to select them"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
 msgstr ""
 
+#: ../data/places-popover.ui.h:1
+#| msgid "New Location"
+msgid "Automatic Location"
+msgstr "Posizion automatiche"
+
+#: ../data/places-popover.ui.h:2
+#| msgid "Loading…"
+msgid "Locating…"
+msgstr "Localizant..."
+
+#: ../data/places-popover.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a city"
+msgstr "Cîr une citât"
+
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "Viodûts di recent"
+
+#: ../data/window.ui.h:1
+msgid "Places"
+msgstr "Lûcs"
+
+#: ../data/window.ui.h:2
+msgid "Refresh"
+msgstr "Inzorne"
+
+#: ../data/window.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a location"
+msgstr "Cîr un lûc"
+
 #: ../data/window.ui.h:4
-msgid "New"
-msgstr "Gnove"
+msgid "To see weather information, enter the name of a city."
+msgstr "Par viodi lis informazions meteo, scrîf il non di une citât."
 
-#: ../data/window.ui.h:5
-msgid "World Weather"
-msgstr "Meteo mondiâl"
+#: ../src/app/city.js:190
+msgid "City view"
+msgstr "Viodude citât"
 
-#: ../data/window.ui.h:6
-msgid "Cancel"
-msgstr "Anule"
-
-#: ../data/window.ui.h:7
-msgid "Delete"
-msgstr "Gjave"
-
-#: ../src/city.js:119
+#: ../src/app/city.js:199
 msgid "Loading…"
-msgstr "Cjamant..."
+msgstr "Daûr a cjamâ..."
 
-#: ../src/forecast.js:112
-msgid "Today"
-msgstr "Vuê"
+#: ../src/app/city.js:273
+msgid "%H:%M"
+msgstr "%H:%M"
 
-#: ../src/forecast.js:118
-msgid "Tomorrow"
-msgstr "Doman"
+#: ../src/app/forecast.js:37
+#| msgid "Forecast for Today"
+msgid "Forecast"
+msgstr "Previsions"
 
-#: ../src/forecast.js:132
-#, c-format
-msgid "%s / %s"
-msgstr "%s / %s"
+#: ../src/app/forecast.js:110
+#| msgid "Forecast for Today"
+msgid "Forecast not available"
+msgstr "Previsions no disponibii"
 
-#: ../src/forecast.js:178
-msgid "More…"
-msgstr "Altri..."
-
-#: ../src/forecast.js:257
-msgid "Forecast for Today"
-msgstr "Previsions par vuê"
-
-#: ../src/forecast.js:259
-msgid "Forecast for Tomorrow"
-msgstr "Previsions par doman"
-
-#: ../src/forecast.js:263
-msgid "%B %d"
-msgstr "%d %B"
-
-#. Translators: this is a time format without date used for AM/PM
-#: ../src/forecast.js:300
+#: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%l.%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/forecast.js:303
+#: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%k.%M"
 
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "Lunis di gnot"
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Previsions pe setemane"
 
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "Lunis di buinore"
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
 
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "Lunis di dopomisdì"
+#: ../src/app/window.js:120
+#| msgid "New Location"
+msgid "Select Location"
+msgstr "Sielç posizion"
 
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "Lunis di sere"
-
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "Martars di gnot"
-
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "Martars di buinore"
-
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Martars di dopomisdì"
-
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "Martars di sere"
-
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "Miercus di gnot"
-
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "Miercus di buinore"
-
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "Miercus di dopomisdì"
-
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "Miercus di sere"
-
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "Joibe di gnot"
-
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "Joibe di buinore"
-
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "Joibe di dopomisdì"
-
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "Joibe di sere"
-
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "Vinars di gnot"
-
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "Vinars di buinore"
-
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "Vinars di dopomisdì"
-
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "Vinars di sere"
-
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "Sabide di gnot"
-
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "Sabide di buinore"
-
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "Sabide di dopomisdì"
-
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "Sabide di sere"
-
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "Domenie di gnot"
-
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "Domenie di buinore"
-
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "Domenie di dopomisdì"
-
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "Domenie di sere"
-
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "Usgnot"
-
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "Cheste buinore"
-
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "Chest dopomisdì"
-
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "Cheste sere"
-
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "Doman di gnot"
-
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Doman di buinore"
-
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Doman di dopomisdì"
-
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Doman di sere"
-
-#: ../src/window.js:182
-#, c-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d selezionâde"
-msgstr[1] "%d selezionadis"
-
-#: ../src/window.js:293
+#: ../src/app/window.js:191
 msgid "translator-credits"
 msgstr "Fabio Tomat"
 
-#: ../src/window.js:295
+#: ../src/app/window.js:193
 msgid "A weather application"
 msgstr "Une aplicazion par il meteo"
 
-#: ../src/world.js:217
-msgid "Add locations"
-msgstr "Zonte localitât"
+#: ../src/app/world.js:38
+#| msgid "World Weather"
+msgid "World view"
+msgstr "Viodude mondiâl"
 
-#: ../src/world.js:220
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr ""
-"Dopre il pulsant <b>Gnove</b> te striche dai struments par zontâ localitâts "
-"mondiâls"
+#: ../src/misc/util.js:159
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/service/searchProvider.js:182
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#~ msgid "About Weather"
+#~ msgstr "Informazions su Meteo"
+
+#~ msgid "Select All"
+#~ msgstr "Selezione dut"
+
+#~ msgid "Select None"
+#~ msgstr "Selezione nuie"
+
+#~ msgid "New"
+#~ msgstr "Gnove"
+
+#~ msgid "Cancel"
+#~ msgstr "Anule"
+
+#~ msgid "Delete"
+#~ msgstr "Gjave"
+
+#~ msgid "More…"
+#~ msgstr "Altri..."
+
+#~ msgid "Forecast for Tomorrow"
+#~ msgstr "Previsions par doman"
+
+#~ msgid "%B %d"
+#~ msgstr "%d %B"
+
+#~ msgid "Monday night"
+#~ msgstr "Lunis di gnot"
+
+#~ msgid "Monday morning"
+#~ msgstr "Lunis di buinore"
+
+#~ msgid "Monday afternoon"
+#~ msgstr "Lunis di dopomisdì"
+
+#~ msgid "Monday evening"
+#~ msgstr "Lunis di sere"
+
+#~ msgid "Tuesday night"
+#~ msgstr "Martars di gnot"
+
+#~ msgid "Tuesday morning"
+#~ msgstr "Martars di buinore"
+
+#~ msgid "Tuesday afternoon"
+#~ msgstr "Martars di dopomisdì"
+
+#~ msgid "Tuesday evening"
+#~ msgstr "Martars di sere"
+
+#~ msgid "Wednesday night"
+#~ msgstr "Miercus di gnot"
+
+#~ msgid "Wednesday morning"
+#~ msgstr "Miercus di buinore"
+
+#~ msgid "Wednesday afternoon"
+#~ msgstr "Miercus di dopomisdì"
+
+#~ msgid "Wednesday evening"
+#~ msgstr "Miercus di sere"
+
+#~ msgid "Thursday night"
+#~ msgstr "Joibe di gnot"
+
+#~ msgid "Thursday morning"
+#~ msgstr "Joibe di buinore"
+
+#~ msgid "Thursday afternoon"
+#~ msgstr "Joibe di dopomisdì"
+
+#~ msgid "Thursday evening"
+#~ msgstr "Joibe di sere"
+
+#~ msgid "Friday night"
+#~ msgstr "Vinars di gnot"
+
+#~ msgid "Friday morning"
+#~ msgstr "Vinars di buinore"
+
+#~ msgid "Friday afternoon"
+#~ msgstr "Vinars di dopomisdì"
+
+#~ msgid "Friday evening"
+#~ msgstr "Vinars di sere"
+
+#~ msgid "Saturday night"
+#~ msgstr "Sabide di gnot"
+
+#~ msgid "Saturday morning"
+#~ msgstr "Sabide di buinore"
+
+#~ msgid "Saturday afternoon"
+#~ msgstr "Sabide di dopomisdì"
+
+#~ msgid "Saturday evening"
+#~ msgstr "Sabide di sere"
+
+#~ msgid "Sunday night"
+#~ msgstr "Domenie di gnot"
+
+#~ msgid "Sunday morning"
+#~ msgstr "Domenie di buinore"
+
+#~ msgid "Sunday afternoon"
+#~ msgstr "Domenie di dopomisdì"
+
+#~ msgid "Sunday evening"
+#~ msgstr "Domenie di sere"
+
+#~ msgid "Tonight"
+#~ msgstr "Usgnot"
+
+#~ msgid "This morning"
+#~ msgstr "Cheste buinore"
+
+#~ msgid "This afternoon"
+#~ msgstr "Chest dopomisdì"
+
+#~ msgid "This evening"
+#~ msgstr "Cheste sere"
+
+#~ msgid "Tomorrow night"
+#~ msgstr "Doman di gnot"
+
+#~ msgid "Tomorrow morning"
+#~ msgstr "Doman di buinore"
+
+#~ msgid "Tomorrow afternoon"
+#~ msgstr "Doman di dopomisdì"
+
+#~ msgid "Tomorrow evening"
+#~ msgstr "Doman di sere"
+
+#~ msgid "%d selected"
+#~ msgid_plural "%d selected"
+#~ msgstr[0] "%d selezionâde"
+#~ msgstr[1] "%d selezionadis"
+
+#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+#~ msgstr ""
+#~ "Dopre il pulsant <b>Gnove</b> te striche dai struments par zontâ "
+#~ "localitâts mondiâls"
