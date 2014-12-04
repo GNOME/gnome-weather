@@ -2,22 +2,23 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Gökhan Gurbetoğlu <ggurbet@gmail.com>, 2013.
+# Muhammet Kara <muhammetk@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-11-10 09:10+0000\n"
-"PO-Revision-Date: 2014-11-10 21:00+0200\n"
-"Last-Translator: etc <etcetin@gmail.com>\n"
+"POT-Creation-Date: 2014-12-04 09:15+0000\n"
+"PO-Revision-Date: 2014-12-04 21:32+0200\n"
+"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -111,6 +112,8 @@ msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 msgstr ""
+"Otomatik konum, geçerli konumun getirilip getirilmeyeceğini belirleyen "
+"otomatik-konumlama anahtarının değeridir."
 
 #: ../data/places-popover.ui.h:1
 msgid "Automatic Location"
