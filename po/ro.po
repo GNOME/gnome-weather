@@ -1,24 +1,25 @@
 # Romanian translation for gnome-weather.
 # Copyright (C) 2014 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014.
 # Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2014.
+# Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-07-29 08:18+0000\n"
-"PO-Revision-Date: 2014-08-02 21:36+0200\n"
-"Last-Translator: Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>\n"
-"Language-Team: Gnome Romanian Translation Team\n"
+"POT-Creation-Date: 2014-10-03 08:29+0000\n"
+"PO-Revision-Date: 2014-10-03 16:57+0300\n"
+"Last-Translator: Bogdan Mințoi <mintoi.bogdan@gmail.com>\n"
+"Language-Team: Română <>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);;\n"
-"X-Generator: Virtaal 0.7.1\n"
+"20)) ? 1 : 2);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -50,11 +51,15 @@ msgid "Current conditions"
 msgstr "Condiții actuale"
 
 #: ../data/city.ui.h:2
-msgid "Detailed forecast"
-msgstr "Prognoza în detaliu"
+msgid "Today"
+msgstr "Astăzi"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:56
-#: ../src/app/window.js:317
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "Mâine"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Vremea"
 
@@ -80,21 +85,13 @@ msgstr ""
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
-"It also integrates with the GNOME Shell, allowing you see the current "
-"conditions of any configured city by just typing its name in the Activities "
-"Overview."
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
 msgstr ""
-"De asemenea, se integrează cu GNOME Shell, și vă permite să observați "
-"condițiile meteo curente pentru oricare oraș configurat prin simpla "
-"introducere a numelui în caseta de căutare din panorama Activități."
-
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "Locație nouă"
-
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "Caută un oraș:"
+"De asemenea, opțional, se poate integra în GNOME Shell, și vă permite să "
+"observați condițiile meteo curente pentru oricare oraș configurat prin "
+"simpla introducere a numelui în caseta de căutare din panorama Activități."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -108,279 +105,269 @@ msgstr ""
 "Locațiile afișate pe harta lumii din gnome-weather. Fiecare valoare este de "
 "tip GVariant returnată de gweather_location_serialize()."
 
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "Locație automată"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"Locația automată este valoarea comutatorului locației-automate, care "
+"hotărăște dacă să aducă locația actuală, sau nu."
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "Locație automată"
+
+#: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "În curs de localizare…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Caută după un oraș:"
+
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "Văzute recent"
+
 #: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "Selectare totală"
+msgid "Places"
+msgstr "Locuri"
 
 #: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "Deselectare totală"
-
-#: ../data/window.ui.h:3 ../src/app/window.js:204
-msgid "Click on locations to select them"
-msgstr "Clic pe locații pentru a le selecta"
-
-#: ../data/window.ui.h:4
-msgid "New"
-msgstr "Nou"
-
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "Precedent"
-
-#: ../data/window.ui.h:6
-msgid "Select"
-msgstr "Selectează"
-
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "Anulare"
-
-#: ../data/window.ui.h:8
 msgid "Refresh"
 msgstr "Reîmprospătare"
 
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "Șterge"
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Caută după o locație:"
 
-#: ../src/app/city.js:126
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Pentru a accesa informații meteo, introduceți numele unui oraș."
+
+#: ../src/app/city.js:190
 msgid "City view"
 msgstr "Vedere oraș"
 
-#: ../src/app/city.js:135
+#: ../src/app/city.js:199
 msgid "Loading…"
 msgstr "Se încarcă…"
 
-#: ../src/app/city.js:207
+#: ../src/app/city.js:273
 msgid "%H:%M"
 msgstr "%H:%M"
 
-#: ../src/app/forecast.js:41
+#: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Prognoză"
 
-#: ../src/app/forecast.js:128 ../src/app/forecast.js:415
-msgid "Today"
-msgstr "Astăzi"
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "Prognoza este indisponibilă"
 
-#: ../src/app/forecast.js:134 ../src/app/forecast.js:295
-#: ../src/app/forecast.js:382 ../src/app/forecast.js:417
-msgid "Tomorrow"
-msgstr "Mâine"
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
 
-#: ../src/app/forecast.js:151
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Prognoza săptămânală"
+
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "Selectează locația"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr "Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014"
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "O aplicație meteo"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "Vedere globală"
+
+#: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/app/forecast.js:197 ../src/app/forecast.js:291
-msgid "More…"
-msgstr "Mai mult…"
-
-#: ../src/app/forecast.js:318
-msgid "%l∶%M %p"
-msgstr "%l∶%M %p"
-
-#: ../src/app/forecast.js:321
-msgid "%R"
-msgstr "%R"
-
-#: ../src/app/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "Prognoza pentru mâine"
-
-#: ../src/app/forecast.js:354
-msgid "Forecast for Today"
-msgstr "Prognoza pentru astăzi"
-
-#: ../src/app/forecast.js:358
-msgid "%B %d"
-msgstr "%B %d"
-
-#: ../src/app/window.js:199
-#, javascript-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d selectat"
-msgstr[1] "%d selectate"
-msgstr[2] "%d selectate"
-
-#: ../src/app/window.js:225
-msgid "World Weather"
-msgstr "Vremea pe glob"
-
-#: ../src/app/window.js:316
-msgid "translator-credits"
-msgstr "Bogdan Mințoi <mintoi.bogdan@gmail.com> 2014"
-
-#: ../src/app/window.js:318
-msgid "A weather application"
-msgstr "O aplicație meteo"
-
-#: ../src/service/searchProvider.js:168
+#: ../src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: ../src/shared/strings.js:22
-msgid "Monday night"
-msgstr "Luni noaptea"
+#~ msgid "Detailed forecast"
+#~ msgstr "Prognoza în detaliu"
 
-#: ../src/shared/strings.js:22
-msgid "Monday morning"
-msgstr "Luni dimineața"
+#~ msgid "Select All"
+#~ msgstr "Selectare totală"
 
-#: ../src/shared/strings.js:22
-msgid "Monday afternoon"
-msgstr "Luni după-amiaza"
+#~ msgid "Select None"
+#~ msgstr "Deselectare totală"
 
-#: ../src/shared/strings.js:22
-msgid "Monday evening"
-msgstr "Luni seara"
+#~ msgid "Click on locations to select them"
+#~ msgstr "Clic pe locații pentru a le selecta"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday night"
-msgstr "Marți noaptea"
+#~ msgid "New"
+#~ msgstr "Nou"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday morning"
-msgstr "Marți dimineața"
+#~ msgid "Back"
+#~ msgstr "Precedent"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Marți după-amiaza"
+#~ msgid "Select"
+#~ msgstr "Selectează"
 
-#: ../src/shared/strings.js:23
-msgid "Tuesday evening"
-msgstr "Marți seara"
+#~ msgid "Cancel"
+#~ msgstr "Anulare"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday night"
-msgstr "Miercuri noaptea"
+#~ msgid "Delete"
+#~ msgstr "Șterge"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday morning"
-msgstr "Miercuri dimineața"
+#~ msgid "More…"
+#~ msgstr "Mai mult…"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "Miercuri după-amiaza"
+#~ msgid "Forecast for Tomorrow"
+#~ msgstr "Prognoza pentru mâine"
 
-#: ../src/shared/strings.js:24
-msgid "Wednesday evening"
-msgstr "Miercuri seara"
+#~ msgid "%B %d"
+#~ msgstr "%B %d"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday night"
-msgstr "Joi noaptea"
+#~ msgid "%d selected"
+#~ msgid_plural "%d selected"
+#~ msgstr[0] "%d selectat"
+#~ msgstr[1] "%d selectate"
+#~ msgstr[2] "%d selectate"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday morning"
-msgstr "Joi dimineața"
+#~ msgid "World Weather"
+#~ msgstr "Vremea pe glob"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday afternoon"
-msgstr "Joi după-amiaza"
+#~ msgid "Monday night"
+#~ msgstr "Luni noaptea"
 
-#: ../src/shared/strings.js:25
-msgid "Thursday evening"
-msgstr "Joi seară"
+#~ msgid "Monday morning"
+#~ msgstr "Luni dimineața"
 
-#: ../src/shared/strings.js:26
-msgid "Friday night"
-msgstr "Vineri noaptea"
+#~ msgid "Monday afternoon"
+#~ msgstr "Luni după-amiaza"
 
-#: ../src/shared/strings.js:26
-msgid "Friday morning"
-msgstr "Vineri dimineața"
+#~ msgid "Monday evening"
+#~ msgstr "Luni seara"
 
-#: ../src/shared/strings.js:26
-msgid "Friday afternoon"
-msgstr "Vineri după-amiaza"
+#~ msgid "Tuesday night"
+#~ msgstr "Marți noaptea"
 
-#: ../src/shared/strings.js:26
-msgid "Friday evening"
-msgstr "Vineri seară"
+#~ msgid "Tuesday morning"
+#~ msgstr "Marți dimineața"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday night"
-msgstr "Sâmbătă noaptea"
+#~ msgid "Tuesday afternoon"
+#~ msgstr "Marți după-amiaza"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday morning"
-msgstr "Sâmbătă dimineața"
+#~ msgid "Tuesday evening"
+#~ msgstr "Marți seara"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday afternoon"
-msgstr "Sâmbătă după-amiaza"
+#~ msgid "Wednesday night"
+#~ msgstr "Miercuri noaptea"
 
-#: ../src/shared/strings.js:27
-msgid "Saturday evening"
-msgstr "Sâmbătă seara"
+#~ msgid "Wednesday morning"
+#~ msgstr "Miercuri dimineața"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday night"
-msgstr "Duminică noaptea"
+#~ msgid "Wednesday afternoon"
+#~ msgstr "Miercuri după-amiaza"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday morning"
-msgstr "Duminică dimineața"
+#~ msgid "Wednesday evening"
+#~ msgstr "Miercuri seara"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday afternoon"
-msgstr "Duminică după-amiaza"
+#~ msgid "Thursday night"
+#~ msgstr "Joi noaptea"
 
-#: ../src/shared/strings.js:28
-msgid "Sunday evening"
-msgstr "Duminică seara"
+#~ msgid "Thursday morning"
+#~ msgstr "Joi dimineața"
 
-#: ../src/shared/strings.js:31
-msgid "Tonight"
-msgstr "La noapte"
+#~ msgid "Thursday afternoon"
+#~ msgstr "Joi după-amiaza"
 
-#: ../src/shared/strings.js:31
-msgid "This morning"
-msgstr "De dimineață"
+#~ msgid "Thursday evening"
+#~ msgstr "Joi seară"
 
-#: ../src/shared/strings.js:31
-msgid "This afternoon"
-msgstr "După-amiază"
+#~ msgid "Friday night"
+#~ msgstr "Vineri noaptea"
 
-#: ../src/shared/strings.js:31
-msgid "This evening"
-msgstr "În această seară"
+#~ msgid "Friday morning"
+#~ msgstr "Vineri dimineața"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow night"
-msgstr "Mâine noapte"
+#~ msgid "Friday afternoon"
+#~ msgstr "Vineri după-amiaza"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Mâine dimineață"
+#~ msgid "Friday evening"
+#~ msgstr "Vineri seară"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Mâine după-amiază"
+#~ msgid "Saturday night"
+#~ msgstr "Sâmbătă noaptea"
 
-#: ../src/shared/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Mâine seară"
+#~ msgid "Saturday morning"
+#~ msgstr "Sâmbătă dimineața"
 
-#: ../src/shared/world.js:276
-msgid "Cities"
-msgstr "Orașe"
+#~ msgid "Saturday afternoon"
+#~ msgstr "Sâmbătă după-amiaza"
 
-#: ../src/shared/world.js:293
-msgid "World view"
-msgstr "Vedere globală"
+#~ msgid "Saturday evening"
+#~ msgstr "Sâmbătă seara"
 
-#: ../src/shared/world.js:321
-msgid "Add locations"
-msgstr "Adaugă locații"
+#~ msgid "Sunday night"
+#~ msgstr "Duminică noaptea"
 
-#: ../src/shared/world.js:324
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr ""
-"Folosiți butonul <b>Nou</b> aflat în bara de unelte pentru a adăuga mai "
-"multe locații"
+#~ msgid "Sunday morning"
+#~ msgstr "Duminică dimineața"
+
+#~ msgid "Sunday afternoon"
+#~ msgstr "Duminică după-amiaza"
+
+#~ msgid "Sunday evening"
+#~ msgstr "Duminică seara"
+
+#~ msgid "Tonight"
+#~ msgstr "La noapte"
+
+#~ msgid "This morning"
+#~ msgstr "De dimineață"
+
+#~ msgid "This afternoon"
+#~ msgstr "După-amiază"
+
+#~ msgid "This evening"
+#~ msgstr "În această seară"
+
+#~ msgid "Tomorrow night"
+#~ msgstr "Mâine noapte"
+
+#~ msgid "Tomorrow morning"
+#~ msgstr "Mâine dimineață"
+
+#~ msgid "Tomorrow afternoon"
+#~ msgstr "Mâine după-amiază"
+
+#~ msgid "Tomorrow evening"
+#~ msgstr "Mâine seară"
+
+#~ msgid "Cities"
+#~ msgstr "Orașe"
+
+#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+#~ msgstr ""
+#~ "Folosiți butonul <b>Nou</b> aflat în bara de unelte pentru a adăuga mai "
+#~ "multe locații"
