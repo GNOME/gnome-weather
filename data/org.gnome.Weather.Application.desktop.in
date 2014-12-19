@@ -7,4 +7,3 @@ Exec=gapplication launch org.gnome.Weather.Application
 DBusActivatable=true
 StartupNotify=true
 Categories=GNOME;GTK;Utility;Core;
-_Keywords=Weather;Forecast;
