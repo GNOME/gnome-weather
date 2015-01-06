@@ -5,15 +5,15 @@
 # Adam Matoušek <adamatousek@gmail.com>, 2013.
 # Daniel Puncman <puncmdan@fel.cvut.cz>, 2013.
 # František Zatloukal <Zatloukal.Frantisek@gmail.com>, 2014.
-# Marek Černocký <marek@manet.cz>, 2013, 2014.
+# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-21 20:11+0000\n"
-"PO-Revision-Date: 2014-09-22 14:50+0200\n"
+"POT-Creation-Date: 2015-01-06 21:14+0000\n"
+"PO-Revision-Date: 2015-01-06 23:39+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -67,6 +67,10 @@ msgstr "Počasí"
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Zobrazit povětrnostní podmínky a předpověď"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "předpověď;počasí;rosnička;"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 msgid ""
