@@ -1,0 +1,217 @@
+# Aragonese translation for gnome-weather.
+# Copyright (C) 2015 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Daniel Martinez <entaltoaragon@gmail.com>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-01-23 21:16+0000\n"
+"PO-Revision-Date: 2015-01-23 22:42+0100\n"
+"Last-Translator: Daniel Martinez <entaltoaragon@gmail.com>\n"
+"Language-Team: Aragonés <softaragones@googlegroups.com>\n"
+"Language: an\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Nueva"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Unidat de temperatura"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "Arredol"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Salir"
+
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Condicions actuals"
+
+#: ../data/city.ui.h:2
+msgid "Today"
+msgstr "Hue"
+
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "Maitín"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../src/app/main.js:52 ../src/app/window.js:192 ../src/service/main.js:49
+msgid "Weather"
+msgstr "Orache"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Amostrar as condicions meteorolochicas y o pronostico"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Pronostico;Orache;Meteorolochía;Clima;"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Una chicota aplicación que le permite monitorizar l'orache actual en a suya "
+"ciudat, u en qualsiquier puesto d'o mundo."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Proporciona acceso a pronosticos actualizaus, dica 7 días, con detalles cada "
+"hora ta o día actual y o siguient, usando quantos servicios d'Internet."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+"Tamién s'integra opcionalment con GNOME Shell, permitindo-le veyer as "
+"condicions actuals de qualsiquier ciudat buscada recientment simplament "
+"escribindo o suyo nombre en a vista d'actividatz."
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Ciudatz configuradas ta las qualas amostrar l'orache"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"As ubicacions amostradas en a vista d'o mundo de gnome-weather. Cada valor "
+"ye un GVariant tornau por gweather_location_serialize()."
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "Ubicación automatica"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"A ubicación automatica ye a valor d'o botón 'ubicación-automatica', que "
+"decide si se debe u no obtener a ubicación actual."
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "Ubicación automatica"
+
+#: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "Buscando…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Buscar una ciudat"
+
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "Vistas recientment"
+
+#: ../data/window.ui.h:1
+msgid "Places"
+msgstr "Puestos"
+
+#: ../data/window.ui.h:2
+msgid "Refresh"
+msgstr "Esviellar"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Buscar una ubicación"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr ""
+"Ta veyer a información sobre l'orache, introduzca o nombre d'una ciudat."
+
+#: ../src/app/city.js:190
+msgid "City view"
+msgstr "Vista d'a ciudat"
+
+#: ../src/app/city.js:199
+msgid "Loading…"
+msgstr "Cargando…"
+
+#: ../src/app/city.js:273
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:37
+msgid "Forecast"
+msgstr "Pronostico"
+
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "Pronostico no disponible"
+
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Pronostico semanal"
+
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "Seleccionar ubicación"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr "Daniel Martinez <entaltoaragon@gmail.com>, 2015"
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "Una aplicación de l'orache"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "Vista mundial"
+
+#: ../src/misc/util.js:159
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/service/searchProvider.js:182
+#, javascript-format
+msgid "%s, %s"
+msgstr " %s, %"
