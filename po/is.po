@@ -1,0 +1,211 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sveinn í Felli <sv1@fellsnet.is>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-01-15 09:17+0000\n"
+"PO-Revision-Date: 2015-01-27 14:43+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../data/app-menu.ui.h:1
+#, fuzzy
+msgid "_New"
+msgstr "_Nýtt"
+
+#: ../data/app-menu.ui.h:2
+#, fuzzy
+msgid "Temperature unit"
+msgstr "Hitaeining"
+
+#: ../data/app-menu.ui.h:3
+#, fuzzy
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+#, fuzzy
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+#, fuzzy
+msgid "About"
+msgstr "Um"
+
+#: ../data/app-menu.ui.h:6
+#, fuzzy
+msgid "Quit"
+msgstr "Hætta"
+
+#: ../data/city.ui.h:1
+#, fuzzy
+msgid "Current conditions"
+msgstr "Núverandi skilyrði:"
+
+#: ../data/city.ui.h:2
+#, fuzzy
+msgid "Today"
+msgstr "Í dag"
+
+#: ../data/city.ui.h:3
+#, fuzzy
+msgid "Tomorrow"
+msgstr "Á morgun"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:192 ../src/service/main.js:49
+msgid "Weather"
+msgstr "Veður"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Birta veðurslýsingar og veðurspár"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Veðurspá;Veðurspá;"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "Sjálfvirk staðsetning"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "Sjálfvirk staðsetning"
+
+#: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "Staðset…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Leita að borg"
+
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "Nýlega skoðað"
+
+#: ../data/window.ui.h:1
+msgid "Places"
+msgstr "Staðir"
+
+#: ../data/window.ui.h:2
+msgid "Refresh"
+msgstr "Uppfæra"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Leita að staðsetningu"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Til að skoða veðurupplýsingar, settu inn nafn á borg."
+
+#: ../src/app/city.js:190
+msgid "City view"
+msgstr "Skoða borg"
+
+#: ../src/app/city.js:199
+msgid "Loading…"
+msgstr "Hleð..."
+
+#: ../src/app/city.js:273
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:37
+msgid "Forecast"
+msgstr "Veðurspá"
+
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "Veðurspá ekki tiltæk"
+
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%l:%M"
+
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Veðurspá vikunnar"
+
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "Veldu staðsetningu"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr "Sveinn í Felli, sv1@fellsnet.is"
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "Veðurforrit"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "Skoða heiminn"
+
+#: ../src/misc/util.js:159
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/service/searchProvider.js:182
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
