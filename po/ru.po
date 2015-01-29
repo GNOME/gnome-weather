@@ -1,18 +1,18 @@
 # Russian translation for gnome-weather.
 # Copyright (C) 2012 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Stas Solovey <whats_up@tut.by>, 2012, 2013.
 # Yuri Myasoedov <ymyasoedov@yandex.ru>, 2014.
+# Stas Solovey <whats_up@tut.by>, 2012, 2013, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-17 08:18+0000\n"
-"PO-Revision-Date: 2014-09-17 20:56+0400\n"
-"Last-Translator: Yuri Myasoedov <ymyasoedov@yandex.ru>\n"
-"Language-Team: русский <gnome-cyr@gnome.org>\n"
+"POT-Creation-Date: 2015-01-29 21:19+0000\n"
+"PO-Revision-Date: 2015-01-30 02:48+0300\n"
+"Last-Translator: Stas Solovey <whats_up@tut.by>\n"
+"Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,16 +57,23 @@ msgstr "Сегодня"
 msgid "Tomorrow"
 msgstr "Завтра"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../src/app/main.js:52 ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Погода"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Показать погодные условия и прогноз"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#| msgid "Weekly Forecast"
+msgid "Weather;Forecast;"
+msgstr "Погода;Прогноз;"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -74,7 +81,7 @@ msgstr ""
 "Небольшое приложение, которое позволяет отслеживать текущее состояние погоды "
 "для вашего города или любой точки мира."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -82,7 +89,7 @@ msgstr ""
 "Оно также предоставляет доступ к подробному прогнозу погоды (до 7 дней) от "
 "различных Интернет-служб."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -120,7 +127,6 @@ msgid "Automatic Location"
 msgstr "Автоматическое местоположение"
 
 #: ../data/places-popover.ui.h:2
-#| msgid "Loading…"
 msgid "Locating…"
 msgstr "Определение местоположения…"
 
@@ -141,7 +147,6 @@ msgid "Refresh"
 msgstr "Обновить"
 
 #: ../data/window.ui.h:3
-#| msgid "A weather application"
 msgid "Search for a location"
 msgstr "Найти местоположение"
 
@@ -192,7 +197,7 @@ msgstr "Выбрать местоположение"
 #: ../src/app/window.js:191
 msgid "translator-credits"
 msgstr ""
-"Stas Solovey <whats_up@tut.by>, 2012, 2013.\\n\n"
+"Stas Solovey <whats_up@tut.by>, 2012-2015.\\n\n"
 "Yuri Myasoedov <ymyasoedov@yandex.ru>, 2014."
 
 #: ../src/app/window.js:193
