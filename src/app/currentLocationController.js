@@ -81,17 +81,27 @@ const CurrentLocationController = new Lang.Class({
 
     _startGeolocationService: function() {
         this._processStarted = true;
-        this._managerProxy = new ManagerProxy(Gio.DBus.system,
-                                              "org.freedesktop.GeoClue2",
-                                              "/org/freedesktop/GeoClue2/Manager");
+        try {
+            this._managerProxy = new ManagerProxy(Gio.DBus.system,
+                                                  "org.freedesktop.GeoClue2",
+                                                  "/org/freedesktop/GeoClue2/Manager");
 
-        this._managerProxy.GetClientRemote(this._onGetClientReady.bind(this));
+            this._managerProxy.GetClientRemote(this._onGetClientReady.bind(this));
+        } catch(e) {
+            this._geoLocationFailed(e);
+        }
+    },
+
+    _geoLocationFailed: function(e) {
+        log ("Failed to connect to GeoClue2 service: " + e.message);
+        GLib.idle_add(GLib.PRIORITY_DEFAULT, Lang.bind(this, function() {
+            this._world.currentLocationChanged(null);
+        }));
     },
 
     _onGetClientReady: function(result, e) {
         if (e) {
-            log ("Failed to connect to GeoClue2 service: " + e.message);
-            this._world.currentLocationChanged(null);
+            this._geoLocationFailed(e);
             return;
         }
 
