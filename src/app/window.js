@@ -160,12 +160,12 @@ const MainWindow = new Lang.Class({
         this._cityView.info = info;
         this._cityView.disconnectClock();
 
-        let isCurrentLocation = false;
+        let isCurrentTimezone = false;
         let currentLocation = this.application.currentLocationController.currentLocation;
         if (currentLocation) {
-            isCurrentLocation = currentLocation.get_timezone().get_tzid() == info.location.get_timezone().get_tzid();
+            isCurrentTimezone = currentLocation.get_timezone().get_tzid() == info.location.get_timezone().get_tzid();
         }
-        if (isCurrentLocation) {
+        if (isCurrentTimezone) {
             this._cityView.infoPage.timeGrid.hide();
         } else {
             this._cityView.connectClock();

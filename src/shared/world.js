@@ -77,7 +77,17 @@ const WorldModel = new Lang.Class({
         this.emit('current-location-changed', location);
     },
 
-    showInfo: function(info) {
+    showInfo: function(info, isCurrentLocation) {
+        if (info != null &&
+            this._infoList[0] != info &&
+            this._infoList.length > 1) {
+            this._moveLocationToFront(info, isCurrentLocation);
+        }
+
+        this._showInfoInternal(info);
+    },
+
+    _showInfoInternal: function(info) {
         this.currentlyLoadedInfo = info;
         this.emit('show-info', info);
         if (info != null)
@@ -86,9 +96,9 @@ const WorldModel = new Lang.Class({
 
     showRecent: function(listbox) {
         if (this._infoList.length > 0)
-            this.showInfo(this._infoList[0]);
+            this.showInfo(this._infoList[0], false);
         else
-            this.showInfo(null);
+            this.showInfo(null, false);
     },
 
     load: function () {
@@ -99,12 +109,16 @@ const WorldModel = new Lang.Class({
             this._settings.set_value('locations', new GLib.Variant('av', locations));
         }
 
-        for (let i = 0; i < locations.length; i++) {
+        let info = null;
+        for (let i = locations.length - 1; i >= 0; i--) {
             let variant = locations[i];
             let location = this._world.deserialize(variant);
 
-            this._addLocationInternal(location, false);
+            info = this._addLocationInternal(location, false);
         }
+
+        if (info)
+            this._showAddedLocation(info, false);
     },
 
     _updateLoadingCount: function(delta) {
@@ -140,24 +154,76 @@ const WorldModel = new Lang.Class({
             for (let info of this._infoList) {
                 let location = info.location;
                 if (location.equal(newLocation)) {
-                    this.showInfo(info);
+                    this.showInfo(info, false);
                     return;
                 }
             }
-
-            let locations = this._settings.get_value('locations').deep_unpack();
-            locations.push(newLocation.serialize());
-            this._settings.set_value('locations', new GLib.Variant('av', locations));
         }
 
-        this._addLocationInternal(newLocation, isCurrentLocation);
+        let info = this._addLocationInternal(newLocation, isCurrentLocation);
+        this._showAddedLocation(info, isCurrentLocation);
+
+        if (!isCurrentLocation)
+            this._queueSaveSettings();
     },
 
-    _removeLocationInternal: function(oldInfo) {
-        if (oldInfo._loadingId) {
+    _queueSaveSettings: function() {
+        if (this._queueSaveSettingsId)
+            return;
+
+        let id = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 10,
+                                          Lang.bind(this, function() {
+                                              this._queueSaveSettingsId = 0;
+                                              this._saveSettingsInternal();
+                                              return false;
+                                          }));
+        this._queueSaveSettingsId = id;
+    },
+
+    _saveSettingsInternal: function() {
+        let locations = [];
+
+        for (let i = 0; i < this._infoList.length; i++) {
+            if (!this._infoList[i]._isCurrentLocation)
+                locations.push(this._infoList[i].location.serialize());
+        }
+
+        this._settings.set_value('locations', new GLib.Variant('av', locations));
+    },
+
+    saveSettingsNow: function() {
+        if (!this._queueSaveSettingsId)
+            return;
+
+        GLib.source_remove(this._queueSaveSettingsId);
+        this._queueSaveSettingsId = 0;
+
+        this._saveSettingsInternal();
+    },
+
+    _moveLocationToFront: function(info, isCurrentLocation) {
+        this._removeLocationInternal(info, true);
+        this._addInfoInternal(info, isCurrentLocation);
+
+        // mark info as a manually chosen location so that we
+        // save it
+        info._isCurrentLocation = false;
+
+        this._queueSaveSettings();
+    },
+
+    _removeLocationInternal: function(oldInfo, skipDisconnect) {
+        if (oldInfo._loadingId && !skipDisconnect) {
             oldInfo.disconnect(oldInfo._loadingId);
             oldInfo._loadingId = 0;
             this._updateLoadingCount(-1);
+        }
+
+        for (let i = 0; i < this._infoList.length; i++) {
+            if (this._infoList[i] == oldInfo) {
+                this._infoList.splice(i, 1);
+                break;
+            }
         }
 
         this.emit('location-removed', oldInfo);
@@ -166,7 +232,14 @@ const WorldModel = new Lang.Class({
     _addLocationInternal: function(newLocation, isCurrentLocation) {
         let info = new GWeather.Info({ location: newLocation,
                                        enabled_providers: this._providers });
-        this._infoList.push(info);
+        this._addInfoInternal(info, isCurrentLocation);
+
+        return info;
+    },
+
+    _addInfoInternal: function(info, isCurrentLocation) {
+        info._isCurrentLocation = isCurrentLocation;
+        this._infoList.unshift(info);
         this.updateInfo(info);
 
         this.emit('location-added', info, isCurrentLocation);
@@ -175,14 +248,16 @@ const WorldModel = new Lang.Class({
             let oldInfo = this._infoList.pop();
             this._removeLocationInternal(oldInfo);
         }
+    },
 
+    _showAddedLocation: function(info, isCurrentLocation) {
         if (isCurrentLocation) {
             if(!this.addedCurrentLocation)
-                this.showInfo(info);
+                this._showInfoInternal(info);
 
             this.addedCurrentLocation = true;
         } else {
-            this.showInfo(info);
+            this._showInfoInternal(info);
         }
     }
 });

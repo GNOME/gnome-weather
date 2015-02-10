@@ -145,6 +145,7 @@ const Application = new Lang.Class({
 
     vfunc_shutdown: function() {
         GWeather.Info.store_cache();
+        this.model.saveSettingsNow();
 
         this.parent();
     }

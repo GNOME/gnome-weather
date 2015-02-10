@@ -86,7 +86,7 @@ const WorldContentView = new Lang.Class({
 
         this._listbox.connect('row-activated', Lang.bind(this, function(listbox, row) {
             this.hide();
-            this.model.showInfo(row._info);
+            this.model.showInfo(row._info, row._isCurrentLocation);
         }));
 
         this.model.connect('current-location-changed', Lang.bind(this, function(model, location) {
@@ -180,6 +180,7 @@ const WorldContentView = new Lang.Class({
         let row = new Gtk.ListBoxRow({ visible: true });
         row.add(grid);
         row._info = info;
+        row._isCurrentLocation = isCurrentLocation;
 
         if (isCurrentLocation) {
             if (model.addedCurrentLocation) {
@@ -194,7 +195,10 @@ const WorldContentView = new Lang.Class({
                 this._listbox.insert(row, 0);
         }
 
-        info.connect('updated', Lang.bind(this, function(info) {
+        if (info._updatedId)
+            return;
+
+        info._updatedId = info.connect('updated', Lang.bind(this, function(info) {
             tempLabel.label = info.get_temp_summary();
             image.icon_name = info.get_symbolic_icon_name();
         }));
@@ -208,6 +212,11 @@ const WorldContentView = new Lang.Class({
                 row.destroy();
                 break;
             }
+        }
+
+        if (info._updatedId) {
+            info.disconnect(info._updatedId);
+            info._updatedId = 0;
         }
     },
 });
