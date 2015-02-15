@@ -1,24 +1,25 @@
 # Swedish translation for gnome-weather.
-# Copyright (C) 2014 gnome-weather's COPYRIGHT HOLDER
+# Copyright © 2014, 2015 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Marcus Lundblad <ml@update.uu.se>, 2014.
 # Sebastian Rasmussen <sebras@gmail.com>, 2014.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-16 08:20+0000\n"
-"PO-Revision-Date: 2014-09-16 20:30+0100\n"
-"Last-Translator: Mattias Eriksson <snaggen@gmail.com>\n"
+"POT-Creation-Date: 2015-01-25 09:19+0000\n"
+"PO-Revision-Date: 2015-01-25 17:42+0100\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: svenska <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.7.3\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -56,16 +57,22 @@ msgstr "Idag"
 msgid "Tomorrow"
 msgstr "Imorgon"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../src/app/main.js:52 ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Väder"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Visar prognoser och väderförhållanden"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Väder;Prognos;"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -73,7 +80,7 @@ msgstr ""
 "Ett litet program som låter dig hålla koll på aktuella väderförhållanden för "
 "din stad eller andra platser i världen."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -82,7 +89,7 @@ msgstr ""
 "information per timme för aktuell och nästkommande dag, från diverse "
 "internettjänster."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -118,10 +125,9 @@ msgstr ""
 
 #: ../data/places-popover.ui.h:1
 msgid "Automatic Location"
-msgstr "Automatisk Plats"
+msgstr "Automatisk plats"
 
 #: ../data/places-popover.ui.h:2
-#| msgid "Loading…"
 msgid "Locating…"
 msgstr "Söker plats…"
 
@@ -142,7 +148,6 @@ msgid "Refresh"
 msgstr "Uppdatera"
 
 #: ../data/window.ui.h:3
-#| msgid "A weather application"
 msgid "Search for a location"
 msgstr "Sök efter en plats"
 
@@ -195,6 +200,7 @@ msgid "translator-credits"
 msgstr ""
 "Marcus Lundblad <ml@update.uu.se>\n"
 "Sebastian Rasmussen <sebras@gmail.com>\n"
+"Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "\n"
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
