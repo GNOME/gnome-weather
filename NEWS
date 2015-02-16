@@ -1,3 +1,10 @@
+3.15.90
+=======
+* Fix history handling [#741837]
+* Fixed crash when Geoclue is not available [#742460]
+* Improved the forecast for the current location
+* Translation updates
+
 3.15.1
 ======
 * Added keywords to the desktop file
