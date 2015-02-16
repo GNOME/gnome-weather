@@ -20,7 +20,6 @@ const GLib = imports.gi.GLib;
 const Gio = imports.gi.Gio;
 const Lang = imports.lang;
 const GWeather = imports.gi.GWeather;
-const Geocode = imports.gi.GeocodeGlib;
 
 const Util = imports.misc.util;
 
@@ -134,12 +133,11 @@ const CurrentLocationController = new Lang.Class({
         let geoclueLocation = new LocationProxy(Gio.DBus.system,
                                                 "org.freedesktop.GeoClue2",
                                                 newPath);
-        let location = new Geocode.Location({ latitude: geoclueLocation.Latitude,
-                                              longitude: geoclueLocation.Longitude,
-                                              accuracy: geoclueLocation.Accuracy,
-                                              description: geoclueLocation.Description });
 
-        this.currentLocation = GWeather.Location.get_world().find_nearest_city (location.latitude, location.longitude);
+        this.currentLocation = GWeather.Location.new_detached(geoclueLocation.Description,
+                                                              null,
+                                                              geoclueLocation.Latitude,
+                                                              geoclueLocation.Longitude);
         this._world.currentLocationChanged(this.currentLocation);
     },
 
