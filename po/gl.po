@@ -2,13 +2,13 @@
 # Copyright (C) 2012 THE gnome-weather'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Fran Diéguez <frandieguez@gnome.org>, 2012.
-# Fran Dieguez <frandieguez@gnome.org>, 2012, 2013, 2014.
+# Fran Dieguez <frandieguez@gnome.org>, 2012, 2013, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-15 21:41+0200\n"
-"PO-Revision-Date: 2014-09-15 21:42+0200\n"
+"POT-Creation-Date: 2015-02-19 10:42+0100\n"
+"PO-Revision-Date: 2015-02-19 10:42+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: gnome-l10n-gl@gnome.org\n"
 "Language: gl\n"
@@ -55,16 +55,22 @@ msgstr "Hoxe"
 msgid "Tomorrow"
 msgstr "Mañá"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../src/app/main.js:52 ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "O tempo"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Mostrar as condicións e predicións do tempo"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Tempo;Meteoroloxía;Predición;"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -72,7 +78,7 @@ msgstr ""
 "Un pequeno aplicativo que lle permitirá facer un seguimento das condicións "
 "meteorolóxicas actuais da súa cidade, ou calquera lugar do mundo."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -80,7 +86,7 @@ msgstr ""
 "Fornece acceso a predicións detalladas ate 7 días, con información por hora "
 "do día actual e seguinte, usando varios servizos de internet."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
