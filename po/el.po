@@ -3,22 +3,23 @@
 # This file is distributed under the same license as the gnome-weather package.
 # Dimitris Spingos <dmtrs32@gmail.com>, 2013.
 # Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013, 2014.
-# Efstathios Iosifidis <iosifidis@opensuse.org>, 2013.
+# Efstathios Iosifidis <iosifidis@opensuse.org>, 2013, 2015.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-18 20:21+0000\n"
-"PO-Revision-Date: 2014-09-19 09:16+0200\n"
-"Last-Translator: Maria Mavridou <mavridou@gmail.com>\n"
-"Language-Team: www.gnome.gr\n"
+"POT-Creation-Date: 2015-02-14 09:22+0000\n"
+"PO-Revision-Date: 2015-02-14 15:08+0200\n"
+"Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
+"Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.4\n"
+"X-Generator: Gtranslator 2.91.6\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -57,16 +58,23 @@ msgstr "Σήμερα"
 msgid "Tomorrow"
 msgstr "Αύριο"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../src/app/main.js:52 ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Καιρός"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Εμφάνιση συνθηκών καιρού και πρόβλεψης"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#| msgid "Weekly Forecast"
+msgid "Weather;Forecast;"
+msgstr "Καιρός;Πρόγνωση;Weather;Forecast;"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -75,7 +83,7 @@ msgstr ""
 "καιρικές συνθήκες για την πόλη σας, ή για οποιαδήποτε άλλη τοποθεσία στον "
 "κόσμο."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -84,7 +92,7 @@ msgstr ""
 "στοιχεία για την τρέχουσα και την επόμενη μέρα, με τη χρήση διαφόρων "
 "υπηρεσιών διαδικτύου."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -124,12 +132,10 @@ msgid "Automatic Location"
 msgstr "Αυτόματη τοποθεσία"
 
 #: ../data/places-popover.ui.h:2
-#| msgid "Loading…"
 msgid "Locating…"
 msgstr "Εντοπισμός…"
 
 #: ../data/places-popover.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a city"
 msgstr "Αναζήτηση πόλης"
 
@@ -146,7 +152,6 @@ msgid "Refresh"
 msgstr "Ανανέωση"
 
 #: ../data/window.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a location"
 msgstr "Αναζήτηση τοποθεσίας"
 
