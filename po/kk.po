@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-10-06 20:26+0000\n"
-"PO-Revision-Date: 2014-10-18 09:12+0600\n"
+"POT-Creation-Date: 2015-02-27 09:32+0000\n"
+"PO-Revision-Date: 2015-02-27 21:56+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.7.3\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -55,20 +55,22 @@ msgstr "Бүгiн"
 msgid "Tomorrow"
 msgstr "Ертең"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../src/app/main.js:52 ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Ауа райы"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Ауа райының күйін және болжамын көрсету"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#| msgid ""
-#| "A small application that allows you to monitor the current weather "
-#| "conditions for your city, or anywhere in the world and to access updated "
-#| "forecasts, up to 7 days, provided by various internet services."
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Ауа райы;Болжам;"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -76,7 +78,7 @@ msgstr ""
 "Өз қалаңыз, немесе әлемнің басқа жерлері үшін ағымдағы ауа райы жағдайын "
 "көрсететін кішігірім қолданба."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -85,7 +87,7 @@ msgstr ""
 "және келесі күн үшін сағат бойынша ақпараты бар ауа райы болжамдарын қарауды "
 "мүмкін қылады."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -108,7 +110,6 @@ msgstr ""
 "мән gweather_location_serialize() қайтаратын GVariant болып табылады."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "Орналасуды автоанықтау"
 
@@ -121,17 +122,14 @@ msgstr ""
 "анықтау керектігін көрсететін қосқыш."
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "Орналасуды автоанықтау"
 
 #: ../data/places-popover.ui.h:2
-#| msgid "Loading…"
 msgid "Locating…"
 msgstr "Анықтау…"
 
 #: ../data/places-popover.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a city"
 msgstr "Қаланы іздеу"
 
@@ -148,7 +146,6 @@ msgid "Refresh"
 msgstr "Жаңарту"
 
 #: ../data/window.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a location"
 msgstr "Орналасуды іздеу"
 
@@ -173,7 +170,6 @@ msgid "Forecast"
 msgstr "Болжам"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "Болжам қолжетерсіз"
 
@@ -186,7 +182,6 @@ msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "Аптаға болжам"
 
@@ -195,7 +190,6 @@ msgid "%A"
 msgstr "%A"
 
 #: ../src/app/window.js:120
-#| msgid "New Location"
 msgid "Select Location"
 msgstr "Орналасуды таңдаңыз"
 
