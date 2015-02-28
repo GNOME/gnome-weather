@@ -28,8 +28,7 @@ const WorldModel = new Lang.Class({
     Name: 'WorldModel',
     Extends: GObject.Object,
     Signals: {
-        'show-info': { param_types: [ GWeather.Info ] },
-        'current-location-changed': { param_types: [ GWeather.Location ] },
+        'current-location-changed': { param_types: [ GWeather.Info ] },
         'revalidate': { param_types: [ GWeather.Location ] },
         'location-added': { param_types: [ GWeather.Info, GObject.Boolean ] },
         'location-removed': { param_types: [ GWeather.Info ] }
@@ -50,7 +49,6 @@ const WorldModel = new Lang.Class({
 
         this._infoList = [];
 
-        this.currentlyLoadedInfo = null;
         this.addedCurrentLocation = false;
     },
 
@@ -68,37 +66,16 @@ const WorldModel = new Lang.Class({
 
     currentLocationChanged: function(location) {
         if (location) {
-            this.addNewLocation(location, true);
-        } else {
-            if (!this.addedCurrentLocation)
-                this.showRecent();
+            let info = this.addNewLocation(location, true);
+            this.emit('current-location-changed', info);
         }
-
-        this.emit('current-location-changed', location);
     },
 
-    showInfo: function(info, isCurrentLocation) {
-        if (info != null &&
-            this._infoList[0] != info &&
-            this._infoList.length > 1) {
-            this._moveLocationToFront(info, isCurrentLocation);
-        }
-
-        this._showInfoInternal(info);
-    },
-
-    _showInfoInternal: function(info) {
-        this.currentlyLoadedInfo = info;
-        this.emit('show-info', info);
-        if (info != null)
-            this.emit('revalidate', info.location);
-    },
-
-    showRecent: function(listbox) {
+    getRecent: function() {
         if (this._infoList.length > 0)
-            this.showInfo(this._infoList[0], false);
+            return this._infoList[0];
         else
-            this.showInfo(null, false);
+            return null;
     },
 
     load: function () {
@@ -116,9 +93,6 @@ const WorldModel = new Lang.Class({
 
             info = this._addLocationInternal(location, false);
         }
-
-        if (info)
-            this._showAddedLocation(info, false);
     },
 
     _updateLoadingCount: function(delta) {
@@ -154,17 +128,19 @@ const WorldModel = new Lang.Class({
             for (let info of this._infoList) {
                 let location = info.location;
                 if (location.equal(newLocation)) {
-                    this.showInfo(info, false);
-                    return;
+                    this.moveLocationToFront(info);
+                    return info;
                 }
             }
         }
 
         let info = this._addLocationInternal(newLocation, isCurrentLocation);
-        this._showAddedLocation(info, isCurrentLocation);
+        this.emit('revalidate', info.location);
 
         if (!isCurrentLocation)
             this._queueSaveSettings();
+
+        return info;
     },
 
     _queueSaveSettings: function() {
@@ -201,9 +177,12 @@ const WorldModel = new Lang.Class({
         this._saveSettingsInternal();
     },
 
-    _moveLocationToFront: function(info, isCurrentLocation) {
+    moveLocationToFront: function(info) {
+        if (this._infoList[0] == info || this._infoList.length == 0)
+            return;
+
         this._removeLocationInternal(info, true);
-        this._addInfoInternal(info, isCurrentLocation);
+        this._addInfoInternal(info, info._isCurrentLocation);
 
         // mark info as a manually chosen location so that we
         // save it
@@ -242,22 +221,14 @@ const WorldModel = new Lang.Class({
         this._infoList.unshift(info);
         this.updateInfo(info);
 
+        if (isCurrentLocation)
+            this.addedCurrentLocation = true;
+
         this.emit('location-added', info, isCurrentLocation);
 
         if (this._infoList.length > 5) {
             let oldInfo = this._infoList.pop();
             this._removeLocationInternal(oldInfo);
-        }
-    },
-
-    _showAddedLocation: function(info, isCurrentLocation) {
-        if (isCurrentLocation) {
-            if(!this.addedCurrentLocation)
-                this._showInfoInternal(info);
-
-            this.addedCurrentLocation = true;
-        } else {
-            this._showInfoInternal(info);
         }
     }
 });

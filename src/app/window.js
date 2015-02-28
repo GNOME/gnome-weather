@@ -41,7 +41,7 @@ const MainWindow = new Lang.Class({
         this.parent(params);
 
         this._world = this.application.world;
-        this._currentInfo = null;
+        this.currentInfo = null;
         this._currentPage = Page.SEARCH;
         this._pageWidgets = [[],[]];
 
@@ -63,16 +63,10 @@ const MainWindow = new Lang.Class({
         this._header.title = title;
         this._header.subtitle = subtitle;
 
-        this._worldView = new WorldView.WorldContentView(this.application, { visible: true });
+        this._worldView = new WorldView.WorldContentView(this.application, this, { visible: true });
         this._worldView.hide();
 
         this._model = this._worldView.model;
-        this._model.connect('show-info', Lang.bind(this, function(model, info) {
-            if (info)
-                this.showInfo(info);
-            else
-                this.showSearch(info);
-        }));
 
         let initialGrid = builder.get_object('initial-grid');
 
@@ -103,7 +97,7 @@ const MainWindow = new Lang.Class({
 
         let autoLocation = this.application.currentLocationController.autoLocation;
         if (!autoLocation)
-            this._model.showRecent();
+            this.showInfo(this._model.getRecent(), false);
     },
 
     update: function() {
@@ -111,8 +105,10 @@ const MainWindow = new Lang.Class({
     },
 
     _initialLocationChanged: function(entry) {
-        if (entry.location)
-            this._model.addNewLocation(entry.location, false);
+        if (entry.location) {
+            let info = this._model.addNewLocation(entry.location, false);
+            this.showInfo(info, false);
+        }
     },
 
     _getTitle: function() {
@@ -156,7 +152,20 @@ const MainWindow = new Lang.Class({
         this._goToPage(Page.SEARCH);
     },
 
-    showInfo: function(info) {
+    showInfo: function(info, isCurrentLocation) {
+        if (!info)
+            return;
+
+        /*
+         * Only show location updates if we have no loaded info or if we are
+         * currently showing the previous current location.
+         */
+        if (isCurrentLocation) {
+            if (this._cityView.info && !this._cityView.info._isCurrentLocation)
+                return;
+        }
+
+        this.currentInfo = info;
         this._cityView.info = info;
         this._cityView.disconnectClock();
 

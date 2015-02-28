@@ -31,7 +31,7 @@ const WorldContentView = new Lang.Class({
     Name: 'WorldContentView',
     Extends: Gtk.Popover,
 
-    _init: function(application, params) {
+    _init: function(application, window, params) {
         params = Params.fill(params, { hexpand: false, vexpand: false });
         this.parent(params);
 
@@ -44,6 +44,7 @@ const WorldContentView = new Lang.Class({
         this.add(grid);
 
         this.model = application.model;
+        this._window = window;
 
         this._listbox = builder.get_object('locations-list-box');
         this._listbox.set_header_func(function (row, previous) {
@@ -86,12 +87,13 @@ const WorldContentView = new Lang.Class({
 
         this._listbox.connect('row-activated', Lang.bind(this, function(listbox, row) {
             this.hide();
-            this.model.showInfo(row._info, row._isCurrentLocation);
+            this.model.moveLocationToFront(row._info);
+            this._window.showInfo(row._info, false);
         }));
 
-        this.model.connect('current-location-changed', Lang.bind(this, function(model, location) {
+        this.model.connect('current-location-changed', Lang.bind(this, function(model, info) {
             autoLocStack.visible_child_name = 'auto-location-switch-grid';
-            if (location) {
+            if (info.location) {
                 GObject.signal_handler_block(autoLocSwitch, handlerId);
                 autoLocSwitch.active = true;
                 GObject.signal_handler_unblock(autoLocSwitch, handlerId);
@@ -102,6 +104,8 @@ const WorldContentView = new Lang.Class({
 
                 autoLocSwitch.sensitive = false;
             }
+
+            this._window.showInfo(info, true);
         }));
 
         let stackPopover = builder.get_object('popover-stack');
@@ -128,14 +132,15 @@ const WorldContentView = new Lang.Class({
         }
     },
 
-    _filterListbox: function(row, model) {
-        return model.currentlyLoadedInfo == null ||
-            row._info != model.currentlyLoadedInfo;
+    _filterListbox: function(row, window) {
+        return window.currentInfo == null ||
+            row._info != window.currentInfo;
     },
 
     _locationChanged: function(entry) {
         if (entry.location) {
-            this.model.addNewLocation(entry.location, false);
+            let info = this.model.addNewLocation(entry.location, false);
+            this._window.showInfo(info, false);
             this.hide();
             entry.location = null;
         }

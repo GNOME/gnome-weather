@@ -60,7 +60,8 @@ const Application = new Lang.Class({
         let location = this.world.deserialize(parameter.deep_unpack());
         let win = this._createWindow();
 
-        this.model.addNewLocation(location, false);
+        let info = this.model.addNewLocation(location, false);
+        win.showInfo(info, false);
     },
 
     _initAppMenu: function() {
