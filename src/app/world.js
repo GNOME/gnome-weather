@@ -119,7 +119,13 @@ const WorldContentView = new Lang.Class({
         this.model.connect('location-added', Lang.bind(this, this._onLocationAdded));
         this.model.connect('location-removed', Lang.bind(this, this._onLocationRemoved));
 
-        this.model.load();
+        if (this.model.length > 0) {
+            this.model.getAll().forEach(Lang.bind(this, function(info) {
+                this._onLocationAdded(this.model, info, info._isCurrentLocation);
+            }));
+        } else {
+            this.model.load();
+        }
     },
 
     _filterListbox: function(row, model) {
@@ -184,7 +190,9 @@ const WorldContentView = new Lang.Class({
 
         if (isCurrentLocation) {
             if (model.addedCurrentLocation) {
-                this._listbox.get_row_at_index(0).destroy();
+                let row0 = this._listbox.get_row_at_index(0);
+                if (row0)
+                    row0.destroy();
             }
 
             this._listbox.insert(row, 0);
