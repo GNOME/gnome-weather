@@ -1,3 +1,12 @@
+3.15.91
+=======
+* Build system fixes [Jonas Danielsson, #740414]
+* Fixed opening the app on a specific location (eg when
+  launched from gnome-maps) [Jonas Danielsson, #740414]
+* Fixed showing the world popover on a second window
+  [Jonas Danielsson, #740414]
+* Translation updates
+
 3.15.90
 =======
 * Fix history handling [#741837]
