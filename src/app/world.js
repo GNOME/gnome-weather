@@ -108,21 +108,13 @@ const WorldContentView = new Lang.Class({
             this._window.showInfo(info, true);
         }));
 
-        let stackPopover = builder.get_object('popover-stack');
-        this.model.connect('revalidate', Lang.bind(this, function() {
-            this._listbox.invalidate_filter();
+        this._stackPopover = builder.get_object('popover-stack');
+        this._listbox.set_filter_func(Lang.bind(this, this._filterListbox));
 
-            let children = this._listbox.get_children();
-            if (children.length == 1)
-                stackPopover.set_visible_child_name("search-grid");
-            else
-                stackPopover.set_visible_child_name("locations-grid");
-        }));
-
-        this._listbox.set_filter_func(Lang.bind(this, this._filterListbox, this.model));
         this.model.connect('location-added', Lang.bind(this, this._onLocationAdded));
         this.model.connect('location-removed', Lang.bind(this, this._onLocationRemoved));
 
+        this._currentLocationAdded = false;
         if (this.model.length > 0) {
             this.model.getAll().forEach(Lang.bind(this, function(info) {
                 this._onLocationAdded(this.model, info, info._isCurrentLocation);
@@ -132,9 +124,20 @@ const WorldContentView = new Lang.Class({
         }
     },
 
-    _filterListbox: function(row, window) {
-        return window.currentInfo == null ||
-            row._info != window.currentInfo;
+    refilter: function() {
+        this._listbox.invalidate_filter();
+    },
+
+    _syncStackPopover: function() {
+        if (this.model.length == 1)
+            this._stackPopover.set_visible_child_name("search-grid");
+        else
+            this._stackPopover.set_visible_child_name("locations-grid");
+    },
+
+    _filterListbox: function(row) {
+        return this._window.currentInfo == null ||
+            row._info != this._window.currentInfo;
     },
 
     _locationChanged: function(entry) {
@@ -194,15 +197,16 @@ const WorldContentView = new Lang.Class({
         row._isCurrentLocation = isCurrentLocation;
 
         if (isCurrentLocation) {
-            if (model.addedCurrentLocation) {
+            if (this._currentLocationAdded) {
                 let row0 = this._listbox.get_row_at_index(0);
                 if (row0)
                     row0.destroy();
             }
 
+            this._currentLocationAdded = true;
             this._listbox.insert(row, 0);
         } else {
-            if (model.addedCurrentLocation)
+            if (this._currentLocationAdded)
                 this._listbox.insert(row, 1);
             else
                 this._listbox.insert(row, 0);
@@ -215,6 +219,8 @@ const WorldContentView = new Lang.Class({
             tempLabel.label = info.get_temp_summary();
             image.icon_name = info.get_symbolic_icon_name();
         }));
+
+        this._syncStackPopover();
     },
 
     _onLocationRemoved: function(model, info) {
@@ -231,5 +237,9 @@ const WorldContentView = new Lang.Class({
             info.disconnect(info._updatedId);
             info._updatedId = 0;
         }
+        if (info._isCurrentLocation)
+            this._currentLocationAdded = false;
+
+        this._syncStackPopover();
     },
 });

@@ -29,7 +29,6 @@ const WorldModel = new Lang.Class({
     Extends: GObject.Object,
     Signals: {
         'current-location-changed': { param_types: [ GWeather.Info ] },
-        'revalidate': { param_types: [ GWeather.Location ] },
         'location-added': { param_types: [ GWeather.Info, GObject.Boolean ] },
         'location-removed': { param_types: [ GWeather.Info ] }
     },
@@ -47,28 +46,41 @@ const WorldModel = new Lang.Class({
 
         this._loadingCount = 0;
 
+        this._currentLocationInfo = null;
         this._infoList = [];
-
-        this.addedCurrentLocation = false;
     },
 
     get length() {
-        return this._infoList.length;
+        return this._infoList.length + (this._currentLocationInfo ? 1 : 0);
     },
 
     getAll: function() {
-        return [].concat(this._infoList);
+        if (this._currentLocationInfo)
+            return [this._currentLocationInfo].concat(this._infoList);
+        else
+            return [].concat(this._infoList);
     },
 
     getAtIndex: function(index) {
+        if (this._currentLocationInfo) {
+            if (index == 0)
+                return this._currentLocationInfo;
+            else
+                index--;
+        }
+
         return this._infoList[index];
     },
 
     currentLocationChanged: function(location) {
-        if (location) {
-            let info = this.addNewLocation(location, true);
-            this.emit('current-location-changed', info);
-        }
+        if (!location)
+            return;
+
+        if (this._currentLocationInfo)
+            this._removeLocationInternal(this._currentLocationInfo, false);
+
+        let info = this.addNewLocation(location, true);
+        this.emit('current-location-changed', info);
     },
 
     getRecent: function() {
@@ -135,7 +147,6 @@ const WorldModel = new Lang.Class({
         }
 
         let info = this._addLocationInternal(newLocation, isCurrentLocation);
-        this.emit('revalidate', info.location);
 
         if (!isCurrentLocation)
             this._queueSaveSettings();
@@ -178,7 +189,7 @@ const WorldModel = new Lang.Class({
     },
 
     moveLocationToFront: function(info) {
-        if (this._infoList[0] == info || this._infoList.length == 0)
+        if (this._infoList.length == 0 || this._infoList[0] == info)
             return;
 
         this._removeLocationInternal(info, true);
@@ -197,6 +208,9 @@ const WorldModel = new Lang.Class({
             oldInfo._loadingId = 0;
             this._updateLoadingCount(-1);
         }
+
+        if (oldInfo == this._currentLocationInfo)
+            this._currentLocationInfo = null;
 
         for (let i = 0; i < this._infoList.length; i++) {
             if (this._infoList[i] == oldInfo) {
@@ -222,7 +236,7 @@ const WorldModel = new Lang.Class({
         this.updateInfo(info);
 
         if (isCurrentLocation)
-            this.addedCurrentLocation = true;
+            this._currentLocationInfo = info;
 
         this.emit('location-added', info, isCurrentLocation);
 

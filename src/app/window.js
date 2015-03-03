@@ -181,6 +181,7 @@ const MainWindow = new Lang.Class({
             this._cityView.infoPage.timeGrid.show();
         }
 
+        this._worldView.refilter();
         this._stack.set_visible_child(this._cityView);
         this._goToPage(Page.CITY);
     },

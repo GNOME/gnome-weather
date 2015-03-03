@@ -49,6 +49,9 @@ const BackgroundService = new Lang.Class({
         GLib.set_application_name(_("Weather"));
 
         this._searchProvider = new SearchProvider.SearchProvider(this);
+
+        if (!pkg.moduledir.startsWith('resource://'))
+            this.debug = true;
     },
 
     _onQuit: function() {
@@ -78,6 +81,12 @@ const BackgroundService = new Lang.Class({
         this.world = GWeather.Location.get_world();
         this.model = new World.WorldModel(this.world, false);
         this.model.load();
+
+        if (this.debug) {
+            this.model.getAll().forEach(function(info) {
+                log(info.location.get_city_name());
+            });
+        }
 
         Util.initActions(this,
                          [{ name: 'quit',
