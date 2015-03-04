@@ -66,7 +66,7 @@ msgstr "Počasí"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
-msgstr "Zobrazit povětrnostní podmínky a předpověď"
+msgstr "Zobrazte si povětrnostní podmínky a předpověď počasí"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
 msgid "Weather;Forecast;"
