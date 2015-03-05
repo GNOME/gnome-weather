@@ -1,14 +1,14 @@
 # Serbian translation for gnome-weather.
-# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2013—2015.
 # This file is distributed under the same license as the gnome-weather package.
-# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2013—2014.
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2013—2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-23 08:23+0000\n"
-"PO-Revision-Date: 2014-09-23 11:11+0200\n"
+"POT-Creation-Date: 2015-03-04 09:31+0000\n"
+"PO-Revision-Date: 2015-03-05 23:16+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -55,20 +55,23 @@ msgstr "Danas"
 msgid "Tomorrow"
 msgstr "Sutra"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../src/app/main.js:52 ../src/app/window.js:202 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Vreme"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Prikažite vremenske prilike i prognozu"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#| msgid ""
-#| "A small application that allows you to monitor the current weather "
-#| "conditions for your city, or anywhere in the world and to access updated "
-#| "forecasts, up to 7 days, provided by various internet services."
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#| msgid "Weekly Forecast"
+msgid "Weather;Forecast;"
+msgstr "vreme;prognoza;"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -76,7 +79,7 @@ msgstr ""
 "Programče koje vam omogućava da nadgledate trenutne vremenske prilike za vaš "
 "grad, ili bilo gde u svetu."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -85,7 +88,7 @@ msgstr ""
 "jednočasovnim pojedinostima za tekući i naredni dan, koristeći razne "
 "internet usluge."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -108,7 +111,6 @@ msgstr ""
 "Gvarijanta koju daje funkcija „gweather_location_serialize()“."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "Samostalno mesto"
 
@@ -121,17 +123,14 @@ msgstr ""
 "li da dobavi tekuće mesto ili ne."
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "Samostalno mesto"
 
 #: ../data/places-popover.ui.h:2
-#| msgid "Loading…"
 msgid "Locating…"
 msgstr "Pronalazim…"
 
 #: ../data/places-popover.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a city"
 msgstr "Potražite grad"
 
@@ -148,7 +147,6 @@ msgid "Refresh"
 msgstr "Osveži"
 
 #: ../data/window.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a location"
 msgstr "Potražite mesto"
 
@@ -173,7 +171,6 @@ msgid "Forecast"
 msgstr "Prognoza"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "Vremenska prognoza nije dostupna"
 
@@ -186,7 +183,6 @@ msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "Sedmična prognoza vremena"
 
@@ -194,19 +190,18 @@ msgstr "Sedmična prognoza vremena"
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:120
-#| msgid "New Location"
+#: ../src/app/window.js:116
 msgid "Select Location"
 msgstr "Izaberite mesto"
 
-#: ../src/app/window.js:191
+#: ../src/app/window.js:201
 msgid "translator-credits"
 msgstr ""
 "  Miroslav Nikolić\n"
 "\n"
 "  http://prevod.org — prevod na srpski jezik"
 
-#: ../src/app/window.js:193
+#: ../src/app/window.js:203
 msgid "A weather application"
 msgstr "Program za vremenske prilike"
 
