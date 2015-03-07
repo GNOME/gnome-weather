@@ -62,6 +62,7 @@ const Application = new Lang.Class({
 
         let info = this.model.addNewLocation(location, false);
         win.showInfo(info, false);
+        this._showWindowWhenReady(win);
     },
 
     _onShowSearch: function(action, parameter) {
@@ -69,6 +70,7 @@ const Application = new Lang.Class({
         let win = this._createWindow();
 
         win.showSearch(text);
+        this._showWindowWhenReady(win);
     },
 
     _initAppMenu: function() {
@@ -122,7 +124,10 @@ const Application = new Lang.Class({
     },
 
     _createWindow: function() {
-        let win = new Window.MainWindow({ application: this });
+        return new Window.MainWindow({ application: this });
+    },
+
+    _showWindowWhenReady: function(win) {
         let notifyId;
 
         if (this.model.loading) {
@@ -153,6 +158,7 @@ const Application = new Lang.Class({
     vfunc_activate: function() {
         let win = this._createWindow();
         win.showDefault();
+        this._showWindowWhenReady(win);
     },
 
     vfunc_shutdown: function() {
