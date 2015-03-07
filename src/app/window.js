@@ -68,10 +68,10 @@ const MainWindow = new Lang.Class({
 
         this._model = this._worldView.model;
 
-        let initialGrid = builder.get_object('initial-grid');
+        this._searchView = builder.get_object('initial-grid');
 
-        let initialGridLocEntry = builder.get_object('initial-grid-location-entry');
-        initialGridLocEntry.connect('notify::location', Lang.bind(this, this._initialLocationChanged));
+        this._searchEntry = builder.get_object('initial-grid-location-entry');
+        this._searchEntry.connect('notify::location', Lang.bind(this, this._searchLocationChanged));
 
         let placesButton = builder.get_object('places-button');
         this._pageWidgets[Page.CITY].push(placesButton);
@@ -87,24 +87,20 @@ const MainWindow = new Lang.Class({
                                                 vexpand: true });
         this._stack.add(this._cityView);
 
-        this._stack.set_visible_child(initialGrid);
+        this._stack.set_visible_child(this._searchView);
 
         this.add(grid);
         grid.show_all();
 
         for (let i = 0; i < this._pageWidgets[Page.CITY].length; i++)
             this._pageWidgets[Page.CITY][i].hide();
-
-        let autoLocation = this.application.currentLocationController.autoLocation;
-        if (!autoLocation)
-            this.showInfo(this._model.getRecent(), false);
     },
 
     update: function() {
         this._cityView.update();
     },
 
-    _initialLocationChanged: function(entry) {
+    _searchLocationChanged: function(entry) {
         if (entry.location) {
             let info = this._model.addNewLocation(entry.location, false);
             this.showInfo(info, false);
@@ -148,8 +144,23 @@ const MainWindow = new Lang.Class({
         this._header.subtitle = subtitle;
     },
 
-    showSearch: function() {
+    showDefault: function() {
+        let clc = this.application.currentLocationController;
+        let autoLocation = clc.autoLocation;
+        let currentLocation = clc.currentLocation;
+        if (currentLocation)
+            this.showInfo(this._model.getCurrentLocation(), false);
+        else if (!autoLocation)
+            this.showInfo(this._model.getRecent(), false);
+    },
+
+    showSearch: function(text) {
+        this._cityView.disconnectClock();
+        this._stack.set_visible_child(this._searchView);
         this._goToPage(Page.SEARCH);
+        this._searchEntry.text = text;
+        if (text.length > 0)
+            this._searchEntry.get_completion().complete();
     },
 
     showInfo: function(info, isCurrentLocation) {
@@ -157,12 +168,18 @@ const MainWindow = new Lang.Class({
             return;
 
         /*
-         * Only show location updates if we have no loaded info or if we are
-         * currently showing the previous current location.
+         * Only show location updates if we have no loaded info and no
+         * search text or if we are currently showing the previous
+         * current location.
          */
         if (isCurrentLocation) {
-            if (this._cityView.info && !this._cityView.info._isCurrentLocation)
-                return;
+            if (this._currentPage == Page.CITY) {
+                if (!this._cityView.info._isCurrentLocation)
+                    return;
+            } else if (this._currentPage == Page.SEARCH) {
+                if (this._searchEntry.text.length > 0)
+                    return;
+            }
         }
 
         this.currentInfo = info;

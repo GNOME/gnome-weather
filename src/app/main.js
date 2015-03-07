@@ -64,6 +64,13 @@ const Application = new Lang.Class({
         win.showInfo(info, false);
     },
 
+    _onShowSearch: function(action, parameter) {
+        let text = parameter.deep_unpack();
+        let win = this._createWindow();
+
+        win.showSearch(text);
+    },
+
     _initAppMenu: function() {
         let builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/Weather/Application/app-menu.ui');
@@ -100,7 +107,10 @@ const Application = new Lang.Class({
                             activate: this._onQuit },
                           { name: 'show-location',
                             activate: this._onShowLocation,
-                            parameter_type: new GLib.VariantType('v') }]);
+                            parameter_type: new GLib.VariantType('v') },
+                          { name: 'show-search',
+                            activate: this._onShowSearch,
+                            parameter_type: new GLib.VariantType('s') }]);
 
         let gwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather' });
         this.add_action(gwSettings.create_action('temperature-unit'));
@@ -141,7 +151,8 @@ const Application = new Lang.Class({
     },
 
     vfunc_activate: function() {
-        this._createWindow();
+        let win = this._createWindow();
+        win.showDefault();
     },
 
     vfunc_shutdown: function() {

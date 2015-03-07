@@ -243,6 +243,8 @@ const SearchProvider = new Lang.Class({
     },
 
     LaunchSearch: function(terms, timestamp) {
-        // not implemented
+        this._app.hold();
+
+        this._activateAction('show-search', new GLib.Variant('s', terms.join(' ')), timestamp);
     },
 });

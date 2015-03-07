@@ -72,6 +72,10 @@ const WorldModel = new Lang.Class({
         return this._infoList[index];
     },
 
+    getCurrentLocation: function() {
+        return this._currentLocationInfo;
+    },
+
     currentLocationChanged: function(location) {
         if (!location)
             return;
