@@ -170,3 +170,8 @@ function getEnabledProviders() {
         return (GWeather.Provider.METAR | GWeather.Provider.YR_NO | GWeather.Provider.OWM);
     }
 }
+
+function easeOutCubic(value) {
+    let t = value - 1;
+    return t * t * t + 1;
+}

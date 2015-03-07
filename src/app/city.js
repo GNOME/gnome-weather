@@ -28,6 +28,8 @@ const Util = imports.misc.util;
 
 const SPINNER_SIZE = 128;
 
+const SCROLLING_ANIMATION_TIME = 400000; //us
+
 const WeatherWidget = new Lang.Class({
     Name: 'WeatherWidget',
     Extends: Gtk.Frame,
@@ -95,32 +97,20 @@ const WeatherWidget = new Lang.Class({
             }
         }));
 
+        this._tickId = 0;
+
         this._leftButton.connect('clicked', Lang.bind(this, function() {
             let hadjustment = this._dayStack.visible_child.get_hadjustment();
-            this._target = hadjustment.value - hadjustment.page_size;
-            if (this._target <= hadjustment.get_lower()) {
-                this._leftButton.set_sensitive(false);
-                this._rightButton.set_sensitive(true);
-            } else
-                this._rightButton.set_sensitive(true);
+            let target = hadjustment.value - hadjustment.page_size;
 
-            this._start = new Date().getTime();
-            this._end = this._start + 328;
-            this._tickId = this.add_tick_callback(Lang.bind(this, this._animate));
+            this._beginScrollAnimation(target);
         }));
 
         this._rightButton.connect('clicked', Lang.bind(this, function() {
             let hadjustment = this._dayStack.visible_child.get_hadjustment();
-            this._target = hadjustment.value + hadjustment.page_size;
-            if (this._target >= hadjustment.get_upper() - hadjustment.page_size) {
-                this._rightButton.set_sensitive(false);
-                this._leftButton.set_sensitive(true);
-            } else
-                this._leftButton.set_sensitive(true);
+            let target = hadjustment.value + hadjustment.page_size;
 
-            this._start = new Date().getTime();
-            this._end = this._start + 328;
-            this._tickId = this.add_tick_callback(Lang.bind(this, this._animate));
+            this._beginScrollAnimation(target);
         }));
 
         this.add(outerBox);
@@ -143,27 +133,34 @@ const WeatherWidget = new Lang.Class({
         }
     },
 
-    _animate: function() {
+    _beginScrollAnimation: function(target) {
+        let start = this.get_frame_clock().get_frame_time();
+        let end = start + SCROLLING_ANIMATION_TIME;
+
+        if (this._tickId != 0)
+            this.remove_tick_callback(this._tickId);
+
+        this._tickId = this.add_tick_callback(Lang.bind(this, function() {
+            return this._animate(target, start, end);
+        }));
+    },
+
+    _animate: function(target, start, end) {
         let hadjustment = this._dayStack.visible_child.get_hadjustment();
         let value = hadjustment.value;
         let t = 1.0;
-        let now = new Date().getTime();
-        if (now < this._end) {
-            t = (now - this._start) / 700;
-            t = this._easeOutCubic (t);
-            hadjustment.value = value + t * (this._target - value);
+        let now = this.get_frame_clock().get_frame_time();
+
+        if (now < end) {
+            t = (now - start) / SCROLLING_ANIMATION_TIME;
+            t = Util.easeOutCubic (t);
+            hadjustment.value = value + t * (target - value);
             return true;
         } else {
-            hadjustment.value = value + t * (this._target - value);
-            this.remove_tick_callback(this._tickId);
+            hadjustment.value = value + t * (target - value);
             this._tickId = 0;
             return false;
         }
-    },
-
-    _easeOutCubic: function(value) {
-        let temp = value - 1;
-        return temp * temp * temp + 1;
     },
 
     clear: function() {
