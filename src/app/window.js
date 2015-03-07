@@ -155,7 +155,7 @@ const MainWindow = new Lang.Class({
     },
 
     showSearch: function(text) {
-        this._cityView.disconnectClock();
+        this._cityView.setTimeVisible(false);
         this._stack.set_visible_child(this._searchView);
         this._goToPage(Page.SEARCH);
         this._searchEntry.text = text;
@@ -184,19 +184,13 @@ const MainWindow = new Lang.Class({
 
         this.currentInfo = info;
         this._cityView.info = info;
-        this._cityView.disconnectClock();
 
         let isCurrentTimezone = false;
         let currentLocation = this.application.currentLocationController.currentLocation;
         if (currentLocation) {
             isCurrentTimezone = currentLocation.get_timezone().get_tzid() == info.location.get_timezone().get_tzid();
         }
-        if (isCurrentTimezone) {
-            this._cityView.infoPage.timeGrid.hide();
-        } else {
-            this._cityView.connectClock();
-            this._cityView.infoPage.timeGrid.show();
-        }
+        this._cityView.setTimeVisible(!isCurrentTimezone);
 
         this._worldView.refilter();
         this._stack.set_visible_child(this._cityView);

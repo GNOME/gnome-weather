@@ -2,18 +2,18 @@
 <!-- Generated with glade 3.16.1 -->
 <interface>
   <requires lib="gtk+" version="3.0"/>
-  <object class="GtkOverlay" id="outer-box">
+  <template class="Gjs_WeatherWidget" parent="GtkFrame">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <child>
-      <object class="GtkFrame" id="content-frame">
+      <object class="GtkFrame" id="contentFrame">
         <property name="name">weather-page-content-view</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="label_xalign">0</property>
         <property name="shadow_type">none</property>
         <child>
-          <object class="GtkGrid" id="outer-grid">
+          <object class="GtkGrid" id="outerGrid">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
@@ -40,7 +40,7 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkImage" id="conditions-image">
+                      <object class="GtkImage" id="conditionsImage">
                         <property name="name">conditions-image</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -55,7 +55,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="temperature-label">
+                      <object class="GtkLabel" id="temperatureLabel">
                         <property name="name">temperature-label</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -70,7 +70,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="conditions-label">
+                      <object class="GtkLabel" id="conditionsLabel">
                         <property name="name">conditions-label</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -98,7 +98,7 @@
                     <child>
                       <object class="GtkStackSwitcher" id="day-stack-switcher">
                         <property name="visible">True</property>
-                        <property name="stack">forecast-stack</property>
+                        <property name="stack">forecastStack</property>
                         <style>
                           <class name="osd"/>
                         </style>
@@ -119,7 +119,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkStack" id="forecast-stack">
+                      <object class="GtkStack" id="forecastStack">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
@@ -187,7 +187,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="left-button">
+                      <object class="GtkButton" id="leftButton">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
@@ -210,7 +210,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="right-button">
+                      <object class="GtkButton" id="rightButton">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
@@ -246,7 +246,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkGrid" id="time-grid">
+              <object class="GtkGrid" id="timeGrid">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">end</property>
@@ -270,7 +270,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="time-label">
+                  <object class="GtkLabel" id="timeLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="margin-top">15</property>
@@ -296,5 +296,5 @@
         </child>
       </object>
     </child>
-  </object>
+  </template>
 </interface>

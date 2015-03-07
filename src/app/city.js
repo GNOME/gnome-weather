@@ -33,6 +33,13 @@ const SCROLLING_ANIMATION_TIME = 400000; //us
 const WeatherWidget = new Lang.Class({
     Name: 'WeatherWidget',
     Extends: Gtk.Frame,
+    Template: 'resource:///org/gnome/Weather/Application/city.ui',
+    InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
+                       'temperatureLabel', 'conditionsLabel',
+                       'timeLabel', 'timeGrid', 'forecastStack',
+                       'leftButton', 'rightButton',
+                       'forecast-today-grid', 'forecast-tomorrow-grid',
+                       'forecast-today', 'forecast-tomorrow'],
 
     _init: function(params) {
         params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE,
@@ -42,48 +49,28 @@ const WeatherWidget = new Lang.Class({
         this._currentStyle = null;
         this._info = null;
 
-        let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/Weather/Application/city.ui');
-
-        let outerBox = builder.get_object('outer-box');
-        this._contentFrame = builder.get_object('content-frame');
-        this._outerGrid = builder.get_object('outer-grid');
-        this._wForecastFrame = builder.get_object('weekly-forecast-frame');
-        this._icon = builder.get_object('conditions-image');
-        this._temperature = builder.get_object('temperature-label');
-        this._conditions = builder.get_object('conditions-label');
-        this.timeLabel = builder.get_object('time-label');
-        this.timeGrid = builder.get_object('time-grid');
-
         this._weeklyForecasts = new WForecast.WeeklyForecastFrame();
         this._outerGrid.attach(this._weeklyForecasts, 1, 0, 1, 2);
 
         this._forecasts = { };
-        this._hadjustments = { };
 
         for (let t of ['today', 'tomorrow']) {
             let box = new Forecast.ForecastBox({ hexpand: false });
 
             this._forecasts[t] = box;
-            builder.get_object('forecast-' + t + '-grid').add(box);
+            this['_forecast_' + t + '_grid'].add(box);
 
-            let fsw = builder.get_object('forecast-' + t);
+            let fsw = this['_forecast_' + t];
             let hscrollbar = fsw.get_hscrollbar();
             hscrollbar.set_opacity(0.0);
             hscrollbar.hide();
             let hadjustment = fsw.get_hadjustment();
             hadjustment.connect('changed', Lang.bind(this, this._syncLeftRightButtons));
             hadjustment.connect('value-changed', Lang.bind(this, this._syncLeftRightButtons));
-
-            this._hadjustments[t] = hadjustment;
         }
 
-        this._dayStack = builder.get_object('forecast-stack');
-        this._leftButton = builder.get_object('left-button');
-        this._rightButton = builder.get_object('right-button');
-
-        this._dayStack.connect('notify::visible-child', Lang.bind(this, function() {
-            let visible_child = this._dayStack.visible_child;
+        this._forecastStack.connect('notify::visible-child', Lang.bind(this, function() {
+            let visible_child = this._forecastStack.visible_child;
             if (visible_child == null)
                 return; // can happen at destruction
 
@@ -100,24 +87,22 @@ const WeatherWidget = new Lang.Class({
         this._tickId = 0;
 
         this._leftButton.connect('clicked', Lang.bind(this, function() {
-            let hadjustment = this._dayStack.visible_child.get_hadjustment();
+            let hadjustment = this._forecastStack.visible_child.get_hadjustment();
             let target = hadjustment.value - hadjustment.page_size;
 
             this._beginScrollAnimation(target);
         }));
 
         this._rightButton.connect('clicked', Lang.bind(this, function() {
-            let hadjustment = this._dayStack.visible_child.get_hadjustment();
+            let hadjustment = this._forecastStack.visible_child.get_hadjustment();
             let target = hadjustment.value + hadjustment.page_size;
 
             this._beginScrollAnimation(target);
         }));
-
-        this.add(outerBox);
     },
 
     _syncLeftRightButtons: function() {
-        let hadjustment = this._dayStack.visible_child.get_hadjustment();
+        let hadjustment = this._forecastStack.visible_child.get_hadjustment();
         if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
             this._leftButton.set_sensitive(false);
             this._rightButton.set_sensitive(false);
@@ -146,7 +131,7 @@ const WeatherWidget = new Lang.Class({
     },
 
     _animate: function(target, start, end) {
-        let hadjustment = this._dayStack.visible_child.get_hadjustment();
+        let hadjustment = this._forecastStack.visible_child.get_hadjustment();
         let value = hadjustment.value;
         let t = 1.0;
         let now = this.get_frame_clock().get_frame_time();
@@ -173,23 +158,31 @@ const WeatherWidget = new Lang.Class({
         }
     },
 
-    _get_style_class: function(info) {
+    _getStyleClass: function(info) {
         let icon = info.get_icon_name();
         let name = icon.replace(/(-\d{3})/, "");
         return name;
     },
 
+    setTimeVisible: function(visible) {
+        this._timeGrid.visible = visible;
+    },
+
+    setTime: function(time) {
+        this._timeLabel.label = time;
+    },
+
     update: function(info) {
         this._info = info;
 
-        this._conditions.label = Util.getWeatherConditions(info);
-        this._temperature.label = info.get_temp_summary();
+        this._conditionsLabel.label = Util.getWeatherConditions(info);
+        this._temperatureLabel.label = info.get_temp_summary();
 
-        this._icon.icon_name = info.get_symbolic_icon_name();
+        this._conditionsImage.icon_name = info.get_symbolic_icon_name();
         let context = this._contentFrame.get_style_context();
         if (this._currentStyle)
             context.remove_class(this._currentStyle);
-        this._currentStyle = this._get_style_class(info);
+        this._currentStyle = this._getStyleClass(info);
         context.add_class(this._currentStyle);
 
         let forecasts = info.get_forecast_list();
@@ -224,8 +217,8 @@ const WeatherView = new Lang.Class({
                                         name: "loading-label" }));
         this.add_named(loadingPage, 'loading');
 
-        this.infoPage = new WeatherWidget();
-        this.add_named(this.infoPage, 'info');
+        this._infoPage = new WeatherWidget();
+        this.add_named(this._infoPage, 'info');
 
         this._info = null;
         this._updateId = 0;
@@ -233,7 +226,7 @@ const WeatherView = new Lang.Class({
         this.connect('destroy', Lang.bind(this, this._onDestroy));
 
         this._wallClock = new Gnome.WallClock();
-        this._clockHandlerId = null;
+        this._clockHandlerId = 0;
     },
 
     get info() {
@@ -245,7 +238,7 @@ const WeatherView = new Lang.Class({
             this._info.disconnect(this._updateId);
             this._updateId = 0;
 
-            this.infoPage.clear();
+            this._infoPage.clear();
         }
 
         this._info = info;
@@ -268,25 +261,34 @@ const WeatherView = new Lang.Class({
     update: function() {
         this.visible_child_name = 'loading';
         this._spinner.start();
-        this.infoPage.clear();
+        this._infoPage.clear();
 
         getApp().model.updateInfo(this._info);
     },
 
     _onUpdate: function(info) {
-        this.infoPage.clear();
-        this.infoPage.update(info);
+        this._infoPage.clear();
+        this._infoPage.update(info);
         this._updateTime();
         this._spinner.stop();
         this.visible_child_name = 'info';
     },
 
-    connectClock: function() {
-        this._clockHandlerId = this._wallClock.connect('notify::clock', Lang.bind(this, this._updateTime));
+    setTimeVisible: function(visible) {
+        if (this._clockHandlerId && !visible) {
+            this._wallClock.disconnect(this._clockHandlerId);
+            this._clockHandlerId = 0;
+        }
+
+        if (!this._clockHandlerId && visible) {
+            this._clockHandlerId = this._wallClock.connect('notify::clock', Lang.bind(this, this._updateTime));
+        }
+
+        this._infoPage.setTimeVisible(visible);
     },
 
     _updateTime: function() {
-        this.infoPage.timeLabel.label = this._getTime();
+        this._infoPage.setTime(this._getTime());
     },
 
     _getTime: function() {
@@ -297,12 +299,5 @@ const WeatherView = new Lang.Class({
             return dt.format(_("%H:%M"));
         }
         return null;
-    },
-
-    disconnectClock: function() {
-        if (this._clockHandlerId) {
-            this._wallClock.disconnect(this._clockHandlerId);
-            this._clockHandlerId = null;
-        }
     }
 });
