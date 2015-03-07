@@ -115,6 +115,8 @@ const SearchProvider = new Lang.Class({
                 else
                     countryRet.push(path);
             }
+
+            index++;
         }
 
         this._app.release();
