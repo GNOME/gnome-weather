@@ -91,17 +91,17 @@ const ForecastBox = new Lang.Class({
     },
 
     update: function(infos, day) {
-        if (infos.length > 0) {
-            let now = GLib.DateTime.new_now_local();
-            if (day == "tomorrow-button")
-                now = now.add_days(1);
-            let dayInfo = this._preprocess(now, infos);
+        let now = GLib.DateTime.new_now_local();
+        if (day == 'tomorrow')
+            now = now.add_days(1);
+        let dayInfo = this._preprocess(now, infos);
 
-            if (dayInfo.length == 0) {
-                now = now.add_hours(-2);
-                dayInfo = this._preprocess(now, infos);
-            }
+        if (dayInfo.length == 0) {
+            now = now.add_hours(-2);
+            dayInfo = this._preprocess(now, infos);
+        }
 
+        if (dayInfo.length > 0) {
             for (let i = 0; i < dayInfo.length; i++) {
                 let info = dayInfo[i];
                 this._addOneInfo(info, i);

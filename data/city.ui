@@ -98,41 +98,13 @@
                     <child>
                       <object class="GtkStackSwitcher" id="day-stack-switcher">
                         <property name="visible">True</property>
-                        <property name="stack">day-stack</property>
+                        <property name="stack">forecast-stack</property>
                         <style>
                           <class name="osd"/>
                         </style>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkStack" id="day-stack">
-                        <property name="visible">False</property>
-                        <property name="no_show_all">True</property>
-                        <child>
-                          <object class="GtkButton" id="today-Button">
-                            <property name="visible">True</property>
-                          </object>
-                          <packing>
-                            <property name="name">today-button</property>
-                            <property name="title" translatable="yes">Today</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkButton" id="tomorrow-button">
-                            <property name="visible">True</property>
-                          </object>
-                          <packing>
-                            <property name="name">tomorrow-button</property>
-                            <property name="title" translatable="yes">Tomorrow</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
                         <property name="top_attach">0</property>
                       </packing>
                     </child>
@@ -143,31 +115,70 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkGrid" id="parent-grid">
+                  <object class="GtkGrid" id="forecast-parent-grid">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkScrolledWindow" id="forecast-scrolled-window">
+                      <object class="GtkStack" id="forecast-stack">
                         <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="vscrollbar_policy">never</property>
-                        <property name="min_content_width">332</property>
-                        <property name="margin-start">32</property>
-                        <property name="margin-end">32</property>
+                        <property name="can-focus">False</property>
                         <child>
-                          <object class="GtkViewport" id="forecast-viewport">
+                          <object class="GtkScrolledWindow" id="forecast-today">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="hscroll_policy">natural</property>
-                            <property name="vscroll_policy">natural</property>
+                            <property name="can_focus">True</property>
+                            <property name="vscrollbar_policy">never</property>
+                            <property name="min_content_width">332</property>
+                            <property name="margin-start">32</property>
+                            <property name="margin-end">32</property>
                             <child>
-                              <object class="GtkGrid" id="forecast-grid">
+                              <object class="GtkViewport" id="forecast-today-viewport">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="halign">center</property>
+                                <property name="hscroll_policy">natural</property>
+                                <property name="vscroll_policy">natural</property>
+                                <child>
+                                  <object class="GtkGrid" id="forecast-today-grid">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="halign">center</property>
+                                  </object>
+                                </child>
                               </object>
                             </child>
                           </object>
+                          <packing>
+                            <property name="name">today</property>
+                            <property name="title" translatable="yes">Today</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkScrolledWindow" id="forecast-tomorrow">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="vscrollbar_policy">never</property>
+                            <property name="min_content_width">332</property>
+                            <property name="margin-start">32</property>
+                            <property name="margin-end">32</property>
+                            <child>
+                              <object class="GtkViewport" id="forecast-tomorrow-viewport">
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="hscroll_policy">natural</property>
+                                <property name="vscroll_policy">natural</property>
+                                <child>
+                                  <object class="GtkGrid" id="forecast-tomorrow-grid">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="halign">center</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="name">tomorrow</property>
+                            <property name="title" translatable="yes">Tomorrow</property>
+                          </packing>
                         </child>
                       </object>
                       <packing>

@@ -46,58 +46,59 @@ const WeatherWidget = new Lang.Class({
         let outerBox = builder.get_object('outer-box');
         this._contentFrame = builder.get_object('content-frame');
         this._outerGrid = builder.get_object('outer-grid');
-        this._forecastGrid = builder.get_object('forecast-grid');
         this._wForecastFrame = builder.get_object('weekly-forecast-frame');
-        let forecastScrollingWindow = builder.get_object('forecast-scrolled-window');
         this._icon = builder.get_object('conditions-image');
         this._temperature = builder.get_object('temperature-label');
         this._conditions = builder.get_object('conditions-label');
         this.timeLabel = builder.get_object('time-label');
         this.timeGrid = builder.get_object('time-grid');
-        this._dayStack = builder.get_object('day-stack');
-        this._leftButton = builder.get_object('left-button');
-        this._rightButton = builder.get_object('right-button');
-
-        this._forecasts = new Forecast.ForecastBox({ hexpand: false });
-        this._forecastGrid.attach(this._forecasts, 0, 0, 1, 1);
 
         this._weeklyForecasts = new WForecast.WeeklyForecastFrame();
         this._outerGrid.attach(this._weeklyForecasts, 1, 0, 1, 2);
 
-        this._hscrollbar = forecastScrollingWindow.get_hscrollbar();
-        this._hscrollbar.set_opacity(0.0);
+        this._forecasts = { };
+        this._hadjustments = { };
 
-        this._hadjustment = forecastScrollingWindow.get_hadjustment();
+        for (let t of ['today', 'tomorrow']) {
+            let box = new Forecast.ForecastBox({ hexpand: false });
 
-        this._hadjustment.connect('changed', Lang.bind(this, function() {
-            if ((this._hadjustment.get_upper() - this._hadjustment.get_lower()) == this._hadjustment.page_size) {
-                this._leftButton.set_sensitive(false);
-                this._rightButton.set_sensitive(false);
-            } else if (this._hadjustment.value == this._hadjustment.get_lower()){
-                this._leftButton.set_sensitive(false);
-                this._rightButton.set_sensitive(true);
-            } else if (this._hadjustment.value >= (this._hadjustment.get_upper() - this._hadjustment.page_size)){
-                this._leftButton.set_sensitive(true);
-                this._rightButton.set_sensitive(false);
-            } else {
-                this._leftButton.set_sensitive(true);
-                this._rightButton.set_sensitive(true);
-            }
-        }));
+            this._forecasts[t] = box;
+            builder.get_object('forecast-' + t + '-grid').add(box);
+
+            let fsw = builder.get_object('forecast-' + t);
+            let hscrollbar = fsw.get_hscrollbar();
+            hscrollbar.set_opacity(0.0);
+            hscrollbar.hide();
+            let hadjustment = fsw.get_hadjustment();
+            hadjustment.connect('changed', Lang.bind(this, this._syncLeftRightButtons));
+            hadjustment.connect('value-changed', Lang.bind(this, this._syncLeftRightButtons));
+
+            this._hadjustments[t] = hadjustment;
+        }
+
+        this._dayStack = builder.get_object('forecast-stack');
+        this._leftButton = builder.get_object('left-button');
+        this._rightButton = builder.get_object('right-button');
 
         this._dayStack.connect('notify::visible-child', Lang.bind(this, function() {
-            this.clear();
-            if (this._info) {
-                let forecasts = this._info.get_forecast_list();
-                this._forecasts.update(forecasts, this._dayStack.get_visible_child_name());
-                this._hadjustment.value = this._hadjustment.get_lower();
-                this._forecasts.show();
+            let visible_child = this._dayStack.visible_child;
+            if (visible_child == null)
+                return; // can happen at destruction
+
+            let hadjustment = visible_child.get_hadjustment();
+            hadjustment.value = hadjustment.get_lower();
+            this._syncLeftRightButtons();
+
+            if (this._tickId) {
+                this.remove_tick_callback(this._tickId);
+                this._tickId = 0;
             }
         }));
 
         this._leftButton.connect('clicked', Lang.bind(this, function() {
-            this._target = this._hadjustment.value - this._hadjustment.page_size;
-            if (this._target <= this._hadjustment.get_lower()) {
+            let hadjustment = this._dayStack.visible_child.get_hadjustment();
+            this._target = hadjustment.value - hadjustment.page_size;
+            if (this._target <= hadjustment.get_lower()) {
                 this._leftButton.set_sensitive(false);
                 this._rightButton.set_sensitive(true);
             } else
@@ -105,12 +106,13 @@ const WeatherWidget = new Lang.Class({
 
             this._start = new Date().getTime();
             this._end = this._start + 328;
-            this._tickId = this._forecastGrid.add_tick_callback(Lang.bind(this, this._animate));
+            this._tickId = this.add_tick_callback(Lang.bind(this, this._animate));
         }));
 
         this._rightButton.connect('clicked', Lang.bind(this, function() {
-            this._target = this._hadjustment.value + this._hadjustment.page_size;
-            if (this._target >= this._hadjustment.get_upper() - this._hadjustment.page_size) {
+            let hadjustment = this._dayStack.visible_child.get_hadjustment();
+            this._target = hadjustment.value + hadjustment.page_size;
+            if (this._target >= hadjustment.get_upper() - hadjustment.page_size) {
                 this._rightButton.set_sensitive(false);
                 this._leftButton.set_sensitive(true);
             } else
@@ -118,24 +120,43 @@ const WeatherWidget = new Lang.Class({
 
             this._start = new Date().getTime();
             this._end = this._start + 328;
-            this._tickId = this._forecastGrid.add_tick_callback(Lang.bind(this, this._animate));
+            this._tickId = this.add_tick_callback(Lang.bind(this, this._animate));
         }));
 
         this.add(outerBox);
     },
 
+    _syncLeftRightButtons: function() {
+        let hadjustment = this._dayStack.visible_child.get_hadjustment();
+        if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
+            this._leftButton.set_sensitive(false);
+            this._rightButton.set_sensitive(false);
+        } else if (hadjustment.value == hadjustment.get_lower()){
+            this._leftButton.set_sensitive(false);
+            this._rightButton.set_sensitive(true);
+        } else if (hadjustment.value >= (hadjustment.get_upper() - hadjustment.page_size)){
+            this._leftButton.set_sensitive(true);
+            this._rightButton.set_sensitive(false);
+        } else {
+            this._leftButton.set_sensitive(true);
+            this._rightButton.set_sensitive(true);
+        }
+    },
+
     _animate: function() {
-        let value = this._hadjustment.value;
+        let hadjustment = this._dayStack.visible_child.get_hadjustment();
+        let value = hadjustment.value;
         let t = 1.0;
         let now = new Date().getTime();
         if (now < this._end) {
             t = (now - this._start) / 700;
             t = this._easeOutCubic (t);
-            this._hadjustment.value = value + t * (this._target - value);
+            hadjustment.value = value + t * (this._target - value);
             return true;
         } else {
-            this._hadjustment.value = value + t * (this._target - value);
-            this._forecastGrid.remove_tick_callback(this._tickId);
+            hadjustment.value = value + t * (this._target - value);
+            this.remove_tick_callback(this._tickId);
+            this._tickId = 0;
             return false;
         }
     },
@@ -146,7 +167,13 @@ const WeatherWidget = new Lang.Class({
     },
 
     clear: function() {
-        this._forecasts.clear();
+        for (let t of ['today', 'tomorrow'])
+            this._forecasts[t].clear();
+
+        if (this._tickId) {
+            this.remove_tick_callback(this._tickId);
+            this._tickId = 0;
+        }
     },
 
     _get_style_class: function(info) {
@@ -169,8 +196,8 @@ const WeatherWidget = new Lang.Class({
         context.add_class(this._currentStyle);
 
         let forecasts = info.get_forecast_list();
-        this._forecasts.update(forecasts, this._dayStack.get_visible_child_name());
-        this._forecasts.show();
+        for (let t of ['today', 'tomorrow'])
+            this._forecasts[t].update(forecasts, t);
 
         if (forecasts.length == 0) {
             this._weeklyForecasts.hide();
