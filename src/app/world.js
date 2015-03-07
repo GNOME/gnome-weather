@@ -116,9 +116,9 @@ const WorldContentView = new Lang.Class({
 
         this._currentLocationAdded = false;
         if (this.model.length > 0) {
-            this.model.getAll().forEach(Lang.bind(this, function(info) {
-                this._onLocationAdded(this.model, info, info._isCurrentLocation);
-            }));
+            let list = this.model.getAll();
+            for (let i = list.length - 1; i >= 0; i--)
+                this._onLocationAdded(this.model, list[i], list[i]._isCurrentLocation);
         } else {
             this.model.load();
         }
