@@ -33,7 +33,7 @@ const SCROLLING_ANIMATION_TIME = 400000; //us
 const WeatherWidget = new Lang.Class({
     Name: 'WeatherWidget',
     Extends: Gtk.Frame,
-    Template: 'resource:///org/gnome/Weather/Application/city.ui',
+    Template: 'resource:///org/gnome/Weather/Application/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
                        'temperatureLabel', 'conditionsLabel',
                        'timeLabel', 'timeGrid', 'forecastStack',
@@ -201,21 +201,11 @@ const WeatherWidget = new Lang.Class({
 const WeatherView = new Lang.Class({
     Name: 'WeatherView',
     Extends: Gtk.Stack,
+    Template: 'resource:///org/gnome/Weather/Application/city.ui',
+    InternalChildren: ['spinner'],
 
     _init: function(params) {
         this.parent(params);
-        this.get_accessible().accessible_name = _("City view");
-
-        let loadingPage = new Gtk.Grid({ orientation: Gtk.Orientation.VERTICAL,
-                                         halign: Gtk.Align.CENTER,
-                                         valign: Gtk.Align.CENTER });
-
-        this._spinner = new Gtk.Spinner({ height_request: SPINNER_SIZE,
-                                          width_request: SPINNER_SIZE });
-        loadingPage.add(this._spinner);
-        loadingPage.add(new Gtk.Label({ label: _("Loading…"),
-                                        name: "loading-label" }));
-        this.add_named(loadingPage, 'loading');
 
         this._infoPage = new WeatherWidget();
         this.add_named(this._infoPage, 'info');
