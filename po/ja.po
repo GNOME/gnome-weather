@@ -1,16 +1,16 @@
 # Japanese translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013.
+# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013, 2015.
 # Hajime Taira <htaira@redhat.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-16 21:23+0000\n"
-"PO-Revision-Date: 2014-09-17 13:25+0900\n"
-"Last-Translator: Hajime Taira <htaira@redhat.com>\n"
+"POT-Creation-Date: 2015-02-15 09:23+0000\n"
+"PO-Revision-Date: 2015-02-16 01:46+0900\n"
+"Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -54,24 +54,30 @@ msgstr "今日"
 msgid "Tomorrow"
 msgstr "明日"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../src/app/main.js:52 ../src/app/window.js:192 ../src/service/main.js:49
 msgid "Weather"
 msgstr "天気"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "天気の概況と予報を表示します"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Weather;Forecast;天気予報;天候;気象;"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid "A small application that allows you to monitor the current weather conditions for your city, or anywhere in the world."
 msgstr "あなたの街や、世界中の都市の現在の天候を確認することができる小さなアプリケーションです。"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid "It provides access to detailed forecasts, up to 7 days, with hourly details for the current and next day, using various internet services."
 msgstr "さまざまなインターネットサービスを使用して詳細な天気予報を参照できます。週間天気予報や、当日と翌日の時間ごとの詳細な天気予報などが利用できます。"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid "It also optionally integrates with the GNOME Shell, allowing you see the current conditions of the most recently searched cities by just typing its name in the Activities Overview."
 msgstr "GNOME Shell と統合することができ、アクティビティ画面で都市名を入力することで、よく調べる都市の現在の天候を参照することができます。"
 
