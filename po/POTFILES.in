@@ -1,9 +1,10 @@
 [type: gettext/glade]data/app-menu.ui
 [type: gettext/glade]data/city.ui
-data/org.gnome.Weather.Application.desktop.in
 data/org.gnome.Weather.Application.appdata.xml.in
+data/org.gnome.Weather.Application.desktop.in
 data/org.gnome.Weather.Application.gschema.xml
 [type: gettext/glade]data/places-popover.ui
+[type: gettext/glade]data/weather-widget.ui
 [type: gettext/glade]data/window.ui
 src/app/city.js
 src/app/currentLocationController.js
