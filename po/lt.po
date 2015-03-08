@@ -1,15 +1,15 @@
 # Lithuanian translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Aurimas Černius <aurisc4@gmail.com>, 2013, 2014.
+# Aurimas Černius <aurisc4@gmail.com>, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-20 08:24+0000\n"
-"PO-Revision-Date: 2014-09-20 21:30+0300\n"
+"POT-Creation-Date: 2015-03-08 15:20+0000\n"
+"PO-Revision-Date: 2015-03-08 19:28+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -45,27 +45,25 @@ msgid "Quit"
 msgstr "Išeiti"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "Dabartinės sąlygos"
+msgid "City view"
+msgstr "Miestų vaizdas"
 
 #: ../data/city.ui.h:2
-msgid "Today"
-msgstr "Šiandien"
+msgid "Loading…"
+msgstr "Įkeliama…"
 
-#: ../data/city.ui.h:3
-msgid "Tomorrow"
-msgstr "Rytoj"
-
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../src/app/window.js:213 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Orai"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Rodyti orų sąlygas ir prognozes"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -73,7 +71,7 @@ msgstr ""
 "Maža programa, kuri jums leidžia stebėti orų sąlygas jūsų mieste arba bet "
 "kur pasaulyje."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -81,7 +79,7 @@ msgstr ""
 "Ji leidžia matyti iki 7 dienų prognozę su valandų tikslumo informacija, "
 "teikiamą įvairių interneto tarnybų."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -90,6 +88,11 @@ msgstr ""
 "Ji taip pat integruojasi su GNOME Shell, leisdama matyti orų sąlygas bet "
 "paskutiniuose ieškotuose miestuose tiesiog įvedant jų pavadinimus veiklų "
 "apžvalgoje."
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#| msgid "Weekly Forecast"
+msgid "Weather;Forecast;"
+msgstr "Orai;Prognozė;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -120,7 +123,6 @@ msgid "Automatic Location"
 msgstr "Automatinė vieta"
 
 #: ../data/places-popover.ui.h:2
-#| msgid "Loading…"
 msgid "Locating…"
 msgstr "Ieškoma…"
 
@@ -132,6 +134,18 @@ msgstr "Ieškoti miesto"
 msgid "Viewed Recently"
 msgstr "Rodyti paskutinius"
 
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "Dabartinės sąlygos"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "Šiandien"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "Rytoj"
+
 #: ../data/window.ui.h:1
 msgid "Places"
 msgstr "Vietos"
@@ -141,7 +155,6 @@ msgid "Refresh"
 msgstr "Atnaujinti"
 
 #: ../data/window.ui.h:3
-#| msgid "A weather application"
 msgid "Search for a location"
 msgstr "Ieškoti vietos"
 
@@ -149,15 +162,7 @@ msgstr "Ieškoti vietos"
 msgid "To see weather information, enter the name of a city."
 msgstr "Informacijai matyti, įveskite miesto pavadinimą."
 
-#: ../src/app/city.js:190
-msgid "City view"
-msgstr "Miestų vaizdas"
-
-#: ../src/app/city.js:199
-msgid "Loading…"
-msgstr "Įkeliama…"
-
-#: ../src/app/city.js:273
+#: ../src/app/city.js:289
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -185,17 +190,17 @@ msgstr "Savaitinė prognozė"
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:120
+#: ../src/app/window.js:112
 msgid "Select Location"
 msgstr "Pasirinkti vietą"
 
-#: ../src/app/window.js:191
+#: ../src/app/window.js:212
 msgid "translator-credits"
 msgstr ""
 "išvertė:\n"
 "Aurimas Černius <aurisc4@gmail.com>"
 
-#: ../src/app/window.js:193
+#: ../src/app/window.js:214
 msgid "A weather application"
 msgstr "Orų programa"
 
@@ -208,7 +213,7 @@ msgstr "Pasaulio vaizdas"
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/service/searchProvider.js:182
+#: ../src/service/searchProvider.js:184
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
