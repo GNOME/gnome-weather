@@ -11,16 +11,16 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-16 08:20+0000\n"
-"PO-Revision-Date: 2014-09-16 22:27+0100\n"
-"Last-Translator: Benjamin Steinwender <b@stbe.at>\n"
+"POT-Creation-Date: 2015-03-09 21:32+0000\n"
+"PO-Revision-Date: 2015-03-10 06:52+0100\n"
+"Last-Translator: Simon Linden <xhi2018@googlemail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.7.4\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -47,27 +47,25 @@ msgid "Quit"
 msgstr "Beenden"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "Momentane Bedingungen:"
+msgid "City view"
+msgstr "Stadtansicht"
 
 #: ../data/city.ui.h:2
-msgid "Today"
-msgstr "Heute"
+msgid "Loading…"
+msgstr "Laden …"
 
-#: ../data/city.ui.h:3
-msgid "Tomorrow"
-msgstr "Morgen"
-
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../src/app/window.js:213 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Wetter"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Wetterberichte und -vorhersagen anzeigen"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -75,7 +73,7 @@ msgstr ""
 "Eine kleine Anwendung, welche es Ihnen erlaubt, das aktuelle Wetter für Ihre "
 "Stadt, oder für einen beliebigen Ort auf der Welt zu betrachten."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -84,7 +82,7 @@ msgstr ""
 "stündlichen Details für den laufenden und den folgenden Tag auf Basis "
 "mehrerer Internetdienste"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -93,6 +91,10 @@ msgstr ""
 "Lässt sich auf Wunsch in die GNOME-Shell einbinden, so dass Sie sich über "
 "das aktuelle Wetter jeder eingegebenen Stadt informieren können, indem Sie "
 "den Ortsnamen in die Aktivitätenübersicht eingeben."
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Wetter;Vorhersage;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -134,6 +136,18 @@ msgstr "Nach einer Stadt suchen:"
 msgid "Viewed Recently"
 msgstr "Kürzlich angeschaut"
 
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "Momentane Bedingungen:"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "Heute"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "Morgen"
+
 #: ../data/window.ui.h:1
 msgid "Places"
 msgstr "Orte"
@@ -144,21 +158,13 @@ msgstr "Aktualisieren"
 
 #: ../data/window.ui.h:3
 msgid "Search for a location"
-msgstr "Nach einem Ort suchen:"
+msgstr "Nach einem Ort suchen"
 
 #: ../data/window.ui.h:4
 msgid "To see weather information, enter the name of a city."
 msgstr "Bitte einen Ort angeben, um das Wetter dort anzuzeigen"
 
-#: ../src/app/city.js:190
-msgid "City view"
-msgstr "Stadtansicht"
-
-#: ../src/app/city.js:199
-msgid "Loading…"
-msgstr "Laden …"
-
-#: ../src/app/city.js:273
+#: ../src/app/city.js:289
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -186,17 +192,17 @@ msgstr "Vorhersage für die Woche"
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:120
+#: ../src/app/window.js:112
 msgid "Select Location"
 msgstr "Ort wählen"
 
-#: ../src/app/window.js:191
+#: ../src/app/window.js:212
 msgid "translator-credits"
 msgstr ""
 "Christian Kirbach <christian.kirbach@gmail.com>, 2013\n"
 "Benjamin Steinwender <b@stbe.at>, 2014"
 
-#: ../src/app/window.js:193
+#: ../src/app/window.js:214
 msgid "A weather application"
 msgstr "Eine Wetter-Anwendung"
 
@@ -209,7 +215,7 @@ msgstr "Weltansicht"
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/service/searchProvider.js:182
+#: ../src/service/searchProvider.js:184
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
