@@ -93,7 +93,7 @@ const WeeklyForecastFrame = new Lang.Class({
 
     update: function(infos) {
         let day = GLib.DateTime.new_now_local();
-        day = day.add_days(2);
+        day = day.add_days(1);
 
         let weeklyInfo = this._preprocess(infos, day);
         this.clear();
