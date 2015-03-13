@@ -1,0 +1,216 @@
+# Bosnian translation for bosnianuniversetranslation
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the bosnianuniversetranslation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bosnianuniversetranslation\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-02-26 21:31+0000\n"
+"PO-Revision-Date: 2015-02-28 14:22+0100\n"
+"Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Launchpad (build 17341)\n"
+"X-Launchpad-Export-Date: 2015-02-15 06:12+0000\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Novi"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Jedinice temperature"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celzij"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Farenhajt"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "O sistemu"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Izlaz"
+
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Trenutni uslovi"
+
+#: ../data/city.ui.h:2
+msgid "Today"
+msgstr "Danas"
+
+#: ../data/city.ui.h:3
+msgid "Tomorrow"
+msgstr "Sutra"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../src/app/main.js:52 ../src/app/window.js:192 ../src/service/main.js:49
+msgid "Weather"
+msgstr "Vrijeme"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Prikaži vremenske uslove i prognozu"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Vrijeme;Prognoza;"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Mala aplikacija koja dopušta prikaz trenutnih vremenskih uslova za vaš grad, "
+"ili bilo gdje u svijetu."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Omogućava pristup detaljnijoj vremenskoj prognozi, 7 dana unaprijed, sa "
+"detaljima po satu za trenutni i sljedeći dan, koristeći različite internet "
+"usluge."
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+"Također opcionalno integrisano sa GNOME Shell-om, dopušta pregled trenutnih "
+"uslova nedavno pretraživanih gradova upisivajem njihovih imena u pregled "
+"aktivnosti."
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Prikaz vremena za konfigurisane gradove"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Lokacije prikazane u svijetu u odnosu na gnome-vrijeme. Svaka vrijednost je "
+"GVariant vraćena od gweather_location_serialize()."
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "Automatska lokacija"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"Automatsko lociranje je vrijednost automatskog lokacijskog prekidača koji "
+"odlučuje da li će dohvatiti trenutnu lokaciju ili ne."
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "Automatska Lokacija"
+
+#: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "Lociranje…"
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Traži grad"
+
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "Prikazan Nedavno"
+
+#: ../data/window.ui.h:1
+msgid "Places"
+msgstr "Mjesta"
+
+#: ../data/window.ui.h:2
+msgid "Refresh"
+msgstr "Osvježi"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Traži lokaciju"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Za pregled informacija o vremenu, ukucati ime grada."
+
+#: ../src/app/city.js:190
+msgid "City view"
+msgstr "Pogled na grad"
+
+#: ../src/app/city.js:199
+msgid "Loading…"
+msgstr "Učitavanje…"
+
+#: ../src/app/city.js:273
+msgid "%H:%M"
+msgstr "%H:%M"
+
+#: ../src/app/forecast.js:37
+msgid "Forecast"
+msgstr "Prognoza"
+
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "Prognoza nije dostupna"
+
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Sedmična prognoza"
+
+#: ../src/app/weeklyForecast.js:107
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:120
+msgid "Select Location"
+msgstr "Odaberi Lokaciju"
+
+#: ../src/app/window.js:191
+msgid "translator-credits"
+msgstr ""
+"  Samir Ribić https://launchpad.net/~megaribi\n"
+"  Selma Glavić https://launchpad.net/~sglavic1"
+
+#: ../src/app/window.js:193
+msgid "A weather application"
+msgstr "Aplikacija za vrijeme"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "Pogled na svijet"
+
+#: ../src/misc/util.js:159
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/service/searchProvider.js:182
+msgid "%s, %s"
+msgstr "%s, %s"
