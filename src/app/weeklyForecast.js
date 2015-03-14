@@ -52,6 +52,14 @@ const WeeklyForecastFrame = new Lang.Class({
         let ret = [];
         let i;
 
+        // look for 14:00 of the given day
+        // (14:00 is chosen because usually it's the highest temperature
+        // in the day, so it makes sense as a temperature value)
+        day = GLib.DateTime.new_local(day.get_year(),
+                                      day.get_month(),
+                                      day.get_day_of_month(),
+                                      14, 0, 0);
+
         // First ignore all infos that are on a different
         // older than day.
         // infos are ordered by time, and it's assumed at some point
@@ -71,7 +79,9 @@ const WeeklyForecastFrame = new Lang.Class({
         let infoCount = 0;
         while (i < infos.length && infoCount < 5) {
             let count = 0;
-            let temp = [];
+            let best = null;
+            let diff = 0;
+
             for ( ; i < infos.length; i++) {
                 let info = infos[i];
                 let [ok, date] = info.get_value_update();
@@ -81,10 +91,14 @@ const WeeklyForecastFrame = new Lang.Class({
                                      datetime.get_ymd()))
                     break;
 
-                temp[count++] = info;
+                let v = Math.abs(datetime.difference(day, best));
+                if (best == null || v < diff) {
+                    best = info;
+                    diff = v;
+                }
             }
-            if (count > 0)
-                ret.push(temp[Math.floor(count/2)]);
+            if (best)
+                ret.push(best);
             day = day.add_days(1);
             infoCount++;
         }
