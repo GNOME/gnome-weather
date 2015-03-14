@@ -54,7 +54,7 @@ msgstr "S'està carregant…"
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
 #: ../src/app/window.js:213 ../src/service/main.js:49
 msgid "Weather"
-msgstr "Weather"
+msgstr "Meteorologia"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
@@ -75,7 +75,7 @@ msgid ""
 "for the current and next day, using various internet services."
 msgstr ""
 "També podeu accedir a les previsions actualitzades de fins a 7 dies i per "
-"hores per el dia actual i l'endemà. Proporcionades per diversos serveis "
+"hores pel dia actual i l'endemà. Proporcionades per diversos serveis "
 "d'Internet."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
@@ -90,7 +90,7 @@ msgstr ""
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
 msgid "Weather;Forecast;"
-msgstr "Temps;Predicció;"
+msgstr "Meteorologia;Predicció;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
