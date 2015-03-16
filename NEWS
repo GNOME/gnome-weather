@@ -1,3 +1,13 @@
+3.15.92
+=======
+* Launching search from the overview (clicking on the weather
+  icon next to results) is now supported
+* The weekly forecast sidebar now includes tomorrow and uses
+  2pm as the representative forecast [#741532]
+* Misc bug fixes to the search provider and to the world popup
+* Build system fixes [Dominique Leuenberger, #745581]
+* Translation updates
+
 3.15.91
 =======
 * Build system fixes [Jonas Danielsson, #740414]
