@@ -117,7 +117,7 @@ const WeeklyForecastFrame = new Lang.Class({
             let [ok, date] = info.get_value_update();
             let datetime = GLib.DateTime.new_from_unix_local(date);
 
-            // Translators: this is the time format for full weekday name according to the current locale
+            /* Translators: this is the time format for full weekday name according to the current locale */
             let timeFormat = _("%A");
 
             let grid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,

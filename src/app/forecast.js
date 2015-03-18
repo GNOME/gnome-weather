@@ -122,10 +122,10 @@ const ForecastBox = new Lang.Class({
         let timeFormat = null;
 
         if (timeSetting == '12h')
-            // Translators: this is a time format without date used for AM/PM
+            /* Translators: this is a time format without date used for AM/PM */
             timeFormat = _("%l∶%M %p");
         else
-            // Translators: this is a time format without date used for 24h mode
+            /* Translators: this is a time format without date used for 24h mode */
             timeFormat = _("%R");
 
         let label = new Gtk.Label({ label: datetime.format(timeFormat),
