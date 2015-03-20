@@ -122,7 +122,6 @@ const SearchProvider = new Lang.Class({
         this._app.release();
 
         let result = nameRet.concat(cityRet).concat(countryRet);
-        log(result);
         invocation.return_value(new GLib.Variant('(as)', [result]));
     },
 
@@ -227,7 +226,7 @@ const SearchProvider = new Lang.Class({
     ActivateResult: function(id, terms, timestamp) {
         this._app.hold();
 
-        log('Activating ' + id);
+        //log('Activating ' + id);
 
         let model = this._app.model;
         let info = model.getAtIndex(parseInt(id));
@@ -236,7 +235,7 @@ const SearchProvider = new Lang.Class({
             return;
         }
 
-        log('Activating ' + info.get_location_name());
+        //log('Activating ' + info.get_location_name());
 
         let location = info.location.serialize();
         this._activateAction('show-location', new GLib.Variant('v', location), timestamp);
