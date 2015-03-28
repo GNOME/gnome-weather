@@ -2,14 +2,14 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 #
-# A S Alam <aalam@users.sf.net>, 2013, 2014.
+# A S Alam <aalam@users.sf.net>, 2013, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-21 08:13+0000\n"
-"PO-Revision-Date: 2014-09-21 08:15-0500\n"
+"POT-Creation-Date: 2015-03-28 09:48+0000\n"
+"PO-Revision-Date: 2015-03-28 18:46-0500\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
@@ -44,57 +44,56 @@ msgid "Quit"
 msgstr "ਬਾਹਰ"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "ਮੌਜੂਦਾ ਹਾਲਤ"
+msgid "City view"
+msgstr "ਸ਼ਹਿਰ ਝਲਕ"
 
 #: ../data/city.ui.h:2
-msgid "Today"
-msgstr "ਅੱਜ"
+msgid "Loading…"
+msgstr "...ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: ../data/city.ui.h:3
-msgid "Tomorrow"
-msgstr "ਭਲਕ"
-
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../src/app/window.js:217 ../src/service/main.js:49
 msgid "Weather"
 msgstr "ਮੌਸਮ"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "ਮੌਸਮ ਹਾਲਤ ਅਤੇ ਭਵਿੱਖਬਾਣੀ ਵੇਖੋ"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#| msgid ""
-#| "A small application that allows you to monitor the current weather "
-#| "conditions for your city, or anywhere in the world and to access updated "
-#| "forecasts, up to 7 days, provided by various internet services."
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
 msgstr ""
 "ਇੱਕ ਛੋਟੀ ਐਪਲੀਕੇਸ਼ਨ, ਜੋ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਸ਼ਹਿਰ ਜਾਂ ਸੰਸਾਰ ਵਿੱਚੋਂ ਹੋਰ ਥਾਵਾਂ ਲਈ "
-"ਮੌਜੂਦਾ ਮੌਸਮ "
-"ਦਾ ਧਿਆਨ ਰੱਖਣ ਲਈ ਸਹਾਇਕ ਹੈ।"
+"ਮੌਜੂਦਾ ਮੌਸਮ ਦਾ ਧਿਆਨ ਰੱਖਣ "
+"ਲਈ ਸਹਾਇਕ ਹੈ।"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
 "ਇਹ ਵੱਖ-ਵੱਖ ਇੰਟਰਨੈੱਟ ਸੇਵਾਵਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ 7 ਦਿਨਾਂ ਤੱਕ ਦੀ ਵੇਰਵੇ ਸਮੇਤ ਭਵਿੱਖਬਾਣੀ "
-"ਦਿੰਦੀ ਹੈ, "
-"ਇਸ ਤੋਂ ਇਲਾਵਾ ਅੱਜ ਅਤੇ ਭਲਕ ਲਈ ਘੰਟਿਆਂ ਦੇ ਮੁਤਾਬਕ ਵੇਰਵਾ ਵੀ ਮੌਜੂਦ ਰਹਿੰਦਾ ਹੈ।"
+"ਦਿੰਦੀ ਹੈ, ਇਸ ਤੋਂ "
+"ਇਲਾਵਾ ਅੱਜ ਅਤੇ ਭਲਕ ਲਈ ਘੰਟਿਆਂ ਦੇ ਮੁਤਾਬਕ ਵੇਰਵਾ ਵੀ ਮੌਜੂਦ ਰਹਿੰਦਾ ਹੈ।"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
 "name in the Activities Overview."
 msgstr ""
 "ਇਹ ਚੋਣਵੇਂ ਰੂਪ ਵਿੱਚ ਗਨੋਮ ਸ਼ੈੱਲ ਨਾਲ ਵੀ ਜੁੜਿਆ ਹੋਈ ਹੈ, ਜਿਸ ਨਾਲ ਤੁਸੀਂ ਸਰਗਰਮੀ ਸੰਖੇਪ "
-"ਵਿੱਚ "
-"ਕਿਸੇ ਲੱਭੇ ਗਏ ਸ਼ਹਿਰਾਂ ਦਾ ਕੇਵਲ ਨਾਂ ਲਿਖ ਕੇ ਹੀ ਮੌਜੂਦਾ ਹਾਲਤ ਨੂੰ ਵੇਖਣ ਸਕਦੇ ਹੋ।"
+"ਵਿੱਚ ਕਿਸੇ ਲੱਭੇ ਗਏ "
+"ਸ਼ਹਿਰਾਂ ਦਾ ਕੇਵਲ ਨਾਂ ਲਿਖ ਕੇ ਹੀ ਮੌਜੂਦਾ ਹਾਲਤ ਨੂੰ ਵੇਖਣ ਸਕਦੇ ਹੋ।"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#| msgid "Weekly Forecast"
+msgid "Weather;Forecast;"
+msgstr "ਮੌਸਮ;ਭਵਿੱਖਬਾਣੀ;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -109,7 +108,6 @@ msgstr ""
 "gweather_location_serialize() ਰਾਹੀਂ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "ਆਟੋਮੈਟਿਕ ਟਿਕਾਣਾ"
 
@@ -119,26 +117,36 @@ msgid ""
 "decides whether to fetch current location or not."
 msgstr ""
 "ਆਟੋਮੈਟਿਕ ਟਿਕਾਣਾ ਉਹ ਹੈ, ਜਿਸ ਨੂੰ automatic-location ਸਵਿੱਚਰਾਹੀਂ ਪ੍ਰਾਪਤ ਕੀਤਾ "
-"ਜਾਂਦਾ ਹੈ, ਜੋ ਕਿ ਤਹਿ ਕਰਦੀ ਹੈ ਕਿ ਮੌਜੂਦਾ ਟਿਕਾਣਾ ਪ੍ਰਾਪਤ ਕਰਨਾ ਹੈ ਜਾਂ ਨਹੀਂ।"
+"ਜਾਂਦਾ ਹੈ, ਜੋ "
+"ਕਿ ਤਹਿ ਕਰਦੀ ਹੈ ਕਿ ਮੌਜੂਦਾ ਟਿਕਾਣਾ ਪ੍ਰਾਪਤ ਕਰਨਾ ਹੈ ਜਾਂ ਨਹੀਂ।"
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "ਆਟੋਮੈਟਿਕ ਟਿਕਾਣਾ"
 
 #: ../data/places-popover.ui.h:2
-#| msgid "Loading…"
 msgid "Locating…"
 msgstr "...ਲੱਭਿਆ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: ../data/places-popover.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a city"
 msgstr "ਸ਼ਹਿਰ ਲਈ ਖੋਜ"
 
 #: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "ਤਾਜ਼ਾ ਵੇਖੇ"
+
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "ਮੌਜੂਦਾ ਹਾਲਤ"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "ਅੱਜ"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "ਭਲਕ"
 
 #: ../data/window.ui.h:1
 msgid "Places"
@@ -149,7 +157,6 @@ msgid "Refresh"
 msgstr "ਤਾਜ਼ਾ ਕਰੋ"
 
 #: ../data/window.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a location"
 msgstr "ਟਿਕਾਣੇ ਲਈ ਖੋਜ ਕਰੋ"
 
@@ -157,15 +164,7 @@ msgstr "ਟਿਕਾਣੇ ਲਈ ਖੋਜ ਕਰੋ"
 msgid "To see weather information, enter the name of a city."
 msgstr "ਮੌਸਮ ਜਾਣਕਾਰੀ ਵੇਖਣ ਲਈ ਸ਼ਹਿਰ ਦਾ ਨਾਂ ਦਿਉ।"
 
-#: ../src/app/city.js:190
-msgid "City view"
-msgstr "ਸ਼ਹਿਰ ਝਲਕ"
-
-#: ../src/app/city.js:199
-msgid "Loading…"
-msgstr "...ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
-
-#: ../src/app/city.js:273
+#: ../src/app/city.js:289
 msgid "%H:%M"
 msgstr "%H:%M"
 
@@ -174,40 +173,40 @@ msgid "Forecast"
 msgstr "ਭਵਿੱਖਬਾਣੀ"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "ਭਵਿੱਖਬਾਣੀ ਮੌਜੂਦ ਨਹੀਂ ਹੈ"
 
+#. Translators: this is a time format without date used for AM/PM */
 #: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
+#. Translators: this is a time format without date used for 24h mode */
 #: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "ਹਫ਼ਤੇ ਲਈ ਭਵਿੱਖਬਾਣੀ"
 
-#: ../src/app/weeklyForecast.js:107
+#. Translators: this is the time format for full weekday name according to the current locale */
+#: ../src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:120
-#| msgid "New Location"
+#: ../src/app/window.js:112
 msgid "Select Location"
 msgstr "ਟਿਕਾਣਾ ਚੁਣੋ"
 
-#: ../src/app/window.js:191
+#: ../src/app/window.js:216
 msgid "translator-credits"
 msgstr ""
 "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ\n"
 "ਪੰਜਾਬੀ ਓਪਨਸੋਰਸ ਟੀਮ (POST)\n"
 "https://plus.google.com/u/0/communities/115252305373832476712"
 
-#: ../src/app/window.js:193
+#: ../src/app/window.js:218
 msgid "A weather application"
 msgstr "ਮੌਸਮ ਐਪਲੀਕੇਸ਼ਨ"
 
@@ -215,12 +214,18 @@ msgstr "ਮੌਸਮ ਐਪਲੀਕੇਸ਼ਨ"
 msgid "World view"
 msgstr "ਸੰਸਾਰ ਝਲਕ"
 
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C" */
 #: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/service/searchProvider.js:182
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C" */
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
