@@ -1,14 +1,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2013, 2014.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2013, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-10-06 20:26+0000\n"
-"PO-Revision-Date: 2014-10-07 21:58+0300\n"
+"POT-Creation-Date: 2015-04-03 08:45+0000\n"
+"PO-Revision-Date: 2015-04-03 18:43+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
@@ -44,31 +44,25 @@ msgid "Quit"
 msgstr "Iziet"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "Pašreizējie apstākļi"
+msgid "City view"
+msgstr "Pilsētas skats"
 
 #: ../data/city.ui.h:2
-msgid "Today"
-msgstr "Šodien"
+msgid "Loading…"
+msgstr "Ielādē…"
 
-#: ../data/city.ui.h:3
-msgid "Tomorrow"
-msgstr "Rīt"
-
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../src/app/window.js:217 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Laikapstākļi"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Rādīt laikapstākļu prognozi"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#| msgid ""
-#| "A small application that allows you to monitor the current weather "
-#| "conditions for your city, or anywhere in the world and to access updated "
-#| "forecasts, up to 7 days, provided by various internet services."
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -76,16 +70,15 @@ msgstr ""
 "Maza lietotne, kas palīdz uzraudzīt pašreizējos laikapstākļus jūsu pilsētā "
 "vai jebkurā citā pasaules vietā."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Tā sniedz piekļuvi detalizētām prognozēm "
-"līdz 7 dienām, ar detalizāciju līdz stundām aktuālajai un nākamajai dienai, "
-"ko sniedz dažādi interneta servisi."
+"Tā sniedz piekļuvi detalizētām prognozēm līdz 7 dienām, ar detalizāciju līdz "
+"stundām aktuālajai un nākamajai dienai, ko sniedz dažādi interneta servisi."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -93,6 +86,11 @@ msgid ""
 msgstr ""
 "To var arī integrēt ar GNOME čaulu, ļaujot redzēt apstākļus nesen meklētajās "
 "pilsētās, ievadot to nosaukumus aktivitāšu pārskatā."
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#| msgid "Weekly Forecast"
+msgid "Weather;Forecast;"
+msgstr "Laika ziņas;Prognoze;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -107,7 +105,6 @@ msgstr ""
 "ko atgriež gweather_location_serialize()."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "Automātiska atrašanās vieta"
 
@@ -120,23 +117,32 @@ msgstr ""
 "nosaka, vai saņemt pašreizējo atrašanās vietu."
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "Automātiska atrašanās vieta"
 
 #: ../data/places-popover.ui.h:2
-#| msgid "Loading…"
 msgid "Locating…"
 msgstr "Meklē…"
 
 #: ../data/places-popover.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a city"
 msgstr "Meklēt pilsētu"
 
 #: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Nesen skatīts"
+
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "Pašreizējie apstākļi"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "Šodien"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "Rīt"
 
 #: ../data/window.ui.h:1
 msgid "Places"
@@ -147,7 +153,6 @@ msgid "Refresh"
 msgstr "Atsvaidzināt"
 
 #: ../data/window.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a location"
 msgstr "Meklēt vietu"
 
@@ -156,15 +161,7 @@ msgid "To see weather information, enter the name of a city."
 msgstr ""
 "Lai redzētu informāciju par laikapstākļiem, ievadiet pilsētas nosaukumu."
 
-#: ../src/app/city.js:190
-msgid "City view"
-msgstr "Pilsētas skats"
-
-#: ../src/app/city.js:199
-msgid "Loading…"
-msgstr "Ielādē…"
-
-#: ../src/app/city.js:273
+#: ../src/app/city.js:289
 msgid "%H:%M"
 msgstr "%H.%M"
 
@@ -173,37 +170,37 @@ msgid "Forecast"
 msgstr "Prognoze"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "Prognoze nav pieejama"
 
+#. Translators: this is a time format without date used for AM/PM */
 #: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%H.%M"
 
+#. Translators: this is a time format without date used for 24h mode */
 #: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "Nedēļas prognoze"
 
-#: ../src/app/weeklyForecast.js:107
+#. Translators: this is the time format for full weekday name according to the current locale */
+#: ../src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:120
-#| msgid "New Location"
+#: ../src/app/window.js:112
 msgid "Select Location"
 msgstr "Izvēlieties vietu"
 
-#: ../src/app/window.js:191
+#: ../src/app/window.js:216
 msgid "translator-credits"
 msgstr "Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>"
 
-#: ../src/app/window.js:193
+#: ../src/app/window.js:218
 msgid "A weather application"
 msgstr "Laikapstākļu lietotne"
 
@@ -211,177 +208,19 @@ msgstr "Laikapstākļu lietotne"
 msgid "World view"
 msgstr "Pasaules skats"
 
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C" */
 #: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/service/searchProvider.js:182
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C" */
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#~ msgid "Detailed forecast"
-#~ msgstr "Detalizēta prognoze"
-
-#~ msgid "Select All"
-#~ msgstr "Izvēlēties visu"
-
-#~ msgid "Select None"
-#~ msgstr "Iezīmēt neko"
-
-#~ msgid "Click on locations to select them"
-#~ msgstr "Spiediet uz atrašanās vietām, lai tos izvēlētos"
-
-#~ msgid "New"
-#~ msgstr "Jauns"
-
-#~ msgid "Back"
-#~ msgstr "Atpakaļ"
-
-#~| msgid "Select All"
-#~ msgid "Select"
-#~ msgstr "Izvēlēties"
-
-#~ msgid "Cancel"
-#~ msgstr "Atcelt"
-
-#~ msgid "Delete"
-#~ msgstr "Dzēst"
-
-#~ msgid "More…"
-#~ msgstr "Vairāk…"
-
-#~ msgid "Forecast for Tomorrow"
-#~ msgstr "Rītdienas prognoze"
-
-#~ msgid "%B %d"
-#~ msgstr "%d. %B"
-
-#~ msgid "Monday night"
-#~ msgstr "Pirmdienas nakts"
-
-#~ msgid "Monday morning"
-#~ msgstr "Pirmdienas rīts"
-
-#~ msgid "Monday afternoon"
-#~ msgstr "Pirmdienas pēcpusdiena"
-
-#~ msgid "Monday evening"
-#~ msgstr "Pirmdienas vakars"
-
-#~ msgid "Tuesday night"
-#~ msgstr "Otrdienas nakts"
-
-#~ msgid "Tuesday morning"
-#~ msgstr "Otrdienas rīts"
-
-#~ msgid "Tuesday afternoon"
-#~ msgstr "Otrdienas pēcpusdiena"
-
-#~ msgid "Tuesday evening"
-#~ msgstr "Otrdienas vakars"
-
-#~ msgid "Wednesday night"
-#~ msgstr "Trešdienas nakts"
-
-#~ msgid "Wednesday morning"
-#~ msgstr "Trešdienas rīts"
-
-#~ msgid "Wednesday afternoon"
-#~ msgstr "Trešdiena pēcpusdiena"
-
-#~ msgid "Wednesday evening"
-#~ msgstr "Trešdienas vakars"
-
-#~ msgid "Thursday night"
-#~ msgstr "Ceturtdienas nakts"
-
-#~ msgid "Thursday morning"
-#~ msgstr "Ceturtdienas rīts"
-
-#~ msgid "Thursday afternoon"
-#~ msgstr "Ceturtdienas pēcpusdiena"
-
-#~ msgid "Thursday evening"
-#~ msgstr "Ceturtdienas vakars"
-
-#~ msgid "Friday night"
-#~ msgstr "Piektdienas nakts"
-
-#~ msgid "Friday morning"
-#~ msgstr "Piektdienas rīts"
-
-#~ msgid "Friday afternoon"
-#~ msgstr "Piektdienas pēcpusdiena"
-
-#~ msgid "Friday evening"
-#~ msgstr "Piektdienas vakars"
-
-#~ msgid "Saturday night"
-#~ msgstr "Sestdienas nakts"
-
-#~ msgid "Saturday morning"
-#~ msgstr "Sestdienas rīts"
-
-#~ msgid "Saturday afternoon"
-#~ msgstr "Sestdienas pēcpusdiena"
-
-#~ msgid "Saturday evening"
-#~ msgstr "Sestdienas vakars"
-
-#~ msgid "Sunday night"
-#~ msgstr "Svētdienas nakts"
-
-#~ msgid "Sunday morning"
-#~ msgstr "Svētdienas rīts"
-
-#~ msgid "Sunday afternoon"
-#~ msgstr "Svētdienas pēcpusdiena"
-
-#~ msgid "Sunday evening"
-#~ msgstr "Svētdienas vakars"
-
-#~ msgid "Tonight"
-#~ msgstr "Šonakt"
-
-#~ msgid "This morning"
-#~ msgstr "Šorīt"
-
-#~ msgid "This afternoon"
-#~ msgstr "Šo pēcpusdien"
-
-#~ msgid "This evening"
-#~ msgstr "Šovakar"
-
-#~ msgid "Tomorrow night"
-#~ msgstr "Rītdienas nakts"
-
-#~ msgid "Tomorrow morning"
-#~ msgstr "Rītdienas rīts"
-
-#~ msgid "Tomorrow afternoon"
-#~ msgstr "Rītdienas pēcpusdiena"
-
-#~ msgid "Tomorrow evening"
-#~ msgstr "Rītdienas vakars"
-
-#~ msgid "%d selected"
-#~ msgid_plural "%d selected"
-#~ msgstr[0] "%d izvēlēts"
-#~ msgstr[1] "%d izvēlēti"
-#~ msgstr[2] "%d izvēlētu"
-
-#~ msgid "World Weather"
-#~ msgstr "Pasaules laikapstākļi"
-
-#~ msgid "Cities"
-#~ msgstr "Pilsētas"
-
-#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-#~ msgstr ""
-#~ "Lietojiet rīkjoslas pogu <b>Jauna</b>, lai pievienotu vairāk vietas "
-#~ "pasaulē"
-
-#~ msgid "About Weather"
-#~ msgstr "Par Laikapstākļiem"
