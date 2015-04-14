@@ -1,3 +1,10 @@
+3.16.1
+======
+* Fixed the missing attribution to the weather data sources
+  in the About dialog
+* Build system fixes
+* Translation updates
+
 3.16.0
 ======
 * Translation updates and fixes
