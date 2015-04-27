@@ -16,9 +16,10 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const Gtk = imports.gi.Gtk;
+const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const Gnome = imports.gi.GnomeDesktop;
+const Gtk = imports.gi.Gtk;
 const Lang = imports.lang;
 
 const Forecast = imports.app.forecast;
@@ -217,6 +218,8 @@ const WeatherView = new Lang.Class({
 
         this._wallClock = new Gnome.WallClock();
         this._clockHandlerId = 0;
+
+        this._desktopSettings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
     },
 
     get info() {
@@ -286,7 +289,10 @@ const WeatherView = new Lang.Class({
             let location = this._info.location;
             let tz = GLib.TimeZone.new(location.get_timezone().get_tzid());
             let dt = GLib.DateTime.new_now(tz);
-            return dt.format(_("%H:%M"));
+
+            return this._wallClock.string_for_datetime (dt,
+                                                        this._desktopSettings.get_enum('clock-format'),
+                                                        false, false, false);
         }
         return null;
     }
