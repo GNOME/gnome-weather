@@ -1,3 +1,7 @@
+3.16.2
+======
+* Honor 12/24 time format in city view
+
 3.16.1
 ======
 * Fixed the missing attribution to the weather data sources
