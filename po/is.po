@@ -1,0 +1,362 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sveinn í Felli <sv1@fellsnet.is>, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2015-04-26 20:48+0000\n"
+"PO-Revision-Date: 2015-04-28 11:42+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.5\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Nýtt"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Hitaeining"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Selsíus"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "Um hugbúnaðinn"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Hætta"
+
+#: ../data/city.ui.h:1
+msgid "Current conditions"
+msgstr "Núverandi skilyrði"
+
+#: ../data/city.ui.h:2
+msgid "Detailed forecast"
+msgstr "Ítarleg veðurspá"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
+#: ../src/window.js:319
+msgid "Weather"
+msgstr "Veður"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Birta veðurslýsingar og veðurspár"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"Lítið forrit til að fylgjast með veðurskilyrðum og spám fyrir ákveðinn stað, "
+"eða í heiminum öllum."
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "Ný staðsetning"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "Leita að borg:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Borgir sem hafa verið stilltar inn til að birta veðurupplýsingar fyrir"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Staðsetningar sem birtar eru í heimssýninni gnome-weather. Hvert gildi er "
+"GVariant sem fæst með gweather_location_serialize()."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Velja allt"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Velja ekkert"
+
+#: ../data/window.ui.h:3 ../src/window.js:208
+msgid "Click on locations to select them"
+msgstr "Smelltu á staðsetningar til að velja þær"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Nýtt"
+
+#: ../data/window.ui.h:5
+msgid "Back"
+msgstr "Til baka"
+
+#: ../data/window.ui.h:6
+msgid "Select"
+msgstr "Velja"
+
+#: ../data/window.ui.h:7
+msgid "Cancel"
+msgstr "Hætta við"
+
+#: ../data/window.ui.h:8
+msgid "Refresh"
+msgstr "Uppfæra"
+
+#: ../data/window.ui.h:9
+msgid "Delete"
+msgstr "Eyða"
+
+#: ../src/city.js:125
+msgid "City view"
+msgstr "Skoða borg"
+
+#: ../src/city.js:134
+msgid "Loading…"
+msgstr "Hleð..."
+
+#: ../src/forecast.js:41
+msgid "Forecast"
+msgstr "Veðurspá"
+
+#: ../src/forecast.js:128 ../src/forecast.js:413
+msgid "Today"
+msgstr "Í dag"
+
+#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
+#: ../src/forecast.js:415
+msgid "Tomorrow"
+msgstr "Á morgun"
+
+#: ../src/forecast.js:151
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:197 ../src/forecast.js:291
+msgid "More…"
+msgstr "Meira…"
+
+#: ../src/forecast.js:318
+msgid "%l∶%M %p"
+msgstr "%l:%M"
+
+#: ../src/forecast.js:321
+msgid "%R"
+msgstr "%R"
+
+#: ../src/forecast.js:352
+msgid "Forecast for Tomorrow"
+msgstr "Spá fyrir morgundaginn"
+
+#: ../src/forecast.js:354
+msgid "Forecast for Today"
+msgstr "Spá fyrir daginn í dag"
+
+#: ../src/forecast.js:356
+msgid "%B %d"
+msgstr "%d %b"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Mánudagsnótt"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Mánudagsmorgunn"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Mánudagseftirmiðdag"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Mánudagskvöld"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Þriðjudagsnótt"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Þriðjudagsmorgunn"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Þriðjudagseftirmiðdag"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Þriðjudagskvöld"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Miðvikudagsnótt"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Miðvikudagsmorgunn"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Miðvikudagseftirmiðdag"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Miðvikudagskvöld"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Fimmtudagsnótt"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Fimmtudagsmorgunn"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Fimmtudagseftirmiðdag"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Fimmtudagskvöld"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Föstudagsnótt"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Föstudagsmorgunn"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Föstudagseftirmiðdag"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Föstudagskvöld"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Laugardagsnótt"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Laugardagsmorgunn"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Laugardagseftirmiðdag"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Laugardagskvöld"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Sunnudagsnótt"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Sunnudagsmorgunn"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Sunnudagseftirmiðdag"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Sunnudagskvöld"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Í kvöld"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Með morginum"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Í eftirmiðdaginn"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Með kvöldinu"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Aðra nótt"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Með morgninum á morgun"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Í eftirmiðdaginn á morgun"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Annað kvöld"
+
+#: ../src/window.js:203
+#, javascript-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d valið"
+msgstr[1] "%d valið"
+
+#: ../src/window.js:229
+msgid "World Weather"
+msgstr "Heimsveður"
+
+#: ../src/window.js:318
+msgid "translator-credits"
+msgstr "Sveinn í Felli, sv1@fellsnet.is"
+
+#: ../src/window.js:320
+msgid "A weather application"
+msgstr "Veðurforrit"
+
+#: ../src/world.js:214
+msgid "Cities"
+msgstr "Borgir"
+
+#: ../src/world.js:231
+msgid "World view"
+msgstr "Skoða heiminn"
+
+#: ../src/world.js:259
+msgid "Add locations"
+msgstr "Bæta við staðsetningum"
+
+#: ../src/world.js:262
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"Notaðu <b>Nýtt</b> hnappinn á áhaldastikunni til að bæta við fleiri "
+"staðsetningum"
+
