@@ -1,0 +1,306 @@
+# Occitan translation for gnome-weather.
+# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Cedric31 <cvalmary@yahoo.fr>, 2013.
+# None <None>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-07-04 03:21+0000\n"
+"PO-Revision-Date: 2013-07-06 18:26+0200\n"
+"Last-Translator: None <None>\n"
+"Language-Team: totenoc.org\n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Virtaal 0.7.0\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_Novèl"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "Unitat de temperatura"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:5
+msgid "About Weather"
+msgstr ""
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "Quitar"
+
+#: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:284
+msgid "Weather"
+msgstr ""
+
+#: ../data/gnome-weather.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr ""
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "Search for a city:"
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "Seleccionar tot"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "Ne seleccionar pas cap"
+
+#: ../data/window.ui.h:3 ../src/window.js:180
+msgid "Click on locations to select them"
+msgstr ""
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "Novèl"
+
+#: ../data/window.ui.h:5
+msgid "World Weather"
+msgstr ""
+
+#: ../data/window.ui.h:6
+msgid "Cancel"
+msgstr "Anullar"
+
+#: ../data/window.ui.h:7
+msgid "Delete"
+msgstr "Suprimir"
+
+#: ../src/city.js:119
+msgid "Loading…"
+msgstr "Cargament…"
+
+#: ../src/forecast.js:112
+msgid "Today"
+msgstr "Uèi"
+
+#: ../src/forecast.js:118
+msgid "Tomorrow"
+msgstr "Deman"
+
+#: ../src/forecast.js:132
+#, c-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:178
+msgid "More…"
+msgstr "Mai..."
+
+#: ../src/forecast.js:257
+msgid "Forecast for Today"
+msgstr ""
+
+#: ../src/forecast.js:259
+msgid "Forecast for Tomorrow"
+msgstr ""
+
+#: ../src/forecast.js:263
+msgid "%B %d"
+msgstr "%B %d"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/forecast.js:300
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/forecast.js:303
+msgid "%R"
+msgstr "%R"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "Diluns de nuèch"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "Diluns matin"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "Diluns de tantòst"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "Diluns de ser"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "Dimars de nuèch"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "Dimars matin"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "Dimars de tantòst"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "Dimars de ser"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "Dimècres de nuèch"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "Dimècres matin"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "Dimècres de tantòst"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "Dimècres de ser"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "Dijòus de nuèch"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "Dijòus matin"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "Dijòus de tantòst"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "Dijòus de ser"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "Divendres de nuèch"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "Divendres matin"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "Divendres de tantòst"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "Divendres de ser"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "Dissabte de nuèch"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "Dissabte matin"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "Dissabte de tantòst"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "Dissabte de ser"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "Dimenge de nuèch"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "Dimenge matin"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "Dimenge de tantòst"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "Dimenge de ser"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "Aquesta nuèch"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "Aqueste matin"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "Aquesta tantossada"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "Aqueste ser"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "Deman de nuèch"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "Deman matin"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "Deman de tantòst"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "Deman de ser"
+
+#: ../src/window.js:176
+#, c-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d seleccionat"
+msgstr[1] "%d seleccionats"
+
+#: ../src/window.js:283
+msgid "translator-credits"
+msgstr "Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>"
+
+#: ../src/window.js:285
+msgid "A weather application"
+msgstr ""
+
+#: ../src/world.js:211
+msgid "Add locations"
+msgstr ""
+
+#: ../src/world.js:214
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+
