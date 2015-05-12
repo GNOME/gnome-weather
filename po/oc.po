@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2013-07-04 03:21+0000\n"
-"PO-Revision-Date: 2013-07-06 18:26+0200\n"
+"PO-Revision-Date: 2015-05-12 23:37+0100\n"
 "Last-Translator: None <None>\n"
 "Language-Team: totenoc.org\n"
 "Language: oc\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Virtaal 0.7.0\n"
+"X-Generator: Poedit 1.7.5\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -38,7 +38,7 @@ msgstr "Fahrenheit"
 
 #: ../data/app-menu.ui.h:5
 msgid "About Weather"
-msgstr ""
+msgstr "A prepaus de Weather"
 
 #: ../data/app-menu.ui.h:6
 msgid "Quit"
@@ -54,7 +54,7 @@ msgstr ""
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "Search for a city:"
-msgstr ""
+msgstr "Recercar una vila :"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -294,13 +294,12 @@ msgstr "Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>"
 
 #: ../src/window.js:285
 msgid "A weather application"
-msgstr ""
+msgstr "Una aplicacion meteorologica"
 
 #: ../src/world.js:211
 msgid "Add locations"
-msgstr ""
+msgstr "Apondre d'emplaçaments"
 
 #: ../src/world.js:214
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
-
