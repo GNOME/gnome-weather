@@ -1,15 +1,15 @@
 # Tajik translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013.
+# Victor Ibragimov <victor.ibragimov@gmail.com>, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-02-05 09:41+0000\n"
-"PO-Revision-Date: 2014-02-05 16:49+0500\n"
+"POT-Creation-Date: 2015-05-13 20:52+0000\n"
+"PO-Revision-Date: 2015-05-14 10:16+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <tg@li.org>\n"
 "Language: tg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.7.5\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -44,40 +44,51 @@ msgid "Quit"
 msgstr "Тарк кардан"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "Шароитҳои обу ҳавои ҷорӣ"
+msgid "City view"
+msgstr "Намоиши шаҳрҳо"
 
 #: ../data/city.ui.h:2
-msgid "Detailed forecast"
-msgstr "Пешгӯии ботафсил"
+msgid "Loading…"
+msgstr "Бор шуда истодааст..."
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:57
-#: ../src/window.js:313
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:217 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Обу ҳаво"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Намоиш додани шароит ва пешгӯии обу ҳаво"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
 "Обу ҳаво барномаи хурдест, ки барои назорат кардани шароити обу ҳаво барои "
-"шаҳри шумо имкон медиҳад. Шумо инчунин метавонед пешгӯии обу ҳаворо барои "
-"тамоми кишварҳои дигар назорат кунед ва маълумоти обу ҳаворо барои 7 рӯз аз "
-"ҳидматҳои интернетии гуногун қабул кунед."
+"шаҳри шумо ё ягон шаҳи ҷаҳон имкон медиҳад."
 
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "Ҷойгиршавии нав"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Он пешгӯии обу ҳавои ботафсилро бо тафсилоти ҳар соата барои рӯзи ҷорӣ ва "
+"навбатӣ, ба воситаи хидматҳои интернетии гуногун, барои 7 рӯз таъмин "
+"менамояд."
 
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "Ҷустуҷӯи шаҳр:"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Пешгӯӣ;Обу ҳаво"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -92,280 +103,279 @@ msgstr ""
 "Ҳар як қимат ба GVariant-и қабулшуда аз gweather_location_serialize() "
 "баробар аст."
 
-#: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "Ҳамаро интихоб кардан"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "Ҷойгиршавии худкор"
 
-#: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "Лағв кардани интихоб"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
 
-#: ../data/window.ui.h:3 ../src/window.js:202
-msgid "Click on locations to select them"
-msgstr "Барои интихоби объект ба ҷойришавӣ зер кунед"
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "Ҷойгиршавии худкор"
 
-#: ../data/window.ui.h:4
-msgid "New"
-msgstr "Нав"
-
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "Қафо"
-
-#: ../data/window.ui.h:6
-#| msgid "Select All"
-msgid "Select"
-msgstr "Интихоб кардан"
-
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "Бекор кардан"
-
-#: ../data/window.ui.h:8
-msgid "Refresh"
-msgstr "Навсозӣ кардан"
-
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "Нест кардан"
-
-#: ../src/city.js:125
-msgid "City view"
-msgstr "Намоиши шаҳрҳо"
-
-#: ../src/city.js:134
-msgid "Loading…"
+#: ../data/places-popover.ui.h:2
+msgid "Locating…"
 msgstr "Бор шуда истодааст..."
 
-#: ../src/forecast.js:41
-#| msgid "Forecast for Today"
-msgid "Forecast"
-msgstr "Пешгӯии обу ҳаво"
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Ҷустуҷӯи шаҳр"
 
-#: ../src/forecast.js:128 ../src/forecast.js:413
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "Намоиши қаблӣ"
+
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "Шароитҳои обу ҳавои ҷорӣ"
+
+#: ../data/weather-widget.ui.h:2
 msgid "Today"
 msgstr "Имрӯз"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
+#: ../data/weather-widget.ui.h:3
 msgid "Tomorrow"
 msgstr "Пагоҳ"
 
-#: ../src/forecast.js:151
+#: ../data/window.ui.h:1
+msgid "Places"
+msgstr "Ҷойҳо"
+
+#: ../data/window.ui.h:2
+msgid "Refresh"
+msgstr "Навсозӣ кардан"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Ҷустуҷӯи ҷойгиршавӣ"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Барои дидани маълумоти обу ҳаво, номи шаҳрро ворид кунед."
+
+#: ../src/app/forecast.js:37
+msgid "Forecast"
+msgstr "Пешгӯии обу ҳаво"
+
+#: ../src/app/forecast.js:110
+msgid "Forecast not available"
+msgstr "Пешгӯии обу ҳаво дастрас нест"
+
+#. Translators: this is a time format without date used for AM/PM */
+#: ../src/app/forecast.js:126
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode */
+#: ../src/app/forecast.js:129
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Пешгӯии обу ҳавои ҳафтаина"
+
+#. Translators: this is the time format for full weekday name according to the current locale */
+#: ../src/app/weeklyForecast.js:121
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:112
+msgid "Select Location"
+msgstr "Интихоби ҷойгиршавӣ"
+
+#: ../src/app/window.js:216
+msgid "translator-credits"
+msgstr "Victor Ibragimov, victor.ibragimov@gmail.com"
+
+#: ../src/app/window.js:218
+msgid "A weather application"
+msgstr "Барномаи обу ҳаво"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "Намоиши ҷаҳон"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C" */
+#: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/forecast.js:197 ../src/forecast.js:291
-msgid "More…"
-msgstr "Бештар…"
-
-#: ../src/forecast.js:318
-msgid "%l∶%M %p"
-msgstr "%l∶%M %p"
-
-#: ../src/forecast.js:321
-msgid "%R"
-msgstr "%R"
-
-#: ../src/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "Обу ҳаво барои пагоҳ"
-
-#: ../src/forecast.js:354
-msgid "Forecast for Today"
-msgstr "Обу ҳаво барои имрӯз"
-
-#: ../src/forecast.js:356
-msgid "%B %d"
-msgstr "%B %d"
-
-#: ../src/searchProvider.js:169
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C" */
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "Шаби рӯзи душанбе"
+#~ msgid "Detailed forecast"
+#~ msgstr "Пешгӯии ботафсил"
 
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "Субҳи рӯзи душанбе"
+#~ msgid "Select All"
+#~ msgstr "Ҳамаро интихоб кардан"
 
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "Пешинии рӯзи душанбе"
+#~ msgid "Select None"
+#~ msgstr "Лағв кардани интихоб"
 
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "Бегоҳии рӯзи душанбе"
+#~ msgid "Click on locations to select them"
+#~ msgstr "Барои интихоби объект ба ҷойришавӣ зер кунед"
 
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "Шаби рӯзи сешанбе"
+#~ msgid "New"
+#~ msgstr "Нав"
 
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "Субҳи рузи сешанбе"
+#~ msgid "Back"
+#~ msgstr "Қафо"
 
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Пешинии рӯзи сешанбе"
+#~| msgid "Select All"
+#~ msgid "Select"
+#~ msgstr "Интихоб кардан"
 
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "Бегоҳии рӯзи сешанбе"
+#~ msgid "Cancel"
+#~ msgstr "Бекор кардан"
 
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "Шаби рӯзи чоршанбе"
+#~ msgid "Delete"
+#~ msgstr "Нест кардан"
 
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "Субҳи рӯзи чоршанбе"
+#~ msgid "More…"
+#~ msgstr "Бештар…"
 
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "Пешинии рӯзи чоршанбе"
+#~ msgid "Forecast for Tomorrow"
+#~ msgstr "Обу ҳаво барои пагоҳ"
 
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "Бегоҳии рӯзи чоршанбе"
+#~ msgid "%B %d"
+#~ msgstr "%B %d"
 
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "Шаби рӯзи панҷшанбе"
+#~ msgid "Monday night"
+#~ msgstr "Шаби рӯзи душанбе"
 
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "Субҳи рӯзи панҷшанбе"
+#~ msgid "Monday morning"
+#~ msgstr "Субҳи рӯзи душанбе"
 
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "Пешинии рӯзи панҷшанбе"
+#~ msgid "Monday afternoon"
+#~ msgstr "Пешинии рӯзи душанбе"
 
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "Бегоҳии рӯзи панҷшанбе"
+#~ msgid "Monday evening"
+#~ msgstr "Бегоҳии рӯзи душанбе"
 
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "Шаби рӯзи ҷумъа"
+#~ msgid "Tuesday night"
+#~ msgstr "Шаби рӯзи сешанбе"
 
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "Субҳи рӯзи ҷумъа"
+#~ msgid "Tuesday morning"
+#~ msgstr "Субҳи рузи сешанбе"
 
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "Пешинии рӯзи ҷумъа"
+#~ msgid "Tuesday afternoon"
+#~ msgstr "Пешинии рӯзи сешанбе"
 
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "Бегоҳии рӯзи ҷумъа"
+#~ msgid "Tuesday evening"
+#~ msgstr "Бегоҳии рӯзи сешанбе"
 
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "Шаби рӯзи шанбе"
+#~ msgid "Wednesday night"
+#~ msgstr "Шаби рӯзи чоршанбе"
 
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "Субҳи рӯзи шанбе"
+#~ msgid "Wednesday morning"
+#~ msgstr "Субҳи рӯзи чоршанбе"
 
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "Пешинии рӯзи шанбе"
+#~ msgid "Wednesday afternoon"
+#~ msgstr "Пешинии рӯзи чоршанбе"
 
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "Бегоҳии рӯзи шанбе"
+#~ msgid "Wednesday evening"
+#~ msgstr "Бегоҳии рӯзи чоршанбе"
 
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "Шаби рӯзи якшанбе"
+#~ msgid "Thursday night"
+#~ msgstr "Шаби рӯзи панҷшанбе"
 
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "Субҳи рӯзи якшанбе"
+#~ msgid "Thursday morning"
+#~ msgstr "Субҳи рӯзи панҷшанбе"
 
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "Пешинии рӯзи якшанбе"
+#~ msgid "Thursday afternoon"
+#~ msgstr "Пешинии рӯзи панҷшанбе"
 
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "Бегоҳии рӯзи якшанбе"
+#~ msgid "Thursday evening"
+#~ msgstr "Бегоҳии рӯзи панҷшанбе"
 
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "Шаби имрӯз"
+#~ msgid "Friday night"
+#~ msgstr "Шаби рӯзи ҷумъа"
 
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "Субҳи имрӯз"
+#~ msgid "Friday morning"
+#~ msgstr "Субҳи рӯзи ҷумъа"
 
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "Пешинии имрӯз"
+#~ msgid "Friday afternoon"
+#~ msgstr "Пешинии рӯзи ҷумъа"
 
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "Бегоҳии имрӯз"
+#~ msgid "Friday evening"
+#~ msgstr "Бегоҳии рӯзи ҷумъа"
 
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "Шаби пагоҳ"
+#~ msgid "Saturday night"
+#~ msgstr "Шаби рӯзи шанбе"
 
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Субҳи пагоҳ"
+#~ msgid "Saturday morning"
+#~ msgstr "Субҳи рӯзи шанбе"
 
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Пешинии пагоҳ"
+#~ msgid "Saturday afternoon"
+#~ msgstr "Пешинии рӯзи шанбе"
 
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Бегоҳии пагоҳ"
+#~ msgid "Saturday evening"
+#~ msgstr "Бегоҳии рӯзи шанбе"
 
-#: ../src/window.js:197
-#, javascript-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d интихоб шудааст"
-msgstr[1] "%d интихоб шудаанд"
+#~ msgid "Sunday night"
+#~ msgstr "Шаби рӯзи якшанбе"
 
-#: ../src/window.js:223
-msgid "World Weather"
-msgstr "Обу ҳавои ҷаҳон"
+#~ msgid "Sunday morning"
+#~ msgstr "Субҳи рӯзи якшанбе"
 
-#: ../src/window.js:312
-msgid "translator-credits"
-msgstr "Victor Ibragimov, victor.ibragimov@gmail.com"
+#~ msgid "Sunday afternoon"
+#~ msgstr "Пешинии рӯзи якшанбе"
 
-#: ../src/window.js:314
-msgid "A weather application"
-msgstr "Барномаи обу ҳаво"
+#~ msgid "Sunday evening"
+#~ msgstr "Бегоҳии рӯзи якшанбе"
 
-#: ../src/world.js:214
-msgid "Cities"
-msgstr "Шаҳрҳо"
+#~ msgid "Tonight"
+#~ msgstr "Шаби имрӯз"
 
-#: ../src/world.js:231
-#| msgid "World Weather"
-msgid "World view"
-msgstr "Намоиши ҷаҳон"
+#~ msgid "This morning"
+#~ msgstr "Субҳи имрӯз"
 
-#: ../src/world.js:258
-msgid "Add locations"
-msgstr "Илова кардани ҷойгиршавӣ"
+#~ msgid "This afternoon"
+#~ msgstr "Пешинии имрӯз"
 
-#: ../src/world.js:261
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr ""
-"Барои илова кардани бештар ҷойгиршавиҳои ҷаҳон, тугмаи <b>Нав</b>-ро дар "
-"навори абзор истифода баред"
+#~ msgid "This evening"
+#~ msgstr "Бегоҳии имрӯз"
+
+#~ msgid "Tomorrow night"
+#~ msgstr "Шаби пагоҳ"
+
+#~ msgid "Tomorrow morning"
+#~ msgstr "Субҳи пагоҳ"
+
+#~ msgid "Tomorrow afternoon"
+#~ msgstr "Пешинии пагоҳ"
+
+#~ msgid "Tomorrow evening"
+#~ msgstr "Бегоҳии пагоҳ"
+
+#~ msgid "%d selected"
+#~ msgid_plural "%d selected"
+#~ msgstr[0] "%d интихоб шудааст"
+#~ msgstr[1] "%d интихоб шудаанд"
+
+#~ msgid "World Weather"
+#~ msgstr "Обу ҳавои ҷаҳон"
+
+#~ msgid "Cities"
+#~ msgstr "Шаҳрҳо"
+
+#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+#~ msgstr ""
+#~ "Барои илова кардани бештар ҷойгиршавиҳои ҷаҳон, тугмаи <b>Нав</b>-ро дар "
+#~ "навори абзор истифода баред"
 
 #~ msgid "About Weather"
 #~ msgstr "Дар бораи барномаи Обу ҳаво"
