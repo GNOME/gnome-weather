@@ -1,23 +1,24 @@
 # Occitan translation for gnome-weather.
-# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# Copyright (C) 2013-2014 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Cedric31 <cvalmary@yahoo.fr>, 2013.
-# None <None>, 2013.
+# 
+# 
+# Cédric Valmary (Tot en Òc) <cvalmary@yahoo.fr>, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2013-07-04 03:21+0000\n"
-"PO-Revision-Date: 2015-05-12 23:37+0100\n"
-"Last-Translator: None <None>\n"
-"Language-Team: totenoc.org\n"
+"PO-Revision-Date: 2015-05-19 09:49+0200\n"
+"Last-Translator: Cédric Valmary (Tot en Òc) <cvalmary@yahoo.fr>\n"
+"Language-Team: www.totenoc.eu\n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Virtaal 0.7.0\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -46,11 +47,11 @@ msgstr "Quitar"
 
 #: ../data/gnome-weather.desktop.in.h:1 ../src/main.js:45 ../src/window.js:284
 msgid "Weather"
-msgstr ""
+msgstr "Metèo"
 
 #: ../data/gnome-weather.desktop.in.h:2
 msgid "Show weather conditions and forecast"
-msgstr ""
+msgstr "Aficha lo temps que fa e las previsions"
 
 #: ../data/new-location-dialog.ui.h:1
 msgid "Search for a city:"
@@ -58,13 +59,15 @@ msgstr "Recercar una vila :"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
-msgstr ""
+msgstr "Vilas que la metèo pòt èsser consultada"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:2
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
+"Los luòcs afichats sus la mapamonda de gnome-weather. Cada valor es una "
+"GVariant renviada per gweather_location_serialize()."
 
 #: ../data/window.ui.h:1
 msgid "Select All"
@@ -76,7 +79,7 @@ msgstr "Ne seleccionar pas cap"
 
 #: ../data/window.ui.h:3 ../src/window.js:180
 msgid "Click on locations to select them"
-msgstr ""
+msgstr "Clicatz suls luòcs per los seleccionar"
 
 #: ../data/window.ui.h:4
 msgid "New"
@@ -84,7 +87,7 @@ msgstr "Novèl"
 
 #: ../data/window.ui.h:5
 msgid "World Weather"
-msgstr ""
+msgstr "Metèo mondiala"
 
 #: ../data/window.ui.h:6
 msgid "Cancel"
@@ -108,6 +111,7 @@ msgstr "Deman"
 
 #: ../src/forecast.js:132
 #, c-format
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
@@ -117,11 +121,11 @@ msgstr "Mai..."
 
 #: ../src/forecast.js:257
 msgid "Forecast for Today"
-msgstr ""
+msgstr "Previsions per uèi"
 
 #: ../src/forecast.js:259
 msgid "Forecast for Tomorrow"
-msgstr ""
+msgstr "Previsions per deman"
 
 #: ../src/forecast.js:263
 msgid "%B %d"
@@ -303,3 +307,113 @@ msgstr "Apondre d'emplaçaments"
 #: ../src/world.js:214
 msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 msgstr ""
+"Utilizar lo boton <b>Novèl</b> de la barra d'aisinas per apondre de luòcs "
+"dins lo mond"
+
+#~ msgid "About"
+#~ msgstr "À propos"
+
+#~ msgid "City view"
+#~ msgstr "Vue de la ville"
+
+#~ msgid ""
+#~ "A small application that allows you to monitor the current weather "
+#~ "conditions for your city, or anywhere in the world."
+#~ msgstr ""
+#~ "Une petite application qui vous permet de surveiller les conditions météo "
+#~ "dans votre ville ou n'importe où dans le monde."
+
+#~ msgid ""
+#~ "It provides access to detailed forecasts, up to 7 days, with hourly details "
+#~ "for the current and next day, using various internet services."
+#~ msgstr ""
+#~ "Elle permet d'accéder à des prévisions détaillées jusqu'à 7 jours, avec des "
+#~ "détails horaires pour le jour actuel et le lendemain, en utilisant divers "
+#~ "services Internet."
+
+#~ msgid ""
+#~ "It also optionally integrates with the GNOME Shell, allowing you see the "
+#~ "current conditions of the most recently searched cities by just typing its "
+#~ "name in the Activities Overview."
+#~ msgstr ""
+#~ "Elle peut également s'intégrer à GNOME Shell, permettant de voir les "
+#~ "conditions actuelles de n'importe quelle ville configurée en tapant "
+#~ "simplement son nom dans la vue d'ensemble des activités."
+
+#~ msgid "Weather;Forecast;"
+#~ msgstr "Météorologie;Prévisions;"
+
+#~ msgid "Automatic location"
+#~ msgstr "Lieu automatique"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which "
+#~ "decides whether to fetch current location or not."
+#~ msgstr ""
+#~ "Le lieu automatique est la valeur de la clé automatic-location qui détermine "
+#~ "s'il faut récupérer le lieu actuel ou pas."
+
+#~ msgid "Automatic Location"
+#~ msgstr "Lieu automatique"
+
+#~ msgid "Locating…"
+#~ msgstr "Localisation en cours…"
+
+#~ msgid "Search for a city"
+#~ msgstr "Rechercher une ville"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "Consultées récemment"
+
+#~ msgid "Current conditions"
+#~ msgstr "Conditions actuelles"
+
+#~ msgid "Places"
+#~ msgstr "Emplacements"
+
+#~ msgid "Refresh"
+#~ msgstr "Actualiser"
+
+#~ msgid "Search for a location"
+#~ msgstr "Rechercher un emplacement"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr ""
+#~ "Pour voir les informations météorologiques, saisissez le nom d'une ville."
+
+#~ msgid "Forecast"
+#~ msgstr "Prévisions"
+
+#~ msgid "Forecast not available"
+#~ msgstr "Prévisions non disponibles"
+
+#~ msgid "Weekly Forecast"
+#~ msgstr "Prévisions pour la semaine"
+
+#~ msgid "%A"
+#~ msgstr "%A"
+
+#~ msgid "Select Location"
+#~ msgstr "Choisir un lieu"
+
+#~ msgid "World view"
+#~ msgstr "Vue mondiale"
+
+#, javascript-format
+#~ msgid "%s, %s"
+#~ msgstr "%s, %s"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
+
+#~ msgid "Detailed forecast"
+#~ msgstr "Prévisions détaillées"
+
+#~ msgid "Back"
+#~ msgstr "Retour"
+
+#~ msgid "Select"
+#~ msgstr "Sélectionner"
+
+#~ msgid "Cities"
+#~ msgstr "Villes"
