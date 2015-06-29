@@ -2,15 +2,15 @@
 # Copyright © 2013, 2014 gnome-weather
 # This file is distributed under the same license as the gnome-weather package.
 # Fernando Carvalho <phaetonkde@gmail.com>, 2013.
-# Tiago S. <almosthumane@portugalmail.pt>, 2014.
+# Tiago S. <almosthumane@portugalmail.pt>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-06 13:37+0000\n"
-"PO-Revision-Date: 2014-02-23 22:06+0100\n"
+"POT-Creation-Date: 2015-06-07 20:57+0000\n"
+"PO-Revision-Date: 2015-06-16 08:03+0100\n"
 "Last-Translator: Tiago S. <almosthumane@portugalmail.pt>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "Language: pt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Gtranslator 2.91.6\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -46,323 +46,356 @@ msgid "Quit"
 msgstr "Sair"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "Condições actuais"
+msgid "City view"
+msgstr "Vista Cidade"
 
 #: ../data/city.ui.h:2
-msgid "Detailed forecast"
-msgstr "Previsão detalhada"
+msgid "Loading…"
+msgstr "A carregar…"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:56
-#: ../src/window.js:319
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:217 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Metereologia"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
-msgstr "Apresenta as condições metereológicas e previsões"
+msgstr "Mostra as condições metereológicas e previsões"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#| msgid ""
+#| "A small application that allows you to monitor the current weather "
+#| "conditions for your city, or anywhere in the world and to access updated "
+#| "forecasts, up to 7 days, provided by various internet services."
 msgid ""
 "A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world and to access updated "
-"forecasts, up to 7 days, provided by various internet services."
+"conditions for your city, or anywhere in the world."
 msgstr ""
 "Uma pequena aplicação que lhe permite monitorizar as condições atmosféricas "
 "atuais da sua cidade, ou qualquer outro local no mundo, e aceder a previsões "
-"atualizadas, até 7 dias, disponibilizadas por vários serviços na internet."
+"atualizadas, até 7 dias, disponibilizadas por vários serviços na Internet."
 
-#: ../data/new-location-dialog.ui.h:1
-msgid "New Location"
-msgstr "Novo Local"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Fornece acesso a previsões detalhadas até 7 dias, com detalhes horários para "
+"o dia atual e seguinte, usando vários serviços da Internet."
 
-#: ../data/new-location-dialog.ui.h:2
-msgid "Search for a city:"
-msgstr "Procurar uma cidade:"
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+"Também se integra, opcionalmente, com a shell do GNOME, permitindo-lhe ver "
+"as condições atuais das cidades mais recentemente procuradas, simplesmente "
+"digitando o seu nome na vista de atividades."
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#| msgid "Forecast"
+msgid "Weather;Forecast;"
+msgstr "Previsão;Tempo;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
-msgstr "Cidades configuradas para as quais apresentar a metereologia"
+msgstr "Cidades configuradas para as quais mostrar a metereologia"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:2
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Os locais apresentados na visão de mundo do gnome-weather. Cada valor é um "
+"Os locais mostrados na visão de mundo do gnome-weather. Cada valor é um "
 "GVariant devolvido por gweather_location_serialize()."
 
-#: ../data/window.ui.h:1
-msgid "Select All"
-msgstr "Selecionar Tudo"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+#| msgid "Add locations"
+msgid "Automatic location"
+msgstr "Localização automática"
 
-#: ../data/window.ui.h:2
-msgid "Select None"
-msgstr "Não Selecionar Nenhum"
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"A localização automática é o valor do interruptor automatic-location, que "
+"decide se obtém ou não a localização atual."
 
-#: ../data/window.ui.h:3 ../src/window.js:208
-msgid "Click on locations to select them"
-msgstr "Clique nos itens para os selecionar"
+#: ../data/places-popover.ui.h:1
+#| msgid "New Location"
+msgid "Automatic Location"
+msgstr "Localização automática"
 
-#: ../data/window.ui.h:4
-msgid "New"
-msgstr "Novo"
+#: ../data/places-popover.ui.h:2
+#| msgid "Loading…"
+msgid "Locating…"
+msgstr "A localizar…"
 
-#: ../data/window.ui.h:5
-msgid "Back"
-msgstr "Retroceder"
+#: ../data/places-popover.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a city"
+msgstr "Procurar uma cidade"
 
-#: ../data/window.ui.h:6
-msgid "Select"
-msgstr "Selecionar"
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "Vistas recentemente"
 
-#: ../data/window.ui.h:7
-msgid "Cancel"
-msgstr "Cancelar"
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "Condições actuais"
 
-#: ../data/window.ui.h:8
-msgid "Refresh"
-msgstr "Atualizar"
-
-#: ../data/window.ui.h:9
-msgid "Delete"
-msgstr "Apagar"
-
-#: ../src/city.js:125
-msgid "City view"
-msgstr "Vista de cidade"
-
-#: ../src/city.js:134
-msgid "Loading…"
-msgstr "A Ler…"
-
-#: ../src/forecast.js:41
-msgid "Forecast"
-msgstr "Previsão"
-
-#: ../src/forecast.js:128 ../src/forecast.js:413
+#: ../data/weather-widget.ui.h:2
 msgid "Today"
 msgstr "Hoje"
 
-#: ../src/forecast.js:134 ../src/forecast.js:295 ../src/forecast.js:380
-#: ../src/forecast.js:415
+#: ../data/weather-widget.ui.h:3
 msgid "Tomorrow"
 msgstr "Amanhã"
 
-#: ../src/forecast.js:151
-#, javascript-format
-msgid "%s / %s"
-msgstr "%s / %s"
+#: ../data/window.ui.h:1
+msgid "Places"
+msgstr "Locais"
 
-#: ../src/forecast.js:197 ../src/forecast.js:291
-msgid "More…"
-msgstr "Mais…"
+#: ../data/window.ui.h:2
+msgid "Refresh"
+msgstr "Atualizar"
 
-#: ../src/forecast.js:318
+#: ../data/window.ui.h:3
+#| msgid "Search for a city:"
+msgid "Search for a location"
+msgstr "Procurar uma localização"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Para ver informação meteorológica, insira o nome de uma cidade."
+
+#: ../src/app/forecast.js:37
+msgid "Forecast"
+msgstr "Previsão"
+
+#: ../src/app/forecast.js:110
+#| msgid "Forecast for Today"
+msgid "Forecast not available"
+msgstr "Previsão indisponível"
+
+#. Translators: this is a time format without date used for AM/PM */
+#: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/forecast.js:321
+#. Translators: this is a time format without date used for 24h mode */
+#: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%R"
 
-#: ../src/forecast.js:352
-msgid "Forecast for Tomorrow"
-msgstr "Previsão para Amanhã"
+#: ../src/app/weeklyForecast.js:36
+#| msgid "Forecast"
+msgid "Weekly Forecast"
+msgstr "Previsão semanal"
 
-#: ../src/forecast.js:354
-msgid "Forecast for Today"
-msgstr "Previsão para Hoje"
+#. Translators: this is the time format for full weekday name according to the current locale */
+#: ../src/app/weeklyForecast.js:121
+msgid "%A"
+msgstr "%A"
 
-#: ../src/forecast.js:356
-msgid "%B %d"
-msgstr "%B %d"
+#: ../src/app/window.js:112
+#| msgid "New Location"
+msgid "Select Location"
+msgstr "Selecionar localização"
 
-#: ../src/searchProvider.js:169
+#: ../src/app/window.js:216
+msgid "translator-credits"
+msgstr ""
+"Fernando Carvalho <phaetonkde@gmail.com>\n"
+"Pedro Albuquerque <palbuquerque73@gmail.com>"
+
+#: ../src/app/window.js:218
+msgid "A weather application"
+msgstr "Uma aplicação de meteorologia"
+
+#: ../src/app/world.js:38
+msgid "World view"
+msgstr "Vista mundial"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C" */
+#: ../src/misc/util.js:159
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s/%s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C" */
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#: ../src/strings.js:22
-msgid "Monday night"
-msgstr "Segunda-feira à noite"
+#~ msgid "Detailed forecast"
+#~ msgstr "Previsão detalhada"
 
-#: ../src/strings.js:22
-msgid "Monday morning"
-msgstr "Segunda-feira de manhã"
+#~ msgid "Select All"
+#~ msgstr "Selecionar Tudo"
 
-#: ../src/strings.js:22
-msgid "Monday afternoon"
-msgstr "Segunda-feira de tarde"
+#~ msgid "Select None"
+#~ msgstr "Não Selecionar Nenhum"
 
-#: ../src/strings.js:22
-msgid "Monday evening"
-msgstr "Segunda-feira ao fim do dia"
+#~ msgid "Click on locations to select them"
+#~ msgstr "Clique nos itens para os selecionar"
 
-#: ../src/strings.js:23
-msgid "Tuesday night"
-msgstr "Terça-feira à noite"
+#~ msgid "New"
+#~ msgstr "Novo"
 
-#: ../src/strings.js:23
-msgid "Tuesday morning"
-msgstr "Terça-feira de manhã"
+#~ msgid "Back"
+#~ msgstr "Retroceder"
 
-#: ../src/strings.js:23
-msgid "Tuesday afternoon"
-msgstr "Terça-feira à tarde"
+#~ msgid "Select"
+#~ msgstr "Selecionar"
 
-#: ../src/strings.js:23
-msgid "Tuesday evening"
-msgstr "Terça-feira ao fim do dia"
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
 
-#: ../src/strings.js:24
-msgid "Wednesday night"
-msgstr "Quarta-feira à noite"
+#~ msgid "Delete"
+#~ msgstr "Apagar"
 
-#: ../src/strings.js:24
-msgid "Wednesday morning"
-msgstr "Quarta-feira de manhã"
+#~ msgid "More…"
+#~ msgstr "Mais…"
 
-#: ../src/strings.js:24
-msgid "Wednesday afternoon"
-msgstr "Quarta-feira à tarde"
+#~ msgid "Forecast for Tomorrow"
+#~ msgstr "Previsão para Amanhã"
 
-#: ../src/strings.js:24
-msgid "Wednesday evening"
-msgstr "Quarta-feira ao fim do dia"
+#~ msgid "%B %d"
+#~ msgstr "%B %d"
 
-#: ../src/strings.js:25
-msgid "Thursday night"
-msgstr "Quinta-feira à noite"
+#~ msgid "Monday night"
+#~ msgstr "Segunda-feira à noite"
 
-#: ../src/strings.js:25
-msgid "Thursday morning"
-msgstr "Quinta-feira de manhã"
+#~ msgid "Monday morning"
+#~ msgstr "Segunda-feira de manhã"
 
-#: ../src/strings.js:25
-msgid "Thursday afternoon"
-msgstr "Quinta-feira à tarde"
+#~ msgid "Monday afternoon"
+#~ msgstr "Segunda-feira de tarde"
 
-#: ../src/strings.js:25
-msgid "Thursday evening"
-msgstr "Quinta-feira ao fim do dia"
+#~ msgid "Monday evening"
+#~ msgstr "Segunda-feira ao fim do dia"
 
-#: ../src/strings.js:26
-msgid "Friday night"
-msgstr "Sexta-feira à noite"
+#~ msgid "Tuesday night"
+#~ msgstr "Terça-feira à noite"
 
-#: ../src/strings.js:26
-msgid "Friday morning"
-msgstr "Sexta-feira de manhã"
+#~ msgid "Tuesday morning"
+#~ msgstr "Terça-feira de manhã"
 
-#: ../src/strings.js:26
-msgid "Friday afternoon"
-msgstr "Sexta-feira à tarde"
+#~ msgid "Tuesday afternoon"
+#~ msgstr "Terça-feira à tarde"
 
-#: ../src/strings.js:26
-msgid "Friday evening"
-msgstr "Sexta-feira ao fim do dia"
+#~ msgid "Tuesday evening"
+#~ msgstr "Terça-feira ao fim do dia"
 
-#: ../src/strings.js:27
-msgid "Saturday night"
-msgstr "Sábado à noite"
+#~ msgid "Wednesday night"
+#~ msgstr "Quarta-feira à noite"
 
-#: ../src/strings.js:27
-msgid "Saturday morning"
-msgstr "Sábado de manhã"
+#~ msgid "Wednesday morning"
+#~ msgstr "Quarta-feira de manhã"
 
-#: ../src/strings.js:27
-msgid "Saturday afternoon"
-msgstr "Sábado à tarde"
+#~ msgid "Wednesday afternoon"
+#~ msgstr "Quarta-feira à tarde"
 
-#: ../src/strings.js:27
-msgid "Saturday evening"
-msgstr "Sábado ao fim do dia"
+#~ msgid "Wednesday evening"
+#~ msgstr "Quarta-feira ao fim do dia"
 
-#: ../src/strings.js:28
-msgid "Sunday night"
-msgstr "Domingo à noite"
+#~ msgid "Thursday night"
+#~ msgstr "Quinta-feira à noite"
 
-#: ../src/strings.js:28
-msgid "Sunday morning"
-msgstr "Domingo de manhã"
+#~ msgid "Thursday morning"
+#~ msgstr "Quinta-feira de manhã"
 
-#: ../src/strings.js:28
-msgid "Sunday afternoon"
-msgstr "Domingo à tarde"
+#~ msgid "Thursday afternoon"
+#~ msgstr "Quinta-feira à tarde"
 
-#: ../src/strings.js:28
-msgid "Sunday evening"
-msgstr "Domingo ao fim do dia"
+#~ msgid "Thursday evening"
+#~ msgstr "Quinta-feira ao fim do dia"
 
-#: ../src/strings.js:31
-msgid "Tonight"
-msgstr "Esta noite"
+#~ msgid "Friday night"
+#~ msgstr "Sexta-feira à noite"
 
-#: ../src/strings.js:31
-msgid "This morning"
-msgstr "Esta manhã"
+#~ msgid "Friday morning"
+#~ msgstr "Sexta-feira de manhã"
 
-#: ../src/strings.js:31
-msgid "This afternoon"
-msgstr "Esta tarde"
+#~ msgid "Friday afternoon"
+#~ msgstr "Sexta-feira à tarde"
 
-#: ../src/strings.js:31
-msgid "This evening"
-msgstr "Ao fim do dia de hoje"
+#~ msgid "Friday evening"
+#~ msgstr "Sexta-feira ao fim do dia"
 
-#: ../src/strings.js:32
-msgid "Tomorrow night"
-msgstr "Amanhã à noite"
+#~ msgid "Saturday night"
+#~ msgstr "Sábado à noite"
 
-#: ../src/strings.js:32
-msgid "Tomorrow morning"
-msgstr "Amanhã de manhã"
+#~ msgid "Saturday morning"
+#~ msgstr "Sábado de manhã"
 
-#: ../src/strings.js:32
-msgid "Tomorrow afternoon"
-msgstr "Amanhã à tarde"
+#~ msgid "Saturday afternoon"
+#~ msgstr "Sábado à tarde"
 
-#: ../src/strings.js:32
-msgid "Tomorrow evening"
-msgstr "Amanhã ao fim do dia"
+#~ msgid "Saturday evening"
+#~ msgstr "Sábado ao fim do dia"
 
-#: ../src/window.js:203
-#, javascript-format
-msgid "%d selected"
-msgid_plural "%d selected"
-msgstr[0] "%d selecionado"
-msgstr[1] "%d selecionados"
+#~ msgid "Sunday night"
+#~ msgstr "Domingo à noite"
 
-#: ../src/window.js:229
-msgid "World Weather"
-msgstr "Meteorologia Mundial"
+#~ msgid "Sunday morning"
+#~ msgstr "Domingo de manhã"
 
-#: ../src/window.js:318
-msgid "translator-credits"
-msgstr "Fernando Carvalho <phaetonkde@gmail.com>"
+#~ msgid "Sunday afternoon"
+#~ msgstr "Domingo à tarde"
 
-#: ../src/window.js:320
-msgid "A weather application"
-msgstr "Uma aplicação de meteorologia"
+#~ msgid "Sunday evening"
+#~ msgstr "Domingo ao fim do dia"
 
-#: ../src/world.js:214
-msgid "Cities"
-msgstr "Cidades"
+#~ msgid "Tonight"
+#~ msgstr "Esta noite"
 
-#: ../src/world.js:231
-msgid "World view"
-msgstr "Vista mundial"
+#~ msgid "This morning"
+#~ msgstr "Esta manhã"
 
-#: ../src/world.js:259
-msgid "Add locations"
-msgstr "Adicionar locais"
+#~ msgid "This afternoon"
+#~ msgstr "Esta tarde"
 
-#: ../src/world.js:262
-msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-msgstr ""
-"Utilizar o botão <b>Novo</b> na barra de ferramentas para adicionar mais "
-"locais do mundo"
+#~ msgid "This evening"
+#~ msgstr "Ao fim do dia de hoje"
+
+#~ msgid "Tomorrow night"
+#~ msgstr "Amanhã à noite"
+
+#~ msgid "Tomorrow morning"
+#~ msgstr "Amanhã de manhã"
+
+#~ msgid "Tomorrow afternoon"
+#~ msgstr "Amanhã à tarde"
+
+#~ msgid "Tomorrow evening"
+#~ msgstr "Amanhã ao fim do dia"
+
+#~ msgid "%d selected"
+#~ msgid_plural "%d selected"
+#~ msgstr[0] "%d selecionado"
+#~ msgstr[1] "%d selecionados"
+
+#~ msgid "World Weather"
+#~ msgstr "Meteorologia Mundial"
+
+#~ msgid "Cities"
+#~ msgstr "Cidades"
+
+#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+#~ msgstr ""
+#~ "Utilizar o botão <b>Novo</b> na barra de ferramentas para adicionar mais "
+#~ "locais do mundo"
 
 #~ msgid "About Weather"
 #~ msgstr "Sobre o Metereologia"
