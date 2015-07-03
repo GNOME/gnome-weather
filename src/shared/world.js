@@ -77,13 +77,14 @@ const WorldModel = new Lang.Class({
     },
 
     currentLocationChanged: function(location) {
-        if (!location)
-            return;
-
         if (this._currentLocationInfo)
             this._removeLocationInternal(this._currentLocationInfo, false);
 
-        let info = this.addNewLocation(location, true);
+        let info;
+        if (location)
+            info = this.addNewLocation(location, true);
+        else
+            info = null;
         this.emit('current-location-changed', info);
     },
 

@@ -23,6 +23,7 @@ const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
 const Lang = imports.lang;
 
+const CurrentLocationController = imports.app.currentLocationController;
 const Params = imports.misc.params;
 const Util = imports.misc.util;
 
@@ -69,11 +70,12 @@ const WorldContentView = new Lang.Class({
         let autoLocSwitch = builder.get_object('auto-location-switch');
         let currentLocationController = application.currentLocationController;
 
-        if(currentLocationController.autoLocation) {
+        if(currentLocationController.autoLocation == CurrentLocationController.AutoLocation.ENABLED) {
             autoLocStack.visible_child_name = 'locating-label';
         } else {
             autoLocStack.visible_child_name = 'auto-location-switch-grid';
             autoLocSwitch.active = false;
+            autoLocSwitch.sensitive = (currentLocationController.autoLocation != CurrentLocationController.AutoLocation.NOT_AVAILABLE);
         }
 
         let handlerId = autoLocSwitch.connect('notify::active', Lang.bind(this, function() {
@@ -93,17 +95,10 @@ const WorldContentView = new Lang.Class({
 
         this.model.connect('current-location-changed', Lang.bind(this, function(model, info) {
             autoLocStack.visible_child_name = 'auto-location-switch-grid';
-            if (info.location) {
-                GObject.signal_handler_block(autoLocSwitch, handlerId);
-                autoLocSwitch.active = true;
-                GObject.signal_handler_unblock(autoLocSwitch, handlerId);
-            } else {
-                GObject.signal_handler_block(autoLocSwitch, handlerId);
-                autoLocSwitch.active = false;
-                GObject.signal_handler_unblock(autoLocSwitch, handlerId);
-
-                autoLocSwitch.sensitive = false;
-            }
+            GObject.signal_handler_block(autoLocSwitch, handlerId);
+            autoLocSwitch.active = (currentLocationController.autoLocation == CurrentLocationController.AutoLocation.ENABLED);
+            autoLocSwitch.sensitive = (currentLocationController.autoLocation != CurrentLocationController.AutoLocation.NOT_AVAILABLE);
+            GObject.signal_handler_unblock(autoLocSwitch, handlerId);
 
             this._window.showInfo(info, true);
         }));
@@ -115,13 +110,9 @@ const WorldContentView = new Lang.Class({
         this.model.connect('location-removed', Lang.bind(this, this._onLocationRemoved));
 
         this._currentLocationAdded = false;
-        if (this.model.length > 0) {
-            let list = this.model.getAll();
-            for (let i = list.length - 1; i >= 0; i--)
-                this._onLocationAdded(this.model, list[i], list[i]._isCurrentLocation);
-        } else {
-            this.model.load();
-        }
+        let list = this.model.getAll();
+        for (let i = list.length - 1; i >= 0; i--)
+            this._onLocationAdded(this.model, list[i], list[i]._isCurrentLocation);
     },
 
     refilter: function() {

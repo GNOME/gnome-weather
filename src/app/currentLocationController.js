@@ -65,6 +65,12 @@ const LocationInterface = '<node> \
 </node>';
 const LocationProxy = Gio.DBusProxy.makeProxyWrapper(LocationInterface);
 
+const AutoLocation = {
+    DISABLED: 0,
+    ENABLED: 1,
+    NOT_AVAILABLE: 2
+};
+
 const CurrentLocationController = new Lang.Class({
     Name: 'CurrentLocationController',
 
@@ -72,8 +78,9 @@ const CurrentLocationController = new Lang.Class({
         this._world = world;
         this._processStarted = false;
         this._settings = Util.getSettings('org.gnome.Weather.Application');
-        this.autoLocation = this._settings.get_value('automatic-location').deep_unpack();
-        if(this.autoLocation)
+        let autoLocation = this._settings.get_value('automatic-location').deep_unpack();
+        this._syncAutoLocation(autoLocation);
+        if (this.autoLocation == AutoLocation.ENABLED)
             this._startGeolocationService();
         this.currentLocation = null;
     },
@@ -93,6 +100,7 @@ const CurrentLocationController = new Lang.Class({
 
     _geoLocationFailed: function(e) {
         log ("Failed to connect to GeoClue2 service: " + e.message);
+        this.autoLocation = AutoLocation.NOT_AVAILABLE;
         GLib.idle_add(GLib.PRIORITY_DEFAULT, Lang.bind(this, function() {
             this._world.currentLocationChanged(null);
         }));
@@ -123,8 +131,7 @@ const CurrentLocationController = new Lang.Class({
 
         this._clientProxy.StartRemote(Lang.bind(this, function(result, e) {
             if (e) {
-                log ("Failed to connect to GeoClue2 service: " + e.message);
-                this._world.currentLocationChanged(null);
+                this._geoLocationFailed(e);
             }
         }));
     },
@@ -143,7 +150,18 @@ const CurrentLocationController = new Lang.Class({
 
     setAutoLocation: function(active) {
         this._settings.set_value('automatic-location', new GLib.Variant('b', active));
+
+        if (this.autoLocation == AutoLocation.NOT_AVAILABLE)
+            return;
         this._autoLocationChanged(active);
+        this._syncAutoLocation(active);
+    },
+
+    _syncAutoLocation: function(autoLocation) {
+        if (autoLocation)
+            this.autoLocation = AutoLocation.ENABLED;
+        else
+            this.autoLocation = AutoLocation.DISABLED;
     },
 
     _autoLocationChanged: function(active) {

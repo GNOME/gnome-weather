@@ -93,6 +93,7 @@ const Application = new Lang.Class({
 
         this.world = GWeather.Location.get_world();
         this.model = new World.WorldModel(this.world, true);
+        this.model.load();
         this.currentLocationController = new CurrentLocationController.CurrentLocationController(this.model);
 
         this.model.connect('notify::loading', Lang.bind(this, function() {

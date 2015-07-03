@@ -21,6 +21,7 @@ const GWeather = imports.gi.GWeather;
 const Lang = imports.lang;
 
 const City = imports.app.city;
+const CurrentLocationController = imports.app.currentLocationController;
 const Params = imports.misc.params;
 const World = imports.shared.world;
 const WorldView = imports.app.world;
@@ -94,6 +95,8 @@ const MainWindow = new Lang.Class({
 
         for (let i = 0; i < this._pageWidgets[Page.CITY].length; i++)
             this._pageWidgets[Page.CITY][i].hide();
+
+        this._showingDefault = false;
     },
 
     update: function() {
@@ -145,16 +148,18 @@ const MainWindow = new Lang.Class({
     },
 
     showDefault: function() {
+        this._showingDefault = true;
         let clc = this.application.currentLocationController;
         let autoLocation = clc.autoLocation;
         let currentLocation = clc.currentLocation;
         if (currentLocation)
             this.showInfo(this._model.getCurrentLocation(), false);
-        else if (!autoLocation)
+        else if (autoLocation != CurrentLocationController.AutoLocation.ENABLED)
             this.showInfo(this._model.getRecent(), false);
     },
 
     showSearch: function(text) {
+        this._showingDefault = false;
         this._cityView.setTimeVisible(false);
         this._stack.set_visible_child(this._searchView);
         this._goToPage(Page.SEARCH);
@@ -164,8 +169,11 @@ const MainWindow = new Lang.Class({
     },
 
     showInfo: function(info, isCurrentLocation) {
-        if (!info)
+        if (!info) {
+            if (isCurrentLocation && this._showingDefault)
+                this.showDefault();
             return;
+        }
 
         /*
          * Only show location updates if we have no loaded info and no
@@ -182,6 +190,7 @@ const MainWindow = new Lang.Class({
             }
         }
 
+        this._showingDefault = false;
         this.currentInfo = info;
         this._cityView.info = info;
 
