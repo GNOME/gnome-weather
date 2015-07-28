@@ -88,7 +88,7 @@ msgstr ""
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
 msgid "Weather;Forecast;"
-msgstr "Пешгӯӣ;Обу ҳаво"
+msgstr "Пешгӯӣ;Обу ҳаво;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"

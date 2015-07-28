@@ -94,7 +94,7 @@ msgstr ""
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
 #| msgid "Weekly Forecast"
 msgid "Weather;Forecast;"
-msgstr "Weather;Forecast;prognoză;vreme;vremea"
+msgstr "Weather;Forecast;prognoză;vreme;vremea;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
