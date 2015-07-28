@@ -116,7 +116,36 @@ const Application = new Lang.Class({
                             parameter_type: new GLib.VariantType('s') }]);
 
         let gwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather' });
-        this.add_action(gwSettings.create_action('temperature-unit'));
+        // we would like to use g_settings_create_action() here
+        // but that does not handle correctly the case of 'default'
+        // we would also like to use g_settings_bind_with_mapping(), but that
+        // function is not introspectable (two callbacks, one destroy notify)
+        // so we hand code the behavior we want
+        function resolveDefaultTemperatureUnit(unit) {
+            unit = GWeather.TemperatureUnit.to_real(unit);
+            if (unit == GWeather.TemperatureUnit.CENTIGRADE)
+                return new GLib.Variant('s', 'centigrade');
+            else if (unit == GWeather.TemperatureUnit.FAHRENHEIT)
+                return new GLib.Variant('s', 'fahrenheit');
+            else
+                return new GLib.Variant('s', 'default');
+        }
+        let temperatureAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'temperature-unit',
+            state: resolveDefaultTemperatureUnit(gwSettings.get_enum('temperature-unit')),
+            parameter_type: new GLib.VariantType('s')
+        });
+        temperatureAction.connect('activate', function(action, parameter) {
+            action.change_state(parameter);
+        })
+        temperatureAction.connect('change-state', function(action, state) {
+            gwSettings.set_value('temperature-unit', state);
+        });
+        gwSettings.connect('changed::temperature-unit', function() {
+            temperatureAction.state = resolveDefaultTemperatureUnit(gwSettings.get_enum('temperature-unit'));
+        });
+        this.add_action(temperatureAction);
 
         this._initAppMenu();
 
