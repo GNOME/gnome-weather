@@ -1,3 +1,9 @@
+3.17.1
+======
+* Fix initial application state when geolocation is disabled
+* Fix temperature unit shown in the menu when not explicitly configured
+* Translation updates
+
 3.16.2.1
 ========
 * A symbolic variant of the app icon is provided
