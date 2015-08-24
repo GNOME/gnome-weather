@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-04 21:19+0100\n"
-"PO-Revision-Date: 2015-03-04 21:20+0100\n"
+"POT-Creation-Date: 2015-08-24 21:19+0200\n"
+"PO-Revision-Date: 2015-08-24 21:20+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -49,31 +49,23 @@ msgid "Quit"
 msgstr "Zakończ"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "Obecne warunki pogodowe"
+msgid "City view"
+msgstr "Widok miasta"
 
 #: ../data/city.ui.h:2
-msgid "Today"
-msgstr "Dzisiaj"
+msgid "Loading…"
+msgstr "Wczytywanie…"
 
-#: ../data/city.ui.h:3
-msgid "Tomorrow"
-msgstr "Jutro"
-
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../src/app/main.js:52 ../src/app/window.js:202 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:226 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Pogoda"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Wyświetlanie warunków pogodowych i prognozy"
-
-#: ../data/org.gnome.Weather.Application.desktop.in.h:3
-msgid "Weather;Forecast;"
-msgstr "Pogoda;Prognoza;"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
@@ -102,6 +94,10 @@ msgstr ""
 "obecnych warunków pogodowych w ostatnio wyszukiwanych miastach poprzez "
 "wpisanie ich nazw w ekranie podglądu."
 
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Pogoda;Prognoza;"
+
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
 msgstr "Skonfigurowane miasta, dla których wyświetlać pogodę"
@@ -123,7 +119,7 @@ msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 msgstr ""
-"Automatyczne położenie to wartość przełącznika \"automatic-location\", który "
+"Automatyczne położenie to wartość przełącznika „automatic-location”, który "
 "określa, czy pobierać obecne położenie."
 
 #: ../data/places-popover.ui.h:1
@@ -142,6 +138,18 @@ msgstr "Wyszukiwanie miasta"
 msgid "Viewed Recently"
 msgstr "Ostatnio przeglądane"
 
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "Obecne warunki pogodowe"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "Dzisiaj"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "Jutro"
+
 #: ../data/window.ui.h:1
 msgid "Places"
 msgstr "Miejsca"
@@ -157,18 +165,6 @@ msgstr "Wyszukiwanie położenia"
 #: ../data/window.ui.h:4
 msgid "To see weather information, enter the name of a city."
 msgstr "Należy wpisać nazwę miasta, aby wyświetlić informacje o pogodzie."
-
-#: ../src/app/city.js:190
-msgid "City view"
-msgstr "Widok miasta"
-
-#: ../src/app/city.js:199
-msgid "Loading…"
-msgstr "Wczytywanie…"
-
-#: ../src/app/city.js:273
-msgid "%H:%M"
-msgstr "%H∶%M"
 
 #: ../src/app/forecast.js:37
 msgid "Forecast"
@@ -193,26 +189,26 @@ msgid "Weekly Forecast"
 msgstr "Prognoza tygodniowa"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: ../src/app/weeklyForecast.js:107
+#: ../src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:116
+#: ../src/app/window.js:115
 msgid "Select Location"
 msgstr "Wybór położenia"
 
-#: ../src/app/window.js:201
+#: ../src/app/window.js:225
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2012-2015\n"
 "Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
 "Aviary.pl <gnomepl@aviary.pl>, 2012-2015"
 
-#: ../src/app/window.js:203
+#: ../src/app/window.js:227
 msgid "A weather application"
 msgstr "Prognoza pogody"
 
-#: ../src/app/world.js:38
+#: ../src/app/world.js:39
 msgid "World view"
 msgstr "Widok świata"
 
@@ -227,7 +223,7 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:182
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
