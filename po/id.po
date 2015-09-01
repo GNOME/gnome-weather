@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-15 20:14+0000\n"
-"PO-Revision-Date: 2014-09-16 10:02+0700\n"
+"POT-Creation-Date: 2015-09-01 09:05+0000\n"
+"PO-Revision-Date: 2015-09-01 20:40+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -44,27 +44,25 @@ msgid "Quit"
 msgstr "Keluar"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "Kondisi saat ini"
+msgid "City view"
+msgstr "Tilikan kota"
 
 #: ../data/city.ui.h:2
-msgid "Today"
-msgstr "Hari Ini"
+msgid "Loading…"
+msgstr "Memuat..."
 
-#: ../data/city.ui.h:3
-msgid "Tomorrow"
-msgstr "Besok"
-
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../src/app/window.js:226 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Cuaca"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Tampilkan kondisi dan ramalan cuaca"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -72,7 +70,7 @@ msgstr ""
 "Aplikasi kecil yang memungkinkan Anda memantau kondisi cuaca saat ini untuk "
 "kota Anda, atau dimanapun di dunia."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -80,7 +78,7 @@ msgstr ""
 "Ini memberikan akses ke ramalan cuaca terrinci, sampai dengan 7 hari, dengan "
 "rincian per jam bagi hari ini dan besok, memakai berbagai layanan internet."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -89,6 +87,10 @@ msgstr ""
 "Ini secara opsional juga terintegrasi dengan GNOME Shell, memungkinkan Anda "
 "melihat kondisi saat ini dari kota yang baru-baru ini dicari hanya dengan "
 "mengetikkan namanya dalam Ringkasan Aktivitas."
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Cuaca;Prakiraan;Ramalan;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -130,6 +132,18 @@ msgstr "Cari kota"
 msgid "Viewed Recently"
 msgstr "Akhir-akhir Ini Dilihat"
 
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "Kondisi saat ini"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "Hari Ini"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "Besok"
+
 #: ../data/window.ui.h:1
 msgid "Places"
 msgstr "Tempat"
@@ -146,18 +160,6 @@ msgstr "Mencari sebuah lokasi"
 msgid "To see weather information, enter the name of a city."
 msgstr "Untuk melihat informasi cuaca, masukkan nama sebuah kota."
 
-#: ../src/app/city.js:190
-msgid "City view"
-msgstr "Tilikan kota"
-
-#: ../src/app/city.js:199
-msgid "Loading…"
-msgstr "Memuat..."
-
-#: ../src/app/city.js:273
-msgid "%H:%M"
-msgstr "%H:%M"
-
 #: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Prakiraan"
@@ -166,10 +168,12 @@ msgstr "Prakiraan"
 msgid "Forecast not available"
 msgstr "Ramalan cuaca tak tersedia"
 
+#. Translators: this is a time format without date used for AM/PM */
 #: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
+#. Translators: this is a time format without date used for 24h mode */
 #: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%R"
@@ -178,32 +182,39 @@ msgstr "%R"
 msgid "Weekly Forecast"
 msgstr "Ramalan Cuaca Mingguan"
 
-#: ../src/app/weeklyForecast.js:107
+#. Translators: this is the time format for full weekday name according to the current locale */
+#: ../src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:120
+#: ../src/app/window.js:115
 msgid "Select Location"
 msgstr "Pilih Lokasi"
 
-#: ../src/app/window.js:191
+#: ../src/app/window.js:225
 msgid "translator-credits"
 msgstr "Andika Triwidada <andika@gmail.com>, 2013, 2014"
 
-#: ../src/app/window.js:193
+#: ../src/app/window.js:227
 msgid "A weather application"
 msgstr "Aplikasi cuaca"
 
-#: ../src/app/world.js:38
+#: ../src/app/world.js:39
 msgid "World view"
 msgstr "Tilikan dunia"
 
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C" */
 #: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/service/searchProvider.js:182
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C" */
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
