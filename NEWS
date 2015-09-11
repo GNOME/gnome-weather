@@ -1,3 +1,8 @@
+3.17.92
+=======
+* Improved background for licensing and legibility [Jakub Steiner, #703150, #754892]
+* Translation updates and fixes
+
 3.17.1
 ======
 * Fix initial application state when geolocation is disabled
