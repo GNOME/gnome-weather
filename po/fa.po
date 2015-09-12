@@ -1,15 +1,15 @@
 # Persian translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Arash Mousavi <mousavi.arash@gmail.com>, 2013, 2014.
+# Arash Mousavi <mousavi.arash@gmail.com>, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-10-06 20:26+0000\n"
-"PO-Revision-Date: 2014-10-11 12:44+0330\n"
+"POT-Creation-Date: 2015-09-11 09:10+0000\n"
+"PO-Revision-Date: 2015-09-12 11:42+0430\n"
 "Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
 "Language-Team: Persian <>\n"
 "Language: fa\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.8.4\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -44,35 +44,33 @@ msgid "Quit"
 msgstr "خروج"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "وضعیت فعلی"
+msgid "City view"
+msgstr "نمای شهری"
 
 #: ../data/city.ui.h:2
-msgid "Today"
-msgstr "امروز"
+msgid "Loading…"
+msgstr "درحال بارگیری..."
 
-#: ../data/city.ui.h:3
-msgid "Tomorrow"
-msgstr "فردا"
-
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../src/app/window.js:226 ../src/service/main.js:49
 msgid "Weather"
 msgstr "آب‌وهوا"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "نمایش وضعیت و پیش‌بینی آب‌وهوا"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
+"A small application that allows you to monitor the current weather conditions "
+"for your city, or anywhere in the world."
 msgstr ""
 "یک برنامه کوچک که به شما اجازه می‌دهد تا وضعیت آب‌وهوایی شهر خود یا هرجایی در "
 "دنیا را بررسی کنید."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -80,7 +78,7 @@ msgstr ""
 "دسترسی به پیش‌بینی‌های دقیق را تا ۷ روز فراهم می‌کند. همراه با جزئیات روزانه "
 "برای امروز و روز بعد، با استفاده از تعدادی از سرویس‌های اینترنتی."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -89,6 +87,11 @@ msgstr ""
 "همچنین به‌طور اختیاری قابلیت یکپارچگی با پوسته‌گنوم را نیز دارد، به شما اجازه "
 "می‌دهد تا وضعیت فعلی برای آخرین شهرهای جست‌وجو شده را فقط با تایپ نام آن در "
 "نمای‌کلی فعالیت‌ها ببینید."
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#| msgid "Weekly Forecast"
+msgid "Weather;Forecast;"
+msgstr "Weather;Forecast;آب‌وهوا;پیش‌بینی;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -130,6 +133,18 @@ msgstr "جست‌وجو برای یک شهر"
 msgid "Viewed Recently"
 msgstr "اخیرا دیده شده"
 
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "وضعیت فعلی"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "امروز"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "فردا"
+
 #: ../data/window.ui.h:1
 msgid "Places"
 msgstr "مکان‌ها"
@@ -146,18 +161,6 @@ msgstr "جست‌وجو برای یک مکان"
 msgid "To see weather information, enter the name of a city."
 msgstr "برای نمایش اطلاعات دما، نام یک شهر را وارد کنید."
 
-#: ../src/app/city.js:190
-msgid "City view"
-msgstr "نمای شهری"
-
-#: ../src/app/city.js:199
-msgid "Loading…"
-msgstr "درحال بارگیری..."
-
-#: ../src/app/city.js:273
-msgid "%H:%M"
-msgstr "%OH:%OM"
-
 #: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "پیش‌بینی"
@@ -166,10 +169,12 @@ msgstr "پیش‌بینی"
 msgid "Forecast not available"
 msgstr "پیش‌بینی موجود نیست"
 
+#. Translators: this is a time format without date used for AM/PM */
 #: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%Ol∶%OM %p"
 
+#. Translators: this is a time format without date used for 24h mode */
 #: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%OH:%OM"
@@ -178,35 +183,45 @@ msgstr "%OH:%OM"
 msgid "Weekly Forecast"
 msgstr "پیش‌بینی هفتگی"
 
-#: ../src/app/weeklyForecast.js:107
+#. Translators: this is the time format for full weekday name according to the current locale */
+#: ../src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:120
+#: ../src/app/window.js:115
 msgid "Select Location"
 msgstr "انتخاب مکان"
 
-#: ../src/app/window.js:191
+#: ../src/app/window.js:225
 msgid "translator-credits"
 msgstr "آرش موسوی <mousavi.arash@gmail.com>"
 
-#: ../src/app/window.js:193
+#: ../src/app/window.js:227
 msgid "A weather application"
 msgstr "یک برنامه آب‌وهوا"
 
-#: ../src/app/world.js:38
+#: ../src/app/world.js:39
 msgid "World view"
 msgstr "نمای جهانی"
 
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C" */
 #: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/service/searchProvider.js:182
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C" */
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "%H:%M"
+#~ msgstr "%OH:%OM"
 
 #~ msgid "About Weather"
 #~ msgstr "درباره آب‌وهوا"
@@ -351,5 +366,4 @@ msgstr "%s, %s"
 #~ msgstr[0] "%Id مورد انتخاب شد"
 
 #~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-#~ msgstr ""
-#~ "از دکمه <b>جدید</b> در نوارد ابزار برای اضافه کردن مکان استفاده کنید"
+#~ msgstr "از دکمه <b>جدید</b> در نوارد ابزار برای اضافه کردن مکان استفاده کنید"
