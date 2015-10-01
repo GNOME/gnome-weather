@@ -2,14 +2,14 @@
 # Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the libgweather package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
-# GunChleoc <fios@foramnagaidhlig.net>, 2014.
+# GunChleoc <fios@foramnagaidhlig.net>, 2014, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: libgweather\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-09-23 08:23+0000\n"
-"PO-Revision-Date: 2014-09-23 11:33+0100\n"
+"POT-Creation-Date: 2015-10-01 09:37+0000\n"
+"PO-Revision-Date: 2015-10-01 12:44+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "Language: gd\n"
@@ -47,27 +47,25 @@ msgid "Quit"
 msgstr "Fàg an-seo"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "An aimsir an-dràsta"
+msgid "City view"
+msgstr "Sealladh baile"
 
 #: ../data/city.ui.h:2
-msgid "Today"
-msgstr "An-diugh"
+msgid "Loading…"
+msgstr "'Ga luchdadh…"
 
-#: ../data/city.ui.h:3
-msgid "Tomorrow"
-msgstr "A-màireach"
-
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../src/app/window.js:226 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Aimsir"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Seall an aimsir an-dràsta agus ro-aithris"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -75,7 +73,7 @@ msgstr ""
 "Aplacaid bheag a leigeas leat sùil a chumail air staid na h-aimsire sa "
 "bhaile agad no àite sam bith air an t-saoghal."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -84,11 +82,7 @@ msgstr ""
 "gach uair airson an diugh 's a-màireach le taic o chaochladh sheirbheisean "
 "eadar-lìn."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
-#| msgid ""
-#| "It also integrates with the GNOME Shell, allowing you see the current "
-#| "conditions of any configured city by just typing its name in the "
-#| "Activities Overview."
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -98,6 +92,11 @@ msgstr ""
 "nam bailtean a lorg thu o chionn goirid, cha leig thu leas ach ainm baile a "
 "sgrìobhadh ann am foir-shealladh nan gnìomhachdan ach am faic thu an aimsir "
 "airson a' bhaile ud."
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#| msgid "Weekly Forecast"
+msgid "Weather;Forecast;"
+msgstr "Weather;Forecast;aimsir;sìde;ro-aithris;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -113,7 +112,6 @@ msgstr ""
 "gweather_location_serialize()."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "Ionad fèin-obrachail"
 
@@ -122,27 +120,37 @@ msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 msgstr ""
-"'S e luach an t-suidse \"automatic-location\" a tha san ionad fhèin-obrachail "
-"a chuireas roimhe an tèid an t-ionad làithreach fhaighinn gus nach tèid."
+"'S e luach an t-suidse \"automatic-location\" a tha san ionad fhèin-"
+"obrachail a chuireas roimhe an tèid an t-ionad làithreach fhaighinn gus nach "
+"tèid."
 
 #: ../data/places-popover.ui.h:1
-#| msgid "New Location"
 msgid "Automatic Location"
 msgstr "Ionad fèin-obrachail"
 
 #: ../data/places-popover.ui.h:2
-#| msgid "Loading…"
 msgid "Locating…"
 msgstr "'Ga lorg…"
 
 #: ../data/places-popover.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a city"
 msgstr "Lorg baile"
 
 #: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Air a shealltainn o chionn goirid"
+
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "An aimsir an-dràsta"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "An-diugh"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "A-màireach"
 
 #: ../data/window.ui.h:1
 msgid "Places"
@@ -153,7 +161,6 @@ msgid "Refresh"
 msgstr "Ath-nuadhaich"
 
 #: ../data/window.ui.h:3
-#| msgid "Search for a city:"
 msgid "Search for a location"
 msgstr "Lorg ionad"
 
@@ -161,70 +168,67 @@ msgstr "Lorg ionad"
 msgid "To see weather information, enter the name of a city."
 msgstr "Cuir a-steach ainm baile gus fiosrachadh na h-aimsire a shealltainn."
 
-#: ../src/app/city.js:190
-msgid "City view"
-msgstr "Sealladh baile"
-
-#: ../src/app/city.js:199
-msgid "Loading…"
-msgstr "'Ga luchdadh…"
-
-#: ../src/app/city.js:273
-msgid "%H:%M"
-msgstr "%H:%M"
-
 #: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Ro-aithris"
 
 #: ../src/app/forecast.js:110
-#| msgid "Forecast for Today"
 msgid "Forecast not available"
 msgstr "Chan eil ro-aithris ri fhaighinn"
 
+#. Translators: this is a time format without date used for AM/PM
 #: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
+#. Translators: this is a time format without date used for 24h mode
 #: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
-#| msgid "Forecast"
 msgid "Weekly Forecast"
 msgstr "Ro-aithris na seachdaine"
 
-#: ../src/app/weeklyForecast.js:107
+#. Translators: this is the time format for full weekday name according to the current locale
+#: ../src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:120
-#| msgid "New Location"
+#: ../src/app/window.js:115
 msgid "Select Location"
 msgstr "Tagh ionad"
 
-#: ../src/app/window.js:191
+#: ../src/app/window.js:225
 msgid "translator-credits"
 msgstr "GunChleoc http://www.foramnagaidhlig.net"
 
-#: ../src/app/window.js:193
+#: ../src/app/window.js:227
 msgid "A weather application"
 msgstr "Aplacaid aimsire"
 
-#: ../src/app/world.js:38
+#: ../src/app/world.js:39
 msgid "World view"
 msgstr "Sealladh an t-saoghail"
 
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
 #: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/service/searchProvider.js:182
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
 
 #~ msgid "Detailed forecast"
 #~ msgstr "Ro-aithris mionaideach"
