@@ -20,50 +20,9 @@ const GLib = imports.gi.GLib;
 const Gio = imports.gi.Gio;
 const Lang = imports.lang;
 const GWeather = imports.gi.GWeather;
+const Geoclue = imports.gi.Geoclue;
 
 const Util = imports.misc.util;
-
-const ManagerInterface = '<node> \
-<interface name="org.freedesktop.GeoClue2.Manager"> \
-    <method name="GetClient"> \
-        <arg name="client" type="o" direction="out"/> \
-    </method> \
-</interface> \
-</node>';
-const ManagerProxy = Gio.DBusProxy.makeProxyWrapper(ManagerInterface);
-
-const ClientInterface = '<node> \
-<interface name="org.freedesktop.GeoClue2.Client"> \
-    <property name="Location" type="o" access="read"/> \
-    <property name="DesktopId" type="s" access="readwrite"/> \
-    <property name="RequestedAccuracyLevel" type="u" access="readwrite"/> \
-    <property name="DistanceThreshold" type="u" access="readwrite"/> \
-    <method name="Start"/> \
-    <signal name="LocationUpdated"> \
-        <arg name="old" type="o"/> \
-        <arg name="new" type="o"/> \
-    </signal> \
-</interface> \
-</node>';
-const ClientProxy = Gio.DBusProxy.makeProxyWrapper(ClientInterface);
-
-const AccuracyLevel = {
-    COUNTRY: 1,
-    CITY: 4,
-    NEIGHBORHOOD: 5,
-    STREET: 6,
-    EXACT: 8,
-};
-
-const LocationInterface = '<node> \
-<interface name="org.freedesktop.GeoClue2.Location"> \
-    <property name="Latitude" type="d" access="read"/> \
-    <property name="Longitude" type="d" access="read"/> \
-    <property name="Accuracy" type="d" access="read"/> \
-    <property name="Description" type="s" access="read"/> \
-</interface> \
-</node>';
-const LocationProxy = Gio.DBusProxy.makeProxyWrapper(LocationInterface);
 
 const AutoLocation = {
     DISABLED: 0,
@@ -87,15 +46,10 @@ const CurrentLocationController = new Lang.Class({
 
     _startGeolocationService: function() {
         this._processStarted = true;
-        try {
-            this._managerProxy = new ManagerProxy(Gio.DBus.system,
-                                                  "org.freedesktop.GeoClue2",
-                                                  "/org/freedesktop/GeoClue2/Manager");
-
-            this._managerProxy.GetClientRemote(this._onGetClientReady.bind(this));
-        } catch(e) {
-            this._geoLocationFailed(e);
-        }
+        Geoclue.Simple.new(pkg.name,
+                           Geoclue.AccuracyLevel.CITY,
+                           null,
+                           Lang.bind (this, this._onSimpleReady));
     },
 
     _geoLocationFailed: function(e) {
@@ -106,45 +60,36 @@ const CurrentLocationController = new Lang.Class({
         }));
     },
 
-    _onGetClientReady: function(result, e) {
-        if (e) {
+    _onSimpleReady: function(object, result) {
+        try {
+            this._simple = Geoclue.Simple.new_finish(result);
+        }
+        catch (e) {
             this._geoLocationFailed(e);
             return;
         }
 
-        let [clientPath] = result;
-
-        this._clientProxy = new ClientProxy(Gio.DBus.system,
-                                            "org.freedesktop.GeoClue2",
-                                            clientPath);
-        this._clientProxy.DesktopId = pkg.name;
-        this._clientProxy.RequestedAccuracyLevel = AccuracyLevel.CITY;
-        this._clientProxy.DistanceThreshold = 100;
+        let client = this._simple.get_client();
+        client.distance_threshold = 100;
 
         this._findLocation();
     },
 
     _findLocation: function() {
         this._locationUpdatedId =
-            this._clientProxy.connectSignal("LocationUpdated",
-                                            this._getCurrentLocation.bind(this));
+                    this._simple.connect("notify::location",
+                                         this._onLocationUpdated.bind(this));
 
-        this._clientProxy.StartRemote(Lang.bind(this, function(result, e) {
-            if (e) {
-                this._geoLocationFailed(e);
-            }
-        }));
+        this._onLocationUpdated(this._simple);
     },
 
-    _getCurrentLocation: function(proxy, sender, [oldPath, newPath]) {
-        let geoclueLocation = new LocationProxy(Gio.DBus.system,
-                                                "org.freedesktop.GeoClue2",
-                                                newPath);
+    _onLocationUpdated: function(simple) {
+        let geoclueLocation = simple.get_location();
 
-        this.currentLocation = GWeather.Location.new_detached(geoclueLocation.Description,
+        this.currentLocation = GWeather.Location.new_detached(geoclueLocation.description,
                                                               null,
-                                                              geoclueLocation.Latitude,
-                                                              geoclueLocation.Longitude);
+                                                              geoclueLocation.latitude,
+                                                              geoclueLocation.longitude);
         this._world.currentLocationChanged(this.currentLocation);
     },
 
@@ -170,11 +115,11 @@ const CurrentLocationController = new Lang.Class({
                 this._startGeolocationService();
             } else {
                 this._locationUpdatedId =
-                    this._clientProxy.connectSignal("LocationUpdated",
-                                                    Lang.bind(this, this._getCurrentLocation));
+                    this._simple.connect("notify::location",
+                                         this._onLocationUpdated.bind(this));
             }
         } else {
-            this._clientProxy.disconnectSignal(this._locationUpdatedId);
+            this._simple.disconnect(this._locationUpdatedId);
         }
     }
 });
