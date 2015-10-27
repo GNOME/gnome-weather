@@ -1,5 +1,5 @@
 AC_PREREQ(2.63)
-AC_INIT([org.gnome.Weather],[3.18.1],
+AC_INIT([org.gnome.Weather],[3.19.1],
 	[https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather],
 	[gnome-weather],
 	[https://wiki.gnome.org/Apps/Weather])
