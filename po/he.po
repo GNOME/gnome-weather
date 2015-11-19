@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-15 22:41+0300\n"
-"PO-Revision-Date: 2014-09-15 23:52+0300\n"
+"POT-Creation-Date: 2015-11-19 21:06+0200\n"
+"PO-Revision-Date: 2015-11-19 21:07+0200\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
@@ -45,27 +45,25 @@ msgid "Quit"
 msgstr "יציאה"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "תנאים נוכחיים"
+msgid "City view"
+msgstr "תצוגת עיר"
 
 #: ../data/city.ui.h:2
-msgid "Today"
-msgstr "היום"
+msgid "Loading…"
+msgstr "בטעינה…"
 
-#: ../data/city.ui.h:3
-msgid "Tomorrow"
-msgstr "מחר"
-
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../src/app/window.js:226 ../src/service/main.js:49
 msgid "Weather"
 msgstr "מזג האוויר"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "הצגת תנאים ואת תחזית מזג האוויר"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -73,7 +71,7 @@ msgstr ""
 "יישום קטן המאפשר לך לצפות בתנאי מזג האוויר הנוכחיים בעיר שלך או בכל מקום אחר "
 "בעולם."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -81,7 +79,7 @@ msgstr ""
 "הוא מספק גישה לתחזיות מפורטות, עד לשבוע ימים, פרטים לפי שעה ליום הנוכחי ולזה "
 "שלאחריו, באמצעות שרתי אינטרנט שונים."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -89,6 +87,10 @@ msgid ""
 msgstr ""
 "כמו כן הוא ניתן לשילוב עם מעטפת GNOME, המאפשר לך לראות את תנאי מזג האוויר של "
 "רוב הערים שחיפשת לאחרונה, רק בהקלדת שם בסקירת פעילויות."
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "תחזית;מזג אוויר;תחזית שבועית;"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -130,6 +132,18 @@ msgstr "חיפוש אחר עיר"
 msgid "Viewed Recently"
 msgstr "נצפה לאחרונה"
 
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "תנאים נוכחיים"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "היום"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "מחר"
+
 #: ../data/window.ui.h:1
 msgid "Places"
 msgstr "מקומות"
@@ -145,18 +159,6 @@ msgstr "חיפוש אחר מקום"
 #: ../data/window.ui.h:4
 msgid "To see weather information, enter the name of a city."
 msgstr "כדי לראות מידע על מזג אוויר, יש להזין שם של עיר"
-
-#: ../src/app/city.js:190
-msgid "City view"
-msgstr "תצוגת עיר"
-
-#: ../src/app/city.js:199
-msgid "Loading…"
-msgstr "בטעינה…"
-
-#: ../src/app/city.js:273
-msgid "%H:%M"
-msgstr "%H:%M"
 
 #: ../src/app/forecast.js:37
 msgid "Forecast"
@@ -181,25 +183,25 @@ msgid "Weekly Forecast"
 msgstr "תחזית שבועית"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: ../src/app/weeklyForecast.js:107
+#: ../src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:120
+#: ../src/app/window.js:115
 msgid "Select Location"
 msgstr "בחירת מיקום"
 
-#: ../src/app/window.js:191
+#: ../src/app/window.js:225
 msgid "translator-credits"
 msgstr ""
 "ירון שהרבני <sh.yaron@gmail.com>\n"
 "יוסף אור בוצ׳קו <yoseforb@gnome.org>"
 
-#: ../src/app/window.js:193
+#: ../src/app/window.js:227
 msgid "A weather application"
 msgstr "יישום מזג אוויר"
 
-#: ../src/app/world.js:38
+#: ../src/app/world.js:39
 msgid "World view"
 msgstr "תצוגת עולם"
 
@@ -214,10 +216,13 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:182
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
 
 #~ msgid "label"
 #~ msgstr "תווית"
