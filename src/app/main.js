@@ -50,6 +50,7 @@ const Application = new Lang.Class({
     _init: function() {
         this.parent({ application_id: pkg.name });
         GLib.set_application_name(_("Weather"));
+        Gtk.Window.set_default_icon_name("org.gnome.Weather.Application");
     },
 
     _onQuit: function() {
