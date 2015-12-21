@@ -1,0 +1,86 @@
+{
+    "app-id": "org.gnome.Weather",
+    "version": "master",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.18",
+    "sdk": "org.gnome.Sdk",
+    "command": "/bin/false",
+    "finish-args": ["--share=network",
+                    "--share=ipc",
+                    "--socket=wayland",
+                    "--socket=x11"],
+    "build-options" : {
+        "cflags": "-O2 -g",
+        "env": {
+            "V": "1"
+        }
+    },
+    "cleanup": ["/share/gir-1.0", "/share/gtk-doc", "/share/aclocal",
+                "/lib/pkgconfig", "/include", "*.a", "*.la"],
+    "modules": [
+        {
+            "name": "m4-common",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "git://github.com/desrt/m4-common.git"
+                }
+            ]
+        },
+        {
+            "name": "geocode-glib",
+            "config-opts": [ "--disable-static" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "git://git.gnome.org/geocode-glib"
+                }
+            ]
+        },
+        {
+            "name": "libgweather",
+            "config-opts": [ "--disable-static", "--disable-vala" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "git://git.gnome.org/libgweather"
+                }
+            ]
+        },
+        {
+            "name": "geoclue",
+            "config-opts": [ "--disable-static", "--disable-3g-source",
+                             "--disable-cdma-source", "--disable-modem-gps-source",
+                             "--disable-nmea-source" ],
+            "cleanup": [ "/share/dbus-1", "/share/applications",
+                         "/libexec", "/etc" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "git://anongit.freedesktop.org/geoclue"
+                }
+            ]
+        },
+        {
+            "name": "gnome-desktop",
+            "config-opts": [ "--disable-static", "--disable-desktop-docs" ],
+            "cleanup": [ "/libexec", "/share/gnome" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "git://git.gnome.org/gnome-desktop",
+                    "branch": "gnome-3-18"
+                }
+            ]
+        },
+        {
+            "name": "gnome-weather",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "git://git.gnome.org/gnome-weather"
+                }
+            ]
+        }
+    ]
+}

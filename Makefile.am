@@ -23,7 +23,10 @@ GITIGNOREFILES = \
 	m4/intltool.m4 \
 	m4/libtool.m4 \
 	m4/lt* \
-	rpms/
+	rpms/ \
+	xdg-app/ \
+	.xdg-app-builder/ \
+	xdg-app-build.sh
 
 distdir = $(PACKAGE_TARNAME)-$(VERSION)
 
