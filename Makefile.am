@@ -1,4 +1,3 @@
-ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 DISTCHECK_CONFIGURE_FLAGS = --disable-dogtail
 
 SUBDIRS = po data src tests

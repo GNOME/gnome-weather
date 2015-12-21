@@ -5,6 +5,7 @@ AC_INIT([org.gnome.Weather],[3.19.1],
 	[https://wiki.gnome.org/Apps/Weather])
 
 AC_CONFIG_MACRO_DIR([m4])
+AX_IS_RELEASE([minor-version])
 
 AM_INIT_AUTOMAKE([1.12 dist-xz no-dist-gzip foreign tar-ustar no-define serial-tests -Wno-portability])
 # revert automake using PACKAGE_TARNAME instead of PACKAGE_NAME
@@ -19,8 +20,11 @@ AC_PROG_LN_S
 
 PKG_PROG_PKG_CONFIG([0.22])
 
+AX_REQUIRE_DEFINED([APPSTREAM_XML])
 APPSTREAM_XML
+AX_REQUIRE_DEFINED([GLIB_GSETTINGS])
 GLIB_GSETTINGS
+AX_REQUIRE_DEFINED([GOBJECT_INTROSPECTION_REQUIRE])
 GOBJECT_INTROSPECTION_REQUIRE([1.35.9])
 GJS_MIN_VERSION=1.39.91
 PKG_CHECK_MODULES([DEPS], [gdk-3.0
