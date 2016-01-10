@@ -1,15 +1,15 @@
 # Lithuanian translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Aurimas Černius <aurisc4@gmail.com>, 2013, 2014, 2015.
+# Aurimas Černius <aurisc4@gmail.com>, 2013, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-08 15:20+0000\n"
-"PO-Revision-Date: 2015-03-08 19:28+0200\n"
+"POT-Creation-Date: 2016-01-05 11:17+0000\n"
+"PO-Revision-Date: 2016-01-10 17:30+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -54,7 +54,7 @@ msgstr "Įkeliama…"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:213 ../src/service/main.js:49
+#: ../src/app/window.js:226 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Orai"
 
@@ -85,12 +85,11 @@ msgid ""
 "current conditions of the most recently searched cities by just typing its "
 "name in the Activities Overview."
 msgstr ""
-"Ji taip pat integruojasi su GNOME Shell, leisdama matyti orų sąlygas bet "
+"Ji taip pat integruojasi su GNOME Shell, leisdama matyti orų sąlygas "
 "paskutiniuose ieškotuose miestuose tiesiog įvedant jų pavadinimus veiklų "
 "apžvalgoje."
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
-#| msgid "Weekly Forecast"
 msgid "Weather;Forecast;"
 msgstr "Orai;Prognozė;"
 
@@ -162,10 +161,6 @@ msgstr "Ieškoti vietos"
 msgid "To see weather information, enter the name of a city."
 msgstr "Informacijai matyti, įveskite miesto pavadinimą."
 
-#: ../src/app/city.js:289
-msgid "%H:%M"
-msgstr "%H:%M"
-
 #: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Prognozė"
@@ -174,10 +169,12 @@ msgstr "Prognozė"
 msgid "Forecast not available"
 msgstr "Prognozė neprieinama"
 
+#. Translators: this is a time format without date used for AM/PM
 #: ../src/app/forecast.js:126
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
+#. Translators: this is a time format without date used for 24h mode
 #: ../src/app/forecast.js:129
 msgid "%R"
 msgstr "%R"
@@ -186,34 +183,44 @@ msgstr "%R"
 msgid "Weekly Forecast"
 msgstr "Savaitinė prognozė"
 
-#: ../src/app/weeklyForecast.js:107
+#. Translators: this is the time format for full weekday name according to the current locale
+#: ../src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:112
+#: ../src/app/window.js:115
 msgid "Select Location"
 msgstr "Pasirinkti vietą"
 
-#: ../src/app/window.js:212
+#: ../src/app/window.js:225
 msgid "translator-credits"
 msgstr ""
 "išvertė:\n"
 "Aurimas Černius <aurisc4@gmail.com>"
 
-#: ../src/app/window.js:214
+#: ../src/app/window.js:227
 msgid "A weather application"
 msgstr "Orų programa"
 
-#: ../src/app/world.js:38
+#: ../src/app/world.js:39
 msgid "World view"
 msgstr "Pasaulio vaizdas"
 
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
 #: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/service/searchProvider.js:184
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
