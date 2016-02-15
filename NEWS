@@ -1,3 +1,11 @@
+3.19.90
+=======
+* Fix missing items in forecast [#757186]
+* Add support for Geoclue agent dialog [Zeeshan Ali, #762102]
+* Add missing tags to Appdata [Richard Hughes]
+* Build system updates and xdg-app support
+* Translation updates
+
 3.19.1
 ======
 * Convert from DBus API to libgeoclue [Zeeshan Ali, #756647]
