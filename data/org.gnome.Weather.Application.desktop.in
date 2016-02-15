@@ -8,3 +8,4 @@ DBusActivatable=true
 StartupNotify=true
 Categories=GNOME;GTK;Utility;Core;
 _Keywords=Weather;Forecast;
+_X-Geoclue-Reason=Allows weather information to be displayed for your location.
