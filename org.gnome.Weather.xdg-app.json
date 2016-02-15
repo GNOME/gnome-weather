@@ -1,35 +1,37 @@
 {
     "app-id": "org.gnome.Weather",
-    "version": "master",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.18",
+    "runtime-version": "master",
     "sdk": "org.gnome.Sdk",
-    "command": "/bin/false",
-    "finish-args": ["--share=network",
-                    "--share=ipc",
-                    "--socket=wayland",
-                    "--socket=x11"],
+    "command": "gnome-weather",
+    "finish-args": [
+        /* X11 + XShm access */
+        "--share=ipc", "--socket=x11",
+        /* Wayland access */
+        "--socket=wayland",
+        /* Needs to talk to the network: */
+        "--share=network",
+        /* Needed to get geo-positioning */
+        "--system-talk-name=org.freedesktop.GeoClue2",
+        /* Needed for dconf to work (unfortunately needs homedir read access) */
+        "--filesystem=home:ro", "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+    ],
     "build-options" : {
         "cflags": "-O2 -g",
+        "cxxflags": "-O2 -g",
         "env": {
             "V": "1"
         }
     },
-    "cleanup": ["/share/gir-1.0", "/share/gtk-doc", "/share/aclocal",
-                "/lib/pkgconfig", "/include", "*.a", "*.la"],
+    "cleanup": ["/include", "/lib/pkgconfig",
+                "/share/pkgconfig", "/share/aclocal",
+                "/man", "/share/man", "/share/gtk-doc",
+                "/share/vala",
+                "*.la", "*.a"],
+    "cleanup-commands": [ "desktop-file-edit \"--set-name=(Nightly) Weather\" /app/share/applications/org.gnome.Weather.Application.desktop" ],
     "modules": [
         {
-            "name": "m4-common",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "git://github.com/desrt/m4-common.git"
-                }
-            ]
-        },
-        {
             "name": "geocode-glib",
-            "config-opts": [ "--disable-static" ],
             "sources": [
                 {
                     "type": "git",
@@ -39,7 +41,7 @@
         },
         {
             "name": "libgweather",
-            "config-opts": [ "--disable-static", "--disable-vala" ],
+            "config-opts": ["--disable-vala"],
             "sources": [
                 {
                     "type": "git",
@@ -48,28 +50,12 @@
             ]
         },
         {
-            "name": "geoclue",
-            "config-opts": [ "--disable-static", "--disable-3g-source",
-                             "--disable-cdma-source", "--disable-modem-gps-source",
-                             "--disable-nmea-source" ],
-            "cleanup": [ "/share/dbus-1", "/share/applications",
-                         "/libexec", "/etc" ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "git://anongit.freedesktop.org/geoclue"
-                }
-            ]
-        },
-        {
             "name": "gnome-desktop",
-            "config-opts": [ "--disable-static", "--disable-desktop-docs" ],
-            "cleanup": [ "/libexec", "/share/gnome" ],
+            "config-opts": ["--disable-debug-tools"],
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gnome-desktop",
-                    "branch": "gnome-3-18"
+                    "url": "git://git.gnome.org/gnome-desktop"
                 }
             ]
         },
