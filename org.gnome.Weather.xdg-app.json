@@ -1,19 +1,14 @@
 {
     "app-id": "org.gnome.Weather",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "master",
+    "runtime-version": "3.18",
     "sdk": "org.gnome.Sdk",
-    "command": "gnome-weather",
+    "command": "/lib/org.gnome.Weather/org.gnome.Weather.Application",
     "finish-args": [
-        /* X11 + XShm access */
         "--share=ipc", "--socket=x11",
-        /* Wayland access */
         "--socket=wayland",
-        /* Needs to talk to the network: */
         "--share=network",
-        /* Needed to get geo-positioning */
         "--system-talk-name=org.freedesktop.GeoClue2",
-        /* Needed for dconf to work (unfortunately needs homedir read access) */
         "--filesystem=home:ro", "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
     "build-options" : {
@@ -26,12 +21,21 @@
     "cleanup": ["/include", "/lib/pkgconfig",
                 "/share/pkgconfig", "/share/aclocal",
                 "/man", "/share/man", "/share/gtk-doc",
-                "/share/vala",
+                "/share/vala", "/bin/gnome-weather",
                 "*.la", "*.a"],
-    "cleanup-commands": [ "desktop-file-edit \"--set-name=(Nightly) Weather\" /app/share/applications/org.gnome.Weather.Application.desktop" ],
     "modules": [
         {
+            "name": "m4-common",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "git://git.gnome.org/m4-common"
+                }
+            ]
+        },
+        {
             "name": "geocode-glib",
+            "config-opts": ["--disable-static"],
             "sources": [
                 {
                     "type": "git",
@@ -41,11 +45,25 @@
         },
         {
             "name": "libgweather",
-            "config-opts": ["--disable-vala"],
+            "config-opts": ["--disable-static", "--disable-vala"],
             "sources": [
                 {
                     "type": "git",
                     "url": "git://git.gnome.org/libgweather"
+                }
+            ]
+        },
+        {
+            "name": "geoclue",
+            "config-opts": [ "--disable-static", "--disable-3g-source",
+                             "--disable-cdma-source", "--disable-modem-gps-source",
+                             "--disable-nmea-source" ],
+            "cleanup": [ "/share/dbus-1", "/share/applications",
+                         "/libexec", "/etc" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "git://anongit.freedesktop.org/geoclue"
                 }
             ]
         },
@@ -55,7 +73,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gnome-desktop"
+                    "url": "git://git.gnome.org/gnome-desktop",
+                    "branch": "gnome-3-18"
                 }
             ]
         },
