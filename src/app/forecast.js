@@ -66,12 +66,13 @@ const ForecastBox = new Lang.Class({
             let datetime = GLib.DateTime.new_from_unix_local(date);
 
             if (Util.arrayEqual(now.get_ymd(), datetime.get_ymd())) {
+                ret.push(info);
                 current = datetime;
                 break;
             }
         }
 
-        for ( ; i < infos.length; i++) {
+        for (i++ ; i < infos.length; i++) {
             let info = infos[i];
 
             let [ok, date] = info.get_value_update();
