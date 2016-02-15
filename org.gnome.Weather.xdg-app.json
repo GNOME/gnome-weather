@@ -3,7 +3,7 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.18",
     "sdk": "org.gnome.Sdk",
-    "command": "/lib/org.gnome.Weather/org.gnome.Weather.Application",
+    "command": "/app/share/org.gnome.Weather/org.gnome.Weather.Application",
     "finish-args": [
         "--share=ipc", "--socket=x11",
         "--socket=wayland",
