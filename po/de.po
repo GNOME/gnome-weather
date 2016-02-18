@@ -1,7 +1,7 @@
 # German translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2013.
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2013, 2016.
 # Christian Kirbach <christian.kirbach@gmail.com>, 2013.
 # Benjamin Steinwender <b@stbe.at>, 2013.
 # Tobias Endrigkeit <tobiasendrigkeit@outlook.com>, 2013.
@@ -11,16 +11,16 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-03-09 21:32+0000\n"
-"PO-Revision-Date: 2015-03-10 06:52+0100\n"
-"Last-Translator: Simon Linden <xhi2018@googlemail.com>\n"
+"POT-Creation-Date: 2016-02-17 23:18+0000\n"
+"PO-Revision-Date: 2016-02-18 09:09+0100\n"
+"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.7\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -28,7 +28,7 @@ msgstr "_Neu"
 
 #: ../data/app-menu.ui.h:2
 msgid "Temperature unit"
-msgstr "Temperatureinheit:"
+msgstr "Temperatureinheit"
 
 #: ../data/app-menu.ui.h:3
 msgid "Celsius"
@@ -56,7 +56,7 @@ msgstr "Laden …"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:213 ../src/service/main.js:49
+#: ../src/app/window.js:226 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Wetter"
 
@@ -71,7 +71,7 @@ msgid ""
 "conditions for your city, or anywhere in the world."
 msgstr ""
 "Eine kleine Anwendung, welche es Ihnen erlaubt, das aktuelle Wetter für Ihre "
-"Stadt, oder für einen beliebigen Ort auf der Welt zu betrachten."
+"Stadt oder für einen beliebigen Ort auf der Welt zu betrachten."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
@@ -80,7 +80,7 @@ msgid ""
 msgstr ""
 "Bietet Zugang zu detaillierter Wettervorhersage über bis zu 7 Tage mit "
 "stündlichen Details für den laufenden und den folgenden Tag auf Basis "
-"mehrerer Internetdienste"
+"mehrerer Internetdienste."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
@@ -96,6 +96,10 @@ msgstr ""
 msgid "Weather;Forecast;"
 msgstr "Wetter;Vorhersage;"
 
+#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+msgid "Allows weather information to be displayed for your location."
+msgstr "Ermöglicht die Anzeige von Wetterinformationen für Ihren Ort."
+
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
 msgstr "Eingerichtete Städte, für die das Wetter angezeigt wird"
@@ -110,19 +114,19 @@ msgstr ""
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
 msgid "Automatic location"
-msgstr "automatischer Ort"
+msgstr "Automatischer Ort"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:4
 msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 msgstr ""
-"Die Einstellung »automatischer Ort« legt fest, ob automatisch das Wetter des "
+"Die Einstellung »Automatischer Ort« legt fest, ob automatisch das Wetter des "
 "aktuellen Ortes angezeigt werden soll."
 
 #: ../data/places-popover.ui.h:1
 msgid "Automatic Location"
-msgstr "automatischer Ort"
+msgstr "Automatischer Ort"
 
 #: ../data/places-popover.ui.h:2
 msgid "Locating…"
@@ -130,7 +134,7 @@ msgstr "Lokalisieren …"
 
 #: ../data/places-popover.ui.h:3
 msgid "Search for a city"
-msgstr "Nach einer Stadt suchen:"
+msgstr "Nach einer Stadt suchen"
 
 #: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
@@ -138,7 +142,7 @@ msgstr "Kürzlich angeschaut"
 
 #: ../data/weather-widget.ui.h:1
 msgid "Current conditions"
-msgstr "Momentane Bedingungen:"
+msgstr "Momentane Bedingungen"
 
 #: ../data/weather-widget.ui.h:2
 msgid "Today"
@@ -162,25 +166,23 @@ msgstr "Nach einem Ort suchen"
 
 #: ../data/window.ui.h:4
 msgid "To see weather information, enter the name of a city."
-msgstr "Bitte einen Ort angeben, um das Wetter dort anzuzeigen"
-
-#: ../src/app/city.js:289
-msgid "%H:%M"
-msgstr "%H:%M"
+msgstr "Bitte geben Sie einen Ort an, um das Wetter dort anzuzeigen."
 
 #: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Vorhersage"
 
-#: ../src/app/forecast.js:110
+#: ../src/app/forecast.js:111
 msgid "Forecast not available"
 msgstr "Vorhersage nicht verfügbar"
 
-#: ../src/app/forecast.js:126
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/app/forecast.js:127
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: ../src/app/forecast.js:129
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/app/forecast.js:130
 msgid "%R"
 msgstr "%R"
 
@@ -188,52 +190,43 @@ msgstr "%R"
 msgid "Weekly Forecast"
 msgstr "Vorhersage für die Woche"
 
-#: ../src/app/weeklyForecast.js:107
+#. Translators: this is the time format for full weekday name according to the current locale
+#: ../src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:112
+#: ../src/app/window.js:115
 msgid "Select Location"
 msgstr "Ort wählen"
 
-#: ../src/app/window.js:212
+#: ../src/app/window.js:225
 msgid "translator-credits"
 msgstr ""
 "Christian Kirbach <christian.kirbach@gmail.com>, 2013\n"
-"Benjamin Steinwender <b@stbe.at>, 2014"
+"Benjamin Steinwender <b@stbe.at>, 2014\n"
+"Mario Blättermann <mario.blaettermann@gmail.com>, 2016"
 
-#: ../src/app/window.js:214
+#: ../src/app/window.js:227
 msgid "A weather application"
 msgstr "Eine Wetter-Anwendung"
 
-#: ../src/app/world.js:38
+#: ../src/app/world.js:39
 msgid "World view"
 msgstr "Weltansicht"
 
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
 #: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/service/searchProvider.js:184
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#~ msgid "Detailed forecast"
-#~ msgstr "Detaillierte Vorhersage"
-
-#~ msgid "Select All"
-#~ msgstr "Alle auswählen"
-
-#~ msgid "Select None"
-#~ msgstr "Nichts auswählen"
-
-#~ msgid "Click on locations to select them"
-#~ msgstr "Klicken Sie auf Orte, um diese auszuwählen"
-
-#~ msgid "New"
-#~ msgstr "Neu"
-
-#~ msgid "Back"
-#~ msgstr "Zurück"
