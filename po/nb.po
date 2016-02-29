@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of gnome-weather.
 # Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Kjartan Maraas <kmaraas@gnome.org>, 2013-2015.
+# Kjartan Maraas <kmaraas@gnome.org>, 2013-2016.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-weather 3.15.x\n"
-"Report-Msgid-Bugs-To:\n"
-"POT-Creation-Date: 2015-02-09 19:08+0100\n"
-"PO-Revision-Date: 2015-02-09 19:09+0100\n"
+"Project-Id-Version: gnome-weather 3.19.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-29 21:50+0100\n"
+"PO-Revision-Date: 2016-02-29 21:51+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language:\n"
@@ -42,31 +42,23 @@ msgid "Quit"
 msgstr "Avslutt"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "Nåværende forhold"
+msgid "City view"
+msgstr "Byvisning"
 
 #: ../data/city.ui.h:2
-msgid "Today"
-msgstr "I dag"
+msgid "Loading…"
+msgstr "Laster …"
 
-#: ../data/city.ui.h:3
-msgid "Tomorrow"
-msgstr "I morgen"
-
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../src/app/main.js:52 ../src/app/window.js:192 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../src/app/window.js:226 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Vær"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Vis værforhold og værmelding"
-
-#: ../data/org.gnome.Weather.Application.desktop.in.h:3
-msgid "Weather;Forecast;"
-msgstr "Vær;Værmelding;"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
@@ -92,6 +84,14 @@ msgid ""
 msgstr ""
 "Integrerer også med GNOME skallet, og lar deg se tilstanden i de mest brukte "
 "byene ved å søke etter navnet i aktivitetsoversikten."
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Vær;Værmelding;"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+msgid "Allows weather information to be displayed for your location."
+msgstr "Viser informasjon om været på stedet du befinner deg."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -133,6 +133,18 @@ msgstr "Søk etter en by"
 msgid "Viewed Recently"
 msgstr "Nylig vist"
 
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "Nåværende forhold"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "I dag"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "I morgen"
+
 #: ../data/window.ui.h:1
 msgid "Places"
 msgstr "Steder"
@@ -149,33 +161,21 @@ msgstr "Søk etter en lokasjon"
 msgid "To see weather information, enter the name of a city."
 msgstr "Oppgi navnet på en by for å se informasjon om vær."
 
-#: ../src/app/city.js:190
-msgid "City view"
-msgstr "Byvisning"
-
-#: ../src/app/city.js:199
-msgid "Loading…"
-msgstr "Laster …"
-
-#: ../src/app/city.js:273
-msgid "%H:%M"
-msgstr "%H.%M"
-
 #: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Værmelding"
 
-#: ../src/app/forecast.js:110
+#: ../src/app/forecast.js:111
 msgid "Forecast not available"
 msgstr "Værmelding ikke tilgjengelig"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:126
+#: ../src/app/forecast.js:127
 msgid "%l∶%M %p"
 msgstr "%H.%M"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:129
+#: ../src/app/forecast.js:130
 msgid "%R"
 msgstr "%R"
 
@@ -184,23 +184,23 @@ msgid "Weekly Forecast"
 msgstr "Værmelding for uken"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: ../src/app/weeklyForecast.js:107
+#: ../src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:120
+#: ../src/app/window.js:115
 msgid "Select Location"
 msgstr "Velg lokasjon"
 
-#: ../src/app/window.js:191
+#: ../src/app/window.js:225
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: ../src/app/window.js:193
+#: ../src/app/window.js:227
 msgid "A weather application"
 msgstr "Et program for vær"
 
-#: ../src/app/world.js:38
+#: ../src/app/world.js:39
 msgid "World view"
 msgstr "Verdensvisning"
 
@@ -215,7 +215,7 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:182
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
