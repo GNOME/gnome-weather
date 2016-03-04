@@ -3,21 +3,23 @@
 # This file is distributed under the same license as the Gnome Weather package.
 # Reinout van Schouwen <reinouts@gnome.org>, 2013.
 # Erwin Poeze <donnut@outlook.com>, 2014.
+# Nathan Follens <nthn@unseen.is>, 2016.
+# Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gnome Weather\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-19 21:14+0000\n"
-"PO-Revision-Date: 2015-04-03 13:13+0100\n"
-"Last-Translator: Nathan Follens <nthn@unseen.is>\n"
-"Language-Team: Dutch <vertaling@vrijschrift.org>\n"
+"POT-Creation-Date: 2016-03-03 23:16+0000\n"
+"PO-Revision-Date: 2016-03-04 10:18+0100\n"
+"Last-Translator: Hannie Dumoleyn <hannie@ubuntu-nl.org>\n"
+"Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Lokalize 1.5\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
@@ -68,17 +70,17 @@ msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
 msgstr ""
-"Een kleine toepassing die u de huidige weersomstandigheden laat bijhouden "
-"voor uw woonplaats, of waar ook ter wereld."
+"Een kleine toepassing waarmee u de actuele weersomstandigheden kunt volgen in "
+"uw woonplaats, of waar ook ter wereld."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Het biedt toegang tot gedetailleerde weersverwachtingen, tot aan 7 dagen "
-"vooruit, met details voor elk uur voor de huidige en volgende dag, geleverd "
-"door diverse internetdiensten."
+"U krijgt gedetailleerde weersverwachtingen, tot aan 7 dagen vooruit, met elk "
+"uur nieuwe informatie voor de huidige en volgende dag, geleverd door diverse "
+"internetdiensten."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
@@ -86,25 +88,30 @@ msgid ""
 "current conditions of the most recently searched cities by just typing its "
 "name in the Activities Overview."
 msgstr ""
-"Het integreert ook desgewenst met de GNOME Shell en laat u toe de huidige "
-"toestand te zien van de meest recent gezochte steden door gewoon de naam "
-"ervan in te geven in het activiteitenoverzicht."
+"Het integreert ook desgewenst met de Gnome Shell en biedt u de mogelijkheid "
+"de huidige weersomstandigheden te zien van de meest recent gezochte steden "
+"door gewoon de naam ervan in te geven in het activiteitenoverzicht."
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
 msgid "Weather;Forecast;"
 msgstr "Weather;Weer;Forecast;Verwachtingen;"
 
+#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+#| msgid "To see weather information, enter the name of a city."
+msgid "Allows weather information to be displayed for your location."
+msgstr "U kunt weerinformatie voor uw locatie bekijken."
+
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
-msgstr "Geconfigureerde steden om het weer van te tonen"
+msgstr "Steden waarvan het weer wordt getoond"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:2
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Locaties getoond in het wereldoverzicht van gnome-weather. Iedere waarde is "
-"een GVariant afkomstig van gweather_location_serialize()."
+"Locaties getoond in het wereldoverzicht van gnome-weer. Iedere waarde is een "
+"GVariant afkomstig van gweather_location_serialize()."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
 msgid "Automatic location"
@@ -115,8 +122,8 @@ msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 msgstr ""
-"De automatische locatie is de waarde van de automatische-locatie schakelaar "
-"die bepaalt of de huidige locatie moet worden opgehaald of niet."
+"De automatische locatie is de waarde van de automatische locatie-knop die "
+"bepaalt of de huidige locatie moet worden opgehaald of niet."
 
 #: ../data/places-popover.ui.h:1
 msgid "Automatic Location"
@@ -132,7 +139,7 @@ msgstr "Naar een stad zoeken"
 
 #: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
-msgstr "Recent bekeken"
+msgstr "Onlangs bekeken"
 
 #: ../data/weather-widget.ui.h:1
 msgid "Current conditions"
@@ -164,25 +171,25 @@ msgstr "Voer de naam van een stad in om de weersverwachtingen te bekijken."
 
 #: ../src/app/forecast.js:37
 msgid "Forecast"
-msgstr "Verwachtingen"
+msgstr "Weersverwachtingen"
 
-#: ../src/app/forecast.js:110
+#: ../src/app/forecast.js:111
 msgid "Forecast not available"
-msgstr "Verwachtingen niet beschikbaar"
+msgstr "Weersverwachtingen niet beschikbaar"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:126
+#: ../src/app/forecast.js:127
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:129
+#: ../src/app/forecast.js:130
 msgid "%R"
 msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
 msgid "Weekly Forecast"
-msgstr "Wekelijkse verwachtingen"
+msgstr "Wekelijkse weersverwachtingen"
 
 #. Translators: this is the time format for full weekday name according to the current locale
 #: ../src/app/weeklyForecast.js:121
@@ -195,7 +202,12 @@ msgstr "Locatie selecteren"
 
 #: ../src/app/window.js:225
 msgid "translator-credits"
-msgstr "Erwin Poeze <donnut@outlook.com>"
+msgstr ""
+"Erwin Poeze\n"
+"Hannie Dumoleyn\n"
+"Nathan Follens\n"
+"\n"
+"Kijk voor meer info op http://nl.gnome.org/"
 
 #: ../src/app/window.js:227
 msgid "A weather application"
