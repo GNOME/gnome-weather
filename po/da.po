@@ -1,23 +1,25 @@
 # Danish translation for gnome-weather.
 # Copyright (C) 2013, 2015 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-#
 # Kris Thomsen <mail@kristhomsen.dk>, 2013-2014.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2014-2015.
-#
+# scootergrisen, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-15 14:44+0100\n"
-"PO-Revision-Date: 2015-03-14 03:30+0100\n"
-"Last-Translator: Kris Thomsen <mail@kristhomsen.dk>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-03-01 11:18+0000\n"
+"PO-Revision-Date: 2016-03-01 22:35+0200\n"
+"Last-Translator: scootergrisen\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -53,7 +55,7 @@ msgstr "Indlæser…"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:213 ../src/service/main.js:49
+#: ../src/app/window.js:226 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Vejr"
 
@@ -91,6 +93,11 @@ msgstr ""
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
 msgid "Weather;Forecast;"
 msgstr "Vejr;Vejrudsigt;"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+#| msgid "To see weather information, enter the name of a city."
+msgid "Allows weather information to be displayed for your location."
+msgstr "Tillader at vejrinformation bliver vist for din placering."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -160,25 +167,21 @@ msgstr "Søg efter en placering"
 msgid "To see weather information, enter the name of a city."
 msgstr "Indtast et bynavn for at få vejrinformation."
 
-#: ../src/app/city.js:289
-msgid "%H:%M"
-msgstr "%H:%M"
-
 #: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Vejrudsigt"
 
-#: ../src/app/forecast.js:110
+#: ../src/app/forecast.js:111
 msgid "Forecast not available"
 msgstr "Vejrudsigt ikke tilgængelig"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:126
+#: ../src/app/forecast.js:127
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:129
+#: ../src/app/forecast.js:130
 msgid "%R"
 msgstr "%R"
 
@@ -191,24 +194,25 @@ msgstr "Ugentlig vejrudsigt"
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:112
+#: ../src/app/window.js:115
 msgid "Select Location"
 msgstr "Vælg placering"
 
-#: ../src/app/window.js:212
+#: ../src/app/window.js:225
 msgid "translator-credits"
 msgstr ""
 "Kris Thomsen\n"
 "Ask Hjorth Larsen\n"
+"scootergrisen\n"
 "\n"
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/app/window.js:214
+#: ../src/app/window.js:227
 msgid "A weather application"
 msgstr "Et vejr-program"
 
-#: ../src/app/world.js:38
+#: ../src/app/world.js:39
 msgid "World view"
 msgstr "Verdensvisning"
 
@@ -223,239 +227,7 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:184
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
-#~ msgid "Detailed forecast"
-#~ msgstr "Detaljeret vejrudsigt"
-
-#~ msgid "Select All"
-#~ msgstr "Vælg alle"
-
-#~ msgid "Select None"
-#~ msgstr "Vælg ingen"
-
-#~ msgid "Click on locations to select them"
-#~ msgstr "Klik på lokationer for at vælge dem"
-
-#~ msgid "New"
-#~ msgstr "Ny"
-
-#~ msgid "Back"
-#~ msgstr "Tilbage"
-
-#~ msgid "Select"
-#~ msgstr "Vælg"
-
-#~ msgid "Cancel"
-#~ msgstr "Annullér"
-
-#~ msgid "Delete"
-#~ msgstr "Slet"
-
-#~ msgid "More…"
-#~ msgstr "Flere…"
-
-#~ msgid "Forecast for Tomorrow"
-#~ msgstr "Vejrudsigt for i morgen"
-
-#~ msgid "%B %d"
-#~ msgstr "%B %d"
-
-#~ msgid "Monday night"
-#~ msgstr "Mandag nat"
-
-#~ msgid "Monday morning"
-#~ msgstr "Mandag morgen"
-
-#~ msgid "Monday afternoon"
-#~ msgstr "Mandag eftermiddag"
-
-#~ msgid "Monday evening"
-#~ msgstr "Mandag aften"
-
-#~ msgid "Tuesday night"
-#~ msgstr "Tirsdag nat"
-
-#~ msgid "Tuesday morning"
-#~ msgstr "Tirsdag morgen"
-
-#~ msgid "Tuesday afternoon"
-#~ msgstr "Tirsdag eftermiddag"
-
-#~ msgid "Tuesday evening"
-#~ msgstr "Tirsdag aften"
-
-#~ msgid "Wednesday night"
-#~ msgstr "Onsdag nat"
-
-#~ msgid "Wednesday morning"
-#~ msgstr "Onsdag morgen"
-
-#~ msgid "Wednesday afternoon"
-#~ msgstr "Onsdag eftermiddag"
-
-#~ msgid "Wednesday evening"
-#~ msgstr "Onsdag aften"
-
-#~ msgid "Thursday night"
-#~ msgstr "Torsdag nat"
-
-#~ msgid "Thursday morning"
-#~ msgstr "Torsdag morgen"
-
-#~ msgid "Thursday afternoon"
-#~ msgstr "Torsdag eftermiddag"
-
-#~ msgid "Thursday evening"
-#~ msgstr "Torsdag aften"
-
-#~ msgid "Friday night"
-#~ msgstr "Fredag nat"
-
-#~ msgid "Friday morning"
-#~ msgstr "Fredag morgen"
-
-#~ msgid "Friday afternoon"
-#~ msgstr "Fredag eftermiddag"
-
-#~ msgid "Friday evening"
-#~ msgstr "Fredag aften"
-
-#~ msgid "Saturday night"
-#~ msgstr "Lørdag nat"
-
-#~ msgid "Saturday morning"
-#~ msgstr "Lørdag morgen"
-
-#~ msgid "Saturday afternoon"
-#~ msgstr "Lørdag eftermiddag"
-
-#~ msgid "Saturday evening"
-#~ msgstr "Lørdag aften"
-
-#~ msgid "Sunday night"
-#~ msgstr "Søndag nat"
-
-#~ msgid "Sunday morning"
-#~ msgstr "Søndag morgen"
-
-#~ msgid "Sunday afternoon"
-#~ msgstr "Søndag eftermiddag"
-
-#~ msgid "Sunday evening"
-#~ msgstr "Søndag aften"
-
-#~ msgid "Tonight"
-#~ msgstr "I aften"
-
-#~ msgid "This morning"
-#~ msgstr "Denne morgen"
-
-#~ msgid "This afternoon"
-#~ msgstr "Denne eftermiddag"
-
-#~ msgid "This evening"
-#~ msgstr "Denne aften"
-
-#~ msgid "Tomorrow night"
-#~ msgstr "I morgen nat"
-
-#~ msgid "Tomorrow morning"
-#~ msgstr "I morgen tidlig"
-
-#~ msgid "Tomorrow afternoon"
-#~ msgstr "I morgen eftermiddag"
-
-#~ msgid "Tomorrow evening"
-#~ msgstr "I morgen aften"
-
-#~ msgid "%d selected"
-#~ msgid_plural "%d selected"
-#~ msgstr[0] "%d valgt"
-#~ msgstr[1] "%d valgte"
-
-#~ msgid "World Weather"
-#~ msgstr "Verdensvejr"
-
-#~ msgid "Cities"
-#~ msgstr "Byer"
-
-#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-#~ msgstr ""
-#~ "Brug knappen <b>Ny</b> i værktøjslinjen for at tilføje flere "
-#~ "verdenslokationer"
-
-#~ msgid "About Weather"
-#~ msgstr "Om Vejr"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Egenskaber"
-
-#~ msgid "Meters (m)"
-#~ msgstr "Meter (m)"
-
-#~ msgid "Kilometers (km)"
-#~ msgstr "Kilometer (km)"
-
-#~ msgid "Miles (mi)"
-#~ msgstr "Mil (mi)"
-
-#~ msgid "Preferences"
-#~ msgstr "Egenskaber"
-
-#~ msgid "Speed unit:"
-#~ msgstr "Hastighedsenhed:"
-
-#~ msgid "Distance unit:"
-#~ msgstr "Afstandsenhed:"
-
-#~ msgid "Pressure unit:"
-#~ msgstr "Trykenhed:"
-
-#~ msgid "Kilopascal (kPa)"
-#~ msgstr "Kilopascal (kPa)"
-
-#~ msgid "Hectopascal (hPa)"
-#~ msgstr "Hektopascal (hPa)"
-
-#~ msgid "Millibar (mbar)"
-#~ msgstr "Millibar (mbar)"
-
-#~ msgid "Millimeters of mercury (mmHg)"
-#~ msgstr "Milimeter af mercury (mmHg)"
-
-#~ msgid "Inches of mercury (inchHg)"
-#~ msgstr "Tommer af mercury (inchHg)"
-
-#~ msgid "Atmosphere (atm)"
-#~ msgstr "Atmosfære (atm)"
-
-#~ msgid "Meters per second (m/s)"
-#~ msgstr "Meter i sekundet (m/s)"
-
-#~ msgid "Kilometers per hour (km/h)"
-#~ msgstr "Kilometer i timen (km/t)"
-
-#~ msgid "Miles per hour (mph)"
-#~ msgstr "Mil i timen (mph)"
-
-#~ msgid "Knots"
-#~ msgstr "Knob"
-
-#~ msgid "Beaufort scale"
-#~ msgstr "Beaufort-skala"
-
-#~ msgid "Kelvin (K)"
-#~ msgstr "Kelvin (K)"
-
-#~ msgid "Centigrade (°C)"
-#~ msgstr "Celcius (°C)"
-
-#~ msgid "Done"
-#~ msgstr "Færdig"
-
-#~ msgid "Click on items to select them"
-#~ msgstr "Klik på elementer for at vælge dem"
