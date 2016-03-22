@@ -23,6 +23,7 @@
                 "/man", "/share/man", "/share/gtk-doc",
                 "/share/vala", "/bin/gnome-weather",
                 "*.la", "*.a"],
+    "cleanup-commands": ["appstream-compose --prefix=/app --origin=xdg-app --basename=org.gnome.Weather org.gnome.Weather.Application"],
     "modules": [
         {
             "name": "m4-common",

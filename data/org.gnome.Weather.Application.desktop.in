@@ -2,7 +2,7 @@
 Type=Application
 _Name=Weather
 _Comment=Show weather conditions and forecast
-Icon=org.gnome.Weather.Application
+Icon=org.gnome.Weather
 Exec=gapplication launch org.gnome.Weather.Application
 DBusActivatable=true
 StartupNotify=true

@@ -226,7 +226,7 @@ const MainWindow = new Lang.Class({
               program_name: _("Weather"),
               comments: _("A weather application"),
               license_type: Gtk.License.GPL_2_0,
-              logo_icon_name: 'org.gnome.Weather.Application',
+              logo_icon_name: 'org.gnome.Weather',
               version: pkg.version,
               website: 'https://wiki.gnome.org/Apps/Weather',
               wrap_license: true,
