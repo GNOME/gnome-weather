@@ -2,14 +2,14 @@
 # Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the libgweather package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
-# GunChleoc <fios@foramnagaidhlig.net>, 2014, 2015.
+# GunChleoc <fios@foramnagaidhlig.net>, 2014, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: libgweather\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-10-01 09:37+0000\n"
-"PO-Revision-Date: 2015-10-01 12:44+0100\n"
+"POT-Creation-Date: 2016-04-22 10:55+0000\n"
+"PO-Revision-Date: 2016-04-22 12:35+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "Language: gd\n"
@@ -94,9 +94,15 @@ msgstr ""
 "airson a' bhaile ud."
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
-#| msgid "Weekly Forecast"
 msgid "Weather;Forecast;"
 msgstr "Weather;Forecast;aimsir;sìde;ro-aithris;"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+#| msgid "To see weather information, enter the name of a city."
+msgid "Allows weather information to be displayed for your location."
+msgstr ""
+"Ceadaichidh seo gun dèid fiosrachadh na h-aimsire far a bheil thu a "
+"shealltainn."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -172,17 +178,17 @@ msgstr "Cuir a-steach ainm baile gus fiosrachadh na h-aimsire a shealltainn."
 msgid "Forecast"
 msgstr "Ro-aithris"
 
-#: ../src/app/forecast.js:110
+#: ../src/app/forecast.js:111
 msgid "Forecast not available"
 msgstr "Chan eil ro-aithris ri fhaighinn"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:126
+#: ../src/app/forecast.js:127
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:129
+#: ../src/app/forecast.js:130
 msgid "%R"
 msgstr "%R"
 
