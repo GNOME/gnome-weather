@@ -1,7 +1,8 @@
 {
     "app-id": "org.gnome.Weather",
+    "branch": "stable",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.18",
+    "runtime-version": "3.20",
     "sdk": "org.gnome.Sdk",
     "command": "/app/share/org.gnome.Weather/org.gnome.Weather.Application",
     "finish-args": [
@@ -27,21 +28,13 @@
     "cleanup-commands": ["appstream-compose --prefix=/app --origin=xdg-app --basename=org.gnome.Weather org.gnome.Weather.Application"],
     "modules": [
         {
-            "name": "m4-common",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "git://git.gnome.org/m4-common"
-                }
-            ]
-        },
-        {
             "name": "geocode-glib",
             "config-opts": ["--disable-static"],
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/geocode-glib"
+                    "url": "git://git.gnome.org/geocode-glib",
+                    "branch": "3.20.1"
                 }
             ]
         },
@@ -51,21 +44,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/libgweather"
-                }
-            ]
-        },
-        {
-            "name": "geoclue",
-            "config-opts": [ "--disable-static", "--disable-3g-source",
-                             "--disable-cdma-source", "--disable-modem-gps-source",
-                             "--disable-nmea-source" ],
-            "cleanup": [ "/share/dbus-1", "/share/applications",
-                         "/libexec", "/etc" ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "git://anongit.freedesktop.org/geoclue"
+                    "url": "git://git.gnome.org/libgweather",
+                    "branch": "3.20.1"
                 }
             ]
         },
@@ -76,7 +56,7 @@
                 {
                     "type": "git",
                     "url": "git://git.gnome.org/gnome-desktop",
-                    "branch": "gnome-3-18"
+                    "branch": "3.20.1"
                 }
             ]
         },
@@ -85,7 +65,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gnome-weather"
+                    "url": "git://git.gnome.org/gnome-weather",
+                    "branch": "3.20.1"
                 }
             ]
         }

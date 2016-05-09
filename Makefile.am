@@ -26,7 +26,9 @@ GITIGNOREFILES = \
 	rpms/ \
 	xdg-app/ \
 	.xdg-app-builder/ \
-	xdg-app-build.sh
+	xdg-app-build.sh \
+	.build \
+	.buildconfig
 
 distdir = $(PACKAGE_TARNAME)-$(VERSION)
 
