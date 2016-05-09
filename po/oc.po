@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-02-15 20:46+0000\n"
-"PO-Revision-Date: 2016-02-24 18:27+0200\n"
+"POT-Creation-Date: 2016-04-29 10:46+0000\n"
+"PO-Revision-Date: 2016-05-08 18:55+0200\n"
 "Last-Translator: Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>\n"
 "Language-Team: Tot En Òc\n"
 "Language: oc\n"
@@ -95,7 +95,6 @@ msgid "Weather;Forecast;"
 msgstr "Meteorologia;Previsions;"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:4
-#| msgid "To see weather information, enter the name of a city."
 msgid "Allows weather information to be displayed for your location."
 msgstr "Permet d'afichar las previsions meteorologicas per vòstre emplaçament."
 
@@ -266,7 +265,7 @@ msgstr "%s, %s"
 #~ msgstr "%B %d"
 
 #~ msgid "Monday night"
-#~ msgstr "Diluns de nuèch"
+#~ msgstr "Diluns de nuèit"
 
 #~ msgid "Monday morning"
 #~ msgstr "Diluns matin"
@@ -278,7 +277,7 @@ msgstr "%s, %s"
 #~ msgstr "Diluns de ser"
 
 #~ msgid "Tuesday night"
-#~ msgstr "Dimars de nuèch"
+#~ msgstr "Dimars de nuèit"
 
 #~ msgid "Tuesday morning"
 #~ msgstr "Dimars matin"
@@ -290,7 +289,7 @@ msgstr "%s, %s"
 #~ msgstr "Dimars de ser"
 
 #~ msgid "Wednesday night"
-#~ msgstr "Dimècres de nuèch"
+#~ msgstr "Dimècres de nuèit"
 
 #~ msgid "Wednesday morning"
 #~ msgstr "Dimècres matin"
@@ -302,7 +301,7 @@ msgstr "%s, %s"
 #~ msgstr "Dimècres de ser"
 
 #~ msgid "Thursday night"
-#~ msgstr "Dijòus de nuèch"
+#~ msgstr "Dijòus de nuèit"
 
 #~ msgid "Thursday morning"
 #~ msgstr "Dijòus matin"
@@ -314,7 +313,7 @@ msgstr "%s, %s"
 #~ msgstr "Dijòus de ser"
 
 #~ msgid "Friday night"
-#~ msgstr "Divendres de nuèch"
+#~ msgstr "Divendres de nuèit"
 
 #~ msgid "Friday morning"
 #~ msgstr "Divendres matin"
@@ -326,7 +325,7 @@ msgstr "%s, %s"
 #~ msgstr "Divendres de ser"
 
 #~ msgid "Saturday night"
-#~ msgstr "Dissabte de nuèch"
+#~ msgstr "Dissabte de nuèit"
 
 #~ msgid "Saturday morning"
 #~ msgstr "Dissabte matin"
@@ -338,7 +337,7 @@ msgstr "%s, %s"
 #~ msgstr "Dissabte de ser"
 
 #~ msgid "Sunday night"
-#~ msgstr "Dimenge de nuèch"
+#~ msgstr "Dimenge de nuèit"
 
 #~ msgid "Sunday morning"
 #~ msgstr "Dimenge matin"
@@ -350,7 +349,7 @@ msgstr "%s, %s"
 #~ msgstr "Dimenge de ser"
 
 #~ msgid "Tonight"
-#~ msgstr "Aquesta nuèch"
+#~ msgstr "Aquesta nuèit"
 
 #~ msgid "This morning"
 #~ msgstr "Aqueste matin"
@@ -362,7 +361,7 @@ msgstr "%s, %s"
 #~ msgstr "Aqueste ser"
 
 #~ msgid "Tomorrow night"
-#~ msgstr "Deman de nuèch"
+#~ msgstr "Deman de nuèit"
 
 #~ msgid "Tomorrow morning"
 #~ msgstr "Deman matin"
