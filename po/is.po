@@ -1,14 +1,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn í Felli <sv1@fellsnet.is>, 2015.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-01-15 09:17+0000\n"
-"PO-Revision-Date: 2015-01-28 08:58+0000\n"
+"POT-Creation-Date: 2016-05-05 10:57+0000\n"
+"PO-Revision-Date: 2016-05-15 10:53+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
@@ -43,31 +43,25 @@ msgid "Quit"
 msgstr "Hætta"
 
 #: ../data/city.ui.h:1
-msgid "Current conditions"
-msgstr "Núverandi skilyrði"
+msgid "City view"
+msgstr "Skoða borg"
 
 #: ../data/city.ui.h:2
-msgid "Today"
-msgstr "Í dag"
+msgid "Loading…"
+msgstr "Hleð..."
 
-#: ../data/city.ui.h:3
-msgid "Tomorrow"
-msgstr "Á morgun"
-
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:192 ../src/service/main.js:49
+#: ../src/app/window.js:226 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Veður"
 
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Birta veðurslýsingar og veðurspár"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:3
-msgid "Weather;Forecast;"
-msgstr "Veðurspá;Veðurspá;"
-
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -75,16 +69,16 @@ msgstr ""
 "Lítið forrit til að fylgjast með veðurskilyrðum og spám fyrir ákveðinn stað, "
 "eða í heiminum öllum."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Það veitir aðgang að nákvæmum veðurspám, allt upp í 7 daga fram í tímann, með "
-"upplýsingar á klukkustundar fresti fyrir næstu 2 daga; það styðst við ýmsar "
-"þjónustur á internetinu."
+"Það veitir aðgang að nákvæmum veðurspám, allt upp í 7 daga fram í tímann, "
+"með upplýsingar á klukkustundar fresti fyrir næstu 2 daga; það styðst við "
+"ýmsar þjónustur á internetinu."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -93,6 +87,15 @@ msgstr ""
 "Hægt er að fella það inn í GNOME Skelina, þannig að þú getur séð "
 "veðurskilyrði í þeim borgum sem síðast hefur verið leitað að með því einu að "
 "slá nafn þeirra inn í aðgerðayfirlitið."
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Veðurspá;Veðurspá;"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+#| msgid "To see weather information, enter the name of a city."
+msgid "Allows weather information to be displayed for your location."
+msgstr "Gerir kleift að birta veðurupplýsingar fyrir staðinn þar sem þú ert."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -134,6 +137,18 @@ msgstr "Leita að borg"
 msgid "Viewed Recently"
 msgstr "Nýlega skoðað"
 
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "Núverandi skilyrði"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "Í dag"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "Á morgun"
+
 #: ../data/window.ui.h:1
 msgid "Places"
 msgstr "Staðir"
@@ -150,31 +165,21 @@ msgstr "Leita að staðsetningu"
 msgid "To see weather information, enter the name of a city."
 msgstr "Til að skoða veðurupplýsingar, settu inn nafn á borg."
 
-#: ../src/app/city.js:190
-msgid "City view"
-msgstr "Skoða borg"
-
-#: ../src/app/city.js:199
-msgid "Loading…"
-msgstr "Hleð..."
-
-#: ../src/app/city.js:273
-msgid "%H:%M"
-msgstr "%H:%M"
-
 #: ../src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Veðurspá"
 
-#: ../src/app/forecast.js:110
+#: ../src/app/forecast.js:111
 msgid "Forecast not available"
 msgstr "Veðurspá ekki tiltæk"
 
-#: ../src/app/forecast.js:126
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/app/forecast.js:127
 msgid "%l∶%M %p"
 msgstr "%l:%M"
 
-#: ../src/app/forecast.js:129
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/app/forecast.js:130
 msgid "%R"
 msgstr "%R"
 
@@ -182,34 +187,42 @@ msgstr "%R"
 msgid "Weekly Forecast"
 msgstr "Veðurspá vikunnar"
 
-#: ../src/app/weeklyForecast.js:107
+#. Translators: this is the time format for full weekday name according to the current locale
+#: ../src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:120
+#: ../src/app/window.js:115
 msgid "Select Location"
 msgstr "Veldu staðsetningu"
 
-#: ../src/app/window.js:191
+#: ../src/app/window.js:225
 msgid "translator-credits"
 msgstr "Sveinn í Felli, sv1@fellsnet.is"
 
-#: ../src/app/window.js:193
+#: ../src/app/window.js:227
 msgid "A weather application"
 msgstr "Veðurforrit"
 
-#: ../src/app/world.js:38
+#: ../src/app/world.js:39
 msgid "World view"
 msgstr "Skoða heiminn"
 
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
 #: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
-#: ../src/service/searchProvider.js:182
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/service/searchProvider.js:183
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-
+#~ msgid "%H:%M"
+#~ msgstr "%H:%M"
