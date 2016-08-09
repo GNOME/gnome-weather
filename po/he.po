@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-19 21:06+0200\n"
-"PO-Revision-Date: 2015-11-19 21:07+0200\n"
+"POT-Creation-Date: 2016-08-09 18:57+0300\n"
+"PO-Revision-Date: 2016-08-09 18:58+0300\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: עברית <>\n"
 "Language: he\n"
@@ -92,6 +92,10 @@ msgstr ""
 msgid "Weather;Forecast;"
 msgstr "תחזית;מזג אוויר;תחזית שבועית;"
 
+#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+msgid "Allows weather information to be displayed for your location."
+msgstr "מאפשר הצגת מידע על מזג האוויר באיזור שלך"
+
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
 msgstr "Configured cities to show weather for"
@@ -164,17 +168,17 @@ msgstr "כדי לראות מידע על מזג אוויר, יש להזין שם 
 msgid "Forecast"
 msgstr "תחזית"
 
-#: ../src/app/forecast.js:110
+#: ../src/app/forecast.js:111
 msgid "Forecast not available"
 msgstr "תחזית אינה זמינה"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:126
+#: ../src/app/forecast.js:127
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:129
+#: ../src/app/forecast.js:130
 msgid "%R"
 msgstr "%R"
 
