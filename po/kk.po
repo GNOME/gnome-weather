@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-03-04 23:17+0000\n"
-"PO-Revision-Date: 2016-03-05 15:27+0500\n"
+"POT-Creation-Date: 2016-05-05 10:57+0000\n"
+"PO-Revision-Date: 2016-09-11 18:38+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.9\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -91,7 +91,7 @@ msgstr ""
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
 msgid "Weather;Forecast;"
-msgstr "Ауа райы;Болжам;"
+msgstr "Ауа райы;Болжам;Weather;"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:4
 msgid "Allows weather information to be displayed for your location."
