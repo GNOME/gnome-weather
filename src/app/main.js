@@ -48,7 +48,8 @@ const Application = new Lang.Class({
     Extends: Gtk.Application,
 
     _init: function() {
-        this.parent({ application_id: pkg.name });
+        this.parent({ application_id: pkg.name,
+                      flags: Gio.ApplicationFlags.CAN_OVERRIDE_APP_ID });
         GLib.set_application_name(_("Weather"));
         Gtk.Window.set_default_icon_name("org.gnome.Weather");
     },

@@ -30,7 +30,7 @@ GJS_MIN_VERSION=1.39.91
 PKG_CHECK_MODULES([DEPS], [gdk-3.0
                            gdk-pixbuf-2.0
                            gio-2.0
-                           glib-2.0
+                           glib-2.0 >= 2.48
                            gobject-2.0
                            gtk+-3.0 >= 3.11.4
                            libgeoclue-2.0 >= 2.3.1
