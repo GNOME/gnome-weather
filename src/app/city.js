@@ -188,6 +188,10 @@ var WeatherWidget = new Lang.Class({
         for (let t of ['today', 'tomorrow'])
             this._forecasts[t].update(forecasts, t);
 
+        if (!this._forecasts['today'].hasForecastInfo() && this._forecasts['tomorrow'].hasForecastInfo())
+            this._forecastStack.set_visible_child_name('tomorrow');
+
+        // FIXME: This doesn't make sense, since the above code assumes forecasts.length != 0.
         if (forecasts.length == 0) {
             this._weeklyForecasts.hide();
         } else {

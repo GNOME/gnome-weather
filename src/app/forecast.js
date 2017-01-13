@@ -45,6 +45,8 @@ var ForecastBox = new Lang.Class({
                                     margin_bottom: 12,
                                     column_homogeneous: true });
         this.add(this._grid);
+
+        this._hasForecastInfo = false;
     },
 
     // Ensure that infos are sufficiently spaced, and
@@ -145,9 +147,15 @@ var ForecastBox = new Lang.Class({
         let temperature = new Gtk.Label({ label: Util.getTemperature(info),
                                           visible: true });
         this._grid.attach(temperature, col, 2, 1, 1);
+
+        this._hasForecastInfo = true;
     },
 
     clear: function() {
         this._grid.foreach(function(w) { w.destroy(); });
+    },
+
+    hasForecastInfo: function() {
+        return this._hasForecastInfo;
     }
 });
