@@ -218,7 +218,7 @@ const MainWindow = new Lang.Class({
 
         let copyright = 'Copyright 2013-2015 The Weather Developers';
         let attribution = this._cityView.info ? this._cityView.info.get_attribution() : '';
-        let copyright = copyright + (attribution ? '\n' + attribution : '');
+        copyright += attribution ? '\n' + attribution : '';
         let aboutDialog = new Gtk.AboutDialog(
             { artists: artists,
               authors: [ 'Giovanni Campagna <gcampagna@src.gnome.org>' ],
