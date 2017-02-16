@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-03-01 11:18+0000\n"
+"Report-Msgid-Bugs-To: "
+"http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-05-05 10:57+0000\n"
 "PO-Revision-Date: 2016-03-01 22:35+0200\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -51,7 +51,7 @@ msgstr "Byvisning"
 
 #: ../data/city.ui.h:2
 msgid "Loading…"
-msgstr "Indlæser…"
+msgstr "Indlæser …"
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
@@ -77,8 +77,9 @@ msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Det tilbyder adgang til detaljerede vejrudsigter, op til syv dage, med time-"
-"detaljer for i dag og i morgen ved at benytte forskellige internettjenester."
+"Det tilbyder adgang til detaljerede vejrudsigter, op til syv dage, med "
+"time-detaljer for i dag og i morgen ved at benytte forskellige "
+"internettjenester."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
@@ -95,7 +96,6 @@ msgid "Weather;Forecast;"
 msgstr "Vejr;Vejrudsigt;"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:4
-#| msgid "To see weather information, enter the name of a city."
 msgid "Allows weather information to be displayed for your location."
 msgstr "Tillader at vejrinformation bliver vist for din placering."
 
@@ -129,7 +129,7 @@ msgstr "Automatisk placering"
 
 #: ../data/places-popover.ui.h:2
 msgid "Locating…"
-msgstr "Finder…"
+msgstr "Finder …"
 
 #: ../data/places-popover.ui.h:3
 msgid "Search for a city"
@@ -231,3 +231,4 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
