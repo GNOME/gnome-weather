@@ -18,15 +18,11 @@ MAINTAINERCLEANFILES = \
 	$(srcdir)/mkinstalldirs
 
 GITIGNOREFILES = \
-	.anjuta \
-	.anjuta_sym_db.db \
 	m4/intltool.m4 \
 	m4/libtool.m4 \
 	m4/lt* \
-	xdg-app/ \
-	.xdg-app-builder/ \
-	xdg-app-build.sh \
 	.build \
+	.flatpak-builder \
 	.buildconfig
 
 distdir = $(PACKAGE_TARNAME)-$(VERSION)
