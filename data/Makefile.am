@@ -21,7 +21,7 @@ gsettings_SCHEMAS = $(PACKAGE_NAME).Application.gschema.xml
 
 @GSETTINGS_RULES@
 
-appstream_XML = $(PACKAGE_NAME).Application.appdata.xml
+appstream_XML = $(PACKAGE_NAME).appdata.xml
 
 @APPSTREAM_XML_RULES@
 @INTLTOOL_XML_RULE@
@@ -54,7 +54,7 @@ EXTRA_DIST = \
 	$(PACKAGE_NAME).Application.data.gresource.xml \
 	$(PACKAGE_NAME).BackgroundService.data.gresource.xml \
 	$(gsettings_SCHEMAS) \
-	$(PACKAGE_NAME).Application.appdata.xml.in \
+	$(PACKAGE_NAME).appdata.xml.in \
 	$(app_resource_files) \
 	$(service_resource_files) \
 	$(NULL)
@@ -64,8 +64,8 @@ CLEANFILES = \
 	$(PACKAGE_NAME).BackgroundService.service \
 	$(PACKAGE_NAME).Application.data.gresource \
 	$(PACKAGE_NAME).BackgroundService.data.gresource \
-	$(PACKAGE_NAME).Application.appdata.xml \
-	$(PACKAGE_NAME).Application.appdata.valid \
+	$(PACKAGE_NAME).appdata.xml \
+	$(PACKAGE_NAME).appdata.valid \
 	$(apps_DATA) \
 	*.valid \
 	gschemas.compiled \
@@ -73,6 +73,6 @@ CLEANFILES = \
 
 # For uninstalled use
 all-local:
-	$(GLIB_COMPILE_SCHEMAS) $(builddir)
+	$(GLIB_COMPILE_SCHEMAS) $(srcdir)
 
 -include $(top_srcdir)/git.mk
