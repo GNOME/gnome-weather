@@ -73,6 +73,6 @@ CLEANFILES = \
 
 # For uninstalled use
 all-local:
-	$(GLIB_COMPILE_SCHEMAS) $(srcdir)
+	$(GLIB_COMPILE_SCHEMAS) --targetdir=$(builddir) $(srcdir)
 
 -include $(top_srcdir)/git.mk

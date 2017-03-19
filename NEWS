@@ -1,3 +1,9 @@
+3.24.0
+======
+* Updates for the new version of gjs [Philip Chimento, #778641]
+* Improvements to the build system for GNOME Builder [Simon Schampijer]
+* Translation updates
+
 3.20.2
 ======
 * Minor bug fixes
