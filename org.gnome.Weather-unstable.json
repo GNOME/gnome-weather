@@ -1,10 +1,10 @@
 {
     "app-id": "org.gnome.Weather",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.24",
-    "branch": "stable",
+    "runtime-version": "master",
     "sdk": "org.gnome.Sdk",
     "command": "/app/share/org.gnome.Weather/org.gnome.Weather.Application",
+    "tags": ["nightly"],
     "finish-args": [
         "--share=ipc", "--socket=x11",
         "--socket=wayland",
@@ -25,15 +25,15 @@
                 "/man", "/share/man", "/share/gtk-doc",
                 "/share/vala",
                 "*.la", "*.a"],
+    "cleanup-commands": [ "desktop-file-edit \"--set-name=(Nightly) Weather\" /app/share/applications/org.gnome.Weather.Application.desktop" ],
     "modules": [
         {
             "name": "geocode-glib",
             "config-opts": ["--disable-static"],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/geocode-glib/3.23/geocode-glib-3.23.90.tar.xz",
-                    "sha256": "f6b536a3b225ede73ef0592ad841640c5cde2a0e4bf3f416c893e8262b1dd7dc"
+                    "type": "git",
+                    "url": "git://git.gnome.org/geocode-glib"
                 }
             ]
         },
@@ -42,9 +42,8 @@
             "config-opts": ["--disable-static", "--disable-vala"],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libgweather/3.24/libgweather-3.24.0.tar.xz",
-                    "sha256": "1089b932205085add19e5e1b63361c0cff1a2c46a67ab2dded6dd2ca87bdfa3d"
+                    "type": "git",
+                    "url": "git://git.gnome.org/libgweather"
                 }
             ]
         },
@@ -53,9 +52,8 @@
             "config-opts": ["--disable-debug-tools", "--disable-udev"],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-desktop/3.23/gnome-desktop-3.23.92.tar.xz",
-                    "sha256": "f3d6ca87ae9298c9fb2d9f91979e7bb569273b562d66e100278ceec44db5a2f2"
+                    "type": "git",
+                    "url": "git://git.gnome.org/gnome-desktop"
                 }
             ]
         },
@@ -64,8 +62,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/cgit/gnome-weather",
-                    "branch": "3.24.0"
+                    "url": "git://git.gnome.org/gnome-weather"
                 }
             ]
         }
