@@ -54,8 +54,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-desktop/3.23/gnome-desktop-3.23.92.tar.xz",
-                    "sha256": "f3d6ca87ae9298c9fb2d9f91979e7bb569273b562d66e100278ceec44db5a2f2"
+                    "url": "https://download.gnome.org/sources/gnome-desktop/3.24/gnome-desktop-3.24.0.tar.xz",
+                    "sha256": "86387aa12ba789afc0772d49fdfbab2d815669552e895be089252dd42aa68677"
                 }
             ]
         },
