@@ -64,7 +64,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.gnome.org/cgit/gnome-weather",
+                    "url": "https://git.gnome.org/browse/gnome-weather",
                     "branch": "3.24.0"
                 }
             ]
