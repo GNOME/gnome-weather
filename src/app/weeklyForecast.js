@@ -91,7 +91,7 @@ const WeeklyForecastFrame = new Lang.Class({
                                      datetime.get_ymd()))
                     break;
 
-                let v = Math.abs(datetime.difference(day, best));
+                let v = Math.abs(datetime.difference(day));
                 if (best == null || v < diff) {
                     best = info;
                     diff = v;
