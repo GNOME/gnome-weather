@@ -27,7 +27,7 @@ const Util = imports.misc.util;
 // In microseconds
 const ONE_HOUR = 3600*1000*1000;
 
-const ForecastBox = new Lang.Class({
+var ForecastBox = new Lang.Class({
     Name: 'ForecastBox',
     Extends: Gtk.Frame,
 

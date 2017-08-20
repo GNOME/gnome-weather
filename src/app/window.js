@@ -32,7 +32,7 @@ const Page = {
     CITY: 1
 };
 
-const MainWindow = new Lang.Class({
+var MainWindow = new Lang.Class({
     Name: 'MainWindow',
     Extends: Gtk.ApplicationWindow,
 

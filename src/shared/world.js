@@ -24,7 +24,7 @@ const Lang = imports.lang;
 const Params = imports.misc.params;
 const Util = imports.misc.util;
 
-const WorldModel = new Lang.Class({
+var WorldModel = new Lang.Class({
     Name: 'WorldModel',
     Extends: GObject.Object,
     Signals: {

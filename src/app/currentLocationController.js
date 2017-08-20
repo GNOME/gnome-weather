@@ -24,13 +24,13 @@ const Geoclue = imports.gi.Geoclue;
 
 const Util = imports.misc.util;
 
-const AutoLocation = {
+var AutoLocation = {
     DISABLED: 0,
     ENABLED: 1,
     NOT_AVAILABLE: 2
 };
 
-const CurrentLocationController = new Lang.Class({
+var CurrentLocationController = new Lang.Class({
     Name: 'CurrentLocationController',
 
     _init: function(world) {

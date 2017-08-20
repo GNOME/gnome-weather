@@ -34,7 +34,7 @@ function getCountryName(location) {
     return location.get_name();
 }
 
-const SearchProvider = new Lang.Class({
+var SearchProvider = new Lang.Class({
     Name: 'WeatherSearchProvider',
 
     _init: function(application) {

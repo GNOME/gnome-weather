@@ -28,7 +28,7 @@ const Params = imports.misc.params;
 const Util = imports.misc.util;
 
 
-const WorldContentView = new Lang.Class({
+var WorldContentView = new Lang.Class({
     Name: 'WorldContentView',
     Extends: Gtk.Popover,
 

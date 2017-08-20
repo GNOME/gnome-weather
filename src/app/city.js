@@ -31,7 +31,7 @@ const SPINNER_SIZE = 128;
 
 const SCROLLING_ANIMATION_TIME = 400000; //us
 
-const WeatherWidget = new Lang.Class({
+var WeatherWidget = new Lang.Class({
     Name: 'WeatherWidget',
     Extends: Gtk.Frame,
     Template: 'resource:///org/gnome/Weather/Application/weather-widget.ui',
@@ -199,7 +199,7 @@ const WeatherWidget = new Lang.Class({
     }
 });
 
-const WeatherView = new Lang.Class({
+var WeatherView = new Lang.Class({
     Name: 'WeatherView',
     Extends: Gtk.Stack,
     Template: 'resource:///org/gnome/Weather/Application/city.ui',

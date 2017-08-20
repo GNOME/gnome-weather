@@ -24,7 +24,7 @@ const Lang = imports.lang;
 const Params = imports.misc.params;
 const Util = imports.misc.util;
 
-const WeeklyForecastFrame = new Lang.Class({
+var WeeklyForecastFrame = new Lang.Class({
     Name: 'WeeklyForecastFrame',
     Extends: Gtk.Frame,
 
