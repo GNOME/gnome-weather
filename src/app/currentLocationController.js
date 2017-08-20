@@ -30,10 +30,8 @@ var AutoLocation = {
     NOT_AVAILABLE: 2
 };
 
-var CurrentLocationController = new Lang.Class({
-    Name: 'CurrentLocationController',
-
-    _init: function(world) {
+var CurrentLocationController = class CurrentLocationController {
+    constructor(world) {
         this._world = world;
         this._processStarted = false;
         this._settings = Util.getSettings('org.gnome.Weather.Application');
@@ -42,25 +40,25 @@ var CurrentLocationController = new Lang.Class({
         if (this.autoLocation == AutoLocation.ENABLED)
             this._startGeolocationService();
         this.currentLocation = null;
-    },
+    }
 
-    _startGeolocationService: function() {
+    _startGeolocationService() {
         this._processStarted = true;
         Geoclue.Simple.new(pkg.name,
                            Geoclue.AccuracyLevel.CITY,
                            null,
-                           Lang.bind (this, this._onSimpleReady));
-    },
+                           this._onSimpleReady.bind(this));
+    }
 
-    _geoLocationFailed: function(e) {
+    _geoLocationFailed(e) {
         log ("Failed to connect to GeoClue2 service: " + e.message);
         this.autoLocation = AutoLocation.NOT_AVAILABLE;
-        GLib.idle_add(GLib.PRIORITY_DEFAULT, Lang.bind(this, function() {
+        GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
             this._world.currentLocationChanged(null);
-        }));
-    },
+        });
+    }
 
-    _onSimpleReady: function(object, result) {
+    _onSimpleReady(object, result) {
         try {
             this._simple = Geoclue.Simple.new_finish(result);
         }
@@ -73,17 +71,17 @@ var CurrentLocationController = new Lang.Class({
         client.distance_threshold = 100;
 
         this._findLocation();
-    },
+    }
 
-    _findLocation: function() {
+    _findLocation() {
         this._locationUpdatedId =
                     this._simple.connect("notify::location",
                                          this._onLocationUpdated.bind(this));
 
         this._onLocationUpdated(this._simple);
-    },
+    }
 
-    _onLocationUpdated: function(simple) {
+    _onLocationUpdated(simple) {
         let geoclueLocation = simple.get_location();
 
         this.currentLocation = GWeather.Location.new_detached(geoclueLocation.description,
@@ -91,25 +89,25 @@ var CurrentLocationController = new Lang.Class({
                                                               geoclueLocation.latitude,
                                                               geoclueLocation.longitude);
         this._world.currentLocationChanged(this.currentLocation);
-    },
+    }
 
-    setAutoLocation: function(active) {
+    setAutoLocation(active) {
         this._settings.set_value('automatic-location', new GLib.Variant('b', active));
 
         if (this.autoLocation == AutoLocation.NOT_AVAILABLE)
             return;
         this._autoLocationChanged(active);
         this._syncAutoLocation(active);
-    },
+    }
 
-    _syncAutoLocation: function(autoLocation) {
+    _syncAutoLocation(autoLocation) {
         if (autoLocation)
             this.autoLocation = AutoLocation.ENABLED;
         else
             this.autoLocation = AutoLocation.DISABLED;
-    },
+    }
 
-    _autoLocationChanged: function(active) {
+    _autoLocationChanged(active) {
         if (active) {
             if (!this._processStarted) {
                 this._startGeolocationService();
@@ -122,4 +120,4 @@ var CurrentLocationController = new Lang.Class({
             this._simple.disconnect(this._locationUpdatedId);
         }
     }
-});
+}

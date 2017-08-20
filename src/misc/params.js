@@ -20,9 +20,9 @@
 // Extend a method to allow more params in a subclass
 // The superclass can safely use Params.parse(), it won't see
 // the extensions.
-// const MyClass = new Lang.Class({
+// const MyClass = class {
 //       ...
-//       method: function(params) {
+//       method(params) {
 //           let mine = Params.filter(params, { anInt: 42 });
 //           this.parent(params);
 //           ... mine.anInt ...

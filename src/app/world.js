@@ -48,7 +48,7 @@ var WorldContentView = new Lang.Class({
         this._window = window;
 
         this._listbox = builder.get_object('locations-list-box');
-        this._listbox.set_header_func(function (row, previous) {
+        this._listbox.set_header_func((row, previous) => {
             let hasHeader = row.get_header() != null;
             let shouldHaveHeader = previous != null;
             if (hasHeader != shouldHaveHeader) {
@@ -60,11 +60,11 @@ var WorldContentView = new Lang.Class({
         });
 
         let locationEntry = builder.get_object('location-entry');
-        locationEntry.connect('notify::location', Lang.bind(this, this._locationChanged));
+        locationEntry.connect('notify::location', this._locationChanged.bind(this));
 
-        this.connect('show', Lang.bind(this, function() {
+        this.connect('show', () => {
             locationEntry.grab_focus();
-        }));
+        });
 
         let autoLocStack = builder.get_object('auto-location-stack');
         let autoLocSwitch = builder.get_object('auto-location-switch');
@@ -78,22 +78,22 @@ var WorldContentView = new Lang.Class({
             autoLocSwitch.sensitive = (currentLocationController.autoLocation != CurrentLocationController.AutoLocation.NOT_AVAILABLE);
         }
 
-        let handlerId = autoLocSwitch.connect('notify::active', Lang.bind(this, function() {
+        let handlerId = autoLocSwitch.connect('notify::active', () => {
             currentLocationController.setAutoLocation(autoLocSwitch.active);
 
             if (autoLocSwitch.active && !this.model.addedCurrentLocation)
                 autoLocStack.visible_child_name = 'locating-label';
 
             this.hide();
-        }));
+        });
 
-        this._listbox.connect('row-activated', Lang.bind(this, function(listbox, row) {
+        this._listbox.connect('row-activated', (listbox, row) => {
             this.hide();
             this.model.moveLocationToFront(row._info);
             this._window.showInfo(row._info, false);
-        }));
+        });
 
-        this.model.connect('current-location-changed', Lang.bind(this, function(model, info) {
+        this.model.connect('current-location-changed', (model, info) => {
             autoLocStack.visible_child_name = 'auto-location-switch-grid';
             GObject.signal_handler_block(autoLocSwitch, handlerId);
             autoLocSwitch.active = (currentLocationController.autoLocation == CurrentLocationController.AutoLocation.ENABLED);
@@ -101,13 +101,13 @@ var WorldContentView = new Lang.Class({
             GObject.signal_handler_unblock(autoLocSwitch, handlerId);
 
             this._window.showInfo(info, true);
-        }));
+        });
 
         this._stackPopover = builder.get_object('popover-stack');
-        this._listbox.set_filter_func(Lang.bind(this, this._filterListbox));
+        this._listbox.set_filter_func(this._filterListbox.bind(this));
 
-        this.model.connect('location-added', Lang.bind(this, this._onLocationAdded));
-        this.model.connect('location-removed', Lang.bind(this, this._onLocationRemoved));
+        this.model.connect('location-added', this._onLocationAdded.bind(this));
+        this.model.connect('location-removed', this._onLocationRemoved.bind(this));
 
         this._currentLocationAdded = false;
         let list = this.model.getAll();
@@ -206,10 +206,10 @@ var WorldContentView = new Lang.Class({
         if (info._updatedId)
             return;
 
-        info._updatedId = info.connect('updated', Lang.bind(this, function(info) {
+        info._updatedId = info.connect('updated', (info) => {
             tempLabel.label = info.get_temp_summary();
             image.icon_name = info.get_symbolic_icon_name();
-        }));
+        });
 
         this._syncStackPopover();
     },

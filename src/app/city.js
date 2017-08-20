@@ -66,11 +66,11 @@ var WeatherWidget = new Lang.Class({
             hscrollbar.set_opacity(0.0);
             hscrollbar.hide();
             let hadjustment = fsw.get_hadjustment();
-            hadjustment.connect('changed', Lang.bind(this, this._syncLeftRightButtons));
-            hadjustment.connect('value-changed', Lang.bind(this, this._syncLeftRightButtons));
+            hadjustment.connect('changed', this._syncLeftRightButtons.bind(this));
+            hadjustment.connect('value-changed', this._syncLeftRightButtons.bind(this));
         }
 
-        this._forecastStack.connect('notify::visible-child', Lang.bind(this, function() {
+        this._forecastStack.connect('notify::visible-child', () => {
             let visible_child = this._forecastStack.visible_child;
             if (visible_child == null)
                 return; // can happen at destruction
@@ -83,23 +83,23 @@ var WeatherWidget = new Lang.Class({
                 this.remove_tick_callback(this._tickId);
                 this._tickId = 0;
             }
-        }));
+        });
 
         this._tickId = 0;
 
-        this._leftButton.connect('clicked', Lang.bind(this, function() {
+        this._leftButton.connect('clicked', () => {
             let hadjustment = this._forecastStack.visible_child.get_hadjustment();
             let target = hadjustment.value - hadjustment.page_size;
 
             this._beginScrollAnimation(target);
-        }));
+        });
 
-        this._rightButton.connect('clicked', Lang.bind(this, function() {
+        this._rightButton.connect('clicked', () => {
             let hadjustment = this._forecastStack.visible_child.get_hadjustment();
             let target = hadjustment.value + hadjustment.page_size;
 
             this._beginScrollAnimation(target);
-        }));
+        });
     },
 
     _syncLeftRightButtons: function() {
@@ -126,9 +126,7 @@ var WeatherWidget = new Lang.Class({
         if (this._tickId != 0)
             this.remove_tick_callback(this._tickId);
 
-        this._tickId = this.add_tick_callback(Lang.bind(this, function() {
-            return this._animate(target, start, end);
-        }));
+        this._tickId = this.add_tick_callback(() => this._animate(target, start, end));
     },
 
     _animate: function(target, start, end) {
@@ -214,7 +212,7 @@ var WeatherView = new Lang.Class({
         this._info = null;
         this._updateId = 0;
 
-        this.connect('destroy', Lang.bind(this, this._onDestroy));
+        this.connect('destroy', this._onDestroy.bind(this));
 
         this._wallClock = new Gnome.WallClock();
         this._clockHandlerId = 0;
@@ -237,8 +235,7 @@ var WeatherView = new Lang.Class({
         this._info = info;
 
         if (info) {
-            this._updateId = this._info.connect('updated',
-                                                Lang.bind(this, this._onUpdate));
+            this._updateId = this._info.connect('updated', this._onUpdate.bind(this));
             if (info.is_valid())
                 this._onUpdate(info);
         }
@@ -274,7 +271,7 @@ var WeatherView = new Lang.Class({
         }
 
         if (!this._clockHandlerId && visible) {
-            this._clockHandlerId = this._wallClock.connect('notify::clock', Lang.bind(this, this._updateTime));
+            this._clockHandlerId = this._wallClock.connect('notify::clock', this._updateTime.bind(this));
         }
 
         this._infoPage.setTimeVisible(visible);

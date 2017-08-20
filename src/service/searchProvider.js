@@ -34,42 +34,40 @@ function getCountryName(location) {
     return location.get_name();
 }
 
-var SearchProvider = new Lang.Class({
-    Name: 'WeatherSearchProvider',
-
-    _init: function(application) {
+var SearchProvider = class WeatherSearchProvider {
+    constructor(application) {
         this._app = application;
 
         this._impl = Gio.DBusExportedObject.wrapJSObject(SearchProviderInterface, this);
-    },
+    }
 
-    export: function(connection, path) {
+    export(connection, path) {
         return this._impl.export(connection, path);
-    },
+    }
 
-    unexport: function(connection) {
+    unexport(connection) {
         return this._impl.unexport_from_connection(connection);
-    },
+    }
 
-    GetInitialResultSetAsync: function(params, invocation) {
+    GetInitialResultSetAsync(params, invocation) {
         this._app.hold();
 
         let terms = params[0];
         let model = this._app.model;
 
         if (model.loading) {
-            let notifyId = model.connect('notify::loading', Lang.bind(this, function(model) {
+            let notifyId = model.connect('notify::loading', (model) => {
                 if (!model.loading) {
                     model.disconnect(notifyId);
                     this._runQuery(terms, invocation);
                 }
-            }));
+            });
         } else {
             this._runQuery(terms, invocation);
         }
-    },
+    }
 
-    _runQuery: function(terms, invocation) {
+    _runQuery(terms, invocation) {
         let nameRet = [];
         let cityRet = [];
         let countryRet = [];
@@ -123,9 +121,9 @@ var SearchProvider = new Lang.Class({
 
         let result = nameRet.concat(cityRet).concat(countryRet);
         invocation.return_value(new GLib.Variant('(as)', [result]));
-    },
+    }
 
-    GetSubsearchResultSet: function(previous, terms) {
+    GetSubsearchResultSet(previous, terms) {
         this._app.hold();
 
         let model = this._app.model;
@@ -160,9 +158,9 @@ var SearchProvider = new Lang.Class({
         this._app.release();
 
         return ret;
-    },
+    }
 
-    GetResultMetas: function(identifiers) {
+    GetResultMetas(identifiers) {
         this._app.hold();
 
         let model = this._app.model;
@@ -191,13 +189,13 @@ var SearchProvider = new Lang.Class({
         this._app.release();
 
         return ret;
-    },
+    }
 
-    _getPlatformData: function(timestamp) {
+    _getPlatformData(timestamp) {
         return {'desktop-startup-id': new GLib.Variant('s', '_TIME' + timestamp) };
-    },
+    }
 
-    _activateAction: function(action, parameter, timestamp) {
+    _activateAction(action, parameter, timestamp) {
         let wrappedParam;
         if (parameter)
             wrappedParam = [parameter];
@@ -212,7 +210,7 @@ var SearchProvider = new Lang.Class({
                                                               this._getPlatformData(timestamp)]),
                               null,
                               Gio.DBusCallFlags.NONE,
-                              -1, null, Lang.bind(this, function(connection, result) {
+                              -1, null, (connection, result) => {
                                   try {
                                       connection.call_finish(result);
                                   } catch(e) {
@@ -220,10 +218,10 @@ var SearchProvider = new Lang.Class({
                                   }
 
                                   this._app.release();
-                              }));
-    },
+                              });
+    }
 
-    ActivateResult: function(id, terms, timestamp) {
+    ActivateResult(id, terms, timestamp) {
         this._app.hold();
 
         //log('Activating ' + id);
@@ -239,11 +237,11 @@ var SearchProvider = new Lang.Class({
 
         let location = info.location.serialize();
         this._activateAction('show-location', new GLib.Variant('v', location), timestamp);
-    },
+    }
 
-    LaunchSearch: function(terms, timestamp) {
+    LaunchSearch(terms, timestamp) {
         this._app.hold();
 
         this._activateAction('show-search', new GLib.Variant('s', terms.join(' ')), timestamp);
-    },
-});
+    }
+}

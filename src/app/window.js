@@ -72,7 +72,7 @@ var MainWindow = new Lang.Class({
         this._searchView = builder.get_object('initial-grid');
 
         this._searchEntry = builder.get_object('initial-grid-location-entry');
-        this._searchEntry.connect('notify::location', Lang.bind(this, this._searchLocationChanged));
+        this._searchEntry.connect('notify::location', this._searchLocationChanged.bind(this));
 
         let placesButton = builder.get_object('places-button');
         this._pageWidgets[Page.CITY].push(placesButton);

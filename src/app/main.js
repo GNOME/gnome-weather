@@ -98,12 +98,12 @@ const Application = new Lang.Class({
         this.model.load();
         this.currentLocationController = new CurrentLocationController.CurrentLocationController(this.model);
 
-        this.model.connect('notify::loading', Lang.bind(this, function() {
+        this.model.connect('notify::loading', () => {
             if (this.model.loading)
                 this.mark_busy();
             else
                 this.unmark_busy();
-        }));
+        });
         if (this.model.loading)
             this.mark_busy();
 
