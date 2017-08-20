@@ -1,3 +1,10 @@
+3.25.91
+=======
+* Weather can now be tiled on sufficiently large monitors [#725407]
+* Fixed compatibility with mozjs52, and improved code to take advantage
+  of the new JavaScript features
+* Translation updates
+
 3.24.0
 ======
 * Updates for the new version of gjs [Philip Chimento, #778641]
