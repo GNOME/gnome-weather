@@ -1,12 +1,5 @@
 <interface>
   <menu id="app-menu">
-    <section>
-      <item>
-        <attribute name="label" translatable="yes">_New</attribute>
-        <attribute name="action">win.new-location</attribute>
-        <attribute name="accel">&lt;Primary&gt;n</attribute>
-      </item>
-    </section>
     <submenu>
       <attribute translatable="yes" name="label">Temperature unit</attribute>
       <item>
