@@ -37,8 +37,6 @@ var MainWindow = new Lang.Class({
     Extends: Gtk.ApplicationWindow,
 
     _init: function(params) {
-        params = Params.fill(params, { width_request: 700,
-                                       height_request: 520 });
         this.parent(params);
 
         this._world = this.application.world;

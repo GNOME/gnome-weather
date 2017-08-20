@@ -31,7 +31,7 @@ var WeeklyForecastFrame = new Lang.Class({
     _init: function(params) {
         params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE,
                                        name: 'weekly-forecast-frame',
-                                       width_request: 220 });
+                                       width_request: 150 });
         this.parent(params);
         this.get_accessible().accessible_name = _("Weekly Forecast");
 
