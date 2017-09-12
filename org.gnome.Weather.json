@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Weather",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.24",
+    "runtime-version": "3.26",
     "branch": "stable",
     "sdk": "org.gnome.Sdk",
     "command": "/app/share/org.gnome.Weather/org.gnome.Weather.Application",
@@ -32,8 +32,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/geocode-glib/3.23/geocode-glib-3.23.90.tar.xz",
-                    "sha256": "f6b536a3b225ede73ef0592ad841640c5cde2a0e4bf3f416c893e8262b1dd7dc"
+                    "url": "https://download.gnome.org/sources/geocode-glib/3.25/geocode-glib-3.25.4.1.tar.xz",
+                    "sha256": "f10169262c313dfaa21acf00687c01e0aaf52983524648e8b9e8e42c052dd778"
                 }
             ]
         },
@@ -43,8 +43,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libgweather/3.24/libgweather-3.24.0.tar.xz",
-                    "sha256": "1089b932205085add19e5e1b63361c0cff1a2c46a67ab2dded6dd2ca87bdfa3d"
+                    "url": "https://download.gnome.org/sources/libgweather/3.26/libgweather-3.26.0.tar.xz",
+                    "sha256": "5b84badc0b3ecffff5db1bb9a7cc4dd4e400a8eb3f1282348f8ee6ba33626b6e"
                 }
             ]
         },
@@ -54,8 +54,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-desktop/3.24/gnome-desktop-3.24.0.tar.xz",
-                    "sha256": "86387aa12ba789afc0772d49fdfbab2d815669552e895be089252dd42aa68677"
+                    "url": "https://download.gnome.org/sources/gnome-desktop/3.26/gnome-desktop-3.26.0.tar.xz",
+                    "sha256": "8a99a084ea06fba20f5c547822dd8e36758676714729c7ae7b44ae3deca57be2"
                 }
             ]
         },
@@ -65,7 +65,7 @@
                 {
                     "type": "git",
                     "url": "https://git.gnome.org/browse/gnome-weather",
-                    "branch": "3.24.0"
+                    "branch": "3.26.0"
                 }
             ]
         }
