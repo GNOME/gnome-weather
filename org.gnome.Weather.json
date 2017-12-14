@@ -43,8 +43,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/libgweather/3.26/libgweather-3.26.0.tar.xz",
-                    "sha256": "5b84badc0b3ecffff5db1bb9a7cc4dd4e400a8eb3f1282348f8ee6ba33626b6e"
+                    "url": "https://download.gnome.org/sources/libgweather/3.26/libgweather-3.26.1.tar.xz",
+                    "sha256": "fca78470b345bce948e0333cab0a7c52c32562fc4a75de37061248a64e8fc4b8"
                 }
             ]
         },
@@ -63,9 +63,9 @@
             "name": "gnome-weather",
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://git.gnome.org/browse/gnome-weather",
-                    "branch": "3.26.0"
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/gnome-weather/3.26/gnome-weather-3.26.0.tar.xz",
+                    "sha256": "965cc0d1b4d4e53c06d494db96f0b124d232af5c0e731ca900edd10f77a74c78"
                 }
             ]
         }
