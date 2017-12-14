@@ -29,7 +29,8 @@
     "modules": [
         {
             "name": "geocode-glib",
-            "config-opts": ["--disable-static"],
+            "config-opts": ["-Denable-installed-tests=false", "-Denable-gtk-doc=false"],
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
@@ -39,11 +40,12 @@
         },
         {
             "name": "libgweather",
-            "config-opts": ["--disable-static", "--disable-vala"],
+            "config-opts": ["-Denable_vala=false", "-Dgtk_doc=false"],
+            "buildsystem": "meson",
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/libgweather"
+                    "url": "https://gitlab.gnome.org/GNOME/libgweather.git"
                 }
             ]
         },
