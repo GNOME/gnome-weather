@@ -88,9 +88,9 @@ var WorldContentView = new Lang.Class({
         });
 
         this._listbox.connect('row-activated', (listbox, row) => {
-            this.hide();
-            this.model.moveLocationToFront(row._info);
             this._window.showInfo(row._info, false);
+            this.model.moveLocationToFront(row._info);
+            this.hide();
         });
 
         this.model.connect('current-location-changed', (model, info) => {
