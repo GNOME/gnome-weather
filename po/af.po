@@ -1,0 +1,222 @@
+# Afrikaans translation for gnome-weather.
+# Copyright (C) 2017 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# pieter <pieter@sonbesie.co.za>, 2017.
+# Pieter Schoeman <pieter@sonbesie.co.za>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-10-29 17:04+0000\n"
+"PO-Revision-Date: 2017-12-18 17:14+0200\n"
+"Last-Translator: Pieter Schoeman <pieter@sonbesie.co.za>\n"
+"Language-Team: Afrikaans <pieter@sonbesie.co.za>\n"
+"Language: af\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.7\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "Temperature unit"
+msgstr "Temperatuur eenheid"
+
+#: ../data/app-menu.ui.h:2
+msgid "Celsius"
+msgstr "Celsius"
+
+#: ../data/app-menu.ui.h:3
+msgid "Fahrenheit"
+msgstr "Fahrenheit"
+
+#: ../data/app-menu.ui.h:4
+msgid "About"
+msgstr "Aangaande"
+
+#: ../data/app-menu.ui.h:5
+msgid "Quit"
+msgstr "Sluit af"
+
+#: ../data/city.ui.h:1
+msgid "City view"
+msgstr "Stadmodus"
+
+#: ../data/city.ui.h:2
+msgid "Loading…"
+msgstr "Laai tans…"
+
+#: ../data/org.gnome.Weather.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:53
+#: ../src/app/window.js:224 ../src/service/main.js:49
+msgid "Weather"
+msgstr "Weer"
+
+#: ../data/org.gnome.Weather.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "Wys weerstoestande en voorspellings"
+
+#: ../data/org.gnome.Weather.appdata.xml.in.h:3
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"'n klein program waarmee jy die huidige weerstoestande vir jou stad, of "
+"enige plek ter wêreld, kan monitor."
+
+#: ../data/org.gnome.Weather.appdata.xml.in.h:4
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Dit bied toegang tot gedetailleerde voorspellings, tot 7 dae, met uurlikse "
+"besonderhede vir die huidige en volgende dag, deur gebruik te maak van "
+"verskeie internet dienste."
+
+#: ../data/org.gnome.Weather.appdata.xml.in.h:5
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+"Dit kan ook integreer met die GNOME Shell sodat jy die huidige toestande van "
+"die mees onlangs gesoekte stede kan sien deur net die naam in die "
+"Aktiwiteits Oorsig te tik."
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+msgid "Weather;Forecast;"
+msgstr "Weather;Forecast;Weer;Voorspelling;"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+msgid "Allows weather information to be displayed for your location."
+msgstr "Laat toe dat weer inligting vir jou ligging getoon word."
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "Opgestelde stede om weer voor te wys"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Die liggings wat in die wêreldmodus van gnome-weer gewys word. Elke waarde "
+"is 'n GVariant teruggestuur deur gweather_location_serialize()."
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+msgid "Automatic location"
+msgstr "Outomatiese ligging"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+"Die outomatiese ligging is die waarde van die outomatiese ligging skakelaar "
+"wat besluit of die huidige ligging gebruik word of nie."
+
+#: ../data/places-popover.ui.h:1
+msgid "Automatic Location"
+msgstr "Outomatiese Ligging"
+
+#: ../data/places-popover.ui.h:2
+msgid "Locating…"
+msgstr "Bepaal tans ligging..."
+
+#: ../data/places-popover.ui.h:3
+msgid "Search for a city"
+msgstr "Soek vir 'n stad"
+
+#: ../data/places-popover.ui.h:4
+msgid "Viewed Recently"
+msgstr "Onlangs Gesien"
+
+#: ../data/weather-widget.ui.h:1
+msgid "Current conditions"
+msgstr "Huidige toestande"
+
+#: ../data/weather-widget.ui.h:2
+msgid "Today"
+msgstr "Vandag"
+
+#: ../data/weather-widget.ui.h:3
+msgid "Tomorrow"
+msgstr "More"
+
+#: ../data/window.ui.h:1
+msgid "Places"
+msgstr "Plekke"
+
+#: ../data/window.ui.h:2
+msgid "Refresh"
+msgstr "Verfris"
+
+#: ../data/window.ui.h:3
+msgid "Search for a location"
+msgstr "Soek vir 'n ligging"
+
+#: ../data/window.ui.h:4
+msgid "To see weather information, enter the name of a city."
+msgstr "Om weer inligting te sien, voer die naam van 'n stad in."
+
+#: ../src/app/forecast.js:37
+msgid "Forecast"
+msgstr "Voorspelling"
+
+#: ../src/app/forecast.js:111
+msgid "Forecast not available"
+msgstr "Voorspelling is nie beskikbaar nie"
+
+#. Translators: this is a time format without date used for AM/PM
+#: ../src/app/forecast.js:127
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: ../src/app/forecast.js:130
+msgid "%R"
+msgstr "%R"
+
+#: ../src/app/weeklyForecast.js:36
+msgid "Weekly Forecast"
+msgstr "Weeklikse Voorspelling"
+
+#. Translators: this is the time format for full weekday name according to the current locale
+#: ../src/app/weeklyForecast.js:121
+msgid "%A"
+msgstr "%A"
+
+#: ../src/app/window.js:113
+msgid "Select Location"
+msgstr "Kies ligging"
+
+#: ../src/app/window.js:223
+msgid "translator-credits"
+msgstr "Pieter Schalk Schoeman"
+
+#: ../src/app/window.js:225
+msgid "A weather application"
+msgstr "'n Weer toepassing"
+
+#: ../src/app/world.js:39
+msgid "World view"
+msgstr "Wêreldmodus"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: ../src/misc/util.js:159
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: ../src/service/searchProvider.js:181
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
