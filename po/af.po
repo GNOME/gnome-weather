@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2017-10-29 17:04+0000\n"
-"PO-Revision-Date: 2017-12-18 17:14+0200\n"
+"PO-Revision-Date: 2018-02-01 13:32+0200\n"
 "Last-Translator: Pieter Schoeman <pieter@sonbesie.co.za>\n"
 "Language-Team: Afrikaans <pieter@sonbesie.co.za>\n"
 "Language: af\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "Temperature unit"
@@ -88,7 +88,7 @@ msgstr ""
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
 msgid "Weather;Forecast;"
-msgstr "Weather;Forecast;Weer;Voorspelling;"
+msgstr "weer;voorspelling;"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:4
 msgid "Allows weather information to be displayed for your location."
@@ -120,11 +120,11 @@ msgstr ""
 
 #: ../data/places-popover.ui.h:1
 msgid "Automatic Location"
-msgstr "Outomatiese Ligging"
+msgstr "Outomatiese ligging"
 
 #: ../data/places-popover.ui.h:2
 msgid "Locating…"
-msgstr "Bepaal tans ligging..."
+msgstr "Bepaal tans ligging…"
 
 #: ../data/places-popover.ui.h:3
 msgid "Search for a city"
@@ -132,7 +132,7 @@ msgstr "Soek vir 'n stad"
 
 #: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
-msgstr "Onlangs Gesien"
+msgstr "Onlangs gesien"
 
 #: ../data/weather-widget.ui.h:1
 msgid "Current conditions"
@@ -182,7 +182,7 @@ msgstr "%R"
 
 #: ../src/app/weeklyForecast.js:36
 msgid "Weekly Forecast"
-msgstr "Weeklikse Voorspelling"
+msgstr "Weeklikse voorspelling"
 
 #. Translators: this is the time format for full weekday name according to the current locale
 #: ../src/app/weeklyForecast.js:121
@@ -195,7 +195,7 @@ msgstr "Kies ligging"
 
 #: ../src/app/window.js:223
 msgid "translator-credits"
-msgstr "Pieter Schalk Schoeman"
+msgstr "Pieter Schoeman"
 
 #: ../src/app/window.js:225
 msgid "A weather application"
