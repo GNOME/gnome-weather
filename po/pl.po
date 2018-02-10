@@ -1,16 +1,16 @@
 # Polish translation for gnome-weather.
-# Copyright © 2012-2017 the gnome-weather authors.
+# Copyright © 2012-2018 the gnome-weather authors.
 # This file is distributed under the same license as the gnome-weather package.
-# Piotr Drąg <piotrdrag@gmail.com>, 2012-2017.
+# Piotr Drąg <piotrdrag@gmail.com>, 2012-2018.
 # Paweł Żołnowski <pawel@zolnowski.name>, 2014.
-# Aviary.pl <community-poland@mozilla.org>, 2012-2017.
+# Aviary.pl <community-poland@mozilla.org>, 2012-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-25 21:30+0100\n"
-"PO-Revision-Date: 2017-03-25 21:31+0100\n"
+"POT-Creation-Date: 2018-02-10 14:32+0100\n"
+"PO-Revision-Date: 2018-02-10 14:33+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -21,26 +21,22 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 
 #: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "_Nowe"
-
-#: ../data/app-menu.ui.h:2
 msgid "Temperature unit"
 msgstr "Jednostka temperatury"
 
-#: ../data/app-menu.ui.h:3
+#: ../data/app-menu.ui.h:2
 msgid "Celsius"
 msgstr "Stopnie Celsjusza"
 
-#: ../data/app-menu.ui.h:4
+#: ../data/app-menu.ui.h:3
 msgid "Fahrenheit"
 msgstr "Stopnie Fahrenheita"
 
-#: ../data/app-menu.ui.h:5
+#: ../data/app-menu.ui.h:4
 msgid "About"
 msgstr "O programie"
 
-#: ../data/app-menu.ui.h:6
+#: ../data/app-menu.ui.h:5
 msgid "Quit"
 msgstr "Zakończ"
 
@@ -54,7 +50,7 @@ msgstr "Wczytywanie…"
 
 #: ../data/org.gnome.Weather.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:53
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: ../src/app/window.js:224 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Pogoda"
 
@@ -88,11 +84,11 @@ msgid ""
 msgstr ""
 "Program można również zintegrować z powłoką GNOME, co umożliwia dostęp do "
 "obecnych warunków pogodowych w ostatnio wyszukiwanych miastach poprzez "
-"wpisanie ich nazw w ekranie podglądu."
+"pisanie ich nazw na ekranie podglądu."
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
 msgid "Weather;Forecast;"
-msgstr "Pogoda;Prognoza;Pogody;"
+msgstr "Pogoda;Prognoza;Pogody;Temperatura;Weather;"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:4
 msgid "Allows weather information to be displayed for your location."
@@ -109,7 +105,7 @@ msgid ""
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
 "Położenia wyświetlane w widoku świata programu gnome-weather. Każda wartość "
-"to GVariant zwrócony przez „gweather_location_serialize()”."
+"to GVariant zwrócony przez funkcję „gweather_location_serialize()”."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
 msgid "Automatic location"
@@ -178,7 +174,7 @@ msgstr "Prognoza jest niedostępna"
 #. Translators: this is a time format without date used for AM/PM
 #: ../src/app/forecast.js:127
 msgid "%l∶%M %p"
-msgstr "%l∶%M %p"
+msgstr "%-l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
 #: ../src/app/forecast.js:130
@@ -194,18 +190,18 @@ msgstr "Prognoza tygodniowa"
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:115
+#: ../src/app/window.js:113
 msgid "Select Location"
 msgstr "Wybór położenia"
 
-#: ../src/app/window.js:225
+#: ../src/app/window.js:223
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2012-2017\n"
+"Piotr Drąg <piotrdrag@gmail.com>, 2012-2018\n"
 "Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
-"Aviary.pl <community-poland@mozilla.org>, 2012-2017"
+"Aviary.pl <community-poland@mozilla.org>, 2012-2018"
 
-#: ../src/app/window.js:227
+#: ../src/app/window.js:225
 msgid "A weather application"
 msgstr "Prognoza pogody"
 
@@ -219,12 +215,12 @@ msgstr "Widok świata"
 #: ../src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
-msgstr "%s / %s"
+msgstr "%s/%s"
 
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: ../src/service/searchProvider.js:181
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
