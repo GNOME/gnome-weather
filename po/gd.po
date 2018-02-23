@@ -2,14 +2,14 @@
 # Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
 # This file is distributed under the same license as the libgweather package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
-# GunChleoc <fios@foramnagaidhlig.net>, 2014, 2015, 2016.
+# GunChleoc <fios@foramnagaidhlig.net>, 2014, 2015, 2016, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: libgweather\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-04-22 10:55+0000\n"
-"PO-Revision-Date: 2016-04-22 12:35+0100\n"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product"
+"=gnome-weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2017-08-20 15:17+0000\n"
+"PO-Revision-Date: 2018-02-23 11:04+0100\n"
 "Last-Translator: GunChleoc <fios@foramnagaidhlig.net>\n"
 "Language-Team: Fòram na Gàidhlig\n"
 "Language: gd\n"
@@ -23,26 +23,22 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "Ù_r"
-
-#: ../data/app-menu.ui.h:2
 msgid "Temperature unit"
 msgstr "Aonad na teothachd"
 
-#: ../data/app-menu.ui.h:3
+#: ../data/app-menu.ui.h:2
 msgid "Celsius"
 msgstr "Celsius"
 
-#: ../data/app-menu.ui.h:4
+#: ../data/app-menu.ui.h:3
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: ../data/app-menu.ui.h:5
+#: ../data/app-menu.ui.h:4
 msgid "About"
 msgstr "Mu dhèidhinn"
 
-#: ../data/app-menu.ui.h:6
+#: ../data/app-menu.ui.h:5
 msgid "Quit"
 msgstr "Fàg an-seo"
 
@@ -52,20 +48,20 @@ msgstr "Sealladh baile"
 
 #: ../data/city.ui.h:2
 msgid "Loading…"
-msgstr "'Ga luchdadh…"
+msgstr "’Ga luchdadh…"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
+#: ../data/org.gnome.Weather.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:53
 #: ../src/app/window.js:226 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Aimsir"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Seall an aimsir an-dràsta agus ro-aithris"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -73,32 +69,31 @@ msgstr ""
 "Aplacaid bheag a leigeas leat sùil a chumail air staid na h-aimsire sa "
 "bhaile agad no àite sam bith air an t-saoghal."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+#: ../data/org.gnome.Weather.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
 "Bheir e dhut ro-aithris mionaideach suas gu 7 làithean le fiosrachadh airson "
-"gach uair airson an diugh 's a-màireach le taic o chaochladh sheirbheisean "
+"gach uair airson an diugh ’s a-màireach le taic o chaochladh sheirbheisean "
 "eadar-lìn."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+#: ../data/org.gnome.Weather.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
 "name in the Activities Overview."
 msgstr ""
-"Gabhaidh amalachadh leis an t-slige GNOME ma thogras tu 's mar sin airson "
+"Gabhaidh amalachadh leis an t-slige GNOME ma thogras tu ’s mar sin airson "
 "nam bailtean a lorg thu o chionn goirid, cha leig thu leas ach ainm baile a "
 "sgrìobhadh ann am foir-shealladh nan gnìomhachdan ach am faic thu an aimsir "
-"airson a' bhaile ud."
+"airson a’ bhaile ud."
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
 msgid "Weather;Forecast;"
 msgstr "Weather;Forecast;aimsir;sìde;ro-aithris;"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:4
-#| msgid "To see weather information, enter the name of a city."
 msgid "Allows weather information to be displayed for your location."
 msgstr ""
 "Ceadaichidh seo gun dèid fiosrachadh na h-aimsire far a bheil thu a "
@@ -114,7 +109,7 @@ msgid ""
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
 "Na h-ionadan a thèid a shealltainn ann an sealladh an t-saoghail aig gnome-"
-"weather. 'S e GVariant a th' anns gach luach a thèid a thilleadh le "
+"weather. ’S e GVariant a th’ anns gach luach a thèid a thilleadh le "
 "gweather_location_serialize()."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
@@ -126,9 +121,8 @@ msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 msgstr ""
-"'S e luach an t-suidse \"automatic-location\" a tha san ionad fhèin-"
-"obrachail a chuireas roimhe an tèid an t-ionad làithreach fhaighinn gus nach "
-"tèid."
+"’S e luach an t-suidse “automatic-location” a tha san ionad fhèin-obrachail "
+"a chuireas roimhe an tèid an t-ionad làithreach fhaighinn gus nach tèid."
 
 #: ../data/places-popover.ui.h:1
 msgid "Automatic Location"
@@ -136,7 +130,7 @@ msgstr "Ionad fèin-obrachail"
 
 #: ../data/places-popover.ui.h:2
 msgid "Locating…"
-msgstr "'Ga lorg…"
+msgstr "’Ga lorg…"
 
 #: ../data/places-popover.ui.h:3
 msgid "Search for a city"
@@ -228,10 +222,13 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: ../src/service/searchProvider.js:181
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "_New"
+#~ msgstr "Ù_r"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
