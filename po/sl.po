@@ -2,7 +2,7 @@
 # Copyright (C) 2012 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 #
-# Matej Urbančič <mateju@svn.gnome.org>, 2012-2016.
+# Matej Urbančič <mateju@svn.gnome.org>, 2012-2018.
 #
 msgid ""
 msgstr ""
@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
 "weather&keywords=I18N+L10N&component=general\n"
 "POT-Creation-Date: 2016-03-05 21:10+0100\n"
-"PO-Revision-Date: 2016-03-05 21:10+0100\n"
+"PO-Revision-Date: 2018-02-03 22:13+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 2.0.4\n"
 
 #: ../data/app-menu.ui.h:1
 msgid "_New"
@@ -32,11 +32,11 @@ msgstr "Enota temperature"
 
 #: ../data/app-menu.ui.h:3
 msgid "Celsius"
-msgstr "Celzijus"
+msgstr "°C (Celzij)"
 
 #: ../data/app-menu.ui.h:4
 msgid "Fahrenheit"
-msgstr "Fahrenheiti"
+msgstr "°F (Fahrenheit)"
 
 #: ../data/app-menu.ui.h:5
 msgid "About"
@@ -52,7 +52,7 @@ msgstr "Pogled mesta"
 
 #: ../data/city.ui.h:2
 msgid "Loading…"
-msgstr "Nalaganje ..."
+msgstr "Poteka nalaganje ..."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
@@ -70,7 +70,7 @@ msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
 msgstr ""
-"Program, ki omogoča nadzor trenutnih vremenskih pogojev za izbrana mesta, "
+"Program, ki omogoča nadzor trenutnih vremenskih pogojev za izbrana mesta "
 "kjerkoli na svetu."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
@@ -78,8 +78,8 @@ msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Omogoča prikaz podrobne vremenske napovedi različnih spletnih mest do 7 dni, "
-"z urno razdelitvijo poteka za en dan naprej."
+"Omogoča prikaz podrobne vremenske napovedi prek različnih spletnih mest do 7 "
+"dni, z urno razdelitvijo poteka za en dan naprej."
 
 #: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
 msgid ""
@@ -96,7 +96,7 @@ msgstr "vreme;napoved;"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:4
 msgid "Allows weather information to be displayed for your location."
-msgstr "Dovoli prikazovanje podrobnosti o vremenu za trenutno mesto"
+msgstr "Dovoli prikazovanje podrobnosti o vremenu za nastavljena mesta"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -106,7 +106,7 @@ msgstr "Nastavljena mesta za prikaz vremena"
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
-msgstr "Mesta, ki so prikazana v svetovnem pogledu programa gnome-weather."
+msgstr "Mesta, ki so prikazana v svetovnem pogledu programa."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
 msgid "Automatic location"
@@ -117,8 +117,8 @@ msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 msgstr ""
-"Samodejno določanje mesta je vrednost možnosti, ki določa, ali naj bo "
-"trenutno mesto določeno ali ne."
+"Samodejno določanje mesta je omogoča določanje trenutnega mesta za prikaz "
+"vremenskih podatkov."
 
 #: ../data/places-popover.ui.h:1
 msgid "Automatic Location"
@@ -162,7 +162,7 @@ msgstr "Iskanje mesta"
 
 #: ../data/window.ui.h:4
 msgid "To see weather information, enter the name of a city."
-msgstr "Za ogled podrobnosti o vremenu vnesite ime mesta."
+msgstr "Za prikaz vremenskih podatkov je treba vpisati ime mesta."
 
 #: ../src/app/forecast.js:37
 msgid "Forecast"
