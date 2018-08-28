@@ -34,7 +34,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/geocode-glib"
+                    "url": "https://gitlab.gnome.org/GNOME/geocode-glib.git"
                 }
             ]
         },
@@ -55,7 +55,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gnome-desktop"
+                    "url": "https://gitlab.gnome.org/GNOME/gnome-desktop.git"
                 }
             ]
         },
@@ -64,7 +64,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gnome-weather"
+                    "url": "https://gitlab.gnome.org/GNOME/gnome-weather.git"
                 }
             ]
         }
