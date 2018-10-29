@@ -33,7 +33,7 @@ const SCROLLING_ANIMATION_TIME = 400000; //us
 var WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
-                       'temperatureLabel', 'conditionsLabel',
+                       'temperatureLabel', 'conditionsLabel', 'windLabel',
                        'timeLabel', 'timeGrid', 'forecastStack',
                        'leftButton', 'rightButton',
                        'forecast-today-grid', 'forecast-tomorrow-grid',
@@ -175,6 +175,7 @@ var WeatherWidget = GObject.registerClass({
 
         this._conditionsLabel.label = Util.getWeatherConditions(info);
         this._temperatureLabel.label = info.get_temp_summary();
+        this._windLabel.label = info.get_wind();
 
         this._conditionsImage.icon_name = info.get_symbolic_icon_name();
         let context = this._contentFrame.get_style_context();
