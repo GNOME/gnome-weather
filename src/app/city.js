@@ -36,7 +36,7 @@ var WeatherWidget = new Lang.Class({
     Extends: Gtk.Frame,
     Template: 'resource:///org/gnome/Weather/Application/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
-                       'temperatureLabel', 'conditionsLabel',
+                       'temperatureLabel', 'conditionsLabel', 'windLabel',
                        'timeLabel', 'timeGrid', 'forecastStack',
                        'leftButton', 'rightButton',
                        'forecast-today-grid', 'forecast-tomorrow-grid',
@@ -176,6 +176,7 @@ var WeatherWidget = new Lang.Class({
 
         this._conditionsLabel.label = Util.getWeatherConditions(info);
         this._temperatureLabel.label = info.get_temp_summary();
+        this._windLabel.label = info.get_wind();
 
         this._conditionsImage.icon_name = info.get_symbolic_icon_name();
         let context = this._contentFrame.get_style_context();
