@@ -54,6 +54,7 @@ var MainWindow = new Lang.Class({
 
         let builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/Weather/Application/window.ui');
+        builder.add_from_resource('/org/gnome/Weather/Application/primary-menu.ui');
 
         let grid = builder.get_object('main-panel');
         this._header = builder.get_object('header-bar');
@@ -79,6 +80,12 @@ var MainWindow = new Lang.Class({
 
         let refresh = builder.get_object('refresh-button');
         this._pageWidgets[Page.CITY].push(refresh);
+
+        let primaryMenuModel = builder.get_object('primary-menu');
+        let primaryMenuButton = builder.get_object('primary-menu-button');
+        let popover = Gtk.Popover.new_from_model(primaryMenuButton, primaryMenuModel);
+
+        primaryMenuButton.set_popover(popover);
 
         this._stack = builder.get_object('main-stack');
 

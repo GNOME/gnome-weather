@@ -75,14 +75,6 @@ const Application = new Lang.Class({
         this._showWindowWhenReady(win);
     },
 
-    _initAppMenu: function() {
-        let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/Weather/Application/app-menu.ui');
-
-        let menu = builder.get_object('app-menu');
-        this.set_app_menu(menu);
-    },
-
     vfunc_startup: function() {
         this.parent();
         // ensure the type before we call to GtkBuilder
@@ -149,10 +141,9 @@ const Application = new Lang.Class({
         });
         this.add_action(temperatureAction);
 
-        this._initAppMenu();
-
         this.add_accelerator("Escape", "win.selection-mode", new GLib.Variant('b', false));
         this.add_accelerator("<Primary>a", "win.select-all", null);
+        this.add_accelerator("<Primary>q", "app.quit", null);
     },
 
     _createWindow: function() {

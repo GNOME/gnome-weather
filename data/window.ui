@@ -6,6 +6,27 @@
     <property name="vexpand">False</property>
     <property name="show-close-button">True</property>
     <child>
+      <object class="GtkMenuButton" id="primary-menu-button">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="use-popover">True</property>
+        <property name="valign">center</property>
+        <style>
+          <class name="image-button"/>
+        </style>
+        <child>
+          <object class="GtkImage" id="primary-menu-img">
+            <property name="visible">True</property>
+            <property name="icon-name">open-menu-symbolic</property>
+            <property name="icon-size">1</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="pack_type">end</property>
+      </packing>
+    </child>
+    <child>
       <object class="GtkMenuButton" id="places-button">
         <property name="visible">True</property>
         <property name="can_focus">True</property>
@@ -144,3 +165,4 @@
     </child>
   </object>
 </interface>
+
