@@ -82,4 +82,10 @@ configure_file(
 	install_dir: join_paths(DATA_DIR, 'dbus-1', 'services')
 )
 
+# Search Provider
+install_data(
+	application_id + '.Application.search-provider.ini',
+	install_dir: 'share/gnome-shell/search-providers'
+)
+
 subdir('icons')
