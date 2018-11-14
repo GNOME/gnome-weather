@@ -13,7 +13,7 @@ message('Looking for dependencies')
 dependency('glib-2.0')
 dependency('gobject-introspection-1.0', version: '>=1.35.9')
 dependency('gtk+-3.0', version :'>=3.20')
-dependency('gjs-1.0', version: '>= 1.40.0')
+dependency('gjs-1.0', version: '>= 1.50.0')
 dependency('geoclue-2.0', version: '>= 0.12.99')
 dependency('gweather-3.0', version: '>= 3.28')
 
