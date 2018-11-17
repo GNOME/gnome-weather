@@ -7,41 +7,36 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-11-22 11:12+0000\n"
-"PO-Revision-Date: 2015-11-22 23:47+0200\n"
-"Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2018-11-10 15:25+0000\n"
+"PO-Revision-Date: 2018-11-16 15:50+0100\n"
+"Last-Translator: Carmen Bianca Bakker <carmen@carmenbianca.eu>\n"
 "Language-Team: Esperanto <gnome-l10n-eo@lists.launchpad.net>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "_Nova"
-
-#: ../data/app-menu.ui.h:2
 msgid "Temperature unit"
 msgstr "Temperatura unuo"
 
-#: ../data/app-menu.ui.h:3
+#: ../data/app-menu.ui.h:2
 msgid "Celsius"
 msgstr "Celsiuso"
 
-#: ../data/app-menu.ui.h:4
+#: ../data/app-menu.ui.h:3
 msgid "Fahrenheit"
 msgstr "Farenhejto"
 
-#: ../data/app-menu.ui.h:5
+#: ../data/app-menu.ui.h:4
 msgid "About"
 msgstr "Pri"
 
-#: ../data/app-menu.ui.h:6
+#: ../data/app-menu.ui.h:5
 msgid "Quit"
 msgstr "Ĉesi"
 
@@ -53,18 +48,18 @@ msgstr "Urba vido"
 msgid "Loading…"
 msgstr "Ŝargante…"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:53
+#: ../src/app/window.js:224 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Vetero"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Montras veterajn statojn kaj prognozojn"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -72,22 +67,31 @@ msgstr ""
 "Eta aplikaĵo kiu permesas al vi observi la nunan veterajn kondiĉojn de via "
 "urbo, aŭ ie ajn en la mondo."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+#: ../data/org.gnome.Weather.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
+"Disponigas la atingon je detalaj prognozoj, ĝis 7 tagoj, kun hora detalo por "
+"la nuna kaj sekvanta tago, pere de diversaj retaj serviloj."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+#: ../data/org.gnome.Weather.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
 "name in the Activities Overview."
 msgstr ""
+"Ĝi ankaŭ laŭvole integras kun la GNOME Shell, permesante vidi la nunajn "
+"kondiĉojn de la plej ĵus serĉitaj urboj nur tajpante sian nomon en la "
+"Superrigardo de Aktivecoj."
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
 msgid "Weather;Forecast;"
 msgstr "Vetero;Prognozo;"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+msgid "Allows weather information to be displayed for your location."
+msgstr "Ebligas la vidigon de veter-informoj por via loko."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:1
 msgid "Configured cities to show weather for"
@@ -102,8 +106,6 @@ msgstr ""
 "GVariant-liverita de gweather_location_serialize()."
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-#, fuzzy
-#| msgid "Add locations"
 msgid "Automatic location"
 msgstr "Aŭtomata lokado"
 
@@ -116,16 +118,12 @@ msgstr ""
 "decidas ĉu venigi la nunan lokon aŭ ne."
 
 #: ../data/places-popover.ui.h:1
-#, fuzzy
-#| msgid "New Location"
 msgid "Automatic Location"
-msgstr "Aŭtomata lokado"
+msgstr "Aŭtomata loko"
 
 #: ../data/places-popover.ui.h:2
-#, fuzzy
-#| msgid "Loading…"
 msgid "Locating…"
-msgstr "Ŝargante…"
+msgstr "Lokante…"
 
 #: ../data/places-popover.ui.h:3
 msgid "Search for a city"
@@ -167,17 +165,17 @@ msgstr "Por vidi veter-informojn, enigu la nomon de urbo."
 msgid "Forecast"
 msgstr "Prognozo"
 
-#: ../src/app/forecast.js:110
+#: ../src/app/forecast.js:111
 msgid "Forecast not available"
 msgstr "Prognozo ne disponeblas"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:126
+#: ../src/app/forecast.js:127
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:129
+#: ../src/app/forecast.js:130
 msgid "%R"
 msgstr "%R"
 
@@ -190,15 +188,15 @@ msgstr "Semajna prognozo"
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:115
+#: ../src/app/window.js:113
 msgid "Select Location"
 msgstr "Elekti lokon"
 
-#: ../src/app/window.js:225
+#: ../src/app/window.js:223
 msgid "translator-credits"
 msgstr "Kristjan SCHMIDT, Daniel PUENTES, Nicolas MAIA"
 
-#: ../src/app/window.js:227
+#: ../src/app/window.js:225
 msgid "A weather application"
 msgstr "Vetera aplikaĵo"
 
@@ -217,10 +215,13 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: ../src/service/searchProvider.js:181
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "_New"
+#~ msgstr "_Nova"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
