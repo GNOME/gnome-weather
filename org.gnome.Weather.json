@@ -1,71 +1,87 @@
 {
-    "app-id": "org.gnome.Weather",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "3.26",
-    "branch": "stable",
-    "sdk": "org.gnome.Sdk",
-    "command": "/app/share/org.gnome.Weather/org.gnome.Weather.Application",
-    "finish-args": [
-        "--share=ipc", "--socket=x11",
+    "app-id" : "org.gnome.Weather",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "master",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "gnome-weather",
+    "tags" : [
+        "nightly"
+    ],
+    "finish-args" : [
+        "--share=ipc",
+        "--socket=x11",
         "--socket=wayland",
         "--share=network",
         "--system-talk-name=org.freedesktop.GeoClue2",
-        "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--talk-name=ca.desrt.dconf",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
-    "build-options" : {
-        "cflags": "-O2 -g",
-        "cxxflags": "-O2 -g",
-        "env": {
-            "V": "1"
-        }
-    },
-    "cleanup": ["/include", "/lib/pkgconfig",
-                "/share/pkgconfig", "/share/aclocal",
-                "/man", "/share/man", "/share/gtk-doc",
-                "/share/vala",
-                "*.la", "*.a"],
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/pkgconfig",
+        "/share/aclocal",
+        "/man",
+        "/share/man",
+        "/share/gtk-doc",
+        "/share/vala",
+        "*.la",
+        "*.a"
+    ],
+    "desktop-file-name-prefix": [ "(Development) " ],
     "modules": [
         {
-            "name": "geocode-glib",
-            "config-opts": ["--disable-static"],
-            "sources": [
+            "name" : "geocode-glib",
+            "config-opts" : [
+                "-Denable-installed-tests=false",
+                "-Denable-gtk-doc=false"
+            ],
+            "buildsystem" : "meson",
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/geocode-glib/3.25/geocode-glib-3.25.4.1.tar.xz",
-                    "sha256": "f10169262c313dfaa21acf00687c01e0aaf52983524648e8b9e8e42c052dd778"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/geocode-glib.git"
                 }
             ]
         },
         {
-            "name": "libgweather",
-            "config-opts": ["--disable-static", "--disable-vala"],
-            "sources": [
+            "name" : "libgweather",
+            "config-opts" : [
+                "-Denable_vala=false",
+                "-Dgtk_doc=false"
+            ],
+            "buildsystem" : "meson",
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/libgweather/3.26/libgweather-3.26.1.tar.xz",
-                    "sha256": "fca78470b345bce948e0333cab0a7c52c32562fc4a75de37061248a64e8fc4b8"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/libgweather.git"
                 }
             ]
         },
         {
-            "name": "gnome-desktop",
-            "config-opts": ["--disable-debug-tools", "--disable-udev"],
-            "sources": [
+            "name" : "gnome-desktop",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Ddebug_tools=false",
+                "-Dudev=disabled",
+                "-Ddesktop_docs=false"
+            ],
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-desktop/3.26/gnome-desktop-3.26.0.tar.xz",
-                    "sha256": "8a99a084ea06fba20f5c547822dd8e36758676714729c7ae7b44ae3deca57be2"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gnome-desktop.git"
                 }
             ]
         },
         {
-            "name": "gnome-weather",
-            "sources": [
+            "name" : "gnome-weather",
+            "buildsystem" : "meson",
+            "sources" : [
                 {
-                    "type": "archive",
-                    "url": "https://download.gnome.org/sources/gnome-weather/3.26/gnome-weather-3.26.0.tar.xz",
-                    "sha256": "965cc0d1b4d4e53c06d494db96f0b124d232af5c0e731ca900edd10f77a74c78"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gnome-weather.git"
                 }
             ]
         }

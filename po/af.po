@@ -7,10 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-10-29 17:04+0000\n"
-"PO-Revision-Date: 2018-02-01 13:32+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2018-11-17 11:50+0000\n"
+"PO-Revision-Date: 2019-01-20 23:26+0200\n"
 "Last-Translator: Pieter Schoeman <pieter@sonbesie.co.za>\n"
 "Language-Team: Afrikaans <pieter@sonbesie.co.za>\n"
 "Language: af\n"
@@ -18,27 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.3\n"
-
-#: ../data/app-menu.ui.h:1
-msgid "Temperature unit"
-msgstr "Temperatuur eenheid"
-
-#: ../data/app-menu.ui.h:2
-msgid "Celsius"
-msgstr "Celsius"
-
-#: ../data/app-menu.ui.h:3
-msgid "Fahrenheit"
-msgstr "Fahrenheit"
-
-#: ../data/app-menu.ui.h:4
-msgid "About"
-msgstr "Aangaande"
-
-#: ../data/app-menu.ui.h:5
-msgid "Quit"
-msgstr "Sluit af"
+"X-Generator: Poedit 2.2\n"
 
 #: ../data/city.ui.h:1
 msgid "City view"
@@ -50,7 +29,7 @@ msgstr "Laai tans…"
 
 #: ../data/org.gnome.Weather.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:53
-#: ../src/app/window.js:224 ../src/service/main.js:49
+#: ../src/app/window.js:231 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Weer"
 
@@ -134,6 +113,22 @@ msgstr "Soek vir 'n stad"
 msgid "Viewed Recently"
 msgstr "Onlangs gesien"
 
+#: ../data/primary-menu.ui.h:1
+msgid "_Temperature Unit"
+msgstr "_Temperatuur eenheid"
+
+#: ../data/primary-menu.ui.h:2
+msgid "_Celsius"
+msgstr "_Celsius"
+
+#: ../data/primary-menu.ui.h:3
+msgid "_Fahrenheit"
+msgstr "_Fahrenheit"
+
+#: ../data/primary-menu.ui.h:4
+msgid "_About Weather"
+msgstr "Aangaande _weer"
+
 #: ../data/weather-widget.ui.h:1
 msgid "Current conditions"
 msgstr "Huidige toestande"
@@ -189,15 +184,15 @@ msgstr "Weeklikse voorspelling"
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:113
+#: ../src/app/window.js:120
 msgid "Select Location"
 msgstr "Kies ligging"
 
-#: ../src/app/window.js:223
+#: ../src/app/window.js:230
 msgid "translator-credits"
 msgstr "Pieter Schoeman"
 
-#: ../src/app/window.js:225
+#: ../src/app/window.js:232
 msgid "A weather application"
 msgstr "'n Weer toepassing"
 
@@ -220,3 +215,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "About"
+#~ msgstr "Aangaande"
+
+#~ msgid "Quit"
+#~ msgstr "Sluit af"

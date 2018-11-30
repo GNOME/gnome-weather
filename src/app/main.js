@@ -28,9 +28,9 @@ pkg.require({ 'Gdk': '3.0',
 const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
+const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
-const Lang = imports.lang;
 
 const Util = imports.misc.util;
 const Window = imports.app.window;
@@ -43,44 +43,43 @@ function initEnvironment() {
     };
 }
 
-const Application = new Lang.Class({
-    Name: 'WeatherApplication',
-    Extends: Gtk.Application,
+const Application = GObject.registerClass(
+    class WeatherApplication extends Gtk.Application {
 
-    _init: function() {
-        this.parent({ application_id: pkg.name,
+    _init() {
+        super._init({ application_id: pkg.name,
                       flags: (Gio.ApplicationFlags.CAN_OVERRIDE_APP_ID |  Gio.ApplicationFlags.FLAGS_NONE) });
         GLib.set_application_name(_("Weather"));
         Gtk.Window.set_default_icon_name("org.gnome.Weather");
-    },
+    }
 
-    _onQuit: function() {
+    _onQuit() {
         this.quit();
-    },
+    }
 
-    _onShowLocation: function(action, parameter) {
+    _onShowLocation(action, parameter) {
         let location = this.world.deserialize(parameter.deep_unpack());
         let win = this._createWindow();
 
         let info = this.model.addNewLocation(location, false);
         win.showInfo(info, false);
         this._showWindowWhenReady(win);
-    },
+    }
 
-    _onShowSearch: function(action, parameter) {
+    _onShowSearch(action, parameter) {
         let text = parameter.deep_unpack();
         let win = this._createWindow();
 
         win.showSearch(text);
         this._showWindowWhenReady(win);
-    },
+    }
 
-    vfunc_startup: function() {
-        this.parent();
+    vfunc_startup() {
+        super.vfunc_startup();
         // ensure the type before we call to GtkBuilder
         GWeather.LocationEntry;
 
-        Util.loadStyleSheet('/org/gnome/Weather/Application/application.css');
+        Util.loadStyleSheet('/org/gnome/Weather/application.css');
 
         let settings = Gtk.Settings.get_for_screen(Gdk.Screen.get_default());
         settings.gtk_application_prefer_dark_theme = true;
@@ -99,15 +98,32 @@ const Application = new Lang.Class({
         if (this.model.loading)
             this.mark_busy();
 
-        Util.initActions(this,
-                         [{ name: 'quit',
-                            activate: this._onQuit },
-                          { name: 'show-location',
-                            activate: this._onShowLocation,
-                            parameter_type: new GLib.VariantType('v') },
-                          { name: 'show-search',
-                            activate: this._onShowSearch,
-                            parameter_type: new GLib.VariantType('s') }]);
+        let quitAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'quit'
+        });
+        quitAction.connect('activate', () => this._onQuit());
+        this.add_action(quitAction);
+
+        let showLocationAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'show-location',
+            parameter_type: new GLib.VariantType('v'),
+        });
+        showLocationAction.connect('activate', (action, parameter) => {
+            this._onShowLocation();
+        });
+        this.add_action(showLocationAction);
+
+        let showSearchAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'show-search',
+            parameter_type: new GLib.VariantType('v'),
+        })
+        showSearchAction.connect('activate', (action, parameter) => {
+            this._onShowSearch();
+        });
+        this.add_action(showSearchAction);
 
         let gwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather' });
         // we would like to use g_settings_create_action() here
@@ -144,13 +160,13 @@ const Application = new Lang.Class({
         this.add_accelerator("Escape", "win.selection-mode", new GLib.Variant('b', false));
         this.add_accelerator("<Primary>a", "win.select-all", null);
         this.add_accelerator("<Primary>q", "app.quit", null);
-    },
+    }
 
-    _createWindow: function() {
+    _createWindow() {
         return new Window.MainWindow({ application: this });
-    },
+    }
 
-    _showWindowWhenReady: function(win) {
+    _showWindowWhenReady(win) {
         let notifyId;
 
         if (this.model.loading) {
@@ -176,19 +192,19 @@ const Application = new Lang.Class({
         }
 
         return win;
-    },
+    }
 
-    vfunc_activate: function() {
+    vfunc_activate() {
         let win = this._createWindow();
         win.showDefault();
         this._showWindowWhenReady(win);
-    },
+    }
 
-    vfunc_shutdown: function() {
+    vfunc_shutdown() {
         GWeather.Info.store_cache();
         this.model.saveSettingsNow();
 
-        this.parent();
+        super.vfunc_shutdown();
     }
 });
 

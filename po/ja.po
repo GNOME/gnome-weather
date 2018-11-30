@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the gnome-weather package.
 # Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013, 2015, 2016.
 # Hajime Taira <htaira@redhat.com>, 2014.
+# sicklylife <translation@sicklylife.jp>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-03-02 11:18+0000\n"
-"PO-Revision-Date: 2016-03-02 23:52+0900\n"
-"Last-Translator: Jiro Matsuzawa <jmatsuzawa@gnome.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2019-02-22 01:46+0000\n"
+"PO-Revision-Date: 2019-03-07 19:47+0900\n"
+"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -19,51 +19,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "新規(_N)"
-
-#: ../data/app-menu.ui.h:2
-msgid "Temperature unit"
-msgstr "温度の単位"
-
-#: ../data/app-menu.ui.h:3
-msgid "Celsius"
-msgstr "摂氏 (℃)"
-
-#: ../data/app-menu.ui.h:4
-msgid "Fahrenheit"
-msgstr "華氏 (℉)"
-
-#: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "このアプリケーションについて"
-
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "終了"
-
 # この文字列は翻訳しない方がいい
-#: ../data/city.ui.h:1
+#: data/city.ui:8
 msgid "City view"
 msgstr "City view"
 
-#: ../data/city.ui.h:2
+#: data/city.ui:30
 msgid "Loading…"
 msgstr "ロード中…"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:53
+#: src/app/window.js:231 src/service/main.js:49
 msgid "Weather"
 msgstr "天気"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
-#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: data/org.gnome.Weather.appdata.xml.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "天気の概況と予報を表示します"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -71,7 +47,7 @@ msgstr ""
 "あなたの街や、世界中の都市の現在の天候を確認することができる小さなアプリケー"
 "ションです。"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+#: data/org.gnome.Weather.appdata.xml.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -79,7 +55,7 @@ msgstr ""
 "さまざまなインターネットサービスを使用して詳細な天気予報を参照できます。週間"
 "天気予報や、当日と翌日の時間ごとの詳細な天気予報などが利用できます。"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+#: data/org.gnome.Weather.appdata.xml.in:24
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -88,19 +64,29 @@ msgstr ""
 "GNOME Shell と統合することができ、アクティビティ画面で都市名を入力すること"
 "で、よく調べる都市の現在の天候を参照することができます。"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in:48
+msgid "The GNOME Project"
+msgstr ""
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Weather.desktop.in.in:7
+msgid "@APP_ID@"
+msgstr ""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "Weather;Forecast;天気予報;天候;気象;"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+#: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
 msgstr "現在地の気象情報を表示できるようにします。"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+#: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
 msgstr "天気を表示する都市"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+#: data/org.gnome.Weather.gschema.xml:7
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
@@ -108,11 +94,11 @@ msgstr ""
 "gnome-weather の世界ビューで表示される場所のリストです。各値は "
 "gweather_location_serialize() が返却する GVariant です。"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+#: data/org.gnome.Weather.gschema.xml:14
 msgid "Automatic location"
 msgstr "自動位置検出"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+#: data/org.gnome.Weather.gschema.xml:15
 msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
@@ -120,100 +106,117 @@ msgstr ""
 "automatic-location は自動位置検出が現在の位置を取得するか否かを切り替える値で"
 "す。"
 
-#: ../data/places-popover.ui.h:1
+#: data/places-popover.ui:44
 msgid "Automatic Location"
 msgstr "自動位置検出"
 
-#: ../data/places-popover.ui.h:2
+#: data/places-popover.ui:83
 msgid "Locating…"
 msgstr "位置を検出中..."
 
-#: ../data/places-popover.ui.h:3
+#: data/places-popover.ui:140
 msgid "Search for a city"
 msgstr "都市の検索"
 
-#: ../data/places-popover.ui.h:4
+#: data/places-popover.ui:172
 msgid "Viewed Recently"
 msgstr "最近表示した場所"
 
-#: ../data/weather-widget.ui.h:1
+#: data/primary-menu.ui:4
+msgid "_Temperature Unit"
+msgstr "温度の単位(_T)"
+
+#: data/primary-menu.ui:6
+msgid "_Celsius"
+msgstr "摂氏 (℃)(_C)"
+
+#: data/primary-menu.ui:11
+msgid "_Fahrenheit"
+msgstr "華氏 (℉)(_F)"
+
+#: data/primary-menu.ui:19
+msgid "_About Weather"
+msgstr "このアプリケーションについて(_A)"
+
+#: data/weather-widget.ui:39
 msgid "Current conditions"
 msgstr "現在の天候"
 
-#: ../data/weather-widget.ui.h:2
+#: data/weather-widget.ui:151
 msgid "Today"
 msgstr "今日"
 
-#: ../data/weather-widget.ui.h:3
+#: data/weather-widget.ui:180
 msgid "Tomorrow"
 msgstr "明日"
 
-#: ../data/window.ui.h:1
+#: data/window.ui:33
 msgid "Places"
 msgstr "場所"
 
-#: ../data/window.ui.h:2
+#: data/window.ui:55
 msgid "Refresh"
 msgstr "更新"
 
-#: ../data/window.ui.h:3
+#: data/window.ui:113
 msgid "Search for a location"
 msgstr "場所の検索"
 
-#: ../data/window.ui.h:4
+#: data/window.ui:129
 msgid "To see weather information, enter the name of a city."
 msgstr "気象情報を表示するには、都市の名前を入力してください。"
 
-#: ../src/app/forecast.js:37
+#: src/app/forecast.js:37
 msgid "Forecast"
 msgstr "天気予報"
 
-#: ../src/app/forecast.js:111
+#: src/app/forecast.js:113
 msgid "Forecast not available"
 msgstr "天気予報がありません"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:127
+#: src/app/forecast.js:129
 msgid "%l∶%M %p"
-msgstr "%p%I∶%M"
+msgstr "%p %I:%M"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:130
+#: src/app/forecast.js:132
 msgid "%R"
-msgstr "%H∶%M"
+msgstr "%H:%M"
 
-#: ../src/app/weeklyForecast.js:36
+#: src/app/weeklyForecast.js:36
 msgid "Weekly Forecast"
 msgstr "週間天気予報"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: ../src/app/weeklyForecast.js:121
+#: src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:115
+#: src/app/window.js:120
 msgid "Select Location"
 msgstr "場所の選択"
 
-#: ../src/app/window.js:225
+#: src/app/window.js:230
 msgid "translator-credits"
 msgstr ""
-"松澤二郎 <jmatsuzawa@gnome.org>\n"
-"Hajime Taira <htaira@redhat.com>"
+"松澤 二郎 <jmatsuzawa@gnome.org>\n"
+"Hajime Taira <htaira@redhat.com>\n"
+"sicklylife <translation@sicklylife.jp>"
 
-#: ../src/app/window.js:227
+#: src/app/window.js:232
 msgid "A weather application"
 msgstr "天気予報アプリケーション"
 
 # この文字列は翻訳しない方がいい
-#: ../src/app/world.js:39
+#: src/app/world.js:39
 msgid "World view"
 msgstr "World view"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: ../src/misc/util.js:159
+#: src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -221,16 +224,22 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: src/service/searchProvider.js:181
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
+#~ msgid "_New"
+#~ msgstr "新規(_N)"
+
+#~ msgid "About"
+#~ msgstr "このアプリケーションについて"
+
+#~ msgid "Quit"
+#~ msgstr "終了"
+
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
-
-#~ msgid "About Weather"
-#~ msgstr "このアプリケーションについて"
 
 #~ msgid "Select All"
 #~ msgstr "すべて選択"

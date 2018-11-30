@@ -16,13 +16,13 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+const Gio = imports.gi.Gio;
+const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
-const Lang = imports.lang;
 
 const City = imports.app.city;
 const CurrentLocationController = imports.app.currentLocationController;
-const Params = imports.misc.params;
 const World = imports.shared.world;
 const WorldView = imports.app.world;
 const Util = imports.misc.util;
@@ -32,29 +32,41 @@ const Page = {
     CITY: 1
 };
 
-var MainWindow = new Lang.Class({
-    Name: 'MainWindow',
-    Extends: Gtk.ApplicationWindow,
+var MainWindow = GObject.registerClass(
+    class MainWindow extends Gtk.ApplicationWindow {
 
-    _init: function(params) {
-        this.parent(params);
+    _init(params) {
+        super._init(params);
 
         this._world = this.application.world;
         this.currentInfo = null;
         this._currentPage = Page.SEARCH;
         this._pageWidgets = [[],[]];
 
-        Util.initActions(this,
-                         [{ name: 'about',
-                            activate: this._showAbout },
-                          { name: 'close',
-                            activate: this._close },
-                          { name: 'refresh',
-                            activate: this.update }]);
+        let aboutAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'about'
+        });
+        aboutAction.connect('activate', () => this._showAbout());
+        this.add_action(aboutAction);
+
+        let closeAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'close'
+        });
+        closeAction.connect('activate', () => this._close());
+        this.add_action(closeAction);
+
+        let refreshAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'refresh'
+        });
+        refreshAction.connect('activate', () => this.update());
+        this.add_action(refreshAction);
 
         let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/Weather/Application/window.ui');
-        builder.add_from_resource('/org/gnome/Weather/Application/primary-menu.ui');
+        builder.add_from_resource('/org/gnome/Weather/window.ui');
+        builder.add_from_resource('/org/gnome/Weather/primary-menu.ui');
 
         let grid = builder.get_object('main-panel');
         this._header = builder.get_object('header-bar');
@@ -71,7 +83,9 @@ var MainWindow = new Lang.Class({
         this._searchView = builder.get_object('initial-grid');
 
         this._searchEntry = builder.get_object('initial-grid-location-entry');
-        this._searchEntry.connect('notify::location', this._searchLocationChanged.bind(this));
+        this._searchEntry.connect('notify::location', (entry) => {
+            this._searchLocationChanged(entry);
+        });
 
         let placesButton = builder.get_object('places-button');
         this._pageWidgets[Page.CITY].push(placesButton);
@@ -102,20 +116,20 @@ var MainWindow = new Lang.Class({
             this._pageWidgets[Page.CITY][i].hide();
 
         this._showingDefault = false;
-    },
+    }
 
-    update: function() {
+    update() {
         this._cityView.update();
-    },
+    }
 
-    _searchLocationChanged: function(entry) {
+    _searchLocationChanged(entry) {
         if (entry.location) {
             let info = this._model.addNewLocation(entry.location, false);
             this.showInfo(info, false);
         }
-    },
+    }
 
-    _getTitle: function() {
+    _getTitle() {
         if (this._currentPage == Page.SEARCH)
             return [_("Select Location"), null];
 
@@ -133,9 +147,9 @@ var MainWindow = new Lang.Class({
             return [city.get_name(), country.get_name()];
         else
             return [city.get_name(), null];
-    },
+    }
 
-    _goToPage: function(page) {
+    _goToPage(page) {
         for (let i = 0; i < this._pageWidgets[this._currentPage].length; i++)
             this._pageWidgets[this._currentPage][i].hide();
 
@@ -150,9 +164,9 @@ var MainWindow = new Lang.Class({
         let [title, subtitle] = this._getTitle();
         this._header.title = title;
         this._header.subtitle = subtitle;
-    },
+    }
 
-    showDefault: function() {
+    showDefault() {
         this._showingDefault = true;
         let clc = this.application.currentLocationController;
         let autoLocation = clc.autoLocation;
@@ -161,9 +175,9 @@ var MainWindow = new Lang.Class({
             this.showInfo(this._model.getCurrentLocation(), false);
         else if (autoLocation != CurrentLocationController.AutoLocation.ENABLED)
             this.showInfo(this._model.getRecent(), false);
-    },
+    }
 
-    showSearch: function(text) {
+    showSearch(text) {
         this._showingDefault = false;
         this._cityView.setTimeVisible(false);
         this._stack.set_visible_child(this._searchView);
@@ -171,9 +185,9 @@ var MainWindow = new Lang.Class({
         this._searchEntry.text = text;
         if (text.length > 0)
             this._searchEntry.get_completion().complete();
-    },
+    }
 
-    showInfo: function(info, isCurrentLocation) {
+    showInfo(info, isCurrentLocation) {
         if (!info) {
             if (isCurrentLocation && this._showingDefault)
                 this.showDefault();
@@ -209,9 +223,9 @@ var MainWindow = new Lang.Class({
         this._worldView.refilter();
         this._stack.set_visible_child(this._cityView);
         this._goToPage(Page.CITY);
-    },
+    }
 
-    _showAbout: function() {
+    _showAbout() {
         let artists = [ 'Jakub Steiner <jimmac@gmail.com>',
                         'Pink Sherbet Photography (D. Sharon Pruitt)',
                         'Elliott Brown',
@@ -252,9 +266,9 @@ var MainWindow = new Lang.Class({
         aboutDialog.connect('response', function() {
             aboutDialog.destroy();
         });
-    },
+    }
 
-    _close: function() {
+    _close() {
         this.destroy();
     }
 });

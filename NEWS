@@ -1,3 +1,102 @@
+3.32.0
+======
+* Migrate app menu to primary menu
+* New icon
+* Show tomorrow's forecasts at the end of the day (Michael Catanzaro)
+
+* Translation updates:
+ - Afrikaans
+ - Arabic
+ - Basque
+ - Catalan
+ - Chinese (Taiwan)
+ - Czech
+ - Danish
+ - Dutch
+ - Esperanto
+ - Estonian
+ - Finnish
+ - French
+ - Friulian
+ - Gaelic
+ - Galician
+ - German
+ - Greek, Modern (1453-)
+ - Hungarian
+ - Indonesian
+ - Italian
+ - Japanese
+ - Kazakh
+ - Latvian
+ - Lithuanian
+ - Nepali
+ - Polish
+ - Portuguese (Brazil)
+ - Romanian
+ - Russian
+ - Serbian
+ - Slovenian
+ - Spanish
+ - Swedish
+ - Tajik
+ - Turkish
+ - Vietnamese
+
+3.31.92
+=======
+* Bugs fixed:
+ - #19 3.31.90 no longer installs a binary in the path
+
+* Translation updates:
+ - Basque
+ - Catalan
+ - Chinese (Taiwan)
+ - Czech
+ - Danish
+ - Dutch
+ - Finnish
+ - French
+ - Friulian
+ - Galician
+ - German
+ - Greek, Modern (1453-)
+ - Hungarian
+ - Indonesian
+ - Italian
+ - Kazakh
+ - Lithuanian
+ - Polish
+ - Portuguese (Brazil)
+ - Romanian
+ - Russian
+ - Serbian
+ - Slovenian
+ - Spanish
+ - Swedish
+ - Tajik
+ - Turkish
+ - Vietnamese
+
+
+3.31.90
+=======
+* Port from Autotools to Meson (Falk Seidl)
+* Show tomorrow's forecasts at the end of the day (Michael Catanzaro)
+* Unify App ID
+* Translation updates:
+ - Galician
+ - Greek
+ - Hungarian
+ - Swedish
+ - Turkish
+
+3.31.3
+======
+* Migrate app menu to primary menu
+* New icon
+* Update GJS dependency
+* Translation updates
+
 3.26.0
 ======
 * Translation updates

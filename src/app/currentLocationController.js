@@ -34,7 +34,7 @@ var CurrentLocationController = class CurrentLocationController {
     constructor(world) {
         this._world = world;
         this._processStarted = false;
-        this._settings = Util.getSettings('org.gnome.Weather.Application');
+        this._settings = Util.getSettings('org.gnome.Weather');
         let autoLocation = this._settings.get_value('automatic-location').deep_unpack();
         this._syncAutoLocation(autoLocation);
         if (this.autoLocation == AutoLocation.ENABLED)
@@ -47,7 +47,9 @@ var CurrentLocationController = class CurrentLocationController {
         Geoclue.Simple.new(pkg.name,
                            Geoclue.AccuracyLevel.CITY,
                            null,
-                           this._onSimpleReady.bind(this));
+                           (object, result) => {
+                                this._onSimpleReady(object, result)
+                            });
     }
 
     _geoLocationFailed(e) {
@@ -75,8 +77,9 @@ var CurrentLocationController = class CurrentLocationController {
 
     _findLocation() {
         this._locationUpdatedId =
-                    this._simple.connect("notify::location",
-                                         this._onLocationUpdated.bind(this));
+                    this._simple.connect("notify::location", (simple) => {
+                        this._onLocationUpdated(simple);
+                    });
 
         this._onLocationUpdated(this._simple);
     }
@@ -113,8 +116,9 @@ var CurrentLocationController = class CurrentLocationController {
                 this._startGeolocationService();
             } else {
                 this._locationUpdatedId =
-                    this._simple.connect("notify::location",
-                                         this._onLocationUpdated.bind(this));
+                    this._simple.connect("notify::location", (simple) => {
+                                             this._onLocationUpdated(simple);
+                                         });
             }
         } else {
             this._simple.disconnect(this._locationUpdatedId);

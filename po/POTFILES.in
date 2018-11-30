@@ -1,11 +1,13 @@
-[type: gettext/glade]data/city.ui
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/city.ui
 data/org.gnome.Weather.appdata.xml.in
-data/org.gnome.Weather.Application.desktop.in
-data/org.gnome.Weather.Application.gschema.xml
-[type: gettext/glade]data/places-popover.ui
-[type: gettext/glade]data/primary-menu.ui
-[type: gettext/glade]data/weather-widget.ui
-[type: gettext/glade]data/window.ui
+data/org.gnome.Weather.desktop.in.in
+data/org.gnome.Weather.gschema.xml
+data/places-popover.ui
+data/primary-menu.ui
+data/weather-widget.ui
+data/window.ui
 src/app/city.js
 src/app/currentLocationController.js
 src/app/forecast.js

@@ -18,22 +18,20 @@
 
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
+const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
-const Lang = imports.lang;
 
-const Params = imports.misc.params;
 const Util = imports.misc.util;
 
 // In microseconds
 const ONE_HOUR = 3600*1000*1000;
 
-var ForecastBox = new Lang.Class({
-    Name: 'ForecastBox',
-    Extends: Gtk.Frame,
+var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
 
-    _init: function(params) {
-        params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE });
-        this.parent(params);
+    _init(params) {
+        super._init(Object.assign({
+            shadow_type: Gtk.ShadowType.NONE
+        }, params));
         this.get_accessible().accessible_name = _("Forecast");
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
@@ -45,27 +43,32 @@ var ForecastBox = new Lang.Class({
                                     margin_bottom: 12,
                                     column_homogeneous: true });
         this.add(this._grid);
-    },
+
+        this._hasForecastInfo = false;
+    }
 
     // Ensure that infos are sufficiently spaced, and
     // remove infos for the wrong day
-    _preprocess: function(now, infos) {
+    _preprocess(now, tz, infos) {
         let ret = [];
         let i;
         let current;
 
-        // First ignore all infos that are on a different
-        // day than now.
+        // First ignore all infos that are on a different day from now.
         // infos are ordered by time, and it's assumed at some point
         // there is an info for the current day (otherwise, nothing
-        // is shown)
+        // is shown).
+        //
+        // We must compare using the target timezone to ensure the 24-hour
+        // day period falls on the correct boundary.
         for (i = 0; i < infos.length; i++) {
             let info = infos[i];
 
             let [ok, date] = info.get_value_update();
-            let datetime = GLib.DateTime.new_from_unix_local(date);
+            let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
 
-            if (Util.arrayEqual(now.get_ymd(), datetime.get_ymd())) {
+            if (Util.arrayEqual(now.get_ymd(), datetime.get_ymd()) &&
+                    now.get_hour() <= datetime.get_hour()) {
                 ret.push(info);
                 current = datetime;
                 break;
@@ -76,7 +79,7 @@ var ForecastBox = new Lang.Class({
             let info = infos[i];
 
             let [ok, date] = info.get_value_update();
-            let datetime = GLib.DateTime.new_from_unix_local(date);
+            let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
             if (datetime.difference(current) < ONE_HOUR)
                 continue;
 
@@ -89,23 +92,25 @@ var ForecastBox = new Lang.Class({
         }
 
         return ret;
-    },
+    }
 
-    update: function(infos, day) {
-        let now = GLib.DateTime.new_now_local();
+    update(infos, tz, day) {
+        let now = GLib.DateTime.new_now(tz);
         if (day == 'tomorrow')
-            now = now.add_days(1);
-        let dayInfo = this._preprocess(now, infos);
+            now = now.add_hours(24 - now.get_hour());
+        // 'now' contains a TimeZone, but there is no accessor;
+        // thus, we must pass both the target time and zone
+        let dayInfo = this._preprocess(now, tz, infos);
 
         if (dayInfo.length == 0) {
             now = now.add_hours(-2);
-            dayInfo = this._preprocess(now, infos);
+            dayInfo = this._preprocess(now, tz, infos);
         }
 
         if (dayInfo.length > 0) {
             for (let i = 0; i < dayInfo.length; i++) {
                 let info = dayInfo[i];
-                this._addOneInfo(info, i);
+                this._addOneInfo(info, tz, i);
             }
         } else {
             let label = new Gtk.Label({ label: _("Forecast not available"),
@@ -113,11 +118,11 @@ var ForecastBox = new Lang.Class({
                                         visible: true });
             this._grid.attach(label, 0, 0, 1, 1);
         }
-    },
+    }
 
-    _addOneInfo: function(info, col) {
+    _addOneInfo(info, tz, col) {
         let [ok, date] = info.get_value_update();
-        let datetime = GLib.DateTime.new_from_unix_local(date);
+        let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
 
         let timeSetting = this._settings.get_string('clock-format');
         let timeFormat = null;
@@ -145,9 +150,15 @@ var ForecastBox = new Lang.Class({
         let temperature = new Gtk.Label({ label: Util.getTemperature(info),
                                           visible: true });
         this._grid.attach(temperature, col, 2, 1, 1);
-    },
 
-    clear: function() {
+        this._hasForecastInfo = true;
+    }
+
+    clear() {
         this._grid.foreach(function(w) { w.destroy(); });
+    }
+
+    hasForecastInfo() {
+        return this._hasForecastInfo;
     }
 });
