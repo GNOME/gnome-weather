@@ -184,8 +184,9 @@ var WeatherWidget = GObject.registerClass({
         context.add_class(this._currentStyle);
 
         let forecasts = info.get_forecast_list();
+        let tz = GLib.TimeZone.new(info.location.get_timezone().get_tzid());
         for (let t of ['today', 'tomorrow'])
-            this._forecasts[t].update(forecasts, t);
+            this._forecasts[t].update(forecasts, tz, t);
 
         if (!this._forecasts['today'].hasForecastInfo() && this._forecasts['tomorrow'].hasForecastInfo())
             this._forecastStack.set_visible_child_name('tomorrow');
