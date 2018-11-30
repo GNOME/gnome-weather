@@ -185,8 +185,9 @@ var WeatherWidget = new Lang.Class({
         context.add_class(this._currentStyle);
 
         let forecasts = info.get_forecast_list();
+        let tz = GLib.TimeZone.new(info.location.get_timezone().get_tzid());
         for (let t of ['today', 'tomorrow'])
-            this._forecasts[t].update(forecasts, t);
+            this._forecasts[t].update(forecasts, tz, t);
 
         if (forecasts.length == 0) {
             this._weeklyForecasts.hide();
