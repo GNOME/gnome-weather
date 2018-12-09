@@ -9,8 +9,8 @@ data_conf.set('pkgdatadir', pkgdatadir)
 message('Compiling resources')
 
 gnome.compile_resources(
-	application_id + '.Application.data',
-	application_id + '.Application.data.gresource.xml',
+	application_id_stable + '.Application.data',
+	application_id_stable + '.Application.data.gresource.xml',
 	gresource_bundle: true,
 	source_dir: '.',
 	install_dir: DATA_DIR,
@@ -18,8 +18,8 @@ gnome.compile_resources(
 )
 
 gnome.compile_resources(
-	application_id + '.BackgroundService.data',
-	application_id + '.BackgroundService.data.gresource.xml',
+	application_id_stable + '.BackgroundService.data',
+	application_id_stable + '.BackgroundService.data.gresource.xml',
 	gresource_bundle: true,
 	source_dir: '.',
 	install_dir: DATA_DIR,
@@ -28,7 +28,7 @@ gnome.compile_resources(
 
 # Installing the schema file
 install_data(
-	application_id + '.Application.gschema.xml',
+	application_id_stable + '.Application.gschema.xml',
 	install_dir: 'share/glib-2.0/schemas'
 )
 
@@ -36,8 +36,8 @@ install_data(
 desktop_conf = configuration_data()
 desktop = i18n.merge_file(
 	'desktop',
-	input: 'org.gnome.Weather.Application.desktop.in',
-	output: 'org.gnome.Weather.Application.desktop',
+	input: application_id_stable + '.Application.desktop.in',
+	output: application_id + '.Application.desktop',
 	po_dir: join_paths(meson.source_root(), 'po'),
 	type: 'desktop',
 	install: true,
@@ -58,7 +58,7 @@ endif
 appdata_conf = configuration_data()
 appdata = i18n.merge_file(
 	'appdata',
-	input: 'org.gnome.Weather.appdata.xml.in',
+	input: application_id_stable + '.appdata.xml.in',
 	output: application_id + '.appdata.xml',
 	install: true,
 	install_dir: join_paths(join_paths('share'), 'metainfo'),
@@ -67,7 +67,7 @@ appdata = i18n.merge_file(
 
 
 configure_file(
-	input: application_id + '.Application.service.in',
+	input: application_id_stable + '.Application.service.in',
 	output: application_id + '.Application.service',
 	configuration: data_conf,
 	install: true,
@@ -75,7 +75,7 @@ configure_file(
 )
 
 configure_file(
-	input: application_id + '.BackgroundService.service.in',
+	input: application_id_stable + '.BackgroundService.service.in',
 	output: application_id + '.BackgroundService.service',
 	configuration: data_conf,
 	install: true,
@@ -84,7 +84,7 @@ configure_file(
 
 # Search Provider
 install_data(
-	application_id + '.Application.search-provider.ini',
+	application_id_stable + '.Application.search-provider.ini',
 	install_dir: 'share/gnome-shell/search-providers'
 )
 

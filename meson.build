@@ -8,6 +8,7 @@ prefix = get_option('prefix')
 i18n = import('i18n')
 gnome = import('gnome')
 application_id = 'org.gnome.Weather'
+application_id_stable = 'org.gnome.Weather'
 
 message('Looking for dependencies')
 dependency('glib-2.0')
