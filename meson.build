@@ -57,5 +57,6 @@ conf.set('APP_ID', application_id)
 subdir('data')
 subdir('po')
 subdir('src')
+subdir('tests')
 
 meson.add_install_script('meson_post_install.py')
