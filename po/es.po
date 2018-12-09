@@ -2,47 +2,22 @@
 # Copyright (C) 2012 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012, 2013, 2014, 2016.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012, 2013, 2014, 2016, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-02-22 11:16+0000\n"
-"PO-Revision-Date: 2016-02-22 17:29+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2018-11-07 20:32+0000\n"
+"PO-Revision-Date: 2018-12-04 15:55+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
-
-#: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "Nueva"
-
-#: ../data/app-menu.ui.h:2
-msgid "Temperature unit"
-msgstr "Unidad de temperatura"
-
-#: ../data/app-menu.ui.h:3
-msgid "Celsius"
-msgstr "Celsius"
-
-#: ../data/app-menu.ui.h:4
-msgid "Fahrenheit"
-msgstr "Fahrenheit"
-
-#: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "Acerca de"
-
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Salir"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../data/city.ui.h:1
 msgid "City view"
@@ -52,18 +27,18 @@ msgstr "Vista de la ciudad"
 msgid "Loading…"
 msgstr "Cargando…"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:53
+#: ../src/app/window.js:231 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Meteorología"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Mostrar las condiciones meteorológicas y el pronóstico"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -71,7 +46,7 @@ msgstr ""
 "Una pequeña aplicación que le permite monitorizar el tiempo actual en su "
 "ciudad, o en cualquier lugar del mundo."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+#: ../data/org.gnome.Weather.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -80,7 +55,7 @@ msgstr ""
 "cada hora para el día actual y el siguiente, usando varios servicios de "
 "Internet."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+#: ../data/org.gnome.Weather.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -95,7 +70,6 @@ msgid "Weather;Forecast;"
 msgstr "Pronóstico;Tiempo;Meteorología;Clima;"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:4
-#| msgid "To see weather information, enter the name of a city."
 msgid "Allows weather information to be displayed for your location."
 msgstr "Permite mostrar la información sobre el tiempo de su ubicación."
 
@@ -138,6 +112,26 @@ msgstr "Buscar una ciudad"
 #: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Vistas recientemente"
+
+#: ../data/primary-menu.ui.h:1
+#| msgid "Temperature unit"
+msgid "_Temperature Unit"
+msgstr "Unidad de _temperatura"
+
+#: ../data/primary-menu.ui.h:2
+#| msgid "Celsius"
+msgid "_Celsius"
+msgstr "_Celsius"
+
+#: ../data/primary-menu.ui.h:3
+#| msgid "Fahrenheit"
+msgid "_Fahrenheit"
+msgstr "_Fahrenheit"
+
+#: ../data/primary-menu.ui.h:4
+#| msgid "About Weather"
+msgid "_About Weather"
+msgstr "_Acerca de Meteorología"
 
 #: ../data/weather-widget.ui.h:1
 msgid "Current conditions"
@@ -195,15 +189,15 @@ msgstr "Pronóstico semanal"
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:115
+#: ../src/app/window.js:120
 msgid "Select Location"
 msgstr "Seleccionar ubicación"
 
-#: ../src/app/window.js:225
+#: ../src/app/window.js:230
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013"
 
-#: ../src/app/window.js:227
+#: ../src/app/window.js:232
 msgid "A weather application"
 msgstr "Una aplicación de meteorología"
 
@@ -222,10 +216,19 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: ../src/service/searchProvider.js:181
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "_New"
+#~ msgstr "Nueva"
+
+#~ msgid "About"
+#~ msgstr "Acerca de"
+
+#~ msgid "Quit"
+#~ msgstr "Salir"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
@@ -392,9 +395,6 @@ msgstr "%s, %s"
 
 #~ msgid "label"
 #~ msgstr "etiqueta"
-
-#~ msgid "About Weather"
-#~ msgstr "Acerca de Meteorología"
 
 #~ msgid "Click on items to select them"
 #~ msgstr "Pulse sobre los elementos para seleccionarlos"

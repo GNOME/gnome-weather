@@ -34,7 +34,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/geocode-glib"
+                    "url": "https://gitlab.gnome.org/GNOME/geocode-glib.git"
                 }
             ]
         },
@@ -51,11 +51,12 @@
         },
         {
             "name": "gnome-desktop",
-            "config-opts": ["--disable-debug-tools", "--disable-udev"],
+            "buildsystem": "meson",
+            "config-opts": ["-Ddebug_tools=false", "-Dudev=disabled", "-Ddesktop_docs=false"],
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gnome-desktop"
+                    "url": "https://gitlab.gnome.org/GNOME/gnome-desktop.git"
                 }
             ]
         },
@@ -64,7 +65,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "git://git.gnome.org/gnome-weather"
+                    "url": "https://gitlab.gnome.org/GNOME/gnome-weather.git"
                 }
             ]
         }
