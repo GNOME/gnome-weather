@@ -1,11 +1,11 @@
 [Desktop Entry]
 Type=Application
-_Name=Weather
-_Comment=Show weather conditions and forecast
+Name=Weather
+Comment=Show weather conditions and forecast
 Icon=org.gnome.Weather
 Exec=gapplication launch org.gnome.Weather.Application
 DBusActivatable=true
 StartupNotify=true
 Categories=GNOME;GTK;Utility;Core;
-_Keywords=Weather;Forecast;
-_X-Geoclue-Reason=Allows weather information to be displayed for your location.
+Keywords=Weather;Forecast;
+X-Geoclue-Reason=Allows weather information to be displayed for your location.
