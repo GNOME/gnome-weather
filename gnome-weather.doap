@@ -18,6 +18,23 @@
   <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
   <programming-language>JavaScript</programming-language>
 
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Christopher Davis</foaf:name>
+      <foaf:mbox rdf:resource="mailto:christopherdavis@gnome.org" />
+      <gnome:userid>christopherdavis</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+
+  <maintainer>
+    <foaf:Person>
+      <foaf:name>Falk Seidl</foaf:name>
+      <foaf:mbox rdf:resource="mailto:fseidl@gnome.org" />
+      <gnome:userid>fseidl</gnome:userid>
+    </foaf:Person>
+  </maintainer>
+
   <maintainer>
     <foaf:Person>
       <foaf:name>Giovanni Campagna</foaf:name>
