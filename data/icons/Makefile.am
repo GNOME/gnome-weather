@@ -6,6 +6,8 @@ nobase_icon_DATA = \
 	hicolor/scalable/apps/$(PACKAGE_NAME).svg \
 	hicolor/symbolic/apps/$(PACKAGE_NAME)-symbolic.svg
 
+EXTRA_DIST=$(nobase_icon_DATA)
+
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 
 install-data-hook: update-icon-cache
