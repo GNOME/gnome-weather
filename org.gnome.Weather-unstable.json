@@ -25,7 +25,7 @@
                 "/man", "/share/man", "/share/gtk-doc",
                 "/share/vala",
                 "*.la", "*.a"],
-    "cleanup-commands": [ "desktop-file-edit \"--set-name=(Nightly) Weather\" /app/share/applications/org.gnome.Weather.Application.desktop" ],
+    "cleanup-commands": [ "desktop-file-edit \"--set-name=(Development) Weather\" /app/share/applications/org.gnome.Weather.Application.desktop" ],
     "modules": [
         {
             "name": "geocode-glib",
