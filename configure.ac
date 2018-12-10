@@ -1,5 +1,5 @@
 AC_PREREQ(2.63)
-AC_INIT([org.gnome.Weather],[3.26.0],
+AC_INIT([org.gnome.Weather],[3.31.3],
 	[https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather],
 	[gnome-weather],
 	[https://wiki.gnome.org/Apps/Weather])
@@ -32,7 +32,7 @@ PKG_CHECK_MODULES([DEPS], [gdk-3.0
                            gio-2.0
                            glib-2.0
                            gobject-2.0
-                           gtk+-3.0 >= 3.11.4
+                           gtk+-3.0 >= 3.12.0
                            libgeoclue-2.0 >= 2.3.1
                            gjs-1.0 >= $GJS_MIN_VERSION
                            gweather-3.0 >= 3.25.91])
