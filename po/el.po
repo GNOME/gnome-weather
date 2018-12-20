@@ -8,10 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-02-27 11:13+0000\n"
-"PO-Revision-Date: 2016-02-27 16:48+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2018-11-07 20:32+0000\n"
+"PO-Revision-Date: 2018-12-21 00:57+0200\n"
 "Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
 "Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
@@ -19,32 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.0.7\n"
 "X-Project-Style: gnome\n"
-
-#: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "_Νέο"
-
-#: ../data/app-menu.ui.h:2
-msgid "Temperature unit"
-msgstr "Μονάδα θερμοκρασίας"
-
-#: ../data/app-menu.ui.h:3
-msgid "Celsius"
-msgstr "Βαθμοί Κελσίου"
-
-#: ../data/app-menu.ui.h:4
-msgid "Fahrenheit"
-msgstr "Φαρενάϊτ"
-
-#: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "Περί"
-
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Έξοδος"
 
 #: ../data/city.ui.h:1
 msgid "City view"
@@ -54,18 +29,18 @@ msgstr "Εμφάνιση πόλης"
 msgid "Loading…"
 msgstr "Φορτώνεται…"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: ../data/org.gnome.Weather.appdata.xml.in.h:1
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:53
+#: ../src/app/window.js:231 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Καιρός"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
+#: ../data/org.gnome.Weather.appdata.xml.in.h:2
 #: ../data/org.gnome.Weather.Application.desktop.in.h:2
 msgid "Show weather conditions and forecast"
 msgstr "Εμφάνιση συνθηκών καιρού και πρόβλεψης"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: ../data/org.gnome.Weather.appdata.xml.in.h:3
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -74,7 +49,7 @@ msgstr ""
 "καιρικές συνθήκες για την πόλη σας, ή για οποιαδήποτε άλλη τοποθεσία στον "
 "κόσμο."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+#: ../data/org.gnome.Weather.appdata.xml.in.h:4
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -83,7 +58,7 @@ msgstr ""
 "στοιχεία για την τρέχουσα και την επόμενη μέρα, με τη χρήση διαφόρων "
 "υπηρεσιών διαδικτύου."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+#: ../data/org.gnome.Weather.appdata.xml.in.h:5
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -98,7 +73,6 @@ msgid "Weather;Forecast;"
 msgstr "Καιρός;Πρόγνωση;Weather;Forecast;"
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:4
-#| msgid "To see weather information, enter the name of a city."
 msgid "Allows weather information to be displayed for your location."
 msgstr "Επιτρέπει την εμφάνιση πληροφοριών καιρού για την τοποθεσία σας."
 
@@ -142,6 +116,22 @@ msgstr "Αναζήτηση πόλης"
 #: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Πρόσφατα"
+
+#: ../data/primary-menu.ui.h:1
+msgid "_Temperature Unit"
+msgstr "Μονάδα _θερμοκρασίας"
+
+#: ../data/primary-menu.ui.h:2
+msgid "_Celsius"
+msgstr "_Κελσίου"
+
+#: ../data/primary-menu.ui.h:3
+msgid "_Fahrenheit"
+msgstr "_Φαρενάϊτ"
+
+#: ../data/primary-menu.ui.h:4
+msgid "_About Weather"
+msgstr "_Περί του Καιρός"
 
 #: ../data/weather-widget.ui.h:1
 msgid "Current conditions"
@@ -199,11 +189,11 @@ msgstr "Εβδομαδιαία πρόγνωση"
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:115
+#: ../src/app/window.js:120
 msgid "Select Location"
 msgstr "Επιλογή τοποθεσίας"
 
-#: ../src/app/window.js:225
+#: ../src/app/window.js:230
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME  \n"
@@ -215,7 +205,7 @@ msgstr ""
 "Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
-#: ../src/app/window.js:227
+#: ../src/app/window.js:232
 msgid "A weather application"
 msgstr "Μια εφαρμογή για τον καιρό"
 
@@ -234,10 +224,19 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: ../src/service/searchProvider.js:181
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "_New"
+#~ msgstr "_Νέο"
+
+#~ msgid "About"
+#~ msgstr "Περί"
+
+#~ msgid "Quit"
+#~ msgstr "Έξοδος"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
@@ -404,6 +403,3 @@ msgstr "%s, %s"
 
 #~ msgid "label"
 #~ msgstr "ετικέτα"
-
-#~ msgid "About Weather"
-#~ msgstr "Για τον καιρό"
