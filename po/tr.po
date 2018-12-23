@@ -5,47 +5,23 @@
 # Muhammet Kara <muhammetk@gmail.com>, 2014.
 # Necdet Yücel <necdetyucel@gmail.com>, 2015.
 # Furkan Ahmet Kara <furkanahmetkara.fk@gmail.com>, 2017.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2017-05-08 20:25+0000\n"
-"PO-Revision-Date: 2017-05-25 02:46+0300\n"
-"Last-Translator: Furkan Ahmet Kara <furkanahmetkara.fk@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2018-11-07 20:32+0000\n"
+"PO-Revision-Date: 2018-12-23 09:15+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Gtranslator 3.30.1\n"
 "X-POOTLE-MTIME: 1420670076.000000\n"
-
-#: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "Ye_ni"
-
-#: ../data/app-menu.ui.h:2
-msgid "Temperature unit"
-msgstr "Sıcaklık birimi"
-
-#: ../data/app-menu.ui.h:3
-msgid "Celsius"
-msgstr "Santigrat"
-
-#: ../data/app-menu.ui.h:4
-msgid "Fahrenheit"
-msgstr "Fahrenhayt"
-
-#: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "Hakkında"
-
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Çık"
 
 #: ../data/city.ui.h:1
 msgid "City view"
@@ -57,7 +33,7 @@ msgstr "Yükleniyor…"
 
 #: ../data/org.gnome.Weather.appdata.xml.in.h:1
 #: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:53
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: ../src/app/window.js:231 ../src/service/main.js:49
 msgid "Weather"
 msgstr "Hava Durumu"
 
@@ -71,7 +47,7 @@ msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
 msgstr ""
-"Şehrinizin ya da dünyadaki herhangi bir yerin geçerli hava durumunu "
+"Şehrinizin ya da dünyadaki herhangi bir yerin anlık hava durumunu "
 "gözleyebileceğiniz ufak bir uygulama."
 
 #: ../data/org.gnome.Weather.appdata.xml.in.h:4
@@ -79,8 +55,8 @@ msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Çeşitli internet hizmetleri kullanarak 7 güne kadar detaylı tahminlerle "
-"birlikte şimdiki ve sonraki gün için saatlik detaylara erişmeyi sağlar."
+"Çeşitli internet hizmetleri kullanarak 7 güne kadar ayrıntılı tahminlerle "
+"birlikte şimdiki ve sonraki gün için saatlik ayrıntılara erişmeyi sağlar."
 
 #: ../data/org.gnome.Weather.appdata.xml.in.h:5
 msgid ""
@@ -88,8 +64,8 @@ msgid ""
 "current conditions of the most recently searched cities by just typing its "
 "name in the Activities Overview."
 msgstr ""
-"İsteğe bağlı olarak GNOME Shell ile birleşir, Etkinlikler Genel Görünümüne "
-"son aranan şehirlerin sadece ismini girerek geçerli hava durumlarını "
+"İsteğe bağlı olarak GNOME Kabuğu ile birleşir, Etkinlikler Genel Görünümüne "
+"son aranan şehirlerin yalnızca adını girerek geçerli hava durumlarını "
 "görmenizi sağlar."
 
 #: ../data/org.gnome.Weather.Application.desktop.in.h:3
@@ -114,31 +90,51 @@ msgstr ""
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:3
 msgid "Automatic location"
-msgstr "Otomatik konum"
+msgstr "Kendiliğinden konumlama"
 
 #: ../data/org.gnome.Weather.Application.gschema.xml.h:4
 msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 msgstr ""
-"Otomatik konum, geçerli konumun getirilip getirilmeyeceğini belirleyen "
-"otomatik-konumlama anahtarının değeridir."
+"Kendiliğinden konum, geçerli konumun getirilip getirilmeyeceğini belirleyen "
+"kendiliğinden-konumlama anahtarının değeridir."
 
 #: ../data/places-popover.ui.h:1
 msgid "Automatic Location"
-msgstr "Otomatik Konum"
+msgstr "Kendiliğinden Konumlama"
 
 #: ../data/places-popover.ui.h:2
 msgid "Locating…"
-msgstr "Yer saptanıyor..."
+msgstr "Yer saptanıyor…"
 
 #: ../data/places-popover.ui.h:3
 msgid "Search for a city"
-msgstr "Bir şehir arayın"
+msgstr "Şehir arayın"
 
 #: ../data/places-popover.ui.h:4
 msgid "Viewed Recently"
 msgstr "Son Görülen"
+
+#: ../data/primary-menu.ui.h:1
+#| msgid "Temperature unit"
+msgid "_Temperature Unit"
+msgstr "_Sıcaklık Birimi"
+
+#: ../data/primary-menu.ui.h:2
+#| msgid "Celsius"
+msgid "_Celsius"
+msgstr "_Santigrat"
+
+#: ../data/primary-menu.ui.h:3
+#| msgid "Fahrenheit"
+msgid "_Fahrenheit"
+msgstr "_Fahrenhayt"
+
+#: ../data/primary-menu.ui.h:4
+#| msgid "About Weather"
+msgid "_About Weather"
+msgstr "Hava Durumu _Hakkında"
 
 #: ../data/weather-widget.ui.h:1
 msgid "Current conditions"
@@ -162,11 +158,11 @@ msgstr "Yenile"
 
 #: ../data/window.ui.h:3
 msgid "Search for a location"
-msgstr "Bir konum arayın"
+msgstr "Konum arayın"
 
 #: ../data/window.ui.h:4
 msgid "To see weather information, enter the name of a city."
-msgstr "Hava bilgisini görmek için şehrin ismini girin."
+msgstr "Hava bilgisini görmek için şehrin adını girin."
 
 #: ../src/app/forecast.js:37
 msgid "Forecast"
@@ -174,7 +170,7 @@ msgstr "Tahmin"
 
 #: ../src/app/forecast.js:111
 msgid "Forecast not available"
-msgstr "Tahmin mevcut değil"
+msgstr "Tahmin yok"
 
 #. Translators: this is a time format without date used for AM/PM
 #: ../src/app/forecast.js:127
@@ -195,19 +191,19 @@ msgstr "Haftalık Tahmin"
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:115
+#: ../src/app/window.js:120
 msgid "Select Location"
 msgstr "Konum Seç"
 
-#: ../src/app/window.js:225
+#: ../src/app/window.js:230
 msgid "translator-credits"
 msgstr ""
 "Gökhan Gurbetoğlu <ggurbet@gmail.com>\n"
 "Emin Tufan Çetin <etcetin@gmail.com>"
 
-#: ../src/app/window.js:227
+#: ../src/app/window.js:232
 msgid "A weather application"
-msgstr "Bir hava durumu uygulaması"
+msgstr "Hava durumu uygulaması"
 
 #: ../src/app/world.js:39
 msgid "World view"
@@ -224,16 +220,22 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: ../src/service/searchProvider.js:181
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
+#~ msgid "_New"
+#~ msgstr "Ye_ni"
+
+#~ msgid "About"
+#~ msgstr "Hakkında"
+
+#~ msgid "Quit"
+#~ msgstr "Çık"
+
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
-
-#~ msgid "About Weather"
-#~ msgstr "Hava Durumu Hakkında"
 
 #~ msgid "Select All"
 #~ msgstr "Tümünü Seç"
