@@ -24,7 +24,6 @@ LIBEXEC_DIR = join_paths(get_option('prefix'), get_option('libexecdir'))
 EXTENSION_DIR = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name())
 DATA_DIR = join_paths(get_option('prefix'), get_option('datadir'), application_id)
 BIN_DIR = join_paths(get_option('prefix'), get_option('bindir'))
-pkgdatadir = join_paths(DATA_DIR, meson.project_name())
 
 # Profiles
 if get_option('profile') == 'development'

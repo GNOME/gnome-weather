@@ -1,10 +1,9 @@
 gnome = import('gnome')
+podir = join_paths(meson.source_root(), 'po')
 
 data_conf = configuration_data()
-data_conf.set('application_id', application_id)
-data_conf.set('PACKAGE_NAME', meson.project_name())
+data_conf.set('APP_ID', application_id)
 data_conf.set('DATA_DIR', DATA_DIR)
-data_conf.set('pkgdatadir', pkgdatadir)
 
 message('Compiling resources')
 
@@ -33,15 +32,24 @@ install_data(
 )
 
 # Building desktop file
+msgfmt = find_program('msgfmt')
 desktop_conf = configuration_data()
-desktop = i18n.merge_file(
-	'desktop',
-	input: application_id_stable + '.Application.desktop.in',
-	output: application_id + '.Application.desktop',
-	po_dir: join_paths(meson.source_root(), 'po'),
-	type: 'desktop',
-	install: true,
-	install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'applications')
+desktop_conf.set('APP_ID', application_id)
+desktop = custom_target(
+  'desktop-file',
+  input: configure_file(
+    input: '@0@.Application.desktop.in.in'.format(application_id_stable),
+    output: '@0@.Application.desktop.in'.format(application_id_stable),
+    configuration: desktop_conf,
+  ),
+  output: '@0@.Application.desktop'.format(application_id),
+  install: true,
+  install_dir: join_paths(get_option('datadir'), 'applications'),
+  command: [msgfmt, '--desktop',
+    '--template', '@INPUT@', '-d', podir, '-o', '@OUTPUT@',
+    '--keyword=X-Geoclue-Reason',
+    '--keyword=Name', '--keyword=Comment', '--keyword=Keywords'
+  ]
 )
 
 # Validating desktop file
@@ -71,7 +79,7 @@ configure_file(
 	output: application_id + '.Application.service',
 	configuration: data_conf,
 	install: true,
-	install_dir: join_paths(DATA_DIR, 'dbus-1', 'services')
+	install_dir: join_paths(get_option('datadir'), 'dbus-1', 'services')
 )
 
 configure_file(
@@ -79,7 +87,7 @@ configure_file(
 	output: application_id + '.BackgroundService.service',
 	configuration: data_conf,
 	install: true,
-	install_dir: join_paths(DATA_DIR, 'dbus-1', 'services')
+	install_dir: join_paths(get_option('datadir'), 'dbus-1', 'services')
 )
 
 # Search Provider

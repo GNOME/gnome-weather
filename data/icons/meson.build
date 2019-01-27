@@ -1,4 +1,4 @@
-datadir = join_paths('share', 'icons')
+datadir = join_paths(get_option('datadir'), 'icons')
 icondir = join_paths('hicolor', 'scalable', 'apps')
 if get_option('profile') == 'development'
 install_data (
