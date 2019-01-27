@@ -34,7 +34,7 @@ const SCROLLING_ANIMATION_TIME = 400000; //us
 var WeatherWidget = new Lang.Class({
     Name: 'WeatherWidget',
     Extends: Gtk.Frame,
-    Template: 'resource:///org/gnome/Weather/Application/weather-widget.ui',
+    Template: 'resource:///org/gnome/Weather/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
                        'temperatureLabel', 'conditionsLabel',
                        'timeLabel', 'timeGrid', 'forecastStack',
@@ -204,7 +204,7 @@ var WeatherWidget = new Lang.Class({
 var WeatherView = new Lang.Class({
     Name: 'WeatherView',
     Extends: Gtk.Stack,
-    Template: 'resource:///org/gnome/Weather/Application/city.ui',
+    Template: 'resource:///org/gnome/Weather/city.ui',
     InternalChildren: ['spinner'],
 
     _init: function(params) {

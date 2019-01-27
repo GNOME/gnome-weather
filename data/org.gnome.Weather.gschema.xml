@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="org.gnome.Weather">
-  <schema id="org.gnome.Weather.Application" path="/org/gnome/Weather/Application/">
+  <schema id="org.gnome.Weather" path="/org/gnome/Weather/">
     <key name="locations" type="av">
       <default>[]</default>
       <summary>Configured cities to show weather for</summary>
