@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014 Giovanni Campagna -->
 <component type="desktop">
-  <id>org.gnome.Weather.Application.desktop</id>
+  <id>org.gnome.Weather.desktop</id>
   <_name>Weather</_name>
   <_summary>Show weather conditions and forecast</_summary>
   <metadata_license>CC0-1.0</metadata_license>

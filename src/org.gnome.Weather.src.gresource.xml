@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/gnome/Weather/Application/js">
+  <gresource prefix="/org/gnome/Weather/js">
     <file>app/city.js</file>
     <file>app/currentLocationController.js</file>
     <file>app/forecast.js</file>

@@ -1,7 +1,7 @@
 [type: gettext/glade]data/city.ui
 data/org.gnome.Weather.appdata.xml.in
-data/org.gnome.Weather.Application.desktop.in
-data/org.gnome.Weather.Application.gschema.xml
+data/org.gnome.Weather.desktop.in.in
+data/org.gnome.Weather.gschema.xml
 [type: gettext/glade]data/places-popover.ui
 [type: gettext/glade]data/primary-menu.ui
 [type: gettext/glade]data/weather-widget.ui

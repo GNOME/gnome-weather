@@ -8,8 +8,8 @@ data_conf.set('DATA_DIR', DATA_DIR)
 message('Compiling resources')
 
 gnome.compile_resources(
-	application_id_stable + '.Application.data',
-	application_id_stable + '.Application.data.gresource.xml',
+	application_id_stable + '.data',
+	application_id_stable + '.data.gresource.xml',
 	gresource_bundle: true,
 	source_dir: '.',
 	install_dir: DATA_DIR,
@@ -27,7 +27,7 @@ gnome.compile_resources(
 
 # Installing the schema file
 install_data(
-	application_id_stable + '.Application.gschema.xml',
+	application_id_stable + '.gschema.xml',
 	install_dir: 'share/glib-2.0/schemas'
 )
 
@@ -38,11 +38,11 @@ desktop_conf.set('APP_ID', application_id)
 desktop = custom_target(
   'desktop-file',
   input: configure_file(
-    input: '@0@.Application.desktop.in.in'.format(application_id_stable),
-    output: '@0@.Application.desktop.in'.format(application_id_stable),
+    input: '@0@.desktop.in.in'.format(application_id_stable),
+    output: '@0@.desktop.in'.format(application_id_stable),
     configuration: desktop_conf,
   ),
-  output: '@0@.Application.desktop'.format(application_id),
+  output: '@0@.desktop'.format(application_id),
   install: true,
   install_dir: join_paths(get_option('datadir'), 'applications'),
   command: [msgfmt, '--desktop',
@@ -58,7 +58,7 @@ if desktop_file_validate.found()
 	test (
 		'Validate desktop file',
 		desktop_file_validate,
-		args: join_paths(meson.current_build_dir(), application_id + '.Application.desktop')
+		args: join_paths(meson.current_build_dir(), application_id + '.desktop')
 	)
 endif
 
@@ -75,8 +75,8 @@ appdata = i18n.merge_file(
 
 
 configure_file(
-	input: application_id_stable + '.Application.service.in',
-	output: application_id + '.Application.service',
+	input: application_id_stable + '.service.in',
+	output: application_id + '.service',
 	configuration: data_conf,
 	install: true,
 	install_dir: join_paths(get_option('datadir'), 'dbus-1', 'services')
@@ -92,7 +92,7 @@ configure_file(
 
 # Search Provider
 install_data(
-	application_id_stable + '.Application.search-provider.ini',
+	application_id_stable + '.search-provider.ini',
 	install_dir: 'share/gnome-shell/search-providers'
 )
 

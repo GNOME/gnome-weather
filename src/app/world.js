@@ -39,7 +39,7 @@ var WorldContentView = new Lang.Class({
         this.get_accessible().accessible_name = _("World view");
 
         let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/Weather/Application/places-popover.ui');
+        builder.add_from_resource('/org/gnome/Weather/places-popover.ui');
 
         let grid = builder.get_object('popover-grid');
         this.add(grid);

@@ -80,7 +80,7 @@ const Application = new Lang.Class({
         // ensure the type before we call to GtkBuilder
         GWeather.LocationEntry;
 
-        Util.loadStyleSheet('/org/gnome/Weather/Application/application.css');
+        Util.loadStyleSheet('/org/gnome/Weather/application.css');
 
         let settings = Gtk.Settings.get_for_screen(Gdk.Screen.get_default());
         settings.gtk_application_prefer_dark_theme = true;
