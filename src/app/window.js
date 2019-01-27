@@ -53,8 +53,8 @@ var MainWindow = new Lang.Class({
                             activate: this.update }]);
 
         let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/Weather/Application/window.ui');
-        builder.add_from_resource('/org/gnome/Weather/Application/primary-menu.ui');
+        builder.add_from_resource('/org/gnome/Weather/window.ui');
+        builder.add_from_resource('/org/gnome/Weather/primary-menu.ui');
 
         let grid = builder.get_object('main-panel');
         this._header = builder.get_object('header-bar');

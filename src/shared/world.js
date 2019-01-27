@@ -41,7 +41,7 @@ var WorldModel = new Lang.Class({
 
         this._world = world;
 
-        this._settings = Util.getSettings('org.gnome.Weather.Application');
+        this._settings = Util.getSettings('org.gnome.Weather');
         this._providers = Util.getEnabledProviders();
 
         this._loadingCount = 0;
