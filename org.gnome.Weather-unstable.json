@@ -36,7 +36,7 @@
         "*.la",
         "*.a"
     ],
-    "cleanup-commands": [ "desktop-file-edit \"--set-name=(Development) Weather\" /app/share/applications/org.gnome.Weather.Application.desktop" ],
+    "desktop-file-name-prefix": [ "(Development) " ],
     "modules": [
         {
             "name" : "geocode-glib",
