@@ -2,8 +2,8 @@
 <!-- Copyright 2014 Giovanni Campagna -->
 <component type="desktop">
   <id>org.gnome.Weather.Application.desktop</id>
-  <_name>Weather</_name>
-  <_summary>Show weather conditions and forecast</_summary>
+  <name>Weather</name>
+  <summary>Show weather conditions and forecast</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+ and CC-BY-3.0 and CC-BY-SA-3.0</project_license>
   <kudos>
@@ -14,19 +14,19 @@
     <kudo>SearchProvider</kudo>
   </kudos>
   <description>
-    <_p>
+    <p>
       A small application that allows you to monitor the current weather
       conditions for your city, or anywhere in the world.
-    </_p>
-    <_p>
+    </p>
+    <p>
       It provides access to detailed forecasts, up to 7 days, with hourly
       details for the current and next day, using various internet services.
-    </_p>
-    <_p>
+    </p>
+    <p>
       It also optionally integrates with the GNOME Shell, allowing you see
       the current conditions of the most recently searched cities by just
       typing its name in the Activities Overview.
-    </_p>
+    </p>
   </description>
   <project_group>GNOME</project_group>
   <screenshots>
@@ -38,7 +38,7 @@
     </screenshot>
   </screenshots>
   <url type="homepage">https://wiki.gnome.org/Apps/Weather</url>
-  <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather</url>
+  <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-weather/issues</url>
   <updatecontact>gcampagna_at_src.gnome.org</updatecontact>
   <translation type="gettext">org.gnome.Weather</translation>
 </component>
