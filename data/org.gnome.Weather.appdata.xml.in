@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014 Giovanni Campagna -->
 <component type="desktop">
-  <id>org.gnome.Weather.Application.desktop</id>
+  <id>org.gnome.Weather</id>
   <name>Weather</name>
   <summary>Show weather conditions and forecast</summary>
   <metadata_license>CC0-1.0</metadata_license>
@@ -41,4 +41,7 @@
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-weather/issues</url>
   <updatecontact>gcampagna_at_src.gnome.org</updatecontact>
   <translation type="gettext">org.gnome.Weather</translation>
+  <provides>
+    <id>org.gnome.Weather.Application.desktop</id>
+  </provides>
 </component>

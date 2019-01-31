@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/gnome/Weather/Application">
+  <gresource prefix="/org/gnome/Weather">
     <file preprocess="xml-stripblanks">city.ui</file>
     <file preprocess="xml-stripblanks">places-popover.ui</file>
     <file preprocess="xml-stripblanks">primary-menu.ui</file>

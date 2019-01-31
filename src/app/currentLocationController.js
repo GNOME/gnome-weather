@@ -34,7 +34,7 @@ var CurrentLocationController = class CurrentLocationController {
     constructor(world) {
         this._world = world;
         this._processStarted = false;
-        this._settings = Util.getSettings('org.gnome.Weather.Application');
+        this._settings = Util.getSettings('org.gnome.Weather');
         let autoLocation = this._settings.get_value('automatic-location').deep_unpack();
         this._syncAutoLocation(autoLocation);
         if (this.autoLocation == AutoLocation.ENABLED)
