@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-01-31 15:58+0000\n"
-"PO-Revision-Date: 2019-02-02 08:50+0100\n"
+"POT-Creation-Date: 2019-02-02 07:51+0000\n"
+"PO-Revision-Date: 2019-02-03 14:59+0100\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -173,7 +173,7 @@ msgstr "Nem érhető el előrejelzés"
 #. Translators: this is a time format without date used for AM/PM
 #: src/app/forecast.js:129
 msgid "%l∶%M %p"
-msgstr "%p %l.%M"
+msgstr "%H:%M"
 
 #. Translators: this is a time format without date used for 24h mode
 #: src/app/forecast.js:132
