@@ -3,7 +3,7 @@
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
-    "command" : "/app/share/org.gnome.Weather/org.gnome.WeatherDevel.Application",
+    "command" : "/app/share/org.gnome.Weather/org.gnome.Weather",
     "tags" : [
         "nightly"
     ],
@@ -83,9 +83,6 @@
         },
         {
             "name" : "gnome-weather",
-            "config-opts": [
-                "-Dprofile=development"
-            ],
             "sources" : [
                 {
                     "type" : "git",
