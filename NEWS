@@ -1,3 +1,15 @@
+3.31.90
+=======
+* Port from Autotools to Meson (Falk Seidl)
+* Show tomorrow's forecasts at the end of the day (Michael Catanzaro)
+* Unify App ID
+* Translation updates:
+ - Galician
+ - Greek
+ - Hungarian
+ - Swedish
+ - Turkish
+
 3.31.3
 ======
 * Migrate app menu to primary menu
