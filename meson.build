@@ -20,8 +20,6 @@ dependency('gweather-3.0', version: '>= 3.28')
 
 env = environment()
 
-LIBEXEC_DIR = join_paths(get_option('prefix'), get_option('libexecdir'))
-EXTENSION_DIR = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name())
 DATA_DIR = join_paths(get_option('prefix'), get_option('datadir'), application_id)
 BIN_DIR = join_paths(get_option('prefix'), get_option('bindir'))
 
@@ -37,9 +35,6 @@ endif
 conf = configuration_data()
 conf.set('PACKAGE_URL', 'https://gitlab.gnome.org/GNOME/gnome-weather')
 conf.set('DATA_DIR', DATA_DIR)
-conf.set('EXTENSION_DIR', EXTENSION_DIR)
-conf.set('LOCALE_DIR', join_paths(get_option('prefix'), get_option('datadir'), 'locale'))
-conf.set('libexecdir', LIBEXEC_DIR)
 
 if get_option('profile') == 'development'
     conf.set('VERSION', ''.join([run_command(['git', 'describe', '--long', '--tags']).stdout(), get_option('profile')]))

@@ -2,7 +2,6 @@ source_conf = configuration_data()
 source_conf.set('GJS', find_program('gjs').path())
 source_conf.set('DATA_DIR', DATA_DIR)
 source_conf.set('PACKAGE_VERSION', meson.project_version())
-source_conf.set('libdir', EXTENSION_DIR)
 source_conf.set('prefix', prefix)
 
 application = configure_file(
