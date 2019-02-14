@@ -1,15 +1,24 @@
 #!/usr/bin/env python3
 
-from os import environ, path
-from subprocess import call
+import os
+import subprocess
+import sys
 
-prefix = environ.get('MESON_INSTALL_PREFIX', '/usr/local')
-datadir = path.join(prefix, 'share')
-destdir = environ.get('DESTDIR', '')
+destdir = os.environ.get('DESTDIR', '')
+datadir = sys.argv[1]
+pkgdatadir = sys.argv[2]
+bindir = os.path.join(destdir + os.sep + sys.argv[3])
+
+if not os.path.exists(bindir):
+    os.makedirs(bindir)
+
+src = os.path.join(pkgdatadir, 'org.gnome.Weather')
+dest = os.path.join(bindir, 'gnome-weather')
+subprocess.call(['ln', '-s', '-f', src, dest])
 
 if not destdir:
     print('Updating icon cache...')
-    call(['gtk-update-icon-cache', '-qtf', path.join(datadir, 'icons', 'hicolor')])
+    subprocess.call(['gtk-update-icon-cache', '-qtf', os.path.join(datadir, 'icons', 'hicolor')])
     print("Installing new Schemas")
-    call(['glib-compile-schemas', path.join(datadir, 'glib-2.0/schemas')])
+    subprocess.call(['glib-compile-schemas', os.path.join(datadir, 'glib-2.0/schemas')])
 

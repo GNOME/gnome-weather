@@ -55,4 +55,9 @@ subdir('po')
 subdir('src')
 subdir('tests')
 
-meson.add_install_script('meson_post_install.py')
+meson.add_install_script(
+    'meson_post_install.py',
+    join_paths(get_option('prefix'), get_option('datadir')),
+    DATA_DIR,
+    BIN_DIR,
+)
