@@ -20,6 +20,7 @@ dependency('gweather-3.0', version: '>= 3.28')
 
 env = environment()
 
+EXTENSION_DIR = join_paths(get_option('prefix'), get_option('libdir'), meson.project_name())
 DATA_DIR = join_paths(get_option('prefix'), get_option('datadir'), application_id)
 BIN_DIR = join_paths(get_option('prefix'), get_option('bindir'))
 
