@@ -3,7 +3,7 @@
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
-    "command" : "/app/share/org.gnome.Weather/org.gnome.Weather",
+    "command" : "gnome-weather",
     "tags" : [
         "nightly"
     ],
