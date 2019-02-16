@@ -6,10 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-05-05 10:57+0000\n"
-"PO-Revision-Date: 2016-09-11 18:38+0500\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2019-01-31 15:58+0000\n"
+"PO-Revision-Date: 2019-02-16 18:48+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
@@ -17,52 +16,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.2.1\n"
 
-#: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "Ж_аңа"
-
-#: ../data/app-menu.ui.h:2
-msgid "Temperature unit"
-msgstr "Температураның өлшем бірлігі"
-
-#: ../data/app-menu.ui.h:3
-msgid "Celsius"
-msgstr "Цельсий"
-
-#: ../data/app-menu.ui.h:4
-msgid "Fahrenheit"
-msgstr "Фаренгейт"
-
-#: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "Осы туралы"
-
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Шығу"
-
-#: ../data/city.ui.h:1
+#: data/city.ui:8
 msgid "City view"
 msgstr "Қалалар көрінісі"
 
-#: ../data/city.ui.h:2
+#: data/city.ui:30
 msgid "Loading…"
 msgstr "Жүктелуде…"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:53
+#: src/app/window.js:231 src/service/main.js:49
 msgid "Weather"
 msgstr "Ауа райы"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
-#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: data/org.gnome.Weather.appdata.xml.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "Ауа райының күйін және болжамын көрсету"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in:17
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -70,7 +45,7 @@ msgstr ""
 "Өз қалаңыз, немесе әлемнің басқа жерлері үшін ағымдағы ауа райы жағдайын "
 "көрсететін кішігірім қолданба."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+#: data/org.gnome.Weather.appdata.xml.in:21
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -79,7 +54,7 @@ msgstr ""
 "және келесі күн үшін сағат бойынша ақпараты бар ауа райы болжамдарын қарауды "
 "мүмкін қылады."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+#: data/org.gnome.Weather.appdata.xml.in:25
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -89,19 +64,25 @@ msgstr ""
 "көрінісінде жақында ізделген қалалар үшін ауа райы болжамын көрсете алады, "
 "ол үшін қала атын енгізу керек."
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Weather.desktop.in.in:7
+msgid "@APP_ID@"
+msgstr "@APP_ID@"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "Ауа райы;Болжам;Weather;"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+#: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
 msgstr "Сіздің орналасуыңыз үшін ауа райын ақпаратын көрсетуді мүмкін етеді."
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+#: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
 msgstr "Ауа райы көрсетілетін қалалар"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+#: data/org.gnome.Weather.gschema.xml:7
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
@@ -109,11 +90,11 @@ msgstr ""
 "Орналасулар gnome-weather қолданбасының әлемдік көрінісінде көрсетіледі. Әр "
 "мән gweather_location_serialize() қайтаратын GVariant болып табылады."
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+#: data/org.gnome.Weather.gschema.xml:14
 msgid "Automatic location"
 msgstr "Орналасуды автоанықтау"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+#: data/org.gnome.Weather.gschema.xml:15
 msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
@@ -121,97 +102,113 @@ msgstr ""
 "Орналасуды автоанықтау мүмкіндігі ағымдағы орналасуды автоматты түрде "
 "анықтау керектігін көрсететін қосқыш."
 
-#: ../data/places-popover.ui.h:1
+#: data/places-popover.ui:44
 msgid "Automatic Location"
 msgstr "Орналасуды автоанықтау"
 
-#: ../data/places-popover.ui.h:2
+#: data/places-popover.ui:83
 msgid "Locating…"
 msgstr "Анықтау…"
 
-#: ../data/places-popover.ui.h:3
+#: data/places-popover.ui:140
 msgid "Search for a city"
 msgstr "Қаланы іздеу"
 
-#: ../data/places-popover.ui.h:4
+#: data/places-popover.ui:172
 msgid "Viewed Recently"
 msgstr "Жақында қаралған"
 
-#: ../data/weather-widget.ui.h:1
+#: data/primary-menu.ui:4
+msgid "_Temperature Unit"
+msgstr "_Температураның өлшем бірлігі"
+
+#: data/primary-menu.ui:6
+msgid "_Celsius"
+msgstr "_Цельсий"
+
+#: data/primary-menu.ui:11
+msgid "_Fahrenheit"
+msgstr "_Фаренгейт"
+
+#: data/primary-menu.ui:19
+msgid "_About Weather"
+msgstr "Ауа райы қолданбасы тур_алы"
+
+#: data/weather-widget.ui:39
 msgid "Current conditions"
 msgstr "Ағымдағы күйі"
 
-#: ../data/weather-widget.ui.h:2
+#: data/weather-widget.ui:151
 msgid "Today"
 msgstr "Бүгiн"
 
-#: ../data/weather-widget.ui.h:3
+#: data/weather-widget.ui:180
 msgid "Tomorrow"
 msgstr "Ертең"
 
-#: ../data/window.ui.h:1
+#: data/window.ui:33
 msgid "Places"
 msgstr "Орындар"
 
-#: ../data/window.ui.h:2
+#: data/window.ui:55
 msgid "Refresh"
 msgstr "Жаңарту"
 
-#: ../data/window.ui.h:3
+#: data/window.ui:113
 msgid "Search for a location"
 msgstr "Орналасуды іздеу"
 
-#: ../data/window.ui.h:4
+#: data/window.ui:129
 msgid "To see weather information, enter the name of a city."
 msgstr "Ауа райы ақпаратын қарау үшін, қала атын енгізіңіз."
 
-#: ../src/app/forecast.js:37
+#: src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Болжам"
 
-#: ../src/app/forecast.js:111
+#: src/app/forecast.js:113
 msgid "Forecast not available"
 msgstr "Болжам қолжетерсіз"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:127
+#: src/app/forecast.js:129
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:130
+#: src/app/forecast.js:132
 msgid "%R"
 msgstr "%R"
 
-#: ../src/app/weeklyForecast.js:36
+#: src/app/weeklyForecast.js:36
 msgid "Weekly Forecast"
 msgstr "Аптаға болжам"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: ../src/app/weeklyForecast.js:121
+#: src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:115
+#: src/app/window.js:120
 msgid "Select Location"
 msgstr "Орналасуды таңдаңыз"
 
-#: ../src/app/window.js:225
+#: src/app/window.js:230
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
-#: ../src/app/window.js:227
+#: src/app/window.js:232
 msgid "A weather application"
 msgstr "Ауа райы қолданбасы"
 
-#: ../src/app/world.js:39
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Әлемдік көрініс"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: ../src/misc/util.js:159
+#: src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -219,10 +216,19 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: src/service/searchProvider.js:181
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "_New"
+#~ msgstr "Ж_аңа"
+
+#~ msgid "About"
+#~ msgstr "Осы туралы"
+
+#~ msgid "Quit"
+#~ msgstr "Шығу"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
@@ -374,9 +380,6 @@ msgstr "%s, %s"
 #~ msgid "%d selected"
 #~ msgid_plural "%d selected"
 #~ msgstr[0] "%d таңдалды"
-
-#~ msgid "World Weather"
-#~ msgstr "Әлем ауа райы"
 
 #~ msgid "Cities"
 #~ msgstr "Қалалар"
