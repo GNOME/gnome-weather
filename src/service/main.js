@@ -25,8 +25,8 @@ pkg.require({ 'Gio': '2.0',
 
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
+const GObject = imports.gi.GObject;
 const GWeather = imports.gi.GWeather;
-const Lang = imports.lang;
 
 const Util = imports.misc.util;
 const SearchProvider = imports.service.searchProvider;
@@ -38,12 +38,11 @@ function initEnvironment() {
     };
 }
 
-const BackgroundService = new Lang.Class({
-    Name: 'WeatherBackgroundService',
-    Extends: Gio.Application,
+const BackgroundService = GObject.registerClass(
+    class WeatherBackgroundService extends Gio.Application {
 
-    _init: function() {
-        this.parent({ application_id: pkg.name,
+    _init() {
+        super._init({ application_id: pkg.name,
                       flags: Gio.ApplicationFlags.IS_SERVICE,
                       inactivity_timeout: 60000 });
         GLib.set_application_name(_("Weather"));
@@ -52,31 +51,31 @@ const BackgroundService = new Lang.Class({
 
         if (!pkg.moduledir.startsWith('resource://'))
             this.debug = true;
-    },
+    }
 
-    _onQuit: function() {
+    _onQuit() {
         this.quit();
-    },
+    }
 
-    vfunc_dbus_register: function(connection, path) {
+    vfunc_dbus_register(connection, path) {
         this.parent(connection, path);
 
         this._searchProvider.export(connection, path);
         return true;
-    },
+    }
 
 /*
   Can't do until GApplication is fixed.
 
-    vfunc_dbus_unregister: function(connection, path) {
+    vfunc_dbus_unregister(connection, path) {
         this._searchProvider.unexport(connection);
 
-        this.parent(connection, path);
+        super.vfunc_dbus_unregister(connection, path);
     },
 */
 
-    vfunc_startup: function() {
-        this.parent();
+    vfunc_startup() {
+        super.vfunc_startup();
 
         this.world = GWeather.Location.get_world();
         this.model = new World.WorldModel(this.world, false);
@@ -91,16 +90,16 @@ const BackgroundService = new Lang.Class({
         Util.initActions(this,
                          [{ name: 'quit',
                             activate: this._onQuit }]);
-    },
+    }
 
-    vfunc_activate: function() {
+    vfunc_activate() {
         // do nothing, this is a background service
-    },
+    }
 
-    vfunc_shutdown: function() {
+    vfunc_shutdown() {
         GWeather.Info.store_cache();
 
-        this.parent();
+        super.vfunc_shutdown();
     }
 });
 
