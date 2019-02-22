@@ -73,6 +73,16 @@ appdata = i18n.merge_file(
 	po_dir: join_paths(meson.source_root(), 'po')
 )
 
+# Validating app data
+appstream_util = find_program('appstream-util', required: false)
+if appstream_util.found()
+	test(
+		'validate-appdata', appstream_util,
+		args: [
+			'validate-relax', '--nonet', appdata.full_path()
+		]
+	)
+endif
 
 configure_file(
 	input: application_id_stable + '.service.in',
