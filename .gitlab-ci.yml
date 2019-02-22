@@ -12,7 +12,7 @@ flatpak:
         APP_ID: "org.gnome.Weather"
     extends: .flatpak
     before_script:
-        - dnf install -y python3-dogtail
+        - dnf install -y python3-dogtail python3-pyatspi
     #     script:
     #       - flatpak-builder --stop-at=${FLATPAK_MODULE} app ${MANIFEST_PATH}
     #       # Make sure to keep this in sync with the Flatpak manifest, all arguments
