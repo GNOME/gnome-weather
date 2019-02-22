@@ -65,8 +65,8 @@ var WeatherWidget = GObject.registerClass({
             hscrollbar.set_opacity(0.0);
             hscrollbar.hide();
             let hadjustment = fsw.get_hadjustment();
-            hadjustment.connect('changed', this._syncLeftRightButtons.bind(this));
-            hadjustment.connect('value-changed', this._syncLeftRightButtons.bind(this));
+            hadjustment.connect('changed', () => this._syncLeftRightButtons());
+            hadjustment.connect('value-changed', () => this._syncLeftRightButtons());
         }
 
         this._forecastStack.connect('notify::visible-child', () => {
@@ -214,7 +214,7 @@ var WeatherView = GObject.registerClass({
         this._info = null;
         this._updateId = 0;
 
-        this.connect('destroy', this._onDestroy.bind(this));
+        this.connect('destroy', () => this._onDestroy());
 
         this._wallClock = new Gnome.WallClock();
         this._clockHandlerId = 0;
@@ -237,7 +237,9 @@ var WeatherView = GObject.registerClass({
         this._info = info;
 
         if (info) {
-            this._updateId = this._info.connect('updated', this._onUpdate.bind(this));
+            this._updateId = this._info.connect('updated', (info) => {
+                this._onUpdate(info)
+            });
             if (info.is_valid())
                 this._onUpdate(info);
         }
@@ -273,7 +275,9 @@ var WeatherView = GObject.registerClass({
         }
 
         if (!this._clockHandlerId && visible) {
-            this._clockHandlerId = this._wallClock.connect('notify::clock', this._updateTime.bind(this));
+            this._clockHandlerId = this._wallClock.connect('notify::clock',  () => {
+                this._updateTime();
+            });
         }
 
         this._infoPage.setTimeVisible(visible);

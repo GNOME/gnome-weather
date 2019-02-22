@@ -58,7 +58,7 @@ var WorldContentView = GObject.registerClass(
         });
 
         let locationEntry = builder.get_object('location-entry');
-        locationEntry.connect('notify::location', this._locationChanged.bind(this));
+        locationEntry.connect('notify::location', (entry) => this._locationChanged(entry));
 
         this.connect('show', () => {
             locationEntry.grab_focus();
@@ -102,10 +102,15 @@ var WorldContentView = GObject.registerClass(
         });
 
         this._stackPopover = builder.get_object('popover-stack');
-        this._listbox.set_filter_func(this._filterListbox.bind(this));
+        this._listbox.set_filter_func((row) => this._filterListbox(row));
 
-        this.model.connect('location-added', this._onLocationAdded.bind(this));
-        this.model.connect('location-removed', this._onLocationRemoved.bind(this));
+        this.model.connect('location-added', (model, info, is_current) => {
+            this._onLocationAdded(model, info, is_current);
+        });
+
+        this.model.connect('location-removed', (model, info) => {
+            this._onLocationRemoved(model, info);
+        });
 
         this._currentLocationAdded = false;
         let list = this.model.getAll();
