@@ -1,0 +1,14 @@
+{
+    "name": "python3-dogtail",
+    "buildsystem": "simple",
+    "build-commands": [
+        "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} dogtail"
+    ],
+    "sources": [
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/86/cd/3cc8dae75602ed13cde989e91ff22f759e829342b64e94975d73852518ec/dogtail-0.9.10.tar.gz",
+            "sha256": "55f01dffeff41293d92806d37bf00c08de430cbbc47badbbd92c31db08ceed4f"
+        }
+    ]
+}

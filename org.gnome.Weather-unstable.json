@@ -32,6 +32,16 @@
     ],
     "desktop-file-name-prefix": [ "(Development) " ],
     "modules": [
+        "python3-dogtail.json",
+        {
+            "name" : "pyatspi2",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/pyatspi2.git"
+                }
+            ]
+        },
         {
             "name" : "geocode-glib",
             "config-opts" : [
