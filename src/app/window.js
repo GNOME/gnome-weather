@@ -70,7 +70,9 @@ var MainWindow = GObject.registerClass(
         this._searchView = builder.get_object('initial-grid');
 
         this._searchEntry = builder.get_object('initial-grid-location-entry');
-        this._searchEntry.connect('notify::location', this._searchLocationChanged.bind(this));
+        this._searchEntry.connect('notify::location', (entry) => {
+            this._searchLocationChanged(entry);
+        });
 
         let placesButton = builder.get_object('places-button');
         this._pageWidgets[Page.CITY].push(placesButton);
