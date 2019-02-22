@@ -1,4 +1,4 @@
-pyexec = find_program('python3')
+pyexec = find_program('python2')
 test(
   'world_view',
   pyexec,
