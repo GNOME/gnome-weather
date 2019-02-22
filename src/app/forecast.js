@@ -18,8 +18,8 @@
 
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
+const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
-const Lang = imports.lang;
 
 const Params = imports.misc.params;
 const Util = imports.misc.util;
@@ -27,13 +27,11 @@ const Util = imports.misc.util;
 // In microseconds
 const ONE_HOUR = 3600*1000*1000;
 
-var ForecastBox = new Lang.Class({
-    Name: 'ForecastBox',
-    Extends: Gtk.Frame,
+var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
 
-    _init: function(params) {
+    _init(params) {
         params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE });
-        this.parent(params);
+        super._init(params);
         this.get_accessible().accessible_name = _("Forecast");
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
@@ -47,11 +45,11 @@ var ForecastBox = new Lang.Class({
         this.add(this._grid);
 
         this._hasForecastInfo = false;
-    },
+    }
 
     // Ensure that infos are sufficiently spaced, and
     // remove infos for the wrong day
-    _preprocess: function(now, infos) {
+    _preprocess(now, infos) {
         let ret = [];
         let i;
         let current;
@@ -91,9 +89,9 @@ var ForecastBox = new Lang.Class({
         }
 
         return ret;
-    },
+    }
 
-    update: function(infos, day) {
+    update(infos, day) {
         let now = GLib.DateTime.new_now_local();
         if (day == 'tomorrow')
             now = now.add_days(1);
@@ -115,9 +113,9 @@ var ForecastBox = new Lang.Class({
                                         visible: true });
             this._grid.attach(label, 0, 0, 1, 1);
         }
-    },
+    }
 
-    _addOneInfo: function(info, col) {
+    _addOneInfo(info, col) {
         let [ok, date] = info.get_value_update();
         let datetime = GLib.DateTime.new_from_unix_local(date);
 
@@ -149,13 +147,13 @@ var ForecastBox = new Lang.Class({
         this._grid.attach(temperature, col, 2, 1, 1);
 
         this._hasForecastInfo = true;
-    },
+    }
 
-    clear: function() {
+    clear() {
         this._grid.foreach(function(w) { w.destroy(); });
-    },
+    }
 
-    hasForecastInfo: function() {
+    hasForecastInfo() {
         return this._hasForecastInfo;
     }
 });
