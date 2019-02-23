@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-01-31 15:58+0000\n"
-"PO-Revision-Date: 2019-02-05 21:20+0200\n"
+"POT-Creation-Date: 2019-02-22 01:46+0000\n"
+"PO-Revision-Date: 2019-02-23 20:50+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -37,7 +37,7 @@ msgstr "Sää"
 msgid "Show weather conditions and forecast"
 msgstr "Näytä säätiedot ja -ennuste"
 
-#: data/org.gnome.Weather.appdata.xml.in:17
+#: data/org.gnome.Weather.appdata.xml.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -45,7 +45,7 @@ msgstr ""
 "Pieni sovellus, joka mahdollistaa kotikaupunkisi tai minkä tahansa muun "
 "sijainnin säätietojen hakemisen."
 
-#: data/org.gnome.Weather.appdata.xml.in:21
+#: data/org.gnome.Weather.appdata.xml.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -54,7 +54,7 @@ msgstr ""
 "seuraavan viikon ajalle sekä tuntikohtaiset tiedot kuluvalle ja seuraavalle "
 "päivälle."
 
-#: data/org.gnome.Weather.appdata.xml.in:25
+#: data/org.gnome.Weather.appdata.xml.in:24
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -63,6 +63,10 @@ msgstr ""
 "Se myös mukautuu Gnome Shelliin, jolloin viimeksi tarkasteltujen sijaintien "
 "säätiedot ovat nähtävissä Shellin yleisnäkymässä kirjoittamalla paikkakunnan "
 "nimen."
+
+#: data/org.gnome.Weather.appdata.xml.in:48
+msgid "The GNOME Project"
+msgstr "Gnome-projekti"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Weather.desktop.in.in:7
@@ -123,17 +127,14 @@ msgid "_Temperature Unit"
 msgstr "_Lämpötilayksikkö"
 
 #: data/primary-menu.ui:6
-#| msgid "Celsius"
 msgid "_Celsius"
 msgstr "_Celsius"
 
 #: data/primary-menu.ui:11
-#| msgid "Fahrenheit"
 msgid "_Fahrenheit"
 msgstr "_Fahrenheit"
 
 #: data/primary-menu.ui:19
-#| msgid "About Weather"
 msgid "_About Weather"
 msgstr "_Tietoja - Sää"
 
