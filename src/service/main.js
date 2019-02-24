@@ -87,9 +87,12 @@ const BackgroundService = GObject.registerClass(
             });
         }
 
-        Util.initActions(this,
-                         [{ name: 'quit',
-                            activate: this._onQuit }]);
+        let quitAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'quit'
+        });
+        quitAction.connect('activate', () => this._onQuit());
+        this.add_action(quitAction);
     }
 
     vfunc_activate() {

@@ -98,15 +98,32 @@ const Application = GObject.registerClass(
         if (this.model.loading)
             this.mark_busy();
 
-        Util.initActions(this,
-                         [{ name: 'quit',
-                            activate: this._onQuit },
-                          { name: 'show-location',
-                            activate: this._onShowLocation,
-                            parameter_type: new GLib.VariantType('v') },
-                          { name: 'show-search',
-                            activate: this._onShowSearch,
-                            parameter_type: new GLib.VariantType('s') }]);
+        let quitAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'quit'
+        });
+        quitAction.connect('activate', () => this._onQuit());
+        this.add_action(quitAction);
+
+        let showLocationAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'show-location',
+            parameter_type: new GLib.VariantType('v'),
+        });
+        showLocationAction.connect('activate', (action, parameter) => {
+            this._onShowLocation();
+        });
+        this.add_action(showLocationAction);
+
+        let showSearchAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'show-search',
+            parameter_type: new GLib.VariantType('v'),
+        })
+        showSearchAction.connect('activate', (action, parameter) => {
+            this._onShowSearch();
+        });
+        this.add_action(showSearchAction);
 
         let gwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather' });
         // we would like to use g_settings_create_action() here
