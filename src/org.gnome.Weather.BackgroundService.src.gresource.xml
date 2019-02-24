@@ -3,7 +3,6 @@
   <gresource prefix="/org/gnome/Weather/BackgroundService/js">
     <file>service/main.js</file>
     <file>service/searchProvider.js</file>
-    <file>misc/params.js</file>
     <file>misc/util.js</file>
     <file>shared/world.js</file>
   </gresource>

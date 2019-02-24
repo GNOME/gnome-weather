@@ -20,7 +20,6 @@ const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
 const GWeather = imports.gi.GWeather;
 
-const Params = imports.misc.params;
 const Util = imports.misc.util;
 
 var WorldModel = GObject.registerClass({

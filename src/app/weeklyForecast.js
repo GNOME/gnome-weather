@@ -21,17 +21,17 @@ const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 
-const Params = imports.misc.params;
 const Util = imports.misc.util;
 
 var WeeklyForecastFrame = GObject.registerClass(
     class WeeklyForecastFrame extends Gtk.Frame {
 
     _init(params) {
-        params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE,
-                                       name: 'weekly-forecast-frame',
-                                       width_request: 150 });
-        super._init(params);
+        super._init(Object.assign({
+            shadow_type: Gtk.ShadowType.NONE,
+            name: 'weekly-forecast-frame',
+            width_request: 150
+        }, params));
         this.get_accessible().accessible_name = _("Weekly Forecast");
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });

@@ -24,7 +24,6 @@ const Gtk = imports.gi.Gtk;
 
 const Forecast = imports.app.forecast;
 const WForecast = imports.app.weeklyForecast;
-const Params = imports.misc.params;
 const Util = imports.misc.util;
 
 const SPINNER_SIZE = 128;
@@ -42,9 +41,10 @@ var WeatherWidget = GObject.registerClass({
 }, class WeatherWidget extends Gtk.Frame {
 
     _init(params) {
-        params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE,
-                                       name: 'weather-page' });
-        super._init(params);
+        super._init(Object.assign({
+            shadow_type: Gtk.ShadowType.NONE,
+            name: 'weather-page'
+        }, params));
 
         this._currentStyle = null;
         this._info = null;

@@ -23,7 +23,6 @@ const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
 
 const CurrentLocationController = imports.app.currentLocationController;
-const Params = imports.misc.params;
 const Util = imports.misc.util;
 
 
@@ -31,8 +30,10 @@ var WorldContentView = GObject.registerClass(
     class WorldContentView extends Gtk.Popover {
 
     _init(application, window, params) {
-        params = Params.fill(params, { hexpand: false, vexpand: false });
-        super._init(params);
+        super._init(Object.assign({
+            hexpand: false,
+            vexpand: false
+        }, params));
 
         this.get_accessible().accessible_name = _("World view");
 
