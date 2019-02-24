@@ -31,8 +31,6 @@ const Gtk = imports.gi.Gtk;
 const System = imports.system;
 const GWeather = imports.gi.GWeather;
 
-const Params = imports.misc.params;
-
 function loadUI(resourcePath, objects) {
     let ui = new Gtk.Builder();
 

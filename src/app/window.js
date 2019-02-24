@@ -23,7 +23,6 @@ const GWeather = imports.gi.GWeather;
 
 const City = imports.app.city;
 const CurrentLocationController = imports.app.currentLocationController;
-const Params = imports.misc.params;
 const World = imports.shared.world;
 const WorldView = imports.app.world;
 const Util = imports.misc.util;

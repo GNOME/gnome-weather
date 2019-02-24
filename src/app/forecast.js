@@ -21,7 +21,6 @@ const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 
-const Params = imports.misc.params;
 const Util = imports.misc.util;
 
 // In microseconds
@@ -30,8 +29,9 @@ const ONE_HOUR = 3600*1000*1000;
 var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
 
     _init(params) {
-        params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE });
-        super._init(params);
+        super._init(Object.assign({
+            shadow_type: Gtk.ShadowType.NONE
+        }, params));
         this.get_accessible().accessible_name = _("Forecast");
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
