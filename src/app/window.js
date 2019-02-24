@@ -16,6 +16,7 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+const Gio = imports.gi.Gio;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
@@ -43,13 +44,26 @@ var MainWindow = GObject.registerClass(
         this._currentPage = Page.SEARCH;
         this._pageWidgets = [[],[]];
 
-        Util.initActions(this,
-                         [{ name: 'about',
-                            activate: this._showAbout },
-                          { name: 'close',
-                            activate: this._close },
-                          { name: 'refresh',
-                            activate: this.update }]);
+        let aboutAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'about'
+        });
+        aboutAction.connect('activate', () => this._showAbout());
+        this.add_action(aboutAction);
+
+        let closeAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'close'
+        });
+        closeAction.connect('activate', () => this._close());
+        this.add_action(closeAction);
+
+        let refreshAction = new Gio.SimpleAction({
+            enabled: true,
+            name: 'refresh'
+        });
+        refreshAction.connect('activate', () => this.update());
+        this.add_action(refreshAction);
 
         let builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/Weather/window.ui');
