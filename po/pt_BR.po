@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-02-19 15:44+0000\n"
-"PO-Revision-Date: 2019-02-20 06:52-0300\n"
+"POT-Creation-Date: 2019-02-22 01:46+0000\n"
+"PO-Revision-Date: 2019-02-25 13:08-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Portuguese - Brazil <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -40,7 +40,7 @@ msgstr "Meteorologia"
 msgid "Show weather conditions and forecast"
 msgstr "Mostra condições meteorológicas e previsão do tempo"
 
-#: data/org.gnome.Weather.appdata.xml.in:17
+#: data/org.gnome.Weather.appdata.xml.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -48,7 +48,7 @@ msgstr ""
 "Um pequeno aplicativo que permite a você monitorar as atuais condições "
 "meteorológicas da sua cidade, ou qualquer lugar do mundo."
 
-#: data/org.gnome.Weather.appdata.xml.in:21
+#: data/org.gnome.Weather.appdata.xml.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -57,7 +57,7 @@ msgstr ""
 "de hora em hora para o dia atual e para o próximo, usando vários serviços da "
 "internet."
 
-#: data/org.gnome.Weather.appdata.xml.in:25
+#: data/org.gnome.Weather.appdata.xml.in:24
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -66,6 +66,10 @@ msgstr ""
 "Ele também integra-se, de forma opcional, com o GNOME Shell, permitindo que "
 "você veja as condições atuais das cidades mais pesquisadas recentemente, "
 "bastando digitar o nome dela no Panorama de Atividades."
+
+#: data/org.gnome.Weather.appdata.xml.in:48
+msgid "The GNOME Project"
+msgstr "O Projeto GNOME"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Weather.desktop.in.in:7
@@ -123,22 +127,18 @@ msgid "Viewed Recently"
 msgstr "Visto recentemente"
 
 #: data/primary-menu.ui:4
-#| msgid "Temperature unit"
 msgid "_Temperature Unit"
 msgstr "Unidade de _temperatura"
 
 #: data/primary-menu.ui:6
-#| msgid "Celsius"
 msgid "_Celsius"
 msgstr "_Celsius"
 
 #: data/primary-menu.ui:11
-#| msgid "Fahrenheit"
 msgid "_Fahrenheit"
 msgstr "_Fahrenheit"
 
 #: data/primary-menu.ui:19
-#| msgid "World Weather"
 msgid "_About Weather"
 msgstr "_Sobre o Meteorologia"
 
