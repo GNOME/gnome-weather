@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-01-31 15:58+0000\n"
-"PO-Revision-Date: 2019-02-06 11:32+0100\n"
+"POT-Creation-Date: 2019-02-22 01:46+0000\n"
+"PO-Revision-Date: 2019-02-26 09:12+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -38,7 +38,7 @@ msgstr "Meteorología"
 msgid "Show weather conditions and forecast"
 msgstr "Mostrar las condiciones meteorológicas y el pronóstico"
 
-#: data/org.gnome.Weather.appdata.xml.in:17
+#: data/org.gnome.Weather.appdata.xml.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -46,7 +46,7 @@ msgstr ""
 "Una pequeña aplicación que le permite monitorizar el tiempo actual en su "
 "ciudad, o en cualquier lugar del mundo."
 
-#: data/org.gnome.Weather.appdata.xml.in:21
+#: data/org.gnome.Weather.appdata.xml.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -55,7 +55,7 @@ msgstr ""
 "cada hora para el día actual y el siguiente, usando varios servicios de "
 "Internet."
 
-#: data/org.gnome.Weather.appdata.xml.in:25
+#: data/org.gnome.Weather.appdata.xml.in:24
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -64,6 +64,10 @@ msgstr ""
 "También se integra opcionalmente con GNOME Shell, permitiéndole ver las "
 "condiciones actuales de cualquier ciudad buscada recientemente simplemente "
 "escribiendo su nombre en la vista de actividades."
+
+#: data/org.gnome.Weather.appdata.xml.in:48
+msgid "The GNOME Project"
+msgstr "El Proyecto GNOME"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Weather.desktop.in.in:7
