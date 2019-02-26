@@ -18,21 +18,20 @@
 
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
+const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
-const Lang = imports.lang;
 
-const Params = imports.misc.params;
 const Util = imports.misc.util;
 
-var WeeklyForecastFrame = new Lang.Class({
-    Name: 'WeeklyForecastFrame',
-    Extends: Gtk.Frame,
+var WeeklyForecastFrame = GObject.registerClass(
+    class WeeklyForecastFrame extends Gtk.Frame {
 
-    _init: function(params) {
-        params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE,
-                                       name: 'weekly-forecast-frame',
-                                       width_request: 150 });
-        this.parent(params);
+    _init(params) {
+        super._init(Object.assign({
+            shadow_type: Gtk.ShadowType.NONE,
+            name: 'weekly-forecast-frame',
+            width_request: 150
+        }, params));
         this.get_accessible().accessible_name = _("Weekly Forecast");
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
@@ -45,10 +44,10 @@ var WeeklyForecastFrame = new Lang.Class({
                                     row_homogeneous: true });
 
         this.add(this._grid);
-    },
+    }
 
     // get infos for the correct day
-    _preprocess: function(infos, day) {
+    _preprocess(infos, day) {
         let ret = [];
         let i;
 
@@ -103,9 +102,9 @@ var WeeklyForecastFrame = new Lang.Class({
             infoCount++;
         }
         return ret;
-    },
+    }
 
-    update: function(infos) {
+    update(infos) {
         let day = GLib.DateTime.new_now_local();
         day = day.add_days(1);
 
@@ -145,9 +144,9 @@ var WeeklyForecastFrame = new Lang.Class({
             grid.show();
             this._grid.attach(grid, 0, i, 1, 1);
         }
-    },
+    }
 
-    clear: function() {
+    clear() {
         this._grid.foreach(function(w) { w.destroy(); });
     }
 });

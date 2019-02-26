@@ -18,22 +18,20 @@
 
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
+const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
-const Lang = imports.lang;
 
-const Params = imports.misc.params;
 const Util = imports.misc.util;
 
 // In microseconds
 const ONE_HOUR = 3600*1000*1000;
 
-var ForecastBox = new Lang.Class({
-    Name: 'ForecastBox',
-    Extends: Gtk.Frame,
+var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
 
-    _init: function(params) {
-        params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE });
-        this.parent(params);
+    _init(params) {
+        super._init(Object.assign({
+            shadow_type: Gtk.ShadowType.NONE
+        }, params));
         this.get_accessible().accessible_name = _("Forecast");
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
@@ -45,7 +43,9 @@ var ForecastBox = new Lang.Class({
                                     margin_bottom: 12,
                                     column_homogeneous: true });
         this.add(this._grid);
-    },
+
+        this._hasForecastInfo = false;
+    }
 
     // Ensure that infos are sufficiently spaced, and
     // remove infos for the wrong day
@@ -92,7 +92,7 @@ var ForecastBox = new Lang.Class({
         }
 
         return ret;
-    },
+    }
 
     update: function(infos, tz, day) {
         let now = GLib.DateTime.new_now(tz);
@@ -118,7 +118,7 @@ var ForecastBox = new Lang.Class({
                                         visible: true });
             this._grid.attach(label, 0, 0, 1, 1);
         }
-    },
+    }
 
     _addOneInfo: function(info, tz, col) {
         let [ok, date] = info.get_value_update();
@@ -150,9 +150,15 @@ var ForecastBox = new Lang.Class({
         let temperature = new Gtk.Label({ label: Util.getTemperature(info),
                                           visible: true });
         this._grid.attach(temperature, col, 2, 1, 1);
-    },
 
-    clear: function() {
+        this._hasForecastInfo = true;
+    }
+
+    clear() {
         this._grid.foreach(function(w) { w.destroy(); });
+    }
+
+    hasForecastInfo() {
+        return this._hasForecastInfo;
     }
 });

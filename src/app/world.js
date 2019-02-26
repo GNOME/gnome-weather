@@ -21,25 +21,24 @@ const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
-const Lang = imports.lang;
 
 const CurrentLocationController = imports.app.currentLocationController;
-const Params = imports.misc.params;
 const Util = imports.misc.util;
 
 
-var WorldContentView = new Lang.Class({
-    Name: 'WorldContentView',
-    Extends: Gtk.Popover,
+var WorldContentView = GObject.registerClass(
+    class WorldContentView extends Gtk.Popover {
 
-    _init: function(application, window, params) {
-        params = Params.fill(params, { hexpand: false, vexpand: false });
-        this.parent(params);
+    _init(application, window, params) {
+        super._init(Object.assign({
+            hexpand: false,
+            vexpand: false
+        }, params));
 
         this.get_accessible().accessible_name = _("World view");
 
         let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/Weather/Application/places-popover.ui');
+        builder.add_from_resource('/org/gnome/Weather/places-popover.ui');
 
         let grid = builder.get_object('popover-grid');
         this.add(grid);
@@ -60,7 +59,7 @@ var WorldContentView = new Lang.Class({
         });
 
         let locationEntry = builder.get_object('location-entry');
-        locationEntry.connect('notify::location', this._locationChanged.bind(this));
+        locationEntry.connect('notify::location', (entry) => this._locationChanged(entry));
 
         this.connect('show', () => {
             locationEntry.grab_focus();
@@ -104,43 +103,48 @@ var WorldContentView = new Lang.Class({
         });
 
         this._stackPopover = builder.get_object('popover-stack');
-        this._listbox.set_filter_func(this._filterListbox.bind(this));
+        this._listbox.set_filter_func((row) => this._filterListbox(row));
 
-        this.model.connect('location-added', this._onLocationAdded.bind(this));
-        this.model.connect('location-removed', this._onLocationRemoved.bind(this));
+        this.model.connect('location-added', (model, info, is_current) => {
+            this._onLocationAdded(model, info, is_current);
+        });
+
+        this.model.connect('location-removed', (model, info) => {
+            this._onLocationRemoved(model, info);
+        });
 
         this._currentLocationAdded = false;
         let list = this.model.getAll();
         for (let i = list.length - 1; i >= 0; i--)
             this._onLocationAdded(this.model, list[i], list[i]._isCurrentLocation);
-    },
+    }
 
-    refilter: function() {
+    refilter() {
         this._listbox.invalidate_filter();
-    },
+    }
 
-    _syncStackPopover: function() {
+    _syncStackPopover() {
         if (this.model.length == 1)
             this._stackPopover.set_visible_child_name("search-grid");
         else
             this._stackPopover.set_visible_child_name("locations-grid");
-    },
+    }
 
-    _filterListbox: function(row) {
+    _filterListbox(row) {
         return this._window.currentInfo == null ||
             row._info != this._window.currentInfo;
-    },
+    }
 
-    _locationChanged: function(entry) {
+    _locationChanged(entry) {
         if (entry.location) {
             let info = this.model.addNewLocation(entry.location, false);
             this._window.showInfo(info, false);
             this.hide();
             entry.location = null;
         }
-    },
+    }
 
-    _onLocationAdded: function(model, info, isCurrentLocation) {
+    _onLocationAdded(model, info, isCurrentLocation) {
         let location = info.location;
 
         let grid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
@@ -212,9 +216,9 @@ var WorldContentView = new Lang.Class({
         });
 
         this._syncStackPopover();
-    },
+    }
 
-    _onLocationRemoved: function(model, info) {
+    _onLocationRemoved(model, info) {
         let rows = this._listbox.get_children();
 
         for (let row of rows) {
@@ -232,5 +236,5 @@ var WorldContentView = new Lang.Class({
             this._currentLocationAdded = false;
 
         this._syncStackPopover();
-    },
+    }
 });

@@ -19,14 +19,10 @@
 const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
 const GWeather = imports.gi.GWeather;
-const Lang = imports.lang;
 
-const Params = imports.misc.params;
 const Util = imports.misc.util;
 
-var WorldModel = new Lang.Class({
-    Name: 'WorldModel',
-    Extends: GObject.Object,
+var WorldModel = GObject.registerClass({
     Signals: {
         'current-location-changed': { param_types: [ GWeather.Info ] },
         'location-added': { param_types: [ GWeather.Info, GObject.Boolean ] },
@@ -35,33 +31,34 @@ var WorldModel = new Lang.Class({
     Properties: {
         'loading': GObject.ParamSpec.boolean('loading', '', '', GObject.ParamFlags.READABLE, false)
     },
+}, class WorldModel extends GObject.Object {
 
-    _init: function(world, enableGtk) {
-        this.parent();
+    _init(world, enableGtk) {
+        super._init();
 
         this._world = world;
 
-        this._settings = Util.getSettings('org.gnome.Weather.Application');
+        this._settings = Util.getSettings('org.gnome.Weather');
         this._providers = Util.getEnabledProviders();
 
         this._loadingCount = 0;
 
         this._currentLocationInfo = null;
         this._infoList = [];
-    },
+    }
 
     get length() {
         return this._infoList.length + (this._currentLocationInfo ? 1 : 0);
-    },
+    }
 
-    getAll: function() {
+    getAll() {
         if (this._currentLocationInfo)
             return [this._currentLocationInfo].concat(this._infoList);
         else
             return [].concat(this._infoList);
-    },
+    }
 
-    getAtIndex: function(index) {
+    getAtIndex(index) {
         if (this._currentLocationInfo) {
             if (index == 0)
                 return this._currentLocationInfo;
@@ -70,13 +67,13 @@ var WorldModel = new Lang.Class({
         }
 
         return this._infoList[index];
-    },
+    }
 
-    getCurrentLocation: function() {
+    getCurrentLocation() {
         return this._currentLocationInfo;
-    },
+    }
 
-    currentLocationChanged: function(location) {
+    currentLocationChanged(location) {
         if (this._currentLocationInfo)
             this._removeLocationInternal(this._currentLocationInfo, false);
 
@@ -86,16 +83,16 @@ var WorldModel = new Lang.Class({
         else
             info = null;
         this.emit('current-location-changed', info);
-    },
+    }
 
-    getRecent: function() {
+    getRecent() {
         if (this._infoList.length > 0)
             return this._infoList[0];
         else
             return null;
-    },
+    }
 
-    load: function () {
+    load () {
         let locations = this._settings.get_value('locations').deep_unpack();
 
         if (locations.length > 5) {
@@ -110,18 +107,18 @@ var WorldModel = new Lang.Class({
 
             info = this._addLocationInternal(location, false);
         }
-    },
+    }
 
-    _updateLoadingCount: function(delta) {
+    _updateLoadingCount(delta) {
         let wasLoading = this._loadingCount > 0;
         this._loadingCount += delta;
         let isLoading = this._loadingCount > 0;
 
         if (wasLoading != isLoading)
             this.notify('loading');
-    },
+    }
 
-    updateInfo: function(info) {
+    updateInfo(info) {
         if (info._loadingId)
             return;
 
@@ -134,13 +131,13 @@ var WorldModel = new Lang.Class({
 
         info.update();
         this._updateLoadingCount(+1);
-    },
+    }
 
     get loading() {
         return this._loadingCount > 0;
-    },
+    }
 
-    addNewLocation: function(newLocation, isCurrentLocation) {
+    addNewLocation(newLocation, isCurrentLocation) {
         if (!isCurrentLocation) {
             for (let info of this._infoList) {
                 let location = info.location;
@@ -157,9 +154,9 @@ var WorldModel = new Lang.Class({
             this._queueSaveSettings();
 
         return info;
-    },
+    }
 
-    _queueSaveSettings: function() {
+    _queueSaveSettings() {
         if (this._queueSaveSettingsId)
             return;
 
@@ -169,9 +166,9 @@ var WorldModel = new Lang.Class({
             return false;
         });
         this._queueSaveSettingsId = id;
-    },
+    }
 
-    _saveSettingsInternal: function() {
+    _saveSettingsInternal() {
         let locations = [];
 
         for (let i = 0; i < this._infoList.length; i++) {
@@ -180,9 +177,9 @@ var WorldModel = new Lang.Class({
         }
 
         this._settings.set_value('locations', new GLib.Variant('av', locations));
-    },
+    }
 
-    saveSettingsNow: function() {
+    saveSettingsNow() {
         if (!this._queueSaveSettingsId)
             return;
 
@@ -190,9 +187,9 @@ var WorldModel = new Lang.Class({
         this._queueSaveSettingsId = 0;
 
         this._saveSettingsInternal();
-    },
+    }
 
-    moveLocationToFront: function(info) {
+    moveLocationToFront(info) {
         if (this._infoList.length == 0 || this._infoList[0] == info)
             return;
 
@@ -204,9 +201,9 @@ var WorldModel = new Lang.Class({
         info._isCurrentLocation = false;
 
         this._queueSaveSettings();
-    },
+    }
 
-    _removeLocationInternal: function(oldInfo, skipDisconnect) {
+    _removeLocationInternal(oldInfo, skipDisconnect) {
         if (oldInfo._loadingId && !skipDisconnect) {
             oldInfo.disconnect(oldInfo._loadingId);
             oldInfo._loadingId = 0;
@@ -224,17 +221,17 @@ var WorldModel = new Lang.Class({
         }
 
         this.emit('location-removed', oldInfo);
-    },
+    }
 
-    _addLocationInternal: function(newLocation, isCurrentLocation) {
+    _addLocationInternal(newLocation, isCurrentLocation) {
         let info = new GWeather.Info({ location: newLocation,
                                        enabled_providers: this._providers });
         this._addInfoInternal(info, isCurrentLocation);
 
         return info;
-    },
+    }
 
-    _addInfoInternal: function(info, isCurrentLocation) {
+    _addInfoInternal(info, isCurrentLocation) {
         info._isCurrentLocation = isCurrentLocation;
         this._infoList.unshift(info);
         this.updateInfo(info);

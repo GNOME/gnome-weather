@@ -31,8 +31,6 @@ const Gtk = imports.gi.Gtk;
 const System = imports.system;
 const GWeather = imports.gi.GWeather;
 
-const Params = imports.misc.params;
-
 function loadUI(resourcePath, objects) {
     let ui = new Gtk.Builder();
 
@@ -51,23 +49,6 @@ function loadStyleSheet(resource) {
     Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(),
                                              provider,
                                              Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-}
-
-function initActions(actionMap, simpleActionEntries, context) {
-    simpleActionEntries.forEach(function(entry) {
-        let filtered = Params.filter(entry, { activate: null,
-                                              state_changed: null,
-                                              context: null });
-        let action = new Gio.SimpleAction(entry);
-
-        let context = filtered.context || actionMap;
-        if (filtered.activate)
-            action.connect('activate', filtered.activate.bind(context));
-        if (filtered.state_changed)
-            action.connect('state-changed', filtered.state_changed.bind(context));
-
-        actionMap.add_action(action);
-    });
 }
 
 function arrayEqual(one, two) {

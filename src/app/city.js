@@ -19,33 +19,32 @@
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const Gnome = imports.gi.GnomeDesktop;
+const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
-const Lang = imports.lang;
 
 const Forecast = imports.app.forecast;
 const WForecast = imports.app.weeklyForecast;
-const Params = imports.misc.params;
 const Util = imports.misc.util;
 
 const SPINNER_SIZE = 128;
 
 const SCROLLING_ANIMATION_TIME = 400000; //us
 
-var WeatherWidget = new Lang.Class({
-    Name: 'WeatherWidget',
-    Extends: Gtk.Frame,
-    Template: 'resource:///org/gnome/Weather/Application/weather-widget.ui',
+var WeatherWidget = GObject.registerClass({
+    Template: 'resource:///org/gnome/Weather/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
                        'temperatureLabel', 'conditionsLabel',
                        'timeLabel', 'timeGrid', 'forecastStack',
                        'leftButton', 'rightButton',
                        'forecast-today-grid', 'forecast-tomorrow-grid',
                        'forecast-today', 'forecast-tomorrow'],
+}, class WeatherWidget extends Gtk.Frame {
 
-    _init: function(params) {
-        params = Params.fill(params, { shadow_type: Gtk.ShadowType.NONE,
-                                       name: 'weather-page' });
-        this.parent(params);
+    _init(params) {
+        super._init(Object.assign({
+            shadow_type: Gtk.ShadowType.NONE,
+            name: 'weather-page'
+        }, params));
 
         this._currentStyle = null;
         this._info = null;
@@ -66,8 +65,8 @@ var WeatherWidget = new Lang.Class({
             hscrollbar.set_opacity(0.0);
             hscrollbar.hide();
             let hadjustment = fsw.get_hadjustment();
-            hadjustment.connect('changed', this._syncLeftRightButtons.bind(this));
-            hadjustment.connect('value-changed', this._syncLeftRightButtons.bind(this));
+            hadjustment.connect('changed', () => this._syncLeftRightButtons());
+            hadjustment.connect('value-changed', () => this._syncLeftRightButtons());
         }
 
         this._forecastStack.connect('notify::visible-child', () => {
@@ -100,9 +99,9 @@ var WeatherWidget = new Lang.Class({
 
             this._beginScrollAnimation(target);
         });
-    },
+    }
 
-    _syncLeftRightButtons: function() {
+    _syncLeftRightButtons() {
         let hadjustment = this._forecastStack.visible_child.get_hadjustment();
         if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
             this._leftButton.set_sensitive(false);
@@ -117,9 +116,9 @@ var WeatherWidget = new Lang.Class({
             this._leftButton.set_sensitive(true);
             this._rightButton.set_sensitive(true);
         }
-    },
+    }
 
-    _beginScrollAnimation: function(target) {
+    _beginScrollAnimation(target) {
         let start = this.get_frame_clock().get_frame_time();
         let end = start + SCROLLING_ANIMATION_TIME;
 
@@ -127,9 +126,9 @@ var WeatherWidget = new Lang.Class({
             this.remove_tick_callback(this._tickId);
 
         this._tickId = this.add_tick_callback(() => this._animate(target, start, end));
-    },
+    }
 
-    _animate: function(target, start, end) {
+    _animate(target, start, end) {
         let hadjustment = this._forecastStack.visible_child.get_hadjustment();
         let value = hadjustment.value;
         let t = 1.0;
@@ -145,9 +144,9 @@ var WeatherWidget = new Lang.Class({
             this._tickId = 0;
             return false;
         }
-    },
+    }
 
-    clear: function() {
+    clear() {
         for (let t of ['today', 'tomorrow'])
             this._forecasts[t].clear();
 
@@ -155,23 +154,23 @@ var WeatherWidget = new Lang.Class({
             this.remove_tick_callback(this._tickId);
             this._tickId = 0;
         }
-    },
+    }
 
-    _getStyleClass: function(info) {
+    _getStyleClass(info) {
         let icon = info.get_icon_name();
         let name = icon.replace(/(-\d{3})/, "");
         return name;
-    },
+    }
 
-    setTimeVisible: function(visible) {
+    setTimeVisible(visible) {
         this._timeGrid.visible = visible;
-    },
+    }
 
-    setTime: function(time) {
+    setTime(time) {
         this._timeLabel.label = time;
-    },
+    }
 
-    update: function(info) {
+    update(info) {
         this._info = info;
 
         this._conditionsLabel.label = Util.getWeatherConditions(info);
@@ -189,6 +188,10 @@ var WeatherWidget = new Lang.Class({
         for (let t of ['today', 'tomorrow'])
             this._forecasts[t].update(forecasts, tz, t);
 
+        if (!this._forecasts['today'].hasForecastInfo() && this._forecasts['tomorrow'].hasForecastInfo())
+            this._forecastStack.set_visible_child_name('tomorrow');
+
+        // FIXME: This doesn't make sense, since the above code assumes forecasts.length != 0.
         if (forecasts.length == 0) {
             this._weeklyForecasts.hide();
         } else {
@@ -198,14 +201,13 @@ var WeatherWidget = new Lang.Class({
     }
 });
 
-var WeatherView = new Lang.Class({
-    Name: 'WeatherView',
-    Extends: Gtk.Stack,
-    Template: 'resource:///org/gnome/Weather/Application/city.ui',
-    InternalChildren: ['spinner'],
+var WeatherView = GObject.registerClass({
+    Template: 'resource:///org/gnome/Weather/city.ui',
+    InternalChildren: ['spinner']
+}, class WeatherView extends Gtk.Stack {
 
-    _init: function(params) {
-        this.parent(params);
+    _init(params) {
+        super._init(params);
 
         this._infoPage = new WeatherWidget();
         this.add_named(this._infoPage, 'info');
@@ -213,17 +215,17 @@ var WeatherView = new Lang.Class({
         this._info = null;
         this._updateId = 0;
 
-        this.connect('destroy', this._onDestroy.bind(this));
+        this.connect('destroy', () => this._onDestroy());
 
         this._wallClock = new Gnome.WallClock();
         this._clockHandlerId = 0;
 
         this._desktopSettings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
-    },
+    }
 
     get info() {
         return this._info;
-    },
+    }
 
     set info(info) {
         if (this._updateId) {
@@ -236,53 +238,57 @@ var WeatherView = new Lang.Class({
         this._info = info;
 
         if (info) {
-            this._updateId = this._info.connect('updated', this._onUpdate.bind(this));
+            this._updateId = this._info.connect('updated', (info) => {
+                this._onUpdate(info)
+            });
             if (info.is_valid())
                 this._onUpdate(info);
         }
-    },
+    }
 
-    _onDestroy: function() {
+    _onDestroy() {
         if (this._updateId) {
             this._info.disconnect(this._updateId);
             this._updateId = 0;
         }
-    },
+    }
 
-    update: function() {
+    update() {
         this.visible_child_name = 'loading';
         this._spinner.start();
         this._infoPage.clear();
 
         getApp().model.updateInfo(this._info);
-    },
+    }
 
-    _onUpdate: function(info) {
+    _onUpdate(info) {
         this._infoPage.clear();
         this._infoPage.update(info);
         this._updateTime();
         this._spinner.stop();
         this.visible_child_name = 'info';
-    },
+    }
 
-    setTimeVisible: function(visible) {
+    setTimeVisible(visible) {
         if (this._clockHandlerId && !visible) {
             this._wallClock.disconnect(this._clockHandlerId);
             this._clockHandlerId = 0;
         }
 
         if (!this._clockHandlerId && visible) {
-            this._clockHandlerId = this._wallClock.connect('notify::clock', this._updateTime.bind(this));
+            this._clockHandlerId = this._wallClock.connect('notify::clock',  () => {
+                this._updateTime();
+            });
         }
 
         this._infoPage.setTimeVisible(visible);
-    },
+    }
 
-    _updateTime: function() {
+    _updateTime() {
         this._infoPage.setTime(this._getTime());
-    },
+    }
 
-    _getTime: function() {
+    _getTime() {
         if (this._info != null) {
             let location = this._info.location;
             let tz = GLib.TimeZone.new(location.get_timezone().get_tzid());

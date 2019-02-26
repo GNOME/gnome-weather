@@ -1,71 +1,87 @@
 {
-    "app-id": "org.gnome.Weather",
-    "runtime": "org.gnome.Platform",
-    "runtime-version": "master",
-    "sdk": "org.gnome.Sdk",
-    "command": "/app/share/org.gnome.Weather/org.gnome.Weather.Application",
-    "tags": ["nightly"],
-    "finish-args": [
-        "--share=ipc", "--socket=x11",
+    "app-id" : "org.gnome.Weather",
+    "runtime" : "org.gnome.Platform",
+    "runtime-version" : "master",
+    "sdk" : "org.gnome.Sdk",
+    "command" : "gnome-weather",
+    "tags" : [
+        "nightly"
+    ],
+    "finish-args" : [
+        "--share=ipc",
+        "--socket=x11",
         "--socket=wayland",
         "--share=network",
         "--system-talk-name=org.freedesktop.GeoClue2",
-        "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--talk-name=ca.desrt.dconf",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
     ],
-    "build-options" : {
-        "cflags": "-O2 -g",
-        "cxxflags": "-O2 -g",
-        "env": {
-            "V": "1"
-        }
-    },
-    "cleanup": ["/include", "/lib/pkgconfig",
-                "/share/pkgconfig", "/share/aclocal",
-                "/man", "/share/man", "/share/gtk-doc",
-                "/share/vala",
-                "*.la", "*.a"],
-    "cleanup-commands": [ "desktop-file-edit \"--set-name=(Nightly) Weather\" /app/share/applications/org.gnome.Weather.Application.desktop" ],
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/pkgconfig",
+        "/share/aclocal",
+        "/man",
+        "/share/man",
+        "/share/gtk-doc",
+        "/share/vala",
+        "*.la",
+        "*.a"
+    ],
+    "desktop-file-name-prefix": [ "(Development) " ],
     "modules": [
         {
-            "name": "geocode-glib",
-            "config-opts": ["-Denable-installed-tests=false", "-Denable-gtk-doc=false"],
-            "buildsystem": "meson",
-            "sources": [
+            "name" : "geocode-glib",
+            "config-opts" : [
+                "-Denable-installed-tests=false",
+                "-Denable-gtk-doc=false"
+            ],
+            "buildsystem" : "meson",
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/geocode-glib.git"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/geocode-glib.git"
                 }
             ]
         },
         {
-            "name": "libgweather",
-            "config-opts": ["-Denable_vala=false", "-Dgtk_doc=false"],
-            "buildsystem": "meson",
-            "sources": [
+            "name" : "libgweather",
+            "config-opts" : [
+                "-Denable_vala=false",
+                "-Dgtk_doc=false"
+            ],
+            "buildsystem" : "meson",
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/libgweather.git"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/libgweather.git"
                 }
             ]
         },
         {
-            "name": "gnome-desktop",
-            "buildsystem": "meson",
-            "config-opts": ["-Ddebug_tools=false", "-Dudev=disabled", "-Ddesktop_docs=false"],
-            "sources": [
+            "name" : "gnome-desktop",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Ddebug_tools=false",
+                "-Dudev=disabled",
+                "-Ddesktop_docs=false"
+            ],
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/gnome-desktop.git"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gnome-desktop.git"
                 }
             ]
         },
         {
-            "name": "gnome-weather",
-            "sources": [
+            "name" : "gnome-weather",
+            "buildsystem" : "meson",
+            "sources" : [
                 {
-                    "type": "git",
-                    "url": "https://gitlab.gnome.org/GNOME/gnome-weather.git"
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/gnome-weather.git"
                 }
             ]
         }

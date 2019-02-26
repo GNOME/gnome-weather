@@ -1,44 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014 Giovanni Campagna -->
 <component type="desktop">
-  <id>org.gnome.Weather.Application.desktop</id>
-  <_name>Weather</_name>
-  <_summary>Show weather conditions and forecast</_summary>
+  <id>org.gnome.Weather</id>
+  <name>Weather</name>
+  <summary>Show weather conditions and forecast</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+ and CC-BY-3.0 and CC-BY-SA-3.0</project_license>
   <kudos>
-    <kudo>AppMenu</kudo>
     <kudo>HiDpiIcon</kudo>
     <kudo>HighContrast</kudo>
     <kudo>ModernToolkit</kudo>
     <kudo>SearchProvider</kudo>
   </kudos>
   <description>
-    <_p>
+    <p>
       A small application that allows you to monitor the current weather
       conditions for your city, or anywhere in the world.
-    </_p>
-    <_p>
+    </p>
+    <p>
       It provides access to detailed forecasts, up to 7 days, with hourly
       details for the current and next day, using various internet services.
-    </_p>
-    <_p>
+    </p>
+    <p>
       It also optionally integrates with the GNOME Shell, allowing you see
       the current conditions of the most recently searched cities by just
       typing its name in the Activities Overview.
-    </_p>
+    </p>
   </description>
   <project_group>GNOME</project_group>
   <screenshots>
     <screenshot type="default">
-      <image width="1500" height="1130">https://git.gnome.org/browse/gnome-weather/plain/misc/screenshots/city-view.png</image>
+      <image height="555" width="704">https://gitlab.gnome.org/GNOME/gnome-weather/raw/master/misc/screenshots/city-view.png</image>
     </screenshot>
     <screenshot>
-      <image width="1500" height="1130">https://git.gnome.org/browse/gnome-weather/plain/misc/screenshots/world-popover.png</image>
+      <image height="555" width="704">https://gitlab.gnome.org/GNOME/gnome-weather/raw/master/misc/screenshots/world-popover.png</image>
     </screenshot>
   </screenshots>
+  <launchable type="desktop-id">org.gnome.Weather.desktop</launchable>
   <url type="homepage">https://wiki.gnome.org/Apps/Weather</url>
-  <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=gnome-weather</url>
-  <updatecontact>gcampagna_at_src.gnome.org</updatecontact>
+  <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-weather/issues</url>
+  <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">org.gnome.Weather</translation>
+  <provides>
+    <id>org.gnome.Weather.Application.desktop</id>
+  </provides>
+
+  <developer_name>The GNOME Project</developer_name>
+
+  <url type="donation">http://www.gnome.org/friends/</url>
+
+  <url type="translate">https://wiki.gnome.org/TranslationProject</url>
 </component>
