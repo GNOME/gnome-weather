@@ -5,64 +5,40 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-02-19 13:31+0000\n"
-"PO-Revision-Date: 2016-02-19 18:59+0200\n"
-"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2019-02-22 01:46+0000\n"
+"PO-Revision-Date: 2019-02-28 15:25+0100\n"
+"Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
-"n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Project-Style: gnome\n"
+"X-Generator: Poedit 2.2\n"
 
-#: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "_Ново"
-
-#: ../data/app-menu.ui.h:2
-msgid "Temperature unit"
-msgstr "Јединица температуре"
-
-#: ../data/app-menu.ui.h:3
-msgid "Celsius"
-msgstr "Целзијуси"
-
-#: ../data/app-menu.ui.h:4
-msgid "Fahrenheit"
-msgstr "Фаренхајти"
-
-#: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "О програму"
-
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Изађи"
-
-#: ../data/city.ui.h:1
+#: data/city.ui:8
 msgid "City view"
 msgstr "Преглед града"
 
-#: ../data/city.ui.h:2
+#: data/city.ui:30
 msgid "Loading…"
 msgstr "Учитавам…"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:53
+#: src/app/window.js:231 src/service/main.js:49
 msgid "Weather"
 msgstr "Време"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
-#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: data/org.gnome.Weather.appdata.xml.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "Прикажите временске прилике и прогнозу"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -70,7 +46,7 @@ msgstr ""
 "Програмче које вам омогућава да надгледате тренутне временске прилике за ваш "
 "град, или било где у свету."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+#: data/org.gnome.Weather.appdata.xml.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -79,7 +55,7 @@ msgstr ""
 "једночасовним појединостима за текући и наредни дан, користећи разне "
 "интернет услуге."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+#: data/org.gnome.Weather.appdata.xml.in:24
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -89,20 +65,29 @@ msgstr ""
 "тренутне услове последњих тражених градова једноставним куцањем њихових "
 "имена у прегледу активности."
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in:48
+msgid "The GNOME Project"
+msgstr "Гном пројекат"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Weather.desktop.in.in:7
+msgid "@APP_ID@"
+msgstr "@APP_ID@"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "време;прогноза;"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:4
-#| msgid "To see weather information, enter the name of a city."
+#: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
 msgstr "Омогућава приказивање података о временским приликама за ваше место."
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+#: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
 msgstr "Подешени градови за које приказивати време"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+#: data/org.gnome.Weather.gschema.xml:7
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
@@ -110,11 +95,11 @@ msgstr ""
 "Места приказана у прегледу света гномовог времена. Свака вредност је "
 "Гваријанта коју даје функција „gweather_location_serialize()“."
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+#: data/org.gnome.Weather.gschema.xml:14
 msgid "Automatic location"
 msgstr "Самостално место"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+#: data/org.gnome.Weather.gschema.xml:15
 msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
@@ -122,100 +107,116 @@ msgstr ""
 "Самостално место је вредност пребацивача самосталног места који одлучује да "
 "ли да добави текуће место или не."
 
-#: ../data/places-popover.ui.h:1
+#: data/places-popover.ui:44
 msgid "Automatic Location"
 msgstr "Самостално место"
 
-#: ../data/places-popover.ui.h:2
+#: data/places-popover.ui:83
 msgid "Locating…"
 msgstr "Проналазим…"
 
-#: ../data/places-popover.ui.h:3
+#: data/places-popover.ui:140
 msgid "Search for a city"
 msgstr "Потражите град"
 
-#: ../data/places-popover.ui.h:4
+#: data/places-popover.ui:172
 msgid "Viewed Recently"
 msgstr "Недавно виђени"
 
-#: ../data/weather-widget.ui.h:1
+#: data/primary-menu.ui:4
+msgid "_Temperature Unit"
+msgstr "Јединица _температуре"
+
+#: data/primary-menu.ui:6
+msgid "_Celsius"
+msgstr "_Целзијуси"
+
+#: data/primary-menu.ui:11
+msgid "_Fahrenheit"
+msgstr "_Фаренхајти"
+
+#: data/primary-menu.ui:19
+msgid "_About Weather"
+msgstr "_О Времену"
+
+#: data/weather-widget.ui:39
 msgid "Current conditions"
 msgstr "Текуће прилике"
 
-#: ../data/weather-widget.ui.h:2
+#: data/weather-widget.ui:151
 msgid "Today"
 msgstr "Данас"
 
-#: ../data/weather-widget.ui.h:3
+#: data/weather-widget.ui:180
 msgid "Tomorrow"
 msgstr "Сутра"
 
-#: ../data/window.ui.h:1
+#: data/window.ui:33
 msgid "Places"
 msgstr "Места"
 
-#: ../data/window.ui.h:2
+#: data/window.ui:55
 msgid "Refresh"
 msgstr "Освежи"
 
-#: ../data/window.ui.h:3
+#: data/window.ui:113
 msgid "Search for a location"
 msgstr "Потражите место"
 
-#: ../data/window.ui.h:4
+#: data/window.ui:129
 msgid "To see weather information, enter the name of a city."
 msgstr "Да видите временске податке, унесите име града."
 
-#: ../src/app/forecast.js:37
+#: src/app/forecast.js:37
 msgid "Forecast"
 msgstr "Прогноза"
 
-#: ../src/app/forecast.js:111
+#: src/app/forecast.js:113
 msgid "Forecast not available"
 msgstr "Временска прогноза није доступна"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:127
+#: src/app/forecast.js:129
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:130
+#: src/app/forecast.js:132
 msgid "%R"
 msgstr "%R"
 
-#: ../src/app/weeklyForecast.js:36
+#: src/app/weeklyForecast.js:36
 msgid "Weekly Forecast"
 msgstr "Седмична прогноза времена"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: ../src/app/weeklyForecast.js:121
+#: src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:115
+#: src/app/window.js:120
 msgid "Select Location"
 msgstr "Изаберите место"
 
-#: ../src/app/window.js:225
+#: src/app/window.js:230
 msgid "translator-credits"
 msgstr ""
 "  Мирослав Николић\n"
 "\n"
 "  http://prevod.org — превод на српски језик"
 
-#: ../src/app/window.js:227
+#: src/app/window.js:232
 msgid "A weather application"
 msgstr "Програм за временске прилике"
 
-#: ../src/app/world.js:39
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Преглед света"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: ../src/misc/util.js:159
+#: src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -223,10 +224,19 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: src/service/searchProvider.js:181
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "_New"
+#~ msgstr "_Ново"
+
+#~ msgid "About"
+#~ msgstr "О програму"
+
+#~ msgid "Quit"
+#~ msgstr "Изађи"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
@@ -392,6 +402,3 @@ msgstr "%s, %s"
 #~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 #~ msgstr ""
 #~ "Користите дугме <b>Ново</b> на траци алата да додате још светских места"
-
-#~ msgid "About Weather"
-#~ msgstr "О Времену"
