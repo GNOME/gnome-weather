@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
 "POT-Creation-Date: 2019-01-31 15:58+0000\n"
-"PO-Revision-Date: 2019-02-19 20:42+0500\n"
+"PO-Revision-Date: 2019-03-03 22:43+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: Tajik <tg@li.org>\n"
 "Language: tg\n"
@@ -61,7 +61,7 @@ msgid ""
 msgstr ""
 "Барномаи мазкур инчунин бо GNOME Shell якҷоя кор мекунад ва ба шумо барои "
 "дидани шароитҳои обу ҳавоӣ дар шаҳрҳои дилхоҳ бо чопкунии номи шаҳр дар "
-"Пешнамоиши фаъолият имкон медиҳад."
+"лавҳаи Пешнамоиши фаъолият имкон медиҳад."
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Weather.desktop.in.in:7
