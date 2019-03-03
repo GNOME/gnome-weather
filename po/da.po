@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-01-31 15:58+0000\n"
-"PO-Revision-Date: 2019-02-11 19:51+0100\n"
+"POT-Creation-Date: 2019-02-22 01:46+0000\n"
+"PO-Revision-Date: 2019-02-28 20:07+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -39,7 +39,7 @@ msgstr "Vejr"
 msgid "Show weather conditions and forecast"
 msgstr "Vis vejrforhold og -udsigt"
 
-#: data/org.gnome.Weather.appdata.xml.in:17
+#: data/org.gnome.Weather.appdata.xml.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -47,7 +47,7 @@ msgstr ""
 "Et lille program, som giver dig mulighed for at overvåge de nuværende "
 "vejrforhold i din by, eller hvor som helst i verden."
 
-#: data/org.gnome.Weather.appdata.xml.in:21
+#: data/org.gnome.Weather.appdata.xml.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -55,7 +55,7 @@ msgstr ""
 "Det tilbyder adgang til detaljerede vejrudsigter, op til syv dage, med time-"
 "detaljer for i dag og i morgen ved at benytte forskellige internettjenester."
 
-#: data/org.gnome.Weather.appdata.xml.in:25
+#: data/org.gnome.Weather.appdata.xml.in:24
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -64,6 +64,10 @@ msgstr ""
 "Der er også valgfri integration med GNOME Shell, som tillader dig at se de "
 "nuværende forhold i de senest søgte byer, blot ved at indtaste byens navn i "
 "Aktivitets-oversigten."
+
+#: data/org.gnome.Weather.appdata.xml.in:48
+msgid "The GNOME Project"
+msgstr "GNOME-projektet"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Weather.desktop.in.in:7
