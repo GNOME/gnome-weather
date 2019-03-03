@@ -49,7 +49,7 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
 
     // Ensure that infos are sufficiently spaced, and
     // remove infos for the wrong day
-    _preprocess: function(now, tz, infos) {
+    _preprocess(now, tz, infos) {
         let ret = [];
         let i;
         let current;
@@ -94,7 +94,7 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
         return ret;
     }
 
-    update: function(infos, tz, day) {
+    update(infos, tz, day) {
         let now = GLib.DateTime.new_now(tz);
         if (day == 'tomorrow')
             now = now.add_hours(24 - now.get_hour());
@@ -120,7 +120,7 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
         }
     }
 
-    _addOneInfo: function(info, tz, col) {
+    _addOneInfo(info, tz, col) {
         let [ok, date] = info.get_value_update();
         let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
 
