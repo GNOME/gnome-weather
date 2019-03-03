@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-01-31 15:58+0000\n"
-"PO-Revision-Date: 2019-02-09 17:33+0200\n"
+"POT-Creation-Date: 2019-02-22 01:46+0000\n"
+"PO-Revision-Date: 2019-03-03 18:33+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Generator: Gtranslator 3.30.1\n"
 
 #: data/city.ui:8
@@ -38,7 +38,7 @@ msgstr "Orai"
 msgid "Show weather conditions and forecast"
 msgstr "Rodyti orų sąlygas ir prognozes"
 
-#: data/org.gnome.Weather.appdata.xml.in:17
+#: data/org.gnome.Weather.appdata.xml.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -46,7 +46,7 @@ msgstr ""
 "Maža programa, kuri jums leidžia stebėti orų sąlygas jūsų mieste arba bet "
 "kur pasaulyje."
 
-#: data/org.gnome.Weather.appdata.xml.in:21
+#: data/org.gnome.Weather.appdata.xml.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -54,7 +54,7 @@ msgstr ""
 "Ji leidžia matyti iki 7 dienų prognozę su valandų tikslumo informacija, "
 "teikiamą įvairių interneto tarnybų."
 
-#: data/org.gnome.Weather.appdata.xml.in:25
+#: data/org.gnome.Weather.appdata.xml.in:24
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -63,6 +63,10 @@ msgstr ""
 "Ji taip pat integruojasi su GNOME Shell, leisdama matyti orų sąlygas "
 "paskutiniuose ieškotuose miestuose tiesiog įvedant jų pavadinimus veiklų "
 "apžvalgoje."
+
+#: data/org.gnome.Weather.appdata.xml.in:48
+msgid "The GNOME Project"
+msgstr "GNOME projektas"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 #: data/org.gnome.Weather.desktop.in.in:7
@@ -119,22 +123,18 @@ msgid "Viewed Recently"
 msgstr "Rodyti paskutinius"
 
 #: data/primary-menu.ui:4
-#| msgid "Temperature unit"
 msgid "_Temperature Unit"
 msgstr "_Temperatūros vienetas"
 
 #: data/primary-menu.ui:6
-#| msgid "Celsius"
 msgid "_Celsius"
 msgstr "_Celcijus"
 
 #: data/primary-menu.ui:11
-#| msgid "Fahrenheit"
 msgid "_Fahrenheit"
 msgstr "_Farenheitas"
 
 #: data/primary-menu.ui:19
-#| msgid "Weather"
 msgid "_About Weather"
 msgstr "Apie orus"
 
