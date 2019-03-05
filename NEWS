@@ -1,3 +1,39 @@
+3.31.92
+=======
+* Bugs fixed:
+ - #19 3.31.90 no longer installs a binary in the path
+
+* Translation updates:
+ - Basque
+ - Catalan
+ - Chinese (Taiwan)
+ - Czech
+ - Danish
+ - Dutch
+ - Finnish
+ - French
+ - Friulian
+ - Galician
+ - German
+ - Greek, Modern (1453-)
+ - Hungarian
+ - Indonesian
+ - Italian
+ - Kazakh
+ - Lithuanian
+ - Polish
+ - Portuguese (Brazil)
+ - Romanian
+ - Russian
+ - Serbian
+ - Slovenian
+ - Spanish
+ - Swedish
+ - Tajik
+ - Turkish
+ - Vietnamese
+
+
 3.31.90
 =======
 * Port from Autotools to Meson (Falk Seidl)
