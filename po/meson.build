@@ -1,3 +1,3 @@
 message('Update translations')
-i18n.gettext(application_id, preset: 'glib',
+i18n.gettext(weather_id, preset: 'glib',
              args: [ '--keyword=X-Geoclue-Reason' ])

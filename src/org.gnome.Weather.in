@@ -1,6 +1,6 @@
 #!@GJS@
-imports.package.init({ name: "org.gnome.Weather",
-                        version: "@PACKAGE_VERSION@",
+imports.package.init({ name: "@APP_ID@",
+                        version: "@VERSION@",
                         prefix: "@prefix@",
                         libdir: "@libdir@" });
 imports.package.run(imports.app.main);
