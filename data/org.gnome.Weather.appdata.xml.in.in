@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014 Giovanni Campagna -->
 <component type="desktop">
-  <id>org.gnome.Weather</id>
+  <id>@app_id@</id>
   <name>Weather</name>
   <summary>Show weather conditions and forecast</summary>
   <metadata_license>CC0-1.0</metadata_license>
@@ -36,13 +36,14 @@
       <image height="555" width="704">https://gitlab.gnome.org/GNOME/gnome-weather/raw/master/misc/screenshots/world-popover.png</image>
     </screenshot>
   </screenshots>
-  <launchable type="desktop-id">org.gnome.Weather.desktop</launchable>
+  <launchable type="desktop-id">@app_id@.desktop</launchable>
   <url type="homepage">https://wiki.gnome.org/Apps/Weather</url>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-weather/issues</url>
   <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">org.gnome.Weather</translation>
   <provides>
     <id>org.gnome.Weather.Application.desktop</id>
+    <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
     <release date="2019-03-11" version="3.32.0"/>
