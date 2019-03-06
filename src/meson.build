@@ -1,9 +1,11 @@
 source_conf = configuration_data()
 source_conf.set('GJS', find_program('gjs').path())
-source_conf.set('VERSION', meson.project_version())
+source_conf.set('VERSION', meson.project_version() + version_suffix)
 source_conf.set('APP_ID', weather_id)
 source_conf.set('libdir', weather_extensiondir)
 source_conf.set('prefix', weather_prefix)
+source_conf.set('profile', profile)
+source_conf.set('name_prefix', name_prefix)
 
 application = configure_file(
   input: '@0@.in'.format(default_id),
@@ -22,16 +24,24 @@ configure_file(
 )
 
 application_sources = gnome.compile_resources(
-  '@0@.src'.format(default_id),
-  '@0@.src.gresource.xml'.format(default_id),
+  '@0@.src'.format(weather_id),
+  configure_file(
+    input: '@0@.src.gresource.xml.in'.format(default_id),
+    output: '@0@.src.gresource.xml'.format(default_id),
+    configuration: source_conf,
+  ),
   gresource_bundle: true,
   install: true,
   install_dir: weather_pkgdatadir
 )
 
 gnome.compile_resources(
-  '@0@.BackgroundService.src'.format(default_id),
-  '@0@.BackgroundService.src.gresource.xml'.format(default_id),
+  '@0@.BackgroundService.src'.format(weather_id),
+  configure_file(
+    input: '@0@.BackgroundService.src.gresource.xml.in'.format(default_id),
+    output: '@0@.BackgroundService.src.gresource.xml'.format(default_id),
+    configuration: source_conf,
+  ),
   gresource_bundle: true,
   install: true,
   install_dir: weather_pkgdatadir

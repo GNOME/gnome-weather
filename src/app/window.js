@@ -115,6 +115,11 @@ var MainWindow = GObject.registerClass(
         for (let i = 0; i < this._pageWidgets[Page.CITY].length; i++)
             this._pageWidgets[Page.CITY][i].hide();
 
+        if (pkg.name.endsWith('Devel')) {
+            let ctx = this.get_style_context();
+            ctx.add_class('devel')
+        }
+
         this._showingDefault = false;
     }
 
@@ -235,6 +240,11 @@ var MainWindow = GObject.registerClass(
                         'Tech Haven Ministries',
                         'Jim Pennucci' ];
 
+        let name_prefix = '';
+        if (pkg.name.endsWith('Devel')) {
+            name_prefix = '(Development) ';
+        }
+
         let copyright = 'Copyright 2013-2015 The Weather Developers';
         let attribution = this._cityView.info ? this._cityView.info.get_attribution() : '';
         copyright += attribution ? '\n' + attribution : '';
@@ -242,10 +252,10 @@ var MainWindow = GObject.registerClass(
             { artists: artists,
               authors: [ 'Giovanni Campagna <gcampagna@src.gnome.org>' ],
               translator_credits: _("translator-credits"),
-              program_name: _("Weather"),
+              program_name: name_prefix + _("Weather"),
               comments: _("A weather application"),
               license_type: Gtk.License.GPL_2_0,
-              logo_icon_name: 'org.gnome.Weather',
+              logo_icon_name: pkg.name,
               version: pkg.version,
               website: 'https://wiki.gnome.org/Apps/Weather',
               wrap_license: true,
