@@ -202,8 +202,8 @@ var SearchProvider = class WeatherSearchProvider {
         else
             wrappedParam = [];
 
-        Gio.DBus.session.call('org.gnome.Weather',
-                              '/org/gnome/Weather',
+        Gio.DBus.session.call(pkg.name,
+                              '/org/gnome/Weather' + pkg.profile,
                               'org.freedesktop.Application',
                               'ActivateAction',
                               new GLib.Variant('(sava{sv})', [action, wrappedParam,
