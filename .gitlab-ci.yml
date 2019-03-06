@@ -9,7 +9,8 @@ flatpak:
         MANIFEST_PATH: "org.gnome.Weather.json"
         FLATPAK_MODULE: "gnome-weather"
         RUNTIME_REPO: "https://sdk.gnome.org/gnome-nightly.flatpakrepo"
-        APP_ID: "org.gnome.Weather"
+        APP_ID: "org.gnome.WeatherDevel"
+        MESON_ARGS: "-Dprofile=development"
     extends: .flatpak
     script:
       - flatpak-builder --stop-at=${FLATPAK_MODULE} app ${MANIFEST_PATH}
