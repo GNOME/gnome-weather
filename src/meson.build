@@ -6,35 +6,35 @@ source_conf.set('libdir', EXTENSION_DIR)
 source_conf.set('prefix', prefix)
 
 application = configure_file(
-	input: application_id_stable + '.in',
-	output: application_id,
-	configuration: source_conf,
-	install: true,
-	install_dir: DATA_DIR
+  input: application_id_stable + '.in',
+  output: application_id,
+  configuration: source_conf,
+  install: true,
+  install_dir: DATA_DIR
 )
 
 configure_file(
-	input: application_id_stable + '.BackgroundService.in',
-	output: application_id + '.BackgroundService',
-	configuration: source_conf,
-	install: true,
-	install_dir: DATA_DIR
+  input: application_id_stable + '.BackgroundService.in',
+  output: application_id + '.BackgroundService',
+  configuration: source_conf,
+  install: true,
+  install_dir: DATA_DIR
 )
 
 application_sources = gnome.compile_resources(
-	application_id_stable + '.src',
-	application_id_stable + '.src.gresource.xml',
-	gresource_bundle: true,
-	install: true,
-	install_dir: DATA_DIR
+  application_id_stable + '.src',
+  application_id_stable + '.src.gresource.xml',
+  gresource_bundle: true,
+  install: true,
+  install_dir: DATA_DIR
 )
 
 gnome.compile_resources(
-	application_id_stable + '.BackgroundService.src',
-	application_id_stable + '.BackgroundService.src.gresource.xml',
-	gresource_bundle: true,
-	install: true,
-	install_dir: DATA_DIR
+  application_id_stable + '.BackgroundService.src',
+  application_id_stable + '.BackgroundService.src.gresource.xml',
+  gresource_bundle: true,
+  install: true,
+  install_dir: DATA_DIR
 )
 
 run_target('run',

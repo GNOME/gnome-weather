@@ -26,11 +26,11 @@ BIN_DIR = join_paths(get_option('prefix'), get_option('bindir'))
 
 # Profiles
 if get_option('profile') == 'development'
-    profile = 'Devel'
-    name_suffix = ' (Development)'
+  profile = 'Devel'
+  name_suffix = ' (Development)'
 else
-    profile = ''
-    name_suffix = ''
+  profile = ''
+  name_suffix = ''
 endif
 
 conf = configuration_data()
@@ -38,9 +38,9 @@ conf.set('PACKAGE_URL', 'https://gitlab.gnome.org/GNOME/gnome-weather')
 conf.set('DATA_DIR', DATA_DIR)
 
 if get_option('profile') == 'development'
-    conf.set('VERSION', ''.join([run_command(['git', 'describe', '--long', '--tags']).stdout(), get_option('profile')]))
+  conf.set('VERSION', ''.join([run_command(['git', 'describe', '--long', '--tags']).stdout(), get_option('profile')]))
 else
-    conf.set('VERSION', meson.project_version())
+  conf.set('VERSION', meson.project_version())
 endif
 
 conf.set_quoted('PROFILE', profile)
@@ -56,8 +56,8 @@ subdir('src')
 subdir('tests')
 
 meson.add_install_script(
-    'meson_post_install.py',
-    join_paths(get_option('prefix'), get_option('datadir')),
-    DATA_DIR,
-    BIN_DIR,
+  'meson_post_install.py',
+  join_paths(get_option('prefix'), get_option('datadir')),
+  DATA_DIR,
+  BIN_DIR,
 )
