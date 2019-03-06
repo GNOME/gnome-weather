@@ -17,10 +17,17 @@ dependency('gweather-3.0', version: '>= 3.28')
 # Profiles
 if get_option('profile') == 'development'
   profile = 'Devel'
-  name_suffix = ' (Development)'
+  name_prefix = '(Development) '
+  vcs_tag = run_command('git', 'rev-parse', '--short', 'HEAD').stdout().strip()
+  if vcs_tag == ''
+    version_suffix = '-devel'
+  else
+    version_suffix = '-@0@'.format (vcs_tag)
+  endif
 else
   profile = ''
-  name_suffix = ''
+  name_prefix = ''
+  version_suffix = ''
 endif
 
 default_id = 'org.gnome.Weather'
@@ -43,4 +50,5 @@ meson.add_install_script(
   weather_datadir,
   weather_pkgdatadir,
   weather_bindir,
+  weather_id
 )

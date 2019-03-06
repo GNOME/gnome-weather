@@ -1,5 +1,5 @@
 #!@GJS@
-imports.package.init({ name: "@APP_ID",
+imports.package.init({ name: "@APP_ID@",
                         version: "@VERSION@",
                         prefix: "@prefix@",
                         libdir: "@libdir@" });

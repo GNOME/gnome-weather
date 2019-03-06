@@ -3,16 +3,16 @@ podir = join_paths(meson.source_root(), 'po')
 
 
 gnome.compile_resources(
-  '@0@.data'.format(default_id),
-  '@0@.data.gresource.xml'.format(weather_id),
+  '@0@.data'.format(weather_id),
+  '@0@.data.gresource.xml'.format(default_id),
   gresource_bundle: true,
   install_dir: weather_pkgdatadir,
   install: true
 )
 
 gnome.compile_resources(
-  '@0@.BackgroundService.data'.format(default_id),
-  '@0@.BackgroundService.data.gresource.xml'.format(weather_id),
+  '@0@.BackgroundService.data'.format(weather_id),
+  '@0@.BackgroundService.data.gresource.xml'.format(default_id),
   gresource_bundle: true,
   install_dir: weather_pkgdatadir,
   install: true
@@ -57,12 +57,17 @@ endif
 
 # Building app data
 appdata_conf = configuration_data()
+appdata_conf.set('app_id', weather_id)
 appdata = i18n.merge_file(
   'appdata',
-  input: '@0@.appdata.xml.in'.format(default_id),
+  input: configure_file(
+    input: '@0@.appdata.xml.in.in'.format(default_id),
+    output: '@0@.appdata.xml.in'.format(default_id),
+    configuration: appdata_conf
+  ),
   output: '@0@.appdata.xml'.format(weather_id),
   install: true,
-  install_dir: join_paths(join_paths('share'), 'metainfo'),
+  install_dir: join_paths(weather_datadir, 'metainfo'),
   po_dir: join_paths(meson.source_root(), 'po')
 )
 
@@ -80,6 +85,7 @@ endif
 service_conf = configuration_data()
 service_conf.set('APP_ID', weather_id)
 service_conf.set('DATA_DIR', weather_pkgdatadir)
+service_conf.set('PROFILE', profile)
 weather_servicedir = join_paths(weather_datadir, 'dbus-1', 'services')
 
 configure_file(
@@ -99,9 +105,11 @@ configure_file(
 )
 
 # Search Provider
-install_data(
-  default_id + '.search-provider.ini',
+configure_file(
+  input: '@0@.search-provider.ini.in'.format(default_id),
+  output: '@0@.search-provider.ini'.format(weather_id),
+  configuration: service_conf,
+  install: true,
   install_dir: join_paths(weather_datadir, 'gnome-shell', 'search-providers')
 )
-
 subdir('icons')
