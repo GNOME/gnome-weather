@@ -1,5 +1,5 @@
 {
-    "app-id" : "org.gnome.Weather",
+    "app-id" : "org.gnome.WeatherDevel",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
@@ -30,7 +30,7 @@
         "*.la",
         "*.a"
     ],
-    "desktop-file-name-prefix": [ "(Development) " ],
+    "desktop-file-name-prefix": "(Development) ",
     "modules": [
         {
             "name" : "geocode-glib",
@@ -78,6 +78,9 @@
         {
             "name" : "gnome-weather",
             "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dprofile=development"
+            ],
             "sources" : [
                 {
                     "type" : "git",

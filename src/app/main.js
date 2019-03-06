@@ -49,8 +49,13 @@ const Application = GObject.registerClass(
     _init() {
         super._init({ application_id: pkg.name,
                       flags: (Gio.ApplicationFlags.CAN_OVERRIDE_APP_ID |  Gio.ApplicationFlags.FLAGS_NONE) });
-        GLib.set_application_name(_("Weather"));
-        Gtk.Window.set_default_icon_name("org.gnome.Weather");
+
+        let name_prefix = '';
+        if (pkg.name.endsWith('Devel')) {
+            name_prefix = '(Development) ';
+        }
+        GLib.set_application_name(name_prefix + _("Weather"));
+        Gtk.Window.set_default_icon_name(pkg.name);
     }
 
     _onQuit() {
