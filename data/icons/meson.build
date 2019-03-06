@@ -1,28 +1,13 @@
-datadir = join_paths(get_option('datadir'), 'icons')
-icondir = join_paths('hicolor', 'scalable', 'apps')
-if get_option('profile') == 'development'
+scalable_icondir = join_paths('hicolor', 'scalable', 'apps')
 install_data (
-  join_paths(icondir, 'org.gnome.Weather.svg'),
-  install_dir: join_paths(datadir, icondir),
-  rename: 'org.gnome.WeatherDevel.svg'
+  join_paths(scalable_icondir, 'org.gnome.Weather.svg'),
+  install_dir: join_paths(weather_datadir, 'icons', scalable_icondir),
+  rename: '@0@.svg'.format(weather_id)
 )
-else
-install_data (
-  join_paths(icondir, 'org.gnome.Weather.svg'),
-  install_dir: join_paths(datadir, icondir)
-)
-endif
 
-icondir = join_paths('hicolor', 'symbolic', 'apps')
-if get_option('profile') == 'development'
+symbolic_icondir = join_paths('hicolor', 'symbolic', 'apps')
 install_data (
-  join_paths(icondir, 'org.gnome.Weather-symbolic.svg'),
-  install_dir: join_paths(datadir, icondir),
-  rename: 'org.gnome.WeatherDevel-symbolic.svg'
+  join_paths(symbolic_icondir, 'org.gnome.Weather-symbolic.svg'),
+  install_dir: join_paths(weather_datadir, 'icons', symbolic_icondir),
+  rename: '@0@-symbolic.svg'.format(weather_id)
 )
-else
-install_data (
-  join_paths(icondir, 'org.gnome.Weather-symbolic.svg'),
-  install_dir: join_paths(datadir, icondir)
-)
-endif
