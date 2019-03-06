@@ -1,0 +1,6 @@
+[Shell Search Provider]
+DesktopId=@APP_ID@.desktop
+BusName=@APP_ID@.BackgroundService
+ObjectPath=/org/gnome/Weather@PROFILE@/BackgroundService
+Version=2
+DefaultDisabled=true
