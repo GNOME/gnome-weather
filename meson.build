@@ -1,5 +1,5 @@
 project('gnome-weather', 'c',
-  version: '3.31.92',
+  version: '3.32.0',
   meson_version: '>= 0.46.0',
   license: 'GPL2+'
 )
