@@ -1,3 +1,47 @@
+3.32.0
+======
+* Migrate app menu to primary menu
+* New icon
+* Show tomorrow's forecasts at the end of the day (Michael Catanzaro)
+
+* Translation updates:
+ - Afrikaans
+ - Arabic
+ - Basque
+ - Catalan
+ - Chinese (Taiwan)
+ - Czech
+ - Danish
+ - Dutch
+ - Esperanto
+ - Estonian
+ - Finnish
+ - French
+ - Friulian
+ - Gaelic
+ - Galician
+ - German
+ - Greek, Modern (1453-)
+ - Hungarian
+ - Indonesian
+ - Italian
+ - Japanese
+ - Kazakh
+ - Latvian
+ - Lithuanian
+ - Nepali
+ - Polish
+ - Portuguese (Brazil)
+ - Romanian
+ - Russian
+ - Serbian
+ - Slovenian
+ - Spanish
+ - Swedish
+ - Tajik
+ - Turkish
+ - Vietnamese
+
 3.31.92
 =======
 * Bugs fixed:
