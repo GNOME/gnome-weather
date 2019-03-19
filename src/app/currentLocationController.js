@@ -87,10 +87,11 @@ var CurrentLocationController = class CurrentLocationController {
     _onLocationUpdated(simple) {
         let geoclueLocation = simple.get_location();
 
-        this.currentLocation = GWeather.Location.new_detached(geoclueLocation.description,
-                                                              null,
-                                                              geoclueLocation.latitude,
-                                                              geoclueLocation.longitude);
+        this.currentLocation = GWeather.Location.get_world()
+                                                .find_nearest_city(
+                                                    geoclueLocation.latitude,
+                                                    geoclueLocation.longitude
+                                                );
         this._world.currentLocationChanged(this.currentLocation);
     }
 
