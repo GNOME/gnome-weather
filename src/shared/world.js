@@ -103,9 +103,15 @@ var WorldModel = GObject.registerClass({
         let info = null;
         for (let i = locations.length - 1; i >= 0; i--) {
             let variant = locations[i];
-            let location = this._world.deserialize(variant);
+            let world = this._world.deserialize(variant);
+            if (world != null) {
+                let coords = world.get_coords();
+                let location = this._world.find_nearest_city(coords[0], coords[1]);
 
-            info = this._addLocationInternal(location, false);
+                info = this._addLocationInternal(location, false);
+            } else {
+                log('Failed to deserialize location from GVariant:' + variant.print(true));
+            }
         }
     }
 
