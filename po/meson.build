@@ -1,3 +1,3 @@
 message('Update translations')
-i18n.gettext('gnome-weather', preset: 'glib',
+i18n.gettext(application_id, preset: 'glib',
              args: [ '--keyword=X-Geoclue-Reason' ])
