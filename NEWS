@@ -1,3 +1,13 @@
+3.32.1
+======
+* Bugs fixed:
+ - #29 The app is not translated
+ -
+
+* Translation updates:
+ - Croatian
+ - English
+
 3.32.0
 ======
 * Migrate app menu to primary menu
