@@ -16,6 +16,7 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+const ByteArray = imports.byteArray;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const GWeather = imports.gi.GWeather;
@@ -24,7 +25,7 @@ const Lang = imports.lang;
 const Util = imports.misc.util;
 const World = imports.shared.world;
 
-const SearchProviderInterface = Gio.resources_lookup_data('/org/gnome/shell/ShellSearchProvider2.xml', 0).toArray().toString();
+const SearchProviderInterface = ByteArray.toString(Gio.resources_lookup_data('/org/gnome/shell/ShellSearchProvider2.xml', 0).get_data());
 
 function getCountryName(location) {
     while (location &&
