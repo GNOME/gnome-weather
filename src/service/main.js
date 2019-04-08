@@ -58,7 +58,7 @@ const BackgroundService = GObject.registerClass(
     }
 
     vfunc_dbus_register(connection, path) {
-        this.parent(connection, path);
+        super.vfunc_dbus_register(connection, path);
 
         this._searchProvider.export(connection, path);
         return true;
