@@ -1,3 +1,11 @@
+3.32.2
+======
+* Bugs fixed:
+ - Logged warning about non-standard use of `array.toString() on a Uint8Array instance`
+
+* Translation updates:
+ - Danish
+
 3.32.1
 ======
 * Bugs fixed:
