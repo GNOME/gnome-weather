@@ -1,7 +1,7 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
 data/city.ui
-data/org.gnome.Weather.appdata.xml.in
+data/org.gnome.Weather.appdata.xml.in.in
 data/org.gnome.Weather.desktop.in.in
 data/org.gnome.Weather.gschema.xml
 data/places-popover.ui
