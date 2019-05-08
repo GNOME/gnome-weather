@@ -1,78 +1,54 @@
 # Chinese (China) translation for gnome-weather.
-# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# Copyright (C) 2013-2019 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # tuhaihe <1132321739qq@gmail.com>, 2013.
 # Wylmer Wang <wantinghard@gmail.com>, 2013.
 # Tong Hui <tonghuix@gmail.com>, 2013.
 # Sphinx Jiang <yishanj@gmail.com>, 2014.
 # Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016.
+# Dingzhong Chen <wsxy162@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-02-25 11:16+0000\n"
-"PO-Revision-Date: 2016-02-25 12:56-0700\n"
-"Last-Translator: Jeff Bai <jeffbai@aosc.xyz>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2019-02-22 01:46+0000\n"
+"PO-Revision-Date: 2019-03-16 00:39+0800\n"
+"Last-Translator: Dingzhong Chen <wsxy162@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
-#: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "新建(_N)"
-
-#: ../data/app-menu.ui.h:2
-msgid "Temperature unit"
-msgstr "温度单位"
-
-#: ../data/app-menu.ui.h:3
-msgid "Celsius"
-msgstr "摄氏度"
-
-#: ../data/app-menu.ui.h:4
-msgid "Fahrenheit"
-msgstr "华氏度"
-
-#: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "关于"
-
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "退出"
-
-#: ../data/city.ui.h:1
+#: data/city.ui:8
 msgid "City view"
 msgstr "城市视图"
 
-#: ../data/city.ui.h:2
+#: data/city.ui:30
 msgid "Loading…"
 msgstr "正在加载..."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:53
+#: src/app/window.js:231 src/service/main.js:49
 msgid "Weather"
 msgstr "天气"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
-#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: data/org.gnome.Weather.appdata.xml.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "显示天气状况和天气预报"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
-msgstr "一个允许你监控所在城市或世界各地的当前天气状况的小应用"
+msgstr "一个允许你监视所在城市或世界各地的当前天气状况的小应用。"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+#: data/org.gnome.Weather.appdata.xml.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -80,7 +56,7 @@ msgstr ""
 "它使用各种不同的网络服务，提供非常具体的 7 天的天气预报，包括当天和第二天的每"
 "个小时的具体天气。"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+#: data/org.gnome.Weather.appdata.xml.in:24
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you see the "
 "current conditions of the most recently searched cities by just typing its "
@@ -89,19 +65,29 @@ msgstr ""
 "它也集成到了 GNOME Shell，允许你通过在活动概览中输入名字来查看最近搜索的城市"
 "的当前状况。"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in:48
+msgid "The GNOME Project"
+msgstr "GNOME 项目"
+
+#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
+#: data/org.gnome.Weather.desktop.in.in:7
+msgid "@APP_ID@"
+msgstr "@APP_ID@"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "Weather;Forecast;天气;预报;"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+#: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
 msgstr "允许显示你当前位置的天气信息。"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+#: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
 msgstr "已配置要显示天气的城市"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+#: data/org.gnome.Weather.gschema.xml:7
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
@@ -109,92 +95,108 @@ msgstr ""
 "gnome-weather 的世界视图中显示的位置。每个值都是由 "
 "gweather_location_serialize() 返回的 GVariant 值。"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+#: data/org.gnome.Weather.gschema.xml:14
 msgid "Automatic location"
 msgstr "自动位置"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+#: data/org.gnome.Weather.gschema.xml:15
 msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 msgstr "自动位置是 automatic-location 开关的值，决定是否获取当前位置。"
 
-#: ../data/places-popover.ui.h:1
+#: data/places-popover.ui:44
 msgid "Automatic Location"
 msgstr "自动位置"
 
-#: ../data/places-popover.ui.h:2
+#: data/places-popover.ui:83
 msgid "Locating…"
-msgstr "正在定位..."
+msgstr "正在定位……"
 
-#: ../data/places-popover.ui.h:3
+#: data/places-popover.ui:140
 msgid "Search for a city"
 msgstr "根据城市搜索"
 
-#: ../data/places-popover.ui.h:4
+#: data/places-popover.ui:172
 msgid "Viewed Recently"
 msgstr "最近查看"
 
-#: ../data/weather-widget.ui.h:1
+#: data/primary-menu.ui:4
+msgid "_Temperature Unit"
+msgstr "温度单位(_T)"
+
+#: data/primary-menu.ui:6
+msgid "_Celsius"
+msgstr "摄氏度(_C)"
+
+#: data/primary-menu.ui:11
+msgid "_Fahrenheit"
+msgstr "华氏度(_F)"
+
+#: data/primary-menu.ui:19
+msgid "_About Weather"
+msgstr "关于天气(_A)"
+
+#: data/weather-widget.ui:39
 msgid "Current conditions"
 msgstr "当前状况"
 
-#: ../data/weather-widget.ui.h:2
+#: data/weather-widget.ui:151
 msgid "Today"
 msgstr "今日"
 
-#: ../data/weather-widget.ui.h:3
+#: data/weather-widget.ui:180
 msgid "Tomorrow"
 msgstr "明日"
 
-#: ../data/window.ui.h:1
+#: data/window.ui:33
 msgid "Places"
 msgstr "地点"
 
-#: ../data/window.ui.h:2
+#: data/window.ui:55
 msgid "Refresh"
 msgstr "刷新"
 
-#: ../data/window.ui.h:3
+#: data/window.ui:113
 msgid "Search for a location"
 msgstr "根据位置搜索"
 
-#: ../data/window.ui.h:4
+#: data/window.ui:129
 msgid "To see weather information, enter the name of a city."
 msgstr "要查看天气信息，请输入城市的名称。"
 
-#: ../src/app/forecast.js:37
+#: src/app/forecast.js:37
 msgid "Forecast"
 msgstr "预报"
 
-#: ../src/app/forecast.js:111
+#: src/app/forecast.js:113
 msgid "Forecast not available"
 msgstr "天气预报不可用"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:127
+#: src/app/forecast.js:129
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:130
+#: src/app/forecast.js:132
 msgid "%R"
 msgstr "%R"
 
-#: ../src/app/weeklyForecast.js:36
+#: src/app/weeklyForecast.js:36
 msgid "Weekly Forecast"
-msgstr "未来 7 天预报"
+msgstr "每周预报"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: ../src/app/weeklyForecast.js:121
+#: src/app/weeklyForecast.js:121
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:115
+#: src/app/window.js:120
 msgid "Select Location"
 msgstr "选择位置"
 
-#: ../src/app/window.js:225
+#: src/app/window.js:230
 msgid "translator-credits"
 msgstr ""
 "tuhaihe <1132321739qq@gmail.com>, 2013\n"
@@ -204,18 +206,18 @@ msgstr ""
 "Sphinx Jiang <yishanj@gmail.com>, 2014\n"
 "Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016"
 
-#: ../src/app/window.js:227
+#: src/app/window.js:232
 msgid "A weather application"
 msgstr "一款天气应用"
 
-#: ../src/app/world.js:39
+#: src/app/world.js:39
 msgid "World view"
 msgstr "全球视图"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: ../src/misc/util.js:159
+#: src/misc/util.js:159
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -223,10 +225,19 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: src/service/searchProvider.js:181
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "_New"
+#~ msgstr "新建(_N)"
+
+#~ msgid "About"
+#~ msgstr "关于"
+
+#~ msgid "Quit"
+#~ msgstr "退出"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
@@ -387,9 +398,6 @@ msgstr "%s, %s"
 
 #~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 #~ msgstr "使用工具栏上的<b>新建</b>按钮来添加更多世界位置"
-
-#~ msgid "About Weather"
-#~ msgstr "关于天气"
 
 #~ msgid "_Preferences"
 #~ msgstr "首选项(_P)"
