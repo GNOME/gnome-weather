@@ -116,7 +116,7 @@ const Application = GObject.registerClass(
             parameter_type: new GLib.VariantType('v'),
         });
         showLocationAction.connect('activate', (action, parameter) => {
-            this._onShowLocation();
+            this._onShowLocation(action, parameter);
         });
         this.add_action(showLocationAction);
 
@@ -126,7 +126,7 @@ const Application = GObject.registerClass(
             parameter_type: new GLib.VariantType('v'),
         })
         showSearchAction.connect('activate', (action, parameter) => {
-            this._onShowSearch();
+            this._onShowSearch(action, parameter);
         });
         this.add_action(showSearchAction);
 
