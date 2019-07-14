@@ -1,0 +1,207 @@
+# Karbi translation for gnome-weather.
+# Copyright (C) 2019 gnome-weather's Free Software Foundation, Inc.
+# This file is distributed under the same license as the gnome-weather package.
+# Jor Teron <jor.teron@gmail.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2019-06-13 01:50+0000\n"
+"PO-Revision-Date: 2019-07-14 17:00+0530\n"
+"Last-Translator: Jor Teron <jor.teron@gmail.com>\n"
+"Language-Team: Karbi <mjw@li.org>\n"
+"Language: mjw\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/city.ui:8
+msgid "City view"
+msgstr "Rongsopi kelang"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "Wang bomlo…"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:57
+#: src/app/window.js:255 src/service/main.js:48
+msgid "Weather"
+msgstr "Botor"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
+msgid "Show weather conditions and forecast"
+msgstr "Botor pen palodep birta"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:16
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+
+#: data/org.gnome.Weather.appdata.xml.in.in:20
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+
+#: data/org.gnome.Weather.appdata.xml.in.in:24
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+
+#: data/org.gnome.Weather.appdata.xml.in.in:52
+msgid "The GNOME Project"
+msgstr "GNOME Project"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
+msgid "Weather;Forecast;"
+msgstr "Botor;Palodep"
+
+#: data/org.gnome.Weather.desktop.in.in:14
+msgid "Allows weather information to be displayed for your location."
+msgstr "Nangli kedo adim botor abirta paklang long ma"
+
+#: data/org.gnome.Weather.gschema.xml:6
+msgid "Configured cities to show weather for"
+msgstr "Rongsopi kethap tang botor birta paklang"
+
+#: data/org.gnome.Weather.gschema.xml:7
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "Automatic location"
+msgstr ""
+
+#: data/org.gnome.Weather.gschema.xml:15
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+
+#: data/places-popover.ui:45
+msgid "Automatic Location"
+msgstr ""
+
+#: data/places-popover.ui:84
+msgid "Locating…"
+msgstr "Ri bomlo…"
+
+#: data/places-popover.ui:141
+msgid "Search for a city"
+msgstr "Rongsopi kiri"
+
+#: data/places-popover.ui:173
+msgid "Viewed Recently"
+msgstr ""
+
+#: data/primary-menu.ui:4
+msgid "_Temperature Unit"
+msgstr ""
+
+#: data/primary-menu.ui:6
+msgid "_Celsius"
+msgstr "_Celsius"
+
+#: data/primary-menu.ui:11
+msgid "_Fahrenheit"
+msgstr "_Fahrenheit"
+
+#: data/primary-menu.ui:19
+msgid "_About Weather"
+msgstr "Weather athe"
+
+#: data/weather-widget.ui:39
+msgid "Current conditions"
+msgstr "Non botor birta"
+
+#: data/weather-widget.ui:151
+msgid "Today"
+msgstr "Pini"
+
+#: data/weather-widget.ui:180
+msgid "Tomorrow"
+msgstr "Pinap"
+
+#: data/window.ui:33
+msgid "Places"
+msgstr "Adim"
+
+#: data/window.ui:55
+msgid "Refresh"
+msgstr ""
+
+#: data/window.ui:113
+msgid "Search for a location"
+msgstr "Adim kiri"
+
+#: data/window.ui:129
+msgid "To see weather information, enter the name of a city."
+msgstr "Botor birta lang ji te, Rongsopi amen tok ik tha."
+
+#: src/app/forecast.js:35
+msgid "Forecast"
+msgstr "Palodep"
+
+#: src/app/forecast.js:116
+msgid "Forecast not available"
+msgstr "Palodep awe"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/forecast.js:132
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#. Translators: this is a time format without date used for 24h mode
+#: src/app/forecast.js:135
+msgid "%R"
+msgstr "%R"
+
+#: src/app/weeklyForecast.js:35
+msgid "Weekly Forecast"
+msgstr "Erui palodep"
+
+#. Translators: this is the time format for full weekday name according to the current locale
+#: src/app/weeklyForecast.js:120
+msgid "%A"
+msgstr "%A"
+
+#: src/app/window.js:139
+msgid "Select Location"
+msgstr "Adim chongvai nangji"
+
+#: src/app/window.js:254
+msgid "translator-credits"
+msgstr ""
+
+#: src/app/window.js:256
+msgid "A weather application"
+msgstr ""
+
+#: src/app/world.js:38
+msgid "World view"
+msgstr "Pirthe botor birta"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: src/misc/util.js:140
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: src/service/searchProvider.js:182
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
