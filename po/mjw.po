@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
 "POT-Creation-Date: 2019-06-13 01:50+0000\n"
-"PO-Revision-Date: 2019-07-14 17:00+0530\n"
+"PO-Revision-Date: 2019-07-16 07:00+0530\n"
 "Last-Translator: Jor Teron <jor.teron@gmail.com>\n"
 "Language-Team: Karbi <mjw@li.org>\n"
 "Language: mjw\n"
@@ -105,7 +105,7 @@ msgstr ""
 
 #: data/primary-menu.ui:4
 msgid "_Temperature Unit"
-msgstr ""
+msgstr "_Temperature Unit"
 
 #: data/primary-menu.ui:6
 msgid "_Celsius"
@@ -117,7 +117,7 @@ msgstr "_Fahrenheit"
 
 #: data/primary-menu.ui:19
 msgid "_About Weather"
-msgstr "Weather athe"
+msgstr "Weather _Athe"
 
 #: data/weather-widget.ui:39
 msgid "Current conditions"
@@ -137,7 +137,7 @@ msgstr "Adim"
 
 #: data/window.ui:55
 msgid "Refresh"
-msgstr ""
+msgstr "Refresh"
 
 #: data/window.ui:113
 msgid "Search for a location"
