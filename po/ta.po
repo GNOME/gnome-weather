@@ -1,0 +1,330 @@
+# Tamil translation for gnome-weather.
+# Copyright (C) 2014 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# தங்கமணி அருண் <thangam.arunx@gmail.com>, 2014.
+# Thangamani Arun <Thangamani Arun<thangam.arunx@gmail.com>>, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
+"weather&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-02-03 14:13+0000\n"
+"PO-Revision-Date: 2014-03-13 03:25+0900\n"
+"Last-Translator: Thangamani Arun <Thangamani Arun<thangam.arunx@gmail.com>>\n"
+"Language-Team: Ubuntu Tamil Team/Free Tamil Computing/Thamizha\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
+
+#: ../data/app-menu.ui.h:1
+msgid "_New"
+msgstr "_புதிய"
+
+#: ../data/app-menu.ui.h:2
+msgid "Temperature unit"
+msgstr "வெப்பநிலை அலகு"
+
+#: ../data/app-menu.ui.h:3
+msgid "Celsius"
+msgstr "செல்சியஸ்"
+
+#: ../data/app-menu.ui.h:4
+msgid "Fahrenheit"
+msgstr "ஃபாரன்ஹீட்"
+
+#: ../data/app-menu.ui.h:5
+msgid "About"
+msgstr "பற்றிய"
+
+#: ../data/app-menu.ui.h:6
+msgid "Quit"
+msgstr "வெளியேறு"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/main.js:58
+#: ../src/window.js:313
+msgid "Weather"
+msgstr "வானிலை"
+
+#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+msgid "Show weather conditions and forecast"
+msgstr "வானிலை நிலவரம் மற்றும் முன்கணிப்பை காட்டு"
+
+#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world and to access updated "
+"forecasts, up to 7 days, provided by various internet services."
+msgstr ""
+"ஒரு சிறிய பயன்பாடு இணைய சேவைகளை பயன்படுத்தி உடனக்குடனாக மட்டும் இல்லாமல் 7 "
+"நாட்களுக்குமான வானிலை நிலவரம் மற்றும் முன்கணிப்பை உலகில் உள்ள எந்த நகரம் "
+"அல்லது எவ்விடத்தின் வானிலை முன்னறிவிப்பையும் கண்கானிக்க முடியும்."
+
+#: ../data/new-location-dialog.ui.h:1
+msgid "New Location"
+msgstr "புதிய இடம்"
+
+#: ../data/new-location-dialog.ui.h:2
+msgid "Search for a city:"
+msgstr "ஒரு நகரத்தை தேடு:"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+msgid "Configured cities to show weather for"
+msgstr "கட்டமைத்த நகரங்களுக்கான வானிலையை காட்ட"
+
+#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"குனோம்-வெதர் உலகப்பட பார்வையில் இடங்களை காட்டுகிறது. ஒவ்வொரு மதிப்பும் ஆல் "
+"அளிக்கப்பட்ட gweather_location_serialize() ஒரு ஜிமாறிலி ஆகும்."
+
+#: ../data/window.ui.h:1
+msgid "Select All"
+msgstr "அனைத்தையும் தேர்வு செய்"
+
+#: ../data/window.ui.h:2
+msgid "Select None"
+msgstr "எதையும் தேர்ந்தெடுக்காதே "
+
+#: ../data/window.ui.h:3 ../src/window.js:202
+msgid "Click on locations to select them"
+msgstr "(இடங்களை தேர்ந்தெடுக்க அதன் மீது சொடுக்கவும்)"
+
+#: ../data/window.ui.h:4
+msgid "New"
+msgstr "புதிய"
+
+#: ../data/window.ui.h:5
+msgid "Cancel"
+msgstr "இரத்துசெய்"
+
+#: ../data/window.ui.h:6
+msgid "Delete"
+msgstr "நீக்கு"
+
+#: ../src/city.js:127
+msgid "Loading…"
+msgstr "ஏற்றுகிறது..."
+
+#: ../src/forecast.js:127 ../src/forecast.js:412
+msgid "Today"
+msgstr "இன்று"
+
+#: ../src/forecast.js:133 ../src/forecast.js:294 ../src/forecast.js:379
+#: ../src/forecast.js:414
+msgid "Tomorrow"
+msgstr "நாளை"
+
+#: ../src/forecast.js:150
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#: ../src/forecast.js:196 ../src/forecast.js:290
+msgid "More…"
+msgstr "மேலும்..."
+
+#: ../src/forecast.js:317
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: ../src/forecast.js:320
+msgid "%R"
+msgstr "%R"
+
+#: ../src/forecast.js:351
+msgid "Forecast for Tomorrow"
+msgstr "நாளைக்கான வானிலை முன்அறிவிப்பு"
+
+#: ../src/forecast.js:353
+msgid "Forecast for Today"
+msgstr "இன்றைய வானிலை முன்அறிவிப்பு"
+
+#: ../src/forecast.js:355
+msgid "%B %d"
+msgstr "%B %d"
+
+#: ../src/searchProvider.js:169
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ../src/strings.js:22
+msgid "Monday night"
+msgstr "திங்கட்கிழமை இரவு"
+
+#: ../src/strings.js:22
+msgid "Monday morning"
+msgstr "திங்கட்கிழமை காலை"
+
+#: ../src/strings.js:22
+msgid "Monday afternoon"
+msgstr "திங்கட்கிழமை மதியம்"
+
+#: ../src/strings.js:22
+msgid "Monday evening"
+msgstr "திங்கட்கிழமை சாயிங்காலம்"
+
+#: ../src/strings.js:23
+msgid "Tuesday night"
+msgstr "செவ்வாய்கிழமை இரவு"
+
+#: ../src/strings.js:23
+msgid "Tuesday morning"
+msgstr "செவ்வாய்கிழமை காலை"
+
+#: ../src/strings.js:23
+msgid "Tuesday afternoon"
+msgstr "செவ்வாய்கிழமை மதியம்"
+
+#: ../src/strings.js:23
+msgid "Tuesday evening"
+msgstr "செவ்வாய்கிழமை சாயிங்காலம்"
+
+#: ../src/strings.js:24
+msgid "Wednesday night"
+msgstr "புதன்கிழமை இரவு"
+
+#: ../src/strings.js:24
+msgid "Wednesday morning"
+msgstr "புதன்கிழமை காலை"
+
+#: ../src/strings.js:24
+msgid "Wednesday afternoon"
+msgstr "புதன்கிழமை மதியம்"
+
+#: ../src/strings.js:24
+msgid "Wednesday evening"
+msgstr "புதன்கிழமை சாயிங்காலம்"
+
+#: ../src/strings.js:25
+msgid "Thursday night"
+msgstr "வியாழக்கிழமை இரவு"
+
+#: ../src/strings.js:25
+msgid "Thursday morning"
+msgstr "வியாழக்கிழமை காலை"
+
+#: ../src/strings.js:25
+msgid "Thursday afternoon"
+msgstr "வியாழக்கிழமை மதியம்"
+
+#: ../src/strings.js:25
+msgid "Thursday evening"
+msgstr "வியாழக்கிழமை சாயிங்காலம்"
+
+#: ../src/strings.js:26
+msgid "Friday night"
+msgstr "வெள்ளிகிழமை இரவு"
+
+#: ../src/strings.js:26
+msgid "Friday morning"
+msgstr "வெள்ளிகிழமை காலை"
+
+#: ../src/strings.js:26
+msgid "Friday afternoon"
+msgstr "வெள்ளிகிழமை மதியம்"
+
+#: ../src/strings.js:26
+msgid "Friday evening"
+msgstr "வெள்ளிகிழமை சாயிங்காலம்"
+
+#: ../src/strings.js:27
+msgid "Saturday night"
+msgstr "சனிக்கிழமை இரவு"
+
+#: ../src/strings.js:27
+msgid "Saturday morning"
+msgstr "சனிக்கிழமை காலை"
+
+#: ../src/strings.js:27
+msgid "Saturday afternoon"
+msgstr "சனிக்கிழமை மதியம்"
+
+#: ../src/strings.js:27
+msgid "Saturday evening"
+msgstr "சனிக்கிழமை சாயிங்காலம்"
+
+#: ../src/strings.js:28
+msgid "Sunday night"
+msgstr "ஞாயிற்றுக்கிழமை இரவு"
+
+#: ../src/strings.js:28
+msgid "Sunday morning"
+msgstr "ஞாயிற்றுக்கிழமை காலை"
+
+#: ../src/strings.js:28
+msgid "Sunday afternoon"
+msgstr "ஞாயிற்றுக்கிழமை மதியம்"
+
+#: ../src/strings.js:28
+msgid "Sunday evening"
+msgstr "ஞாயிற்றுக்கிழமை சாயிங்காலம்"
+
+#: ../src/strings.js:31
+msgid "Tonight"
+msgstr "இன்றிரவு"
+
+#: ../src/strings.js:31
+msgid "This morning"
+msgstr "இன்று காலை"
+
+#: ../src/strings.js:31
+msgid "This afternoon"
+msgstr "இன்று மதியம்"
+
+#: ../src/strings.js:31
+msgid "This evening"
+msgstr "இன்று சாயிங்காலம்"
+
+#: ../src/strings.js:32
+msgid "Tomorrow night"
+msgstr "நாளை இரவு"
+
+#: ../src/strings.js:32
+msgid "Tomorrow morning"
+msgstr "நாளை காலை"
+
+#: ../src/strings.js:32
+msgid "Tomorrow afternoon"
+msgstr "நாளை மதியம்"
+
+#: ../src/strings.js:32
+msgid "Tomorrow evening"
+msgstr "நாளை சாயிங்காலம்"
+
+#: ../src/window.js:197
+#, javascript-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] "%d தேர்ந்தெடுக்கப்பட்டது"
+msgstr[1] "%d தேர்ந்தெடுக்கப்பட்டது"
+
+#: ../src/window.js:223
+msgid "World Weather"
+msgstr "உலக வானிலை"
+
+#: ../src/window.js:312
+msgid "translator-credits"
+msgstr ""
+"Dr. T. Vasudevan <agnihot3@gmail.com>, Thangamani Arun "
+"<thangam.arunx@gmail.com>"
+
+#: ../src/window.js:314
+msgid "A weather application"
+msgstr "ஒரு வானிலை பயன்பாடு"
+
+#: ../src/world.js:256
+msgid "Add locations"
+msgstr "இடங்களை சேர்"
+
+#: ../src/world.js:259
+msgid "Use the <b>New</b> button on the toolbar to add more world locations"
+msgstr ""
+"கருவிப்பட்டையில் உள்ள <b>புதிய</b> பொத்தானை பயன்படுத்தி உலனிலுள்ள மற்ற "
+"இடங்களை சேர்"
