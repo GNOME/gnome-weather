@@ -17,4 +17,7 @@
     <file>weather-snow.jpg</file>
     <file>weather-storm.jpg</file>
   </gresource>
+  <gresource prefix="/org/gnome/shell">
+    <file>ShellWeatherIntegration.xml</file>
+  </gresource>
 </gresources>
