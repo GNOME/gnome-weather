@@ -25,6 +25,7 @@ pkg.require({ 'Gdk': '3.0',
               'Gtk': '3.0',
               'GWeather': '3.0' });
 
+const ByteArray = imports.byteArray;
 const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
@@ -36,6 +37,9 @@ const Util = imports.misc.util;
 const Window = imports.app.window;
 const World = imports.shared.world;
 const CurrentLocationController = imports.app.currentLocationController;
+
+const ShellIntegrationInterface = ByteArray.toString(
+    Gio.resources_lookup_data('/org/gnome/shell/ShellWeatherIntegration.xml', 0).get_data());
 
 function initEnvironment() {
     window.getApp = function() {
@@ -167,6 +171,16 @@ const Application = GObject.registerClass(
         this.add_accelerator("<Primary>q", "app.quit", null);
     }
 
+    vfunc_dbus_register(conn, path) {
+        this._shellIntegration = new ShellIntegration();
+        this._shellIntegration.export(conn, path);
+        return true;
+    }
+
+    vfunc_dbus_unregister(conn, path) {
+        this._shellIntegration.unexport(conn);
+    }
+
     _createWindow() {
         return new Window.MainWindow({ application: this });
     }
@@ -212,6 +226,40 @@ const Application = GObject.registerClass(
         super.vfunc_shutdown();
     }
 });
+
+let ShellIntegration = class ShellIntegration {
+    constructor() {
+        this._impl = Gio.DBusExportedObject.wrapJSObject(
+            ShellIntegrationInterface, this);
+
+        this._settings = new Gio.Settings({ schema_id: 'org.gnome.Weather' });
+
+        this._settings.connect('changed::automatic-location', () => {
+            this._impl.emit_property_changed('AutomaticLocation',
+                new GLib.Variant('b', this.AutomaticLocation));
+        });
+        this._settings.connect('changed::locations', () => {
+            this._impl.emit_property_changed('Location',
+                new GLib.Variant('av', this.Locations));
+        });
+    }
+
+    export(connection, path) {
+        return this._impl.export(connection, path);
+    }
+
+    unexport(connection) {
+        return this._impl.unexport_from_connection(connection);
+    }
+
+    get AutomaticLocation() {
+        return this._settings.get_boolean('automatic-location');
+    }
+
+    get Locations() {
+        return this._settings.get_value('locations').deep_unpack();
+    }
+};
 
 function main(argv) {
     initEnvironment();
