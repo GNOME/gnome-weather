@@ -51,21 +51,22 @@
 #weather-page-content-view.weather-showers,
 #weather-page-content-view.weather-showers:backdrop,
 #weather-page-content-view.weather-showers-scattered,
-#weather-page-content-view.weather-showers-scattered:backdrop {
-    background-image: url("weather-showers.jpg");
+#weather-page-content-view.weather-showers-scattered:backdrop,
+#weather-page-content-view.weather-storm,
+#weather-page-content-view.weather-storm:backdrop {
+    background: repeating-linear-gradient(
+      -80deg,
+      rgba(163, 71, 186, 1),
+      rgba(163, 71, 186, 1) 6px,
+      rgba(172, 88, 192, 1) 1px,
+      rgba(172, 88, 192, 1) 8px
+    );
     color: rgba(255,255,255,1.0);
 }
 
 #weather-page-content-view.weather-snow,
 #weather-page-content-view.weather-snow:backdrop {
     background-image: url("weather-snow.jpg");
-    color: rgba(255,255,255,0.8);
-}
-
-#weather-page-content-view.weather-storm,
-#weather-page-content-view.weather-storm:backdrop {
-    background-image: url("weather-storm.jpg");
-    background-position: center 80%;
     color: rgba(255,255,255,0.8);
 }
 
