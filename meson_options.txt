@@ -7,3 +7,5 @@ option(
   ],
   value: 'default'
 )
+option('dogtail', type: 'boolean', value: false)
+
