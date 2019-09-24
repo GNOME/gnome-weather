@@ -1,3 +1,22 @@
+3.34.0
+======
+* Export location information to GNOME Shell (Florian Müllner)
+* Use weather station's time zone (Jim Mason)
+* Allow enter key to show location (James Westman)
+
+* Bugs fixed:
+ - !18 Fix search provider (Florian Müllner)
+
+* Translation updates:
+ - Catalan
+ - Chinese (China)
+ - Danish
+ - Icelandic
+ - Karbi
+ - Korean
+ - Persian
+ - Tamil
+
 3.33.90
 =======
 * Export location information to GNOME Shell (Florian Müllner)

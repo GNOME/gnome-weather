@@ -46,7 +46,28 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
-    <release date="2019-08-05" version="3.33.90"/>
+    <release date="2019-09-24" version="3.34.0">
+      <description>
+        <p>GNOME Weather 3.34 includes bug fixes and general improvements:</p>
+        <ul>
+          <li>Export location information to GNOME Shell (Florian Müllner)</li>
+          <li>Use weather station's time zone (Jim Mason)</li>
+          <li>Allow enter key to show location (James Westman)</li>
+          <li>Fix search provider (Florian Müllner)</li>
+        </ul>
+        <p>It also includes translation updates for the following locales:</p>
+        <ul>
+          <li>Catalan</li>
+          <li>Chinese (China)</li>
+          <li>Danish</li>
+          <li>Icelandic</li>
+          <li>Karbi</li>
+          <li>Korean</li>
+          <li>Persian</li>
+          <li>Tamil</li>
+        </ul>
+      </description>
+    </release>
     <release date="2019-03-11" version="3.32.0"/>
   </releases>
 
