@@ -24,7 +24,7 @@
     <p>
       It also optionally integrates with the GNOME Shell, allowing you to see
       the current conditions of the most recently searched cities by just
-      typing its name in the Activities Overview.
+      typing the name in the Activities Overview.
     </p>
   </description>
   <project_group>GNOME</project_group>
