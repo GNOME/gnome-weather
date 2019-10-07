@@ -1,8 +1,13 @@
+if profile == 'Devel'
+  icon = '@0@.svg'.format(weather_id)
+else
+  icon = '@0@.svg'.format(default_id)
+endif
+
 scalable_icondir = join_paths('hicolor', 'scalable', 'apps')
 install_data (
-  join_paths(scalable_icondir, 'org.gnome.Weather.svg'),
-  install_dir: join_paths(weather_datadir, 'icons', scalable_icondir),
-  rename: '@0@.svg'.format(weather_id)
+  join_paths(scalable_icondir, icon),
+  install_dir: join_paths(weather_datadir, 'icons', scalable_icondir)
 )
 
 symbolic_icondir = join_paths('hicolor', 'symbolic', 'apps')
