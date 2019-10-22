@@ -8,16 +8,23 @@ flatpak:
     variables:
         MANIFEST_PATH: "org.gnome.Weather.json"
         FLATPAK_MODULE: "gnome-weather"
-        RUNTIME_REPO: "https://sdk.gnome.org/gnome-nightly.flatpakrepo"
+        RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
         APP_ID: "org.gnome.WeatherDevel"
         MESON_ARGS: "-Dprofile=development"
     extends: .flatpak
-    script:
-      - flatpak-builder --stop-at=${FLATPAK_MODULE} app ${MANIFEST_PATH}
-      # Make sure to keep this in sync with the Flatpak manifest, all arguments
-      # are passed except the config-args because we build it ourselves
-      - flatpak build app meson --prefix=/app ${MESON_ARGS} _build
-      - flatpak build app ninja -C _build install
-      - flatpak-builder --finish-only --repo=repo app ${MANIFEST_PATH}
-      # Generate a Flatpak bundle
-      - flatpak build-bundle repo ${BUNDLE} --runtime-repo=${RUNTIME_REPO} ${APP_ID}
+
+review:
+    stage: deploy
+    dependencies:
+      - flatpak
+    extends: .review
+
+stop_review:
+    stage: deploy
+    extends: .stop_review
+
+nightly:
+  extends: '.publish_nightly'
+  only:
+    refs:
+      - master
