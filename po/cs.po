@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-02-22 01:46+0000\n"
-"PO-Revision-Date: 2019-02-28 11:11+0100\n"
+"POT-Creation-Date: 2019-10-22 01:19+0000\n"
+"PO-Revision-Date: 2019-11-02 12:01+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -30,18 +30,18 @@ msgstr "Zobrazení města"
 msgid "Loading…"
 msgstr "Načítá se…"
 
-#: data/org.gnome.Weather.appdata.xml.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:53
-#: src/app/window.js:231 src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: src/app/window.js:255 src/service/main.js:48
 msgid "Weather"
 msgstr "Počasí"
 
-#: data/org.gnome.Weather.appdata.xml.in:6
+#: data/org.gnome.Weather.appdata.xml.in.in:6
 #: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "Zobrazte si povětrnostní podmínky a předpověď počasí"
 
-#: data/org.gnome.Weather.appdata.xml.in:16
+#: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -49,7 +49,7 @@ msgstr ""
 "Malá aplikace, díky které můžete sledovat aktuální povětrnostní podmínky ve "
 "svém městě nebo kdekoliv na světě."
 
-#: data/org.gnome.Weather.appdata.xml.in:20
+#: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -57,24 +57,19 @@ msgstr ""
 "Díky využití několika internetových služeb poskytuje podrobnou předpověď až "
 "na 7 dní, pro dnešek a zítřek s detaily po hodinách."
 
-#: data/org.gnome.Weather.appdata.xml.in:24
+#: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you see the "
-"current conditions of the most recently searched cities by just typing its "
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
 "Umí se integrovat do prostředím GNOME Shell, takže si můžete zobrazit "
 "aktuální počasí v nedávno vyhledaných městech napsaním jejich názvu v "
 "přehledu činností."
 
-#: data/org.gnome.Weather.appdata.xml.in:48
+#: data/org.gnome.Weather.appdata.xml.in.in:74
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Weather.desktop.in.in:7
-msgid "@APP_ID@"
-msgstr "@APP_ID@"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
@@ -111,19 +106,19 @@ msgstr ""
 "Automatické místo je hodnota přepínače automatic-location, který rozhoduje, "
 "jestli zjišťovat aktuální místo nebo ne."
 
-#: data/places-popover.ui:44
+#: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Automaticky vybrané místo"
 
-#: data/places-popover.ui:83
+#: data/places-popover.ui:84
 msgid "Locating…"
 msgstr "Vyhledává se…"
 
-#: data/places-popover.ui:140
+#: data/places-popover.ui:141
 msgid "Search for a city"
 msgstr "Vyhledání města"
 
-#: data/places-popover.ui:172
+#: data/places-popover.ui:173
 msgid "Viewed Recently"
 msgstr "Naposledy zobrazené"
 
@@ -171,55 +166,55 @@ msgstr "Vyhledání místa"
 msgid "To see weather information, enter the name of a city."
 msgstr "Abyste viděli informace o počasí, zadejte název města."
 
-#: src/app/forecast.js:37
+#: src/app/forecast.js:35
 msgid "Forecast"
 msgstr "Předpověď počasí"
 
-#: src/app/forecast.js:113
+#: src/app/forecast.js:116
 msgid "Forecast not available"
 msgstr "Předpověď není dostupná"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:129
+#: src/app/forecast.js:132
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:132
+#: src/app/forecast.js:135
 msgid "%R"
 msgstr "%R"
 
-#: src/app/weeklyForecast.js:36
+#: src/app/weeklyForecast.js:35
 msgid "Weekly Forecast"
 msgstr "Týdenní předpověď počasí"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:121
+#: src/app/weeklyForecast.js:120
 msgid "%A"
 msgstr "%A"
 
-#: src/app/window.js:120
+#: src/app/window.js:139
 msgid "Select Location"
 msgstr "Výběr místa"
 
-#: src/app/window.js:230
+#: src/app/window.js:254
 msgid "translator-credits"
 msgstr ""
 "Adam Matoušek <adamatousek@gmail.com>\n"
 "Daniel Puncman <puncmdan@fel.cvut.cz>"
 
-#: src/app/window.js:232
+#: src/app/window.js:256
 msgid "A weather application"
 msgstr "Aplikace Počasí"
 
-#: src/app/world.js:39
+#: src/app/world.js:38
 msgid "World view"
 msgstr "Zobrazení světa"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:159
+#: src/misc/util.js:140
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -227,7 +222,7 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:181
+#: src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
