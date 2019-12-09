@@ -46,7 +46,6 @@ var WeatherWidget = GObject.registerClass({
             name: 'weather-page'
         }, params));
 
-        this._currentStyle = null;
         this._info = null;
 
         this._weeklyForecasts = new WForecast.WeeklyForecastFrame();
@@ -156,12 +155,6 @@ var WeatherWidget = GObject.registerClass({
         }
     }
 
-    _getStyleClass(info) {
-        let icon = info.get_icon_name();
-        let name = icon.replace(/(-\d{3})/, "");
-        return name;
-    }
-
     setTimeVisible(visible) {
         this._timeGrid.visible = visible;
     }
@@ -178,11 +171,6 @@ var WeatherWidget = GObject.registerClass({
         this._windLabel.label = info.get_wind();
 
         this._conditionsImage.icon_name = info.get_symbolic_icon_name();
-        let context = this._contentFrame.get_style_context();
-        if (this._currentStyle)
-            context.remove_class(this._currentStyle);
-        this._currentStyle = this._getStyleClass(info);
-        context.add_class(this._currentStyle);
 
         let forecasts = info.get_forecast_list();
         let tz = GLib.TimeZone.new(info.location.get_timezone().get_tzid());
