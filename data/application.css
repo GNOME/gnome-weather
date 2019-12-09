@@ -11,64 +11,6 @@
     background-clip: border-box;
 }
 
-#weather-page-content-view.weather-clear,
-#weather-page-content-view.weather-clear:backdrop {
-    background-image: url("weather-clear.jpg");
-    color: rgba(0,0,0,0.8);
-}
-
-#weather-page-content-view.weather-clear-night,
-#weather-page-content-view.weather-clear-night:backdrop {
-    background-image: url("weather-clear-night.jpg");
-    color: rgba(255,255,255,0.8);
-}
-
-#weather-page-content-view.weather-few-clouds,
-#weather-page-content-view.weather-few-clouds:backdrop {
-    background-image: url("weather-few-clouds.jpg");
-    color: rgba(0,0,0,0.6);
-}
-
-#weather-page-content-view.weather-few-clouds-night,
-#weather-page-content-view.weather-few-clouds-night:backdrop {
-    background-image: url("weather-few-clouds-night.jpg");
-    color: rgba(255,255,255,0.8);
-}
-
-#weather-page-content-view.weather-fog,
-#weather-page-content-view.weather-fog:backdrop {
-    background-image: url("weather-fog.jpg");
-    background-position: center 20%;
-    color: rgba(255,255,255,0.8);
-}
-
-#weather-page-content-view.weather-overcast,
-#weather-page-content-view.weather-overcast:backdrop {
-    background-image: url("weather-overcast.jpg");
-    color: rgba(255,255,255,0.8);
-}
-
-#weather-page-content-view.weather-showers,
-#weather-page-content-view.weather-showers:backdrop,
-#weather-page-content-view.weather-showers-scattered,
-#weather-page-content-view.weather-showers-scattered:backdrop {
-    background-image: url("weather-showers.jpg");
-    color: rgba(255,255,255,1.0);
-}
-
-#weather-page-content-view.weather-snow,
-#weather-page-content-view.weather-snow:backdrop {
-    background-image: url("weather-snow.jpg");
-    color: rgba(255,255,255,0.8);
-}
-
-#weather-page-content-view.weather-storm,
-#weather-page-content-view.weather-storm:backdrop {
-    background-image: url("weather-storm.jpg");
-    background-position: center 80%;
-    color: rgba(255,255,255,0.8);
-}
-
 #loading-label {
     padding-top: 24px;
     font-size: 1.5em;
