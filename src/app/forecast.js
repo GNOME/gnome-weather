@@ -24,7 +24,7 @@ const Gtk = imports.gi.Gtk;
 const Util = imports.misc.util;
 
 // In microseconds
-const ONE_HOUR = 3600*1000*1000;
+const TWENTY_FOUR_HOURS = 24 * 3600 * 1000 * 1000;
 
 var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
 
@@ -51,44 +51,20 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
     // remove infos for the wrong day
     _preprocess(now, tz, infos) {
         let ret = [];
-        let i;
-        let current;
 
-        // First ignore all infos that are on a different day from now.
-        // infos are ordered by time, and it's assumed at some point
-        // there is an info for the current day (otherwise, nothing
-        // is shown).
-        //
-        // We must compare using the target timezone to ensure the 24-hour
-        // day period falls on the correct boundary.
-        for (i = 0; i < infos.length; i++) {
+        for (let i = 0; i < infos.length; i++) {
             let info = infos[i];
 
             let [ok, date] = info.get_value_update();
             let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
 
-            if (Util.arrayEqual(now.get_ymd(), datetime.get_ymd()) &&
-                    now.get_hour() <= datetime.get_hour()) {
-                ret.push(info);
-                current = datetime;
-                break;
-            }
-        }
-
-        for (i++ ; i < infos.length; i++) {
-            let info = infos[i];
-
-            let [ok, date] = info.get_value_update();
-            let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
-            if (datetime.difference(current) < ONE_HOUR)
+            if (datetime.difference(now) <= 0) {
                 continue;
-
-            if (!Util.arrayEqual(now.get_ymd(),
-                                 datetime.get_ymd()))
+            }
+            if (datetime.difference(now) >= TWENTY_FOUR_HOURS)
                 break;
 
             ret.push(info);
-            current = datetime;
         }
 
         return ret;
@@ -97,15 +73,10 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
     update(infos, tz, day) {
         let now = GLib.DateTime.new_now(tz);
         if (day == 'tomorrow')
-            now = now.add_hours(24 - now.get_hour());
+            now = now.add_hours(24);
         // 'now' contains a TimeZone, but there is no accessor;
         // thus, we must pass both the target time and zone
         let dayInfo = this._preprocess(now, tz, infos);
-
-        if (dayInfo.length == 0) {
-            now = now.add_hours(-2);
-            dayInfo = this._preprocess(now, tz, infos);
-        }
 
         if (dayInfo.length > 0) {
             for (let i = 0; i < dayInfo.length; i++) {
