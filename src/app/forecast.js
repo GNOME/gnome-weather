@@ -40,8 +40,7 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
                                     column_spacing: 18,
                                     row_spacing: 6,
                                     margin_top: 12,
-                                    margin_bottom: 12,
-                                    column_homogeneous: true });
+                                    margin_bottom: 12});
         this.add(this._grid);
 
         this._hasForecastInfo = false;
@@ -105,7 +104,7 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
             /* Translators: this is a time format without date used for 24h mode */
             timeFormat = _("%R");
 
-        let label = new Gtk.Label({ label: datetime.format(timeFormat),
+        /*let label = new Gtk.Label({ label: datetime.format(timeFormat),
                                     use_markup: true,
                                     visible: true });
         this._grid.attach(label, col, 0, 1, 1);
@@ -120,7 +119,16 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
 
         let temperature = new Gtk.Label({ label: Util.getTemperature(info),
                                           visible: true });
-        this._grid.attach(temperature, col, 2, 1, 1);
+        this._grid.attach(temperature, col, 2, 1, 1);*/
+
+        let hourEntry = new HourEntry();
+        hourEntry.timeLabel.label = datetime.format(timeFormat);
+        hourEntry.image.iconName = info.get_symbolic_icon_name();
+        hourEntry.temperatureLabel.label = Util.getTemperature(info);
+        this._grid.attach(hourEntry, col * 2, 0, 1, 3);
+
+        let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL, visible: true});
+        this._grid.attach(separator, col * 2 + 1, 0, 1, 3);
 
         this._hasForecastInfo = true;
     }
@@ -131,5 +139,27 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
 
     hasForecastInfo() {
         return this._hasForecastInfo;
+    }
+});
+
+var HourEntry = GObject.registerClass({
+    Template: 'resource:///org/gnome/Weather/hour-entry.ui',
+    InternalChildren: ['timeLabel', 'image', 'temperatureLabel'],
+}, class HourEntry extends Gtk.Box {
+
+    _init(params) {
+        super._init(params);
+    }
+
+    get timeLabel() {
+        return this._timeLabel;
+    }
+
+    get image() {
+        return this._image;
+    }
+
+    get temperatureLabel() {
+        return this._temperatureLabel;
     }
 });
