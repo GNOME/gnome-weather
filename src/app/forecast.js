@@ -30,18 +30,15 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
 
     _init(params) {
         super._init(Object.assign({
-            shadow_type: Gtk.ShadowType.NONE
+            shadow_type: Gtk.ShadowType.IN
         }, params));
         this.get_accessible().accessible_name = _("Forecast");
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
-        this._grid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
-                                    column_spacing: 18,
-                                    row_spacing: 6,
-                                    margin_top: 12,
-                                    margin_bottom: 12});
-        this.add(this._grid);
+        this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL,
+                                  spacing: 0});
+        this.add(this._box);
 
         this._hasForecastInfo = false;
     }
@@ -81,12 +78,18 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
             for (let i = 0; i < dayInfo.length; i++) {
                 let info = dayInfo[i];
                 this._addOneInfo(info, tz, i);
+
+                if (i < dayInfo.length - 1) {
+                    let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL,
+                                                        visible: true});
+                    this._box.pack_start(separator, false, false, 0);
+                }
             }
         } else {
             let label = new Gtk.Label({ label: _("Forecast not available"),
                                         use_markup: true,
                                         visible: true });
-            this._grid.attach(label, 0, 0, 1, 1);
+            this._box.pack_start(label, true, false, 0);
         }
     }
 
@@ -104,37 +107,17 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
             /* Translators: this is a time format without date used for 24h mode */
             timeFormat = _("%R");
 
-        /*let label = new Gtk.Label({ label: datetime.format(timeFormat),
-                                    use_markup: true,
-                                    visible: true });
-        this._grid.attach(label, col, 0, 1, 1);
-
-        let image = new Gtk.Image({ icon_name: info.get_symbolic_icon_name(),
-                                    pixel_size: 32,
-                                    margin_start: 10,
-                                    margin_end: 10,
-                                    use_fallback: true,
-                                    visible: true });
-        this._grid.attach(image, col, 1, 1, 1);
-
-        let temperature = new Gtk.Label({ label: Util.getTemperature(info),
-                                          visible: true });
-        this._grid.attach(temperature, col, 2, 1, 1);*/
-
         let hourEntry = new HourEntry();
         hourEntry.timeLabel.label = datetime.format(timeFormat);
         hourEntry.image.iconName = info.get_symbolic_icon_name();
         hourEntry.temperatureLabel.label = Util.getTemperature(info);
-        this._grid.attach(hourEntry, col * 2, 0, 1, 3);
-
-        let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL, visible: true});
-        this._grid.attach(separator, col * 2 + 1, 0, 1, 3);
+        this._box.pack_start(hourEntry, false, false, 0);
 
         this._hasForecastInfo = true;
     }
 
     clear() {
-        this._grid.foreach(function(w) { w.destroy(); });
+        this._box.foreach(function(w) { w.destroy(); });
     }
 
     hasForecastInfo() {
