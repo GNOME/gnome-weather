@@ -49,12 +49,16 @@ var WeatherWidget = GObject.registerClass({
         this._info = null;
 
         this._weeklyForecasts = new WForecast.WeeklyForecastFrame();
-        this._outerGrid.attach(this._weeklyForecasts, 1, 0, 1, 2);
 
         this._forecasts = { };
 
         for (let t of ['today', 'tomorrow']) {
-            let box = new Forecast.ForecastBox({ hexpand: false });
+            let box;
+            if (t == 'today') {
+                box = new Forecast.ForecastBox({ hexpand: false });
+            } else {
+                box = new WForecast.WeeklyForecastFrame();
+            }
 
             this._forecasts[t] = box;
             this['_forecast_' + t + '_grid'].add(box);
