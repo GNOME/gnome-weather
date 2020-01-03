@@ -23,12 +23,11 @@ const Gtk = imports.gi.Gtk;
 
 const Util = imports.misc.util;
 
-var WeeklyForecastFrame = GObject.registerClass(
-    class WeeklyForecastFrame extends Gtk.Frame {
+var WeeklyForecastFrame = GObject.registerClass(class WeeklyForecastFrame extends Gtk.Frame {
 
     _init(params) {
         super._init(Object.assign({
-            shadow_type: Gtk.ShadowType.NONE,
+            shadow_type: Gtk.ShadowType.IN,
             name: 'weekly-forecast-frame',
             width_request: 150
         }, params));
@@ -36,14 +35,9 @@ var WeeklyForecastFrame = GObject.registerClass(
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
-        this._grid = new Gtk.Grid({ orientation: Gtk.Orientation.VERTICAL,
-                                    margin: 24,
-                                    valign: Gtk.Align.START,
-                                    halign: Gtk.Align.START,
-                                    row_spacing: 25,
-                                    row_homogeneous: true });
-
-        this.add(this._grid);
+        this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL,
+                                  spacing: 0});
+        this.add(this._box);
     }
 
     // get infos for the correct day
@@ -116,37 +110,56 @@ var WeeklyForecastFrame = GObject.registerClass(
             let [ok, date] = info.get_value_update();
             let datetime = GLib.DateTime.new_from_unix_local(date);
 
-            /* Translators: this is the time format for full weekday name according to the current locale */
-            let timeFormat = _("%A");
+            let dayEntry = new DayEntry();
 
-            let grid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
-                                      row_spacing: 5,
-                                      column_spacing: 10 });
+            /* Translators: this is the time format for weekday name according to the current locale */
+            let nameFormat = _("%a");
+            dayEntry.nameLabel.label = datetime.format(nameFormat);
 
-            let label = new Gtk.Label({ label: datetime.format(timeFormat).bold(),
-                                        use_markup: true,
-                                        halign: Gtk.Align.START,
-                                        visible: true });
-            grid.attach(label, 0, 0, 2, 1);
+            /* Translators: this is the time format for day and month name according to the current locale */
+            let dateFormat = _("%e %b");
+            dayEntry.dateLabel.label = datetime.format(dateFormat);
 
-            let image = new Gtk.Image({ icon_name: info.get_symbolic_icon_name(),
-                                        icon_size: Gtk.IconSize.DIALOG,
-                                        use_fallback: true,
-                                        halign: Gtk.Align.START,
-                                        visible: true });
-            grid.attach(image, 0, 1, 1, 1);
+            dayEntry.image.iconName = info.get_symbolic_icon_name();
+            dayEntry.temperatureLabel.label = Util.getTemperature(info);
 
-            let temperature = new Gtk.Label({ label: Util.getTemperature(info),
-                                              halign: Gtk.Align.START,
-                                              valign: Gtk.Align.START,
-                                              visible: true });
-            grid.attach(temperature, 1, 1, 1, 1);
-            grid.show();
-            this._grid.attach(grid, 0, i, 1, 1);
+            this._box.pack_start(dayEntry, false, false, 0);
+
+            if (i < weeklyInfo.length - 1) {
+                let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL,
+                                                    visible: true});
+                this._box.pack_start(separator, false, false, 0);
+            }
         }
     }
 
     clear() {
-        this._grid.foreach(function(w) { w.destroy(); });
+        this._box.foreach(function(w) { w.destroy(); });
+    }
+});
+
+var DayEntry = GObject.registerClass({
+    Template: 'resource:///org/gnome/Weather/day-entry.ui',
+    InternalChildren: ['nameLabel', 'dateLabel', 'image', 'temperatureLabel'],
+}, class DayEntry extends Gtk.Box {
+
+    _init(params) {
+        super._init(params);
+    }
+
+    get nameLabel() {
+        return this._nameLabel;
+    }
+
+    get dateLabel() {
+        return this._dateLabel;
+    }
+
+    get image() {
+        return this._image;
+    }
+
+    get temperatureLabel() {
+        return this._temperatureLabel;
     }
 });

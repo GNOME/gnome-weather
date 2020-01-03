@@ -111,6 +111,7 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
         hourEntry.timeLabel.label = datetime.format(timeFormat);
         hourEntry.image.iconName = info.get_symbolic_icon_name();
         hourEntry.temperatureLabel.label = Util.getTemperature(info);
+
         this._box.pack_start(hourEntry, false, false, 0);
 
         this._hasForecastInfo = true;

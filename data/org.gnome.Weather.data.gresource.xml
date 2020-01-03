@@ -7,6 +7,7 @@
     <file preprocess="xml-stripblanks">weather-widget.ui</file>
     <file preprocess="xml-stripblanks">window.ui</file>
     <file preprocess="xml-stripblanks">hour-entry.ui</file>
+    <file preprocess="xml-stripblanks">day-entry.ui</file>
     <file>application.css</file>
   </gresource>
   <gresource prefix="/org/gnome/shell">

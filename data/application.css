@@ -40,11 +40,6 @@
     padding: 12px;
 }
 
-#weekly-forecast-frame {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-}
-
 .content-view.cell {
     font-weight: bold;
 }
