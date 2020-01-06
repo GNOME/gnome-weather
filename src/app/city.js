@@ -22,8 +22,8 @@ const Gnome = imports.gi.GnomeDesktop;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 
-const Forecast = imports.app.forecast;
-const WForecast = imports.app.weeklyForecast;
+const HourlyForecast = imports.app.hourlyForecast;
+const DailyForecast = imports.app.dailyForecast;
 const Util = imports.misc.util;
 
 const SPINNER_SIZE = 128;
@@ -36,8 +36,8 @@ var WeatherWidget = GObject.registerClass({
                        'temperatureLabel', 'conditionsLabel', 'windLabel',
                        'timeLabel', 'timeGrid', 'forecastStack',
                        'leftButton', 'rightButton',
-                       'forecast-today-grid', 'forecast-tomorrow-grid',
-                       'forecast-today', 'forecast-tomorrow'],
+                       'forecast-hourly', 'forecast-hourly-viewport',
+                       'forecast-daily', 'forecast-daily-viewport'],
 }, class WeatherWidget extends Gtk.Frame {
 
     _init(params) {
@@ -48,20 +48,20 @@ var WeatherWidget = GObject.registerClass({
 
         this._info = null;
 
-        this._weeklyForecasts = new WForecast.WeeklyForecastFrame();
+        this._dailyForecasts = new DailyForecast.DailyForecastFrame();
 
         this._forecasts = { };
 
-        for (let t of ['today', 'tomorrow']) {
+        for (let t of ['hourly', 'daily']) {
             let box;
-            if (t == 'today') {
-                box = new Forecast.ForecastBox({ hexpand: false });
+            if (t == 'hourly') {
+                box = new HourlyForecast.HourlyForecastFrame();
             } else {
-                box = new WForecast.WeeklyForecastFrame();
+                box = new DailyForecast.DailyForecastFrame();
             }
 
             this._forecasts[t] = box;
-            this['_forecast_' + t + '_grid'].add(box);
+            this['_forecast_' + t + '_viewport'].add(box);
 
             let fsw = this['_forecast_' + t];
             let hscrollbar = fsw.get_hscrollbar();
@@ -150,7 +150,7 @@ var WeatherWidget = GObject.registerClass({
     }
 
     clear() {
-        for (let t of ['today', 'tomorrow'])
+        for (let t of ['hourly', 'daily'])
             this._forecasts[t].clear();
 
         if (this._tickId) {
@@ -178,19 +178,8 @@ var WeatherWidget = GObject.registerClass({
 
         let forecasts = info.get_forecast_list();
         let tz = GLib.TimeZone.new(info.location.get_timezone().get_tzid());
-        for (let t of ['today', 'tomorrow'])
-            this._forecasts[t].update(forecasts, tz, t);
-
-        if (!this._forecasts['today'].hasForecastInfo() && this._forecasts['tomorrow'].hasForecastInfo())
-            this._forecastStack.set_visible_child_name('tomorrow');
-
-        // FIXME: This doesn't make sense, since the above code assumes forecasts.length != 0.
-        if (forecasts.length == 0) {
-            this._weeklyForecasts.hide();
-        } else {
-            this._weeklyForecasts.show();
-            this._weeklyForecasts.update(forecasts);
-        }
+        for (let t of ['hourly', 'daily'])
+            this._forecasts[t].update(forecasts, tz);
     }
 });
 

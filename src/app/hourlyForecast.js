@@ -26,13 +26,14 @@ const Util = imports.misc.util;
 // In microseconds
 const TWENTY_FOUR_HOURS = 24 * 3600 * 1000 * 1000;
 
-var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
+var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.Frame {
 
     _init(params) {
         super._init(Object.assign({
-            shadow_type: Gtk.ShadowType.IN
+            shadow_type: Gtk.ShadowType.IN,
+            name: 'hourly-forecast-frame',
         }, params));
-        this.get_accessible().accessible_name = _("Forecast");
+        this.get_accessible().accessible_name = _("Hourly Forecast");
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
@@ -45,14 +46,14 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
 
     // Ensure that infos are sufficiently spaced, and
     // remove infos for the wrong day
-    _preprocess(now, tz, infos) {
+    _preprocess(now, infos) {
         let ret = [];
 
         for (let i = 0; i < infos.length; i++) {
             let info = infos[i];
 
             let [ok, date] = info.get_value_update();
-            let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
+            let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(now.get_timezone());
 
             if (datetime.difference(now) <= 0) {
                 continue;
@@ -66,23 +67,17 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
         return ret;
     }
 
-    update(infos, tz, day) {
+    update(infos, tz) {
         let now = GLib.DateTime.new_now(tz);
-        if (day == 'tomorrow')
-            now = now.add_hours(24);
-        // 'now' contains a TimeZone, but there is no accessor;
-        // thus, we must pass both the target time and zone
-        let dayInfo = this._preprocess(now, tz, infos);
+        let hourlyInfo = this._preprocess(now, infos);
 
-        if (dayInfo.length > 0) {
-            for (let i = 0; i < dayInfo.length; i++) {
-                let info = dayInfo[i];
-                this._addOneInfo(info, tz, i);
+        if (hourlyInfo.length > 0) {
+            for (let i = 0; i < hourlyInfo.length; i++) {
+                let info = hourlyInfo[i];
+                this._addHourEntry(info, tz);
 
-                if (i < dayInfo.length - 1) {
-                    let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL,
-                                                        visible: true});
-                    this._box.pack_start(separator, false, false, 0);
+                if (i < hourlyInfo.length - 1) {
+                    this._addSeparator();
                 }
             }
         } else {
@@ -93,7 +88,7 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
         }
     }
 
-    _addOneInfo(info, tz, col) {
+    _addHourEntry(info, tz) {
         let [ok, date] = info.get_value_update();
         let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
 
@@ -115,6 +110,12 @@ var ForecastBox = GObject.registerClass(class ForecastBox extends Gtk.Frame {
         this._box.pack_start(hourEntry, false, false, 0);
 
         this._hasForecastInfo = true;
+    }
+
+    _addSeparator() {
+        let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL,
+                                            visible: true});
+        this._box.pack_start(separator, false, false, 0);
     }
 
     clear() {

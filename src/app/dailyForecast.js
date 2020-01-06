@@ -23,15 +23,14 @@ const Gtk = imports.gi.Gtk;
 
 const Util = imports.misc.util;
 
-var WeeklyForecastFrame = GObject.registerClass(class WeeklyForecastFrame extends Gtk.Frame {
+var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends Gtk.Frame {
 
     _init(params) {
         super._init(Object.assign({
             shadow_type: Gtk.ShadowType.IN,
-            name: 'weekly-forecast-frame',
-            width_request: 150
+            name: 'daily-forecast-frame',
         }, params));
-        this.get_accessible().accessible_name = _("Weekly Forecast");
+        this.get_accessible().accessible_name = _("Daily Forecast");
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
@@ -41,7 +40,7 @@ var WeeklyForecastFrame = GObject.registerClass(class WeeklyForecastFrame extend
     }
 
     // get infos for the correct day
-    _preprocess(infos, day) {
+    _preprocess(day, infos) {
         let ret = [];
         let i;
 
@@ -102,35 +101,49 @@ var WeeklyForecastFrame = GObject.registerClass(class WeeklyForecastFrame extend
         let day = GLib.DateTime.new_now_local();
         day = day.add_days(1);
 
-        let weeklyInfo = this._preprocess(infos, day);
-        this.clear();
+        let dailyInfo = this._preprocess(day, infos);
 
-        for (let i = 0; i < weeklyInfo.length; i++) {
-            let info = weeklyInfo[i];
-            let [ok, date] = info.get_value_update();
-            let datetime = GLib.DateTime.new_from_unix_local(date);
+        if (dailyInfo.length > 0) {
+            for (let i = 0; i < dailyInfo.length; i++) {
+                let info = dailyInfo[i];
+                this._addDayEntry(info)
 
-            let dayEntry = new DayEntry();
-
-            /* Translators: this is the time format for weekday name according to the current locale */
-            let nameFormat = _("%a");
-            dayEntry.nameLabel.label = datetime.format(nameFormat);
-
-            /* Translators: this is the time format for day and month name according to the current locale */
-            let dateFormat = _("%e %b");
-            dayEntry.dateLabel.label = datetime.format(dateFormat);
-
-            dayEntry.image.iconName = info.get_symbolic_icon_name();
-            dayEntry.temperatureLabel.label = Util.getTemperature(info);
-
-            this._box.pack_start(dayEntry, false, false, 0);
-
-            if (i < weeklyInfo.length - 1) {
-                let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL,
-                                                    visible: true});
-                this._box.pack_start(separator, false, false, 0);
+                if (i < dailyInfo.length - 1) {
+                    this._addSeparator();
+                }
             }
+        } else {
+            let label = new Gtk.Label({ label: _("Forecast not available"),
+                                        use_markup: true,
+                                        visible: true });
+            this._box.pack_start(label, true, false, 0);
         }
+    }
+
+    _addDayEntry(info) {
+        let [ok, date] = info.get_value_update();
+        let datetime = GLib.DateTime.new_from_unix_local(date);
+
+        let dayEntry = new DayEntry();
+
+        /* Translators: this is the time format for weekday name according to the current locale */
+        let nameFormat = _("%a");
+        dayEntry.nameLabel.label = datetime.format(nameFormat);
+
+        /* Translators: this is the time format for day and month name according to the current locale */
+        let dateFormat = _("%e %b");
+        dayEntry.dateLabel.label = datetime.format(dateFormat);
+
+        dayEntry.image.iconName = info.get_symbolic_icon_name();
+        dayEntry.temperatureLabel.label = Util.getTemperature(info);
+
+        this._box.pack_start(dayEntry, false, false, 0);
+    }
+
+    _addSeparator() {
+        let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL,
+                                            visible: true});
+        this._box.pack_start(separator, false, false, 0);
     }
 
     clear() {
