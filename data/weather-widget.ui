@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.1 -->
+<!-- Generated with glade 3.22.0 -->
 <interface>
   <requires lib="gtk+" version="3.0"/>
   <template class="Gjs_WeatherWidget" parent="GtkFrame">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="label_xalign">0</property>
     <child>
       <object class="GtkFrame" id="contentFrame">
         <property name="name">weather-page-content-view</property>
@@ -22,11 +23,11 @@
                 <property name="can_focus">False</property>
                 <property name="halign">center</property>
                 <property name="valign">start</property>
+                <property name="margin_start">50</property>
+                <property name="margin_end">20</property>
+                <property name="margin_top">50</property>
                 <property name="hexpand">True</property>
                 <property name="vexpand">True</property>
-                <property name="margin-top">50</property>
-                <property name="margin-start">50</property>
-                <property name="margin-end">20</property>
                 <property name="row_spacing">32</property>
                 <child>
                   <object class="GtkGrid" id="inner-grid">
@@ -34,23 +35,17 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="column_spacing">20</property>
-                    <child internal-child="accessible">
-                      <object class="AtkObject" id="conditions-grid-a11y">
-                        <property name="accessible-name" translatable="yes">Current conditions</property>
-                      </object>
-                    </child>
                     <child>
                       <object class="GtkImage" id="conditionsImage">
                         <property name="name">conditions-image</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="pixel_size">172</property>
-                        <property name="icon-size">2</property>
+                        <property name="icon_size">2</property>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
                         <property name="top_attach">0</property>
-                        <property name="width">1</property>
                         <property name="height">3</property>
                       </packing>
                     </child>
@@ -59,14 +54,12 @@
                         <property name="name">temperature-label</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="valign">start</property>
                         <property name="halign">start</property>
+                        <property name="valign">start</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
                         <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
                       </packing>
                     </child>
                     <child>
@@ -74,22 +67,20 @@
                         <property name="name">conditions-label</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
+                        <property name="halign">start</property>
                         <property name="valign">start</property>
                         <property name="vexpand">True</property>
-                        <property name="halign">start</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
                         <property name="top_attach">1</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
                       </packing>
                     </child>
                     <child>
                       <object class="GtkBox" id="windBox">
                         <property name="name">wind-box</property>
                         <property name="visible">True</property>
-                        <property name="orientation">horizontal</property>
+                        <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="valign">start</property>
                         <property name="spacing">12</property>
@@ -99,24 +90,32 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="halign">start</property>
-                            <property name="icon-name">weather-windy-symbolic</property>
+                            <property name="icon_name">weather-windy-symbolic</property>
                           </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
                         </child>
                         <child>
                           <object class="GtkLabel" id="windLabel">
                             <property name="name">wind-label</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="vexpand">True</property>
                             <property name="halign">start</property>
+                            <property name="vexpand">True</property>
                           </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
                         </child>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
                         <property name="top_attach">2</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
                       </packing>
                     </child>
                   </object>
@@ -132,6 +131,7 @@
                     <child>
                       <object class="GtkStackSwitcher" id="day-stack-switcher">
                         <property name="visible">True</property>
+                        <property name="can_focus">False</property>
                         <property name="stack">forecastStack</property>
                         <style>
                           <class name="osd"/>
@@ -155,27 +155,23 @@
                     <child>
                       <object class="GtkStack" id="forecastStack">
                         <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+                        <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkScrolledWindow" id="forecast-today">
+                          <object class="GtkScrolledWindow" id="forecast-hourly">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
+                            <property name="margin_start">32</property>
+                            <property name="margin_end">32</property>
                             <property name="vscrollbar_policy">never</property>
                             <property name="min_content_width">332</property>
-                            <property name="margin-start">32</property>
-                            <property name="margin-end">32</property>
                             <child>
-                              <object class="GtkViewport" id="forecast-today-viewport">
+                              <object class="GtkViewport" id="forecast-hourly-viewport">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="hscroll_policy">natural</property>
                                 <property name="vscroll_policy">natural</property>
                                 <child>
-                                  <object class="GtkGrid" id="forecast-today-grid">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="halign">center</property>
-                                  </object>
+                                  <placeholder/>
                                 </child>
                               </object>
                             </child>
@@ -186,25 +182,21 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkScrolledWindow" id="forecast-tomorrow">
+                          <object class="GtkScrolledWindow" id="forecast-daily">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
+                            <property name="margin_start">32</property>
+                            <property name="margin_end">32</property>
                             <property name="vscrollbar_policy">never</property>
                             <property name="min_content_width">332</property>
-                            <property name="margin-start">32</property>
-                            <property name="margin-end">32</property>
                             <child>
-                              <object class="GtkViewport" id="forecast-tomorrow-viewport">
+                              <object class="GtkViewport" id="forecast-daily-viewport">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="hscroll_policy">natural</property>
                                 <property name="vscroll_policy">natural</property>
                                 <child>
-                                  <object class="GtkGrid" id="forecast-tomorrow-grid">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="halign">center</property>
-                                  </object>
+                                  <placeholder/>
                                 </child>
                               </object>
                             </child>
@@ -212,6 +204,7 @@
                           <packing>
                             <property name="name">tomorrow</property>
                             <property name="title" translatable="yes">Tomorrow</property>
+                            <property name="position">1</property>
                           </packing>
                         </child>
                       </object>
@@ -226,17 +219,17 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="valign">center</property>
-                        <style>
-                          <class name="osd"/>
-                        </style>
                         <child>
                           <object class="GtkImage" id="left-image">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="icon-name">go-previous-symbolic</property>
+                            <property name="icon_name">go-previous-symbolic</property>
                             <property name="icon_size">1</property>
                           </object>
                         </child>
+                        <style>
+                          <class name="osd"/>
+                        </style>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -249,16 +242,16 @@
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
                         <property name="valign">center</property>
-                        <style>
-                          <class name="osd"/>
-                        </style>
                         <child>
                           <object class="GtkImage" id="right-image">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="icon-name">go-next-symbolic</property>
+                            <property name="icon_name">go-next-symbolic</property>
                           </object>
                         </child>
+                        <style>
+                          <class name="osd"/>
+                        </style>
                       </object>
                       <packing>
                         <property name="left_attach">2</property>
@@ -275,8 +268,6 @@
               <packing>
                 <property name="left_attach">0</property>
                 <property name="top_attach">1</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
               </packing>
             </child>
             <child>
@@ -284,46 +275,40 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">end</property>
-                <property name="margin-end">20</property>
+                <property name="margin_end">20</property>
                 <child>
                   <object class="GtkImage" id="clock-image">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
-                    <property name="margin-start">10</property>
-                    <property name="margin-end">10</property>
-                    <property name="margin-top">15</property>
-                    <property name="margin-bottom">15</property>
+                    <property name="margin_start">10</property>
+                    <property name="margin_end">10</property>
+                    <property name="margin_top">15</property>
+                    <property name="margin_bottom">15</property>
                     <property name="icon_name">document-open-recent-symbolic</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
                     <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="timeLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin-top">15</property>
-                    <property name="margin-bottom">15</property>
+                    <property name="margin_top">15</property>
+                    <property name="margin_bottom">15</property>
                     <property name="label">label</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
                 </child>
               </object>
               <packing>
                 <property name="left_attach">0</property>
                 <property name="top_attach">0</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
               </packing>
             </child>
           </object>
