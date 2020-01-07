@@ -133,9 +133,6 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="stack">forecastStack</property>
-                        <style>
-                          <class name="osd"/>
-                        </style>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>
@@ -177,8 +174,8 @@
                             </child>
                           </object>
                           <packing>
-                            <property name="name">today</property>
-                            <property name="title" translatable="yes">Today</property>
+                            <property name="name">hourly</property>
+                            <property name="title" translatable="yes">Hourly</property>
                           </packing>
                         </child>
                         <child>
@@ -202,8 +199,8 @@
                             </child>
                           </object>
                           <packing>
-                            <property name="name">tomorrow</property>
-                            <property name="title" translatable="yes">Tomorrow</property>
+                            <property name="name">daily</property>
+                            <property name="title" translatable="yes">Daily</property>
                             <property name="position">1</property>
                           </packing>
                         </child>
