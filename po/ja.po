@@ -1,16 +1,16 @@
 # Japanese translation for gnome-weather.
-# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# Copyright (C) 2013-2020 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013, 2015, 2016.
 # Hajime Taira <htaira@redhat.com>, 2014.
-# sicklylife <translation@sicklylife.jp>, 2019.
+# sicklylife <translation@sicklylife.jp>, 2019-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
 "POT-Creation-Date: 2019-10-22 01:19+0000\n"
-"PO-Revision-Date: 2019-03-07 19:47+0900\n"
+"PO-Revision-Date: 2020-01-18 00:00+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -26,7 +26,7 @@ msgstr "City view"
 
 #: data/city.ui:30
 msgid "Loading…"
-msgstr "ロード中…"
+msgstr "読み込み中…"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
@@ -56,11 +56,6 @@ msgstr ""
 "天気予報や、当日と翌日の時間ごとの詳細な天気予報などが利用できます。"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
-#, fuzzy
-#| msgid ""
-#| "It also optionally integrates with the GNOME Shell, allowing you see the "
-#| "current conditions of the most recently searched cities by just typing "
-#| "its name in the Activities Overview."
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you to see the "
 "current conditions of the most recently searched cities by just typing the "
@@ -71,7 +66,7 @@ msgstr ""
 
 #: data/org.gnome.Weather.appdata.xml.in.in:74
 msgid "The GNOME Project"
-msgstr ""
+msgstr "The GNOME Project"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
