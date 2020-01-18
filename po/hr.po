@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-02-22 01:46+0000\n"
-"PO-Revision-Date: 2019-03-25 20:55+0100\n"
-"Last-Translator: gogo <trebelnik2@gmail.com>\n"
+"POT-Creation-Date: 2019-10-22 01:19+0000\n"
+"PO-Revision-Date: 2020-01-19 00:06+0100\n"
+"Last-Translator: gogo <linux.hr@protonmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
@@ -27,18 +27,18 @@ msgstr "Prikaz grada"
 msgid "Loading…"
 msgstr "Učitavanje…"
 
-#: data/org.gnome.Weather.appdata.xml.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:53
-#: src/app/window.js:231 src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: src/app/window.js:255 src/service/main.js:48
 msgid "Weather"
 msgstr "Vrijeme"
 
-#: data/org.gnome.Weather.appdata.xml.in:6
+#: data/org.gnome.Weather.appdata.xml.in.in:6
 #: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "Pogledajte vašu lokalnu vremensku prognozu"
 
-#: data/org.gnome.Weather.appdata.xml.in:16
+#: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -46,7 +46,7 @@ msgstr ""
 "Mala aplikacija koja vam omogućuje praćenje trenutne vremenske prognoze u "
 "vašem gradu, ili bilo gdje na svijetu."
 
-#: data/org.gnome.Weather.appdata.xml.in:20
+#: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -54,24 +54,19 @@ msgstr ""
 "Omogućuje vam pristup opširnoj prognozi vremena, do 7dana, sa satnim "
 "pojedinostima za trenutni i sljedeći dan, koristeći razne internetske usluge."
 
-#: data/org.gnome.Weather.appdata.xml.in:24
+#: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you see the "
-"current conditions of the most recently searched cities by just typing its "
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"Isto tako se po izboru integrira s GNOME ljuskom, omogućujući vam da vidite "
-"trenutnu vremensku prognozu najćešće traženih gradova, jednostavno samo "
-"tipkanjem naziva grada u Aktivnosti pregledu."
+"Isto tako se po izboru integrira s GNOME ljuskom, omogućujući vam pregled "
+"trenutne vremenske prognoze najčešće traženih gradova, jednostavno samo "
+"upisivanjem naziva grada u Aktivnosti pregledu."
 
-#: data/org.gnome.Weather.appdata.xml.in:48
+#: data/org.gnome.Weather.appdata.xml.in.in:74
 msgid "The GNOME Project"
 msgstr "GNOME projekt"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Weather.desktop.in.in:7
-msgid "@APP_ID@"
-msgstr "@APP_ID@"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
@@ -106,19 +101,19 @@ msgstr ""
 "Automatska lokacija je vrijednost automatic-location preklopnika koji "
 "odlučuje treba li preuzeti trenutnu lokaciju ili ne."
 
-#: data/places-popover.ui:44
+#: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Automatska lokacija"
 
-#: data/places-popover.ui:83
+#: data/places-popover.ui:84
 msgid "Locating…"
 msgstr "Lociranje…"
 
-#: data/places-popover.ui:140
+#: data/places-popover.ui:141
 msgid "Search for a city"
 msgstr "Potraži grad"
 
-#: data/places-popover.ui:172
+#: data/places-popover.ui:173
 msgid "Viewed Recently"
 msgstr "Nedavno pogledano"
 
@@ -166,53 +161,53 @@ msgstr "Potraži lokaciju"
 msgid "To see weather information, enter the name of a city."
 msgstr "Kako bi vidjeli vremenske informacije, upišite naziv grada."
 
-#: src/app/forecast.js:37
+#: src/app/forecast.js:35
 msgid "Forecast"
 msgstr "Prognoza"
 
-#: src/app/forecast.js:113
+#: src/app/forecast.js:116
 msgid "Forecast not available"
 msgstr "Prognoza nije dostupna"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:129
+#: src/app/forecast.js:132
 msgid "%l∶%M %p"
 msgstr "%H:%M"
 
 #. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:132
+#: src/app/forecast.js:135
 msgid "%R"
 msgstr "%R"
 
-#: src/app/weeklyForecast.js:36
+#: src/app/weeklyForecast.js:35
 msgid "Weekly Forecast"
 msgstr "Tjedna prognoza"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:121
+#: src/app/weeklyForecast.js:120
 msgid "%A"
 msgstr "%A"
 
-#: src/app/window.js:120
+#: src/app/window.js:139
 msgid "Select Location"
 msgstr "Odaberi lokaciju"
 
-#: src/app/window.js:230
+#: src/app/window.js:254
 msgid "translator-credits"
 msgstr "gogo https://launchpad.net/~trebelnik-stefina"
 
-#: src/app/window.js:232
+#: src/app/window.js:256
 msgid "A weather application"
 msgstr "Aplikacija vremenske prognoze"
 
-#: src/app/world.js:39
+#: src/app/world.js:38
 msgid "World view"
 msgstr "Prikaz svijeta"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:159
+#: src/misc/util.js:140
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -220,10 +215,13 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:181
+#: src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "@APP_ID@"
+#~ msgstr "@APP_ID@"
 
 #~ msgid "_New"
 #~ msgstr "_Nova"
