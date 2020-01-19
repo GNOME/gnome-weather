@@ -1,0 +1,215 @@
+# Kurdish Sorani translation for gnome-weather.
+# Copyright (C) 2020 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# jwtiyar <jwtiyar@gmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather gnome-3-34\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2019-12-04 04:28+0000\n"
+"PO-Revision-Date: 2020-01-16 13:08+0300\n"
+"Language-Team: Kurdish Sorani <ckb@li.org>\n"
+"Language: ckb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: data/city.ui:8
+msgid "City view"
+msgstr "پیشاندانی شار"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "باردەکرێت..."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: src/app/window.js:255 src/service/main.js:48
+msgid "Weather"
+msgstr "کەش و هەوا"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
+msgid "Show weather conditions and forecast"
+msgstr "دۆخی کەش و هەوا پیشان بدە"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:16
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"نەرمەکاڵایەکی بچووک ڕێگەت دەکات چاودێری کەش و هەوای ئێستا بکەیت و بۆ ئەو "
+"شوینەی لێیت و هەموو جیهان."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:20
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"ڕێگەت دەدات بچیتە دۆخی کەش و هەوای زیاتر، بۆ ٧ رۆژ، لەگەڵ زانیاری بۆ هەموو "
+"کاژێرەکان  بۆ ئەم رۆژە و رۆژەکانی تر، بە بەکارهێنانی خزمەتگوزاری ئینتەرنێت."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:24
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you see the "
+"current conditions of the most recently searched cities by just typing its "
+"name in the Activities Overview."
+msgstr ""
+
+#: data/org.gnome.Weather.appdata.xml.in.in:74
+msgid "The GNOME Project"
+msgstr "پرۆژەی گنۆم"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
+msgid "Weather;Forecast;"
+msgstr "کەش و هەوا؛پێشبینی؛"
+
+#: data/org.gnome.Weather.desktop.in.in:14
+msgid "Allows weather information to be displayed for your location."
+msgstr "ڕێگەدەدات زانیاری کەش و هەوا پیشانبدرێت بۆ شوێنەکەت."
+
+#: data/org.gnome.Weather.gschema.xml:6
+msgid "Configured cities to show weather for"
+msgstr "ئەو شارەنەی دیاریکراون کەش و هەوای پیشان دەدات"
+
+#: data/org.gnome.Weather.gschema.xml:7
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "Automatic location"
+msgstr "ذۆزینەوەی شوێن خۆکارانە"
+
+#: data/org.gnome.Weather.gschema.xml:15
+msgid ""
+"The automatic location is the value of automatic-location switch which "
+"decides whether to fetch current location or not."
+msgstr ""
+
+#: data/places-popover.ui:45
+msgid "Automatic Location"
+msgstr "ذۆزینەوەی شوێن خۆکارانە"
+
+#: data/places-popover.ui:84
+msgid "Locating…"
+msgstr "دۆزینەوە..."
+
+#: data/places-popover.ui:141
+msgid "Search for a city"
+msgstr "بگەڕێ بۆ شار"
+
+#: data/places-popover.ui:173
+msgid "Viewed Recently"
+msgstr "دوواجار بینراون"
+
+#: data/primary-menu.ui:4
+msgid "_Temperature Unit"
+msgstr "ـ یەکەی پلەی گەرمی"
+
+#: data/primary-menu.ui:6
+msgid "_Celsius"
+msgstr "ـ سیلیزی"
+
+#: data/primary-menu.ui:11
+msgid "_Fahrenheit"
+msgstr "ـ فەهرەنهایت"
+
+#: data/primary-menu.ui:19
+msgid "_About Weather"
+msgstr "ـ دەربارەی کەش و هەوا"
+
+#: data/weather-widget.ui:39
+msgid "Current conditions"
+msgstr "دۆخی ئێستا"
+
+#: data/weather-widget.ui:151
+msgid "Today"
+msgstr "ئەمڕۆ"
+
+#: data/weather-widget.ui:180
+msgid "Tomorrow"
+msgstr "بەیانی"
+
+#: data/window.ui:33
+msgid "Places"
+msgstr "شوێنەکان"
+
+#: data/window.ui:55
+msgid "Refresh"
+msgstr "نوێکردنەوە"
+
+#: data/window.ui:113
+msgid "Search for a location"
+msgstr "گەڕان بۆ شوێن"
+
+#: data/window.ui:129
+msgid "To see weather information, enter the name of a city."
+msgstr "بۆ بینینی زانیاری کەش و هەوا، ناوی شارەکە بنووسە."
+
+#: src/app/forecast.js:35
+msgid "Forecast"
+msgstr "پێشبینی"
+
+#: src/app/forecast.js:116
+msgid "Forecast not available"
+msgstr "پێشبینی بەردەست نیە"
+
+# دەسکاری نەکرێت
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/forecast.js:132
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+# دەسکاری نەکرێت
+#. Translators: this is a time format without date used for 24h mode
+#: src/app/forecast.js:135
+msgid "%R"
+msgstr "%R"
+
+#: src/app/weeklyForecast.js:35
+msgid "Weekly Forecast"
+msgstr "پێشبینی هەفتانە"
+
+# دەسکاری نەکرێت
+#. Translators: this is the time format for full weekday name according to the current locale
+#: src/app/weeklyForecast.js:120
+msgid "%A"
+msgstr "%A"
+
+#: src/app/window.js:139
+msgid "Select Location"
+msgstr "شوێن دیاریبکە"
+
+#: src/app/window.js:254
+msgid "translator-credits"
+msgstr "وەرگێڕەکان"
+
+#: src/app/window.js:256
+msgid "A weather application"
+msgstr "نەرمەواڵەی کەش و هەوا"
+
+#: src/app/world.js:38
+msgid "World view"
+msgstr "بینینی جیهانی"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: src/misc/util.js:140
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: src/service/searchProvider.js:182
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
