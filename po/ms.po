@@ -8,63 +8,64 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-03-25 19:55+0000\n"
-"PO-Revision-Date: 2019-03-28 23:47+0800\n"
-"Language-Team: Malay <ms@li.org>\n"
+"POT-Creation-Date: 2020-01-19 07:49+0000\n"
+"PO-Revision-Date: 2020-01-24 09:18+0800\n"
+"Last-Translator: abuyop <abuyop@gmail.com>\n"
+"Language-Team: Pasukan Terjemahan GNOME Malaysia\n"
 "Language: ms\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Ahmed Noor Kader Mustajir Md Eusoff <sir.ade@gmail.com>\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: data/city.ui:8
 msgid "City view"
-msgstr "Pemandangan Bandar"
+msgstr "Pandangan bandar"
 
 #: data/city.ui:30
 msgid "Loading…"
 msgstr "Memuatkan…"
 
-#: data/org.gnome.Weather.appdata.xml.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:52
-#: src/app/window.js:245 src/service/main.js:48
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: src/app/window.js:255 src/service/main.js:48
 msgid "Weather"
 msgstr "Cuaca"
 
-#: data/org.gnome.Weather.appdata.xml.in:6
+#: data/org.gnome.Weather.appdata.xml.in.in:6
 #: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
-msgstr "Papar keadaan cuaca dan ramalan"
+msgstr "Tunjuk keadaan dan ramalan cuaca"
 
-#: data/org.gnome.Weather.appdata.xml.in:16
+#: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
 msgstr ""
-"Aplikasi kecil yang membolehkan anda mengawasi keadaan cuaca semasa untuk "
-"bandar anda, atau mana-mana tempat di dunia ini."
+"Sebuah aplikasi kecil yang membolehkan anda pantau keadaan cuaca semasa "
+"bandar anda, atau mana-mana lokasi di seluruh dunia."
 
-#: data/org.gnome.Weather.appdata.xml.in:20
+#: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Ia memberi akses perincian ramalan, sehingga 7 hari, dengan setiap jam "
-"perincian untuk semasa dan hari seterusnya, menggunakan pelbagai servis "
-"internet."
+"Ia menyediakan capaian ramalan terperinci, sehingga 7 hari, dengan "
+"perincian setiap jam bagi hari ini dan hari esok, menggunakan pelbagai "
+"perkhidmatan internet yang ada."
 
-#: data/org.gnome.Weather.appdata.xml.in:24
+#: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you see the "
-"current conditions of the most recently searched cities by just typing its "
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"Ianya secara pilihan integrasi dengan GNOME Shell, membenarkan anda melihat "
-"kondisi bandar yang dicari baru-baru ini dengan menaip nama dalam Aktiviti "
-"Gambaran Keseluruhan."
+"Ia juga disepadukan secara pilihan dengan Shell GNOME, membolehkan anda "
+"melihat keadaan semasa bandar digelintar baru-baru hanya menaip nama dalam "
+"Selayang Pandang Aktiviti."
 
-#: data/org.gnome.Weather.appdata.xml.in:48
+#: data/org.gnome.Weather.appdata.xml.in.in:74
 msgid "The GNOME Project"
 msgstr "Projek GNOME"
 
@@ -75,107 +76,107 @@ msgstr "Cuaca;Ramalan;"
 
 #: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
-msgstr "Membenarkan maklumat cuaca dipaparkan untuk lokasi anda."
+msgstr "Membenarkan maklumat cuaca dipaparkan mengikut lokasi anda."
 
 #: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
-msgstr "Bandar telah ditatarajah untuk memaparkan cuaca untuk"
+msgstr "Bandar yang dikonfigur untuk ditunjukkan keadaan cuacanya"
 
 #: data/org.gnome.Weather.gschema.xml:7
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Lokasi yang ditunjuk dalam pemandangan dunia gnome-weather. Setiap nilai "
-"adalah GVariant dibahagi dengan gweather_location_serialize()."
+"Lokasi ditunjukkan dalam pandangan dunia gnome-weather. Setiap nilai ialah "
+"satu GVariant yang dikembalikan oleh gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
 msgid "Automatic location"
-msgstr "Lokasi Automatik"
+msgstr "Lokasi automatik"
 
 #: data/org.gnome.Weather.gschema.xml:15
 msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 msgstr ""
-"Lokasi automatik adalah nilai penukaran lokasi-automatik dimana ia "
-"memutuskan samaada untuk mendapatkan lokasi semasa atau tidak."
+"Lokasi automatik ialah nilai suis automatic-location yang menentukan sama "
+"ada mahu dapatkan lokasi semasa atau sebaliknya."
 
-#: data/places-popover.ui:44
+#: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Lokasi Automatik"
 
-#: data/places-popover.ui:83
+#: data/places-popover.ui:84
 msgid "Locating…"
-msgstr "Mengesan…"
+msgstr "Mendapatkan Lokasi…"
 
-#: data/places-popover.ui:140
+#: data/places-popover.ui:141
 msgid "Search for a city"
-msgstr "Mencari sebuah bandar"
+msgstr "Gelintar sebuah bandar"
 
-#: data/places-popover.ui:172
+#: data/places-popover.ui:173
 msgid "Viewed Recently"
-msgstr "Lihat Baru-baru Ini"
+msgstr "Dilihat Baru-baru Ini"
 
 #: data/primary-menu.ui:4
 msgid "_Temperature Unit"
-msgstr "_Unit Cuaca"
+msgstr "Unit _Suhu"
 
 #: data/primary-menu.ui:6
 msgid "_Celsius"
-msgstr "_Celsius"
+msgstr "_Selsius"
 
 #: data/primary-menu.ui:11
 msgid "_Fahrenheit"
-msgstr "_Fahrenheit"
+msgstr "_Fahrenhait"
 
 #: data/primary-menu.ui:19
 msgid "_About Weather"
-msgstr "_Mengenai Cuaca"
+msgstr "Perih_al Cuaca"
 
 #: data/weather-widget.ui:39
 msgid "Current conditions"
-msgstr "Keadaan cuaca"
+msgstr "Keadaan semasa"
 
-#: data/weather-widget.ui:151
+#: data/weather-widget.ui:185
 msgid "Today"
 msgstr "Hari ini"
 
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:214
 msgid "Tomorrow"
 msgstr "Esok"
 
 #: data/window.ui:33
 msgid "Places"
-msgstr "Tempat-tempat"
+msgstr "Tempat"
 
 #: data/window.ui:55
 msgid "Refresh"
-msgstr "Menyegarkan Semula"
+msgstr "Segar Semula"
 
 #: data/window.ui:113
 msgid "Search for a location"
-msgstr "Mencari lokasi"
+msgstr "Gelintar satu lokasi"
 
 #: data/window.ui:129
 msgid "To see weather information, enter the name of a city."
-msgstr "Untuk melihat maklumat cuaca, masukkan nama bandar."
+msgstr "Untuk melihat maklumat cuaca, masukkan nama sebuah bandar."
 
 #: src/app/forecast.js:35
 msgid "Forecast"
 msgstr "Ramalan"
 
-#: src/app/forecast.js:111
+#: src/app/forecast.js:116
 msgid "Forecast not available"
-msgstr "Ramalan tidak boleh didapati"
+msgstr "Ramalan tidak tersedia"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:127
+#: src/app/forecast.js:132
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:130
+#: src/app/forecast.js:135
 msgid "%R"
 msgstr "%R"
 
@@ -188,21 +189,28 @@ msgstr "Ramalan Mingguan"
 msgid "%A"
 msgstr "%A"
 
-#: src/app/window.js:134
+#: src/app/window.js:139
 msgid "Select Location"
 msgstr "Pilih Lokasi"
 
-#: src/app/window.js:244
+#: src/app/window.js:254
 msgid "translator-credits"
-msgstr "kredit-penterjemah"
+msgstr ""
+"MIMOS OpenSource \n"
+"Hasbullah Bin Pit\n"
+"\n"
+"Launchpad Contributions:\n"
+"  Ahmed Noor Kader Mustajir Md Eusoff https://launchpad.net/~sir.ade\n"
+"  Hasbullah Bin Pit https://launchpad.net/~sebol\n"
+"  abuyop https://launchpad.net/~abuyop"
 
-#: src/app/window.js:246
+#: src/app/window.js:256
 msgid "A weather application"
-msgstr "Apliakasi Cuaca"
+msgstr "Sebuah aplikasi cuaca"
 
 #: src/app/world.js:38
 msgid "World view"
-msgstr "Pemandangan dunia"
+msgstr "Pandangan Dunia"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
@@ -215,7 +223,7 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:181
+#: src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
