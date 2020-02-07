@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-02-22 01:46+0000\n"
-"PO-Revision-Date: 2019-02-26 14:09+0100\n"
+"POT-Creation-Date: 2019-10-22 01:19+0000\n"
+"PO-Revision-Date: 2020-02-07 23:28+0100\n"
 "Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
@@ -31,18 +31,18 @@ msgstr "Vue de la ville"
 msgid "Loading…"
 msgstr "Chargement en cours…"
 
-#: data/org.gnome.Weather.appdata.xml.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:53
-#: src/app/window.js:231 src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: src/app/window.js:255 src/service/main.js:48
 msgid "Weather"
 msgstr "Météo"
 
-#: data/org.gnome.Weather.appdata.xml.in:6
+#: data/org.gnome.Weather.appdata.xml.in.in:6
 #: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "Affiche le temps qu’il fait et les prévisions"
 
-#: data/org.gnome.Weather.appdata.xml.in:16
+#: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -50,7 +50,7 @@ msgstr ""
 "Une petite application qui vous permet de surveiller les conditions météo "
 "dans votre ville ou n’importe où dans le monde."
 
-#: data/org.gnome.Weather.appdata.xml.in:20
+#: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -59,24 +59,19 @@ msgstr ""
 "détails horaires pour le jour actuel et le lendemain, en utilisant divers "
 "services Internet."
 
-#: data/org.gnome.Weather.appdata.xml.in:24
+#: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you see the "
-"current conditions of the most recently searched cities by just typing its "
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
 "Elle peut également s’intégrer à GNOME Shell, permettant de voir les "
 "conditions actuelles de n’importe quelle ville configurée en tapant "
-"simplement son nom dans la vue d’ensemble des activités."
+"simplement le nom dans la vue d’ensemble des activités."
 
-#: data/org.gnome.Weather.appdata.xml.in:48
+#: data/org.gnome.Weather.appdata.xml.in.in:74
 msgid "The GNOME Project"
 msgstr "Le projet GNOME"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Weather.desktop.in.in:7
-msgid "@APP_ID@"
-msgstr "@APP_ID@"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
@@ -112,19 +107,19 @@ msgstr ""
 "Le lieu automatique est la valeur de la clé automatic-location qui détermine "
 "s’il faut récupérer le lieu actuel ou pas."
 
-#: data/places-popover.ui:44
+#: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Lieu automatique"
 
-#: data/places-popover.ui:83
+#: data/places-popover.ui:84
 msgid "Locating…"
 msgstr "Localisation en cours…"
 
-#: data/places-popover.ui:140
+#: data/places-popover.ui:141
 msgid "Search for a city"
 msgstr "Rechercher une ville"
 
-#: data/places-popover.ui:172
+#: data/places-popover.ui:173
 msgid "Viewed Recently"
 msgstr "Consultées récemment"
 
@@ -173,56 +168,56 @@ msgid "To see weather information, enter the name of a city."
 msgstr ""
 "Pour voir les informations météorologiques, saisissez le nom d’une ville."
 
-#: src/app/forecast.js:37
+#: src/app/forecast.js:35
 msgid "Forecast"
 msgstr "Prévisions"
 
-#: src/app/forecast.js:113
+#: src/app/forecast.js:116
 msgid "Forecast not available"
 msgstr "Prévisions non disponibles"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:129
+#: src/app/forecast.js:132
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:132
+#: src/app/forecast.js:135
 msgid "%R"
 msgstr "%R"
 
-#: src/app/weeklyForecast.js:36
+#: src/app/weeklyForecast.js:35
 msgid "Weekly Forecast"
 msgstr "Prévisions pour la semaine"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:121
+#: src/app/weeklyForecast.js:120
 msgid "%A"
 msgstr "%A"
 
-#: src/app/window.js:120
+#: src/app/window.js:139
 msgid "Select Location"
 msgstr "Choisir un lieu"
 
-#: src/app/window.js:230
+#: src/app/window.js:254
 msgid "translator-credits"
 msgstr ""
 "Alain Lojewski <allomervan@gmail.com>, 2012-2013\n"
 "Bruno Cauet <brunocauet@gmail.com>, 2014\n"
 "Claude Paroz <claude@2xlibre.net>, 2014"
 
-#: src/app/window.js:232
+#: src/app/window.js:256
 msgid "A weather application"
 msgstr "Une application de prévisions météo"
 
-#: src/app/world.js:39
+#: src/app/world.js:38
 msgid "World view"
 msgstr "Vue mondiale"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:159
+#: src/misc/util.js:140
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -230,10 +225,13 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:181
+#: src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "@APP_ID@"
+#~ msgstr "@APP_ID@"
 
 #~ msgid "About"
 #~ msgstr "À propos"
