@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-02-22 01:46+0000\n"
-"PO-Revision-Date: 2019-03-09 19:30+0200\n"
+"POT-Creation-Date: 2019-10-22 01:19+0000\n"
+"PO-Revision-Date: 2020-02-18 01:30+0200\n"
 "Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
 "Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 2.3\n"
 "X-Project-Style: gnome\n"
 
 #: data/city.ui:8
@@ -29,18 +29,18 @@ msgstr "Εμφάνιση πόλης"
 msgid "Loading…"
 msgstr "Φορτώνεται…"
 
-#: data/org.gnome.Weather.appdata.xml.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:53
-#: src/app/window.js:231 src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: src/app/window.js:255 src/service/main.js:48
 msgid "Weather"
 msgstr "Καιρός"
 
-#: data/org.gnome.Weather.appdata.xml.in:6
+#: data/org.gnome.Weather.appdata.xml.in.in:6
 #: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "Εμφάνιση συνθηκών καιρού και πρόβλεψης"
 
-#: data/org.gnome.Weather.appdata.xml.in:16
+#: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -49,7 +49,7 @@ msgstr ""
 "καιρικές συνθήκες για την πόλη σας, ή για οποιαδήποτε άλλη τοποθεσία στον "
 "κόσμο."
 
-#: data/org.gnome.Weather.appdata.xml.in:20
+#: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -58,24 +58,19 @@ msgstr ""
 "στοιχεία για την τρέχουσα και την επόμενη μέρα, με τη χρήση διαφόρων "
 "υπηρεσιών διαδικτύου."
 
-#: data/org.gnome.Weather.appdata.xml.in:24
+#: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you see the "
-"current conditions of the most recently searched cities by just typing its "
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
 "Επίσης ενσωματώνεται προαιρετικά με το GNOME Shell, επιτρέποντάς σας να "
-"δείτε τις τρέχουσες συνθήκες οποιασδήποτε πόλης έχει ρυθμιστεί απλά "
-"πληκτρολογώντας το όνομα στην επισκόπιση Δραστηριότητες."
+"δείτε τις τρέχουσες συνθήκες της πόλης που αναζητήθηκε πρόσφατα απλά "
+"πληκτρολογώντας το όνομα στην επισκόπηση των Δραστηριοτήτων."
 
-#: data/org.gnome.Weather.appdata.xml.in:48
+#: data/org.gnome.Weather.appdata.xml.in.in:74
 msgid "The GNOME Project"
 msgstr "Το έργο GNOME"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Weather.desktop.in.in:7
-msgid "@APP_ID@"
-msgstr "@APP_ID@"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
@@ -111,19 +106,19 @@ msgstr ""
 "Η αυτόματη τοποθεσία είναι η τιμή του διακόπτη automatic-location, ο οποίος "
 "αποφασίζει εάν θα ανακτηθεί η τρέχουσα τοποθεσία ή όχι."
 
-#: data/places-popover.ui:44
+#: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Αυτόματη τοποθεσία"
 
-#: data/places-popover.ui:83
+#: data/places-popover.ui:84
 msgid "Locating…"
 msgstr "Εντοπισμός…"
 
-#: data/places-popover.ui:140
+#: data/places-popover.ui:141
 msgid "Search for a city"
 msgstr "Αναζήτηση πόλης"
 
-#: data/places-popover.ui:172
+#: data/places-popover.ui:173
 msgid "Viewed Recently"
 msgstr "Πρόσφατα"
 
@@ -172,38 +167,38 @@ msgid "To see weather information, enter the name of a city."
 msgstr ""
 "Για να δείτε πληροφορίες για τον καιρό, πληκτρολογήστε το όνομα μιας πόλης."
 
-#: src/app/forecast.js:37
+#: src/app/forecast.js:35
 msgid "Forecast"
 msgstr "Πρόγνωση"
 
-#: src/app/forecast.js:113
+#: src/app/forecast.js:116
 msgid "Forecast not available"
 msgstr "Η πρόγνωση δεν είναι διαθέσιμη"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:129
+#: src/app/forecast.js:132
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:132
+#: src/app/forecast.js:135
 msgid "%R"
 msgstr "%R"
 
-#: src/app/weeklyForecast.js:36
+#: src/app/weeklyForecast.js:35
 msgid "Weekly Forecast"
 msgstr "Εβδομαδιαία πρόγνωση"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:121
+#: src/app/weeklyForecast.js:120
 msgid "%A"
 msgstr "%A"
 
-#: src/app/window.js:120
+#: src/app/window.js:139
 msgid "Select Location"
 msgstr "Επιλογή τοποθεσίας"
 
-#: src/app/window.js:230
+#: src/app/window.js:254
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME  \n"
@@ -215,27 +210,32 @@ msgstr ""
 "Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
-#: src/app/window.js:232
+#: src/app/window.js:256
 msgid "A weather application"
 msgstr "Μια εφαρμογή για τον καιρό"
 
-#: src/app/world.js:39
+#: src/app/world.js:38
 msgid "World view"
 msgstr "Εμφάνιση παγκόσμιου καιρού"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:159
+#: src/misc/util.js:140
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:181
+#: src/service/searchProvider.js:182
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "@APP_ID@"
+#~ msgstr "@APP_ID@"
 
 #~ msgid "_New"
 #~ msgstr "_Νέο"
