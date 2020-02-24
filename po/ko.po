@@ -2,21 +2,21 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Jinkyu Yi <jincreator@jincreator.net>, 2013, 2014, 2015, 2016.
-# DaeHyun Sung <sungdh86@gmail.com>, 2019.
+# DaeHyun Sung <sungdh86@gmail.com>, 2019-2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-03-25 19:55+0000\n"
-"PO-Revision-Date: 2019-09-05 00:11+0900\n"
-"Last-Translator: DaeHyun Sung <sungdh86@gmail.com>\n"
+"POT-Creation-Date: 2019-10-22 01:19+0000\n"
+"PO-Revision-Date: 2020-02-23 23:11+0900\n"
+"Last-Translator: DaeHyun Sung <sungdh86+git@gmail.com>\n"
 "Language-Team: 한국어 <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.3\n"
 
 #: data/city.ui:8
 msgid "City view"
@@ -26,18 +26,18 @@ msgstr "도시 보기"
 msgid "Loading…"
 msgstr "읽어오는 중…"
 
-#: data/org.gnome.Weather.appdata.xml.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:52
-#: src/app/window.js:245 src/service/main.js:48
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: src/app/window.js:255 src/service/main.js:48
 msgid "Weather"
 msgstr "날씨"
 
-#: data/org.gnome.Weather.appdata.xml.in:6
+#: data/org.gnome.Weather.appdata.xml.in.in:6
 #: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "날씨와 일기 예보 보기"
 
-#: data/org.gnome.Weather.appdata.xml.in:16
+#: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -45,7 +45,7 @@ msgstr ""
 "당신이 사는 도시를 비롯하여 전세계 모든 곳의 현재 날씨를 알게 해주는 작은 프"
 "로그램입니다."
 
-#: data/org.gnome.Weather.appdata.xml.in:20
+#: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -53,16 +53,16 @@ msgstr ""
 "여러 인터넷 서비스에서 일주일까지의 자세한 일기 예보를 가져와 알려드리며, 오"
 "늘과 내일 날씨는 시간별로도 알 수 있게 해드립니다."
 
-#: data/org.gnome.Weather.appdata.xml.in:24
+#: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you see the "
-"current conditions of the most recently searched cities by just typing its "
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"그놈 쉘에 붙어 자주 찾은 도시의 이름을 현재 활동에 치는 것만으로 현재 날씨"
-"를 보여드릴 수도 있습니다."
+"그놈 쉘에서 선택적으로 통합되므로, 활동 개요에 도시명을 입력하면 가장 최근"
+"에 검색된 도시의 현재 상태를 볼 수 있게 해줍니다."
 
-#: data/org.gnome.Weather.appdata.xml.in:48
+#: data/org.gnome.Weather.appdata.xml.in.in:74
 msgid "The GNOME Project"
 msgstr "그놈 프로젝트"
 
@@ -99,19 +99,19 @@ msgstr ""
 "지역 알아서 찾기는 현재 위치를 스스로 받아올지 말지 고른 automatic-location "
 "스위치의 값입니다."
 
-#: data/places-popover.ui:44
+#: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "지역 알아서 찾기"
 
-#: data/places-popover.ui:83
+#: data/places-popover.ui:84
 msgid "Locating…"
 msgstr "지역 찾는 중…"
 
-#: data/places-popover.ui:140
+#: data/places-popover.ui:141
 msgid "Search for a city"
 msgstr "도시로 검색"
 
-#: data/places-popover.ui:172
+#: data/places-popover.ui:173
 msgid "Viewed Recently"
 msgstr "최근에 봄"
 
@@ -163,17 +163,17 @@ msgstr "날씨 정보를 볼 도시 이름을 넣어주십시오."
 msgid "Forecast"
 msgstr "예보"
 
-#: src/app/forecast.js:111
+#: src/app/forecast.js:116
 msgid "Forecast not available"
 msgstr "일기예보를 알 수 없음"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:127
+#: src/app/forecast.js:132
 msgid "%l∶%M %p"
 msgstr "%p %l∶%M"
 
 #. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:130
+#: src/app/forecast.js:135
 msgid "%R"
 msgstr "%R"
 
@@ -186,17 +186,17 @@ msgstr "주간 예보"
 msgid "%A"
 msgstr "%A"
 
-#: src/app/window.js:134
+#: src/app/window.js:139
 msgid "Select Location"
 msgstr "지역 선택"
 
-#: src/app/window.js:244
+#: src/app/window.js:254
 msgid "translator-credits"
 msgstr ""
 "Jinkyu Yi <jincreator@jincreator.net>\n"
 "DaeHyun Sung <sungdh86@gmail.com>"
 
-#: src/app/window.js:246
+#: src/app/window.js:256
 msgid "A weather application"
 msgstr "날씨 프로그램"
 
@@ -215,7 +215,7 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:181
+#: src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
