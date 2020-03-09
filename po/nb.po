@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of gnome-weather.
 # Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Kjartan Maraas <kmaraas@gnome.org>, 2013-2016.
+# Kjartan Maraas <kmaraas@gnome.org>, 2013-2020.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-weather 3.19.x\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-29 21:50+0100\n"
-"PO-Revision-Date: 2016-02-29 21:51+0100\n"
+"Project-Id-Version: gnome-weather 3.36.x\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2019-10-22 01:19+0000\n"
+"PO-Revision-Date: 2020-03-09 15:16+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language:\n"
@@ -17,50 +17,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "_Ny"
-
-#: ../data/app-menu.ui.h:2
-msgid "Temperature unit"
-msgstr "Temperaturenhet"
-
-#: ../data/app-menu.ui.h:3
-msgid "Celsius"
-msgstr "Celcius"
-
-#: ../data/app-menu.ui.h:4
-msgid "Fahrenheit"
-msgstr "Fahrenheit"
-
-#: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "Om"
-
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Avslutt"
-
-#: ../data/city.ui.h:1
+#: data/city.ui:8
 msgid "City view"
 msgstr "Byvisning"
 
-#: ../data/city.ui.h:2
+#: data/city.ui:30
 msgid "Loading…"
 msgstr "Laster …"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: src/app/window.js:255 src/service/main.js:48
 msgid "Weather"
 msgstr "Vær"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
-#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: data/org.gnome.Weather.appdata.xml.in.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "Vis værforhold og værmelding"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -68,7 +44,7 @@ msgstr ""
 "Et lite program som lar deg overvåke værforholdene for din by eller hvor som "
 "helst i verden."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+#: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -76,28 +52,33 @@ msgstr ""
 "Gir tilgang til detaljerte værmeldinger opp til syv dager med detaljer time "
 "for time for i dag og i morgen. Bruker forskjellige tjenester på internett."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+#: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you see the "
-"current conditions of the most recently searched cities by just typing its "
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
 "Integrerer også med GNOME skallet, og lar deg se tilstanden i de mest brukte "
 "byene ved å søke etter navnet i aktivitetsoversikten."
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in.in:74
+msgid "The GNOME Project"
+msgstr "GNOME prosjektet"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "Vær;Værmelding;"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+#: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
 msgstr "Viser informasjon om været på stedet du befinner deg."
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+#: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
 msgstr "Byer som er konfigurert for visning av vær"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+#: data/org.gnome.Weather.gschema.xml:7
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
@@ -105,11 +86,11 @@ msgstr ""
 "Lokasjonene som vises i verdensvisning av gnome-weather. Hver verdi er en "
 "GVariant som returneres av gweather_location_serialize()."
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+#: data/org.gnome.Weather.gschema.xml:14
 msgid "Automatic location"
 msgstr "Automatisk lokasjon"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+#: data/org.gnome.Weather.gschema.xml:15
 msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
@@ -117,97 +98,113 @@ msgstr ""
 "Automatisk stedsvalg er verdien i valget «automatic-location» som bestemmer "
 "om aktiv lokasjon skal hentes eller ikke."
 
-#: ../data/places-popover.ui.h:1
+#: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Automatisk lokasjon"
 
-#: ../data/places-popover.ui.h:2
+#: data/places-popover.ui:84
 msgid "Locating…"
 msgstr "Finner …"
 
-#: ../data/places-popover.ui.h:3
+#: data/places-popover.ui:141
 msgid "Search for a city"
 msgstr "Søk etter en by"
 
-#: ../data/places-popover.ui.h:4
+#: data/places-popover.ui:173
 msgid "Viewed Recently"
 msgstr "Nylig vist"
 
-#: ../data/weather-widget.ui.h:1
+#: data/primary-menu.ui:4
+msgid "_Temperature Unit"
+msgstr "_Temperaturenhet"
+
+#: data/primary-menu.ui:6
+msgid "_Celsius"
+msgstr "_Celcius"
+
+#: data/primary-menu.ui:11
+msgid "_Fahrenheit"
+msgstr "_Fahrenheit"
+
+#: data/primary-menu.ui:19
+msgid "_About Weather"
+msgstr "_Om Vær"
+
+#: data/weather-widget.ui:39
 msgid "Current conditions"
 msgstr "Nåværende forhold"
 
-#: ../data/weather-widget.ui.h:2
+#: data/weather-widget.ui:151
 msgid "Today"
 msgstr "I dag"
 
-#: ../data/weather-widget.ui.h:3
+#: data/weather-widget.ui:180
 msgid "Tomorrow"
 msgstr "I morgen"
 
-#: ../data/window.ui.h:1
+#: data/window.ui:33
 msgid "Places"
 msgstr "Steder"
 
-#: ../data/window.ui.h:2
+#: data/window.ui:55
 msgid "Refresh"
 msgstr "Oppdater"
 
-#: ../data/window.ui.h:3
+#: data/window.ui:113
 msgid "Search for a location"
 msgstr "Søk etter en lokasjon"
 
-#: ../data/window.ui.h:4
+#: data/window.ui:129
 msgid "To see weather information, enter the name of a city."
 msgstr "Oppgi navnet på en by for å se informasjon om vær."
 
-#: ../src/app/forecast.js:37
+#: src/app/forecast.js:35
 msgid "Forecast"
 msgstr "Værmelding"
 
-#: ../src/app/forecast.js:111
+#: src/app/forecast.js:116
 msgid "Forecast not available"
 msgstr "Værmelding ikke tilgjengelig"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:127
+#: src/app/forecast.js:132
 msgid "%l∶%M %p"
 msgstr "%H.%M"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:130
+#: src/app/forecast.js:135
 msgid "%R"
 msgstr "%R"
 
-#: ../src/app/weeklyForecast.js:36
+#: src/app/weeklyForecast.js:35
 msgid "Weekly Forecast"
 msgstr "Værmelding for uken"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: ../src/app/weeklyForecast.js:121
+#: src/app/weeklyForecast.js:120
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:115
+#: src/app/window.js:139
 msgid "Select Location"
 msgstr "Velg lokasjon"
 
-#: ../src/app/window.js:225
+#: src/app/window.js:254
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: ../src/app/window.js:227
+#: src/app/window.js:256
 msgid "A weather application"
 msgstr "Et program for vær"
 
-#: ../src/app/world.js:39
+#: src/app/world.js:38
 msgid "World view"
 msgstr "Verdensvisning"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: ../src/misc/util.js:159
+#: src/misc/util.js:140
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -215,7 +212,7 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
