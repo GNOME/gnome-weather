@@ -1,68 +1,44 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Korostil <ted.korostiled@gmail.com>, 2013, 2014, 2015, 2016.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-22 19:48+0200\n"
-"PO-Revision-Date: 2016-03-22 19:49+0300\n"
-"Last-Translator: Daniel Korostil <ted.korostiled@gmail.com>\n"
-"Language-Team: linux.org.ua\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2019-10-22 01:19+0000\n"
+"PO-Revision-Date: 2020-03-11 20:26+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.03.70\n"
 "X-Project-Style: gnome\n"
 
-#: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "_Створити"
-
-#: ../data/app-menu.ui.h:2
-msgid "Temperature unit"
-msgstr "Одиниця температури"
-
-#: ../data/app-menu.ui.h:3
-msgid "Celsius"
-msgstr "Цельсій"
-
-#: ../data/app-menu.ui.h:4
-msgid "Fahrenheit"
-msgstr "Фаренгейт"
-
-#: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "Про програму"
-
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "Вийти"
-
-#: ../data/city.ui.h:1
+#: data/city.ui:8
 msgid "City view"
 msgstr "Огляд міста"
 
-#: ../data/city.ui.h:2
+#: data/city.ui:30
 msgid "Loading…"
 msgstr "Завантаження…"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: src/app/window.js:255 src/service/main.js:48
 msgid "Weather"
 msgstr "Погода"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
-#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: data/org.gnome.Weather.appdata.xml.in.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "Показувати погодні умови і прогноз"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -70,7 +46,7 @@ msgstr ""
 "Маленька програма, яка дозволяє стежити за поточними погодними умовами "
 "вашого міста або будь-де в світі."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+#: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -79,29 +55,39 @@ msgstr ""
 "подробицями для поточного і наступного дня, використовуючи різні служби в "
 "інтернеті."
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+#: data/org.gnome.Weather.appdata.xml.in.in:24
+#| msgid ""
+#| "It also optionally integrates with the GNOME Shell, allowing you see the "
+#| "current conditions of the most recently searched cities by just typing "
+#| "its name in the Activities Overview."
 msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you see the "
-"current conditions of the most recently searched cities by just typing its "
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
 "Також необов'язково вбудовується в GNOME Shell, дозволяючи бачити поточні "
-"погодні умови найнедавніших міст просто ввівши його назву в огляді "
+"погодні умови найнедавніших міст. Достатньо ввести потрібного вам міста в"
+" огляді "
 "діяльності."
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in.in:74
+msgid "The GNOME Project"
+msgstr "Проєкт GNOME"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "Погода;Прогноз;"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+#: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
 msgstr "Дозволяє показувати відомості про погоду для вашої місцевості."
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+#: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
 msgstr "Підібрані міста для показування погоди"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+#: data/org.gnome.Weather.gschema.xml:7
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
@@ -109,11 +95,11 @@ msgstr ""
 "Місця показані в світовому перегляді. Кожне значення — це GVariant, який "
 "повертає gweather_location_serialize()."
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
+#: data/org.gnome.Weather.gschema.xml:14
 msgid "Automatic location"
 msgstr "Автоматичне знаходження місця"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
+#: data/org.gnome.Weather.gschema.xml:15
 msgid ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
@@ -121,97 +107,117 @@ msgstr ""
 "Автоматичне знаходження місця — значення, яке визначає, чи шукати поточне "
 "місце перебування, чи ні."
 
-#: ../data/places-popover.ui.h:1
+#: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Автоматичне знаходження місця"
 
-#: ../data/places-popover.ui.h:2
+#: data/places-popover.ui:84
 msgid "Locating…"
 msgstr "Знаходження…"
 
-#: ../data/places-popover.ui.h:3
+#: data/places-popover.ui:141
 msgid "Search for a city"
 msgstr "Пошук міста"
 
-#: ../data/places-popover.ui.h:4
+#: data/places-popover.ui:173
 msgid "Viewed Recently"
 msgstr "Недавно переглянуті"
 
-#: ../data/weather-widget.ui.h:1
+#: data/primary-menu.ui:4
+#| msgid "Temperature unit"
+msgid "_Temperature Unit"
+msgstr "Одиниця _температури"
+
+#: data/primary-menu.ui:6
+#| msgid "Celsius"
+msgid "_Celsius"
+msgstr "Градуси _Цельсія"
+
+#: data/primary-menu.ui:11
+#| msgid "Fahrenheit"
+msgid "_Fahrenheit"
+msgstr "Градуси _Фаренгейта"
+
+#: data/primary-menu.ui:19
+#| msgid "About Weather"
+msgid "_About Weather"
+msgstr "_Про «Погоду»"
+
+#: data/weather-widget.ui:39
 msgid "Current conditions"
 msgstr "Поточні погодні умови"
 
-#: ../data/weather-widget.ui.h:2
+#: data/weather-widget.ui:151
 msgid "Today"
 msgstr "Сьогодні"
 
-#: ../data/weather-widget.ui.h:3
+#: data/weather-widget.ui:180
 msgid "Tomorrow"
 msgstr "Завтра"
 
-#: ../data/window.ui.h:1
+#: data/window.ui:33
 msgid "Places"
 msgstr "Місця"
 
-#: ../data/window.ui.h:2
+#: data/window.ui:55
 msgid "Refresh"
 msgstr "Оновити"
 
-#: ../data/window.ui.h:3
+#: data/window.ui:113
 msgid "Search for a location"
 msgstr "Пошук місцевості"
 
-#: ../data/window.ui.h:4
+#: data/window.ui:129
 msgid "To see weather information, enter the name of a city."
 msgstr "Уведіть назву міста, щоб побачити інформацію про погоду."
 
-#: ../src/app/forecast.js:37
+#: src/app/forecast.js:35
 msgid "Forecast"
 msgstr "Прогноз погоди"
 
-#: ../src/app/forecast.js:111
+#: src/app/forecast.js:116
 msgid "Forecast not available"
 msgstr "Прогноз недоступний"
 
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:127
+#: src/app/forecast.js:132
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:130
+#: src/app/forecast.js:135
 msgid "%R"
 msgstr "%R"
 
-#: ../src/app/weeklyForecast.js:36
+#: src/app/weeklyForecast.js:35
 msgid "Weekly Forecast"
 msgstr "Тижневий прогноз"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: ../src/app/weeklyForecast.js:121
+#: src/app/weeklyForecast.js:120
 msgid "%A"
 msgstr "%A"
 
-#: ../src/app/window.js:115
+#: src/app/window.js:139
 msgid "Select Location"
 msgstr "Вибрати місцевість"
 
-#: ../src/app/window.js:225
+#: src/app/window.js:254
 msgid "translator-credits"
 msgstr "Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: ../src/app/window.js:227
+#: src/app/window.js:256
 msgid "A weather application"
 msgstr "Погодна програма"
 
-#: ../src/app/world.js:39
+#: src/app/world.js:38
 msgid "World view"
 msgstr "Світовий огляд"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: ../src/misc/util.js:159
+#: src/misc/util.js:140
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -219,10 +225,19 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "_New"
+#~ msgstr "_Створити"
+
+#~ msgid "About"
+#~ msgstr "Про програму"
+
+#~ msgid "Quit"
+#~ msgstr "Вийти"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
@@ -387,6 +402,3 @@ msgstr "%s, %s"
 #~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 #~ msgstr ""
 #~ "Натисніть кнопку <b>Додати</b> на панелі, щоб розширити кількість місць"
-
-#~ msgid "About Weather"
-#~ msgstr "Про програму"
