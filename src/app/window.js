@@ -245,9 +245,9 @@ var MainWindow = GObject.registerClass(
             name_prefix = '(Development) ';
         }
 
-        let copyright = 'Copyright 2013-2015 The Weather Developers';
+        let copyright_info = 'Copyright 2013-2015 The Weather Developers';
         let attribution = this._cityView.info ? this._cityView.info.get_attribution() : '';
-        copyright += attribution ? '\n' + attribution : '';
+        copyright_info += attribution ? '\n' + attribution : '';
         let aboutDialog = new Gtk.AboutDialog(
             { artists: artists,
               authors: [ 'Giovanni Campagna <gcampagna@src.gnome.org>' ],
@@ -258,19 +258,12 @@ var MainWindow = GObject.registerClass(
               logo_icon_name: pkg.name,
               version: pkg.version,
               website: 'https://wiki.gnome.org/Apps/Weather',
+              copyright: copyright_info,
               wrap_license: true,
               modal: true,
               transient_for: this,
               use_header_bar: true
             });
-
-        // HACK: we need to poke into gtkaboutdialog internals
-        // to set the copyright with markup like attribution requires
-        // FIXME: file a gtk+ bug
-
-        let copyrightLabel = aboutDialog.get_template_child(Gtk.AboutDialog, 'copyright_label');
-        copyrightLabel.set_markup('<span size="small">' + copyright + '</span>');
-        copyrightLabel.show();
 
         aboutDialog.show();
         aboutDialog.connect('response', function() {
