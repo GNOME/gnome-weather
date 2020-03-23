@@ -224,6 +224,12 @@ var WorldModel = GObject.registerClass({
     }
 
     _addLocationInternal(newLocation, isCurrentLocation) {
+        for (let i = 0; i < this._infoList.length; i++) {
+            let info = this._infoList[i];
+            if (info.get_location().equal(newLocation))
+                return info;
+        }
+
         let info = new GWeather.Info({ location: newLocation,
                                        enabled_providers: this._providers });
         this._addInfoInternal(info, isCurrentLocation);
