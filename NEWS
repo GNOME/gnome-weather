@@ -1,3 +1,15 @@
+3.34.1
+======
+
+* Bugs fixed:
+  - #90 Always shows weather for wrong location (Michael Catanzaro)
+
+* Translation updates:
+ - Chinese (Taiwan)
+ - Kurdish Sorani
+ - Malay
+ - Slovak
+
 3.34.0
 ======
 * Export location information to GNOME Shell (Florian Müllner)
