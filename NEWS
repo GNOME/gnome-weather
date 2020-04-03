@@ -1,3 +1,11 @@
+3.32.3
+======
+* Bugs fixed:
+ - #90 Always shows weather for wrong location (Michael Catanzaro)
+
+* Translation updates:
+ - Icelandic
+
 3.32.2
 ======
 * Bugs fixed:
