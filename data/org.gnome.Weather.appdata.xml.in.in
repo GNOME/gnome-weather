@@ -46,6 +46,7 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2020-04-03" version="3.34.1"/>
     <release date="2019-09-24" version="3.34.0">
       <description>
         <p>GNOME Weather 3.34 includes bug fixes and general improvements:</p>
