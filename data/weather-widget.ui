@@ -51,7 +51,7 @@
                         <property name="left_attach">0</property>
                         <property name="top_attach">0</property>
                         <property name="width">1</property>
-                        <property name="height">3</property>
+                        <property name="height">2</property>
                       </packing>
                     </child>
                     <child>
@@ -81,40 +81,6 @@
                       <packing>
                         <property name="left_attach">1</property>
                         <property name="top_attach">1</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox" id="windBox">
-                        <property name="name">wind-box</property>
-                        <property name="visible">True</property>
-                        <property name="orientation">horizontal</property>
-                        <property name="halign">start</property>
-                        <property name="valign">start</property>
-                        <property name="spacing">12</property>
-                        <child>
-                          <object class="GtkImage" id="windIcon">
-                            <property name="name">wind-icon</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="halign">start</property>
-                            <property name="icon-name">weather-windy-symbolic</property>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkLabel" id="windLabel">
-                            <property name="name">wind-label</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="vexpand">True</property>
-                            <property name="halign">start</property>
-                          </object>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">2</property>
                         <property name="width">1</property>
                         <property name="height">1</property>
                       </packing>
