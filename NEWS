@@ -1,3 +1,17 @@
+3.36.0
+======
+
+* Bugs fixed:
+  - #90 Always shows weather for wrong location (Michael Catanzaro)
+  - !26 Deduplicate cities in locations popover (Michael Catanzaro)
+* Bugs introduced:
+  - #95 Unknown location since 3.34.1 (sorry!)
+
+* New nightly app icon (Jakub Steiner)
+* Publish nightlies from CI (Christopher Davis)
+* Added README (Christopher Davis)
+* Many translation updates
+
 3.34.0
 ======
 * Export location information to GNOME Shell (Florian Müllner)
