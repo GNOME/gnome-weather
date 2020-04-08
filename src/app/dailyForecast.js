@@ -40,17 +40,11 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
     }
 
     // get infos for the correct day
-    _preprocess(day, infos) {
-        let ret = [];
+    _preprocess(infos) {
         let i;
 
-        // look for 14:00 of the given day
-        // (14:00 is chosen because usually it's the highest temperature
-        // in the day, so it makes sense as a temperature value)
-        day = GLib.DateTime.new_local(day.get_year(),
-                                      day.get_month(),
-                                      day.get_day_of_month(),
-                                      14, 0, 0);
+        let day = GLib.DateTime.new_now_local();
+        day = day.add_days(1);
 
         // First ignore all infos that are on a different
         // older than day.
@@ -60,55 +54,40 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
         for (i = 0; i < infos.length; i++) {
             let info = infos[i];
 
-            let [ok, date] = info.get_value_update();
-            let datetime = GLib.DateTime.new_from_unix_local(date);
-
+            let datetime = Util.getDateTime(info);
             if (Util.arrayEqual(day.get_ymd(), datetime.get_ymd())) {
                 break;
             }
         }
 
-        let infoCount = 0;
-        while (i < infos.length && infoCount < 5) {
-            let count = 0;
-            let best = null;
-            let diff = 0;
-
+        let weekInfos = [];
+        while (i < infos.length && weekInfos.length < 7) {
+            let dayInfos = {day: day, infos: []};
             for ( ; i < infos.length; i++) {
                 let info = infos[i];
-                let [ok, date] = info.get_value_update();
-                let datetime = GLib.DateTime.new_from_unix_local(date);
 
-                if (!Util.arrayEqual(day.get_ymd(),
-                                     datetime.get_ymd()))
+                let datetime = Util.getDateTime(info);
+                if (!Util.arrayEqual(day.get_ymd(), datetime.get_ymd())) {
                     break;
-
-                let v = Math.abs(datetime.difference(day));
-                if (best == null || v < diff) {
-                    best = info;
-                    diff = v;
                 }
+
+                dayInfos.infos.push(info);
             }
-            if (best)
-                ret.push(best);
+            weekInfos.push(dayInfos);
             day = day.add_days(1);
-            infoCount++;
         }
-        return ret;
+        return weekInfos;
     }
 
     update(infos) {
-        let day = GLib.DateTime.new_now_local();
-        day = day.add_days(1);
+        let weekInfos = this._preprocess(infos);
 
-        let dailyInfo = this._preprocess(day, infos);
+        if (weekInfos.length > 0) {
+            for (let i = 0; i < weekInfos.length; i++) {
+                let dayInfos = weekInfos[i];
+                this._addDayEntry(dayInfos);
 
-        if (dailyInfo.length > 0) {
-            for (let i = 0; i < dailyInfo.length; i++) {
-                let info = dailyInfo[i];
-                this._addDayEntry(info)
-
-                if (i < dailyInfo.length - 1) {
+                if (i < weekInfos.length - 1) {
                     this._addSeparator();
                 }
             }
@@ -120,22 +99,113 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
         }
     }
 
-    _addDayEntry(info) {
-        let [ok, date] = info.get_value_update();
-        let datetime = GLib.DateTime.new_from_unix_local(date);
+    _addDayEntry({day, infos}) {
+        let maxInfo;
+        let maxTemp = -Infinity;
+
+        let minInfo;
+        let minTemp = Infinity;
+
+        day = Util.getDay(day);
+        let dayInfo;
+        let dayDiff = Infinity;
+
+        let night = Util.getNight(day);
+        let nightInfo;
+        let nightDiff = Infinity;
+
+        let morning = Util.getMorning(day);
+        let morningInfo;
+        let morningDiff = Infinity;
+
+        let afternoon = Util.getAfternoon(day);
+        let afternoonInfo;
+        let afternoonDiff = Infinity;
+
+        let evening = Util.getEvening(day);
+        let eveningInfo;
+        let eveningDiff = Infinity;
+
+        for (let i = 0; i < infos.length; i++) {
+            let info = infos[i];
+
+            let temp = Util.getTemp(info);
+            if (temp > maxTemp) {
+                maxInfo = info;
+                maxTemp = temp;
+            }
+            if (temp < minTemp) {
+                minInfo = info;
+                minTemp = minTemp;
+            }
+
+            let datetime = Util.getDateTime(info);
+
+            let diff = Math.abs(datetime.difference(day));
+            if (diff < dayDiff) {
+                dayInfo = info;
+                dayDiff = diff;
+            }
+
+            diff = Math.abs(datetime.difference(night));
+            if (diff < nightDiff) {
+                nightInfo = info;
+                nightDiff = diff;
+            }
+
+            diff = Math.abs(datetime.difference(morning));
+            if (diff < morningDiff) {
+                morningInfo = info;
+                morningDiff = diff;
+            }
+
+            diff = Math.abs(datetime.difference(afternoon));
+            if (diff < afternoonDiff) {
+                afternoonInfo = info;
+                afternoonDiff = diff;
+            }
+
+            diff = Math.abs(datetime.difference(evening));
+            if (diff < eveningDiff) {
+                eveningInfo = info;
+                eveningDiff = diff;
+            }
+        }
 
         let dayEntry = new DayEntry();
 
         /* Translators: this is the time format for weekday name according to the current locale */
         let nameFormat = _("%a");
-        dayEntry.nameLabel.label = datetime.format(nameFormat);
+        dayEntry.nameLabel.label = day.format(nameFormat);
 
         /* Translators: this is the time format for day and month name according to the current locale */
         let dateFormat = _("%e %b");
-        dayEntry.dateLabel.label = datetime.format(dateFormat);
+        dayEntry.dateLabel.label = day.format(dateFormat);
 
-        dayEntry.image.iconName = info.get_symbolic_icon_name();
-        dayEntry.temperatureLabel.label = Util.getTemperature(info);
+        dayEntry.image.iconName = dayInfo.get_symbolic_icon_name();
+
+        dayEntry.maxTemperatureLabel.label = maxInfo.get_temp_summary();
+        dayEntry.minTemperatureLabel.label = minInfo.get_temp_summary();
+
+        dayEntry.nightTemperatureLabel.label = nightInfo.get_temp_summary();
+        dayEntry.nightImage.iconName = nightInfo.get_symbolic_icon_name();
+        dayEntry.nightHumidity.label = nightInfo.get_humidity();
+        dayEntry.nightWind.label = nightInfo.get_wind();
+
+        dayEntry.morningTemperatureLabel.label = morningInfo.get_temp_summary();
+        dayEntry.morningImage.iconName = morningInfo.get_symbolic_icon_name();
+        dayEntry.morningHumidity.label = morningInfo.get_humidity();
+        dayEntry.morningWind.label = morningInfo.get_wind();
+
+        dayEntry.afternoonTemperatureLabel.label = afternoonInfo.get_temp_summary();
+        dayEntry.afternoonImage.iconName = afternoonInfo.get_symbolic_icon_name();
+        dayEntry.afternoonHumidity.label = afternoonInfo.get_humidity();
+        dayEntry.afternoonWind.label = afternoonInfo.get_wind();
+
+        dayEntry.eveningTemperatureLabel.label = eveningInfo.get_temp_summary();
+        dayEntry.eveningImage.iconName = eveningInfo.get_symbolic_icon_name();
+        dayEntry.eveningHumidity.label = eveningInfo.get_humidity();
+        dayEntry.eveningWind.label = eveningInfo.get_wind();
 
         this._box.pack_start(dayEntry, false, false, 0);
     }
@@ -153,7 +223,16 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
 
 var DayEntry = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/day-entry.ui',
-    InternalChildren: ['nameLabel', 'dateLabel', 'image', 'temperatureLabel'],
+    InternalChildren: ['nameLabel', 'dateLabel', 'image',
+                       'maxTemperatureLabel', 'minTemperatureLabel',
+                       'nightTemperatureLabel', 'nightImage',
+                       'nightHumidity', 'nightWind',
+                       'morningTemperatureLabel', 'morningImage',
+                       'morningHumidity', 'morningWind',
+                       'afternoonTemperatureLabel', 'afternoonImage',
+                       'afternoonHumidity', 'afternoonWind',
+                       'eveningTemperatureLabel', 'eveningImage',
+                       'eveningHumidity', 'eveningWind'],
 }, class DayEntry extends Gtk.Box {
 
     _init(params) {
@@ -172,7 +251,75 @@ var DayEntry = GObject.registerClass({
         return this._image;
     }
 
-    get temperatureLabel() {
-        return this._temperatureLabel;
+    get maxTemperatureLabel() {
+        return this._maxTemperatureLabel;
+    }
+
+    get minTemperatureLabel() {
+        return this._minTemperatureLabel;
+    }
+
+    get nightTemperatureLabel() {
+        return this._nightTemperatureLabel;
+    }
+
+    get nightImage() {
+        return this._nightImage;
+    }
+
+    get nightHumidity() {
+        return this._nightHumidity;
+    }
+
+    get nightWind() {
+        return this._nightWind;
+    }
+
+    get morningTemperatureLabel() {
+        return this._morningTemperatureLabel;
+    }
+
+    get morningImage() {
+        return this._morningImage;
+    }
+
+    get morningHumidity() {
+        return this._morningHumidity;
+    }
+
+    get morningWind() {
+        return this._morningWind;
+    }
+
+    get afternoonTemperatureLabel() {
+        return this._afternoonTemperatureLabel;
+    }
+
+    get afternoonImage() {
+        return this._afternoonImage;
+    }
+
+    get afternoonHumidity() {
+        return this._afternoonHumidity;
+    }
+
+    get afternoonWind() {
+        return this._afternoonWind;
+    }
+
+    get eveningTemperatureLabel() {
+        return this._eveningTemperatureLabel;
+    }
+
+    get eveningImage() {
+        return this._eveningImage;
+    }
+
+    get eveningHumidity() {
+        return this._eveningHumidity;
+    }
+
+    get eveningWind() {
+        return this._eveningWind;
     }
 });
