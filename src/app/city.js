@@ -108,17 +108,17 @@ var WeatherWidget = GObject.registerClass({
     _syncLeftRightButtons() {
         let hadjustment = this._forecastStack.visible_child.get_hadjustment();
         if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
-            this._leftButton.set_sensitive(false);
-            this._rightButton.set_sensitive(false);
+            this._leftButton.hide();
+            this._rightButton.hide();
         } else if (hadjustment.value == hadjustment.get_lower()){
-            this._leftButton.set_sensitive(false);
-            this._rightButton.set_sensitive(true);
+            this._leftButton.hide();
+            this._rightButton.show();
         } else if (hadjustment.value >= (hadjustment.get_upper() - hadjustment.page_size)){
-            this._leftButton.set_sensitive(true);
-            this._rightButton.set_sensitive(false);
+            this._leftButton.show();
+            this._rightButton.hide();
         } else {
-            this._leftButton.set_sensitive(true);
-            this._rightButton.set_sensitive(true);
+            this._leftButton.show();
+            this._rightButton.show();
         }
     }
 
