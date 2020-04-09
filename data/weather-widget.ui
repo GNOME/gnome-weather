@@ -24,8 +24,9 @@
                 <property name="halign">center</property>
                 <property name="valign">start</property>
                 <property name="margin_start">50</property>
-                <property name="margin_end">20</property>
+                <property name="margin_end">50</property>
                 <property name="margin_top">50</property>
+                <property name="margin_bottom">50</property>
                 <property name="hexpand">True</property>
                 <property name="vexpand">True</property>
                 <property name="row_spacing">32</property>
@@ -146,7 +147,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkGrid" id="forecast-parent-grid">
+                  <object class="GtkOverlay" id="forecast-overlay">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
@@ -157,8 +158,6 @@
                           <object class="GtkScrolledWindow" id="forecast-hourly">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="margin_start">32</property>
-                            <property name="margin_end">32</property>
                             <property name="vscrollbar_policy">never</property>
                             <property name="min_content_width">332</property>
                             <child>
@@ -182,8 +181,6 @@
                           <object class="GtkScrolledWindow" id="forecast-daily">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="margin_start">32</property>
-                            <property name="margin_end">32</property>
                             <property name="vscrollbar_policy">never</property>
                             <property name="min_content_width">332</property>
                             <child>
@@ -206,15 +203,15 @@
                         </child>
                       </object>
                       <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">0</property>
+                        <property name="index">-1</property>
                       </packing>
                     </child>
-                    <child>
+                    <child type="overlay">
                       <object class="GtkButton" id="leftButton">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
+                        <property name="halign">start</property>
                         <property name="valign">center</property>
                         <child>
                           <object class="GtkImage" id="left-image">
@@ -228,16 +225,13 @@
                           <class name="osd"/>
                         </style>
                       </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
-                      </packing>
                     </child>
-                    <child>
+                    <child type="overlay">
                       <object class="GtkButton" id="rightButton">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">True</property>
+                        <property name="halign">end</property>
                         <property name="valign">center</property>
                         <child>
                           <object class="GtkImage" id="right-image">
@@ -251,8 +245,7 @@
                         </style>
                       </object>
                       <packing>
-                        <property name="left_attach">2</property>
-                        <property name="top_attach">0</property>
+                        <property name="index">1</property>
                       </packing>
                     </child>
                   </object>
