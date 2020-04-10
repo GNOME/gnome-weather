@@ -1,3 +1,8 @@
+3.32.4
+======
+* Bugs fixed:
+ - #95 Unknown temperature and cloud conditions when using autolocation (Michael Catanzaro)
+
 3.32.3
 ======
 * Bugs fixed:
