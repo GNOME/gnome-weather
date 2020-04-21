@@ -19,7 +19,9 @@
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
+const Gdk = imports.gi.Gdk;
 const Gtk = imports.gi.Gtk;
+const GWeather = imports.gi.GWeather;
 
 const Util = imports.misc.util;
 
@@ -40,6 +42,8 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL,
                                   spacing: 0});
         this.add(this._box);
+
+        this._hourlyInfo = [];
 
         this._hasForecastInfo = false;
     }
@@ -86,6 +90,8 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
                                         visible: true });
             this._box.pack_start(label, true, false, 0);
         }
+
+        this._hourlyInfo = hourlyInfo;
     }
 
     _addHourEntry(info, tz) {
@@ -124,6 +130,48 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
 
     hasForecastInfo() {
         return this._hasForecastInfo;
+    }
+
+    vfunc_draw(cr) {
+        let hourlyInfo = this._hourlyInfo;
+
+        let temps = hourlyInfo.map(info => {
+            let [ok, t] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
+            return t;
+        });
+        let maxTemp = Math.max(...temps);
+        temps = temps.map(t => t / maxTemp);
+        let n = temps.length;
+
+        let width = this.get_allocated_width();
+        let height = this.get_allocated_height();
+
+        let top_padding = 80;
+        let bottom_padding = 40;
+
+        let canvas_height = height - top_padding - bottom_padding;
+        let step = (width - (n - 1)) / n;
+
+        cr.setSourceRGB(209.0 / 255.0, 148.0 / 255.0, 12.0 / 255.0);
+        cr.setLineWidth(4);
+
+        cr.moveTo (0, top_padding + ((1 - temps[0]) * canvas_height));
+        for (let i = 0; i < n; i++) {
+            cr.lineTo((i * step) + step / 2, top_padding + ((1 - temps[i]) * canvas_height));
+        }
+        cr.lineTo(width, top_padding + ((1 - temps[n - 1]) * canvas_height));
+        cr.strokePreserve();
+
+        cr.lineTo(width, height);
+        cr.lineTo(0, height);
+
+        cr.setSourceRGB(238.0 / 255.0, 214.0 / 255.0, 127.0 / 255.0);
+        cr.fill();
+
+        super.vfunc_draw(cr);
+        cr.$dispose();
+
+        return Gdk.EVENT_PROPAGATE;
     }
 });
 
