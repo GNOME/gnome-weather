@@ -32,8 +32,6 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
         }, params));
         this.get_accessible().accessible_name = _("Daily Forecast");
 
-        this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
-
         this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL,
                                   spacing: 0});
         this.add(this._box);
