@@ -55,9 +55,8 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
             let info = infos[i];
 
             let datetime = Util.getDateTime(info);
-            if (Util.arrayEqual(day.get_ymd(), datetime.get_ymd())) {
+            if (Util.arrayEqual(day.get_ymd(), datetime.get_ymd()))
                 break;
-            }
         }
 
         let weekInfos = [];
@@ -67,9 +66,8 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
                 let info = infos[i];
 
                 let datetime = Util.getDateTime(info);
-                if (!Util.arrayEqual(day.get_ymd(), datetime.get_ymd())) {
+                if (!Util.arrayEqual(day.get_ymd(), datetime.get_ymd()))
                     break;
-                }
 
                 dayInfos.infos.push(info);
             }
@@ -87,9 +85,8 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
                 let dayInfos = weekInfos[i];
                 this._addDayEntry(dayInfos);
 
-                if (i < weekInfos.length - 1) {
+                if (i < weekInfos.length - 1)
                     this._addSeparator();
-                }
             }
         } else {
             let label = new Gtk.Label({ label: _("Forecast not available"),

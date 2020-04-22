@@ -59,9 +59,9 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
             let [ok, date] = info.get_value_update();
             let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(now.get_timezone());
 
-            if (datetime.difference(now) <= 0) {
+            if (datetime.difference(now) <= 0)
                 continue;
-            }
+
             if (datetime.difference(now) >= TWENTY_FOUR_HOURS)
                 break;
 
@@ -80,9 +80,8 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
                 let info = hourlyInfo[i];
                 this._addHourEntry(info, tz);
 
-                if (i < hourlyInfo.length - 1) {
+                if (i < hourlyInfo.length - 1)
                     this._addSeparator();
-                }
             }
         } else {
             let label = new Gtk.Label({ label: _("Forecast not available"),
@@ -156,9 +155,8 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         cr.setLineWidth(4);
 
         cr.moveTo (0, top_padding + ((1 - temps[0]) * canvas_height));
-        for (let i = 0; i < n; i++) {
+        for (let i = 0; i < n; i++)
             cr.lineTo((i * step) + step / 2, top_padding + ((1 - temps[i]) * canvas_height));
-        }
         cr.lineTo(width, top_padding + ((1 - temps[n - 1]) * canvas_height));
         cr.strokePreserve();
 
