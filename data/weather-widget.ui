@@ -119,6 +119,11 @@
                         <property name="top_attach">2</property>
                       </packing>
                     </child>
+                    <child internal-child="accessible">
+                      <object class="AtkObject" id="inner-grid-atkobject">
+                        <property name="AtkObject::accessible-name" translatable="yes">Current conditions</property>
+                      </object>
+                    </child>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
