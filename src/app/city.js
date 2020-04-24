@@ -36,8 +36,8 @@ var WeatherWidget = GObject.registerClass({
                        'temperatureLabel', 'conditionsLabel', 'windLabel',
                        'timeLabel', 'timeGrid', 'forecastStack',
                        'leftButton', 'rightButton',
-                       'forecast-hourly', 'forecast-hourly-viewport',
-                       'forecast-daily', 'forecast-daily-viewport'],
+                       'forecast-hourly', 'forecast-hourly-alignment',
+                       'forecast-daily', 'forecast-daily-alignment'],
 }, class WeatherWidget extends Gtk.Frame {
 
     _init(params) {
@@ -61,7 +61,7 @@ var WeatherWidget = GObject.registerClass({
             }
 
             this._forecasts[t] = box;
-            this['_forecast_' + t + '_viewport'].add(box);
+            this['_forecast_' + t + '_alignment'].add(box);
 
             let fsw = this['_forecast_' + t];
             let hscrollbar = fsw.get_hscrollbar();
