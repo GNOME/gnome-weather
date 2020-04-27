@@ -35,7 +35,7 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
             shadow_type: Gtk.ShadowType.IN,
             name: 'hourly-forecast-frame',
         }, params));
-        this.get_accessible().accessible_name = _("Hourly Forecast");
+        this.get_accessible().accessible_name = _('Hourly Forecast');
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
@@ -84,7 +84,7 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
                     this._addSeparator();
             }
         } else {
-            let label = new Gtk.Label({ label: _("Forecast not available"),
+            let label = new Gtk.Label({ label: _('Forecast not available'),
                                         use_markup: true,
                                         visible: true });
             this._box.pack_start(label, true, false, 0);
@@ -102,10 +102,10 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
 
         if (timeSetting == '12h')
             /* Translators: this is a time format without date used for AM/PM */
-            timeFormat = _("%l∶%M %p");
+            timeFormat = _('%l∶%M %p');
         else
             /* Translators: this is a time format without date used for 24h mode */
-            timeFormat = _("%R");
+            timeFormat = _('%R');
 
         let hourEntry = new HourEntry();
         hourEntry.timeLabel.label = datetime.format(timeFormat);
