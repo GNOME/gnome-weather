@@ -30,7 +30,7 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
             shadow_type: Gtk.ShadowType.IN,
             name: 'daily-forecast-frame',
         }, params));
-        this.get_accessible().accessible_name = _("Daily Forecast");
+        this.get_accessible().accessible_name = _('Daily Forecast');
 
         this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL,
                                   spacing: 0});
@@ -87,7 +87,7 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
                     this._addSeparator();
             }
         } else {
-            let label = new Gtk.Label({ label: _("Forecast not available"),
+            let label = new Gtk.Label({ label: _('Forecast not available'),
                                         use_markup: true,
                                         visible: true });
             this._box.pack_start(label, true, false, 0);
@@ -173,7 +173,7 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
         dayEntry.nameLabel.label = day.format(nameFormat);
 
         /* Translators: this is the time format for day and month name according to the current locale */
-        let dateFormat = _("%e %b");
+        let dateFormat = _('%e %b');
         dayEntry.dateLabel.label = day.format(dateFormat);
 
         dayEntry.image.iconName = dayInfo.get_symbolic_icon_name();
