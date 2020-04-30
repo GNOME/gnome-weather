@@ -169,8 +169,7 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
 
         let dayEntry = new DayEntry();
 
-        /* Translators: this is the time format for weekday name according to the current locale */
-        let nameFormat = _("%a");
+        let nameFormat = '%a';
         dayEntry.nameLabel.label = day.format(nameFormat);
 
         /* Translators: this is the time format for day and month name according to the current locale */
