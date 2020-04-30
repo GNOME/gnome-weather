@@ -104,8 +104,7 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
             /* Translators: this is a time format without date used for AM/PM */
             timeFormat = _("%l∶%M %p");
         else
-            /* Translators: this is a time format without date used for 24h mode */
-            timeFormat = _("%R");
+            timeFormat = '%R';
 
         let hourEntry = new HourEntry();
         hourEntry.timeLabel.label = datetime.format(timeFormat);
