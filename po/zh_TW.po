@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-10-22 01:19+0000\n"
-"PO-Revision-Date: 2020-01-22 02:20+0800\n"
-"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
+"POT-Creation-Date: 2020-04-22 15:22+0000\n"
+"PO-Revision-Date: 2020-05-02 00:34+0800\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 
 #: data/city.ui:8
 msgid "City view"
@@ -125,17 +125,17 @@ msgstr "華氏(_F)"
 
 #: data/primary-menu.ui:19
 msgid "_About Weather"
-msgstr "關於天氣(_A)"
+msgstr "關於《天氣》(_A)"
 
 #: data/weather-widget.ui:39
 msgid "Current conditions"
 msgstr "目前情況"
 
-#: data/weather-widget.ui:151
+#: data/weather-widget.ui:185
 msgid "Today"
 msgstr "今天"
 
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:214
 msgid "Tomorrow"
 msgstr "明天"
 
