@@ -17,14 +17,14 @@
           <object class="GtkGrid" id="outerGrid">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="valign">start</property>
+            <property name="vexpand">True</property>
             <child>
               <object class="GtkGrid" id="alignment">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="halign">center</property>
-                <property name="margin_start">50</property>
-                <property name="margin_end">50</property>
+                <property name="halign">start</property>
+                <property name="margin_start">20</property>
+                <property name="margin_end">20</property>
                 <property name="margin_top">50</property>
                 <property name="margin_bottom">32</property>
                 <property name="row_spacing">32</property>
@@ -68,7 +68,6 @@
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
                         <property name="valign">start</property>
-                        <property name="vexpand">True</property>
                       </object>
                       <packing>
                         <property name="left_attach">1</property>
@@ -103,7 +102,6 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="halign">start</property>
-                            <property name="vexpand">True</property>
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -223,8 +221,8 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">center</property>
-                                <property name="left_padding">50</property>
-                                <property name="right_padding">50</property>
+                                <property name="left_padding">20</property>
+                                <property name="right_padding">20</property>
                                 <child>
                                   <placeholder/>
                                 </child>
@@ -255,8 +253,8 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="halign">center</property>
-                                <property name="left_padding">50</property>
-                                <property name="right_padding">50</property>
+                                <property name="left_padding">20</property>
+                                <property name="right_padding">20</property>
                                 <child>
                                   <placeholder/>
                                 </child>
