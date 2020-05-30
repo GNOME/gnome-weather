@@ -21,6 +21,7 @@ const GLib = imports.gi.GLib;
 const Gnome = imports.gi.GnomeDesktop;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
+const GWeather = imports.gi.GWeather;
 
 const WorldView = imports.app.world;
 const HourlyForecast = imports.app.hourlyForecast;
@@ -34,7 +35,8 @@ const SCROLLING_ANIMATION_TIME = 400000; //us
 var WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
-                       'placesButton', 'temperatureLabel', 'conditionsLabel', 'windLabel',
+                       'placesButton', 'placesLabel',
+                       'temperatureLabel', 'conditionsLabel', 'windLabel',
                        'timeLabel', 'timeGrid', 'forecastStack',
                        'leftButton', 'rightButton',
                        'forecast-hourly', 'forecast-hourly-alignment',
@@ -173,6 +175,20 @@ var WeatherWidget = GObject.registerClass({
 
     update(info) {
         this._info = info;
+
+        let location = info.location;
+        let city = location;
+        if (location.get_level() == GWeather.LocationLevel.WEATHER_STATION)
+            city = location.get_parent();
+
+        let country = city.get_parent();
+        while (country && country.get_level() > GWeather.LocationLevel.COUNTRY)
+            country = country.get_parent();
+
+        if (country)
+            this._placesLabel.set_text(city.get_name() + ', ' + country.get_name());
+        else
+            this._placesLabel.set_text(city.get_name());
 
         this._worldView.refilter();
 
