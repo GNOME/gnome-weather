@@ -22,6 +22,7 @@ const Gnome = imports.gi.GnomeDesktop;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 
+const WorldView = imports.app.world;
 const HourlyForecast = imports.app.hourlyForecast;
 const DailyForecast = imports.app.dailyForecast;
 const Util = imports.misc.util;
@@ -33,20 +34,23 @@ const SCROLLING_ANIMATION_TIME = 400000; //us
 var WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
-                       'temperatureLabel', 'conditionsLabel', 'windLabel',
+                       'placesButton', 'temperatureLabel', 'conditionsLabel', 'windLabel',
                        'timeLabel', 'timeGrid', 'forecastStack',
                        'leftButton', 'rightButton',
                        'forecast-hourly', 'forecast-hourly-alignment',
                        'forecast-daily', 'forecast-daily-alignment'],
 }, class WeatherWidget extends Gtk.Frame {
 
-    _init(params) {
+    _init(application, window, params) {
         super._init(Object.assign({
             shadow_type: Gtk.ShadowType.NONE,
             name: 'weather-page'
         }, params));
 
         this._info = null;
+
+        this._worldView = new WorldView.WorldContentView(application, window);
+        this._placesButton.set_popover(this._worldView);
 
         this._dailyForecasts = new DailyForecast.DailyForecastFrame();
 
@@ -170,6 +174,8 @@ var WeatherWidget = GObject.registerClass({
     update(info) {
         this._info = info;
 
+        this._worldView.refilter();
+
         this._conditionsLabel.label = Util.getWeatherConditions(info);
         this._temperatureLabel.label = info.get_temp_summary();
         this._windLabel.label = info.get_wind();
@@ -188,10 +194,10 @@ var WeatherView = GObject.registerClass({
     InternalChildren: ['spinner']
 }, class WeatherView extends Gtk.Stack {
 
-    _init(params) {
+    _init(application, window, params) {
         super._init(params);
 
-        this._infoPage = new WeatherWidget();
+        this._infoPage = new WeatherWidget(application, window);
         this.add_named(this._infoPage, 'info');
 
         this._info = null;
