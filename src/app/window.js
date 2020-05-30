@@ -77,10 +77,7 @@ var MainWindow = GObject.registerClass(
         this._header.title = title;
         this._header.subtitle = subtitle;
 
-        this._worldView = new WorldView.WorldContentView(this.application, this, { visible: true });
-        this._worldView.hide();
-
-        this._model = this._worldView.model;
+        this._model = this.application.model;
 
         this._searchView = builder.get_object('initial-grid');
 
@@ -88,11 +85,6 @@ var MainWindow = GObject.registerClass(
         this._searchEntry.connect('notify::location', (entry) => {
             this._searchLocationChanged(entry);
         });
-
-        let placesButton = builder.get_object('places-button');
-        this._pageWidgets[Page.CITY].push(placesButton);
-
-        placesButton.set_popover(this._worldView);
 
         let refresh = builder.get_object('refresh-button');
         this._pageWidgets[Page.CITY].push(refresh);
@@ -105,8 +97,8 @@ var MainWindow = GObject.registerClass(
 
         this._stack = builder.get_object('main-stack');
 
-        this._cityView = new City.WeatherView({ hexpand: true,
-                                                vexpand: true });
+        this._cityView = new City.WeatherView(this.application, this,
+                                              { hexpand: true, vexpand: true });
         this._stack.add(this._cityView);
 
         this._stack.set_visible_child(this._searchView);
@@ -227,7 +219,6 @@ var MainWindow = GObject.registerClass(
         }
         this._cityView.setTimeVisible(!isCurrentTimezone);
 
-        this._worldView.refilter();
         this._stack.set_visible_child(this._cityView);
         this._goToPage(Page.CITY);
     }
