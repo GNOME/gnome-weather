@@ -73,9 +73,7 @@ var MainWindow = GObject.registerClass(
         let grid = builder.get_object('main-panel');
         this._header = builder.get_object('header-bar');
         this.set_titlebar(this._header);
-        let [title, subtitle] = this._getTitle();
-        this._header.title = title;
-        this._header.subtitle = subtitle;
+        this._header.set_title(_('Select Location'));
 
         this._model = this.application.model;
 
@@ -100,6 +98,9 @@ var MainWindow = GObject.registerClass(
         this._cityView = new City.WeatherView(this.application, this,
                                               { hexpand: true, vexpand: true });
         this._stack.add(this._cityView);
+
+        this._forecastStackSwitcher = new Gtk.StackSwitcher({visible: true});
+        this._forecastStackSwitcher.set_stack(this._cityView.getInfoPage().getForecastStack());
 
         this._stack.set_visible_child(this._searchView);
 
@@ -128,24 +129,11 @@ var MainWindow = GObject.registerClass(
         }
     }
 
-    _getTitle() {
-        if (this._currentPage == Page.SEARCH)
-            return [_("Select Location"), null];
-
-        let location = this._cityView.info.location;
-        let city = location;
-        if (location.get_level() == GWeather.LocationLevel.WEATHER_STATION)
-            city = location.get_parent();
-
-        let country = city.get_parent();
-        while (country &&
-               country.get_level() > GWeather.LocationLevel.COUNTRY)
-            country = country.get_parent();
-
-        if (country)
-            return [city.get_name(), country.get_name()];
+    _setTitle(page) {
+        if (page == Page.CITY)
+            this._header.set_custom_title(this._forecastStackSwitcher);
         else
-            return [city.get_name(), null];
+            this._header.set_custom_title(null);
     }
 
     _goToPage(page) {
@@ -158,11 +146,9 @@ var MainWindow = GObject.registerClass(
                 this._pageWidgets[page][i].show();
         }
 
-        this._currentPage = page;
+        this._setTitle(page);
 
-        let [title, subtitle] = this._getTitle();
-        this._header.title = title;
-        this._header.subtitle = subtitle;
+        this._currentPage = page;
     }
 
     showDefault() {

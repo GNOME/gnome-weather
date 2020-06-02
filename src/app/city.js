@@ -173,6 +173,10 @@ var WeatherWidget = GObject.registerClass({
         this._timeLabel.label = time;
     }
 
+    getForecastStack() {
+        return this._forecastStack;
+    }
+
     update(info) {
         this._info = info;
 
@@ -286,6 +290,10 @@ var WeatherView = GObject.registerClass({
         }
 
         this._infoPage.setTimeVisible(visible);
+    }
+
+    getInfoPage() {
+        return this._infoPage;
     }
 
     _updateTime() {
