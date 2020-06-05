@@ -38,3 +38,8 @@
 #locations-list-box {
     border: 1px solid @borders;
 }
+
+.forecast-temperature-label {
+    font-weight: bold;
+    color: #c89009;
+}

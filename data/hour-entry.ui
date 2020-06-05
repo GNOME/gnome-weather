@@ -46,6 +46,9 @@
         <property name="valign">end</property>
         <property name="margin_bottom">16</property>
         <property name="label" translatable="yes">13°</property>
+        <style>
+          <class name="forecast-temperature-label"/>
+        </style>
       </object>
       <packing>
         <property name="expand">False</property>
