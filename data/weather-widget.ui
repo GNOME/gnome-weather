@@ -198,7 +198,7 @@
                 <property name="margin_end">20</property>
                 <property name="margin_top">50</property>
                 <property name="margin_bottom">32</property>
-                <property name="column_spacing">20</property>
+                <property name="column_spacing">10</property>
                 <child>
                   <object class="GtkImage" id="conditionsImage">
                     <property name="name">conditions-image</property>
@@ -243,6 +243,7 @@
                         <property name="spacing">12</property>
                         <child>
                           <object class="GtkLabel" id="placesLabel">
+                            <property name="name">places-label</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Places</property>
@@ -269,6 +270,7 @@
                     </child>
                     <style>
                       <class name="text-button"/>
+                      <class name="flat"/>
                     </style>
                   </object>
                   <packing>
