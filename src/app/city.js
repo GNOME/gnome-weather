@@ -36,8 +36,7 @@ var WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
                        'placesButton', 'placesLabel','temperatureLabel',
-                       'timeLabel', 'timeGrid', 'forecastStack',
-                       'leftButton', 'rightButton',
+                       'forecastStack','leftButton', 'rightButton',
                        'forecast-hourly', 'forecast-hourly-alignment',
                        'forecast-daily', 'forecast-daily-alignment'],
 }, class WeatherWidget extends Gtk.Frame {
@@ -164,14 +163,6 @@ var WeatherWidget = GObject.registerClass({
         }
     }
 
-    setTimeVisible(visible) {
-        this._timeGrid.visible = visible;
-    }
-
-    setTime(time) {
-        this._timeLabel.label = time;
-    }
-
     getForecastStack() {
         return this._forecastStack;
     }
@@ -268,44 +259,11 @@ var WeatherView = GObject.registerClass({
     _onUpdate(info) {
         this._infoPage.clear();
         this._infoPage.update(info);
-        this._updateTime();
         this._spinner.stop();
         this.visible_child_name = 'info';
     }
 
-    setTimeVisible(visible) {
-        if (this._clockHandlerId && !visible) {
-            this._wallClock.disconnect(this._clockHandlerId);
-            this._clockHandlerId = 0;
-        }
-
-        if (!this._clockHandlerId && visible) {
-            this._clockHandlerId = this._wallClock.connect('notify::clock',  () => {
-                this._updateTime();
-            });
-        }
-
-        this._infoPage.setTimeVisible(visible);
-    }
-
     getInfoPage() {
         return this._infoPage;
-    }
-
-    _updateTime() {
-        this._infoPage.setTime(this._getTime());
-    }
-
-    _getTime() {
-        if (this._info != null) {
-            let location = this._info.location;
-            let tz = GLib.TimeZone.new(location.get_timezone().get_tzid());
-            let dt = GLib.DateTime.new_now(tz);
-
-            return this._wallClock.string_for_datetime (dt,
-                                                        this._desktopSettings.get_enum('clock-format'),
-                                                        false, false, false);
-        }
-        return null;
     }
 });

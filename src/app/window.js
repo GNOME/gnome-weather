@@ -198,13 +198,6 @@ var MainWindow = GObject.registerClass(
         this.currentInfo = info;
         this._cityView.info = info;
 
-        let isCurrentTimezone = false;
-        let currentLocation = this.application.currentLocationController.currentLocation;
-        if (currentLocation) {
-            isCurrentTimezone = currentLocation.get_timezone().get_tzid() == info.location.get_timezone().get_tzid();
-        }
-        this._cityView.setTimeVisible(!isCurrentTimezone);
-
         this._stack.set_visible_child(this._cityView);
         this._goToPage(Page.CITY);
     }
