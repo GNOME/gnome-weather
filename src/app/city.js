@@ -21,9 +21,11 @@ const GLib = imports.gi.GLib;
 const Gnome = imports.gi.GnomeDesktop;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
+const GWeather = imports.gi.GWeather;
 
-const Forecast = imports.app.forecast;
-const WForecast = imports.app.weeklyForecast;
+const WorldView = imports.app.world;
+const HourlyForecast = imports.app.hourlyForecast;
+const DailyForecast = imports.app.dailyForecast;
 const Util = imports.misc.util;
 
 const SPINNER_SIZE = 128;
@@ -33,32 +35,37 @@ const SCROLLING_ANIMATION_TIME = 400000; //us
 var WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
-                       'temperatureLabel', 'conditionsLabel', 'windLabel',
-                       'timeLabel', 'timeGrid', 'forecastStack',
-                       'leftButton', 'rightButton',
-                       'forecast-today-grid', 'forecast-tomorrow-grid',
-                       'forecast-today', 'forecast-tomorrow'],
+                       'placesButton', 'placesLabel','temperatureLabel',
+                       'forecastStack','leftButton', 'rightButton',
+                       'forecast-hourly', 'forecast-hourly-alignment',
+                       'forecast-daily', 'forecast-daily-alignment'],
 }, class WeatherWidget extends Gtk.Frame {
 
-    _init(params) {
+    _init(application, window, params) {
         super._init(Object.assign({
             shadow_type: Gtk.ShadowType.NONE,
             name: 'weather-page'
         }, params));
 
-        this._currentStyle = null;
         this._info = null;
 
-        this._weeklyForecasts = new WForecast.WeeklyForecastFrame();
-        this._outerGrid.attach(this._weeklyForecasts, 1, 0, 1, 2);
+        this._worldView = new WorldView.WorldContentView(application, window);
+        this._placesButton.set_popover(this._worldView);
+
+        this._dailyForecasts = new DailyForecast.DailyForecastFrame();
 
         this._forecasts = { };
 
-        for (let t of ['today', 'tomorrow']) {
-            let box = new Forecast.ForecastBox({ hexpand: false });
+        for (let t of ['hourly', 'daily']) {
+            let box;
+            if (t == 'hourly') {
+                box = new HourlyForecast.HourlyForecastFrame();
+            } else {
+                box = new DailyForecast.DailyForecastFrame();
+            }
 
             this._forecasts[t] = box;
-            this['_forecast_' + t + '_grid'].add(box);
+            this['_forecast_' + t + '_alignment'].add(box);
 
             let fsw = this['_forecast_' + t];
             let hscrollbar = fsw.get_hscrollbar();
@@ -104,17 +111,17 @@ var WeatherWidget = GObject.registerClass({
     _syncLeftRightButtons() {
         let hadjustment = this._forecastStack.visible_child.get_hadjustment();
         if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
-            this._leftButton.set_sensitive(false);
-            this._rightButton.set_sensitive(false);
+            this._leftButton.hide();
+            this._rightButton.hide();
         } else if (hadjustment.value == hadjustment.get_lower()){
-            this._leftButton.set_sensitive(false);
-            this._rightButton.set_sensitive(true);
+            this._leftButton.hide();
+            this._rightButton.show();
         } else if (hadjustment.value >= (hadjustment.get_upper() - hadjustment.page_size)){
-            this._leftButton.set_sensitive(true);
-            this._rightButton.set_sensitive(false);
+            this._leftButton.show();
+            this._rightButton.hide();
         } else {
-            this._leftButton.set_sensitive(true);
-            this._rightButton.set_sensitive(true);
+            this._leftButton.show();
+            this._rightButton.show();
         }
     }
 
@@ -147,7 +154,7 @@ var WeatherWidget = GObject.registerClass({
     }
 
     clear() {
-        for (let t of ['today', 'tomorrow'])
+        for (let t of ['hourly', 'daily'])
             this._forecasts[t].clear();
 
         if (this._tickId) {
@@ -156,49 +163,36 @@ var WeatherWidget = GObject.registerClass({
         }
     }
 
-    _getStyleClass(info) {
-        let icon = info.get_icon_name();
-        let name = icon.replace(/(-\d{3})/, "");
-        return name;
-    }
-
-    setTimeVisible(visible) {
-        this._timeGrid.visible = visible;
-    }
-
-    setTime(time) {
-        this._timeLabel.label = time;
+    getForecastStack() {
+        return this._forecastStack;
     }
 
     update(info) {
         this._info = info;
 
-        this._conditionsLabel.label = Util.getWeatherConditions(info);
-        this._temperatureLabel.label = info.get_temp_summary();
-        this._windLabel.label = info.get_wind();
+        let location = info.location;
+        let city = location;
+        if (location.get_level() == GWeather.LocationLevel.WEATHER_STATION)
+            city = location.get_parent();
+
+        let country = city.get_parent();
+        while (country && country.get_level() > GWeather.LocationLevel.COUNTRY)
+            country = country.get_parent();
+
+        if (country)
+            this._placesLabel.set_text(city.get_name() + ', ' + country.get_name());
+        else
+            this._placesLabel.set_text(city.get_name());
+
+        this._worldView.refilter();
 
         this._conditionsImage.icon_name = info.get_symbolic_icon_name();
-        let context = this._contentFrame.get_style_context();
-        if (this._currentStyle)
-            context.remove_class(this._currentStyle);
-        this._currentStyle = this._getStyleClass(info);
-        context.add_class(this._currentStyle);
+        this._temperatureLabel.label = info.get_temp_summary();
 
         let forecasts = info.get_forecast_list();
         let tz = GLib.TimeZone.new(info.location.get_timezone().get_tzid());
-        for (let t of ['today', 'tomorrow'])
-            this._forecasts[t].update(forecasts, tz, t);
-
-        if (!this._forecasts['today'].hasForecastInfo() && this._forecasts['tomorrow'].hasForecastInfo())
-            this._forecastStack.set_visible_child_name('tomorrow');
-
-        // FIXME: This doesn't make sense, since the above code assumes forecasts.length != 0.
-        if (forecasts.length == 0) {
-            this._weeklyForecasts.hide();
-        } else {
-            this._weeklyForecasts.show();
-            this._weeklyForecasts.update(forecasts);
-        }
+        for (let t of ['hourly', 'daily'])
+            this._forecasts[t].update(forecasts, tz);
     }
 });
 
@@ -207,10 +201,10 @@ var WeatherView = GObject.registerClass({
     InternalChildren: ['spinner']
 }, class WeatherView extends Gtk.Stack {
 
-    _init(params) {
+    _init(application, window, params) {
         super._init(params);
 
-        this._infoPage = new WeatherWidget();
+        this._infoPage = new WeatherWidget(application, window);
         this.add_named(this._infoPage, 'info');
 
         this._info = null;
@@ -265,40 +259,11 @@ var WeatherView = GObject.registerClass({
     _onUpdate(info) {
         this._infoPage.clear();
         this._infoPage.update(info);
-        this._updateTime();
         this._spinner.stop();
         this.visible_child_name = 'info';
     }
 
-    setTimeVisible(visible) {
-        if (this._clockHandlerId && !visible) {
-            this._wallClock.disconnect(this._clockHandlerId);
-            this._clockHandlerId = 0;
-        }
-
-        if (!this._clockHandlerId && visible) {
-            this._clockHandlerId = this._wallClock.connect('notify::clock',  () => {
-                this._updateTime();
-            });
-        }
-
-        this._infoPage.setTimeVisible(visible);
-    }
-
-    _updateTime() {
-        this._infoPage.setTime(this._getTime());
-    }
-
-    _getTime() {
-        if (this._info != null) {
-            let location = this._info.location;
-            let tz = GLib.TimeZone.new(location.get_timezone().get_tzid());
-            let dt = GLib.DateTime.new_now(tz);
-
-            return this._wallClock.string_for_datetime (dt,
-                                                        this._desktopSettings.get_enum('clock-format'),
-                                                        false, false, false);
-        }
-        return null;
+    getInfoPage() {
+        return this._infoPage;
     }
 });

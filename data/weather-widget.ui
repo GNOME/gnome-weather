@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.1 -->
+<!-- Generated with glade 3.22.0 -->
 <interface>
   <requires lib="gtk+" version="3.0"/>
   <template class="Gjs_WeatherWidget" parent="GtkFrame">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="label_xalign">0</property>
     <child>
       <object class="GtkFrame" id="contentFrame">
         <property name="name">weather-page-content-view</property>
@@ -16,314 +17,230 @@
           <object class="GtkGrid" id="outerGrid">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="vexpand">True</property>
             <child>
-              <object class="GtkGrid" id="alignment">
+              <object class="GtkOverlay" id="forecast-overlay">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="halign">center</property>
-                <property name="valign">start</property>
-                <property name="hexpand">True</property>
-                <property name="vexpand">True</property>
-                <property name="margin-top">50</property>
-                <property name="margin-start">50</property>
-                <property name="margin-end">20</property>
-                <property name="row_spacing">32</property>
+                <property name="margin_bottom">50</property>
                 <child>
-                  <object class="GtkGrid" id="inner-grid">
-                    <property name="name">conditions-grid</property>
+                  <object class="GtkStack" id="forecastStack">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="column_spacing">20</property>
-                    <child internal-child="accessible">
-                      <object class="AtkObject" id="conditions-grid-a11y">
-                        <property name="accessible-name" translatable="yes">Current conditions</property>
-                      </object>
-                    </child>
                     <child>
-                      <object class="GtkImage" id="conditionsImage">
-                        <property name="name">conditions-image</property>
+                      <object class="GtkScrolledWindow" id="forecast-hourly">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="pixel_size">172</property>
-                        <property name="icon-size">2</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">3</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="temperatureLabel">
-                        <property name="name">temperature-label</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="valign">start</property>
-                        <property name="halign">start</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">0</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="conditionsLabel">
-                        <property name="name">conditions-label</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="valign">start</property>
-                        <property name="vexpand">True</property>
-                        <property name="halign">start</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">1</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox" id="windBox">
-                        <property name="name">wind-box</property>
-                        <property name="visible">True</property>
-                        <property name="orientation">horizontal</property>
-                        <property name="halign">start</property>
-                        <property name="valign">start</property>
-                        <property name="spacing">12</property>
+                        <property name="can_focus">True</property>
+                        <property name="vscrollbar_policy">never</property>
+                        <property name="min_content_width">332</property>
                         <child>
-                          <object class="GtkImage" id="windIcon">
-                            <property name="name">wind-icon</property>
+                          <object class="GtkViewport" id="forecast-hourly-viewport">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="halign">start</property>
-                            <property name="icon-name">weather-windy-symbolic</property>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkLabel" id="windLabel">
-                            <property name="name">wind-label</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="vexpand">True</property>
-                            <property name="halign">start</property>
-                          </object>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">2</property>
-                        <property name="width">1</property>
-                        <property name="height">1</property>
-                      </packing>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkGrid" id="stack-grid">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <child>
-                      <object class="GtkStackSwitcher" id="day-stack-switcher">
-                        <property name="visible">True</property>
-                        <property name="stack">forecastStack</property>
-                        <style>
-                          <class name="osd"/>
-                        </style>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
-                      </packing>
-                    </child>
-                  </object>
-                  <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkGrid" id="forecast-parent-grid">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <child>
-                      <object class="GtkStack" id="forecastStack">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <child>
-                          <object class="GtkScrolledWindow" id="forecast-today">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="vscrollbar_policy">never</property>
-                            <property name="min_content_width">332</property>
-                            <property name="margin-start">32</property>
-                            <property name="margin-end">32</property>
+                            <property name="hscroll_policy">natural</property>
+                            <property name="vscroll_policy">natural</property>
                             <child>
-                              <object class="GtkViewport" id="forecast-today-viewport">
+                              <object class="GtkAlignment" id="forecast-hourly-alignment">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="hscroll_policy">natural</property>
-                                <property name="vscroll_policy">natural</property>
+                                <property name="halign">center</property>
+                                <property name="left_padding">20</property>
+                                <property name="right_padding">20</property>
                                 <child>
-                                  <object class="GtkGrid" id="forecast-today-grid">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="halign">center</property>
-                                  </object>
+                                  <placeholder/>
                                 </child>
                               </object>
                             </child>
                           </object>
-                          <packing>
-                            <property name="name">today</property>
-                            <property name="title" translatable="yes">Today</property>
-                          </packing>
                         </child>
+                      </object>
+                      <packing>
+                        <property name="name">hourly</property>
+                        <property name="title" translatable="yes">Hourly</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkScrolledWindow" id="forecast-daily">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="vscrollbar_policy">never</property>
+                        <property name="min_content_width">332</property>
                         <child>
-                          <object class="GtkScrolledWindow" id="forecast-tomorrow">
+                          <object class="GtkViewport" id="forecast-daily-viewport">
                             <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="vscrollbar_policy">never</property>
-                            <property name="min_content_width">332</property>
-                            <property name="margin-start">32</property>
-                            <property name="margin-end">32</property>
+                            <property name="can_focus">False</property>
+                            <property name="hscroll_policy">natural</property>
+                            <property name="vscroll_policy">natural</property>
                             <child>
-                              <object class="GtkViewport" id="forecast-tomorrow-viewport">
+                              <object class="GtkAlignment" id="forecast-daily-alignment">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="hscroll_policy">natural</property>
-                                <property name="vscroll_policy">natural</property>
+                                <property name="halign">center</property>
+                                <property name="left_padding">20</property>
+                                <property name="right_padding">20</property>
                                 <child>
-                                  <object class="GtkGrid" id="forecast-tomorrow-grid">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="halign">center</property>
-                                  </object>
+                                  <placeholder/>
                                 </child>
                               </object>
                             </child>
                           </object>
-                          <packing>
-                            <property name="name">tomorrow</property>
-                            <property name="title" translatable="yes">Tomorrow</property>
-                          </packing>
                         </child>
                       </object>
                       <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="leftButton">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">True</property>
-                        <property name="valign">center</property>
-                        <style>
-                          <class name="osd"/>
-                        </style>
-                        <child>
-                          <object class="GtkImage" id="left-image">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="icon-name">go-previous-symbolic</property>
-                            <property name="icon_size">1</property>
-                          </object>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkButton" id="rightButton">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">True</property>
-                        <property name="valign">center</property>
-                        <style>
-                          <class name="osd"/>
-                        </style>
-                        <child>
-                          <object class="GtkImage" id="right-image">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="icon-name">go-next-symbolic</property>
-                          </object>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="left_attach">2</property>
-                        <property name="top_attach">0</property>
+                        <property name="name">daily</property>
+                        <property name="title" translatable="yes">Daily</property>
+                        <property name="position">1</property>
                       </packing>
                     </child>
                   </object>
                   <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">2</property>
+                    <property name="index">-1</property>
+                  </packing>
+                </child>
+                <child type="overlay">
+                  <object class="GtkButton" id="rightButton">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="halign">end</property>
+                    <property name="valign">center</property>
+                    <property name="margin_right">28</property>
+                    <child>
+                      <object class="GtkImage" id="right-image">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="icon_name">go-next-symbolic</property>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="osd"/>
+                    </style>
+                  </object>
+                </child>
+                <child type="overlay">
+                  <object class="GtkButton" id="leftButton">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="margin_left">28</property>
+                    <child>
+                      <object class="GtkImage" id="left-image">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="icon_name">go-previous-symbolic</property>
+                        <property name="icon_size">1</property>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="osd"/>
+                    </style>
+                  </object>
+                  <packing>
+                    <property name="index">1</property>
                   </packing>
                 </child>
               </object>
               <packing>
                 <property name="left_attach">0</property>
                 <property name="top_attach">1</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
               </packing>
             </child>
             <child>
-              <object class="GtkGrid" id="timeGrid">
+              <object class="GtkGrid" id="inner-grid">
+                <property name="name">conditions-grid</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="halign">end</property>
-                <property name="margin-end">20</property>
+                <property name="column_spacing">10</property>
                 <child>
-                  <object class="GtkImage" id="clock-image">
+                  <object class="GtkImage" id="conditionsImage">
+                    <property name="name">conditions-image</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
-                    <property name="margin-start">10</property>
-                    <property name="margin-end">10</property>
-                    <property name="margin-top">15</property>
-                    <property name="margin-bottom">15</property>
-                    <property name="icon_name">document-open-recent-symbolic</property>
+                    <property name="valign">start</property>
+                    <property name="pixel_size">96</property>
+                    <property name="icon_size">2</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
                     <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
+                    <property name="height">2</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="timeLabel">
+                  <object class="GtkLabel" id="temperatureLabel">
+                    <property name="name">temperature-label</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="margin-top">15</property>
-                    <property name="margin-bottom">15</property>
-                    <property name="label">label</property>
+                    <property name="halign">start</property>
+                    <property name="valign">start</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkMenuButton" id="placesButton">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="focus_on_click">False</property>
+                    <property name="receives_default">True</property>
+                    <property name="halign">start</property>
+                    <property name="valign">start</property>
+                    <child>
+                      <object class="GtkBox" id="placesBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkLabel" id="placesLabel">
+                            <property name="name">places-label</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="label" translatable="yes">Places</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkImage" id="placesImage">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="icon_name">pan-down-symbolic</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="text-button"/>
+                      <class name="flat"/>
+                    </style>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="top_attach">0</property>
-                    <property name="width">1</property>
-                    <property name="height">1</property>
                   </packing>
+                </child>
+                <child internal-child="accessible">
+                  <object class="AtkObject" id="inner-grid-atkobject">
+                    <property name="AtkObject::accessible-name" translatable="yes">Current conditions</property>
+                  </object>
                 </child>
               </object>
               <packing>
                 <property name="left_attach">0</property>
                 <property name="top_attach">0</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
               </packing>
             </child>
           </object>

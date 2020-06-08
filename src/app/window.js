@@ -43,6 +43,8 @@ var MainWindow = GObject.registerClass(
         this._currentPage = Page.SEARCH;
         this._pageWidgets = [[],[]];
 
+        this.set_default_size(650, 520);
+
         let aboutAction = new Gio.SimpleAction({
             enabled: true,
             name: 'about'
@@ -71,14 +73,9 @@ var MainWindow = GObject.registerClass(
         let grid = builder.get_object('main-panel');
         this._header = builder.get_object('header-bar');
         this.set_titlebar(this._header);
-        let [title, subtitle] = this._getTitle();
-        this._header.title = title;
-        this._header.subtitle = subtitle;
+        this._header.set_title(_('Select Location'));
 
-        this._worldView = new WorldView.WorldContentView(this.application, this, { visible: true });
-        this._worldView.hide();
-
-        this._model = this._worldView.model;
+        this._model = this.application.model;
 
         this._searchView = builder.get_object('initial-grid');
 
@@ -86,11 +83,6 @@ var MainWindow = GObject.registerClass(
         this._searchEntry.connect('notify::location', (entry) => {
             this._searchLocationChanged(entry);
         });
-
-        let placesButton = builder.get_object('places-button');
-        this._pageWidgets[Page.CITY].push(placesButton);
-
-        placesButton.set_popover(this._worldView);
 
         let refresh = builder.get_object('refresh-button');
         this._pageWidgets[Page.CITY].push(refresh);
@@ -103,9 +95,12 @@ var MainWindow = GObject.registerClass(
 
         this._stack = builder.get_object('main-stack');
 
-        this._cityView = new City.WeatherView({ hexpand: true,
-                                                vexpand: true });
+        this._cityView = new City.WeatherView(this.application, this,
+                                              { hexpand: true, vexpand: true });
         this._stack.add(this._cityView);
+
+        this._forecastStackSwitcher = new Gtk.StackSwitcher({visible: true});
+        this._forecastStackSwitcher.set_stack(this._cityView.getInfoPage().getForecastStack());
 
         this._stack.set_visible_child(this._searchView);
 
@@ -134,24 +129,11 @@ var MainWindow = GObject.registerClass(
         }
     }
 
-    _getTitle() {
-        if (this._currentPage == Page.SEARCH)
-            return [_("Select Location"), null];
-
-        let location = this._cityView.info.location;
-        let city = location;
-        if (location.get_level() == GWeather.LocationLevel.WEATHER_STATION)
-            city = location.get_parent();
-
-        let country = city.get_parent();
-        while (country &&
-               country.get_level() > GWeather.LocationLevel.COUNTRY)
-            country = country.get_parent();
-
-        if (country)
-            return [city.get_name(), country.get_name()];
+    _setTitle(page) {
+        if (page == Page.CITY)
+            this._header.set_custom_title(this._forecastStackSwitcher);
         else
-            return [city.get_name(), null];
+            this._header.set_custom_title(null);
     }
 
     _goToPage(page) {
@@ -164,11 +146,9 @@ var MainWindow = GObject.registerClass(
                 this._pageWidgets[page][i].show();
         }
 
-        this._currentPage = page;
+        this._setTitle(page);
 
-        let [title, subtitle] = this._getTitle();
-        this._header.title = title;
-        this._header.subtitle = subtitle;
+        this._currentPage = page;
     }
 
     showDefault() {
@@ -218,14 +198,6 @@ var MainWindow = GObject.registerClass(
         this.currentInfo = info;
         this._cityView.info = info;
 
-        let isCurrentTimezone = false;
-        let currentLocation = this.application.currentLocationController.currentLocation;
-        if (currentLocation) {
-            isCurrentTimezone = currentLocation.get_timezone().get_tzid() == info.location.get_timezone().get_tzid();
-        }
-        this._cityView.setTimeVisible(!isCurrentTimezone);
-
-        this._worldView.refilter();
         this._stack.set_visible_child(this._cityView);
         this._goToPage(Page.CITY);
     }

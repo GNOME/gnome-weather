@@ -90,9 +90,6 @@ const Application = GObject.registerClass(
 
         Util.loadStyleSheet('/org/gnome/Weather/application.css');
 
-        let settings = Gtk.Settings.get_for_screen(Gdk.Screen.get_default());
-        settings.gtk_application_prefer_dark_theme = true;
-
         this.world = GWeather.Location.get_world();
         this.model = new World.WorldModel(this.world, true);
         this.model.load();
