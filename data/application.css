@@ -48,3 +48,6 @@
     font-weight: bold;
     color: #c89009;
 }
+
+@define-color temp_graph_border_color rgba(246, 211, 45, 1.0);
+@define-color temp_graph_background_color rgba(248, 228, 92, 0.5);

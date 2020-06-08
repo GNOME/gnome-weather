@@ -150,8 +150,9 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         let canvas_height = height - top_padding - bottom_padding;
         let step = (width - (n - 1)) / n;
 
-        cr.setSourceRGB(209.0 / 255.0, 148.0 / 255.0, 12.0 / 255.0);
-        cr.setLineWidth(4);
+        let [, borderColor] = this.get_style_context().lookup_color('temp_graph_border_color');
+        Gdk.cairo_set_source_rgba(cr, borderColor);
+        cr.setLineWidth(2);
 
         cr.moveTo (0, top_padding + ((1 - temps[0]) * canvas_height));
         for (let i = 0; i < n; i++)
@@ -162,7 +163,9 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         cr.lineTo(width, height);
         cr.lineTo(0, height);
 
-        cr.setSourceRGB(238.0 / 255.0, 214.0 / 255.0, 127.0 / 255.0);
+        let [, backgroundColor] = this.get_style_context().lookup_color('temp_graph_background_color');
+        Gdk.cairo_set_source_rgba(cr, backgroundColor);
+
         cr.fill();
 
         super.vfunc_draw(cr);
