@@ -58,7 +58,7 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
         }
 
         let weekInfos = [];
-        while (i < infos.length && weekInfos.length < 7) {
+        while (i < infos.length) {
             let dayInfos = {day: day, infos: []};
             for ( ; i < infos.length; i++) {
                 let info = infos[i];
