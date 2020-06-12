@@ -156,3 +156,48 @@ function easeOutCubic(value) {
     let t = value - 1;
     return t * t * t + 1;
 }
+
+function getNight(date) {
+    return GLib.DateTime.new_local(date.get_year(),
+                                   date.get_month(),
+                                   date.get_day_of_month(),
+                                   2, 0, 0);
+}
+
+function getMorning(date) {
+    return GLib.DateTime.new_local(date.get_year(),
+                                   date.get_month(),
+                                   date.get_day_of_month(),
+                                   7, 0, 0);
+}
+
+function getDay(date) {
+    return GLib.DateTime.new_local(date.get_year(),
+                                   date.get_month(),
+                                   date.get_day_of_month(),
+                                   12, 0, 0);
+}
+
+function getAfternoon(date) {
+    return GLib.DateTime.new_local(date.get_year(),
+                                   date.get_month(),
+                                   date.get_day_of_month(),
+                                   17, 0, 0);
+}
+
+function getEvening(date) {
+    return GLib.DateTime.new_local(date.get_year(),
+                                   date.get_month(),
+                                   date.get_day_of_month(),
+                                   22, 0, 0);
+}
+
+function getDateTime(info) {
+    let [ok, date] = info.get_value_update();
+    return GLib.DateTime.new_from_unix_local(date);
+}
+
+function getTemp(info) {
+    let [ok, temp] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
+    return temp;
+}
