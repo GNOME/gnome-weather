@@ -6,30 +6,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-10-22 01:19+0000\n"
-"PO-Revision-Date: 2020-03-11 20:26+0200\n"
+"POT-Creation-Date: 2020-06-13 10:34+0000\n"
+"PO-Revision-Date: 2020-06-13 14:41+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
 "=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 20.03.70\n"
+"X-Generator: Lokalize 20.07.70\n"
 "X-Project-Style: gnome\n"
-
-#: data/city.ui:8
-msgid "City view"
-msgstr "Огляд міста"
-
-#: data/city.ui:30
-msgid "Loading…"
-msgstr "Завантаження…"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
-#: src/app/window.js:255 src/service/main.js:48
+#: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Погода"
 
@@ -56,19 +48,14 @@ msgstr ""
 "інтернеті."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
-#| msgid ""
-#| "It also optionally integrates with the GNOME Shell, allowing you see the "
-#| "current conditions of the most recently searched cities by just typing "
-#| "its name in the Activities Overview."
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you to see the "
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
 "Також необов'язково вбудовується в GNOME Shell, дозволяючи бачити поточні "
-"погодні умови найнедавніших міст. Достатньо ввести потрібного вам міста в"
-" огляді "
-"діяльності."
+"погодні умови найнедавніших міст. Достатньо ввести потрібного вам міста в "
+"огляді діяльності."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:74
 msgid "The GNOME Project"
@@ -107,6 +94,74 @@ msgstr ""
 "Автоматичне знаходження місця — значення, яке визначає, чи шукати поточне "
 "місце перебування, чи ні."
 
+#: data/city.ui:8
+msgid "City view"
+msgstr "Огляд міста"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "Завантаження…"
+
+#: data/day-entry.ui:27
+#| msgid "Tonight"
+msgid "Night"
+msgstr "Ніч"
+
+#: data/day-entry.ui:39
+#| msgid "Monday morning"
+msgid "Morning"
+msgstr "Ранок"
+
+#: data/day-entry.ui:51
+#| msgid "This afternoon"
+msgid "Afternoon"
+msgstr "Після обіду"
+
+#: data/day-entry.ui:63
+#| msgid "This evening"
+msgid "Evening"
+msgstr "Вечір"
+
+#: data/day-entry.ui:126 data/day-entry.ui:137 data/day-entry.ui:148
+#: data/day-entry.ui:159
+msgid "16°"
+msgstr "16°"
+
+#: data/day-entry.ui:203 data/day-entry.ui:214 data/day-entry.ui:225
+#: data/day-entry.ui:236
+msgid "2.1 mm"
+msgstr "2,1 мм"
+
+#: data/day-entry.ui:247 data/day-entry.ui:258 data/day-entry.ui:269
+#: data/day-entry.ui:280
+msgid "5 m/s"
+msgstr "5 м/с"
+
+#: data/day-entry.ui:323
+msgid "Tues"
+msgstr "Вт"
+
+#: data/day-entry.ui:336
+msgid "7 June"
+msgstr "7 червня"
+
+#: data/day-entry.ui:364
+msgid "18°"
+msgstr "18°"
+
+#: data/day-entry.ui:377
+msgid "9°"
+msgstr "9°"
+
+#: data/hour-entry.ui:19
+#| msgid "New"
+msgid "Now"
+msgstr "Зараз"
+
+#: data/hour-entry.ui:48
+msgid "13°"
+msgstr "13°"
+
 #: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Автоматичне знаходження місця"
@@ -124,89 +179,82 @@ msgid "Viewed Recently"
 msgstr "Недавно переглянуті"
 
 #: data/primary-menu.ui:4
-#| msgid "Temperature unit"
 msgid "_Temperature Unit"
 msgstr "Одиниця _температури"
 
 #: data/primary-menu.ui:6
-#| msgid "Celsius"
 msgid "_Celsius"
 msgstr "Градуси _Цельсія"
 
 #: data/primary-menu.ui:11
-#| msgid "Fahrenheit"
 msgid "_Fahrenheit"
 msgstr "Градуси _Фаренгейта"
 
 #: data/primary-menu.ui:19
-#| msgid "About Weather"
 msgid "_About Weather"
 msgstr "_Про «Погоду»"
 
-#: data/weather-widget.ui:39
-msgid "Current conditions"
-msgstr "Поточні погодні умови"
+#: data/weather-widget.ui:59
+msgid "Hourly"
+msgstr "Щогодини"
 
-#: data/weather-widget.ui:151
-msgid "Today"
-msgstr "Сьогодні"
+#: data/weather-widget.ui:91
+msgid "Daily"
+msgstr "Щодня"
 
-#: data/weather-widget.ui:180
-msgid "Tomorrow"
-msgstr "Завтра"
-
-#: data/window.ui:33
+#: data/weather-widget.ui:203
 msgid "Places"
 msgstr "Місця"
 
-#: data/window.ui:55
+#: data/weather-widget.ui:237
+msgid "Current conditions"
+msgstr "Поточні погодні умови"
+
+#: data/window.ui:49
 msgid "Refresh"
 msgstr "Оновити"
 
-#: data/window.ui:113
+#: data/window.ui:105
 msgid "Search for a location"
 msgstr "Пошук місцевості"
 
-#: data/window.ui:129
+#: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr "Уведіть назву міста, щоб побачити інформацію про погоду."
 
-#: src/app/forecast.js:35
-msgid "Forecast"
-msgstr "Прогноз погоди"
+#: src/app/dailyForecast.js:33
+#| msgid "Detailed forecast"
+msgid "Daily Forecast"
+msgstr "Денний прогноз"
 
-#: src/app/forecast.js:116
+#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
 msgid "Forecast not available"
 msgstr "Прогноз недоступний"
 
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:176
+msgid "%e %b"
+msgstr "%e %b"
+
+#: src/app/hourlyForecast.js:38
+#| msgid "Weekly Forecast"
+msgid "Hourly Forecast"
+msgstr "Годинний прогноз"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:132
+#: src/app/hourlyForecast.js:105
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:135
-msgid "%R"
-msgstr "%R"
-
-#: src/app/weeklyForecast.js:35
-msgid "Weekly Forecast"
-msgstr "Тижневий прогноз"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:120
-msgid "%A"
-msgstr "%A"
-
-#: src/app/window.js:139
+#: src/app/window.js:76
 msgid "Select Location"
 msgstr "Вибрати місцевість"
 
-#: src/app/window.js:254
+#: src/app/window.js:226
 msgid "translator-credits"
 msgstr "Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: src/app/window.js:256
+#: src/app/window.js:228
 msgid "A weather application"
 msgstr "Погодна програма"
 
@@ -230,6 +278,21 @@ msgstr "%s / %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
+#~ msgid "Today"
+#~ msgstr "Сьогодні"
+
+#~ msgid "Tomorrow"
+#~ msgstr "Завтра"
+
+#~ msgid "Forecast"
+#~ msgstr "Прогноз погоди"
+
+#~ msgid "%R"
+#~ msgstr "%R"
+
+#~ msgid "%A"
+#~ msgstr "%A"
+
 #~ msgid "_New"
 #~ msgstr "_Створити"
 
@@ -242,9 +305,6 @@ msgstr "%s, %s"
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
 
-#~ msgid "Detailed forecast"
-#~ msgstr "Детальний прогноз погоди"
-
 #~ msgid "Select All"
 #~ msgstr "Вибрати все"
 
@@ -253,9 +313,6 @@ msgstr "%s, %s"
 
 #~ msgid "Click on locations to select them"
 #~ msgstr "Натисніть на міста, щоб їх вибрати"
-
-#~ msgid "New"
-#~ msgstr "Додати"
 
 #~ msgid "Back"
 #~ msgstr "Назад"
@@ -281,9 +338,6 @@ msgstr "%s, %s"
 
 #~ msgid "Monday night"
 #~ msgstr "Ніч понеділок"
-
-#~ msgid "Monday morning"
-#~ msgstr "Ранок понеділок"
 
 #~ msgid "Monday afternoon"
 #~ msgstr "По обіді понеділок"
@@ -363,17 +417,8 @@ msgstr "%s, %s"
 #~ msgid "Sunday evening"
 #~ msgstr "Вечір неділя"
 
-#~ msgid "Tonight"
-#~ msgstr "Вночі"
-
 #~ msgid "This morning"
 #~ msgstr "Зранку"
-
-#~ msgid "This afternoon"
-#~ msgstr "По обіді"
-
-#~ msgid "This evening"
-#~ msgstr "Вечором"
 
 #~ msgid "Tomorrow night"
 #~ msgstr "Завтра вночі"
