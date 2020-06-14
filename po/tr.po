@@ -5,15 +5,16 @@
 # Muhammet Kara <muhammetk@gmail.com>, 2014.
 # Necdet Yücel <necdetyucel@gmail.com>, 2015.
 # Furkan Ahmet Kara <furkanahmetkara.fk@gmail.com>, 2017.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2018-2019.
+# Sabri Ünal <libreajans@gmail.com>, 2020.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2018, 2019, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-10-22 01:19+0000\n"
-"PO-Revision-Date: 2020-02-05 18:50+0300\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"POT-Creation-Date: 2020-06-13 10:34+0000\n"
+"PO-Revision-Date: 2020-06-14 18:50+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -23,17 +24,9 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 "X-POOTLE-MTIME: 1420670076.000000\n"
 
-#: data/city.ui:8
-msgid "City view"
-msgstr "Şehir görünümü"
-
-#: data/city.ui:30
-msgid "Loading…"
-msgstr "Yükleniyor…"
-
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
-#: src/app/window.js:255 src/service/main.js:48
+#: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Hava Durumu"
 
@@ -75,7 +68,7 @@ msgstr "GNOME Projesi"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
-msgstr "Hava;Tahmin;"
+msgstr "Hava;Tahmin;Hava Durumu;"
 
 #: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
@@ -104,6 +97,69 @@ msgid ""
 msgstr ""
 "Kendiliğinden konum, geçerli konumun getirilip getirilmeyeceğini belirleyen "
 "kendiliğinden-konumlama anahtarının değeridir."
+
+#: data/city.ui:8
+msgid "City view"
+msgstr "Şehir görünümü"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "Yükleniyor…"
+
+#: data/day-entry.ui:27
+msgid "Night"
+msgstr "Gece"
+
+#: data/day-entry.ui:39
+msgid "Morning"
+msgstr "Sabah"
+
+#: data/day-entry.ui:51
+msgid "Afternoon"
+msgstr "Öğleden sonra"
+
+#: data/day-entry.ui:63
+msgid "Evening"
+msgstr "Akşam"
+
+#: data/day-entry.ui:126 data/day-entry.ui:137 data/day-entry.ui:148
+#: data/day-entry.ui:159
+msgid "16°"
+msgstr "16°"
+
+#: data/day-entry.ui:203 data/day-entry.ui:214 data/day-entry.ui:225
+#: data/day-entry.ui:236
+msgid "2.1 mm"
+msgstr "2.1 mm"
+
+#: data/day-entry.ui:247 data/day-entry.ui:258 data/day-entry.ui:269
+#: data/day-entry.ui:280
+msgid "5 m/s"
+msgstr "5 m/s"
+
+#: data/day-entry.ui:323
+msgid "Tues"
+msgstr "Per"
+
+#: data/day-entry.ui:336
+msgid "7 June"
+msgstr "7 Haziran"
+
+#: data/day-entry.ui:364
+msgid "18°"
+msgstr "18°"
+
+#: data/day-entry.ui:377
+msgid "9°"
+msgstr "9°"
+
+#: data/hour-entry.ui:19
+msgid "Now"
+msgstr "Şimdi"
+
+#: data/hour-entry.ui:48
+msgid "13°"
+msgstr "13°"
 
 #: data/places-popover.ui:45
 msgid "Automatic Location"
@@ -137,72 +193,67 @@ msgstr "_Fahrenhayt"
 msgid "_About Weather"
 msgstr "Hava Durumu _Hakkında"
 
-#: data/weather-widget.ui:39
-msgid "Current conditions"
-msgstr "Geçerli hava koşulları"
+#: data/weather-widget.ui:59
+msgid "Hourly"
+msgstr "Saatlik"
 
-#: data/weather-widget.ui:151
-msgid "Today"
-msgstr "Bugün"
+#: data/weather-widget.ui:91
+msgid "Daily"
+msgstr "Günlük"
 
-#: data/weather-widget.ui:180
-msgid "Tomorrow"
-msgstr "Yarın"
-
-#: data/window.ui:33
+#: data/weather-widget.ui:203
 msgid "Places"
 msgstr "Yerler"
 
-#: data/window.ui:55
+#: data/weather-widget.ui:237
+msgid "Current conditions"
+msgstr "Geçerli hava koşulları"
+
+#: data/window.ui:49
 msgid "Refresh"
 msgstr "Yenile"
 
-#: data/window.ui:113
+#: data/window.ui:105
 msgid "Search for a location"
 msgstr "Konum arayın"
 
-#: data/window.ui:129
+#: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr "Hava bilgisini görmek için şehrin adını girin."
 
-#: src/app/forecast.js:35
-msgid "Forecast"
-msgstr "Tahmin"
+#: src/app/dailyForecast.js:33
+msgid "Daily Forecast"
+msgstr "Günlük Tahmin"
 
-#: src/app/forecast.js:116
+#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
 msgid "Forecast not available"
 msgstr "Tahmin yok"
 
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:176
+msgid "%e %b"
+msgstr "%e %b"
+
+#: src/app/hourlyForecast.js:38
+msgid "Hourly Forecast"
+msgstr "Saatlik Tahmin"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:132
+#: src/app/hourlyForecast.js:105
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:135
-msgid "%R"
-msgstr "%R"
-
-#: src/app/weeklyForecast.js:35
-msgid "Weekly Forecast"
-msgstr "Haftalık Tahmin"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:120
-msgid "%A"
-msgstr "%A"
-
-#: src/app/window.js:139
+#: src/app/window.js:76
 msgid "Select Location"
 msgstr "Konum Seç"
 
-#: src/app/window.js:254
+#: src/app/window.js:226
 msgid "translator-credits"
 msgstr ""
 "Gökhan Gurbetoğlu <ggurbet@gmail.com>\n"
 "Emin Tufan Çetin <etcetin@gmail.com>"
 
-#: src/app/window.js:256
+#: src/app/window.js:228
 msgid "A weather application"
 msgstr "Hava durumu uygulaması"
 
@@ -225,6 +276,21 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Today"
+#~ msgstr "Bugün"
+
+#~ msgid "Tomorrow"
+#~ msgstr "Yarın"
+
+#~ msgid "Forecast"
+#~ msgstr "Tahmin"
+
+#~ msgid "%R"
+#~ msgstr "%R"
+
+#~ msgid "%A"
+#~ msgstr "%A"
 
 #~ msgid "@APP_ID@"
 #~ msgstr "@APP_ID@"
@@ -250,9 +316,6 @@ msgstr "%s, %s"
 #~ msgid "Click on locations to select them"
 #~ msgstr "Seçmek için konumlara tıklayın"
 
-#~ msgid "New"
-#~ msgstr "Yeni"
-
 #~ msgid "Cancel"
 #~ msgstr "İptal"
 
@@ -270,9 +333,6 @@ msgstr "%s, %s"
 
 #~ msgid "Monday night"
 #~ msgstr "Pazartesi gecesi"
-
-#~ msgid "Monday morning"
-#~ msgstr "Pazartesi sabahı"
 
 #~ msgid "Monday afternoon"
 #~ msgstr "Pazartesi öğleden sonra"
@@ -352,17 +412,8 @@ msgstr "%s, %s"
 #~ msgid "Sunday evening"
 #~ msgstr "Pazar akşamı"
 
-#~ msgid "Tonight"
-#~ msgstr "Bu gece"
-
 #~ msgid "This morning"
 #~ msgstr "Bu sabah"
-
-#~ msgid "This afternoon"
-#~ msgstr "Bugün öğleden sonra"
-
-#~ msgid "This evening"
-#~ msgstr "Bu akşam"
 
 #~ msgid "Tomorrow night"
 #~ msgstr "Yarın gece"
