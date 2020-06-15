@@ -123,7 +123,7 @@
                   <object class="GtkLabel" id="nightTemperatureLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">16°</property>
+                    <property name="label">16°</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -134,7 +134,7 @@
                   <object class="GtkLabel" id="morningTemperatureLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">16°</property>
+                    <property name="label">16°</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -145,7 +145,7 @@
                   <object class="GtkLabel" id="afternoonTemperatureLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">16°</property>
+                    <property name="label">16°</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -156,7 +156,7 @@
                   <object class="GtkLabel" id="eveningTemperatureLabel">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">16°</property>
+                    <property name="label">16°</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -200,7 +200,7 @@
                   <object class="GtkLabel" id="nightHumidity">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">2.1 mm</property>
+                    <property name="label">2.1 mm</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
@@ -211,7 +211,7 @@
                   <object class="GtkLabel" id="morningHumidity">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">2.1 mm</property>
+                    <property name="label">2.1 mm</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
@@ -222,7 +222,7 @@
                   <object class="GtkLabel" id="afternoonHumidity">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">2.1 mm</property>
+                    <property name="label">2.1 mm</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
@@ -233,7 +233,7 @@
                   <object class="GtkLabel" id="eveningHumidity">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">2.1 mm</property>
+                    <property name="label">2.1 mm</property>
                   </object>
                   <packing>
                     <property name="left_attach">1</property>
@@ -244,7 +244,7 @@
                   <object class="GtkLabel" id="nightWind">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">5 m/s</property>
+                    <property name="label">5 m/s</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -255,7 +255,7 @@
                   <object class="GtkLabel" id="morningWind">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">5 m/s</property>
+                    <property name="label">5 m/s</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -266,7 +266,7 @@
                   <object class="GtkLabel" id="afternoonWind">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">5 m/s</property>
+                    <property name="label">5 m/s</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -277,7 +277,7 @@
                   <object class="GtkLabel" id="eveningWind">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">5 m/s</property>
+                    <property name="label">5 m/s</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -320,7 +320,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="margin_top">8</property>
-        <property name="label" translatable="yes">Tues</property>
+        <property name="label">Tues</property>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -333,7 +333,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="margin_top">8</property>
-        <property name="label" translatable="yes">7 June</property>
+        <property name="label">7 June</property>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -361,7 +361,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="margin_top">8</property>
-        <property name="label" translatable="yes">18°</property>
+        <property name="label">18°</property>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -374,7 +374,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="margin_top">8</property>
-        <property name="label" translatable="yes">9°</property>
+        <property name="label">9°</property>
       </object>
       <packing>
         <property name="expand">False</property>
