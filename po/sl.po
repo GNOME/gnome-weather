@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-02-28 13:15+0000\n"
-"PO-Revision-Date: 2020-02-29 21:52+0100\n"
+"POT-Creation-Date: 2020-06-16 07:46+0000\n"
+"PO-Revision-Date: 2020-06-16 19:19+0200\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -19,19 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.2.4\n"
-
-#: data/city.ui:8
-msgid "City view"
-msgstr "Pogled mesta"
-
-#: data/city.ui:30
-msgid "Loading…"
-msgstr "Poteka nalaganje …"
+"X-Generator: Poedit 2.3\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
-#: src/app/window.js:255 src/service/main.js:48
+#: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Vreme"
 
@@ -101,6 +93,69 @@ msgstr ""
 "Samodejno določanje mesta je omogoča določanje trenutnega mesta za prikaz "
 "vremenskih podatkov."
 
+#: data/city.ui:8
+msgid "City view"
+msgstr "Pogled mesta"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "Poteka nalaganje …"
+
+#: data/day-entry.ui:27
+msgid "Night"
+msgstr "Noč"
+
+#: data/day-entry.ui:39
+msgid "Morning"
+msgstr "Jutro"
+
+#: data/day-entry.ui:51
+msgid "Afternoon"
+msgstr "Popoldan"
+
+#: data/day-entry.ui:63
+msgid "Evening"
+msgstr "Večer"
+
+#: data/day-entry.ui:126 data/day-entry.ui:137 data/day-entry.ui:148
+#: data/day-entry.ui:159
+msgid "16°"
+msgstr "16°"
+
+#: data/day-entry.ui:203 data/day-entry.ui:214 data/day-entry.ui:225
+#: data/day-entry.ui:236
+msgid "2.1 mm"
+msgstr "2.1 mm"
+
+#: data/day-entry.ui:247 data/day-entry.ui:258 data/day-entry.ui:269
+#: data/day-entry.ui:280
+msgid "5 m/s"
+msgstr "5 m/s"
+
+#: data/day-entry.ui:323
+msgid "Tues"
+msgstr "Tor"
+
+#: data/day-entry.ui:336
+msgid "7 June"
+msgstr "7. junij"
+
+#: data/day-entry.ui:364
+msgid "18°"
+msgstr "18°"
+
+#: data/day-entry.ui:377
+msgid "9°"
+msgstr "9°"
+
+#: data/hour-entry.ui:19
+msgid "Now"
+msgstr "Ravnokar"
+
+#: data/hour-entry.ui:48
+msgid "13°"
+msgstr "13°"
+
 #: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Samodejno določanje mesta"
@@ -133,70 +188,65 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_O Programu"
 
-#: data/weather-widget.ui:39
-msgid "Current conditions"
-msgstr "Trenutne razmere"
+#: data/weather-widget.ui:59
+msgid "Hourly"
+msgstr "Vsako uro"
 
-#: data/weather-widget.ui:185
-msgid "Today"
-msgstr "Danes"
+#: data/weather-widget.ui:91
+msgid "Daily"
+msgstr "Dnevno"
 
-#: data/weather-widget.ui:214
-msgid "Tomorrow"
-msgstr "Jutri"
-
-#: data/window.ui:33
+#: data/weather-widget.ui:203
 msgid "Places"
 msgstr "Mesta"
 
-#: data/window.ui:55
+#: data/weather-widget.ui:237
+msgid "Current conditions"
+msgstr "Trenutne razmere"
+
+#: data/window.ui:49
 msgid "Refresh"
 msgstr "Osveži"
 
-#: data/window.ui:113
+#: data/window.ui:105
 msgid "Search for a location"
 msgstr "Iskanje mesta"
 
-#: data/window.ui:129
+#: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr "Za prikaz vremenskih podatkov je treba vpisati ime mesta."
 
-#: src/app/forecast.js:35
-msgid "Forecast"
-msgstr "Napoved"
+#: src/app/dailyForecast.js:33
+msgid "Daily Forecast"
+msgstr "Dnevna napoved"
 
-#: src/app/forecast.js:116
+#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
 msgid "Forecast not available"
 msgstr "Napoved ni na voljo"
 
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:176
+msgid "%e %b"
+msgstr "%e %b"
+
+#: src/app/hourlyForecast.js:38
+msgid "Hourly Forecast"
+msgstr "Urna napoved"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:132
+#: src/app/hourlyForecast.js:105
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:135
-msgid "%R"
-msgstr "%R"
-
-#: src/app/weeklyForecast.js:35
-msgid "Weekly Forecast"
-msgstr "Tedenska vremenska napoved"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:120
-msgid "%A"
-msgstr "%A"
-
-#: src/app/window.js:139
+#: src/app/window.js:76
 msgid "Select Location"
 msgstr "Izbor mesta"
 
-#: src/app/window.js:254
+#: src/app/window.js:226
 msgid "translator-credits"
 msgstr "Matej Urbančič <matej.urban@svn.gnome.org>"
 
-#: src/app/window.js:256
+#: src/app/window.js:228
 msgid "A weather application"
 msgstr "Program za prikaz podatkov vremena"
 
@@ -220,6 +270,21 @@ msgstr "%s / %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
+#~ msgid "Today"
+#~ msgstr "Danes"
+
+#~ msgid "Tomorrow"
+#~ msgstr "Jutri"
+
+#~ msgid "Forecast"
+#~ msgstr "Napoved"
+
+#~ msgid "%R"
+#~ msgstr "%R"
+
+#~ msgid "%A"
+#~ msgstr "%A"
+
 #~ msgid "@APP_ID@"
 #~ msgstr "@APP_ID@"
 
@@ -235,9 +300,6 @@ msgstr "%s, %s"
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
 
-#~ msgid "Detailed forecast"
-#~ msgstr "Podrobna napoved"
-
 #~ msgid "Select All"
 #~ msgstr "Izberi vse"
 
@@ -246,9 +308,6 @@ msgstr "%s, %s"
 
 #~ msgid "Click on locations to select them"
 #~ msgstr "S klikom se predmeti izberejo."
-
-#~ msgid "New"
-#~ msgstr "Novo"
 
 #~ msgid "Back"
 #~ msgstr "Nazaj"
@@ -273,9 +332,6 @@ msgstr "%s, %s"
 
 #~ msgid "Monday night"
 #~ msgstr "Ponedeljek ponoči"
-
-#~ msgid "Monday morning"
-#~ msgstr "Ponedeljek zjutraj"
 
 #~ msgid "Monday afternoon"
 #~ msgstr "Ponedeljek popoldne"
@@ -355,17 +411,8 @@ msgstr "%s, %s"
 #~ msgid "Sunday evening"
 #~ msgstr "Nedelja zvečer"
 
-#~ msgid "Tonight"
-#~ msgstr "Ponoči"
-
 #~ msgid "This morning"
 #~ msgstr "Danes zjutraj"
-
-#~ msgid "This afternoon"
-#~ msgstr "Danes popoldne"
-
-#~ msgid "This evening"
-#~ msgstr "Danes zvečer"
 
 #~ msgid "Tomorrow night"
 #~ msgstr "Jutri ponoči"
