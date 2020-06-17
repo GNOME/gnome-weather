@@ -178,25 +178,25 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
 
         dayEntry.image.iconName = dayInfo.get_symbolic_icon_name();
 
-        dayEntry.maxTemperatureLabel.label = maxInfo.get_temp_summary();
-        dayEntry.minTemperatureLabel.label = minInfo.get_temp_summary();
+        dayEntry.maxTemperatureLabel.label = Util.getTempString(maxInfo);
+        dayEntry.minTemperatureLabel.label = Util.getTempString(minInfo);
 
-        dayEntry.nightTemperatureLabel.label = nightInfo.get_temp_summary();
+        dayEntry.nightTemperatureLabel.label = Util.getTempString(nightInfo);
         dayEntry.nightImage.iconName = nightInfo.get_symbolic_icon_name();
         dayEntry.nightHumidity.label = nightInfo.get_humidity();
         dayEntry.nightWind.label = nightInfo.get_wind();
 
-        dayEntry.morningTemperatureLabel.label = morningInfo.get_temp_summary();
+        dayEntry.morningTemperatureLabel.label = Util.getTempString(morningInfo);
         dayEntry.morningImage.iconName = morningInfo.get_symbolic_icon_name();
         dayEntry.morningHumidity.label = morningInfo.get_humidity();
         dayEntry.morningWind.label = morningInfo.get_wind();
 
-        dayEntry.afternoonTemperatureLabel.label = afternoonInfo.get_temp_summary();
+        dayEntry.afternoonTemperatureLabel.label = Util.getTempString(afternoonInfo);
         dayEntry.afternoonImage.iconName = afternoonInfo.get_symbolic_icon_name();
         dayEntry.afternoonHumidity.label = afternoonInfo.get_humidity();
         dayEntry.afternoonWind.label = afternoonInfo.get_wind();
 
-        dayEntry.eveningTemperatureLabel.label = eveningInfo.get_temp_summary();
+        dayEntry.eveningTemperatureLabel.label = Util.getTempString(eveningInfo);
         dayEntry.eveningImage.iconName = eveningInfo.get_symbolic_icon_name();
         dayEntry.eveningHumidity.label = eveningInfo.get_humidity();
         dayEntry.eveningWind.label = eveningInfo.get_wind();
