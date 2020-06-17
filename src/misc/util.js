@@ -201,3 +201,10 @@ function getTemp(info) {
     let [ok, temp] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
     return temp;
 }
+
+function getTempString(info) {
+    let [ok, temp] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
+    if (!ok)
+        return "--";
+    return Math.round(temp) + "°";
+}
