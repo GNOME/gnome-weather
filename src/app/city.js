@@ -187,7 +187,7 @@ var WeatherWidget = GObject.registerClass({
         this._worldView.refilter();
 
         this._conditionsImage.icon_name = info.get_symbolic_icon_name();
-        this._temperatureLabel.label = info.get_temp_summary();
+        this._temperatureLabel.label = Util.getTempString(info);
 
         let forecasts = info.get_forecast_list();
         let tz = GLib.TimeZone.new(info.location.get_timezone().get_tzid());
