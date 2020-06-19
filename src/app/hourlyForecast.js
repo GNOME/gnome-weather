@@ -109,7 +109,7 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         let hourEntry = new HourEntry();
         hourEntry.timeLabel.label = datetime.format(timeFormat);
         hourEntry.image.iconName = info.get_symbolic_icon_name();
-        hourEntry.temperatureLabel.label = info.get_temp_summary();
+        hourEntry.temperatureLabel.label = Util.getTempString(info);
 
         this._box.pack_start(hourEntry, false, false, 0);
 
@@ -133,10 +133,7 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
     vfunc_draw(cr) {
         let hourlyInfo = this._hourlyInfo;
 
-        let temps = hourlyInfo.map(info => {
-            let [ok, t] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
-            return t;
-        });
+        let temps = hourlyInfo.map(info => Util.getTemp(info));
         let maxTemp = Math.max(...temps);
         temps = temps.map(t => t / maxTemp);
         let n = temps.length;
