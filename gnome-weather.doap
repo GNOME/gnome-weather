@@ -21,17 +21,9 @@
 
   <maintainer>
     <foaf:Person>
-      <foaf:name>Christopher Davis</foaf:name>
-      <foaf:mbox rdf:resource="mailto:christopherdavis@gnome.org" />
-      <gnome:userid>christopherdavis</gnome:userid>
-    </foaf:Person>
-  </maintainer>
-
-  <maintainer>
-    <foaf:Person>
-      <foaf:name>Falk Seidl</foaf:name>
-      <foaf:mbox rdf:resource="mailto:fseidl@gnome.org" />
-      <gnome:userid>fseidl</gnome:userid>
+      <foaf:name>Vitaly Dyachkov</foaf:name>
+      <foaf:mbox rdf:resource="mailto:obyknovenius@me.com" />
+      <gnome:userid>vitalydyachkov</gnome:userid>
     </foaf:Person>
   </maintainer>
 
