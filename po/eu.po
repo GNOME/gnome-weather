@@ -4,32 +4,23 @@
 #
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2013, 2014, 2015, 2016.
 # Edurne Labaka <elabaka@uzei.com>, 2015.
-# Asier Sarasua Garmendia  <asier.sarasua@gmail.com>, 2013, 2019, 2020.
+# Asier Sarasua Garmendia  <asiersarasua@ni.eus, 2013, 2019, 2020.
 msgid ""
 msgstr "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-10-22 01:19+0000\n"
-"PO-Revision-Date: 2020-02-15 19:00+0100\n"
-"Last-Translator: Asier Sarasua Garmendia <asier.sarasua@gmail.com>\n"
+"POT-Creation-Date: 2020-06-18 17:07+0000\n"
+"PO-Revision-Date: 2020-06-22 19:00+0100\n"
+"Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: OmegaT 4.1.5\n"
-
-#: data/city.ui:8
-msgid "City view"
-msgstr "Hiriaren ikuspegia"
-
-#: data/city.ui:30
-msgid "Loading…"
-msgstr "Kargatzen…"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
-#: src/app/window.js:255 src/service/main.js:48
+#: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Eguraldia"
 
@@ -90,6 +81,30 @@ msgid ""
 "decides whether to fetch current location or not."
 msgstr "Kokaleku automatikoa 'automatic-location' aldatzailearen balioa da, uneko kokalekua hartuko duen edo ez erabakitzeko."
 
+#: data/city.ui:8
+msgid "City view"
+msgstr "Hiriaren ikuspegia"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "Kargatzen…"
+
+#: data/day-entry.ui:27
+msgid "Night"
+msgstr "Gaua"
+
+#: data/day-entry.ui:39
+msgid "Morning"
+msgstr "Goiza"
+
+#: data/day-entry.ui:51
+msgid "Afternoon"
+msgstr "Arratsaldea"
+
+#: data/day-entry.ui:63
+msgid "Evening"
+msgstr "Iluntzea"
+
 #: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Kokaleku automatikoa"
@@ -122,70 +137,65 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Weather aplikazioari buruz"
 
-#: data/weather-widget.ui:39
-msgid "Current conditions"
-msgstr "Uneko baldintzak"
+#: data/weather-widget.ui:59
+msgid "Hourly"
+msgstr "Orduro"
 
-#: data/weather-widget.ui:151
-msgid "Today"
-msgstr "Gaur"
+#: data/weather-widget.ui:91
+msgid "Daily"
+msgstr "Egunero"
 
-#: data/weather-widget.ui:180
-msgid "Tomorrow"
-msgstr "Bihar"
-
-#: data/window.ui:33
+#: data/weather-widget.ui:203
 msgid "Places"
 msgstr "Lekuak"
 
-#: data/window.ui:55
+#: data/weather-widget.ui:237
+msgid "Current conditions"
+msgstr "Uneko baldintzak"
+
+#: data/window.ui:49
 msgid "Refresh"
 msgstr "Freskatu"
 
-#: data/window.ui:113
+#: data/window.ui:105
 msgid "Search for a location"
 msgstr "Bilatu kokalekua"
 
-#: data/window.ui:129
+#: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr "Eguraldiari buruzko informazioa ikusteko, sartu herriaren izena."
 
-#: src/app/forecast.js:35
-msgid "Forecast"
-msgstr "Iragarpena"
+#: src/app/dailyForecast.js:33
+msgid "Daily Forecast"
+msgstr "Eguneroko iragarpena"
 
-#: src/app/forecast.js:116
+#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
 msgid "Forecast not available"
 msgstr "Iragarpena ez dago eskuragarri"
 
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:176
+msgid "%e %b"
+msgstr "%e %b"
+
+#: src/app/hourlyForecast.js:38
+msgid "Hourly Forecast"
+msgstr "Orduroko iragarpena"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:132
+#: src/app/hourlyForecast.js:105
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:135
-msgid "%R"
-msgstr "%R"
-
-#: src/app/weeklyForecast.js:35
-msgid "Weekly Forecast"
-msgstr "Asteko iragarpena"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:120
-msgid "%A"
-msgstr "%A"
-
-#: src/app/window.js:139
+#: src/app/window.js:76
 msgid "Select Location"
 msgstr "Hautatu kokalekua"
 
-#: src/app/window.js:254
+#: src/app/window.js:226
 msgid "translator-credits"
-msgstr "Asier Sarasua Garmendia <asier.sarasua@gmail.com>"
+msgstr "translator-credits"
 
-#: src/app/window.js:256
+#: src/app/window.js:228
 msgid "A weather application"
 msgstr "Eguraldiaren aplikazio bat"
 
@@ -208,6 +218,21 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Today"
+#~ msgstr "Gaur"
+
+#~ msgid "Tomorrow"
+#~ msgstr "Bihar"
+
+#~ msgid "Forecast"
+#~ msgstr "Iragarpena"
+
+#~ msgid "%R"
+#~ msgstr "%R"
+
+#~ msgid "%A"
+#~ msgstr "%A"
 
 #~ msgid "@APP_ID@"
 #~ msgstr "@APP_ID@"
