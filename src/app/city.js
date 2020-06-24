@@ -16,6 +16,8 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+const Mainloop = imports.mainloop;
+
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const Gnome = imports.gi.GnomeDesktop;
@@ -38,7 +40,8 @@ var WeatherWidget = GObject.registerClass({
                        'placesButton', 'placesLabel','temperatureLabel',
                        'forecastStack','leftButton', 'rightButton',
                        'forecast-hourly', 'forecast-hourly-alignment',
-                       'forecast-daily', 'forecast-daily-alignment'],
+                       'forecast-daily', 'forecast-daily-alignment',
+                       'updatedTimeLabel'],
 }, class WeatherWidget extends Gtk.Frame {
 
     _init(application, window, params) {
@@ -106,6 +109,12 @@ var WeatherWidget = GObject.registerClass({
 
             this._beginScrollAnimation(target);
         });
+
+        this._updatedTime = null;
+        Mainloop.timeout_add(1000, () => {
+            this._updatedTimeLabel.label = this._formatUpdatedTime();
+            return true;
+        }, null);
     }
 
     _syncLeftRightButtons() {
@@ -193,6 +202,49 @@ var WeatherWidget = GObject.registerClass({
         let tz = GLib.TimeZone.new(info.location.get_timezone().get_tzid());
         for (let t of ['hourly', 'daily'])
             this._forecasts[t].update(forecasts, tz);
+
+        this._updatedTime = Date.now();
+        this._updatedTimeLabel.label = this._formatUpdatedTime();
+    }
+
+    _formatUpdatedTime() {
+        if (this._updatedTime == null)
+            return '';
+
+        const milliseconds = Date.now() - this._updatedTime;
+
+        const seconds = milliseconds / 1000;
+        if (seconds < 60)
+            return _('Updated just now.');
+
+        const minutes = seconds / 60;
+        if (minutes < 60)
+            return ngettext(
+                'Updated %d minute ago.',
+                'Updated %d minutes ago.', minutes).format(minutes);
+
+        const hours = minutes / 60;
+        if (hours < 24)
+            return ngettext(
+                'Updated %d hour ago.',
+                'Updated %d hours ago.', hours).format(hours);
+
+        const days = hours / 24;
+        if (days < 7)
+            return ngettext(
+                'Updated %d day ago.',
+                'Updated %d days ago.', days).format(days);
+
+        const weeks = days / 7;
+        if (days < 30)
+            return ngettext(
+                'Updated %d week ago.',
+                'Updated %d weeks ago.', weeks).format(weeks);
+
+        const months = days / 30;
+        return ngettext(
+            'Updated %d month ago.',
+            '%d months ago.', months).format(months);
     }
 });
 
