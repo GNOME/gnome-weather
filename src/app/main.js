@@ -16,8 +16,10 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-pkg.initGettext();
 pkg.initFormat();
+pkg.initGettext();
+window.ngettext = imports.gettext.ngettext;
+
 pkg.require({ 'Gdk': '3.0',
               'Gio': '2.0',
               'GLib': '2.0',
