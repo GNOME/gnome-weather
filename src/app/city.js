@@ -16,8 +16,6 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const Mainloop = imports.mainloop;
-
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const Gnome = imports.gi.GnomeDesktop;
@@ -33,6 +31,8 @@ const Util = imports.misc.util;
 const SPINNER_SIZE = 128;
 
 const SCROLLING_ANIMATION_TIME = 400000; //us
+
+const UPDATED_TIME_TIMEOUT = 60; //s
 
 var WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
@@ -111,10 +111,12 @@ var WeatherWidget = GObject.registerClass({
         });
 
         this._updatedTime = null;
-        Mainloop.timeout_add(1000, () => {
-            this._updatedTimeLabel.label = this._formatUpdatedTime();
-            return true;
-        }, null);
+        this._updatedTimeTimeoutId = 0;
+
+        this._updatedTimeLabel.connect('destroy', () => {
+            if (this._updatedTimeTimeoutId)
+                GLib.Source.remove(this._updatedTimeTimeoutId);
+        });
     }
 
     _syncLeftRightButtons() {
@@ -203,8 +205,19 @@ var WeatherWidget = GObject.registerClass({
         for (let t of ['hourly', 'daily'])
             this._forecasts[t].update(forecasts, tz);
 
+        if (this._updatedTimeTimeoutId)
+            GLib.Source.remove(this._updatedTimeTimeoutId);
+
         this._updatedTime = Date.now();
         this._updatedTimeLabel.label = this._formatUpdatedTime();
+
+        this._updatedTimeTimeoutId = GLib.timeout_add_seconds(
+            GLib.PRIORITY_DEFAULT,
+            UPDATED_TIME_TIMEOUT, () => {
+                this._updatedTimeLabel.label = this._formatUpdatedTime();
+                return GLib.SOURCE_CONTINUE;
+            }
+        );
     }
 
     _formatUpdatedTime() {
