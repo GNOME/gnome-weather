@@ -1,14 +1,14 @@
 # Kazakh translation for gnome-weather.
 # Copyright (C) 2014 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2014.
+# Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2014-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-01-31 15:58+0000\n"
-"PO-Revision-Date: 2019-02-16 18:48+0500\n"
+"POT-Creation-Date: 2020-04-06 15:57+0000\n"
+"PO-Revision-Date: 2020-06-26 09:33+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: data/city.ui:8
 msgid "City view"
@@ -26,18 +26,18 @@ msgstr "Қалалар көрінісі"
 msgid "Loading…"
 msgstr "Жүктелуде…"
 
-#: data/org.gnome.Weather.appdata.xml.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:53
-#: src/app/window.js:231 src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: src/app/window.js:255 src/service/main.js:48
 msgid "Weather"
 msgstr "Ауа райы"
 
-#: data/org.gnome.Weather.appdata.xml.in:6
+#: data/org.gnome.Weather.appdata.xml.in.in:6
 #: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "Ауа райының күйін және болжамын көрсету"
 
-#: data/org.gnome.Weather.appdata.xml.in:17
+#: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -45,7 +45,7 @@ msgstr ""
 "Өз қалаңыз, немесе әлемнің басқа жерлері үшін ағымдағы ауа райы жағдайын "
 "көрсететін кішігірім қолданба."
 
-#: data/org.gnome.Weather.appdata.xml.in:21
+#: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -54,25 +54,24 @@ msgstr ""
 "және келесі күн үшін сағат бойынша ақпараты бар ауа райы болжамдарын қарауды "
 "мүмкін қылады."
 
-#: data/org.gnome.Weather.appdata.xml.in:25
+#: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you see the "
-"current conditions of the most recently searched cities by just typing its "
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
 "Сонымен қатар, оның GNOME Shell ішіне интеграциясы бар, белсенділік "
 "көрінісінде жақында ізделген қалалар үшін ауа райы болжамын көрсете алады, "
 "ол үшін қала атын енгізу керек."
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-#: data/org.gnome.Weather.desktop.in.in:7
-msgid "@APP_ID@"
-msgstr "@APP_ID@"
+#: data/org.gnome.Weather.appdata.xml.in.in:76
+msgid "The GNOME Project"
+msgstr "GNOME жобасы"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
-msgstr "Ауа райы;Болжам;Weather;"
+msgstr "Weather;Forecast;Ауа райы;Болжам;"
 
 #: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
@@ -102,19 +101,19 @@ msgstr ""
 "Орналасуды автоанықтау мүмкіндігі ағымдағы орналасуды автоматты түрде "
 "анықтау керектігін көрсететін қосқыш."
 
-#: data/places-popover.ui:44
+#: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Орналасуды автоанықтау"
 
-#: data/places-popover.ui:83
+#: data/places-popover.ui:84
 msgid "Locating…"
 msgstr "Анықтау…"
 
-#: data/places-popover.ui:140
+#: data/places-popover.ui:141
 msgid "Search for a city"
 msgstr "Қаланы іздеу"
 
-#: data/places-popover.ui:172
+#: data/places-popover.ui:173
 msgid "Viewed Recently"
 msgstr "Жақында қаралған"
 
@@ -162,53 +161,53 @@ msgstr "Орналасуды іздеу"
 msgid "To see weather information, enter the name of a city."
 msgstr "Ауа райы ақпаратын қарау үшін, қала атын енгізіңіз."
 
-#: src/app/forecast.js:37
+#: src/app/forecast.js:35
 msgid "Forecast"
 msgstr "Болжам"
 
-#: src/app/forecast.js:113
+#: src/app/forecast.js:116
 msgid "Forecast not available"
 msgstr "Болжам қолжетерсіз"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:129
+#: src/app/forecast.js:132
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
 #. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:132
+#: src/app/forecast.js:135
 msgid "%R"
 msgstr "%R"
 
-#: src/app/weeklyForecast.js:36
+#: src/app/weeklyForecast.js:35
 msgid "Weekly Forecast"
-msgstr "Аптаға болжам"
+msgstr "Апталық болжам"
 
 #. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:121
+#: src/app/weeklyForecast.js:120
 msgid "%A"
 msgstr "%A"
 
-#: src/app/window.js:120
+#: src/app/window.js:139
 msgid "Select Location"
 msgstr "Орналасуды таңдаңыз"
 
-#: src/app/window.js:230
+#: src/app/window.js:254
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
-#: src/app/window.js:232
+#: src/app/window.js:256
 msgid "A weather application"
 msgstr "Ауа райы қолданбасы"
 
-#: src/app/world.js:39
+#: src/app/world.js:38
 msgid "World view"
-msgstr "Әлемдік көрініс"
+msgstr "Әлем көрінісі"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:159
+#: src/misc/util.js:140
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -216,10 +215,13 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:181
+#: src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "@APP_ID@"
+#~ msgstr "@APP_ID@"
 
 #~ msgid "_New"
 #~ msgstr "Ж_аңа"
