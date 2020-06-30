@@ -6,6 +6,12 @@
     font-weight: bold;
 }
 
+#temperature-label {
+    font-size: 32pt;
+    font-weight: 900;
+    margin-left: 16px;
+}
+
 #weather-page-placeholder-title {
     font-weight: bold;
     font-size: 1.2em;
@@ -21,11 +27,6 @@
 #loading-label {
     padding-top: 24px;
     font-size: 1.5em;
-}
-
-#temperature-label {
-    font-size: 4em;
-    margin-left: 16px;
 }
 
 #attribution-label {
