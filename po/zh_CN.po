@@ -13,16 +13,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-06-18 17:07+0000\n"
-"PO-Revision-Date: 2020-04-02 17:16+0800\n"
-"Last-Translator: 王滋涵 <wi24rd@fedoraproject.org>\n"
+"POT-Creation-Date: 2020-06-28 18:33+0000\n"
+"PO-Revision-Date: 2020-06-30 18:39+0800\n"
+"Last-Translator: Merrick Zhang <anphorea@gmail.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
@@ -102,28 +102,20 @@ msgid "Loading…"
 msgstr "正在加载..."
 
 #: data/day-entry.ui:27
-#, fuzzy
-#| msgid "Tonight"
 msgid "Night"
-msgstr "今夜"
+msgstr "深夜"
 
 #: data/day-entry.ui:39
-#, fuzzy
-#| msgid "Monday morning"
 msgid "Morning"
-msgstr "周一上午"
+msgstr "上午"
 
 #: data/day-entry.ui:51
-#, fuzzy
-#| msgid "This afternoon"
 msgid "Afternoon"
-msgstr "今天下午"
+msgstr "下午"
 
 #: data/day-entry.ui:63
-#, fuzzy
-#| msgid "This evening"
 msgid "Evening"
-msgstr "今晚"
+msgstr "晚上"
 
 #: data/places-popover.ui:45
 msgid "Automatic Location"
@@ -159,11 +151,11 @@ msgstr "关于天气(_A)"
 
 #: data/weather-widget.ui:59
 msgid "Hourly"
-msgstr ""
+msgstr "每小时"
 
 #: data/weather-widget.ui:91
 msgid "Daily"
-msgstr ""
+msgstr "每天"
 
 #: data/weather-widget.ui:203
 msgid "Places"
@@ -186,10 +178,8 @@ msgid "To see weather information, enter the name of a city."
 msgstr "要查看天气信息，请输入城市的名称。"
 
 #: src/app/dailyForecast.js:33
-#, fuzzy
-#| msgid "Detailed forecast"
 msgid "Daily Forecast"
-msgstr "详细预报"
+msgstr "每日预报"
 
 #: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
 msgid "Forecast not available"
@@ -198,13 +188,11 @@ msgstr "天气预报不可用"
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:176
 msgid "%e %b"
-msgstr ""
+msgstr "%e %b"
 
 #: src/app/hourlyForecast.js:38
-#, fuzzy
-#| msgid "Weekly Forecast"
 msgid "Hourly Forecast"
-msgstr "每周预报"
+msgstr "小时预报"
 
 #. Translators: this is a time format without date used for AM/PM
 #: src/app/hourlyForecast.js:105
