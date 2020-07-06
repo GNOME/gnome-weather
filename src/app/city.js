@@ -32,13 +32,16 @@ const SPINNER_SIZE = 128;
 
 const SCROLLING_ANIMATION_TIME = 400000; //us
 
+const UPDATED_TIME_TIMEOUT = 60; //s
+
 var WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
                        'placesButton', 'placesLabel','temperatureLabel',
                        'forecastStack','leftButton', 'rightButton',
                        'forecast-hourly', 'forecast-hourly-alignment',
-                       'forecast-daily', 'forecast-daily-alignment'],
+                       'forecast-daily', 'forecast-daily-alignment',
+                       'updatedTimeLabel'],
 }, class WeatherWidget extends Gtk.Frame {
 
     _init(application, window, params) {
@@ -106,6 +109,18 @@ var WeatherWidget = GObject.registerClass({
 
             this._beginScrollAnimation(target);
         });
+
+        this._updatedTime = null;
+        this._updatedTimeTimeoutId = 0;
+
+        this.connect('destroy', () => this._onDestroy());
+    }
+
+    _onDestroy() {
+        if (this._updatedTimeTimeoutId) {
+            GLib.Source.remove(this._updatedTimeTimeoutId);
+            this._updatedTimeTimeoutId = 0;
+        }
     }
 
     _syncLeftRightButtons() {
@@ -193,6 +208,60 @@ var WeatherWidget = GObject.registerClass({
         let tz = GLib.TimeZone.new(info.location.get_timezone().get_tzid());
         for (let t of ['hourly', 'daily'])
             this._forecasts[t].update(forecasts, tz);
+
+        if (this._updatedTimeTimeoutId)
+            GLib.Source.remove(this._updatedTimeTimeoutId);
+
+        this._updatedTime = Date.now();
+        this._updatedTimeLabel.label = this._formatUpdatedTime();
+
+        this._updatedTimeTimeoutId = GLib.timeout_add_seconds(
+            GLib.PRIORITY_DEFAULT,
+            UPDATED_TIME_TIMEOUT, () => {
+                this._updatedTimeLabel.label = this._formatUpdatedTime();
+                return GLib.SOURCE_CONTINUE;
+            }
+        );
+    }
+
+    _formatUpdatedTime() {
+        if (this._updatedTime == null)
+            return '';
+
+        const milliseconds = Date.now() - this._updatedTime;
+
+        const seconds = milliseconds / 1000;
+        if (seconds < 60)
+            return _('Updated just now.');
+
+        const minutes = seconds / 60;
+        if (minutes < 60)
+            return ngettext(
+                'Updated %d minute ago.',
+                'Updated %d minutes ago.', minutes).format(minutes);
+
+        const hours = minutes / 60;
+        if (hours < 24)
+            return ngettext(
+                'Updated %d hour ago.',
+                'Updated %d hours ago.', hours).format(hours);
+
+        const days = hours / 24;
+        if (days < 7)
+            return ngettext(
+                'Updated %d day ago.',
+                'Updated %d days ago.', days).format(days);
+
+        const weeks = days / 7;
+        if (days < 30)
+            return ngettext(
+                'Updated %d week ago.',
+                'Updated %d weeks ago.', weeks).format(weeks);
+
+        const months = days / 30;
+        return ngettext(
+            'Updated %d month ago.',
+            '%d months ago.', months).format(months);
     }
 });
 

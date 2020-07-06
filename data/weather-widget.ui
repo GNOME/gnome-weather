@@ -22,7 +22,7 @@
               <object class="GtkOverlay" id="forecast-overlay">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="margin_bottom">50</property>
+                <property name="margin_bottom">24</property>
                 <child>
                   <object class="GtkStack" id="forecastStack">
                     <property name="visible">True</property>
@@ -241,6 +241,20 @@
               <packing>
                 <property name="left_attach">0</property>
                 <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="updatedTimeLabel">
+                <property name="name">updated-time-label</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">start</property>
+                <property name="margin_start">18</property>
+                <property name="margin_bottom">20</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
               </packing>
             </child>
           </object>
