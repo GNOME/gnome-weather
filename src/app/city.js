@@ -113,10 +113,14 @@ var WeatherWidget = GObject.registerClass({
         this._updatedTime = null;
         this._updatedTimeTimeoutId = 0;
 
-        this._updatedTimeLabel.connect('destroy', () => {
-            if (this._updatedTimeTimeoutId)
-                GLib.Source.remove(this._updatedTimeTimeoutId);
-        });
+        this.connect('destroy', () => this._onDestroy());
+    }
+
+    _onDestroy() {
+        if (this._updatedTimeTimeoutId) {
+            GLib.Source.remove(this._updatedTimeTimeoutId);
+            this._updatedTimeTimeoutId = 0;
+        }
     }
 
     _syncLeftRightButtons() {
