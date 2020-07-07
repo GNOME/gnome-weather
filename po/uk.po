@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-06-13 10:34+0000\n"
-"PO-Revision-Date: 2020-06-13 14:41+0300\n"
+"POT-Creation-Date: 2020-07-06 08:28+0000\n"
+"PO-Revision-Date: 2020-07-07 07:35+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
 #: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Погода"
@@ -103,64 +103,20 @@ msgid "Loading…"
 msgstr "Завантаження…"
 
 #: data/day-entry.ui:27
-#| msgid "Tonight"
 msgid "Night"
 msgstr "Ніч"
 
 #: data/day-entry.ui:39
-#| msgid "Monday morning"
 msgid "Morning"
 msgstr "Ранок"
 
 #: data/day-entry.ui:51
-#| msgid "This afternoon"
 msgid "Afternoon"
 msgstr "Після обіду"
 
 #: data/day-entry.ui:63
-#| msgid "This evening"
 msgid "Evening"
 msgstr "Вечір"
-
-#: data/day-entry.ui:126 data/day-entry.ui:137 data/day-entry.ui:148
-#: data/day-entry.ui:159
-msgid "16°"
-msgstr "16°"
-
-#: data/day-entry.ui:203 data/day-entry.ui:214 data/day-entry.ui:225
-#: data/day-entry.ui:236
-msgid "2.1 mm"
-msgstr "2,1 мм"
-
-#: data/day-entry.ui:247 data/day-entry.ui:258 data/day-entry.ui:269
-#: data/day-entry.ui:280
-msgid "5 m/s"
-msgstr "5 м/с"
-
-#: data/day-entry.ui:323
-msgid "Tues"
-msgstr "Вт"
-
-#: data/day-entry.ui:336
-msgid "7 June"
-msgstr "7 червня"
-
-#: data/day-entry.ui:364
-msgid "18°"
-msgstr "18°"
-
-#: data/day-entry.ui:377
-msgid "9°"
-msgstr "9°"
-
-#: data/hour-entry.ui:19
-#| msgid "New"
-msgid "Now"
-msgstr "Зараз"
-
-#: data/hour-entry.ui:48
-msgid "13°"
-msgstr "13°"
 
 #: data/places-popover.ui:45
 msgid "Automatic Location"
@@ -222,8 +178,51 @@ msgstr "Пошук місцевості"
 msgid "To see weather information, enter the name of a city."
 msgstr "Уведіть назву міста, щоб побачити інформацію про погоду."
 
+#: src/app/city.js:235
+msgid "Updated just now."
+msgstr "Щойно оновлено."
+
+#: src/app/city.js:240
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Оновлено %d хвилину тому."
+msgstr[1] "Оновлено %d хвилини тому."
+msgstr[2] "Оновлено %d хвилин тому."
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Оновлено %d годину тому."
+msgstr[1] "Оновлено %d години тому."
+msgstr[2] "Оновлено %d годин тому."
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Оновлено %d день тому."
+msgstr[1] "Оновлено %d дні тому."
+msgstr[2] "Оновлено %d днів тому."
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Оновлено %d тиждень тому."
+msgstr[1] "Оновлено %d тижні тому."
+msgstr[2] "Оновлено %d тижнів тому."
+
+#: src/app/city.js:263
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] "Оновлено %d місяць тому."
+msgstr[1] "Оновлено %d місяці тому."
+msgstr[2] "Оновлено %d місяців тому."
+
 #: src/app/dailyForecast.js:33
-#| msgid "Detailed forecast"
 msgid "Daily Forecast"
 msgstr "Денний прогноз"
 
@@ -237,7 +236,6 @@ msgid "%e %b"
 msgstr "%e %b"
 
 #: src/app/hourlyForecast.js:38
-#| msgid "Weekly Forecast"
 msgid "Hourly Forecast"
 msgstr "Годинний прогноз"
 
@@ -277,6 +275,34 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "16°"
+#~ msgstr "16°"
+
+#~ msgid "2.1 mm"
+#~ msgstr "2,1 мм"
+
+#~ msgid "5 m/s"
+#~ msgstr "5 м/с"
+
+#~ msgid "Tues"
+#~ msgstr "Вт"
+
+#~ msgid "7 June"
+#~ msgstr "7 червня"
+
+#~ msgid "18°"
+#~ msgstr "18°"
+
+#~ msgid "9°"
+#~ msgstr "9°"
+
+#~| msgid "New"
+#~ msgid "Now"
+#~ msgstr "Зараз"
+
+#~ msgid "13°"
+#~ msgstr "13°"
 
 #~ msgid "Today"
 #~ msgstr "Сьогодні"
