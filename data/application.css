@@ -60,3 +60,8 @@
 #updated-time-label {
     font-size: 9pt;
 }
+
+#attribution-label {
+    font-size: 9pt;
+    color: rgba(154, 153, 150, 1.0);
+}

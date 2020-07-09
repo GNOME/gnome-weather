@@ -42,7 +42,7 @@ var WeatherWidget = GObject.registerClass({
                        'forecastStack','leftButton', 'rightButton',
                        'forecast-hourly', 'forecast-hourly-alignment',
                        'forecast-daily', 'forecast-daily-alignment',
-                       'updatedTimeLabel'],
+                       'updatedTimeLabel', 'attributionLabel'],
 }, class WeatherWidget extends Gtk.Frame {
 
     _init(application, window, params) {
@@ -228,6 +228,8 @@ var WeatherWidget = GObject.registerClass({
                 return GLib.SOURCE_CONTINUE;
             }
         );
+
+        this._attributionLabel.label = info.get_attribution();
     }
 
     _formatUpdatedTime() {
