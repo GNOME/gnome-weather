@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-06-28 18:33+0000\n"
-"PO-Revision-Date: 2020-06-30 18:39+0800\n"
+"POT-Creation-Date: 2020-07-12 17:13+0000\n"
+"PO-Revision-Date: 2020-07-13 23:26+0800\n"
 "Last-Translator: Merrick Zhang <anphorea@gmail.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -22,10 +22,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.3\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
 #: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "天气"
@@ -99,7 +99,7 @@ msgstr "城市视图"
 
 #: data/city.ui:30
 msgid "Loading…"
-msgstr "正在加载..."
+msgstr "正在加载…"
 
 #: data/day-entry.ui:27
 msgid "Night"
@@ -177,6 +177,40 @@ msgstr "根据位置搜索"
 msgid "To see weather information, enter the name of a city."
 msgstr "要查看天气信息，请输入城市的名称。"
 
+#: src/app/city.js:235
+msgid "Updated just now."
+msgstr "刚刚更新。"
+
+#: src/app/city.js:240
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "%d 分钟前更新。"
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "%d 小时前更新。"
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "%d 天前更新。"
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "%d 周前更新。"
+
+#: src/app/city.js:263
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] "%d 个月前更新。"
+
 #: src/app/dailyForecast.js:33
 msgid "Daily Forecast"
 msgstr "每日预报"
@@ -206,7 +240,7 @@ msgstr "选择位置"
 #: src/app/window.js:226
 msgid "translator-credits"
 msgstr ""
-"tuhaihe <1132321739qq@gmail.com>, 2013\n"
+"tuhaihe <1132321739qq@gmail.com>, 2013,2020\n"
 "Wylmer Wang <wantinghard@gmail.com>, 2013\n"
 "甘露(Gan Lu)  <rhythm.gan@gmail.com>, 2013\n"
 "Tong Hui <tonghuix@gmail.com>, 2013\n"
