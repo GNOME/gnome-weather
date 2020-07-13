@@ -9,29 +9,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-10-22 01:19+0000\n"
-"PO-Revision-Date: 2020-02-18 01:30+0200\n"
-"Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
+"POT-Creation-Date: 2020-07-06 08:28+0000\n"
+"PO-Revision-Date: 2020-07-14 00:05+0300\n"
+"Last-Translator: Efstathios Iosifidis <eiosifidis@gnome.org>\n"
 "Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Project-Style: gnome\n"
 
-#: data/city.ui:8
-msgid "City view"
-msgstr "Εμφάνιση πόλης"
-
-#: data/city.ui:30
-msgid "Loading…"
-msgstr "Φορτώνεται…"
-
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
-#: src/app/window.js:255 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
+#: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Καιρός"
 
@@ -106,6 +98,30 @@ msgstr ""
 "Η αυτόματη τοποθεσία είναι η τιμή του διακόπτη automatic-location, ο οποίος "
 "αποφασίζει εάν θα ανακτηθεί η τρέχουσα τοποθεσία ή όχι."
 
+#: data/city.ui:8
+msgid "City view"
+msgstr "Εμφάνιση πόλης"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "Φορτώνεται…"
+
+#: data/day-entry.ui:27
+msgid "Night"
+msgstr "Νύχτα"
+
+#: data/day-entry.ui:39
+msgid "Morning"
+msgstr "Πρωί"
+
+#: data/day-entry.ui:51
+msgid "Afternoon"
+msgstr "Απόγευμα"
+
+#: data/day-entry.ui:63
+msgid "Evening"
+msgstr "Βράδυ"
+
 #: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Αυτόματη τοποθεσία"
@@ -138,67 +154,101 @@ msgstr "_Φαρενάϊτ"
 msgid "_About Weather"
 msgstr "_Περί του Καιρός"
 
-#: data/weather-widget.ui:39
-msgid "Current conditions"
-msgstr "Παρούσες συνθήκες"
+#: data/weather-widget.ui:59
+msgid "Hourly"
+msgstr "Ωριαία"
 
-#: data/weather-widget.ui:151
-msgid "Today"
-msgstr "Σήμερα"
+#: data/weather-widget.ui:91
+msgid "Daily"
+msgstr "Ημερησίως"
 
-#: data/weather-widget.ui:180
-msgid "Tomorrow"
-msgstr "Αύριο"
-
-#: data/window.ui:33
+#: data/weather-widget.ui:203
 msgid "Places"
 msgstr "Τοποθεσίες"
 
-#: data/window.ui:55
+#: data/weather-widget.ui:237
+msgid "Current conditions"
+msgstr "Παρούσες συνθήκες"
+
+#: data/window.ui:49
 msgid "Refresh"
 msgstr "Ανανέωση"
 
-#: data/window.ui:113
+#: data/window.ui:105
 msgid "Search for a location"
 msgstr "Αναζήτηση τοποθεσίας"
 
-#: data/window.ui:129
+#: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr ""
 "Για να δείτε πληροφορίες για τον καιρό, πληκτρολογήστε το όνομα μιας πόλης."
 
-#: src/app/forecast.js:35
-msgid "Forecast"
-msgstr "Πρόγνωση"
+#: src/app/city.js:235
+msgid "Updated just now."
+msgstr "Ενημερώθηκε μόλις τώρα."
 
-#: src/app/forecast.js:116
+#: src/app/city.js:240
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Ενημερώθηκε πριν από %d λεπτό."
+msgstr[1] "Ενημερώθηκε πριν από %d λεπτά."
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Ενημερώθηκε πριν από %d ώρα."
+msgstr[1] "Ενημερώθηκε πριν από %d ώρες."
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Ενημερώθηκε πριν από %d ημέρα."
+msgstr[1] "Ενημερώθηκε πριν από %d ημέρες."
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Ενημερώθηκε πριν από %d εβδομάδα."
+msgstr[1] "Ενημερώθηκε πριν από %d εβδομάδες."
+
+#: src/app/city.js:263
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] "Ενημερώθηκε πριν από %d μήνα."
+msgstr[1] "Ενημερώθηκε πριν από %d μήνες."
+
+#: src/app/dailyForecast.js:33
+msgid "Daily Forecast"
+msgstr "Ημερήσια πρόγνωση"
+
+#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
 msgid "Forecast not available"
 msgstr "Η πρόγνωση δεν είναι διαθέσιμη"
 
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:176
+msgid "%e %b"
+msgstr "%e %b"
+
+#: src/app/hourlyForecast.js:38
+msgid "Hourly Forecast"
+msgstr "Ωριαία πρόγνωση"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:132
+#: src/app/hourlyForecast.js:105
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:135
-msgid "%R"
-msgstr "%R"
-
-#: src/app/weeklyForecast.js:35
-msgid "Weekly Forecast"
-msgstr "Εβδομαδιαία πρόγνωση"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:120
-msgid "%A"
-msgstr "%A"
-
-#: src/app/window.js:139
+#: src/app/window.js:76
 msgid "Select Location"
 msgstr "Επιλογή τοποθεσίας"
 
-#: src/app/window.js:254
+#: src/app/window.js:226
 msgid "translator-credits"
 msgstr ""
 "Ελληνική μεταφραστική ομάδα GNOME  \n"
@@ -210,7 +260,7 @@ msgstr ""
 "Για περισσότερες πληροφορίες, επισκεφθείτε τη σελίδα\n"
 "http://gnome.gr/"
 
-#: src/app/window.js:256
+#: src/app/window.js:228
 msgid "A weather application"
 msgstr "Μια εφαρμογή για τον καιρό"
 
@@ -234,6 +284,21 @@ msgstr "%s / %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
+#~ msgid "Today"
+#~ msgstr "Σήμερα"
+
+#~ msgid "Tomorrow"
+#~ msgstr "Αύριο"
+
+#~ msgid "Forecast"
+#~ msgstr "Πρόγνωση"
+
+#~ msgid "%R"
+#~ msgstr "%R"
+
+#~ msgid "%A"
+#~ msgstr "%A"
+
 #~ msgid "@APP_ID@"
 #~ msgstr "@APP_ID@"
 
@@ -248,9 +313,6 @@ msgstr "%s, %s"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
-
-#~ msgid "Detailed forecast"
-#~ msgstr "Αναλυτική πρόγνωση"
 
 #~ msgid "Select All"
 #~ msgstr "Επιλογή όλων"
@@ -295,9 +357,6 @@ msgstr "%s, %s"
 
 #~ msgid "Monday night"
 #~ msgstr "Δευτέρα νύχτα"
-
-#~ msgid "Monday morning"
-#~ msgstr "Δευτέρα πρωί"
 
 #~ msgid "Monday afternoon"
 #~ msgstr "Δευτέρα απόγευμα"
@@ -377,17 +436,8 @@ msgstr "%s, %s"
 #~ msgid "Sunday evening"
 #~ msgstr "Κυριακή βράδυ"
 
-#~ msgid "Tonight"
-#~ msgstr "Απόψε"
-
 #~ msgid "This morning"
 #~ msgstr "Αυτό το πρωί"
-
-#~ msgid "This afternoon"
-#~ msgstr "Αυτό το απόγευμα"
-
-#~ msgid "This evening"
-#~ msgstr "Αυτό το βράδυ"
 
 #~ msgid "Tomorrow night"
 #~ msgstr "Αύριο τη νύχτα"
