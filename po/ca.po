@@ -9,19 +9,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-06-18 17:07+0000\n"
-"PO-Revision-Date: 2020-07-03 01:22+0200\n"
-"Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
+"POT-Creation-Date: 2020-07-13 21:07+0000\n"
+"PO-Revision-Date: 2020-07-16 17:50+0200\n"
+"Last-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
 #: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Meteorologia"
@@ -49,10 +49,6 @@ msgstr ""
 "d'Internet."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
-#| msgid ""
-#| "It also optionally integrates with the GNOME Shell, allowing you see the "
-#| "current conditions of the most recently searched cities by just typing "
-#| "its name in the Activities Overview."
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you to see the "
 "current conditions of the most recently searched cities by just typing the "
@@ -184,8 +180,46 @@ msgstr "Cerqueu una ubicació"
 msgid "To see weather information, enter the name of a city."
 msgstr "Per veure la informació meteorològica, introduïu el nom d'una ciutat."
 
+#: src/app/city.js:235
+msgid "Updated just now."
+msgstr "Actualitzat ara mateix."
+
+#: src/app/city.js:240
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Actualitzat fa %d minut"
+msgstr[1] "Actualitzat fa %d minuts"
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Actualitzat fa %d hora"
+msgstr[1] "Actualitzat fa %d hores"
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Actualitzat fa %d dia."
+msgstr[1] "Actualitzat fa %d dies."
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Actualitzat fa %d setmana."
+msgstr[1] "Actualitzat fa %d setmanes."
+
+#: src/app/city.js:263
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] "Actualitzat fa %d mes."
+msgstr[1] "Actualitzat fa %d mesos."
+
 #: src/app/dailyForecast.js:33
-#| msgid "Weekly Forecast"
 msgid "Daily Forecast"
 msgstr "Predicció diària"
 
@@ -199,7 +233,6 @@ msgid "%e %b"
 msgstr "%e %b"
 
 #: src/app/hourlyForecast.js:38
-#| msgid "Weekly Forecast"
 msgid "Hourly Forecast"
 msgstr "Predicció per hores"
 
@@ -214,7 +247,9 @@ msgstr "Seleccioneu una ubicació"
 
 #: src/app/window.js:226
 msgid "translator-credits"
-msgstr "Josep Sanchez Mesegue <papapep@gmx.com>"
+msgstr ""
+"Josep Sanchez Mesegue <papapep@gmx.com>,\n"
+"Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>"
 
 #: src/app/window.js:228
 msgid "A weather application"
