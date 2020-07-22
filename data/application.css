@@ -12,6 +12,10 @@
     margin-left: 16px;
 }
 
+#apparent-label {
+    font-size: 9pt;
+}
+
 #weather-page-placeholder-title {
     font-weight: bold;
     font-size: 1.2em;

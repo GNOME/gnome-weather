@@ -37,7 +37,8 @@ const UPDATED_TIME_TIMEOUT = 60; //s
 var WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
-                       'placesButton', 'placesLabel','temperatureLabel',
+                       'placesButton', 'placesLabel',
+                       'temperatureLabel', 'apparentLabel',
                        'forecastStack','leftButton', 'rightButton',
                        'forecast-hourly', 'forecast-hourly-alignment',
                        'forecast-daily', 'forecast-daily-alignment',
@@ -202,7 +203,12 @@ var WeatherWidget = GObject.registerClass({
         this._worldView.refilter();
 
         this._conditionsImage.icon_name = info.get_symbolic_icon_name();
-        this._temperatureLabel.label = Util.getTempString(info);
+
+        const [, tempValue] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
+        this._temperatureLabel.label = '%.0f°'.format(tempValue);
+
+        const [, apparentValue] = info.get_value_apparent(GWeather.TemperatureUnit.DEFAULT);
+        this._apparentLabel.label = _('Feels like %.0f°').format(apparentValue);
 
         let forecasts = info.get_forecast_list();
         let tz = GLib.TimeZone.new(info.location.get_timezone().get_tzid());
