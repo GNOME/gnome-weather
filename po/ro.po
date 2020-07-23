@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-06 08:28+0000\n"
-"PO-Revision-Date: 2020-07-06 16:29+0300\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-07-23 13:29+0300\n"
 "Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
 "Language: ro\n"
@@ -162,11 +162,11 @@ msgstr "Pe oră"
 msgid "Daily"
 msgstr "Zilnic"
 
-#: data/weather-widget.ui:203
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "Locuri"
 
-#: data/weather-widget.ui:237
+#: data/weather-widget.ui:266
 msgid "Current conditions"
 msgstr "Condiții actuale"
 
@@ -182,11 +182,16 @@ msgstr "Caută o locație"
 msgid "To see weather information, enter the name of a city."
 msgstr "Pentru a accesa informații meteo, introduceți numele unui oraș."
 
-#: src/app/city.js:235
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Se resimte ca %.0f°"
+
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Actualizat chiar acum."
 
-#: src/app/city.js:240
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -194,7 +199,7 @@ msgstr[0] "Actualizat acum %d minut."
 msgstr[1] "Actualizat acum %d minute."
 msgstr[2] "Actualizat acum %d de minute."
 
-#: src/app/city.js:246
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -202,7 +207,7 @@ msgstr[0] "Actualizat acum %d oră."
 msgstr[1] "Actualizat acum %d ore."
 msgstr[2] "Actualizat acum %d de ore."
 
-#: src/app/city.js:252
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -210,7 +215,7 @@ msgstr[0] "Actualizat acum %d zi."
 msgstr[1] "Actualizat acum %d zile."
 msgstr[2] "Actualizat acum %d de zile."
 
-#: src/app/city.js:258
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -218,7 +223,7 @@ msgstr[0] "Actualizat acum %d săptămână."
 msgstr[1] "Actualizat acum %d săptămâni."
 msgstr[2] "Actualizat acum %d de săptămâni."
 
-#: src/app/city.js:263
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "%d months ago."
