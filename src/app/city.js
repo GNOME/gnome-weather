@@ -202,7 +202,7 @@ var WeatherWidget = GObject.registerClass({
 
         this._worldView.refilter();
 
-        this._conditionsImage.icon_name = info.get_symbolic_icon_name();
+        this._conditionsImage.icon_name = info.get_icon_name();
 
         const [, tempValue] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
         this._temperatureLabel.label = '%.0f°'.format(tempValue);
