@@ -162,6 +162,9 @@
                     <property name="valign">start</property>
                     <property name="pixel_size">96</property>
                     <property name="icon_size">2</property>
+                    <style>
+                      <class name="icon-dropshadow"/>
+                    </style>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
