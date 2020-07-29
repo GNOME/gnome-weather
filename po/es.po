@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-06-13 10:34+0000\n"
-"PO-Revision-Date: 2020-06-16 09:26+0200\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-07-29 09:50+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Gtranslator 3.36.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
 #: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Meteorología"
@@ -103,64 +103,20 @@ msgid "Loading…"
 msgstr "Cargando…"
 
 #: data/day-entry.ui:27
-#| msgid "Tonight"
 msgid "Night"
 msgstr "Noche"
 
 #: data/day-entry.ui:39
-#| msgid "Monday morning"
 msgid "Morning"
 msgstr "Mañana"
 
 #: data/day-entry.ui:51
-#| msgid "This afternoon"
 msgid "Afternoon"
 msgstr "Tarde"
 
 #: data/day-entry.ui:63
-#| msgid "This evening"
 msgid "Evening"
 msgstr "Noche"
-
-#: data/day-entry.ui:126 data/day-entry.ui:137 data/day-entry.ui:148
-#: data/day-entry.ui:159
-msgid "16°"
-msgstr "16°"
-
-#: data/day-entry.ui:203 data/day-entry.ui:214 data/day-entry.ui:225
-#: data/day-entry.ui:236
-msgid "2.1 mm"
-msgstr "2.1 mm"
-
-#: data/day-entry.ui:247 data/day-entry.ui:258 data/day-entry.ui:269
-#: data/day-entry.ui:280
-msgid "5 m/s"
-msgstr "5 m/s"
-
-#: data/day-entry.ui:323
-msgid "Tues"
-msgstr "Jue"
-
-#: data/day-entry.ui:336
-msgid "7 June"
-msgstr "7 junio"
-
-#: data/day-entry.ui:364
-msgid "18°"
-msgstr "18°"
-
-#: data/day-entry.ui:377
-msgid "9°"
-msgstr "9°"
-
-#: data/hour-entry.ui:19
-#| msgid "New"
-msgid "Now"
-msgstr "Ahora"
-
-#: data/hour-entry.ui:48
-msgid "13°"
-msgstr "13°"
 
 #: data/places-popover.ui:45
 msgid "Automatic Location"
@@ -202,11 +158,11 @@ msgstr "Cada hora"
 msgid "Daily"
 msgstr "Cada día"
 
-#: data/weather-widget.ui:203
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "Lugares"
 
-#: data/weather-widget.ui:237
+#: data/weather-widget.ui:266
 msgid "Current conditions"
 msgstr "Condiciones actuales"
 
@@ -223,8 +179,51 @@ msgid "To see weather information, enter the name of a city."
 msgstr ""
 "Para ver la información sobre el tiempo, introduzca el nombre de una ciudad."
 
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Sensación de %.0f°"
+
+#: src/app/city.js:241
+msgid "Updated just now."
+msgstr "Actualizado justo ahora."
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Actualizado hace %d minuto."
+msgstr[1] "Actualizado hace %d minutos."
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Actualizado hace %d hora."
+msgstr[1] "Actualizado hace %d horas."
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Actualizado hace %d día."
+msgstr[1] "Actualizado hace %d días."
+
+#: src/app/city.js:264
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Actualizado hace %d semana."
+msgstr[1] "Actualizado hace %d semanas."
+
+#: src/app/city.js:269
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] "Actualizado hace %d mes."
+msgstr[1] "Actualizado hace %d meses."
+
 #: src/app/dailyForecast.js:33
-#| msgid "Detailed forecast"
 msgid "Daily Forecast"
 msgstr "Pronóstico diario"
 
@@ -238,7 +237,6 @@ msgid "%e %b"
 msgstr "%e %b"
 
 #: src/app/hourlyForecast.js:38
-#| msgid "Weekly Forecast"
 msgid "Hourly Forecast"
 msgstr "Pronóstico por horas"
 
@@ -278,6 +276,34 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "16°"
+#~ msgstr "16°"
+
+#~ msgid "2.1 mm"
+#~ msgstr "2.1 mm"
+
+#~ msgid "5 m/s"
+#~ msgstr "5 m/s"
+
+#~ msgid "Tues"
+#~ msgstr "Jue"
+
+#~ msgid "7 June"
+#~ msgstr "7 junio"
+
+#~ msgid "18°"
+#~ msgstr "18°"
+
+#~ msgid "9°"
+#~ msgstr "9°"
+
+#~| msgid "New"
+#~ msgid "Now"
+#~ msgstr "Ahora"
+
+#~ msgid "13°"
+#~ msgstr "13°"
 
 #~ msgid "Today"
 #~ msgstr "Hoy"
