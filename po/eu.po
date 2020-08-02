@@ -8,8 +8,8 @@
 msgid ""
 msgstr "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-06-18 17:07+0000\n"
-"PO-Revision-Date: 2020-06-22 19:00+0100\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-08-02 19:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr "Project-Id-Version: gnome-weather master\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
 #: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Eguraldia"
@@ -145,11 +145,11 @@ msgstr "Orduro"
 msgid "Daily"
 msgstr "Egunero"
 
-#: data/weather-widget.ui:203
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "Lekuak"
 
-#: data/weather-widget.ui:237
+#: data/weather-widget.ui:266
 msgid "Current conditions"
 msgstr "Uneko baldintzak"
 
@@ -164,6 +164,50 @@ msgstr "Bilatu kokalekua"
 #: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr "Eguraldiari buruzko informazioa ikusteko, sartu herriaren izena."
+
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "%.0f° ematen du"
+
+#: src/app/city.js:241
+msgid "Updated just now."
+msgstr "Orain bertan eguneratua."
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Duela minutu %d eguneratua."
+msgstr[1] "Duela %d minutu eguneratua."
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Duela ordu %d eguneratua."
+msgstr[1] "Duela %d ordu eguneratua."
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Duela egun %d eguneratua."
+msgstr[1] "Duela %d egun eguneratua."
+
+#: src/app/city.js:264
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Duela aste %d eguneratua."
+msgstr[1] "Duela %d aste eguneratua."
+
+#: src/app/city.js:269
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] "Duela hilabete %d eguneratua."
+msgstr[1] "Duela %d hilabete."
 
 #: src/app/dailyForecast.js:33
 msgid "Daily Forecast"
