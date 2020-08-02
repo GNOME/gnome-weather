@@ -13,18 +13,7 @@ flatpak:
         MESON_ARGS: "-Dprofile=development"
     extends: .flatpak
 
-review:
-    stage: deploy
-    dependencies:
-      - flatpak
-    extends: .review
-
-stop_review:
-    stage: deploy
-    extends: .stop_review
-
 nightly:
   extends: '.publish_nightly'
-  only:
-    refs:
-      - master
+  dependencies: ['flatpak']
+  needs: ['flatpak']
