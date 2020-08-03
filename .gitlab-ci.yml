@@ -10,7 +10,6 @@ flatpak:
         FLATPAK_MODULE: "gnome-weather"
         RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
         APP_ID: "org.gnome.WeatherDevel"
-        MESON_ARGS: "-Dprofile=development"
     extends: .flatpak
 
 nightly:
