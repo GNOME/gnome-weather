@@ -30,7 +30,6 @@
         "*.la",
         "*.a"
     ],
-    "desktop-file-name-prefix": "(Development) ",
     "modules": [
         {
             "name" : "geocode-glib",
