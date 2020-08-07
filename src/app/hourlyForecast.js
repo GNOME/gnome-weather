@@ -35,7 +35,10 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
             shadow_type: Gtk.ShadowType.IN,
             name: 'hourly-forecast-frame',
         }, params));
+
         this.get_accessible().accessible_name = _('Hourly Forecast');
+
+        this.get_style_context().add_class("forecast-frame");
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
@@ -131,6 +134,8 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
     }
 
     vfunc_draw(cr) {
+        super.vfunc_draw(cr);
+
         let hourlyInfo = this._hourlyInfo;
 
         let temps = hourlyInfo.map(info => Util.getTemp(info));
@@ -165,7 +170,6 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
 
         cr.fill();
 
-        super.vfunc_draw(cr);
         cr.$dispose();
 
         return Gdk.EVENT_PROPAGATE;
