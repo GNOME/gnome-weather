@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-06-13 10:34+0000\n"
-"PO-Revision-Date: 2020-06-14 18:50+0300\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-08-10 17:49+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -25,7 +25,7 @@ msgstr ""
 "X-POOTLE-MTIME: 1420670076.000000\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
 #: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Hava Durumu"
@@ -122,45 +122,6 @@ msgstr "Öğleden sonra"
 msgid "Evening"
 msgstr "Akşam"
 
-#: data/day-entry.ui:126 data/day-entry.ui:137 data/day-entry.ui:148
-#: data/day-entry.ui:159
-msgid "16°"
-msgstr "16°"
-
-#: data/day-entry.ui:203 data/day-entry.ui:214 data/day-entry.ui:225
-#: data/day-entry.ui:236
-msgid "2.1 mm"
-msgstr "2.1 mm"
-
-#: data/day-entry.ui:247 data/day-entry.ui:258 data/day-entry.ui:269
-#: data/day-entry.ui:280
-msgid "5 m/s"
-msgstr "5 m/s"
-
-#: data/day-entry.ui:323
-msgid "Tues"
-msgstr "Per"
-
-#: data/day-entry.ui:336
-msgid "7 June"
-msgstr "7 Haziran"
-
-#: data/day-entry.ui:364
-msgid "18°"
-msgstr "18°"
-
-#: data/day-entry.ui:377
-msgid "9°"
-msgstr "9°"
-
-#: data/hour-entry.ui:19
-msgid "Now"
-msgstr "Şimdi"
-
-#: data/hour-entry.ui:48
-msgid "13°"
-msgstr "13°"
-
 #: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Kendiliğinden Konumlama"
@@ -201,11 +162,11 @@ msgstr "Saatlik"
 msgid "Daily"
 msgstr "Günlük"
 
-#: data/weather-widget.ui:203
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "Yerler"
 
-#: data/weather-widget.ui:237
+#: data/weather-widget.ui:266
 msgid "Current conditions"
 msgstr "Geçerli hava koşulları"
 
@@ -220,6 +181,45 @@ msgstr "Konum arayın"
 #: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr "Hava bilgisini görmek için şehrin adını girin."
+
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "%.0f° gibi hissediliyor"
+
+#: src/app/city.js:241
+msgid "Updated just now."
+msgstr "Şimdi güncellendi."
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "%d dakika önce güncellendi."
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "%d saat önce güncellendi."
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "%d gün önce güncellendi."
+
+#: src/app/city.js:264
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "%d hafta önce güncellendi."
+
+#: src/app/city.js:269
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] "%d ay önce güncellendi."
 
 #: src/app/dailyForecast.js:33
 msgid "Daily Forecast"
@@ -276,6 +276,33 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "16°"
+#~ msgstr "16°"
+
+#~ msgid "2.1 mm"
+#~ msgstr "2.1 mm"
+
+#~ msgid "5 m/s"
+#~ msgstr "5 m/s"
+
+#~ msgid "Tues"
+#~ msgstr "Per"
+
+#~ msgid "7 June"
+#~ msgstr "7 Haziran"
+
+#~ msgid "18°"
+#~ msgstr "18°"
+
+#~ msgid "9°"
+#~ msgstr "9°"
+
+#~ msgid "Now"
+#~ msgstr "Şimdi"
+
+#~ msgid "13°"
+#~ msgstr "13°"
 
 #~ msgid "Today"
 #~ msgstr "Bugün"
