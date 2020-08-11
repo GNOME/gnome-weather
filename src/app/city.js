@@ -34,6 +34,105 @@ const SCROLLING_ANIMATION_TIME = 400000; //us
 
 const UPDATED_TIME_TIMEOUT = 60; //s
 
+/**
+ * Ported from 'gweather_info_get_icon_name' in libgweather.
+ * Converts the current weather conditions into the appropriate
+ * resource name.
+ * 
+ * @param {GWeather.Info} info a GWeather.Info object
+ * @returns {string} the resource name associated with the current weather conditions
+ */
+function get_icon_name(info) {
+    const [significant, phenomenon, qualifier] = info.get_value_conditions();
+    const [valid, sky] = info.get_value_sky();
+
+    if (significant) {
+        if (phenomenon != GWeather.ConditionPhenomenon.NONE &&
+            qualifier == GWeather.ConditionQualifier.THUNDERSTORM)
+            return "weather-storm";
+
+        switch (phenomenon) {
+            case GWeather.ConditionPhenomenon.INVALID:
+            case GWeather.ConditionPhenomenon.LAST:
+            case GWeather.ConditionPhenomenon.NONE:
+                break;
+
+            case GWeather.ConditionPhenomenon.DRIZZLE:
+            case GWeather.ConditionPhenomenon.RAIN:
+            case GWeather.ConditionPhenomenon.UNKNOWN_PRECIPITATION:
+            case GWeather.ConditionPhenomenon.HAIL:
+            case GWeather.ConditionPhenomenon.SMALL_HAIL:
+                return "weather-showers";
+
+            case GWeather.ConditionPhenomenon.SNOW:
+            case GWeather.ConditionPhenomenon.SNOW_GRAINS:
+            case GWeather.ConditionPhenomenon.ICE_PELLETS:
+            case GWeather.ConditionPhenomenon.ICE_CRYSTALS:
+                return "weather-snow";
+
+            case GWeather.ConditionPhenomenon.TORNADO:
+                return "weather-tornado";
+
+            case GWeather.ConditionPhenomenon.SQUALL:
+                return "weather-storm";
+
+            case GWeather.ConditionPhenomenon.MIST:
+            case GWeather.ConditionPhenomenon.FOG:
+            case GWeather.ConditionPhenomenon.SMOKE:
+            case GWeather.ConditionPhenomenon.VOLCANIC_ASH:
+            case GWeather.ConditionPhenomenon.SAND:
+            case GWeather.ConditionPhenomenon.HAZE:
+            case GWeather.ConditionPhenomenon.SPRAY:
+            case GWeather.ConditionPhenomenon.DUST:
+            case GWeather.ConditionPhenomenon.SANDSTORM:
+            case GWeather.ConditionPhenomenon.DUSTSTORM:
+            case GWeather.ConditionPhenomenon.FUNNEL_CLOUD:
+            case GWeather.ConditionPhenomenon.DUST_WHIRLS:
+                return "weather-fog";
+        }
+    }
+
+    const daytime = info.is_daytime();
+
+    if (valid) {
+        switch (sky) {
+            case GWeather.Sky.INVALID:
+            case GWeather.Sky.LAST:
+            case GWeather.Sky.CLEAR:
+                if (daytime)
+                    return "weather-clear";
+                else
+                    return "weather-clear-night";
+
+            case GWeather.Sky.BROKEN:
+            case GWeather.Sky.SCATTERED:
+            case GWeather.Sky.FEW:
+                if (daytime)
+                    return "weather-few-clouds";
+                else
+                    return "weather-few-clouds-night";
+
+            case GWeather.Sky.OVERCAST:
+                return "weather-overcast";
+
+            default: /* unrecognized */
+                return null;
+        }
+    }
+
+    return null;
+}
+
+function get_icon_resource(info) {
+    const name = get_icon_name(info);
+
+    if (!name) {
+        return null;
+    }
+
+    return `/org/gnome/Weather/status/${name}.svg`;
+}
+
 var WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
@@ -202,7 +301,15 @@ var WeatherWidget = GObject.registerClass({
 
         this._worldView.refilter();
 
-        this._conditionsImage.icon_name = info.get_icon_name();
+        this._conditionsImage.clear();
+
+        const resource = get_icon_resource(info);
+
+        try {
+            this._conditionsImage.set_from_resource(resource);
+        } catch (err) {
+            log(`Failed to set weather icon from resource: ${resource}`);
+        }
 
         const [, tempValue] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
         this._temperatureLabel.label = '%.0f°'.format(tempValue);

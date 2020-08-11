@@ -9,6 +9,20 @@
     <file preprocess="xml-stripblanks">hour-entry.ui</file>
     <file preprocess="xml-stripblanks">day-entry.ui</file>
     <file>application.css</file>
+    <!-- Status Icons -->
+    <file>status/weather-clear.svg</file>
+    <file>status/weather-clear-night.svg</file>
+    <file>status/weather-few-clouds.svg</file>
+    <file>status/weather-few-clouds-night.svg</file>
+    <file>status/weather-fog.svg</file>
+    <file>status/weather-overcast.svg</file>
+    <file>status/weather-severe-alert.svg</file>
+    <file>status/weather-showers.svg</file>
+    <file>status/weather-showers-scattered.svg</file>
+    <file>status/weather-snow.svg</file>
+    <file>status/weather-storm.svg</file>
+    <file>status/weather-tornado.svg</file>
+    <file>status/weather-windy.svg</file>
   </gresource>
   <gresource prefix="/org/gnome/shell">
     <file>ShellWeatherIntegration.xml</file>
