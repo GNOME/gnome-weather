@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-12 17:13+0000\n"
-"PO-Revision-Date: 2020-07-13 23:26+0800\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-08-13 12:00+0800\n"
 "Last-Translator: Merrick Zhang <anphorea@gmail.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
@@ -157,11 +157,11 @@ msgstr "每小时"
 msgid "Daily"
 msgstr "每天"
 
-#: data/weather-widget.ui:203
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "地点"
 
-#: data/weather-widget.ui:237
+#: data/weather-widget.ui:266
 msgid "Current conditions"
 msgstr "当前状况"
 
@@ -177,35 +177,40 @@ msgstr "根据位置搜索"
 msgid "To see weather information, enter the name of a city."
 msgstr "要查看天气信息，请输入城市的名称。"
 
-#: src/app/city.js:235
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "体感（温度）%.0f°"
+
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "刚刚更新。"
 
-#: src/app/city.js:240
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d 分钟前更新。"
 
-#: src/app/city.js:246
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d 小时前更新。"
 
-#: src/app/city.js:252
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d 天前更新。"
 
-#: src/app/city.js:258
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d 周前更新。"
 
-#: src/app/city.js:263
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "%d months ago."
@@ -246,7 +251,8 @@ msgstr ""
 "Tong Hui <tonghuix@gmail.com>, 2013\n"
 "Sphinx Jiang <yishanj@gmail.com>, 2014\n"
 "Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016\n"
-"王滋涵 <wi24rd@fedoraproject.org>, 2020"
+"王滋涵 <wi24rd@fedoraproject.org>, 2020\n"
+"Weiyi Xu <xuweiyi0923@gmail.com>, 2020"
 
 #: src/app/window.js:228
 msgid "A weather application"
