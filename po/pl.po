@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-10-22 01:19+0000\n"
-"PO-Revision-Date: 2020-02-16 14:01+0100\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-08-16 11:24+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -20,17 +20,9 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
 
-#: data/city.ui:8
-msgid "City view"
-msgstr "Widok miasta"
-
-#: data/city.ui:30
-msgid "Loading…"
-msgstr "Wczytywanie…"
-
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
-#: src/app/window.js:255 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
+#: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Pogoda"
 
@@ -106,6 +98,30 @@ msgstr ""
 "Automatyczne położenie to wartość przełącznika „automatic-location”, który "
 "określa, czy pobierać obecne położenie."
 
+#: data/city.ui:8
+msgid "City view"
+msgstr "Widok miasta"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "Wczytywanie…"
+
+#: data/day-entry.ui:27
+msgid "Night"
+msgstr "Noc"
+
+#: data/day-entry.ui:39
+msgid "Morning"
+msgstr "Poranek"
+
+#: data/day-entry.ui:51
+msgid "Afternoon"
+msgstr "Popołudnie"
+
+#: data/day-entry.ui:63
+msgid "Evening"
+msgstr "Wieczór"
+
 #: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Automatyczne położenie"
@@ -138,73 +154,117 @@ msgstr "Stopnie _Fahrenheita"
 msgid "_About Weather"
 msgstr "_O programie"
 
-#: data/weather-widget.ui:39
-msgid "Current conditions"
-msgstr "Obecne warunki pogodowe"
+#: data/weather-widget.ui:59
+msgid "Hourly"
+msgstr "Godzinowa"
 
-#: data/weather-widget.ui:151
-msgid "Today"
-msgstr "Dzisiaj"
+#: data/weather-widget.ui:91
+msgid "Daily"
+msgstr "Dzienna"
 
-#: data/weather-widget.ui:180
-msgid "Tomorrow"
-msgstr "Jutro"
-
-#: data/window.ui:33
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "Miejsca"
 
-#: data/window.ui:55
+#: data/weather-widget.ui:266
+msgid "Current conditions"
+msgstr "Obecne warunki pogodowe"
+
+#: data/window.ui:49
 msgid "Refresh"
 msgstr "Odśwież"
 
-#: data/window.ui:113
+#: data/window.ui:105
 msgid "Search for a location"
 msgstr "Wyszukiwanie położenia"
 
-#: data/window.ui:129
+#: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr "Należy wpisać nazwę miasta, aby wyświetlić informacje o pogodzie."
 
-#: src/app/forecast.js:35
-msgid "Forecast"
-msgstr "Prognoza"
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Odczuwalna: %.0f °"
 
-#: src/app/forecast.js:116
+#: src/app/city.js:241
+msgid "Updated just now."
+msgstr "Zaktualizowano przed chwilą."
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Zaktualizowano %d minutę temu."
+msgstr[1] "Zaktualizowano %d minuty temu."
+msgstr[2] "Zaktualizowano %d minut temu."
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Zaktualizowano %d godzinę temu."
+msgstr[1] "Zaktualizowano %d godziny temu."
+msgstr[2] "Zaktualizowano %d godzin temu."
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Zaktualizowano %d dzień temu."
+msgstr[1] "Zaktualizowano %d dni temu."
+msgstr[2] "Zaktualizowano %d dni temu."
+
+#: src/app/city.js:264
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Zaktualizowano %d tydzień temu."
+msgstr[1] "Zaktualizowano %d tygodnie temu."
+msgstr[2] "Zaktualizowano %d tygodni temu."
+
+#: src/app/city.js:269
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] "Zaktualizowano %d miesiąc temu."
+msgstr[1] "Zaktualizowano %d miesiące temu."
+msgstr[2] "Zaktualizowano %d miesięcy temu."
+
+#: src/app/dailyForecast.js:33
+msgid "Daily Forecast"
+msgstr "Prognoza dzienna"
+
+#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
 msgid "Forecast not available"
 msgstr "Prognoza jest niedostępna"
 
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:176
+msgid "%e %b"
+msgstr "%-d %b"
+
+#: src/app/hourlyForecast.js:38
+msgid "Hourly Forecast"
+msgstr "Prognoza godzinowa"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:132
+#: src/app/hourlyForecast.js:105
 msgid "%l∶%M %p"
 msgstr "%-l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:135
-msgid "%R"
-msgstr "%H∶%M"
-
-#: src/app/weeklyForecast.js:35
-msgid "Weekly Forecast"
-msgstr "Prognoza tygodniowa"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:120
-msgid "%A"
-msgstr "%A"
-
-#: src/app/window.js:139
+#: src/app/window.js:76
 msgid "Select Location"
 msgstr "Wybór położenia"
 
-#: src/app/window.js:254
+#: src/app/window.js:226
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2012-2020\n"
 "Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
 "Aviary.pl <community-poland@mozilla.org>, 2012-2020"
 
-#: src/app/window.js:256
+#: src/app/window.js:228
 msgid "A weather application"
 msgstr "Prognoza pogody"
 
