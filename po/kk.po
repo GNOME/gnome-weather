@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-06 08:28+0000\n"
-"PO-Revision-Date: 2020-07-06 17:00+0500\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-08-17 15:33+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
@@ -157,11 +157,11 @@ msgstr "Сағат сайын"
 msgid "Daily"
 msgstr "Күн сайын"
 
-#: data/weather-widget.ui:203
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "Орындар"
 
-#: data/weather-widget.ui:237
+#: data/weather-widget.ui:266
 msgid "Current conditions"
 msgstr "Ағымдағы күйі"
 
@@ -177,35 +177,40 @@ msgstr "Орналасуды іздеу"
 msgid "To see weather information, enter the name of a city."
 msgstr "Ауа райы ақпаратын қарау үшін, қала атын енгізіңіз."
 
-#: src/app/city.js:235
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "%.0f° сияқты сезіледі"
+
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Жаңа ғана жаңартылды."
 
-#: src/app/city.js:240
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d минут бұрын жаңартылды."
 
-#: src/app/city.js:246
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d сағат бұрын жаңартылды."
 
-#: src/app/city.js:252
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d күн бұрын жаңартылды."
 
-#: src/app/city.js:258
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d апта бұрын жаңартылды."
 
-#: src/app/city.js:263
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "%d months ago."
