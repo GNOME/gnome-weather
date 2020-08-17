@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-10-22 01:19+0000\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
 "PO-Revision-Date: 2020-01-18 00:00+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -19,18 +19,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-# この文字列は翻訳しない方がいい
-#: data/city.ui:8
-msgid "City view"
-msgstr "City view"
-
-#: data/city.ui:30
-msgid "Loading…"
-msgstr "読み込み中…"
-
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
-#: src/app/window.js:255 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
+#: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "天気"
 
@@ -101,6 +92,39 @@ msgstr ""
 "automatic-location は自動位置検出が現在の位置を取得するか否かを切り替える値で"
 "す。"
 
+# この文字列は翻訳しない方がいい
+#: data/city.ui:8
+msgid "City view"
+msgstr "City view"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "読み込み中…"
+
+#: data/day-entry.ui:27
+#, fuzzy
+#| msgid "Tonight"
+msgid "Night"
+msgstr "今日 深夜"
+
+#: data/day-entry.ui:39
+#, fuzzy
+#| msgid "Monday morning"
+msgid "Morning"
+msgstr "月曜日 朝"
+
+#: data/day-entry.ui:51
+#, fuzzy
+#| msgid "This afternoon"
+msgid "Afternoon"
+msgstr "今日 昼"
+
+#: data/day-entry.ui:63
+#, fuzzy
+#| msgid "This evening"
+msgid "Evening"
+msgstr "今日 夜"
+
 #: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "自動位置検出"
@@ -133,73 +157,111 @@ msgstr "華氏 (℉)(_F)"
 msgid "_About Weather"
 msgstr "このアプリケーションについて(_A)"
 
-#: data/weather-widget.ui:39
-msgid "Current conditions"
-msgstr "現在の天候"
+#: data/weather-widget.ui:59
+msgid "Hourly"
+msgstr ""
 
-#: data/weather-widget.ui:151
-msgid "Today"
-msgstr "今日"
+#: data/weather-widget.ui:91
+msgid "Daily"
+msgstr ""
 
-#: data/weather-widget.ui:180
-msgid "Tomorrow"
-msgstr "明日"
-
-#: data/window.ui:33
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "場所"
 
-#: data/window.ui:55
+#: data/weather-widget.ui:266
+msgid "Current conditions"
+msgstr "現在の天候"
+
+#: data/window.ui:49
 msgid "Refresh"
 msgstr "更新"
 
-#: data/window.ui:113
+#: data/window.ui:105
 msgid "Search for a location"
 msgstr "場所の検索"
 
-#: data/window.ui:129
+#: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr "気象情報を表示するには、都市の名前を入力してください。"
 
-#: src/app/forecast.js:35
-msgid "Forecast"
-msgstr "天気予報"
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr ""
 
-#: src/app/forecast.js:116
+#: src/app/city.js:241
+msgid "Updated just now."
+msgstr ""
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] ""
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] ""
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] ""
+
+#: src/app/city.js:264
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] ""
+
+#: src/app/city.js:269
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] ""
+
+#: src/app/dailyForecast.js:33
+#, fuzzy
+#| msgid "Weekly Forecast"
+msgid "Daily Forecast"
+msgstr "週間天気予報"
+
+#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
 msgid "Forecast not available"
 msgstr "天気予報がありません"
 
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:176
+msgid "%e %b"
+msgstr ""
+
+#: src/app/hourlyForecast.js:38
+#, fuzzy
+#| msgid "Weekly Forecast"
+msgid "Hourly Forecast"
+msgstr "週間天気予報"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:132
+#: src/app/hourlyForecast.js:105
 msgid "%l∶%M %p"
 msgstr "%p %I:%M"
 
-#. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:135
-msgid "%R"
-msgstr "%H:%M"
-
-#: src/app/weeklyForecast.js:35
-msgid "Weekly Forecast"
-msgstr "週間天気予報"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:120
-msgid "%A"
-msgstr "%A"
-
-#: src/app/window.js:139
+#: src/app/window.js:76
 msgid "Select Location"
 msgstr "場所の選択"
 
-#: src/app/window.js:254
+#: src/app/window.js:226
 msgid "translator-credits"
 msgstr ""
 "松澤 二郎 <jmatsuzawa@gnome.org>\n"
 "Hajime Taira <htaira@redhat.com>\n"
 "sicklylife <translation@sicklylife.jp>"
 
-#: src/app/window.js:256
+#: src/app/window.js:228
 msgid "A weather application"
 msgstr "天気予報アプリケーション"
 
@@ -223,6 +285,21 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Today"
+#~ msgstr "今日"
+
+#~ msgid "Tomorrow"
+#~ msgstr "明日"
+
+#~ msgid "Forecast"
+#~ msgstr "天気予報"
+
+#~ msgid "%R"
+#~ msgstr "%H:%M"
+
+#~ msgid "%A"
+#~ msgstr "%A"
 
 #~ msgid "_New"
 #~ msgstr "新規(_N)"
@@ -265,9 +342,6 @@ msgstr "%s, %s"
 
 #~ msgid "Monday night"
 #~ msgstr "月曜日 深夜"
-
-#~ msgid "Monday morning"
-#~ msgstr "月曜日 朝"
 
 #~ msgid "Monday afternoon"
 #~ msgstr "月曜日 昼"
@@ -347,17 +421,8 @@ msgstr "%s, %s"
 #~ msgid "Sunday evening"
 #~ msgstr "日曜日 夜"
 
-#~ msgid "Tonight"
-#~ msgstr "今日 深夜"
-
 #~ msgid "This morning"
 #~ msgstr "今日 朝"
-
-#~ msgid "This afternoon"
-#~ msgstr "今日 昼"
-
-#~ msgid "This evening"
-#~ msgstr "今日 夜"
 
 #~ msgid "Tomorrow night"
 #~ msgstr "明日 深夜"
