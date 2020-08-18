@@ -2,13 +2,13 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Andika Triwidada <andika@gmail.com>, 2013, 2014.
-#
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2019-2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-10-22 01:19+0000\n"
-"PO-Revision-Date: 2019-10-28 13:08+0700\n"
+"POT-Creation-Date: 2020-08-12 15:08+0000\n"
+"PO-Revision-Date: 2020-08-14 18:54+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -16,19 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural= n!=1;\n"
-"X-Generator: Poedit 2.2.4\n"
-
-#: data/city.ui:8
-msgid "City view"
-msgstr "Tilikan kota"
-
-#: data/city.ui:30
-msgid "Loading…"
-msgstr "Memuat…"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
-#: src/app/window.js:255 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
+#: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "Cuaca"
 
@@ -100,6 +92,30 @@ msgstr ""
 "Lokasi otomatis adalah nilai dari dari saklar automatic-location yang "
 "menentukan apakah akan mengambil lokasi saat ini atau tidak."
 
+#: data/city.ui:8
+msgid "City view"
+msgstr "Tilikan kota"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "Memuat…"
+
+#: data/day-entry.ui:27
+msgid "Night"
+msgstr "Malam"
+
+#: data/day-entry.ui:39
+msgid "Morning"
+msgstr "Pagi"
+
+#: data/day-entry.ui:51
+msgid "Afternoon"
+msgstr "Siang"
+
+#: data/day-entry.ui:63
+msgid "Evening"
+msgstr "Sore"
+
 #: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "Lokasi Otomatis"
@@ -132,72 +148,111 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "Tent_ang Cuaca"
 
-#: data/weather-widget.ui:39
-msgid "Current conditions"
-msgstr "Kondisi saat ini"
+#: data/weather-widget.ui:59
+msgid "Hourly"
+msgstr "Per Jam"
 
-#: data/weather-widget.ui:151
-msgid "Today"
-msgstr "Hari Ini"
+#: data/weather-widget.ui:91
+msgid "Daily"
+msgstr "Per Hari"
 
-#: data/weather-widget.ui:180
-msgid "Tomorrow"
-msgstr "Besok"
-
-#: data/window.ui:33
+#: data/weather-widget.ui:193
 msgid "Places"
 msgstr "Tempat"
 
-#: data/window.ui:55
+#: data/weather-widget.ui:269
+msgid "Current conditions"
+msgstr "Kondisi saat ini"
+
+#: data/window.ui:49
 msgid "Refresh"
 msgstr "Segarkan"
 
-#: data/window.ui:113
+#: data/window.ui:105
 msgid "Search for a location"
 msgstr "Mencari sebuah lokasi"
 
-#: data/window.ui:129
+#: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr "Untuk melihat informasi cuaca, masukkan nama sebuah kota."
 
-#: src/app/forecast.js:35
-msgid "Forecast"
-msgstr "Prakiraan"
+#: src/app/city.js:318
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Terasa seperti %.0f°"
 
-#: src/app/forecast.js:116
+#: src/app/city.js:350
+msgid "Updated just now."
+msgstr "Dimutakhirkan sekarang,"
+
+#: src/app/city.js:355
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Dimutakhirkan %d menit yang lalu"
+msgstr[1] "%d menit yang lalu"
+
+#: src/app/city.js:361
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Dimutakhirkan %d jam yang lalu"
+msgstr[1] "%d jam yang lalu"
+
+#: src/app/city.js:367
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Dimutakhirkan %d hari yang lalu"
+msgstr[1] "%d hari lalu"
+
+#: src/app/city.js:373
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Dimutakhirkan %d minggu yang lalu"
+msgstr[1] "%d minggu yang lalu"
+
+#: src/app/city.js:378
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] "Dimutakhirkan %d bulan yang lalu"
+msgstr[1] "%d bulan yang lalu"
+
+#: src/app/dailyForecast.js:34
+msgid "Daily Forecast"
+msgstr "Ramalan Cuaca Per Hari"
+
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:90
 msgid "Forecast not available"
 msgstr "Ramalan cuaca tak tersedia"
 
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:179
+msgid "%e %b"
+msgstr "%e %b"
+
+#: src/app/hourlyForecast.js:39
+msgid "Hourly Forecast"
+msgstr "Ramalan Cuaca Per Jam"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:132
+#: src/app/hourlyForecast.js:108
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:135
-msgid "%R"
-msgstr "%R"
-
-#: src/app/weeklyForecast.js:35
-msgid "Weekly Forecast"
-msgstr "Ramalan Cuaca Mingguan"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:120
-msgid "%A"
-msgstr "%A"
-
-#: src/app/window.js:139
+#: src/app/window.js:76
 msgid "Select Location"
 msgstr "Pilih Lokasi"
 
-#: src/app/window.js:254
+#: src/app/window.js:226
 msgid "translator-credits"
 msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2013, 2014, 2016.\n"
-"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2019."
+"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2019-2020."
 
-#: src/app/window.js:256
+#: src/app/window.js:228
 msgid "A weather application"
 msgstr "Aplikasi cuaca"
 
@@ -220,6 +275,21 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Today"
+#~ msgstr "Hari Ini"
+
+#~ msgid "Tomorrow"
+#~ msgstr "Besok"
+
+#~ msgid "Forecast"
+#~ msgstr "Prakiraan"
+
+#~ msgid "%R"
+#~ msgstr "%R"
+
+#~ msgid "%A"
+#~ msgstr "%A"
 
 #~ msgid "@APP_ID@"
 #~ msgstr "@APP_ID@"
