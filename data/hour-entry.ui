@@ -2,59 +2,65 @@
 <!-- Generated with glade 3.22.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
-  <template class="Gjs_HourEntry" parent="GtkBox">
-    <property name="width_request">75</property>
-    <property name="height_request">200</property>
+  <template class="Gjs_HourEntry" parent="GtkAlignment">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="hexpand">True</property>
-    <property name="vexpand">True</property>
-    <property name="orientation">vertical</property>
-    <property name="spacing">8</property>
+    <property name="top_padding">18</property>
+    <property name="bottom_padding">18</property>
     <child>
-      <object class="GtkLabel" id="timeLabel">
+      <object class="GtkBox" id="box">
+        <property name="width_request">75</property>
+        <property name="height_request">200</property>
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">8</property>
-        <property name="label">Now</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">0</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkImage" id="image">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="valign">start</property>
+        <property name="hexpand">True</property>
         <property name="vexpand">True</property>
-        <property name="pixel_size">32</property>
-        <property name="icon_name">weather-showers-symbolic</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">8</property>
+        <child>
+          <object class="GtkLabel" id="timeLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label">Now</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="image">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="valign">start</property>
+            <property name="vexpand">True</property>
+            <property name="pixel_size">32</property>
+            <property name="icon_name">weather-showers-symbolic</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="temperatureLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="valign">end</property>
+            <property name="label">13°</property>
+            <style>
+              <class name="forecast-temperature-label"/>
+            </style>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">1</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkLabel" id="temperatureLabel">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="valign">end</property>
-        <property name="margin_bottom">16</property>
-        <property name="label">13°</property>
-        <style>
-          <class name="forecast-temperature-label"/>
-        </style>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">2</property>
-      </packing>
     </child>
   </template>
 </interface>
