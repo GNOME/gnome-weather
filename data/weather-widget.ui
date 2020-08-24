@@ -43,7 +43,7 @@
                               <object class="GtkAlignment" id="forecast-hourly-alignment">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
-                                <property name="halign">center</property>
+                                <property name="halign">start</property>
                                 <property name="left_padding">20</property>
                                 <property name="right_padding">20</property>
                                 <child>
