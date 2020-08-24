@@ -16,7 +16,7 @@
         <property name="hexpand">True</property>
         <property name="vexpand">True</property>
         <property name="orientation">vertical</property>
-        <property name="spacing">8</property>
+        <property name="spacing">18</property>
         <child>
           <object class="GtkLabel" id="timeLabel">
             <property name="visible">True</property>
