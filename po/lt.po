@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-06 08:28+0000\n"
-"PO-Revision-Date: 2020-07-12 20:13+0300\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-08-25 23:09+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -157,11 +157,11 @@ msgstr "Kas valandą"
 msgid "Daily"
 msgstr "Kasdien"
 
-#: data/weather-widget.ui:203
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "Vietos"
 
-#: data/weather-widget.ui:237
+#: data/weather-widget.ui:266
 msgid "Current conditions"
 msgstr "Dabartinės sąlygos"
 
@@ -177,11 +177,16 @@ msgstr "Ieškoti vietos"
 msgid "To see weather information, enter the name of a city."
 msgstr "Informacijai matyti, įveskite miesto pavadinimą."
 
-#: src/app/city.js:235
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Jaučiama kaip %.0f°"
+
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Ką tik atnaujinta."
 
-#: src/app/city.js:240
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -189,7 +194,7 @@ msgstr[0] "Atnaujinta prieš %d minutę."
 msgstr[1] "Atnaujinta prieš %d minutes."
 msgstr[2] "Atnaujinta prieš %d minučių."
 
-#: src/app/city.js:246
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -197,7 +202,7 @@ msgstr[0] "Atnaujinta prieš %d valandą."
 msgstr[1] "Atnaujinta prieš %d valandas."
 msgstr[2] "Atnaujinta prieš %d valandų."
 
-#: src/app/city.js:252
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -205,7 +210,7 @@ msgstr[0] "Atnaujinta prieš %d dieną."
 msgstr[1] "Atnaujinta prieš %d dienas."
 msgstr[2] "Atnaujinta prieš %d dienų."
 
-#: src/app/city.js:258
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -213,7 +218,7 @@ msgstr[0] "Atnaujinta prieš %d savaitę."
 msgstr[1] "Atnaujinta prieš %d savaites."
 msgstr[2] "Atnaujinta prieš %d savaičių."
 
-#: src/app/city.js:263
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "%d months ago."
@@ -222,7 +227,6 @@ msgstr[1] "Atnaujinta prieš %d mėnesius."
 msgstr[2] "Atnaujinta prieš %d mėnesių."
 
 #: src/app/dailyForecast.js:33
-#| msgid "Weekly Forecast"
 msgid "Daily Forecast"
 msgstr "Kasdienė prognozė"
 
@@ -236,7 +240,6 @@ msgid "%e %b"
 msgstr "%e %b"
 
 #: src/app/hourlyForecast.js:38
-#| msgid "Weekly Forecast"
 msgid "Hourly Forecast"
 msgstr "Kasvalandinė prognozė"
 
