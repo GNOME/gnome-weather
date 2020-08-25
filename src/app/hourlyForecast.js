@@ -141,33 +141,40 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         let temps = hourlyInfo.map(info => Util.getTemp(info));
         let maxTemp = Math.max(...temps);
         temps = temps.map(t => t / maxTemp);
-        let n = temps.length;
 
         let width = this.get_allocated_width();
         let height = this.get_allocated_height();
+
+        const entryWidth = 75, separatorWidth = 1;
 
         let top_padding = 80;
         let bottom_padding = 40;
 
         let canvas_height = height - top_padding - bottom_padding;
-        let step = (width - (n - 1)) / n;
 
         let [, borderColor] = this.get_style_context().lookup_color('temp_graph_border_color');
         Gdk.cairo_set_source_rgba(cr, borderColor);
         cr.setLineWidth(2);
 
-        cr.moveTo (0, top_padding + ((1 - temps[0]) * canvas_height));
-        for (let i = 0; i < n; i++)
-            cr.lineTo((i * step) + step / 2, top_padding + ((1 - temps[i]) * canvas_height));
-        cr.lineTo(width, top_padding + ((1 - temps[n - 1]) * canvas_height));
+        let [, backgroundColor] = this.get_style_context().lookup_color('temp_graph_background_color');
+        Gdk.cairo_set_source_rgba(cr, backgroundColor);
+
+        let x = 0;
+        cr.moveTo (x, top_padding + ((1 - temps[0]) * canvas_height));
+
+        x += entryWidth / 2;
+        cr.lineTo(x, top_padding + ((1 - temps[0]) * canvas_height));
+
+        for (let i = 1; i < temps.length; i++) {
+            x += entryWidth + separatorWidth;
+            cr.lineTo(x, top_padding + ((1 - temps[i]) * canvas_height));
+        }
+
+        cr.lineTo(width, top_padding + ((1 - temps[temps.length - 1]) * canvas_height));
         cr.strokePreserve();
 
         cr.lineTo(width, height);
         cr.lineTo(0, height);
-
-        let [, backgroundColor] = this.get_style_context().lookup_color('temp_graph_background_color');
-        Gdk.cairo_set_source_rgba(cr, backgroundColor);
-
         cr.fill();
 
         cr.$dispose();
