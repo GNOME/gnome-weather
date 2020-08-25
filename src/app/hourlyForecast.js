@@ -136,11 +136,12 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
     vfunc_draw(cr) {
         super.vfunc_draw(cr);
 
-        let hourlyInfo = this._hourlyInfo;
+        const temps = this._hourlyInfo.map(info => Util.getTemp(info));
 
-        let temps = hourlyInfo.map(info => Util.getTemp(info));
-        let maxTemp = Math.max(...temps);
-        temps = temps.map(t => t / maxTemp);
+        const maxTemp = Math.max(...temps);
+        const minTemp = Math.min(...temps);
+
+        const values = temps.map(t => (t - minTemp) / (maxTemp - minTemp));
 
         let width = this.get_allocated_width();
         let height = this.get_allocated_height();
@@ -160,17 +161,17 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         Gdk.cairo_set_source_rgba(cr, backgroundColor);
 
         let x = 0;
-        cr.moveTo (x, top_padding + ((1 - temps[0]) * canvas_height));
+        cr.moveTo (x, top_padding + ((1 - values[0]) * canvas_height));
 
         x += entryWidth / 2;
-        cr.lineTo(x, top_padding + ((1 - temps[0]) * canvas_height));
+        cr.lineTo(x, top_padding + ((1 - values[0]) * canvas_height));
 
-        for (let i = 1; i < temps.length; i++) {
+        for (let i = 1; i < values.length; i++) {
             x += entryWidth + separatorWidth;
-            cr.lineTo(x, top_padding + ((1 - temps[i]) * canvas_height));
+            cr.lineTo(x, top_padding + ((1 - values[i]) * canvas_height));
         }
 
-        cr.lineTo(width, top_padding + ((1 - temps[temps.length - 1]) * canvas_height));
+        cr.lineTo(width, top_padding + ((1 - values[values.length - 1]) * canvas_height));
         cr.strokePreserve();
 
         cr.lineTo(width, height);
