@@ -1,15 +1,15 @@
 # Persian translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Arash Mousavi <mousavi.arash@gmail.com>, 2013, 2014, 2015, 2016.
-# Danial Behzadi <dani.behzi@ubuntu.com>, 2017, 2018, 2019.
+# Arash Mousavi <mousavi.arash@gmail.com>, 2013-2016.
+# Danial Behzadi <dani.behzi@ubuntu.com>, 2017-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-10-22 01:19+0000\n"
-"PO-Revision-Date: 2019-11-03 12:26+0000\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-08-26 10:56+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <>\n"
 "Language: fa\n"
@@ -17,18 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.2.4\n"
-
-#: data/city.ui:8
-msgid "City view"
-msgstr "نمای شهری"
-
-#: data/city.ui:30
-msgid "Loading…"
-msgstr "درحال بار کردن…"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61 src/app/window.js:255
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63 src/app/window.js:227
 #: src/service/main.js:48
 msgid "Weather"
 msgstr "آب‌وهوا"
@@ -100,6 +92,30 @@ msgstr ""
 "موقعیت خودکار، مقدار کلید automatic-location است که تصمیم می‌گیرد مکان فعلی "
 "گرفته شود یا نه."
 
+#: data/city.ui:8
+msgid "City view"
+msgstr "نمای شهری"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "درحال بار کردن…"
+
+#: data/day-entry.ui:27
+msgid "Night"
+msgstr "شب"
+
+#: data/day-entry.ui:39
+msgid "Morning"
+msgstr "صبح"
+
+#: data/day-entry.ui:51
+msgid "Afternoon"
+msgstr "بعدازظهر"
+
+#: data/day-entry.ui:63
+msgid "Evening"
+msgstr "عصر"
+
 #: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "موقعیت خودکار"
@@ -132,72 +148,106 @@ msgstr "_فارنهایت"
 msgid "_About Weather"
 msgstr "_درباره آب‌وهوا"
 
-#: data/weather-widget.ui:39
-msgid "Current conditions"
-msgstr "وضعیت‌های فعلی"
+#: data/weather-widget.ui:59
+msgid "Hourly"
+msgstr "هرساعت"
 
-#: data/weather-widget.ui:151
-msgid "Today"
-msgstr "امروز"
+#: data/weather-widget.ui:91
+msgid "Daily"
+msgstr "روزانه"
 
-#: data/weather-widget.ui:180
-msgid "Tomorrow"
-msgstr "فردا"
-
-#: data/window.ui:33
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "مکان‌ها"
 
-#: data/window.ui:55
+#: data/weather-widget.ui:266
+msgid "Current conditions"
+msgstr "وضعیت‌های فعلی"
+
+#: data/window.ui:49
 msgid "Refresh"
 msgstr "تازه‌سازی"
 
-#: data/window.ui:113
+#: data/window.ui:105
 msgid "Search for a location"
 msgstr "جست‌وجو برای یک موقعیت"
 
-#: data/window.ui:129
+#: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr "برای نمایش اطلاعات آب‌وهوا، نام شهری را وارد کنید."
 
-#: src/app/forecast.js:35
-msgid "Forecast"
-msgstr "پیش‌بینی"
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "به نظر %.0f° می‌رسد"
 
-#: src/app/forecast.js:116
+#: src/app/city.js:241
+msgid "Updated just now."
+msgstr "هم‌اکنون به‌روز شد."
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "%Id دقیقه پیش به‌روز شد."
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "%Id ساعت پیش به‌روز شد."
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "%Id روز پیش به‌روز شد."
+
+#: src/app/city.js:264
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "%Id هفته پیش به‌روز شد."
+
+#: src/app/city.js:269
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] "%Id ماه پیش به‌روز شد."
+
+#: src/app/dailyForecast.js:33
+msgid "Daily Forecast"
+msgstr "پیش‌بینی روزانه"
+
+#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
 msgid "Forecast not available"
 msgstr "پیش‌بینی موجود نیست"
 
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:176
+msgid "%e %b"
+msgstr "%Oe %OB"
+
+#: src/app/hourlyForecast.js:38
+msgid "Hourly Forecast"
+msgstr "پیش‌بینی ساعتی"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:132
+#: src/app/hourlyForecast.js:105
 msgid "%l∶%M %p"
 msgstr "%Ol∶%OM %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:135
-msgid "%R"
-msgstr "%OR"
-
-#: src/app/weeklyForecast.js:35
-msgid "Weekly Forecast"
-msgstr "پیش‌بینی هفتگی"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:120
-msgid "%A"
-msgstr "%A"
-
-#: src/app/window.js:139
+#: src/app/window.js:76
 msgid "Select Location"
 msgstr "گزینش موقعیت"
 
-#: src/app/window.js:254
+#: src/app/window.js:226
 msgid "translator-credits"
 msgstr ""
 "آرش موسوی <mousavi.arash@gmail.com>\n"
 "دانیال بهزادی <dani.behzi@ubuntu.com>"
 
-#: src/app/window.js:256
+#: src/app/window.js:228
 msgid "A weather application"
 msgstr "یک برنامهٔ آب‌وهوا"
 
@@ -220,6 +270,21 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Today"
+#~ msgstr "امروز"
+
+#~ msgid "Tomorrow"
+#~ msgstr "فردا"
+
+#~ msgid "Forecast"
+#~ msgstr "پیش‌بینی"
+
+#~ msgid "%R"
+#~ msgstr "%OR"
+
+#~ msgid "%A"
+#~ msgstr "%A"
 
 #~ msgid "_New"
 #~ msgstr "_جدید"
@@ -262,9 +327,6 @@ msgstr "%s, %s"
 
 #~ msgid "Monday night"
 #~ msgstr "شب دوشنبه"
-
-#~ msgid "Monday morning"
-#~ msgstr "صبح دوشنبه"
 
 #~ msgid "Monday afternoon"
 #~ msgstr "بعدازظهر دوشنبه"
@@ -344,17 +406,8 @@ msgstr "%s, %s"
 #~ msgid "Sunday evening"
 #~ msgstr "عصر یک‌شنبه"
 
-#~ msgid "Tonight"
-#~ msgstr "امشب"
-
 #~ msgid "This morning"
 #~ msgstr "امروز صبح"
-
-#~ msgid "This afternoon"
-#~ msgstr "امروز بعدازظهر"
-
-#~ msgid "This evening"
-#~ msgstr "امروز عصر"
 
 #~ msgid "Tomorrow night"
 #~ msgstr "فردا شب"
