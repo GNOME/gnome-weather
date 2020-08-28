@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-06 08:28+0000\n"
-"PO-Revision-Date: 2020-07-11 22:05+0200\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-08-28 11:28+0200\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
@@ -156,11 +156,11 @@ msgstr "Ore par ore"
 msgid "Daily"
 msgstr "Pe zornade"
 
-#: data/weather-widget.ui:203
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "Lûcs"
 
-#: data/weather-widget.ui:237
+#: data/weather-widget.ui:266
 msgid "Current conditions"
 msgstr "Condizions atuâi"
 
@@ -176,39 +176,44 @@ msgstr "Cîr une posizion"
 msgid "To see weather information, enter the name of a city."
 msgstr "Par viodi lis informazions meteo, scrîf il non di une citât."
 
-#: src/app/city.js:235
-msgid "Updated just now."
-msgstr "Inzornât propite cumò"
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Si sintin %.0f°"
 
-#: src/app/city.js:240
+#: src/app/city.js:241
+msgid "Updated just now."
+msgstr "Inzornât propite cumò."
+
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Inzornât %d minût indaûr."
 msgstr[1] "Inzornât %d minûts indaûr."
 
-#: src/app/city.js:246
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Inzornât %d ore indaûr."
 msgstr[1] "Inzornât %d oris indaûr."
 
-#: src/app/city.js:252
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Inzornât %d dì indaûr."
 msgstr[1] "Inzornât %d dîs indaûr."
 
-#: src/app/city.js:258
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Inzornât %d setemane indaûr."
 msgstr[1] "Inzornât %d setemanis indaûr."
 
-#: src/app/city.js:263
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "%d months ago."
