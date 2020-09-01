@@ -136,7 +136,7 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
     vfunc_draw(cr) {
         super.vfunc_draw(cr);
 
-        const temps = this._hourlyInfo.map(info => Util.getTemp(info));
+        const temps = this._hourlyInfo.map(info => Math.round(Util.getTemp(info)));
 
         const maxTemp = Math.max(...temps);
         const minTemp = Math.min(...temps);
