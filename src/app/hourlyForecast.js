@@ -143,39 +143,47 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
 
         const values = temps.map(t => (t - minTemp) / (maxTemp - minTemp));
 
-        let width = this.get_allocated_width();
-        let height = this.get_allocated_height();
+        const frameWidth = this.get_allocated_width();
+        const frameHeight = this.get_allocated_height();
 
-        const entryWidth = 75, separatorWidth = 1;
+        const entryWidth = 75;
+        const separatorWidth = 1;
 
-        let top_padding = 80;
-        let bottom_padding = 40;
+        const frameBorderWidth = 1;
+        const lineWidth = 2;
 
-        let canvas_height = height - top_padding - bottom_padding;
+        const entryImageY = 56, entryImageHeight = 32;
+        const entryTemperatureLabelHeight = 19;
+
+        const spacing = 18;
+
+        const graphMinY = frameBorderWidth + lineWidth / 2 + entryImageY + entryImageHeight + spacing;
+        const graphMaxY = frameHeight - frameBorderWidth - lineWidth / 2 - spacing - entryTemperatureLabelHeight - spacing;
+        const graphHeight = graphMaxY - graphMinY;
 
         let [, borderColor] = this.get_style_context().lookup_color('temp_graph_border_color');
         Gdk.cairo_set_source_rgba(cr, borderColor);
-        cr.setLineWidth(2);
+        cr.setLineWidth(lineWidth);
 
         let [, backgroundColor] = this.get_style_context().lookup_color('temp_graph_background_color');
         Gdk.cairo_set_source_rgba(cr, backgroundColor);
-
         let x = 0;
-        cr.moveTo (x, top_padding + ((1 - values[0]) * canvas_height));
+        cr.moveTo (x, graphMinY + ((1 - values[0]) * graphHeight));
 
         x += entryWidth / 2;
-        cr.lineTo(x, top_padding + ((1 - values[0]) * canvas_height));
+        cr.lineTo(x, graphMinY + ((1 - values[0]) * graphHeight));
 
         for (let i = 1; i < values.length; i++) {
             x += entryWidth + separatorWidth;
-            cr.lineTo(x, top_padding + ((1 - values[i]) * canvas_height));
+            cr.lineTo(x, graphMinY + ((1 - values[i]) * graphHeight));
         }
 
-        cr.lineTo(width, top_padding + ((1 - values[values.length - 1]) * canvas_height));
+        cr.lineTo(frameWidth, graphMinY + ((1 - values[values.length - 1]) * graphHeight));
         cr.strokePreserve();
 
-        cr.lineTo(width, height);
-        cr.lineTo(0, height);
+
+        cr.lineTo(frameWidth, frameHeight);
+        cr.lineTo(0, frameHeight);
         cr.fill();
 
         cr.$dispose();
