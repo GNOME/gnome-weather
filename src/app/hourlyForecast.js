@@ -161,12 +161,6 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         const graphMaxY = frameHeight - frameBorderWidth - lineWidth / 2 - spacing - entryTemperatureLabelHeight - spacing;
         const graphHeight = graphMaxY - graphMinY;
 
-        let [, borderColor] = this.get_style_context().lookup_color('temp_graph_border_color');
-        Gdk.cairo_set_source_rgba(cr, borderColor);
-        cr.setLineWidth(lineWidth);
-
-        let [, backgroundColor] = this.get_style_context().lookup_color('temp_graph_background_color');
-        Gdk.cairo_set_source_rgba(cr, backgroundColor);
         let x = 0;
         cr.moveTo (x, graphMinY + ((1 - values[0]) * graphHeight));
 
@@ -179,11 +173,19 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         }
 
         cr.lineTo(frameWidth, graphMinY + ((1 - values[values.length - 1]) * graphHeight));
-        cr.strokePreserve();
 
+        let [, borderColor] = this.get_style_context().lookup_color('temp_graph_border_color');
+        Gdk.cairo_set_source_rgba(cr, borderColor);
+
+        cr.setLineWidth(lineWidth);
+        cr.strokePreserve();
 
         cr.lineTo(frameWidth, frameHeight);
         cr.lineTo(0, frameHeight);
+
+        let [, backgroundColor] = this.get_style_context().lookup_color('temp_graph_background_color');
+        Gdk.cairo_set_source_rgba(cr, backgroundColor);
+
         cr.fill();
 
         cr.$dispose();
