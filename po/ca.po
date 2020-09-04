@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-13 21:07+0000\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
 "PO-Revision-Date: 2020-07-16 17:50+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -62,7 +62,8 @@ msgstr ""
 msgid "The GNOME Project"
 msgstr "El projecte GNOME"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "Meteorologia;Predicció;"
@@ -160,11 +161,11 @@ msgstr "Per hores"
 msgid "Daily"
 msgstr "Diari"
 
-#: data/weather-widget.ui:203
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "Llocs"
 
-#: data/weather-widget.ui:237
+#: data/weather-widget.ui:266
 msgid "Current conditions"
 msgstr "Condicions actuals"
 
@@ -180,39 +181,44 @@ msgstr "Cerqueu una ubicació"
 msgid "To see weather information, enter the name of a city."
 msgstr "Per veure la informació meteorològica, introduïu el nom d'una ciutat."
 
-#: src/app/city.js:235
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Sensació de %.0f°"
+
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Actualitzat ara mateix."
 
-#: src/app/city.js:240
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Actualitzat fa %d minut"
 msgstr[1] "Actualitzat fa %d minuts"
 
-#: src/app/city.js:246
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Actualitzat fa %d hora"
 msgstr[1] "Actualitzat fa %d hores"
 
-#: src/app/city.js:252
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Actualitzat fa %d dia."
 msgstr[1] "Actualitzat fa %d dies."
 
-#: src/app/city.js:258
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Actualitzat fa %d setmana."
 msgstr[1] "Actualitzat fa %d setmanes."
 
-#: src/app/city.js:263
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "%d months ago."
@@ -227,7 +233,8 @@ msgstr "Predicció diària"
 msgid "Forecast not available"
 msgstr "La predicció està disponible"
 
-#. Translators: this is the time format for day and month name according to the current locale
+#. Translators: this is the time format for day and month name according to
+#. the current locale
 #: src/app/dailyForecast.js:176
 msgid "%e %b"
 msgstr "%e %b"
