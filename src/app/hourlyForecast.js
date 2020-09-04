@@ -38,8 +38,6 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
 
         this.get_accessible().accessible_name = _('Hourly Forecast');
 
-        this.get_style_context().add_class("forecast-frame");
-
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
         this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL,
@@ -134,8 +132,6 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
     }
 
     vfunc_draw(cr) {
-        super.vfunc_draw(cr);
-
         const temps = this._hourlyInfo.map(info => Math.round(Util.getTemp(info)));
 
         const maxTemp = Math.max(...temps);
@@ -161,6 +157,15 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         const graphMaxY = frameHeight - frameBorderWidth - lineWidth / 2 - spacing - entryTemperatureLabelHeight - spacing;
         const graphHeight = graphMaxY - graphMinY;
 
+        let [, backgroundColor] = this.get_style_context().lookup_color('temp_chart_background_color');
+        Gdk.cairo_set_source_rgba(cr, backgroundColor);
+
+        cr.rectangle(0, 0, frameWidth, frameHeight);
+        cr.fill();
+
+        let [, strokeColor] = this.get_style_context().lookup_color('temp_chart_stroke_color');
+        Gdk.cairo_set_source_rgba(cr, strokeColor);
+
         let x = 0;
         cr.moveTo (x, graphMinY + ((1 - values[0]) * graphHeight));
 
@@ -174,20 +179,17 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
 
         cr.lineTo(frameWidth, graphMinY + ((1 - values[values.length - 1]) * graphHeight));
 
-        let [, borderColor] = this.get_style_context().lookup_color('temp_graph_border_color');
-        Gdk.cairo_set_source_rgba(cr, borderColor);
-
         cr.setLineWidth(lineWidth);
         cr.strokePreserve();
 
+        let [, fillColor] = this.get_style_context().lookup_color('temp_chart_fill_color');
+        Gdk.cairo_set_source_rgba(cr, fillColor);
+
         cr.lineTo(frameWidth, frameHeight);
         cr.lineTo(0, frameHeight);
-
-        let [, backgroundColor] = this.get_style_context().lookup_color('temp_graph_background_color');
-        Gdk.cairo_set_source_rgba(cr, backgroundColor);
-
         cr.fill();
 
+        super.vfunc_draw(cr);
         cr.$dispose();
 
         return Gdk.EVENT_PROPAGATE;

@@ -33,8 +33,6 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
 
         this.get_accessible().accessible_name = _('Daily Forecast');
 
-        this.get_style_context().add_class("forecast-frame");
-
         this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL,
                                   spacing: 0});
         this.add(this._box);
