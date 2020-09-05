@@ -1,25 +1,25 @@
 # German translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2013, 2016.
+#
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2013, 2016, 2020.
 # Christian Kirbach <christian.kirbach@gmail.com>, 2013.
 # Benjamin Steinwender <b@stbe.at>, 2013.
 # Tobias Endrigkeit <tobiasendrigkeit@outlook.com>, 2013.
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-06 08:28+0000\n"
-"PO-Revision-Date: 2020-07-06 11:31+0200\n"
-"Last-Translator: Tim Sabsch <tim@sabsch.com>\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-09-02 21:04+0200\n"
+"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Lokalize 20.08.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
@@ -160,11 +160,11 @@ msgstr "Stündlich"
 msgid "Daily"
 msgstr "Täglich"
 
-#: data/weather-widget.ui:203
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "Orte"
 
-#: data/weather-widget.ui:237
+#: data/weather-widget.ui:266
 msgid "Current conditions"
 msgstr "Aktueller Wetterbericht"
 
@@ -180,39 +180,44 @@ msgstr "Nach einem Ort suchen"
 msgid "To see weather information, enter the name of a city."
 msgstr "Bitte geben Sie einen Ort an, um das Wetter dort anzuzeigen."
 
-#: src/app/city.js:235
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Gefühlt %.0f°"
+
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Soeben aktualisiert."
 
-#: src/app/city.js:240
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Vor %d Minute aktualisiert."
 msgstr[1] "Vor %d Minuten aktualisiert."
 
-#: src/app/city.js:246
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Vor %d Stunde aktualisiert."
 msgstr[1] "Vor %d Stunden aktualisiert."
 
-#: src/app/city.js:252
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Vor %d Tag aktualisiert."
 msgstr[1] "Vor %d Tagen aktualisiert."
 
-#: src/app/city.js:258
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Vor %d Woche aktualisiert."
 msgstr[1] "Vor %d Wochen aktualisiert."
 
-#: src/app/city.js:263
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "%d months ago."
