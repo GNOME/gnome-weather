@@ -16,6 +16,7 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+const Handy = imports.gi.Handy;
 const Gio = imports.gi.Gio;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
@@ -33,7 +34,7 @@ const Page = {
 };
 
 var MainWindow = GObject.registerClass(
-    class MainWindow extends Gtk.ApplicationWindow {
+    class MainWindow extends Handy.ApplicationWindow {
 
     _init(params) {
         super._init(params);
@@ -72,7 +73,6 @@ var MainWindow = GObject.registerClass(
 
         let grid = builder.get_object('main-panel');
         this._header = builder.get_object('header-bar');
-        this.set_titlebar(this._header);
         this._header.set_title(_('Select Location'));
 
         this._model = this.application.model;
@@ -99,13 +99,18 @@ var MainWindow = GObject.registerClass(
                                               { hexpand: true, vexpand: true });
         this._stack.add(this._cityView);
 
-        this._forecastStackSwitcher = new Gtk.StackSwitcher({visible: true});
+        this._forecastStackSwitcher = builder.get_object('switcher-title');
         this._forecastStackSwitcher.set_stack(this._cityView.getInfoPage().getForecastStack());
+
+        this._forecastStackSwitcherBar = builder.get_object('switcher-bar');
+        this._forecastStackSwitcherBar.set_stack(this._cityView.getInfoPage().getForecastStack());
 
         this._stack.set_visible_child(this._searchView);
 
-        this.add(grid);
-        grid.show_all();
+        let box = builder.get_object('main-box');
+
+        this.add(box);
+        box.show_all();
 
         for (let i = 0; i < this._pageWidgets[Page.CITY].length; i++)
             this._pageWidgets[Page.CITY][i].hide();

@@ -57,6 +57,7 @@
                       <packing>
                         <property name="name">hourly</property>
                         <property name="title" translatable="yes">Hourly</property>
+                        <property name="icon-name">preferences-system-time-symbolic</property>
                       </packing>
                     </child>
                     <child>
@@ -89,6 +90,7 @@
                       <packing>
                         <property name="name">daily</property>
                         <property name="title" translatable="yes">Daily</property>
+                        <property name="icon-name">x-office-calendar-symbolic</property>
                         <property name="position">1</property>
                       </packing>
                     </child>
@@ -188,6 +190,8 @@
                         <child>
                           <object class="GtkLabel" id="placesLabel">
                             <property name="name">places-label</property>
+                            <property name="wrap">True</property>
+                            <property name="wrap-mode">word-char</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Places</property>

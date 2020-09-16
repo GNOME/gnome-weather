@@ -70,3 +70,8 @@
     font-size: 9pt;
     color: rgba(154, 153, 150, 1.0);
 }
+
+viewswitchertitle viewswitcher {
+  margin-left: 100px;
+  margin-right: 100px;
+}

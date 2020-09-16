@@ -28,6 +28,7 @@ pkg.require({ 'Gdk': '3.0',
               'GWeather': '3.0' });
 
 const ByteArray = imports.byteArray;
+const Handy = imports.gi.Handy;
 const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
@@ -87,6 +88,7 @@ const Application = GObject.registerClass(
 
     vfunc_startup() {
         super.vfunc_startup();
+        Handy.init();
         // ensure the type before we call to GtkBuilder
         GWeather.LocationEntry;
 
