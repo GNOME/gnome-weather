@@ -156,17 +156,34 @@
                 <property name="can_focus">False</property>
                 <property name="column_spacing">10</property>
                 <child>
-                  <object class="GtkImage" id="conditionsImage">
-                    <property name="name">conditions-image</property>
+                  <object class="HdySqueezer" id="conditionsSqueezer">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="halign">start</property>
-                    <property name="valign">start</property>
-                    <property name="pixel_size">96</property>
-                    <property name="icon_size">2</property>
-                    <style>
-                      <class name="icon-dropshadow"/>
-                    </style>
+                    <property name="homogeneous">False</property>
+                    <property name="transition-type">crossfade</property>
+                    <child>
+                      <object class="GtkImage" id="conditionsImage">
+                        <property name="name">conditions-image</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="valign">center</property>
+                        <style>
+                          <class name="icon-dropshadow"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImage" id="conditionsImageSmall">
+                        <property name="name">conditions-image-small</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="valign">center</property>
+                        <style>
+                          <class name="icon-dropshadow"/>
+                        </style>
+                      </object>
+                    </child>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>

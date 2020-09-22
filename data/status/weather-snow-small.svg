@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <g transform="matrix(.5 0 0 .5 .00019332 -4.6727e-6)" fill="none" stroke-linecap="round">
+        <g stroke="#99c1f1" stroke-width="6">
+            <path d="m64 8v112"/>
+            <path d="m54 14 10 6 10-6"/>
+            <path d="m54 114.48 10-6 10 6"/>
+        </g>
+        <path d="m54 14 10 6 10-6" stroke="#fff" stroke-width="2"/>
+        <path d="m54 114.48 10-6 10 6" stroke="#fff" stroke-width="2"/>
+        <g stroke="#99c1f1" stroke-width="6">
+            <path d="m112.56 36.102-96.996 56"/>
+            <path d="m102.36 30.441-0.19532 11.66 10.195 5.6602"/>
+            <path d="m15.348 80.68 10.195 5.6602-0.19531 11.66"/>
+        </g>
+        <path d="m102.36 30.441-0.19532 11.66 10.195 5.6602" stroke="#fff" stroke-width="2"/>
+        <path d="m15.348 80.68 10.195 5.6602-0.19531 11.66" stroke="#fff" stroke-width="2"/>
+        <g stroke="#99c1f1" stroke-width="6">
+            <path d="m112.59 92.133-96.996-56"/>
+            <path d="m112.39 80.473-10.195 5.6602 0.19531 11.66"/>
+            <path d="m25.371 30.234 0.19922 11.66-10.199 5.6602"/>
+        </g>
+        <g stroke="#fff" stroke-width="2">
+            <path d="m112.39 80.473-10.195 5.6602 0.19531 11.66"/>
+            <path d="m64 8v112"/>
+            <path d="m25.371 30.234 0.19922 11.66-10.199 5.6602"/>
+            <path d="m112.56 36.102-96.996 56"/>
+            <path d="m112.59 92.133-96.996-56"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <radialGradient id="a" cx="280.99" cy="488.85" r="224" gradientTransform="matrix(.1735 0 0 .17112 -16.753 -64.741)" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#fdfacf" offset="0"/>
+        <stop stop-color="#f9f06b" offset=".4"/>
+        <stop stop-color="#f6d32d" offset="1"/>
+    </radialGradient>
+    <linearGradient id="b" x1="79" x2="79" y1="111.16" y2="90" gradientTransform="scale(.5)" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#eef4fc" offset="0"/>
+        <stop stop-color="#fff" offset="1"/>
+    </linearGradient>
+    <g stroke-width=".5">
+        <path d="m10 10h44v44h-44z" fill="#f5c211"/>
+        <path d="m63 32-31 31-31-31 31-31z" fill="#f6d32d"/>
+        <path d="m56 32c0 13.254-10.746 24-24 24s-24-10.746-24-24 10.746-24 24-24 24 10.746 24 24z" fill="url(#a)"/>
+        <path d="m45 36c-3.9062 0.0039-7.4512 2.2832-9.0781 5.834-1.0586-0.54492-2.2324-0.83203-3.4219-0.83398-3.9453 0.0039-7.2129 3.0645-7.4746 7h-0.02539c-2.0488 0-3.8086 1.2344-4.5801 3h-0.41992v2c0 2.7617 2.2383 5 5 5h28c3.3145 0 6-2.6855 6-6v-2h-0.35352c-0.60547-1.7109-1.9531-3.0547-3.6641-3.6562 0.0078-0.11524 0.01367-0.22852 0.01758-0.34375 0-5.5234-4.4766-10-10-10z" fill="#dceafa"/>
+        <path d="m45 34c-3.9062 0.0039-7.4512 2.2832-9.0781 5.834-1.0586-0.54492-2.2324-0.83203-3.4219-0.83398-3.9453 0.0039-7.2129 3.0645-7.4746 7h-0.02539c-2.7617 0-5 2.2383-5 5 0 2.7617 2.2383 5 5 5h28c3.3145 0 6-2.6855 6-6-2e-3 -2.5469-1.6133-4.8145-4.0176-5.6562 0.0078-0.11524 0.01367-0.22852 0.01758-0.34375 0-5.5234-4.4766-10-10-10z" fill="url(#b)"/>
+    </g>
+</svg>

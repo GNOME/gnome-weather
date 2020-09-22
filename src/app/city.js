@@ -123,19 +123,21 @@ function get_icon_name(info) {
     return null;
 }
 
-function get_icon_resource(info) {
+function get_icon_resources(info) {
     const name = get_icon_name(info);
 
     if (!name) {
         return null;
     }
 
-    return `/org/gnome/Weather/status/${name}.svg`;
+    return [`/org/gnome/Weather/status/${name}.svg`,
+            `/org/gnome/Weather/status/${name}-small.svg`];
 }
 
 var WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
-    InternalChildren: ['contentFrame', 'outerGrid', 'conditionsImage',
+    InternalChildren: ['contentFrame', 'outerGrid',
+                       'conditionsImage', 'conditionsImageSmall',
                        'placesButton', 'placesLabel',
                        'temperatureLabel', 'apparentLabel',
                        'forecastStack','leftButton', 'rightButton',
@@ -302,11 +304,13 @@ var WeatherWidget = GObject.registerClass({
         this._worldView.refilter();
 
         this._conditionsImage.clear();
+        this._conditionsImageSmall.clear();
 
-        const resource = get_icon_resource(info);
+        const [resource, resourceSmall] = get_icon_resources(info);
 
         try {
             this._conditionsImage.set_from_resource(resource);
+            this._conditionsImageSmall.set_from_resource(resourceSmall);
         } catch (err) {
             log(`Failed to set weather icon from resource: ${resource}`);
         }
