@@ -125,6 +125,7 @@
                     <property name="halign">center</property>
                     <property name="valign">center</property>
                     <property name="vexpand">False</property>
+                    <property name="wrap">True</property>
                     <property name="label" translatable="yes">To see weather information, enter the name of a city.</property>
                   </object>
                   <packing>
