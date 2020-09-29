@@ -116,6 +116,7 @@
                     </child>
                     <style>
                       <class name="osd"/>
+                      <class name="circular"/>
                     </style>
                   </object>
                 </child>
@@ -137,6 +138,7 @@
                     </child>
                     <style>
                       <class name="osd"/>
+                      <class name="circular"/>
                     </style>
                   </object>
                   <packing>

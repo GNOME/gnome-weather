@@ -88,3 +88,14 @@ viewswitchertitle viewswitcher {
   margin-left: 100px;
   margin-right: 100px;
 }
+
+button.osd.circular {
+  border-radius: 9999px;
+  -gtk-outline-radius: 9999px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+button.osd.circular > image {
+  padding: 12px;
+}
