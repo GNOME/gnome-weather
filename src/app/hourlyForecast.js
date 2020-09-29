@@ -142,7 +142,7 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         const frameWidth = this.get_allocated_width();
         const frameHeight = this.get_allocated_height();
 
-        const entryWidth = 75;
+        const entryWidth = 75 ;
         const separatorWidth = 1;
 
         const frameBorderWidth = 1;
@@ -153,9 +153,29 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
 
         const spacing = 18;
 
+        const borderRadius = 9;
+
         const graphMinY = frameBorderWidth + lineWidth / 2 + entryImageY + entryImageHeight + spacing;
         const graphMaxY = frameHeight - frameBorderWidth - lineWidth / 2 - spacing - entryTemperatureLabelHeight - spacing;
         const graphHeight = graphMaxY - graphMinY;
+
+        const arc0 = 0.0;
+        const arc1 = Math.PI * 0.5
+        const arc2 = Math.PI;
+        const arc3 = Math.PI * 1.5
+
+        let frameX = 0;
+        let frameY = 0;
+
+        cr.newSubPath();
+        cr.arc(frameX + frameWidth - borderRadius, frameY + borderRadius, borderRadius, arc3, arc0);
+        cr.arc(frameX + frameWidth - borderRadius, frameY + frameHeight - borderRadius, borderRadius, arc0, arc1);
+        cr.arc(frameX + borderRadius, frameY + frameHeight - borderRadius, borderRadius, arc1, arc2);
+        cr.arc(frameX + borderRadius, frameY + borderRadius, borderRadius, arc2, arc3);
+        cr.closePath();
+
+        cr.clip();
+        cr.fill();
 
         let [, backgroundColor] = this.get_style_context().lookup_color('temp_chart_background_color');
         Gdk.cairo_set_source_rgba(cr, backgroundColor);
