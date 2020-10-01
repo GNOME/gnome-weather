@@ -44,7 +44,7 @@ var MainWindow = GObject.registerClass(
         this._currentPage = Page.SEARCH;
         this._pageWidgets = [[],[]];
 
-        this.set_default_size(650, 520);
+        this.set_default_size(760, 520);
 
         let aboutAction = new Gio.SimpleAction({
             enabled: true,
