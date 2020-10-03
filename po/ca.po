@@ -194,15 +194,15 @@ msgstr "Actualitzat ara mateix."
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
-msgstr[0] "Actualitzat fa %d minut"
-msgstr[1] "Actualitzat fa %d minuts"
+msgstr[0] "Actualitzat fa %d minut."
+msgstr[1] "Actualitzat fa %d minuts."
 
 #: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
-msgstr[0] "Actualitzat fa %d hora"
-msgstr[1] "Actualitzat fa %d hores"
+msgstr[0] "Actualitzat fa %d hora."
+msgstr[1] "Actualitzat fa %d hores."
 
 #: src/app/city.js:258
 #, javascript-format
