@@ -116,10 +116,12 @@ function get_icon_name(info) {
                 return "weather-overcast";
 
             default: /* unrecognized */
+                log(`Unrecognized sky type: ${sky}`);
                 return null;
         }
     }
 
+    log(`Could not get a sky from info`);
     return null;
 }
 
@@ -306,13 +308,12 @@ var WeatherWidget = GObject.registerClass({
         this._conditionsImage.clear();
         this._conditionsImageSmall.clear();
 
-        const [resource, resourceSmall] = get_icon_resources(info);
-
         try {
+            const [resource, resourceSmall] = get_icon_resources(info);
             this._conditionsImage.set_from_resource(resource);
             this._conditionsImageSmall.set_from_resource(resourceSmall);
         } catch (err) {
-            log(`Failed to set weather icon from resource: ${resource}`);
+            log(`Failed to set weather icon from resource: ${err}`);
         }
 
         const [, tempValue] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
