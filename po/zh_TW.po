@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-04-22 15:22+0000\n"
-"PO-Revision-Date: 2020-05-02 00:34+0800\n"
+"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"PO-Revision-Date: 2020-10-12 22:35+0800\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
@@ -16,19 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3\n"
-
-#: data/city.ui:8
-msgid "City view"
-msgstr "城市檢視"
-
-#: data/city.ui:30
-msgid "Loading…"
-msgstr "載入中…"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
-#: src/app/window.js:255 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
+#: src/app/window.js:227 src/service/main.js:48
 msgid "Weather"
 msgstr "天氣"
 
@@ -95,6 +87,30 @@ msgid ""
 "decides whether to fetch current location or not."
 msgstr "自動位置是 automatic-location 開關的數值，它決定是否要取得目前的位置。"
 
+#: data/city.ui:8
+msgid "City view"
+msgstr "城市檢視"
+
+#: data/city.ui:30
+msgid "Loading…"
+msgstr "載入中…"
+
+#: data/day-entry.ui:27
+msgid "Night"
+msgstr "夜間"
+
+#: data/day-entry.ui:39
+msgid "Morning"
+msgstr "早上"
+
+#: data/day-entry.ui:51
+msgid "Afternoon"
+msgstr "下午"
+
+#: data/day-entry.ui:63
+msgid "Evening"
+msgstr "晚上"
+
 #: data/places-popover.ui:45
 msgid "Automatic Location"
 msgstr "自動位置"
@@ -127,70 +143,104 @@ msgstr "華氏(_F)"
 msgid "_About Weather"
 msgstr "關於《天氣》(_A)"
 
-#: data/weather-widget.ui:39
-msgid "Current conditions"
-msgstr "目前情況"
+#: data/weather-widget.ui:59
+msgid "Hourly"
+msgstr "每小時"
 
-#: data/weather-widget.ui:185
-msgid "Today"
-msgstr "今天"
+#: data/weather-widget.ui:91
+msgid "Daily"
+msgstr "每天"
 
-#: data/weather-widget.ui:214
-msgid "Tomorrow"
-msgstr "明天"
-
-#: data/window.ui:33
+#: data/weather-widget.ui:190
 msgid "Places"
 msgstr "位置"
 
-#: data/window.ui:55
+#: data/weather-widget.ui:266
+msgid "Current conditions"
+msgstr "目前情況"
+
+#: data/window.ui:49
 msgid "Refresh"
 msgstr "重新整理"
 
-#: data/window.ui:113
+#: data/window.ui:105
 msgid "Search for a location"
 msgstr "搜尋位置"
 
-#: data/window.ui:129
+#: data/window.ui:119
 msgid "To see weather information, enter the name of a city."
 msgstr "若要查看天氣資訊，請輸入城市名稱。"
 
-#: src/app/forecast.js:35
-msgid "Forecast"
-msgstr "預報"
+#: src/app/city.js:211
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "體感 %.0f°"
 
-#: src/app/forecast.js:116
+#: src/app/city.js:241
+msgid "Updated just now."
+msgstr "剛才更新。"
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "%d 分鐘前更新。"
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "%d 小時前更新。"
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "%d 天前更新。"
+
+#: src/app/city.js:264
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "%d 週前更新。"
+
+#: src/app/city.js:269
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "%d months ago."
+msgstr[0] "%d 個月前更新。"
+
+#: src/app/dailyForecast.js:33
+msgid "Daily Forecast"
+msgstr "每日預報"
+
+#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
 msgid "Forecast not available"
 msgstr "天氣預報無法使用"
 
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:176
+msgid "%e %b"
+msgstr "%b%e日"
+
+#: src/app/hourlyForecast.js:38
+msgid "Hourly Forecast"
+msgstr "每小時預報"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:132
+#: src/app/hourlyForecast.js:105
 msgid "%l∶%M %p"
 msgstr "%p %l∶%M"
 
-#. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:135
-msgid "%R"
-msgstr "%R"
-
-#: src/app/weeklyForecast.js:35
-msgid "Weekly Forecast"
-msgstr "每週天氣"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:120
-msgid "%A"
-msgstr "%A"
-
-#: src/app/window.js:139
+#: src/app/window.js:76
 msgid "Select Location"
 msgstr "選取位置"
 
-#: src/app/window.js:254
+#: src/app/window.js:226
 msgid "translator-credits"
 msgstr "Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>, 2013"
 
-#: src/app/window.js:256
+#: src/app/window.js:228
 msgid "A weather application"
 msgstr "天氣應用程式"
 
@@ -214,6 +264,21 @@ msgstr "%s / %s"
 msgid "%s, %s"
 msgstr "%s，%s"
 
+#~ msgid "Today"
+#~ msgstr "今天"
+
+#~ msgid "Tomorrow"
+#~ msgstr "明天"
+
+#~ msgid "Forecast"
+#~ msgstr "預報"
+
+#~ msgid "%R"
+#~ msgstr "%R"
+
+#~ msgid "%A"
+#~ msgstr "%A"
+
 #~ msgid "@APP_ID@"
 #~ msgstr "@APP_ID@"
 
@@ -228,9 +293,6 @@ msgstr "%s，%s"
 
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
-
-#~ msgid "Detailed forecast"
-#~ msgstr "詳細預報"
 
 #~ msgid "Select All"
 #~ msgstr "全部選取"
@@ -274,9 +336,6 @@ msgstr "%s，%s"
 
 #~ msgid "Monday night"
 #~ msgstr "星期一晚上"
-
-#~ msgid "Monday morning"
-#~ msgstr "星期一早上"
 
 #~ msgid "Monday afternoon"
 #~ msgstr "星期一下午"
@@ -356,17 +415,8 @@ msgstr "%s，%s"
 #~ msgid "Sunday evening"
 #~ msgstr "星期日傍晚"
 
-#~ msgid "Tonight"
-#~ msgstr "今天晚上"
-
 #~ msgid "This morning"
 #~ msgstr "今天早上"
-
-#~ msgid "This afternoon"
-#~ msgstr "今天下午"
-
-#~ msgid "This evening"
-#~ msgstr "今天傍晚"
 
 #~ msgid "Tomorrow night"
 #~ msgstr "明天晚上"
