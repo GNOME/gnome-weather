@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="64" height="64" version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <linearGradient id="a" x1="188.44" x2="261.1" y1="-77.782" y2="-150.44" gradientTransform="matrix(.35355 .35355 .35355 -.35355 0 -86)" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#f6d32d" offset="0"/>
-        <stop stop-color="#f5c211" offset="1"/>
-    </linearGradient>
-    <radialGradient id="b" cx="280.99" cy="488.85" r="224" gradientTransform="matrix(.1735 0 0 .17112 -16.753 -64.741)" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#fdfacf" offset="0"/>
-        <stop stop-color="#f9f06b" offset=".4"/>
-        <stop stop-color="#f6d32d" offset="1"/>
-    </radialGradient>
-    <g stroke-width=".5">
-        <path d="m10 10h44v44h-44z" fill="#f5c211"/>
-        <path d="m1 32 31 31 31-31-31-31z" fill="url(#a)"/>
-        <path d="m56 32c0 13.254-10.746 24-24 24s-24-10.746-24-24 10.746-24 24-24 24 10.746 24 24z" fill="url(#b)"/>
-    </g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 64 64" version="1.1">
+<defs>
+<linearGradient id="linear0" gradientUnits="userSpaceOnUse" x1="188.444" y1="-77.781998" x2="261.098999" y2="-150.436996" gradientTransform="matrix(0.353553,0.353553,0.353553,-0.353553,-0.0000545287,-85.999868)">
+<stop offset="0" style="stop-color:rgb(96.470588%,82.745099%,17.647059%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(96.078432%,76.078433%,6.666667%);stop-opacity:1;"/>
+</linearGradient>
+<radialGradient id="radial0" gradientUnits="userSpaceOnUse" cx="280.993988" cy="488.847992" fx="280.993988" fy="488.847992" r="224" gradientTransform="matrix(0.1735,0,0,0.171115,-16.753,-64.740997)">
+<stop offset="0" style="stop-color:rgb(99.215686%,98.039216%,81.176472%);stop-opacity:1;"/>
+<stop offset="0.4" style="stop-color:rgb(97.647059%,94.117647%,41.960785%);stop-opacity:1;"/>
+<stop offset="1" style="stop-color:rgb(96.470588%,82.745099%,17.647059%);stop-opacity:1;"/>
+</radialGradient>
+</defs>
+<g id="surface1">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(96.078432%,76.078433%,6.666667%);fill-opacity:1;" d="M 10 10 L 54 10 L 54 54 L 10 54 Z M 10 10 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#linear0);" d="M 1 32 L 32 63 L 63 32 L 32 1 Z M 1 32 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:url(#radial0);" d="M 56 32 C 56 45.253906 45.253906 56 32 56 C 18.746094 56 8 45.253906 8 32 C 8 18.746094 18.746094 8 32 8 C 45.253906 8 56 18.746094 56 32 Z M 56 32 "/>
+</g>
 </svg>
