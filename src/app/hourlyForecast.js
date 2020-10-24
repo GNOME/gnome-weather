@@ -219,7 +219,7 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
 var HourEntry = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/hour-entry.ui',
     InternalChildren: ['timeLabel', 'image', 'temperatureLabel'],
-}, class HourEntry extends Gtk.Alignment {
+}, class HourEntry extends Gtk.Box {
 
     _init(params) {
         super._init(params);
