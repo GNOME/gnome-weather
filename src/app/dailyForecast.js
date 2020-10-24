@@ -27,6 +27,9 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
 
     _init(params) {
         super._init(Object.assign({
+            halign: Gtk.Align.START,
+            margin_start: 20,
+            margin_end: 20,
             shadow_type: Gtk.ShadowType.IN,
             name: 'daily-forecast-frame',
         }, params));
