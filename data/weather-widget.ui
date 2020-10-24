@@ -67,7 +67,6 @@
                         <property name="name">daily</property>
                         <property name="title" translatable="yes">Daily</property>
                         <property name="icon-name">x-office-calendar-symbolic</property>
-                        <property name="position">1</property>
                       </packing>
                     </child>
                   </object>

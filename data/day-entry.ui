@@ -294,10 +294,6 @@
           <placeholder/>
         </child>
       </object>
-      <packing>
-        <property name="submenu">main</property>
-        <property name="position">1</property>
-      </packing>
     </child>
   </object>
   <template class="Gjs_DayEntry" parent="GtkBox">
@@ -316,11 +312,6 @@
         <property name="margin_top">8</property>
         <property name="label">Tues</property>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">0</property>
-      </packing>
     </child>
     <child>
       <object class="GtkLabel" id="dateLabel">
@@ -329,11 +320,6 @@
         <property name="margin_top">8</property>
         <property name="label">7 June</property>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">1</property>
-      </packing>
     </child>
     <child>
       <object class="GtkImage" id="image">
@@ -344,11 +330,6 @@
         <property name="pixel_size">32</property>
         <property name="icon_name">weather-showers-symbolic</property>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">2</property>
-      </packing>
     </child>
     <child>
       <object class="GtkLabel" id="maxTemperatureLabel">
@@ -357,11 +338,6 @@
         <property name="margin_top">8</property>
         <property name="label">18°</property>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">3</property>
-      </packing>
     </child>
     <child>
       <object class="GtkLabel" id="minTemperatureLabel">
@@ -370,11 +346,6 @@
         <property name="margin_top">8</property>
         <property name="label">9°</property>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">4</property>
-      </packing>
     </child>
     <child>
       <object class="GtkMenuButton">
@@ -397,11 +368,6 @@
           <class name="flat"/>
         </style>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">5</property>
-      </packing>
     </child>
   </template>
 </interface>

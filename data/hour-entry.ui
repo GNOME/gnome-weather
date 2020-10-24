@@ -19,11 +19,6 @@
         <property name="can_focus">False</property>
         <property name="label">Now</property>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">0</property>
-      </packing>
     </child>
     <child>
       <object class="GtkImage" id="image">
@@ -34,11 +29,6 @@
         <property name="pixel_size">32</property>
         <property name="icon_name">weather-showers-symbolic</property>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">1</property>
-      </packing>
     </child>
     <child>
       <object class="GtkLabel" id="temperatureLabel">
@@ -50,11 +40,6 @@
           <class name="forecast-temperature-label"/>
         </style>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">2</property>
-      </packing>
     </child>
   </template>
 </interface>
