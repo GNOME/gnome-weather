@@ -16,3 +16,10 @@ install_data (
   install_dir: join_paths(weather_datadir, 'icons', symbolic_icondir),
   rename: '@0@-symbolic.svg'.format(weather_id)
 )
+
+status_icondir = join_paths('hicolor', 'scalable', 'status')
+install_subdir (
+  status_icondir,
+  install_dir: join_paths(weather_datadir, 'icons', status_icondir),
+  strip_directory: true
+)
