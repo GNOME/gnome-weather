@@ -139,8 +139,7 @@ function get_icon_resources(info) {
 var WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
     InternalChildren: ['contentFrame', 'outerGrid',
-                       'conditionsImage', 'conditionsImageSmall',
-                       'placesButton', 'placesLabel',
+                       'conditionsImage', 'placesButton', 'placesLabel',
                        'temperatureLabel', 'apparentLabel',
                        'forecastStack','leftButton', 'rightButton',
                        'forecast-hourly', 'forecast-hourly-viewport',
@@ -304,17 +303,6 @@ var WeatherWidget = GObject.registerClass({
             this._placesLabel.set_text(city.get_name());
 
         this._worldView.refilter();
-
-        this._conditionsImage.clear();
-        this._conditionsImageSmall.clear();
-
-        try {
-            const [resource, resourceSmall] = get_icon_resources(info);
-            this._conditionsImage.set_from_resource(resource);
-            this._conditionsImageSmall.set_from_resource(resourceSmall);
-        } catch (err) {
-            log(`Failed to set weather icon from resource: ${err}`);
-        }
 
         const [, tempValue] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
         this._temperatureLabel.label = '%.0f°'.format(tempValue);
