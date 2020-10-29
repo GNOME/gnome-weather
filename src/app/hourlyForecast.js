@@ -112,7 +112,11 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
 
         let hourEntry = new HourEntry();
         hourEntry.timeLabel.label = datetime.format(timeFormat);
-        hourEntry.image.iconName = info.get_symbolic_icon_name();
+
+        const iconTheme = Gtk.IconTheme.get_default();
+        const icon = iconTheme.load_icon(info.get_icon_name() + '-small', 32, 0);
+        hourEntry.image.set_from_pixbuf(icon);
+
         hourEntry.temperatureLabel.label = Util.getTempString(info);
 
         this._box.pack_start(hourEntry, false, false, 0);
