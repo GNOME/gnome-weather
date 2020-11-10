@@ -271,7 +271,7 @@ var WeatherWidget = GObject.registerClass({
         const months = days / 30;
         return ngettext(
             'Updated %d month ago.',
-            '%d months ago.', months).format(months);
+            'Updated %d months ago.', months).format(months);
     }
 });
 
