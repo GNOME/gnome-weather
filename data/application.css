@@ -54,7 +54,7 @@
     color: #c89009;
 }
 
-@define-color temp_chart_background_color white;
+@define-color temp_chart_background_color @theme_base_color;
 @define-color temp_chart_fill_color rgba(248, 228, 92, 0.5);
 @define-color temp_chart_stroke_color rgba(246, 211, 45, 1.0);
 
