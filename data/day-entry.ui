@@ -297,28 +297,36 @@
     </child>
   </object>
   <template class="Gjs_DayEntry" parent="GtkBox">
-    <property name="width_request">75</property>
+    <property name="width_request">100</property>
     <property name="height_request">200</property>
     <property name="visible">True</property>
     <property name="can_focus">False</property>
+    <property name="margin_top">18</property>
+    <property name="margin_bottom">18</property>
     <property name="hexpand">True</property>
     <property name="vexpand">True</property>
     <property name="orientation">vertical</property>
-    <property name="spacing">8</property>
+    <property name="spacing">18</property>
     <child>
-      <object class="GtkLabel" id="nameLabel">
+      <object class="GtkBox">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">8</property>
-        <property name="label">Tues</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkLabel" id="dateLabel">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_top">8</property>
-        <property name="label">7 June</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">6</property>
+        <child>
+          <object class="GtkLabel" id="nameLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label">Tues</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="dateLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label">7 June</property>
+          </object>
+        </child>
       </object>
     </child>
     <child>
@@ -332,19 +340,25 @@
       </object>
     </child>
     <child>
-      <object class="GtkLabel" id="maxTemperatureLabel">
+      <object class="GtkBox">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_top">8</property>
-        <property name="label">18°</property>
-      </object>
-    </child>
-    <child>
-      <object class="GtkLabel" id="minTemperatureLabel">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="margin_top">8</property>
-        <property name="label">9°</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">12</property>
+        <child>
+          <object class="GtkLabel" id="maxTemperatureLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label">18°</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel" id="minTemperatureLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label">9°</property>
+          </object>
+        </child>
       </object>
     </child>
     <child>
