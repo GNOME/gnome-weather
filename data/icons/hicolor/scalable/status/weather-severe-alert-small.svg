@@ -7,15 +7,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64px"
-   height="64px"
-   viewBox="0 0 64 64"
+   width="16"
+   height="16"
    version="1.1"
-   id="svg32"
-   sodipodi:docname="weather-severe-alert-small.svg"
+   id="svg6"
+   sodipodi:docname="weather-severe-alert-symbolic.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata
-     id="metadata36">
+     id="metadata12">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -25,6 +24,8 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <defs
+     id="defs10" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -34,84 +35,33 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
-     id="namedview34"
+     inkscape:window-width="1440"
+     inkscape:window-height="836"
+     id="namedview8"
      showgrid="false"
-     inkscape:current-layer="svg32">
-    <inkscape:grid
-       type="xygrid"
-       id="grid529" />
-  </sodipodi:namedview>
-  <defs
-     id="defs19">
-    <linearGradient
-       id="linear0"
-       gradientUnits="userSpaceOnUse"
-       x1="7.164"
-       y1="56.174"
-       x2="120"
-       y2="56.174"
-       gradientTransform="matrix(0.5,0,0,0.5,0,1)">
-      <stop
-         offset="0"
-         style="stop-color:rgb(7.843138%,28.235295%,53.333336%);stop-opacity:1;"
-         id="stop2" />
-      <stop
-         offset="0.076"
-         style="stop-color:rgb(13.725491%,47.058824%,87.450981%);stop-opacity:1;"
-         id="stop4" />
-      <stop
-         offset="0.337"
-         style="stop-color:rgb(7.843138%,28.235295%,53.333336%);stop-opacity:1;"
-         id="stop6" />
-      <stop
-         offset="0.504"
-         style="stop-color:rgb(96.078432%,76.078433%,6.666667%);stop-opacity:1;"
-         id="stop8" />
-      <stop
-         offset="0.709"
-         style="stop-color:rgb(7.843138%,28.235295%,53.333336%);stop-opacity:1;"
-         id="stop10" />
-      <stop
-         offset="0.885"
-         style="stop-color:rgb(7.843138%,28.235295%,53.333336%);stop-opacity:1;"
-         id="stop12" />
-      <stop
-         offset="0.954"
-         style="stop-color:rgb(10.980392%,40.000001%,75.686276%);stop-opacity:1;"
-         id="stop14" />
-      <stop
-         offset="1"
-         style="stop-color:rgb(7.843138%,28.235295%,53.333336%);stop-opacity:1;"
-         id="stop16" />
-    </linearGradient>
-  </defs>
+     inkscape:zoom="45.9375"
+     inkscape:cx="8"
+     inkscape:cy="8"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
   <g
-     style="display:inline;enable-background:new"
-     id="g4122-0-5"
-     inkscape:label="cloud weather alert danger warning"
-     transform="matrix(3.99995,0,0,3.99995,-804.02373,-1107.9496)">
-    <title
-       id="title14310">weather-alert</title>
-    <rect
-       width="16"
-       height="16"
-       x="201"
-       y="277"
-       id="rect18110-7-1-6-6-8-9-1"
-       style="color:#bebebe;display:inline;overflow:visible;visibility:visible;fill:none;stroke:none;stroke-width:1.781;marker:none;enable-background:new" />
+     id="g843">
     <path
-       style="color:#bebebe;display:inline;overflow:visible;visibility:visible;fill:#f57900;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none"
-       d="m 280.875,160 c -0.49245,0 -0.875,0.38256 -0.875,0.875 v 6.25 c 0,0.49244 0.38255,0.875 0.875,0.875 h 6.25 c 0.49245,0 0.875,-0.38256 0.875,-0.875 v -6.25 C 288,160.38256 287.61745,160 287.125,160 Z m 2.125,1 h 2 v 2.5 c 0,0 0,0.5 -0.5,0.5 h -1 c -0.5,0 -0.5,-0.5 -0.5,-0.5 z m 0.5,4 h 1 c 0.277,0 0.5,0.223 0.5,0.5 v 1 c 0,0.277 -0.223,0.5 -0.5,0.5 h -1 c -0.277,0 -0.5,-0.223 -0.5,-0.5 v -1 c 0,-0.277 0.223,-0.5 0.5,-0.5 z"
-       transform="translate(-70.9998,125)"
-       id="path10898-2"
+       d="M 9.5,2 A 2.49,2.49 0 0 0 7.031,4.219 C 6.704,4.097 6.37,4 6,4 A 3,3 0 0 0 3,7 C 3,7.098 3.022,7.185 3.031,7.281 A 2.014,2.014 0 0 0 2,7 2,2 0 1 0 2,11 H 7 V 8.875 C 7,7.865 7.865,7 8.875,7 h 5.062 a 2.499,2.499 0 0 0 -2,-1.938 A 2.5,2.5 0 0 0 9.5,2 Z"
+       style="marker:none;fill:#5e5c64;fill-opacity:1"
+       color="#000000"
+       overflow="visible"
+       fill="#2e3436"
+       id="path2" />
+    <path
        class="warning"
-       inkscape:connector-curvature="0" />
+       d="M8.875 8A.863.863 0 008 8.875v6.25c0 .492.383.875.875.875h6.25a.863.863 0 00.875-.875v-6.25A.863.863 0 0015.125 8zM11 9h2v2.5s0 .5-.5.5h-1c-.5 0-.5-.5-.5-.5zm.5 4h1c.277 0 .5.223.5.5v1c0 .277-.223.5-.5.5h-1a.499.499 0 01-.5-.5v-1c0-.277.223-.5.5-.5z"
+       style="marker:none"
+       color="#bebebe"
+       overflow="visible"
+       fill="#f57900"
+       id="path4" />
   </g>
-  <path
-     id="path404"
-     style="fill:#5e5c64;fill-opacity:1;stroke-width:0.567175"
-     d="m 41.027344,8.0898438 c -6.409389,0.0076 -12.22747,3.7469822 -14.896485,9.5742182 -1.736029,-0.895103 -3.660083,-1.364401 -5.613281,-1.36914 -6.473733,0.0068 -11.8357059,5.030114 -12.2656249,11.490234 -0.01304,-0.0023 -0.029359,-0.002 -0.042969,-0.002 -4.5305919,0 -8.20507815,3.672533 -8.20507815,8.203125 0,4.532861 3.67391925,8.207031 8.20507815,8.207031 H 28.830078 v -8.578125 c 0,-3.635627 3.083263,-6.714843 6.716797,-6.714843 h 24.839844 c 0.773934,0 1.519142,0.147245 2.21875,0.402343 -1.182544,-1.977107 -3.020996,-3.476897 -5.195313,-4.238281 0.01304,-0.188302 0.02167,-0.376467 0.02734,-0.5625 0,-9.063453 -7.346136,-16.4121092 -16.410156,-16.4121092 z"
-     sodipodi:nodetypes="ccccssscssscccc" />
 </svg>

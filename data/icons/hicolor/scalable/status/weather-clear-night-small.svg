@@ -5,18 +5,16 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="64px"
-   height="64px"
-   viewBox="0 0 64 64"
+   width="16"
+   height="16"
    version="1.1"
-   id="svg99"
-   sodipodi:docname="weather-clear-night-small.svg"
+   id="svg8"
+   sodipodi:docname="weather-clear-night-symbolic.svg"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
   <metadata
-     id="metadata103">
+     id="metadata14">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -26,6 +24,8 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <defs
+     id="defs12" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -35,236 +35,29 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
-     id="namedview101"
+     inkscape:window-width="1440"
+     inkscape:window-height="836"
+     id="namedview10"
      showgrid="false"
-     inkscape:current-layer="svg99" />
-  <defs
-     id="defs70">
-    <linearGradient
-       id="linear0"
-       gradientUnits="userSpaceOnUse"
-       x1="160.233994"
-       y1="218.688995"
-       x2="160.233994"
-       y2="257.980988"
-       gradientTransform="matrix(0.188398,-0.188398,0.188398,0.188398,-18.505533,-2.457308)">
-      <stop
-         offset="0"
-         style="stop-color:rgb(99.215686%,98.039216%,81.176472%);stop-opacity:1;"
-         id="stop2" />
-      <stop
-         offset="0.4"
-         style="stop-color:rgb(97.647059%,94.117647%,41.960785%);stop-opacity:1;"
-         id="stop4" />
-      <stop
-         offset="1"
-         style="stop-color:rgb(96.470588%,82.745099%,17.647059%);stop-opacity:1;"
-         id="stop6" />
-    </linearGradient>
-    <radialGradient
-       id="radial0"
-       gradientUnits="userSpaceOnUse"
-       cx="107.504997"
-       cy="217.035004"
-       fx="107.504997"
-       fy="217.035004"
-       r="2.357"
-       gradientTransform="matrix(2.721645,0.00837,-0.00592,1.9246,-228.23178,-407.19199)">
-      <stop
-         offset="0"
-         style="stop-color:rgb(96.078432%,76.078433%,6.666667%);stop-opacity:1;"
-         id="stop9" />
-      <stop
-         offset="1"
-         style="stop-color:rgb(96.078432%,76.078433%,6.666667%);stop-opacity:0;"
-         id="stop11" />
-    </radialGradient>
-    <filter
-       id="alpha"
-       filterUnits="objectBoundingBox"
-       x="0%"
-       y="0%"
-       width="100%"
-       height="100%">
-      <feColorMatrix
-         type="matrix"
-         in="SourceGraphic"
-         values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
-         id="feColorMatrix14" />
-    </filter>
-    <image
-       id="image13"
-       width="64"
-       height="64"
-       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAXUlEQVR4nO3Syw1AQBiF0Uus9Kko9ekBK1GCCfE+Z30z+ZJ/EgD4rerugB3alHUvSaatUXM453pdkrpgNybpt0YlD33aG3/AkLLDzWeHAAAAAAAAAAAAAAAAADzOCpTqBd+8jhwqAAAAAElFTkSuQmCC" />
-    <mask
-       id="mask0">
-      <g
-         filter="url(#alpha)"
-         id="g20">
-        <use
-           xlink:href="#image13"
-           id="use18" />
-      </g>
-    </mask>
-    <radialGradient
-       id="radial1"
-       gradientUnits="userSpaceOnUse"
-       cx="104.183998"
-       cy="209.276993"
-       fx="104.183998"
-       fy="209.276993"
-       r="9.074"
-       gradientTransform="matrix(0.79911,0,0,0.83122,-30.8745,-163.838501)">
-      <stop
-         offset="0"
-         style="stop-color:rgb(99.607843%,98.431373%,93.333334%);stop-opacity:1;"
-         id="stop23" />
-      <stop
-         offset="1"
-         style="stop-color:rgb(96.470588%,80.784315%,26.274511%);stop-opacity:0.925;"
-         id="stop25" />
-    </radialGradient>
-    <clipPath
-       id="clip1">
-      <rect
-         x="0"
-         y="0"
-         width="64"
-         height="64"
-         id="rect28" />
-    </clipPath>
-    <g
-       id="surface12"
-       clip-path="url(#clip1)">
-      <path
-         style=" stroke:none;fill-rule:nonzero;fill:url(#radial1);"
-         d="M 54 10.5 L 51.640625 8.140625 L 44.925781 10.5 Z M 54 10.5 "
-         id="path31" />
-    </g>
-    <linearGradient
-       id="linear1"
-       gradientUnits="userSpaceOnUse"
-       x1="160.233994"
-       y1="218.688995"
-       x2="160.233994"
-       y2="257.980988"
-       gradientTransform="matrix(0.134951,-0.134951,0.134951,0.134951,-4.936853,17.218383)">
-      <stop
-         offset="0"
-         style="stop-color:rgb(99.215686%,98.039216%,81.176472%);stop-opacity:1;"
-         id="stop34" />
-      <stop
-         offset="0.4"
-         style="stop-color:rgb(97.647059%,94.117647%,41.960785%);stop-opacity:1;"
-         id="stop36" />
-      <stop
-         offset="1"
-         style="stop-color:rgb(96.470588%,82.745099%,17.647059%);stop-opacity:1;"
-         id="stop38" />
-    </linearGradient>
-    <radialGradient
-       id="radial2"
-       gradientUnits="userSpaceOnUse"
-       cx="107.504997"
-       cy="217.035004"
-       fx="107.504997"
-       fy="217.035004"
-       r="2.357"
-       gradientTransform="matrix(1.949565,0.005995,-0.00424,1.378625,-155.46324,-270.22169)">
-      <stop
-         offset="0"
-         style="stop-color:rgb(96.078432%,76.078433%,6.666667%);stop-opacity:1;"
-         id="stop41" />
-      <stop
-         offset="1"
-         style="stop-color:rgb(96.078432%,76.078433%,6.666667%);stop-opacity:0;"
-         id="stop43" />
-    </radialGradient>
-    <image
-       id="image25"
-       width="64"
-       height="64"
-       xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAAW0lEQVR4nO3QsQmAQBAEwBXExDJsxv4zMRaMDY3s4A0eXtSZdDl2uQQAAAAAAPiL7ukBN4YkUyE/kmw1BX3NcQNjkrmQL/n4A84kayHfWw0BAAAAAAAAAAB4pQt9+wbYfzRCEwAAAABJRU5ErkJggg==" />
-    <mask
-       id="mask1">
-      <g
-         filter="url(#alpha)"
-         id="g49">
-        <use
-           xlink:href="#image25"
-           id="use47" />
-      </g>
-    </mask>
-    <radialGradient
-       id="radial3"
-       gradientUnits="userSpaceOnUse"
-       cx="104.183998"
-       cy="209.276993"
-       fx="104.183998"
-       fy="209.276993"
-       r="9.074"
-       gradientTransform="matrix(0.572415,0,0,0.59542,-13.797,-98.382004)">
-      <stop
-         offset="0"
-         style="stop-color:rgb(99.607843%,98.431373%,93.333334%);stop-opacity:1;"
-         id="stop52" />
-      <stop
-         offset="1"
-         style="stop-color:rgb(96.470588%,80.784315%,26.274511%);stop-opacity:0.925;"
-         id="stop54" />
-    </radialGradient>
-    <clipPath
-       id="clip2">
-      <rect
-         x="0"
-         y="0"
-         width="64"
-         height="64"
-         id="rect57" />
-    </clipPath>
-    <g
-       id="surface24"
-       clip-path="url(#clip2)">
-      <path
-         style=" stroke:none;fill-rule:nonzero;fill:url(#radial3);"
-         d="M 47 26.5 L 45.308594 24.808594 L 40.5 26.5 Z M 47 26.5 "
-         id="path60" />
-    </g>
-    <linearGradient
-       id="linear2"
-       gradientUnits="userSpaceOnUse"
-       x1="4.496"
-       y1="65.214996"
-       x2="118.792999"
-       y2="65.214996"
-       gradientTransform="matrix(0.5,0,0,0.5,-2.248,-3.537)">
-      <stop
-         offset="0"
-         style="stop-color:rgb(87.058824%,86.666667%,85.490197%);stop-opacity:1;"
-         id="stop63" />
-      <stop
-         offset="0.506"
-         style="stop-color:rgb(94.901961%,94.901961%,94.117647%);stop-opacity:1;"
-         id="stop65" />
-      <stop
-         offset="1"
-         style="stop-color:rgb(77.254903%,76.47059%,74.509805%);stop-opacity:1;"
-         id="stop67" />
-    </linearGradient>
-  </defs>
-  <path
-     style="fill:#f8e45c;fill-rule:nonzero;stroke:none"
-     d="M 63.074219,10.5 56.359375,12.859375 54,19.574219 51.640625,12.859375 44.925781,10.5 51.640625,8.140625 54,1.425781 56.359375,8.140625 Z m 0,0"
-     id="path72" />
-  <path
-     style="fill:#f9f06b;fill-rule:nonzero;stroke:none"
-     d="M 53.5,26.5 48.691406,28.191406 47,33 45.308594,28.191406 40.5,26.5 45.308594,24.808594 47,20 l 1.691406,4.808594 z m 0,0"
-     id="path82" />
-  <path
-     style="fill:#f8e45c;fill-opacity:1;fill-rule:nonzero;stroke:none"
-     d="M 31.925781,2.324219 C 15.535156,2.324219 2.246094,15.609375 2.246094,32 c 0,16.390625 13.289062,29.675781 29.679687,29.675781 12.050781,0 22.910157,-7.289062 27.46875,-18.445312 -1.339843,0.253906 -2.699219,0.378906 -4.066406,0.378906 -12.234375,0 -22.152344,-9.921875 -22.152344,-22.15625 0,-6.828125 3.148438,-13.273437 8.53125,-17.472656 -3.144531,-1.097657 -6.449219,-1.65625 -9.78125,-1.65625 z m 0,0"
-     id="path92" />
+     inkscape:zoom="45.9375"
+     inkscape:cx="8"
+     inkscape:cy="8"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <g
+     id="g843">
+    <path
+       d="M 6.815,1.107 C 3.519,1.672 0.992,4.548 0.992,8 c 0,3.854 3.148,7 7.002,7 a 6.96,6.96 0 0 0 4.58,-1.723 C 8.8,12.295 5.992,8.86 5.992,4.785 A 8.69,8.69 0 0 1 6.815,1.107 Z"
+       style="color:#bebebe;font-weight:400;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-transform:none;fill:#f6d32d;marker:none;fill-opacity:1"
+       overflow="visible"
+       id="path2" />
+    <path
+       d="M 7.994,1 C 7.592,1 7.199,1.042 6.814,1.107 A 8.69,8.69 0 0 0 5.992,4.785 c 0,4.075 2.807,7.51 6.582,8.492 A 6.983,6.983 0 0 0 14.994,8 c 0,-3.854 -3.146,-7 -7,-7 z"
+       style="color:#bebebe;font-weight:400;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-transform:none;fill:#474747;marker:none"
+       overflow="visible"
+       opacity="0.35"
+       id="path4" />
+  </g>
 </svg>
