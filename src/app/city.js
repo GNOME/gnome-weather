@@ -203,7 +203,7 @@ var WeatherWidget = GObject.registerClass({
         this._worldView.refilter();
 
         const iconTheme = Gtk.IconTheme.get_default();
-        const icon = iconTheme.load_icon(info.get_icon_name(), 84, 0);
+        const icon = iconTheme.load_icon(info.get_icon_name() + '-large', 84, 0);
         this._conditionsImage.set_from_pixbuf(icon);
 
         const [, tempValue] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
