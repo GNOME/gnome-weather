@@ -353,6 +353,9 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label">18°</property>
+            <style>
+              <class name="forecast-temperature-label"/>
+            </style>
           </object>
         </child>
         <child>
@@ -360,6 +363,9 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label">9°</property>
+            <style>
+              <class name="forecast-low-temperature-label"/>
+            </style>
           </object>
         </child>
       </object>
