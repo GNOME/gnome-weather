@@ -20,7 +20,6 @@ const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
-const GWeather = imports.gi.GWeather;
 
 const Util = imports.misc.util;
 
@@ -189,22 +188,22 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
         dayEntry.nightTemperatureLabel.label = Util.getTempString(nightInfo);
         dayEntry.nightImage.iconName = nightInfo.get_icon_name() + '-small';
         dayEntry.nightHumidity.label = nightInfo.get_humidity();
-        this._setWindInfo(nightInfo, dayEntry.nightWind);
+        dayEntry.nightWind.label = nightInfo.get_wind();
 
         dayEntry.morningTemperatureLabel.label = Util.getTempString(morningInfo);
         dayEntry.morningImage.iconName = morningInfo.get_icon_name() + '-small';
         dayEntry.morningHumidity.label = morningInfo.get_humidity();
-        this._setWindInfo(morningInfo, dayEntry.morningWind);
+        dayEntry.morningWind.label = morningInfo.get_wind();
 
         dayEntry.afternoonTemperatureLabel.label = Util.getTempString(afternoonInfo);
         dayEntry.afternoonImage.iconName = afternoonInfo.get_icon_name() + '-small';
         dayEntry.afternoonHumidity.label = afternoonInfo.get_humidity();
-        this._setWindInfo(afternoonInfo, dayEntry.afternoonWind);
+        dayEntry.afternoonWind.label = afternoonInfo.get_wind();
 
         dayEntry.eveningTemperatureLabel.label = Util.getTempString(eveningInfo);
         dayEntry.eveningImage.iconName = eveningInfo.get_icon_name() + '-small';
         dayEntry.eveningHumidity.label = eveningInfo.get_humidity();
-        this._setWindInfo(eveningInfo, dayEntry.eveningWind);
+        dayEntry.eveningWind.label = eveningInfo.get_wind();
 
         this._box.pack_start(dayEntry, false, false, 0);
     }
@@ -213,16 +212,6 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
         let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL,
                                             visible: true});
         this._box.pack_start(separator, false, false, 0);
-    }
-
-    _setWindInfo(info, label) {
-        let [ok, speed, direction] = info.get_value_wind(GWeather.SpeedUnit.DEFAULT);
-        if (ok) {
-            label.label = speed.toFixed(1).toString() + ' ' +  GWeather.speed_unit_to_string(GWeather.SpeedUnit.DEFAULT);
-        } else {
-            /* Fall back to get_wind() */
-            label.label = info.get_wind();
-        }
     }
 
     clear() {
