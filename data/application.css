@@ -21,13 +21,6 @@
     font-size: 1.2em;
 }
 
-#weather-page-content-view {
-    background-size: cover;
-    background-position: center;
-    background-origin: border-box;
-    background-clip: border-box;
-}
-
 #loading-label {
     padding-top: 24px;
     font-size: 1.5em;
