@@ -328,6 +328,9 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="label">7 June</property>
+            <style>
+              <class name="small-label"/>
+            </style>
           </object>
         </child>
       </object>

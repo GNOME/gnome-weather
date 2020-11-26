@@ -108,3 +108,7 @@ button.osd.circular > image {
 .day-popover {
   background-color: @theme_base_color;
 }
+
+.small-label {
+  font-size: 9pt;
+}
