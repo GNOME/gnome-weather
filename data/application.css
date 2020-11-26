@@ -99,3 +99,7 @@ button.osd.circular {
 button.osd.circular > image {
   padding: 12px;
 }
+
+.day-popover {
+  background-color: @theme_base_color;
+}

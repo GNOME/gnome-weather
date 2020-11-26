@@ -53,7 +53,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libgweather.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/libgweather.git",
+                    "branch" : "wip/cdavis/windspeed-string"
                 }
             ]
         },

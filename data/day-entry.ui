@@ -4,6 +4,9 @@
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkPopoverMenu" id="more_menu">
     <property name="can_focus">False</property>
+    <style>
+      <class name="day-popover"/>
+    </style>
     <child>
       <object class="GtkGrid">
         <property name="visible">True</property>
@@ -163,7 +166,7 @@
               <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="icon_name">weather-windy</property>
+                <property name="icon_name">temperature-symbolic</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -174,7 +177,7 @@
               <object class="GtkImage">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="icon_name">weather-windy</property>
+                <property name="icon_name">weather-showers-scattered-symbolic</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
