@@ -177,7 +177,7 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
         dayEntry.nameLabel.label = day.format(nameFormat);
 
         /* Translators: this is the time format for day and month name according to the current locale */
-        let dateFormat = _('%e %b');
+        let dateFormat = _('%b %e ');
         dayEntry.dateLabel.label = day.format(dateFormat);
 
         dayEntry.image.iconName = dayInfo.get_icon_name() + '-small';
