@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-11-11 16:18+0000\n"
-"PO-Revision-Date: 2020-11-11 18:20+0200\n"
+"POT-Creation-Date: 2020-12-01 16:59+0000\n"
+"PO-Revision-Date: 2020-12-02 09:09+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -158,11 +158,11 @@ msgstr "Щогодини"
 msgid "Daily"
 msgstr "Щодня"
 
-#: data/weather-widget.ui:172
+#: data/weather-widget.ui:173
 msgid "Places"
 msgstr "Місця"
 
-#: data/weather-widget.ui:248
+#: data/weather-widget.ui:249
 msgid "Current conditions"
 msgstr "Поточні погодні умови"
 
@@ -178,16 +178,16 @@ msgstr "Пошук місцевості"
 msgid "To see weather information, enter the name of a city."
 msgstr "Уведіть назву міста, щоб побачити інформацію про погоду."
 
-#: src/app/city.js:213
+#: src/app/city.js:211
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Відчувається як %.0f°"
 
-#: src/app/city.js:245
+#: src/app/city.js:243
 msgid "Updated just now."
 msgstr "Щойно оновлено."
 
-#: src/app/city.js:250
+#: src/app/city.js:248
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -195,7 +195,7 @@ msgstr[0] "Оновлено %d хвилину тому."
 msgstr[1] "Оновлено %d хвилини тому."
 msgstr[2] "Оновлено %d хвилин тому."
 
-#: src/app/city.js:256
+#: src/app/city.js:254
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -203,7 +203,7 @@ msgstr[0] "Оновлено %d годину тому."
 msgstr[1] "Оновлено %d години тому."
 msgstr[2] "Оновлено %d годин тому."
 
-#: src/app/city.js:262
+#: src/app/city.js:260
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -211,7 +211,7 @@ msgstr[0] "Оновлено %d день тому."
 msgstr[1] "Оновлено %d дні тому."
 msgstr[2] "Оновлено %d днів тому."
 
-#: src/app/city.js:268
+#: src/app/city.js:266
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -219,10 +219,8 @@ msgstr[0] "Оновлено %d тиждень тому."
 msgstr[1] "Оновлено %d тижні тому."
 msgstr[2] "Оновлено %d тижнів тому."
 
-#: src/app/city.js:273
+#: src/app/city.js:271
 #, javascript-format
-#| msgid "Updated %d month ago."
-#| msgid_plural "%d months ago."
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Оновлено %d місяць тому."
@@ -239,8 +237,8 @@ msgstr "Прогноз недоступний"
 
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:180
-msgid "%e %b"
-msgstr "%e %b"
+msgid "%b %e "
+msgstr "%e %b "
 
 #: src/app/hourlyForecast.js:42
 msgid "Hourly Forecast"
@@ -282,6 +280,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "%e %b"
+#~ msgstr "%e %b"
 
 #~ msgid "16°"
 #~ msgstr "16°"
