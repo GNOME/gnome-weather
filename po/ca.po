@@ -9,20 +9,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-22 15:18+0000\n"
-"PO-Revision-Date: 2020-07-16 17:50+0200\n"
-"Last-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\n"
+"POT-Creation-Date: 2020-12-19 06:47+0000\n"
+"PO-Revision-Date: 2020-12-19 15:46+0100\n"
+"Last-Translator: Miquel-Àngel Burgos i Fradeja <miquel.angel.burgos@gmail."
+"com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:43 src/app/main.js:64
+#: src/app/window.js:232 src/service/main.js:48
 msgid "Weather"
 msgstr "Meteorologia"
 
@@ -62,8 +63,7 @@ msgstr ""
 msgid "The GNOME Project"
 msgstr "El projecte GNOME"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "Meteorologia;Predicció;"
@@ -105,19 +105,19 @@ msgstr "Visualització de ciutat"
 msgid "Loading…"
 msgstr "S'està carregant…"
 
-#: data/day-entry.ui:27
+#: data/day-entry.ui:23
 msgid "Night"
 msgstr "Nit"
 
-#: data/day-entry.ui:39
+#: data/day-entry.ui:35
 msgid "Morning"
 msgstr "Matí"
 
-#: data/day-entry.ui:51
+#: data/day-entry.ui:47
 msgid "Afternoon"
 msgstr "Tarda"
 
-#: data/day-entry.ui:63
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Vespre"
 
@@ -153,31 +153,31 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Quant al Meteorologia"
 
-#: data/weather-widget.ui:59
+#: data/weather-widget.ui:47
 msgid "Hourly"
 msgstr "Per hores"
 
-#: data/weather-widget.ui:91
+#: data/weather-widget.ui:68
 msgid "Daily"
 msgstr "Diari"
 
-#: data/weather-widget.ui:190
+#: data/weather-widget.ui:173
 msgid "Places"
 msgstr "Llocs"
 
-#: data/weather-widget.ui:266
+#: data/weather-widget.ui:249
 msgid "Current conditions"
 msgstr "Condicions actuals"
 
-#: data/window.ui:49
+#: data/window.ui:32
 msgid "Refresh"
 msgstr "Actualitza"
 
-#: data/window.ui:105
+#: data/window.ui:114
 msgid "Search for a location"
 msgstr "Cerqueu una ubicació"
 
-#: data/window.ui:119
+#: data/window.ui:129
 msgid "To see weather information, enter the name of a city."
 msgstr "Per veure la informació meteorològica, introduïu el nom d'una ciutat."
 
@@ -186,65 +186,64 @@ msgstr "Per veure la informació meteorològica, introduïu el nom d'una ciutat.
 msgid "Feels like %.0f°"
 msgstr "Sensació de %.0f°"
 
-#: src/app/city.js:241
+#: src/app/city.js:243
 msgid "Updated just now."
 msgstr "Actualitzat ara mateix."
 
-#: src/app/city.js:246
+#: src/app/city.js:248
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Actualitzat fa %d minut."
 msgstr[1] "Actualitzat fa %d minuts."
 
-#: src/app/city.js:252
+#: src/app/city.js:254
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Actualitzat fa %d hora."
 msgstr[1] "Actualitzat fa %d hores."
 
-#: src/app/city.js:258
+#: src/app/city.js:260
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Actualitzat fa %d dia."
 msgstr[1] "Actualitzat fa %d dies."
 
-#: src/app/city.js:264
+#: src/app/city.js:266
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Actualitzat fa %d setmana."
 msgstr[1] "Actualitzat fa %d setmanes."
 
-#: src/app/city.js:269
+#: src/app/city.js:271
 #, javascript-format
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "Actualitzat fa %d mes."
 msgstr[1] "Actualitzat fa %d mesos."
 
-#: src/app/dailyForecast.js:33
+#: src/app/dailyForecast.js:37
 msgid "Daily Forecast"
 msgstr "Predicció diària"
 
-#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
+#: src/app/dailyForecast.js:94 src/app/hourlyForecast.js:91
 msgid "Forecast not available"
 msgstr "La predicció està disponible"
 
-#. Translators: this is the time format for day and month name according to
-#. the current locale
-#: src/app/dailyForecast.js:176
-msgid "%e %b"
-msgstr "%e %b"
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:180
+msgid "%b %e "
+msgstr "%b %e "
 
-#: src/app/hourlyForecast.js:38
+#: src/app/hourlyForecast.js:42
 msgid "Hourly Forecast"
 msgstr "Predicció per hores"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:105
+#: src/app/hourlyForecast.js:109
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
@@ -252,13 +251,14 @@ msgstr "%l∶%M %p"
 msgid "Select Location"
 msgstr "Seleccioneu una ubicació"
 
-#: src/app/window.js:226
+#: src/app/window.js:231
 msgid "translator-credits"
 msgstr ""
 "Josep Sanchez Mesegue <papapep@gmx.com>,\n"
-"Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>"
+"Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\n"
+"Miquel-Àngel Burgos i Fradeja <miquel.angel.burgos@gmail.com>"
 
-#: src/app/window.js:228
+#: src/app/window.js:233
 msgid "A weather application"
 msgstr "Un programa sobre meteorologia"
 
@@ -281,6 +281,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "%e %b"
+#~ msgstr "%e %b"
 
 #~ msgid "Today"
 #~ msgstr "Avui"
