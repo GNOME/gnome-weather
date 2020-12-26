@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-12-08 18:59+0000\n"
-"PO-Revision-Date: 2020-12-18 06:53+0100\n"
+"POT-Creation-Date: 2020-12-22 20:25+0000\n"
+"PO-Revision-Date: 2020-12-26 06:09+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -230,8 +230,8 @@ msgstr "Previsions no disponibii"
 
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:180
-msgid "%b %e "
-msgstr "%e di %b "
+msgid "%b %e"
+msgstr "%e di %b"
 
 #: src/app/hourlyForecast.js:42
 msgid "Hourly Forecast"
