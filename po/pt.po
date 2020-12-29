@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-12-19 06:47+0000\n"
-"PO-Revision-Date: 2020-12-21 22:48+0000\n"
+"POT-Creation-Date: 2020-12-22 20:25+0000\n"
+"PO-Revision-Date: 2020-12-29 18:31+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <>\n"
 "Language: pt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
@@ -235,8 +235,8 @@ msgstr "Previsão indisponível"
 
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:180
-msgid "%b %e "
-msgstr "%b %e "
+msgid "%b %e"
+msgstr "%b %e"
 
 #: src/app/hourlyForecast.js:42
 msgid "Hourly Forecast"
