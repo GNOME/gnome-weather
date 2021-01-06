@@ -179,7 +179,7 @@ msgstr "Cerqueu una ubicació"
 
 #: data/window.ui:129
 msgid "To see weather information, enter the name of a city."
-msgstr "Per veure la informació meteorològica, introduïu el nom d'una ciutat."
+msgstr "Per a veure la informació meteorològica, introduïu el nom d'una ciutat."
 
 #: src/app/city.js:211
 #, javascript-format
