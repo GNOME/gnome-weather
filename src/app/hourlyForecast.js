@@ -141,7 +141,12 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         const maxTemp = Math.max(...temps);
         const minTemp = Math.min(...temps);
 
-        const values = temps.map(t => (t - minTemp) / (maxTemp - minTemp));
+        let values;
+        if (minTemp != maxTemp) {
+            values = temps.map(t => (t - minTemp) / (maxTemp - minTemp));
+        } else {
+            values = temps.map(t => t / 2);
+        }
 
         const frameWidth = this.get_allocated_width();
         const frameHeight = this.get_allocated_height();
