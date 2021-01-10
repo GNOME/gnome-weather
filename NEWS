@@ -1,3 +1,51 @@
+40.alpha
+========
+* Major redesign with new charts (Vitaly Dyachkov, Nahuel Gomez Castro, Evan Welsh, Allan Day, Sam Hewitt)
+* Adaptive for mobile and desktop (Christopher Davis)
+
+* Bugs fixed:
+ - #95 Unknown temperature and cloud conditions since 3.34.1 when using auto location
+
+* Translation updates:
+ - Bangla (India)
+ - Basque
+ - Catalan
+ - Chinese (China)
+ - Chinese (Taiwan)
+ - Croatian
+ - Czech
+ - Danish
+ - Dutch
+ - English (United Kingdom)
+ - Esperanto
+ - Finnish
+ - French
+ - Friulian
+ - Galician
+ - German
+ - Greek, Modern (1453-)
+ - Hebrew
+ - Hungarian
+ - Indonesian
+ - Italian
+ - Japanese
+ - Kazakh
+ - Korean
+ - Latvian
+ - Lithuanian
+ - Persian
+ - Polish
+ - Portuguese
+ - Portuguese (Brazil)
+ - Romanian
+ - Serbian
+ - Slovak
+ - Slovenian
+ - Spanish
+ - Swedish
+ - Turkish
+ - Ukrainian
+
 3.34.0
 ======
 * Export location information to GNOME Shell (Florian Müllner)
@@ -422,7 +470,7 @@
 * Enabled OpenWeatherMap backend
 * Updated for libgweather API changes
 * Translation updates
- 
+
 3.9.3
 =====
 * Fixed icon handling in GWeatherLocationEntry due

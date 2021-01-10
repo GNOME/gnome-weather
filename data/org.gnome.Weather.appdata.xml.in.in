@@ -46,6 +46,50 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2020-01-09" version="40.alpha">
+      <description>
+        <p>GNOME Weather 40 brings an exciting new redesign that works on both desktop and mobile form factors.</p>
+        <p>Weather 40 also comes with updated translations for the following locales:</p>
+        <ul>
+          <li>Bangla (India)</li>
+          <li>BasqueCatalan</li>
+          <li>Chinese (China)</li>
+          <li>Chinese (Taiwan)</li>
+          <li>Croatian</li>
+          <li>Czech</li>
+          <li>Danish</li>
+          <li>Dutch</li>
+          <li>English (United Kingdom)</li>
+          <li>Esperanto</li>
+          <li>Finnish</li>
+          <li>French</li>
+          <li>Friulian</li>
+          <li>Galician</li>
+          <li>German</li>
+          <li>Greek, Modern (1453-)</li>
+          <li>Hebrew</li>
+          <li>HungarianIndonesian</li>
+          <li>Italian</li>
+          <li>Japanese</li>
+          <li>Kazakh</li>
+          <li>Korean</li>
+          <li>Latvian</li>
+          <li>Lithuanian</li>
+          <li>Persian</li>
+          <li>Polish</li>
+          <li>Portuguese</li>
+          <li>Portuguese (Brazil)</li>
+          <li>Romanian</li>
+          <li>Serbian</li>
+          <li>Slovak</li>
+          <li>Slovenian</li>
+          <li>Spanish</li>
+          <li>Swedish</li>
+          <li>Turkish</li>
+          <li>Ukrainian</li>
+        </ul>
+      </description>
+    </release>
     <release date="2019-09-24" version="3.34.0">
       <description>
         <p>GNOME Weather 3.34 includes bug fixes and general improvements:</p>
