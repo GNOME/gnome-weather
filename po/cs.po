@@ -5,14 +5,14 @@
 # Adam Matoušek <adamatousek@gmail.com>, 2013.
 # Daniel Puncman <puncmdan@fel.cvut.cz>, 2013.
 # František Zatloukal <Zatloukal.Frantisek@gmail.com>, 2014.
-# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015, 2016, 2019, 2020.
+# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015, 2016, 2019, 2020, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-11-11 16:18+0000\n"
-"PO-Revision-Date: 2020-11-11 17:33+0100\n"
+"POT-Creation-Date: 2020-12-22 20:25+0000\n"
+"PO-Revision-Date: 2021-01-11 22:14+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -162,11 +162,11 @@ msgstr "Hodinová"
 msgid "Daily"
 msgstr "Denní"
 
-#: data/weather-widget.ui:172
+#: data/weather-widget.ui:173
 msgid "Places"
 msgstr "Místa"
 
-#: data/weather-widget.ui:248
+#: data/weather-widget.ui:249
 msgid "Current conditions"
 msgstr "Současné podmínky"
 
@@ -182,16 +182,16 @@ msgstr "Vyhledání místa"
 msgid "To see weather information, enter the name of a city."
 msgstr "Abyste viděli informace o počasí, zadejte název města."
 
-#: src/app/city.js:213
+#: src/app/city.js:211
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Pocitově jako %.0f"
 
-#: src/app/city.js:245
+#: src/app/city.js:243
 msgid "Updated just now."
 msgstr "Právě aktualizováno."
 
-#: src/app/city.js:250
+#: src/app/city.js:248
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -199,7 +199,7 @@ msgstr[0] "Aktualizováno před %d minutou."
 msgstr[1] "Aktualizováno před %d minutami."
 msgstr[2] "Aktualizováno před %d minutami."
 
-#: src/app/city.js:256
+#: src/app/city.js:254
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -207,7 +207,7 @@ msgstr[0] "Aktualizováno před %d hodinou."
 msgstr[1] "Aktualizováno před %d hodinami"
 msgstr[2] "Aktualizováno před %d hodinami"
 
-#: src/app/city.js:262
+#: src/app/city.js:260
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -215,7 +215,7 @@ msgstr[0] "Aktualizováno před %d dnem."
 msgstr[1] "Aktualizováno před %d dny."
 msgstr[2] "Aktualizováno před %d dny."
 
-#: src/app/city.js:268
+#: src/app/city.js:266
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -223,7 +223,7 @@ msgstr[0] "Aktualizováno před %d týdnem."
 msgstr[1] "Aktualizováno před %d týdny."
 msgstr[2] "Aktualizováno před %d týdny."
 
-#: src/app/city.js:273
+#: src/app/city.js:271
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -241,7 +241,7 @@ msgstr "Předpověď není dostupná"
 
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:180
-msgid "%e %b"
+msgid "%b %e"
 msgstr "%e. %B"
 
 #: src/app/hourlyForecast.js:42
