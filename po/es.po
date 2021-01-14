@@ -2,14 +2,14 @@
 # Copyright (C) 2012 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012-2020.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-12-01 16:59+0000\n"
-"PO-Revision-Date: 2020-12-02 12:13+0100\n"
+"POT-Creation-Date: 2020-12-22 20:25+0000\n"
+"PO-Revision-Date: 2021-01-14 09:46+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
@@ -218,8 +218,6 @@ msgstr[1] "Actualizado hace %d semanas."
 
 #: src/app/city.js:271
 #, javascript-format
-#| msgid "Updated %d month ago."
-#| msgid_plural "%d months ago."
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Actualizado hace %d mes."
@@ -235,8 +233,9 @@ msgstr "Pronóstico no disponible"
 
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:180
-msgid "%b %e "
-msgstr "%b %e "
+#| msgid "%b %e "
+msgid "%b %e"
+msgstr "%b %e"
 
 #: src/app/hourlyForecast.js:42
 msgid "Hourly Forecast"
