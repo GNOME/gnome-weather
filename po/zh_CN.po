@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-22 15:18+0000\n"
-"PO-Revision-Date: 2020-08-13 12:00+0800\n"
-"Last-Translator: Merrick Zhang <anphorea@gmail.com>\n"
+"POT-Creation-Date: 2021-01-22 13:51+0000\n"
+"PO-Revision-Date: 2021-01-24 19:23+0800\n"
+"Last-Translator: mars <gzhqyz@gmail.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -25,8 +25,8 @@ msgstr ""
 "X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:43 src/app/main.js:64
+#: src/app/window.js:232 src/service/main.js:48
 msgid "Weather"
 msgstr "天气"
 
@@ -58,7 +58,7 @@ msgstr ""
 "它也可选与 GNOME Shell 集成，允许你通过在活动概览中输入名字来查看最近搜索的城"
 "市的当前状况。"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:118
 msgid "The GNOME Project"
 msgstr "GNOME 项目"
 
@@ -101,19 +101,19 @@ msgstr "城市视图"
 msgid "Loading…"
 msgstr "正在加载…"
 
-#: data/day-entry.ui:27
+#: data/day-entry.ui:23
 msgid "Night"
 msgstr "深夜"
 
-#: data/day-entry.ui:39
+#: data/day-entry.ui:35
 msgid "Morning"
 msgstr "上午"
 
-#: data/day-entry.ui:51
+#: data/day-entry.ui:47
 msgid "Afternoon"
 msgstr "下午"
 
-#: data/day-entry.ui:63
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "晚上"
 
@@ -149,31 +149,31 @@ msgstr "华氏度(_F)"
 msgid "_About Weather"
 msgstr "关于天气(_A)"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "每小时"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "每天"
-
-#: data/weather-widget.ui:190
+#: data/weather-widget.ui:71
 msgid "Places"
 msgstr "地点"
 
-#: data/weather-widget.ui:266
+#: data/weather-widget.ui:147
 msgid "Current conditions"
 msgstr "当前状况"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:178
+msgid "Hourly"
+msgstr "每小时"
+
+#: data/weather-widget.ui:199
+msgid "Daily"
+msgstr "每天"
+
+#: data/window.ui:32
 msgid "Refresh"
 msgstr "刷新"
 
-#: data/window.ui:105
+#: data/window.ui:114
 msgid "Search for a location"
 msgstr "根据位置搜索"
 
-#: data/window.ui:119
+#: data/window.ui:129
 msgid "To see weather information, enter the name of a city."
 msgstr "要查看天气信息，请输入城市的名称。"
 
@@ -182,59 +182,59 @@ msgstr "要查看天气信息，请输入城市的名称。"
 msgid "Feels like %.0f°"
 msgstr "体感（温度）%.0f°"
 
-#: src/app/city.js:241
+#: src/app/city.js:243
 msgid "Updated just now."
 msgstr "刚刚更新。"
 
-#: src/app/city.js:246
+#: src/app/city.js:248
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d 分钟前更新。"
 
-#: src/app/city.js:252
+#: src/app/city.js:254
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d 小时前更新。"
 
-#: src/app/city.js:258
+#: src/app/city.js:260
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d 天前更新。"
 
-#: src/app/city.js:264
+#: src/app/city.js:266
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d 周前更新。"
 
-#: src/app/city.js:269
+#: src/app/city.js:271
 #, javascript-format
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "%d 个月前更新。"
 
-#: src/app/dailyForecast.js:33
+#: src/app/dailyForecast.js:37
 msgid "Daily Forecast"
 msgstr "每日预报"
 
-#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
+#: src/app/dailyForecast.js:94 src/app/hourlyForecast.js:91
 msgid "Forecast not available"
 msgstr "天气预报不可用"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:176
-msgid "%e %b"
-msgstr "%e %b"
+#: src/app/dailyForecast.js:180
+msgid "%b %e"
+msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:38
+#: src/app/hourlyForecast.js:42
 msgid "Hourly Forecast"
 msgstr "小时预报"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:105
+#: src/app/hourlyForecast.js:109
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
@@ -242,7 +242,7 @@ msgstr "%l∶%M %p"
 msgid "Select Location"
 msgstr "选择位置"
 
-#: src/app/window.js:226
+#: src/app/window.js:231
 msgid "translator-credits"
 msgstr ""
 "tuhaihe <1132321739qq@gmail.com>, 2013,2020\n"
@@ -254,7 +254,7 @@ msgstr ""
 "王滋涵 <wi24rd@fedoraproject.org>, 2020\n"
 "Weiyi Xu <xuweiyi0923@gmail.com>, 2020"
 
-#: src/app/window.js:228
+#: src/app/window.js:233
 msgid "A weather application"
 msgstr "一款天气应用"
 
@@ -277,6 +277,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "%e %b"
+#~ msgstr "%e %b"
 
 #~ msgid "Today"
 #~ msgstr "今日"
