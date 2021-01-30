@@ -1,26 +1,26 @@
 # Brazilian Portuguese translation for gnome-weather.
-# Copyright (C) 2020 gnome-weather's COPYRIGHT HOLDER
+# Copyright (C) 2021 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Georges Basile Stavracas Neto <georges.stavracas@gmail.com>, 2013.
 # Artur de Aquino Morais <artur.morais93@outlook.com>, 2016.
 # Yuri Otávio <yuriotavio@hotmail.com>, 2019.
-# Rafael Fontenelle <rafaelff@gnome.org>, 2013-2020.
 # Enrico Nicoletto <liverig@gmail.com>, 2013, 2014, 2020.
+# Rafael Fontenelle <rafaelff@gnome.org>, 2013-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-11-11 16:18+0000\n"
-"PO-Revision-Date: 2020-11-11 14:01-0300\n"
-"Last-Translator: Enrico Nicoletto <liverig@gmail.com>\n"
+"POT-Creation-Date: 2020-12-22 20:25+0000\n"
+"PO-Revision-Date: 2021-01-30 18:06-0300\n"
+"Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 3.38.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:43 src/app/main.js:64
@@ -162,11 +162,11 @@ msgstr "Por hora"
 msgid "Daily"
 msgstr "Por dia"
 
-#: data/weather-widget.ui:172
+#: data/weather-widget.ui:173
 msgid "Places"
 msgstr "Locais"
 
-#: data/weather-widget.ui:248
+#: data/weather-widget.ui:249
 msgid "Current conditions"
 msgstr "Condições atuais"
 
@@ -182,44 +182,44 @@ msgstr "Pesquisar por uma localização"
 msgid "To see weather information, enter the name of a city."
 msgstr "Para ver informações meteorológicas, insira o nome de uma cidade."
 
-#: src/app/city.js:213
+#: src/app/city.js:211
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Sensação de %.0f°"
 
-#: src/app/city.js:245
+#: src/app/city.js:243
 msgid "Updated just now."
 msgstr "Atualizado agora mesmo."
 
-#: src/app/city.js:250
+#: src/app/city.js:248
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Atualizado %d minuto atrás."
 msgstr[1] "Atualizado %d minutos atrás."
 
-#: src/app/city.js:256
+#: src/app/city.js:254
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Atualizado %d hora atrás."
 msgstr[1] "Atualizado %d horas atrás."
 
-#: src/app/city.js:262
+#: src/app/city.js:260
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Atualizado %d dia atrás."
 msgstr[1] "Atualizado %d dias atrás."
 
-#: src/app/city.js:268
+#: src/app/city.js:266
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Atualizado %d semana atrás."
 msgstr[1] "Atualizado %d semanas atrás."
 
-#: src/app/city.js:273
+#: src/app/city.js:271
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -236,7 +236,7 @@ msgstr "Previsão indisponível"
 
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:180
-msgid "%e %b"
+msgid "%b %e"
 msgstr "%e de %b"
 
 #: src/app/hourlyForecast.js:42
@@ -282,6 +282,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "%e %b"
+#~ msgstr "%e de %b"
 
 #~ msgid "Today"
 #~ msgstr "Hoje"
