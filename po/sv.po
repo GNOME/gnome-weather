@@ -1,16 +1,17 @@
 # Swedish translation for gnome-weather.
-# Copyright © 2014-2020 gnome-weather's COPYRIGHT HOLDER
+# Copyright © 2014-2021 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Marcus Lundblad <ml@update.uu.se>, 2014.
 # Sebastian Rasmussen <sebras@gmail.com>, 2014.
 # Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016, 2018, 2019, 2020.
+# Luna Jernberg <droidbittin@gmail.com>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-11-11 16:18+0000\n"
-"PO-Revision-Date: 2020-11-28 22:38+0100\n"
+"POT-Creation-Date: 2021-01-12 05:58+0000\n"
+"PO-Revision-Date: 2021-02-03 20:52+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -58,7 +59,7 @@ msgstr ""
 "dig att se aktuella förhållanden för de senast eftersökta städerna genom att "
 "bara skriva namnet i Aktivitetsöversikten."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:118
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -151,21 +152,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Om Väder"
 
-#: data/weather-widget.ui:47
-msgid "Hourly"
-msgstr "Timvis"
-
-#: data/weather-widget.ui:68
-msgid "Daily"
-msgstr "Dagsvis"
-
-#: data/weather-widget.ui:172
+#: data/weather-widget.ui:71
 msgid "Places"
 msgstr "Platser"
 
-#: data/weather-widget.ui:248
+#: data/weather-widget.ui:147
 msgid "Current conditions"
 msgstr "Aktuella förhållanden"
+
+#: data/weather-widget.ui:178
+msgid "Hourly"
+msgstr "Timvis"
+
+#: data/weather-widget.ui:199
+msgid "Daily"
+msgstr "Dagsvis"
 
 #: data/window.ui:32
 msgid "Refresh"
@@ -179,44 +180,44 @@ msgstr "Sök efter en plats"
 msgid "To see weather information, enter the name of a city."
 msgstr "Fyll i namnet på en stad för att se väderinformation."
 
-#: src/app/city.js:213
+#: src/app/city.js:211
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Känns som %.0f°"
 
-#: src/app/city.js:245
+#: src/app/city.js:243
 msgid "Updated just now."
 msgstr "Uppdaterades just nu."
 
-#: src/app/city.js:250
+#: src/app/city.js:248
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Uppdaterades för %d minut sedan."
 msgstr[1] "Uppdaterades för %d minuter sedan."
 
-#: src/app/city.js:256
+#: src/app/city.js:254
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Uppdaterades för %d timme sedan."
 msgstr[1] "Uppdaterades för %d timmar sedan."
 
-#: src/app/city.js:262
+#: src/app/city.js:260
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Uppdaterades för %d dag sedan."
 msgstr[1] "Uppdaterades för %d dagar sedan."
 
-#: src/app/city.js:268
+#: src/app/city.js:266
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Uppdaterades för %d vecka sedan."
 msgstr[1] "Uppdaterades för %d veckor sedan."
 
-#: src/app/city.js:273
+#: src/app/city.js:271
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -233,7 +234,7 @@ msgstr "Prognos inte tillgänglig"
 
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:180
-msgid "%e %b"
+msgid "%b %e"
 msgstr "%e %b"
 
 #: src/app/hourlyForecast.js:42
@@ -255,6 +256,7 @@ msgstr ""
 "Marcus Lundblad <ml@update.uu.se>\n"
 "Sebastian Rasmussen <sebras@gmail.com>\n"
 "Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
+"Luna Jernberg <droidbittin@gmail.com>\n"
 "\n"
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
@@ -282,6 +284,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "%e %b"
+#~ msgstr "%e %b"
 
 #~ msgid "Today"
 #~ msgstr "Idag"
