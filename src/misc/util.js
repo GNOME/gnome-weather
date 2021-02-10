@@ -148,7 +148,7 @@ function getEnabledProviders() {
     if (provider_override) {
         return (GWeather.Provider.METAR | GWeather.Provider[provider_override]);
     } else {
-        return (GWeather.Provider.METAR | GWeather.Provider.YR_NO | GWeather.Provider.OWM);
+        return (GWeather.Provider.METAR | GWeather.Provider.MET_NO | GWeather.Provider.OWM);
     }
 }
 

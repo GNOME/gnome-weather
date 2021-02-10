@@ -230,8 +230,12 @@ var WorldModel = GObject.registerClass({
                 return info;
         }
 
-        let info = new GWeather.Info({ location: newLocation,
-                                       enabled_providers: this._providers });
+        let info = new GWeather.Info({
+            application_id: pkg.name,
+            contact_info: 'https://gitlab.gnome.org/GNOME/gnome-weather/-/raw/master/gnome-weather.doap',
+            location: newLocation,
+            enabled_providers: this._providers
+        });
         this._addInfoInternal(info, isCurrentLocation);
 
         return info;
