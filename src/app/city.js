@@ -205,7 +205,7 @@ var WeatherWidget = GObject.registerClass({
         this._conditionsImage.iconName = info.get_icon_name() + '-large';
 
         const [, tempValue] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
-        this._temperatureLabel.label = '%.0f°'.format(tempValue);
+        this._temperatureLabel.label = '%d°'.format(Math.round(tempValue));
 
         const [, apparentValue] = info.get_value_apparent(GWeather.TemperatureUnit.DEFAULT);
         this._apparentLabel.label = _('Feels like %.0f°').format(apparentValue);
