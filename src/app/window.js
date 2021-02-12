@@ -33,8 +33,11 @@ const Page = {
     CITY: 1
 };
 
-var MainWindow = GObject.registerClass(
-    class MainWindow extends Handy.ApplicationWindow {
+var MainWindow = GObject.registerClass({
+    Template: 'resource:///org/gnome/Weather/window.ui',
+    InternalChildren: ['header', 'refresh', 'forecastStackSwitcher', 'stack',
+                       'searchView', 'searchEntry', 'forecastStackSwitcherBar']
+}, class MainWindow extends Handy.ApplicationWindow {
 
     _init(params) {
         super._init(params);
@@ -67,50 +70,25 @@ var MainWindow = GObject.registerClass(
         refreshAction.connect('activate', () => this.update());
         this.add_action(refreshAction);
 
-        let builder = new Gtk.Builder();
-        builder.add_from_resource('/org/gnome/Weather/window.ui');
-        builder.add_from_resource('/org/gnome/Weather/primary-menu.ui');
-
-        let grid = builder.get_object('main-panel');
-        this._header = builder.get_object('header-bar');
         this._header.set_title(_('Select Location'));
 
         this._model = this.application.model;
 
-        this._searchView = builder.get_object('initial-grid');
-
-        this._searchEntry = builder.get_object('initial-grid-location-entry');
         this._searchEntry.connect('notify::location', (entry) => {
             this._searchLocationChanged(entry);
         });
 
-        let refresh = builder.get_object('refresh-button');
-        this._pageWidgets[Page.CITY].push(refresh);
-
-        let primaryMenuModel = builder.get_object('primary-menu');
-        let primaryMenuButton = builder.get_object('primary-menu-button');
-        let popover = Gtk.Popover.new_from_model(primaryMenuButton, primaryMenuModel);
-
-        primaryMenuButton.set_popover(popover);
-
-        this._stack = builder.get_object('main-stack');
+        this._pageWidgets[Page.CITY].push(this._refresh);
 
         this._cityView = new City.WeatherView(this.application, this,
                                               { hexpand: true, vexpand: true });
         this._stack.add(this._cityView);
 
-        this._forecastStackSwitcher = builder.get_object('switcher-title');
         this._forecastStackSwitcher.set_stack(this._cityView.getInfoPage().getForecastStack());
 
-        this._forecastStackSwitcherBar = builder.get_object('switcher-bar');
         this._forecastStackSwitcherBar.set_stack(this._cityView.getInfoPage().getForecastStack());
 
         this._stack.set_visible_child(this._searchView);
-
-        let box = builder.get_object('main-box');
-
-        this.add(box);
-        box.show_all();
 
         for (let i = 0; i < this._pageWidgets[Page.CITY].length; i++)
             this._pageWidgets[Page.CITY][i].hide();
@@ -121,6 +99,7 @@ var MainWindow = GObject.registerClass(
         }
 
         this._showingDefault = false;
+        this.show_all();
     }
 
     update() {
