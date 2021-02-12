@@ -29,6 +29,7 @@
         <property name="can-focus">False</property>
         <property name="vexpand">False</property>
         <property name="homogeneous">False</property>
+        <property name="transition_type">crossfade</property>
         <child>
           <object class="GtkGrid" id="auto-location-grid">
             <property name="visible">True</property>

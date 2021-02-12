@@ -69,6 +69,7 @@
               <object class="GtkStack" id="titleStack">
                 <property name="visible">True</property>
                 <property name="visible-child-name" bind-source="stack" bind-property="visible-child-name" bind-flags="bidirectional|sync-create"/>
+                <property name="transition_type">crossfade</property>
                 <child>
                   <object class="GtkLabel">
                     <property name="visible">True</property>
