@@ -70,6 +70,8 @@ var MainWindow = GObject.registerClass({
 
         this._model = this.application.model;
 
+        this._searchView.icon_name = pkg.name;
+
         this._searchEntry.connect('notify::location', (entry) => {
             this._searchLocationChanged(entry);
         });

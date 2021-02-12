@@ -126,8 +126,8 @@
               <object class="HdyStatusPage" id="searchView">
                 <property name="visible">True</property>
                 <property name="icon_name">mark-location-symbolic</property>
-                <property name="title" translatable="yes">Search for a Location</property>
-                <property name="description" translatable="yes">To see weather information, enter the name of a city.</property>
+                <property name="title" translatable="yes">Welcome to Weather!</property>
+                <property name="description" translatable="yes">To get started, select a location.</property>
                 <child>
                   <object class="GWeatherLocationEntry" id="searchEntry">
                     <property name="visible">True</property>
@@ -136,8 +136,12 @@
                     <property name="hexpand">False</property>
                     <property name="halign">center</property>
                     <property name="width-request">246</property>
+                    <property name="placeholder_text">Search for a city or country</property>
                   </object>
                 </child>
+                <style>
+                  <class name="search-view"/>
+                </style>
               </object>
               <packing>
                 <property name="name">search</property>

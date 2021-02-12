@@ -105,3 +105,12 @@ button.osd.circular > image {
 .small-label {
   font-size: 9pt;
 }
+
+.search-view scrolledwindow {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
+.search-view .large-title {
+  font-weight: bold;
+}
