@@ -37,32 +37,64 @@
             <property name="show_close_button">True</property>
             <property name="centering_policy">strict</property>
             <child>
-              <object class="GtkButton" id="refresh">
+              <object class="GtkRevealer" id="refreshRevealer">
                 <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="valign">center</property>
-                <property name="action_name">win.refresh</property>
+                <property name="transition_type">crossfade</property>
                 <child>
-                  <object class="GtkImage" id="refresh-button-image">
+                  <object class="GtkButton" id="refresh">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="icon_name">view-refresh-symbolic</property>
-                  </object>
-                </child>
-                <child internal-child="accessible">
-                  <object class="AtkObject" id="refresh-button-atkobject">
-                    <property name="AtkObject::accessible-name" translatable="yes">Refresh</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">False</property>
+                    <property name="valign">center</property>
+                    <property name="action_name">win.refresh</property>
+                    <child>
+                      <object class="GtkImage" id="refresh-button-image">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="icon_name">view-refresh-symbolic</property>
+                      </object>
+                    </child>
+                    <child internal-child="accessible">
+                      <object class="AtkObject" id="refresh-button-atkobject">
+                        <property name="AtkObject::accessible-name" translatable="yes">Refresh</property>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>
             </child>
-           <child type="title">
-             <object class="HdyViewSwitcherTitle" id="forecastStackSwitcher">
-               <property name="visible">True</property>
-               <property name="title" translatable="yes">Weather</property>
-             </object>
-           </child>
+            <child type="title">
+              <object class="GtkStack" id="titleStack">
+                <property name="visible">True</property>
+                <property name="visible-child-name" bind-source="stack" bind-property="visible-child-name" bind-flags="bidirectional|sync-create"/>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="ellipsize">end</property>
+                    <property name="halign">center</property>
+                    <property name="wrap">False</property>
+                    <property name="single-line-mode">True</property>
+                    <property name="width-chars">5</property>
+                    <property name="label" translatable="yes">Select Location</property>
+                    <style>
+                      <class name="title"/>
+                    </style>
+                  </object>
+                  <packing>
+                    <property name="name">search</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="HdyViewSwitcherTitle" id="forecastStackSwitcher">
+                    <property name="visible">True</property>
+                    <property name="title" translatable="yes">Weather</property>
+                  </object>
+                  <packing>
+                    <property name="name">city</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
             <child>
               <object class="GtkMenuButton" id="primary-menu-button">
                 <property name="visible">True</property>
@@ -85,88 +117,80 @@
           </object>
         </child>
         <child>
-          <object class="GtkGrid">
-            <property name="visible">True</property>
+          <object class="GtkStack" id="stack">
             <property name="can_focus">False</property>
-            <property name="orientation">vertical</property>
+            <property name="transition_type">crossfade</property>
             <child>
-              <object class="GtkStack" id="stack">
+              <object class="GtkGrid" id="searchView">
+                <property name="name">initial-grid</property>
+                <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="transition_type">crossfade</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="margin_top">25</property>
+                <property name="margin_bottom">25</property>
+                <property name="vexpand">False</property>
+                <property name="orientation">vertical</property>
+                <property name="row_homogeneous">True</property>
                 <child>
-                  <object class="GtkGrid" id="searchView">
-                    <property name="name">initial-grid</property>
+                  <object class="GtkImage" id="mark-location-image">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">center</property>
                     <property name="valign">center</property>
-                    <property name="margin_top">25</property>
-                    <property name="margin_bottom">25</property>
                     <property name="vexpand">False</property>
-                    <property name="orientation">vertical</property>
-                    <property name="row_homogeneous">True</property>
-                    <child>
-                      <object class="GtkImage" id="mark-location-image">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="halign">center</property>
-                        <property name="valign">center</property>
-                        <property name="vexpand">False</property>
-                        <property name="icon_name">mark-location-symbolic</property>
-                        <property name="use_fallback">True</property>
-                        <property name="icon_size">6</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="search-location-label">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="halign">center</property>
-                        <property name="valign">center</property>
-                        <property name="vexpand">False</property>
-                        <property name="label" translatable="yes">Search for a location</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">1</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="search-nereby-location-label">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="halign">center</property>
-                        <property name="valign">center</property>
-                        <property name="vexpand">False</property>
-                        <property name="wrap">True</property>
-                        <property name="label" translatable="yes">To see weather information, enter the name of a city.</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">2</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GWeatherLocationEntry" id="searchEntry">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="activates_default">True</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">3</property>
-                      </packing>
-                    </child>
+                    <property name="icon_name">mark-location-symbolic</property>
+                    <property name="use_fallback">True</property>
+                    <property name="icon_size">6</property>
                   </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="search-location-label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">center</property>
+                    <property name="valign">center</property>
+                    <property name="vexpand">False</property>
+                    <property name="label" translatable="yes">Search for a location</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="search-nereby-location-label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">center</property>
+                    <property name="valign">center</property>
+                    <property name="vexpand">False</property>
+                    <property name="wrap">True</property>
+                    <property name="label" translatable="yes">To see weather information, enter the name of a city.</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GWeatherLocationEntry" id="searchEntry">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="activates_default">True</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">3</property>
+                  </packing>
                 </child>
               </object>
               <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
+                <property name="name">search</property>
               </packing>
             </child>
           </object>

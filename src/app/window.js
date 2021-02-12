@@ -35,8 +35,8 @@ const Page = {
 
 var MainWindow = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/window.ui',
-    InternalChildren: ['header', 'refresh', 'forecastStackSwitcher', 'stack',
-                       'searchView', 'searchEntry', 'forecastStackSwitcherBar']
+    InternalChildren: ['header', 'refreshRevealer', 'refresh', 'forecastStackSwitcher', 'stack',
+                       'titleStack', 'searchView', 'searchEntry', 'forecastStackSwitcherBar']
 }, class MainWindow extends Handy.ApplicationWindow {
 
     _init(params) {
@@ -70,8 +70,6 @@ var MainWindow = GObject.registerClass({
         refreshAction.connect('activate', () => this.update());
         this.add_action(refreshAction);
 
-        this._header.set_title(_('Select Location'));
-
         this._model = this.application.model;
 
         this._searchEntry.connect('notify::location', (entry) => {
@@ -82,7 +80,7 @@ var MainWindow = GObject.registerClass({
 
         this._cityView = new City.WeatherView(this.application, this,
                                               { hexpand: true, vexpand: true });
-        this._stack.add(this._cityView);
+        this._stack.add_named(this._cityView, 'city');
 
         this._forecastStackSwitcher.set_stack(this._cityView.getInfoPage().getForecastStack());
 
@@ -113,13 +111,6 @@ var MainWindow = GObject.registerClass({
         }
     }
 
-    _setTitle(page) {
-        if (page == Page.CITY)
-            this._header.set_custom_title(this._forecastStackSwitcher);
-        else
-            this._header.set_custom_title(null);
-    }
-
     _goToPage(page) {
         for (let i = 0; i < this._pageWidgets[this._currentPage].length; i++)
             this._pageWidgets[this._currentPage][i].hide();
@@ -130,13 +121,12 @@ var MainWindow = GObject.registerClass({
                 this._pageWidgets[page][i].show();
         }
 
-        this._setTitle(page);
-
         this._currentPage = page;
     }
 
     showDefault() {
         this._showingDefault = true;
+        this._refreshRevealer.reveal_child = false;
         let clc = this.application.currentLocationController;
         let autoLocation = clc.autoLocation;
         let currentLocation = clc.currentLocation;
@@ -148,6 +138,7 @@ var MainWindow = GObject.registerClass({
 
     showSearch(text) {
         this._showingDefault = false;
+        this._refreshRevealer.reveal_child = true;
         this._cityView.setTimeVisible(false);
         this._stack.set_visible_child(this._searchView);
         this._goToPage(Page.SEARCH);
@@ -179,6 +170,7 @@ var MainWindow = GObject.registerClass({
         }
 
         this._showingDefault = false;
+        this._refreshRevealer.reveal_child = true;
         this.currentInfo = info;
         this._cityView.info = info;
 
