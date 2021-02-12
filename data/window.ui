@@ -25,6 +25,8 @@
   </menu>
   <template class="Gjs_MainWindow" parent="HdyApplicationWindow">
     <property name="visible">True</property>
+    <property name="default_width">760</property>
+    <property name="default_height">520</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
