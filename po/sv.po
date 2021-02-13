@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the gnome-weather package.
 # Marcus Lundblad <ml@update.uu.se>, 2014.
 # Sebastian Rasmussen <sebras@gmail.com>, 2014.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016, 2018, 2019, 2020.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016, 2018, 2019, 2020, 2021.
 # Luna Jernberg <droidbittin@gmail.com>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-01-12 05:58+0000\n"
-"PO-Revision-Date: 2021-02-03 20:52+0100\n"
+"POT-Creation-Date: 2021-02-12 20:57+0000\n"
+"PO-Revision-Date: 2021-02-13 20:06+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -22,8 +22,8 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:43 src/app/main.js:64
-#: src/app/window.js:232 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Väder"
 
@@ -96,59 +96,59 @@ msgstr ""
 "Den automatiska platsen är värdet av inställningen automatisk-plats som "
 "avgör huruvida den aktuella platsen ska hämtas eller ej."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "Stadsvy"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Läser in…"
 
-#: data/day-entry.ui:23
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Natt"
 
-#: data/day-entry.ui:35
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Morgon"
 
-#: data/day-entry.ui:47
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "Eftermiddag"
 
-#: data/day-entry.ui:59
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Kväll"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Automatisk plats"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Söker plats…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "Sök efter en stad"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Senast besökta"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "_Temperaturenhet"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "_Celsius"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "_Fahrenheit"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "_Om Väder"
 
@@ -160,25 +160,29 @@ msgstr "Platser"
 msgid "Current conditions"
 msgstr "Aktuella förhållanden"
 
-#: data/weather-widget.ui:178
+#: data/weather-widget.ui:179
 msgid "Hourly"
 msgstr "Timvis"
 
-#: data/weather-widget.ui:199
+#: data/weather-widget.ui:200
 msgid "Daily"
 msgstr "Dagsvis"
 
-#: data/window.ui:32
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "Uppdatera"
 
-#: data/window.ui:114
-msgid "Search for a location"
-msgstr "Sök efter en plats"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Välj plats"
 
-#: data/window.ui:129
-msgid "To see weather information, enter the name of a city."
-msgstr "Fyll i namnet på en stad för att se väderinformation."
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Välkommen till Väder!"
+
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "För att komma igång, välj en plats."
 
 #: src/app/city.js:211
 #, javascript-format
@@ -224,16 +228,16 @@ msgid_plural "Updated %d months ago."
 msgstr[0] "Uppdaterades för %d månad sedan."
 msgstr[1] "Uppdaterades för %d månader sedan."
 
-#: src/app/dailyForecast.js:37
+#: src/app/dailyForecast.js:38
 msgid "Daily Forecast"
 msgstr "Dagsprognos"
 
-#: src/app/dailyForecast.js:94 src/app/hourlyForecast.js:91
+#: src/app/dailyForecast.js:95 src/app/hourlyForecast.js:91
 msgid "Forecast not available"
 msgstr "Prognos inte tillgänglig"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:180
+#: src/app/dailyForecast.js:181
 msgid "%b %e"
 msgstr "%e %b"
 
@@ -246,11 +250,7 @@ msgstr "Timprognos"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Välj plats"
-
-#: src/app/window.js:231
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr ""
 "Marcus Lundblad <ml@update.uu.se>\n"
@@ -261,7 +261,7 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/app/window.js:233
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "Ett väderprogram"
 
@@ -284,6 +284,12 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "Sök efter en plats"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "Fyll i namnet på en stad för att se väderinformation."
 
 #~ msgid "%e %b"
 #~ msgstr "%e %b"
