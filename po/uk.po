@@ -1,27 +1,26 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Korostil <ted.korostiled@gmail.com>, 2013, 2014, 2015, 2016.
-# Yuri Chornoivan <yurchor@ukr.net>, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-12-22 20:25+0000\n"
-"PO-Revision-Date: 2020-12-22 23:38+0200\n"
+"POT-Creation-Date: 2021-02-12 20:57+0000\n"
+"PO-Revision-Date: 2021-02-13 09:17+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 20.11.70\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:43 src/app/main.js:64
-#: src/app/window.js:232 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Погода"
 
@@ -57,7 +56,7 @@ msgstr ""
 "погодні умови найнедавніших міст. Достатньо ввести потрібного вам міста в "
 "огляді діяльності."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:118
 msgid "The GNOME Project"
 msgstr "Проєкт GNOME"
 
@@ -94,89 +93,95 @@ msgstr ""
 "Автоматичне знаходження місця — значення, яке визначає, чи шукати поточне "
 "місце перебування, чи ні."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "Огляд міста"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Завантаження…"
 
-#: data/day-entry.ui:23
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Ніч"
 
-#: data/day-entry.ui:35
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Ранок"
 
-#: data/day-entry.ui:47
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "Після обіду"
 
-#: data/day-entry.ui:59
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Вечір"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Автоматичне знаходження місця"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Знаходження…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "Пошук міста"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Недавно переглянуті"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "Одиниця _температури"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "Градуси _Цельсія"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "Градуси _Фаренгейта"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "_Про «Погоду»"
 
-#: data/weather-widget.ui:47
-msgid "Hourly"
-msgstr "Щогодини"
-
-#: data/weather-widget.ui:68
-msgid "Daily"
-msgstr "Щодня"
-
-#: data/weather-widget.ui:173
+#: data/weather-widget.ui:71
 msgid "Places"
 msgstr "Місця"
 
-#: data/weather-widget.ui:249
+#: data/weather-widget.ui:147
 msgid "Current conditions"
 msgstr "Поточні погодні умови"
 
-#: data/window.ui:32
+#: data/weather-widget.ui:179
+msgid "Hourly"
+msgstr "Щогодини"
+
+#: data/weather-widget.ui:200
+msgid "Daily"
+msgstr "Щодня"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "Оновити"
 
-#: data/window.ui:114
-msgid "Search for a location"
-msgstr "Пошук місцевості"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Вибрати місцевість"
 
-#: data/window.ui:129
-msgid "To see weather information, enter the name of a city."
-msgstr "Уведіть назву міста, щоб побачити інформацію про погоду."
+#: data/window.ui:126
+#| msgid "World Weather"
+msgid "Welcome to Weather!"
+msgstr "Вітаємо у «Погоді»!"
+
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr ""
+"Спочатку, виберіть місце."
 
 #: src/app/city.js:211
 #, javascript-format
@@ -227,17 +232,16 @@ msgstr[0] "Оновлено %d місяць тому."
 msgstr[1] "Оновлено %d місяці тому."
 msgstr[2] "Оновлено %d місяців тому."
 
-#: src/app/dailyForecast.js:37
+#: src/app/dailyForecast.js:38
 msgid "Daily Forecast"
 msgstr "Денний прогноз"
 
-#: src/app/dailyForecast.js:94 src/app/hourlyForecast.js:91
+#: src/app/dailyForecast.js:95 src/app/hourlyForecast.js:91
 msgid "Forecast not available"
 msgstr "Прогноз недоступний"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:180
-#| msgid "%b %e "
+#: src/app/dailyForecast.js:181
 msgid "%b %e"
 msgstr "%e %b"
 
@@ -250,15 +254,11 @@ msgstr "Годинний прогноз"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Вибрати місцевість"
-
-#: src/app/window.js:231
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr "Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: src/app/window.js:233
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "Погодна програма"
 
@@ -281,6 +281,12 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "Пошук місцевості"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "Уведіть назву міста, щоб побачити інформацію про погоду."
 
 #~ msgid "%e %b"
 #~ msgstr "%e %b"
@@ -472,9 +478,6 @@ msgstr "%s, %s"
 #~ msgstr[0] "%d вибрано"
 #~ msgstr[1] "%d вибрано"
 #~ msgstr[2] "%d вибрано"
-
-#~ msgid "World Weather"
-#~ msgstr "Світова погода"
 
 #~ msgid "Cities"
 #~ msgstr "Міста"
