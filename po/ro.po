@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-12-22 20:25+0000\n"
-"PO-Revision-Date: 2020-12-23 14:04+0200\n"
+"POT-Creation-Date: 2021-02-12 20:57+0000\n"
+"PO-Revision-Date: 2021-02-13 11:52+0100\n"
 "Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
 "Language: ro\n"
@@ -22,8 +22,8 @@ msgstr ""
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:43 src/app/main.js:64
-#: src/app/window.js:232 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Vreme"
 
@@ -59,7 +59,7 @@ msgstr ""
 "prin simpla introducere a numelero în căsuța de căutare din panorama "
 "Activități."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:118
 msgid "The GNOME Project"
 msgstr "Proiectul GNOME"
 
@@ -98,89 +98,93 @@ msgstr ""
 "Locația automată este valoarea comutatorului locației-automate, care "
 "hotărăște dacă să aducă locația actuală, sau nu."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "Vedere oraș"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Se încarcă…"
 
-#: data/day-entry.ui:23
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Noapte"
 
-#: data/day-entry.ui:35
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Dimineață"
 
-#: data/day-entry.ui:47
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "După-amiază"
 
-#: data/day-entry.ui:59
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Seară"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Locație automată"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "În curs de localizare…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "Caută un oraș"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Văzute recent"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "Unitate de _temperatură"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "_Celsius"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "_Fahrenheit"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "_Despre Vreme"
 
-#: data/weather-widget.ui:47
-msgid "Hourly"
-msgstr "Pe oră"
-
-#: data/weather-widget.ui:68
-msgid "Daily"
-msgstr "Zilnic"
-
-#: data/weather-widget.ui:173
+#: data/weather-widget.ui:71
 msgid "Places"
 msgstr "Locuri"
 
-#: data/weather-widget.ui:249
+#: data/weather-widget.ui:147
 msgid "Current conditions"
 msgstr "Condiții actuale"
 
-#: data/window.ui:32
+#: data/weather-widget.ui:179
+msgid "Hourly"
+msgstr "Pe oră"
+
+#: data/weather-widget.ui:200
+msgid "Daily"
+msgstr "Zilnic"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "Reîmprospătează"
 
-#: data/window.ui:114
-msgid "Search for a location"
-msgstr "Caută o locație"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Selectează locația"
 
-#: data/window.ui:129
-msgid "To see weather information, enter the name of a city."
-msgstr "Pentru a accesa informații meteo, introduceți numele unui oraș."
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Bine ați venit la Vreme!"
+
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "Pentru a începe, selectați o locație"
 
 #: src/app/city.js:211
 #, javascript-format
@@ -231,16 +235,16 @@ msgstr[0] "Actualizat acum %d lună."
 msgstr[1] "Actualizat acum %d luni."
 msgstr[2] "Actualizat acum %d de luni."
 
-#: src/app/dailyForecast.js:37
+#: src/app/dailyForecast.js:38
 msgid "Daily Forecast"
 msgstr "Prognoza zilnică"
 
-#: src/app/dailyForecast.js:94 src/app/hourlyForecast.js:91
+#: src/app/dailyForecast.js:95 src/app/hourlyForecast.js:91
 msgid "Forecast not available"
 msgstr "Prognoza este indisponibilă"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:180
+#: src/app/dailyForecast.js:181
 msgid "%b %e"
 msgstr "%b %e"
 
@@ -253,18 +257,14 @@ msgstr "Prognoza pe oră"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Selectează locația"
-
-#: src/app/window.js:231
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr ""
 "Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014\n"
 "Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, "
 "2018-2020"
 
-#: src/app/window.js:233
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "O aplicație meteo"
 
@@ -287,6 +287,12 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "Caută o locație"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "Pentru a accesa informații meteo, introduceți numele unui oraș."
 
 #~ msgid "%e %b"
 #~ msgstr "%e %b"
