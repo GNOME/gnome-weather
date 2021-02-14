@@ -1,6 +1,6 @@
-40.alpha
+40.beta
 ========
-* Major redesign with new charts (Vitaly Dyachkov, Nahuel Gomez Castro, Evan Welsh, Allan Day, Sam Hewitt)
+* Major redesign with new charts (Vitaly Dyachkov, Nahuel Gomez Castro, Evan Welsh, Allan Day, Sam Hewitt, Christopher Davis)
 * Adaptive for mobile and desktop (Christopher Davis)
 
 * Bugs fixed:
@@ -33,6 +33,7 @@
  - Korean
  - Latvian
  - Lithuanian
+ - Panjabi
  - Persian
  - Polish
  - Portuguese

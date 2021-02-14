@@ -46,7 +46,7 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
-    <release date="2020-01-09" version="40.alpha">
+    <release date="2021-02-13" version="40.beta">
       <description>
         <p>GNOME Weather 40 brings an exciting new redesign that works on both desktop and mobile form factors.</p>
         <p>Weather 40 also comes with updated translations for the following locales:</p>
@@ -75,6 +75,7 @@
           <li>Korean</li>
           <li>Latvian</li>
           <li>Lithuanian</li>
+          <li>Panjabi</li>
           <li>Persian</li>
           <li>Polish</li>
           <li>Portuguese</li>
