@@ -1,19 +1,20 @@
 # Turkish translation for gnome-weather.
-# Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
+# Copyright (C) 2013-2021 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
+#
 # Gökhan Gurbetoğlu <ggurbet@gmail.com>, 2013.
 # Muhammet Kara <muhammetk@gmail.com>, 2014.
 # Necdet Yücel <necdetyucel@gmail.com>, 2015.
 # Furkan Ahmet Kara <furkanahmetkara.fk@gmail.com>, 2017.
-# Sabri Ünal <libreajans@gmail.com>, 2020.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2018, 2019, 2020.
+# Sabri Ünal <libreajans@gmail.com>, 2020, 2021.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2018, 2019, 2020, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-22 15:18+0000\n"
-"PO-Revision-Date: 2020-08-10 17:49+0300\n"
+"POT-Creation-Date: 2021-02-14 05:08+0000\n"
+"PO-Revision-Date: 2021-02-16 19:41+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -21,12 +22,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-POOTLE-MTIME: 1420670076.000000\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Hava Durumu"
 
@@ -48,7 +49,7 @@ msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Çeşitli internet hizmetleri kullanarak 7 güne kadar ayrıntılı tahminlerle "
+"Türlü internet hizmetleri kullanarak 7 güne dek ayrıntılı tahminlerle "
 "birlikte şimdiki ve sonraki gün için saatlik ayrıntılara erişmeyi sağlar."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
@@ -57,18 +58,18 @@ msgid ""
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"İsteğe bağlı olarak GNOME Kabuğu ile birleşir, Etkinlikler Genel Görünümüne "
+"İsteğe bağlı olarak GNOME Kabuğu ile tümleşir, Etkinlikler Genel Görünümüne "
 "son aranan şehirlerin yalnızca adını girerek geçerli hava durumlarını "
 "görmenizi sağlar."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "GNOME Projesi"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
-msgstr "Hava;Tahmin;Hava Durumu;"
+msgstr "Hava;Tahmin;Öngörü;Hava Durumu;"
 
 #: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
@@ -98,162 +99,162 @@ msgstr ""
 "Kendiliğinden konum, geçerli konumun getirilip getirilmeyeceğini belirleyen "
 "kendiliğinden-konumlama anahtarının değeridir."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "Şehir görünümü"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Yükleniyor…"
 
-#: data/day-entry.ui:27
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Gece"
 
-#: data/day-entry.ui:39
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Sabah"
 
-#: data/day-entry.ui:51
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "Öğleden sonra"
 
-#: data/day-entry.ui:63
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Akşam"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Kendiliğinden Konumlama"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Yer saptanıyor…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
-msgstr "Şehir arayın"
+msgstr "Şehir ara"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Son Görülen"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "_Sıcaklık Birimi"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "_Santigrat"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "_Fahrenhayt"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "Hava Durumu _Hakkında"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "Saatlik"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "Günlük"
-
-#: data/weather-widget.ui:190
+#: data/weather-widget.ui:71
 msgid "Places"
 msgstr "Yerler"
 
-#: data/weather-widget.ui:266
+#: data/weather-widget.ui:147
 msgid "Current conditions"
 msgstr "Geçerli hava koşulları"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:179
+msgid "Hourly"
+msgstr "Saatlik"
+
+#: data/weather-widget.ui:200
+msgid "Daily"
+msgstr "Günlük"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "Yenile"
 
-#: data/window.ui:105
-msgid "Search for a location"
-msgstr "Konum arayın"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Konum Seç"
 
-#: data/window.ui:119
-msgid "To see weather information, enter the name of a city."
-msgstr "Hava bilgisini görmek için şehrin adını girin."
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Hava Durumuʼna Hoş Geldiniz!"
+
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "Başlamak için konum seç."
 
 #: src/app/city.js:211
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "%.0f° gibi hissediliyor"
 
-#: src/app/city.js:241
+#: src/app/city.js:243
 msgid "Updated just now."
 msgstr "Şimdi güncellendi."
 
-#: src/app/city.js:246
+#: src/app/city.js:248
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d dakika önce güncellendi."
 
-#: src/app/city.js:252
+#: src/app/city.js:254
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d saat önce güncellendi."
 
-#: src/app/city.js:258
+#: src/app/city.js:260
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d gün önce güncellendi."
 
-#: src/app/city.js:264
+#: src/app/city.js:266
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d hafta önce güncellendi."
 
-#: src/app/city.js:269
+#: src/app/city.js:271
 #, javascript-format
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "%d ay önce güncellendi."
 
-#: src/app/dailyForecast.js:33
+#: src/app/dailyForecast.js:38
 msgid "Daily Forecast"
 msgstr "Günlük Tahmin"
 
-#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
+#: src/app/dailyForecast.js:95 src/app/hourlyForecast.js:91
 msgid "Forecast not available"
 msgstr "Tahmin yok"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:176
-msgid "%e %b"
-msgstr "%e %b"
+#: src/app/dailyForecast.js:181
+msgid "%b %e"
+msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:38
+#: src/app/hourlyForecast.js:42
 msgid "Hourly Forecast"
 msgstr "Saatlik Tahmin"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:105
+#: src/app/hourlyForecast.js:109
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Konum Seç"
-
-#: src/app/window.js:226
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr ""
 "Gökhan Gurbetoğlu <ggurbet@gmail.com>\n"
 "Emin Tufan Çetin <etcetin@gmail.com>"
 
-#: src/app/window.js:228
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "Hava durumu uygulaması"
 
@@ -276,6 +277,15 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "Konum arayın"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "Hava bilgisini görmek için şehrin adını girin."
+
+#~ msgid "%e %b"
+#~ msgstr "%e %b"
 
 #~ msgid "16°"
 #~ msgstr "16°"
