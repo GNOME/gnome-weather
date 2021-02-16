@@ -56,8 +56,6 @@ var WeatherWidget = GObject.registerClass({
         this._worldView = new WorldView.WorldContentView(application, window);
         this._placesButton.set_popover(this._worldView);
 
-        this._dailyForecasts = new DailyForecast.DailyForecastFrame();
-
         this._forecasts = { };
 
         for (let t of ['hourly', 'daily']) {
