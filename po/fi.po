@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-22 15:18+0000\n"
-"PO-Revision-Date: 2020-08-25 00:20+0300\n"
+"POT-Creation-Date: 2021-02-12 20:57+0000\n"
+"PO-Revision-Date: 2021-02-21 16:06+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Sää"
 
@@ -56,7 +56,7 @@ msgstr ""
 "tarkasteltujen sijaintien säätiedot ovat nähtävissä yleisnäkymässä "
 "kirjoittamalla paikkakunnan nimen."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:118
 msgid "The GNOME Project"
 msgstr "Gnome-projekti"
 
@@ -93,166 +93,165 @@ msgstr ""
 "Automaattinen sijainti on automatic-location-kytkimen arvo, joka päättää "
 "haetaanko nykyinen sijainti vai ei."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "Kaupunkinäkymä"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Ladataan…"
 
-#: data/day-entry.ui:27
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Yö"
 
-#: data/day-entry.ui:39
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Aamu"
 
-#: data/day-entry.ui:51
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "Iltapäivä"
 
-#: data/day-entry.ui:63
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Ilta"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Automaattinen sijainti"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Paikannetaan…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "Etsi kaupunkia"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Viimeksi katsottu"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "_Lämpötilayksikkö"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "_Celsius"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "_Fahrenheit"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "_Tietoja - Sää"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "Tuntikohtainen"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "Päiväkohtainen"
-
-#: data/weather-widget.ui:190
+#: data/weather-widget.ui:71
 msgid "Places"
 msgstr "Sijainnit"
 
-#: data/weather-widget.ui:266
+#: data/weather-widget.ui:147
 msgid "Current conditions"
 msgstr "Nykyinen tila"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:179
+msgid "Hourly"
+msgstr "Tuntikohtainen"
+
+#: data/weather-widget.ui:200
+msgid "Daily"
+msgstr "Päiväkohtainen"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "Päivitä"
 
-#: data/window.ui:105
-msgid "Search for a location"
-msgstr "Etsi sijaintia"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Valitse sijainti"
 
-#: data/window.ui:119
-msgid "To see weather information, enter the name of a city."
-msgstr "Kirjoita paikkakunnan nimi nähdäksesi säätiedot."
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Tervetuloa säätietojen pariin!"
+
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "Aloita valitsemalla sijainti."
 
 #: src/app/city.js:211
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Tuntuu kuin %.0f°"
 
-#: src/app/city.js:241
+#: src/app/city.js:243
 msgid "Updated just now."
 msgstr "Päivitetty juuri nyt."
 
-#: src/app/city.js:246
+#: src/app/city.js:248
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Päivitetty %d minuutti sitten."
 msgstr[1] "Päivitetty %d minuuttia sitten."
 
-#: src/app/city.js:252
+#: src/app/city.js:254
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Päivitetty %d tunti sitten."
 msgstr[1] "Päivitetty %d tuntia sitten."
 
-#: src/app/city.js:258
+#: src/app/city.js:260
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Päivitetty %d päivä sitten."
 msgstr[1] "Päivitetty %d päivää sitten."
 
-#: src/app/city.js:264
+#: src/app/city.js:266
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Päivitetty %d viikko sitten."
 msgstr[1] "Päivitetty %d viikkoa sitten."
 
-#: src/app/city.js:269
+#: src/app/city.js:271
 #, javascript-format
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "Päivitetty %d kuukausi sitten."
 msgstr[1] "Päivitetty %d kuukautta sitten."
 
-#: src/app/dailyForecast.js:33
+#: src/app/dailyForecast.js:38
 msgid "Daily Forecast"
 msgstr "Päiväkohtainen ennuste"
 
-#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
+#: src/app/dailyForecast.js:95 src/app/hourlyForecast.js:91
 msgid "Forecast not available"
 msgstr "Ennustetta ei ole saatavilla"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:176
-msgid "%e %b"
+#: src/app/dailyForecast.js:181
+msgid "%b %e"
 msgstr "%e. %b"
 
-#: src/app/hourlyForecast.js:38
-#| msgid "Weekly Forecast"
+#: src/app/hourlyForecast.js:42
 msgid "Hourly Forecast"
 msgstr "Tuntikohtainen ennuste"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:105
+#: src/app/hourlyForecast.js:109
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Valitse sijainti"
-
-#: src/app/window.js:226
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr "Jiri Grönroos"
 
-#: src/app/window.js:228
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "Sääsovellus"
 
@@ -275,6 +274,15 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "Etsi sijaintia"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "Kirjoita paikkakunnan nimi nähdäksesi säätiedot."
+
+#~ msgid "%e %b"
+#~ msgstr "%e. %b"
 
 #~ msgid "Today"
 #~ msgstr "Tänään"
@@ -440,9 +448,6 @@ msgstr "%s, %s"
 #~ msgid_plural "%d selected"
 #~ msgstr[0] "%d valittu"
 #~ msgstr[1] "%d valittu"
-
-#~ msgid "World Weather"
-#~ msgstr "Maailman sää"
 
 #~ msgid "Cities"
 #~ msgstr "Kaupungit"
