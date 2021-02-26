@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
 "POT-Creation-Date: 2021-02-12 20:57+0000\n"
-"PO-Revision-Date: 2021-02-26 10:18+0100\n"
+"PO-Revision-Date: 2021-02-26 10:19+0100\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
@@ -175,7 +175,7 @@ msgstr "Odaberi lokaciju"
 
 #: data/window.ui:126
 msgid "Welcome to Weather!"
-msgstr "_Dobrodošli u vrijeme!"
+msgstr "Dobrodošli u vrijeme!"
 
 #: data/window.ui:127
 msgid "To get started, select a location."
