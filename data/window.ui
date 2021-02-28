@@ -133,7 +133,7 @@
                     <property name="hexpand">False</property>
                     <property name="halign">center</property>
                     <property name="width-request">246</property>
-                    <property name="placeholder_text">Search for a city or country</property>
+                    <property name="placeholder_text" translatable="yes">Search for a city or country</property>
                   </object>
                 </child>
                 <style>
