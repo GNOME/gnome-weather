@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-12 20:57+0000\n"
-"PO-Revision-Date: 2021-02-17 22:24-0300\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-02-28 20:53-0300\n"
 "Last-Translator: Rafael Fontenelle <rafaelff@gnome.org>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -60,7 +60,7 @@ msgstr ""
 "você veja as condições atuais das cidades mais pesquisadas recentemente, "
 "somente digitando o nome no Panorama de Atividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:118
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -154,19 +154,19 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Sobre o Meteorologia"
 
-#: data/weather-widget.ui:71
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Locais"
 
-#: data/weather-widget.ui:147
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Condições atuais"
 
-#: data/weather-widget.ui:179
+#: data/weather-widget.ui:180
 msgid "Hourly"
 msgstr "Por hora"
 
-#: data/weather-widget.ui:200
+#: data/weather-widget.ui:201
 msgid "Daily"
 msgstr "Por dia"
 
@@ -179,7 +179,6 @@ msgid "Select Location"
 msgstr "Selecionar local"
 
 #: data/window.ui:126
-#| msgid "_About Weather"
 msgid "Welcome to Weather!"
 msgstr "Bem-vindo ao Meteorologia!"
 
@@ -187,69 +186,74 @@ msgstr "Bem-vindo ao Meteorologia!"
 msgid "To get started, select a location."
 msgstr "Para começar, selecione uma localização."
 
-#: src/app/city.js:211
+#: data/window.ui:136
+#| msgid "Search for a city"
+msgid "Search for a city or country"
+msgstr "Pesquisar por uma cidade ou país"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Sensação de %.0f°"
 
-#: src/app/city.js:243
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Atualizado agora mesmo."
 
-#: src/app/city.js:248
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Atualizado %d minuto atrás."
 msgstr[1] "Atualizado %d minutos atrás."
 
-#: src/app/city.js:254
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Atualizado %d hora atrás."
 msgstr[1] "Atualizado %d horas atrás."
 
-#: src/app/city.js:260
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Atualizado %d dia atrás."
 msgstr[1] "Atualizado %d dias atrás."
 
-#: src/app/city.js:266
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Atualizado %d semana atrás."
 msgstr[1] "Atualizado %d semanas atrás."
 
-#: src/app/city.js:271
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Atualizado há %d mês atrás."
 msgstr[1] "Atualizado há %d meses atrás."
 
-#: src/app/dailyForecast.js:38
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Previsão por hora"
 
-#: src/app/dailyForecast.js:95 src/app/hourlyForecast.js:91
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Previsão indisponível"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:181
+#: src/app/dailyForecast.js:179
 msgid "%b %e"
 msgstr "%e de %b"
 
-#: src/app/hourlyForecast.js:42
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Previsão por hora"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:109
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
