@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-12 20:57+0000\n"
-"PO-Revision-Date: 2021-02-13 20:06+0100\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-02-28 13:55+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -59,7 +59,7 @@ msgstr ""
 "dig att se aktuella förhållanden för de senast eftersökta städerna genom att "
 "bara skriva namnet i Aktivitetsöversikten."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:118
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -152,19 +152,19 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Om Väder"
 
-#: data/weather-widget.ui:71
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Platser"
 
-#: data/weather-widget.ui:147
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Aktuella förhållanden"
 
-#: data/weather-widget.ui:179
+#: data/weather-widget.ui:180
 msgid "Hourly"
 msgstr "Timvis"
 
-#: data/weather-widget.ui:200
+#: data/weather-widget.ui:201
 msgid "Daily"
 msgstr "Dagsvis"
 
@@ -184,69 +184,73 @@ msgstr "Välkommen till Väder!"
 msgid "To get started, select a location."
 msgstr "För att komma igång, välj en plats."
 
-#: src/app/city.js:211
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "Sök efter en stad eller ett land"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Känns som %.0f°"
 
-#: src/app/city.js:243
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Uppdaterades just nu."
 
-#: src/app/city.js:248
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Uppdaterades för %d minut sedan."
 msgstr[1] "Uppdaterades för %d minuter sedan."
 
-#: src/app/city.js:254
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Uppdaterades för %d timme sedan."
 msgstr[1] "Uppdaterades för %d timmar sedan."
 
-#: src/app/city.js:260
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Uppdaterades för %d dag sedan."
 msgstr[1] "Uppdaterades för %d dagar sedan."
 
-#: src/app/city.js:266
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Uppdaterades för %d vecka sedan."
 msgstr[1] "Uppdaterades för %d veckor sedan."
 
-#: src/app/city.js:271
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Uppdaterades för %d månad sedan."
 msgstr[1] "Uppdaterades för %d månader sedan."
 
-#: src/app/dailyForecast.js:38
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Dagsprognos"
 
-#: src/app/dailyForecast.js:95 src/app/hourlyForecast.js:91
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Prognos inte tillgänglig"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:181
+#: src/app/dailyForecast.js:179
 msgid "%b %e"
 msgstr "%e %b"
 
-#: src/app/hourlyForecast.js:42
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Timprognos"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:109
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
@@ -284,42 +288,3 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
-#~ msgid "Search for a location"
-#~ msgstr "Sök efter en plats"
-
-#~ msgid "To see weather information, enter the name of a city."
-#~ msgstr "Fyll i namnet på en stad för att se väderinformation."
-
-#~ msgid "%e %b"
-#~ msgstr "%e %b"
-
-#~ msgid "Today"
-#~ msgstr "Idag"
-
-#~ msgid "Tomorrow"
-#~ msgstr "Imorgon"
-
-#~ msgid "Forecast"
-#~ msgstr "Prognos"
-
-#~ msgid "%R"
-#~ msgstr "%R"
-
-#~ msgid "%A"
-#~ msgstr "%A"
-
-#~ msgid "@APP_ID@"
-#~ msgstr "@APP_ID@"
-
-#~ msgid "_New"
-#~ msgstr "_Ny"
-
-#~ msgid "About"
-#~ msgstr "Om"
-
-#~ msgid "Quit"
-#~ msgstr "Avsluta"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
