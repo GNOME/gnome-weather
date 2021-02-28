@@ -8,7 +8,7 @@
 msgid ""
 msgstr "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
 "PO-Revision-Date: 2020-08-02 19:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
@@ -19,8 +19,8 @@ msgstr "Project-Id-Version: gnome-weather master\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Eguraldia"
 
@@ -48,7 +48,7 @@ msgid ""
 "name in the Activities Overview."
 msgstr "Aukeran, GNOME Shell-ekin integratu daiteke, azken aldian bilatutako herrien uneko baldintzak ikusteko haien izena jardueren ikuspegian idatzita."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "GNOME proiektua"
 
@@ -81,91 +81,99 @@ msgid ""
 "decides whether to fetch current location or not."
 msgstr "Kokaleku automatikoa 'automatic-location' aldatzailearen balioa da, uneko kokalekua hartuko duen edo ez erabakitzeko."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "Hiriaren ikuspegia"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Kargatzen…"
 
-#: data/day-entry.ui:27
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Gaua"
 
-#: data/day-entry.ui:39
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Goiza"
 
-#: data/day-entry.ui:51
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "Arratsaldea"
 
-#: data/day-entry.ui:63
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Iluntzea"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Kokaleku automatikoa"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Lokalizatzen…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
-msgstr "Bilatu herria"
+msgstr "Bilatu hiria"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Ikusitako azkenak"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "_Tenperatura-unitatea"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "_Celsius"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "_Fahrenheit"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "_Weather aplikazioari buruz"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "Orduro"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "Egunero"
-
-#: data/weather-widget.ui:190
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Lekuak"
 
-#: data/weather-widget.ui:266
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Uneko baldintzak"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:180
+msgid "Hourly"
+msgstr "Orduro"
+
+#: data/weather-widget.ui:201
+msgid "Daily"
+msgstr "Egunero"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "Freskatu"
 
-#: data/window.ui:105
-msgid "Search for a location"
-msgstr "Bilatu kokalekua"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Hautatu kokalekua"
 
-#: data/window.ui:119
-msgid "To see weather information, enter the name of a city."
-msgstr "Eguraldiari buruzko informazioa ikusteko, sartu herriaren izena."
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Ongi etorri Eguraldia aplikaziora"
 
-#: src/app/city.js:211
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "Hasteko, hautatu kokaleku bat."
+
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "Bilatu hiria edo herrialdea"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "%.0f° ematen du"
@@ -205,41 +213,37 @@ msgstr[1] "Duela %d aste eguneratua."
 #: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "Duela hilabete %d eguneratua."
-msgstr[1] "Duela %d hilabete."
+msgstr[1] "Duela %d hilabete eguneratua."
 
-#: src/app/dailyForecast.js:33
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Eguneroko iragarpena"
 
-#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Iragarpena ez dago eskuragarri"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:176
-msgid "%e %b"
-msgstr "%e %b"
+#: src/app/dailyForecast.js:179
+msgid "%b %e"
+msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:38
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Orduroko iragarpena"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:105
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Hautatu kokalekua"
-
-#: src/app/window.js:226
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr "translator-credits"
 
-#: src/app/window.js:228
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "Eguraldiaren aplikazio bat"
 
@@ -262,6 +266,15 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "Bilatu kokalekua"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "Eguraldiari buruzko informazioa ikusteko, sartu herriaren izena."
+
+#~ msgid "%e %b"
+#~ msgstr "%e %b"
 
 #~ msgid "Today"
 #~ msgstr "Gaur"
