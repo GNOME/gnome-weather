@@ -1,16 +1,16 @@
 # Polish translation for gnome-weather.
-# Copyright © 2012-2020 the gnome-weather authors.
+# Copyright © 2012-2021 the gnome-weather authors.
 # This file is distributed under the same license as the gnome-weather package.
-# Piotr Drąg <piotrdrag@gmail.com>, 2012-2020.
+# Piotr Drąg <piotrdrag@gmail.com>, 2012-2021.
 # Paweł Żołnowski <pawel@zolnowski.name>, 2014.
-# Aviary.pl <community-poland@mozilla.org>, 2012-2020.
+# Aviary.pl <community-poland@mozilla.org>, 2012-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-22 15:18+0000\n"
-"PO-Revision-Date: 2020-08-16 11:24+0200\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-02-28 13:54+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -21,8 +21,8 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Pogoda"
 
@@ -58,7 +58,7 @@ msgstr ""
 "obecnych warunków pogodowych w ostatnio wyszukiwanych miastach poprzez "
 "pisanie ich nazw na ekranie podglądu."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -98,91 +98,99 @@ msgstr ""
 "Automatyczne położenie to wartość przełącznika „automatic-location”, który "
 "określa, czy pobierać obecne położenie."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "Widok miasta"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Wczytywanie…"
 
-#: data/day-entry.ui:27
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Noc"
 
-#: data/day-entry.ui:39
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Poranek"
 
-#: data/day-entry.ui:51
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "Popołudnie"
 
-#: data/day-entry.ui:63
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Wieczór"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Automatyczne położenie"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Ustalanie położenia…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "Wyszukiwanie miasta"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Ostatnio przeglądane"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "_Jednostka temperatury"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "Stopnie _Celsjusza"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "Stopnie _Fahrenheita"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "_O programie"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "Godzinowa"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "Dzienna"
-
-#: data/weather-widget.ui:190
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Miejsca"
 
-#: data/weather-widget.ui:266
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Obecne warunki pogodowe"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:180
+msgid "Hourly"
+msgstr "Godzinowa"
+
+#: data/weather-widget.ui:201
+msgid "Daily"
+msgstr "Dzienna"
+
+#: data/window.ui:51
 msgid "Refresh"
-msgstr "Odśwież"
+msgstr "Odświeża"
 
-#: data/window.ui:105
-msgid "Search for a location"
-msgstr "Wyszukiwanie położenia"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Wybór położenia"
 
-#: data/window.ui:119
-msgid "To see weather information, enter the name of a city."
-msgstr "Należy wpisać nazwę miasta, aby wyświetlić informacje o pogodzie."
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Witamy w prognozie pogody!"
 
-#: src/app/city.js:211
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "Należy wybrać położenie, aby rozpocząć."
+
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "Wyszukiwanie miasta lub kraju"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Odczuwalna: %.0f °"
@@ -226,45 +234,41 @@ msgstr[2] "Zaktualizowano %d tygodni temu."
 #: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "Zaktualizowano %d miesiąc temu."
 msgstr[1] "Zaktualizowano %d miesiące temu."
 msgstr[2] "Zaktualizowano %d miesięcy temu."
 
-#: src/app/dailyForecast.js:33
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Prognoza dzienna"
 
-#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Prognoza jest niedostępna"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:176
-msgid "%e %b"
+#: src/app/dailyForecast.js:179
+msgid "%b %e"
 msgstr "%-d %b"
 
-#: src/app/hourlyForecast.js:38
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Prognoza godzinowa"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:105
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%-l∶%M %p"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Wybór położenia"
-
-#: src/app/window.js:226
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2012-2020\n"
+"Piotr Drąg <piotrdrag@gmail.com>, 2012-2021\n"
 "Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
-"Aviary.pl <community-poland@mozilla.org>, 2012-2020"
+"Aviary.pl <community-poland@mozilla.org>, 2012-2021"
 
-#: src/app/window.js:228
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "Prognoza pogody"
 
