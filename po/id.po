@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-12 20:57+0000\n"
-"PO-Revision-Date: 2021-02-16 18:33+0700\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-03-01 20:48+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -55,7 +55,7 @@ msgstr ""
 "melihat kondisi saat ini dari kota yang baru-baru ini dicari hanya dengan "
 "mengetikkan namanya dalam Ringkasan Aktivitas."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:118
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "Proyek GNOME"
 
@@ -148,19 +148,19 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "Tent_ang Cuaca"
 
-#: data/weather-widget.ui:71
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Tempat"
 
-#: data/weather-widget.ui:147
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Kondisi saat ini"
 
-#: data/weather-widget.ui:179
+#: data/weather-widget.ui:180
 msgid "Hourly"
 msgstr "Per Jam"
 
-#: data/weather-widget.ui:200
+#: data/weather-widget.ui:201
 msgid "Daily"
 msgstr "Per Hari"
 
@@ -180,69 +180,73 @@ msgstr "Selamat datang di Cuaca!"
 msgid "To get started, select a location."
 msgstr "Untuk memulai, pilih lokasi."
 
-#: src/app/city.js:211
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "Cari kota atau negara"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Terasa seperti %.0f°"
 
-#: src/app/city.js:243
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Dimutakhirkan sekarang."
 
-#: src/app/city.js:248
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Dimutakhirkan %d menit yang lalu."
 msgstr[1] "Dimutakhirkan %d menit yang lalu."
 
-#: src/app/city.js:254
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Dimutakhirkan %d jam yang lalu."
 msgstr[1] "Dimutakhirkan %d jam yang lalu."
 
-#: src/app/city.js:260
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Dimutakhirkan %d hari yang lalu."
 msgstr[1] "Dimutakhirkan %d hari yang lalu."
 
-#: src/app/city.js:266
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Dimutakhirkan %d minggu yang lalu."
 msgstr[1] "Dimutakhirkan %d minggu yang lalu."
 
-#: src/app/city.js:271
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Dimutakhirkan %d bulan yang lalu."
 msgstr[1] "Dimutakhirkan %d bulan yang lalu."
 
-#: src/app/dailyForecast.js:38
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Ramalan Cuaca Per Hari"
 
-#: src/app/dailyForecast.js:95 src/app/hourlyForecast.js:91
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Ramalan cuaca tak tersedia"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:181
+#: src/app/dailyForecast.js:179
 msgid "%b %e"
 msgstr "%e %b"
 
-#: src/app/hourlyForecast.js:42
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Ramalan Cuaca Per Jam"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:109
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
