@@ -2,15 +2,15 @@
 # Copyright (C) 2012 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 #
-# Matej Urbančič <mateju@svn.gnome.org>, + 2012–2021.
+# Matej Urbančič <mateju@src.gnome.org>, + 2012–2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-18 01:27+0000\n"
-"PO-Revision-Date: 2021-02-18 17:54+0100\n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"POT-Creation-Date: 2021-03-01 13:51+0000\n"
+"PO-Revision-Date: 2021-03-01 22:13+0100\n"
+"Last-Translator: Matej Urbančič <mateju@src.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
 "MIME-Version: 1.0\n"
@@ -149,19 +149,19 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_O Programu"
 
-#: data/weather-widget.ui:71
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Mesta"
 
-#: data/weather-widget.ui:147
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Trenutne razmere"
 
-#: data/weather-widget.ui:179
+#: data/weather-widget.ui:180
 msgid "Hourly"
 msgstr "Vsako uro"
 
-#: data/weather-widget.ui:200
+#: data/weather-widget.ui:201
 msgid "Daily"
 msgstr "Dnevno"
 
@@ -180,6 +180,10 @@ msgstr "Dobrodošli v program Vreme!"
 #: data/window.ui:127
 msgid "To get started, select a location."
 msgstr "Z začetek izberite mesto."
+
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "Iskanje mesta ali države"
 
 #: src/app/city.js:209
 #, javascript-format
@@ -235,31 +239,31 @@ msgstr[1] "Posodobljeno pred %d mesecem."
 msgstr[2] "Posodobljeno pred %d mesecema."
 msgstr[3] "Posodobljeno pred %d meseci."
 
-#: src/app/dailyForecast.js:38
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Dnevna napoved"
 
-#: src/app/dailyForecast.js:95 src/app/hourlyForecast.js:91
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Napoved ni na voljo"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:181
+#: src/app/dailyForecast.js:179
 msgid "%b %e"
 msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:42
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Urna napoved"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:109
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
 #: src/app/window.js:202
 msgid "translator-credits"
-msgstr "Matej Urbančič <matej.urban@svn.gnome.org>"
+msgstr "Matej Urbančič <matej.urban@src.gnome.org>"
 
 #: src/app/window.js:204
 msgid "A weather application"
