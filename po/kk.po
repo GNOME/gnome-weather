@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-22 15:18+0000\n"
-"PO-Revision-Date: 2020-08-17 15:33+0500\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-03-03 08:36+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Ауа райы"
 
@@ -56,7 +56,7 @@ msgstr ""
 "көрінісінде жақында ізделген қалалар үшін ауа райы болжамын көрсете алады, "
 "ол үшін қала атын енгізу керек."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "GNOME жобасы"
 
@@ -93,91 +93,99 @@ msgstr ""
 "Орналасуды автоанықтау мүмкіндігі ағымдағы орналасуды автоматты түрде "
 "анықтау керектігін көрсететін қосқыш."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "Қалалар көрінісі"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Жүктелуде…"
 
-#: data/day-entry.ui:27
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Түн"
 
-#: data/day-entry.ui:39
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Таңертең"
 
-#: data/day-entry.ui:51
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "Түстен кейін"
 
-#: data/day-entry.ui:63
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Кешке"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Орналасуды автоанықтау"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Анықтау…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "Қаланы іздеу"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Жақында қаралған"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "_Температураның өлшем бірлігі"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "_Цельсий"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "_Фаренгейт"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "Ауа райы қолданбасы тур_алы"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "Сағат сайын"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "Күн сайын"
-
-#: data/weather-widget.ui:190
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Орындар"
 
-#: data/weather-widget.ui:266
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Ағымдағы күйі"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:180
+msgid "Hourly"
+msgstr "Сағат сайын"
+
+#: data/weather-widget.ui:201
+msgid "Daily"
+msgstr "Күн сайын"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "Жаңарту"
 
-#: data/window.ui:105
-msgid "Search for a location"
-msgstr "Орналасуды іздеу"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Орналасуды таңдаңыз"
 
-#: data/window.ui:119
-msgid "To see weather information, enter the name of a city."
-msgstr "Ауа райы ақпаратын қарау үшін, қала атын енгізіңіз."
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Ауа райы қолданбасына қош келдіңіз!"
 
-#: src/app/city.js:211
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "Жұмысты бастау үшін орналасуды таңдаңыз."
+
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "Қаланы немесе елді іздеу"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "%.0f° сияқты сезіледі"
@@ -213,40 +221,36 @@ msgstr[0] "%d апта бұрын жаңартылды."
 #: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "%d ай бұрын жаңартылды."
 
-#: src/app/dailyForecast.js:33
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Тәуліктік болжам"
 
-#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Болжам қолжетерсіз"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:176
-msgid "%e %b"
-msgstr "%e %b"
+#: src/app/dailyForecast.js:179
+msgid "%b %e"
+msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:38
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Сағаттық болжам"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:105
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Орналасуды таңдаңыз"
-
-#: src/app/window.js:226
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
-#: src/app/window.js:228
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "Ауа райы қолданбасы"
 
@@ -269,6 +273,15 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "Орналасуды іздеу"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "Ауа райы ақпаратын қарау үшін, қала атын енгізіңіз."
+
+#~ msgid "%e %b"
+#~ msgstr "%e %b"
 
 #~ msgid "Today"
 #~ msgstr "Бүгiн"
