@@ -184,11 +184,11 @@ msgstr "Vítejte v Počasí!"
 
 #: data/window.ui:127
 msgid "To get started, select a location."
-msgstr "Pro začáte si vyberte místo."
+msgstr "Pro začáte vyberte místo."
 
 #: data/window.ui:136
 msgid "Search for a city or country"
-msgstr "Hledat město nebo zemi"
+msgstr "hledat město nebo zemi"
 
 #: src/app/city.js:209
 #, javascript-format
