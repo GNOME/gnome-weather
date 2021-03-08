@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-12-22 20:25+0000\n"
-"PO-Revision-Date: 2021-01-11 22:14+0100\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-03-08 15:33+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -23,8 +23,8 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:43 src/app/main.js:64
-#: src/app/window.js:232 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Počasí"
 
@@ -59,7 +59,7 @@ msgstr ""
 "aktuální počasí v nedávno vyhledaných městech napsaním jejich názvu v "
 "přehledu činností."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -98,100 +98,108 @@ msgstr ""
 "Automatické místo je hodnota přepínače automatic-location, který rozhoduje, "
 "jestli zjišťovat aktuální místo nebo ne."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "Zobrazení města"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Načítá se…"
 
-#: data/day-entry.ui:23
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Noc"
 
-#: data/day-entry.ui:35
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Ráno"
 
-#: data/day-entry.ui:47
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "Odpoledne"
 
-#: data/day-entry.ui:59
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Večer"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Automaticky vybrané místo"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Vyhledává se…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "Vyhledání města"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Naposledy zobrazené"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "Jednotky _teploty"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "Stupně _Celsia"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "Stupně _Fahrenheita"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "O _aplikaci Počasí"
 
-#: data/weather-widget.ui:47
-msgid "Hourly"
-msgstr "Hodinová"
-
-#: data/weather-widget.ui:68
-msgid "Daily"
-msgstr "Denní"
-
-#: data/weather-widget.ui:173
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Místa"
 
-#: data/weather-widget.ui:249
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Současné podmínky"
 
-#: data/window.ui:32
+#: data/weather-widget.ui:180
+msgid "Hourly"
+msgstr "Hodinová"
+
+#: data/weather-widget.ui:201
+msgid "Daily"
+msgstr "Denní"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "Aktualizovat"
 
-#: data/window.ui:114
-msgid "Search for a location"
-msgstr "Vyhledání místa"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Výběr místa"
 
-#: data/window.ui:129
-msgid "To see weather information, enter the name of a city."
-msgstr "Abyste viděli informace o počasí, zadejte název města."
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Vítejte v Počasí!"
 
-#: src/app/city.js:211
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "Pro začáte si vyberte místo."
+
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "Hledat město nebo zemi"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Pocitově jako %.0f"
 
-#: src/app/city.js:243
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Právě aktualizováno."
 
-#: src/app/city.js:248
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -199,7 +207,7 @@ msgstr[0] "Aktualizováno před %d minutou."
 msgstr[1] "Aktualizováno před %d minutami."
 msgstr[2] "Aktualizováno před %d minutami."
 
-#: src/app/city.js:254
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -207,7 +215,7 @@ msgstr[0] "Aktualizováno před %d hodinou."
 msgstr[1] "Aktualizováno před %d hodinami"
 msgstr[2] "Aktualizováno před %d hodinami"
 
-#: src/app/city.js:260
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -215,7 +223,7 @@ msgstr[0] "Aktualizováno před %d dnem."
 msgstr[1] "Aktualizováno před %d dny."
 msgstr[2] "Aktualizováno před %d dny."
 
-#: src/app/city.js:266
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -223,7 +231,7 @@ msgstr[0] "Aktualizováno před %d týdnem."
 msgstr[1] "Aktualizováno před %d týdny."
 msgstr[2] "Aktualizováno před %d týdny."
 
-#: src/app/city.js:271
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -231,39 +239,35 @@ msgstr[0] "Aktualizováno před %d měsícem."
 msgstr[1] "Aktualizováno před %d měsíci."
 msgstr[2] "Aktualizováno před %d měsíci."
 
-#: src/app/dailyForecast.js:37
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Denní předpověď počasí"
 
-#: src/app/dailyForecast.js:94 src/app/hourlyForecast.js:91
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Předpověď není dostupná"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:180
+#: src/app/dailyForecast.js:179
 msgid "%b %e"
 msgstr "%e. %B"
 
-#: src/app/hourlyForecast.js:42
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Hodinová předpověď počasí"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:109
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Výběr místa"
-
-#: src/app/window.js:231
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr ""
 "Adam Matoušek <adamatousek@gmail.com>\n"
 "Daniel Puncman <puncmdan@fel.cvut.cz>"
 
-#: src/app/window.js:233
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "Aplikace Počasí"
 
@@ -286,3 +290,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "Vyhledání místa"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "Abyste viděli informace o počasí, zadejte název města."
