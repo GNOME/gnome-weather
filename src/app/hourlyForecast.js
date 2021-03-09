@@ -155,40 +155,14 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
 
         const spacing = 18;
 
-        const borderRadius = 9;
-
         const graphMinY = lineWidth / 2 + entryImageY + entryImageHeight + spacing;
         const graphMaxY = height - lineWidth / 2 - spacing - entryTemperatureLabelHeight - spacing;
         const graphHeight = graphMaxY - graphMinY;
 
-        const arc0 = 0.0;
-        const arc1 = Math.PI * 0.5
-        const arc2 = Math.PI;
-        const arc3 = Math.PI * 1.5
-
-        let x = 0;
-        let y = 0;
-
-        cr.newSubPath();
-        cr.arc(x + width - borderRadius, y + borderRadius, borderRadius, arc3, arc0);
-        cr.arc(x + width - borderRadius, y + height - borderRadius, borderRadius, arc0, arc1);
-        cr.arc(x + borderRadius, y + height - borderRadius, borderRadius, arc1, arc2);
-        cr.arc(x + borderRadius, y + borderRadius, borderRadius, arc2, arc3);
-        cr.closePath();
-
-        cr.clip();
-        cr.fill();
-
-        let [, backgroundColor] = this.get_style_context().lookup_color('temp_chart_background_color');
-        Gdk.cairo_set_source_rgba(cr, backgroundColor);
-
-        cr.rectangle(0, 0, width, height);
-        cr.fill();
-
         let [, strokeColor] = this.get_style_context().lookup_color('temp_chart_stroke_color');
         Gdk.cairo_set_source_rgba(cr, strokeColor);
 
-        x = 0;
+        let x = 0;
         cr.moveTo (x, graphMinY + ((1 - values[0]) * graphHeight));
 
         x += entryWidth / 2;
