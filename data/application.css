@@ -52,23 +52,6 @@
 @define-color temp_chart_fill_color rgba(248, 228, 92, 0.5);
 @define-color temp_chart_stroke_color rgba(246, 211, 45, 1.0);
 
-#daily-forecast-frame {
-    background-color: @temp_chart_background_color;
-    border-radius: 9px;
-}
-
-#daily-forecast-frame > border {
-    border-radius: 9px;
-}
-
-#hourly-forecast-frame {
-    border-radius: 9px;
-}
-
-#hourly-forecast-frame > border {
-    border-radius: 9px;
-}
-
 #updated-time-label {
     font-size: 9pt;
 }

@@ -24,20 +24,16 @@ const GWeather = imports.gi.GWeather;
 
 const Util = imports.misc.util;
 
-var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends Gtk.Frame {
+var DailyForecastBox = GObject.registerClass(class DailyForecastBox extends Gtk.Box {
 
     _init(params) {
         super._init(Object.assign({
-            halign: Gtk.Align.START,
-            shadow_type: Gtk.ShadowType.IN,
-            name: 'daily-forecast-frame',
+            orientation: Gtk.Orientation.HORIZONTAL,
+            spacing: 0,
+            name: 'daily-forecast-box',
         }, params));
 
         this.get_accessible().accessible_name = _('Daily Forecast');
-
-        this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL,
-                                  spacing: 0});
-        this.add(this._box);
     }
 
     // get infos for the correct day
@@ -93,7 +89,7 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
             let label = new Gtk.Label({ label: _('Forecast not available'),
                                         use_markup: true,
                                         visible: true });
-            this._box.pack_start(label, true, false, 0);
+            this.pack_start(label, true, false, 0);
         }
     }
 
@@ -204,13 +200,13 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
         dayEntry.eveningHumidity.label = eveningInfo.get_humidity();
         this._setWindInfo(eveningInfo, dayEntry.eveningWind);
 
-        this._box.pack_start(dayEntry, false, false, 0);
+        this.pack_start(dayEntry, false, false, 0);
     }
 
     _addSeparator() {
         let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL,
                                             visible: true});
-        this._box.pack_start(separator, false, false, 0);
+        this.pack_start(separator, false, false, 0);
     }
 
     _setWindInfo(info, label) {
@@ -224,7 +220,7 @@ var DailyForecastFrame = GObject.registerClass(class DailyForecastFrame extends 
     }
 
     clear() {
-        this._box.foreach(function(w) { w.destroy(); });
+        this.foreach(function(w) { w.destroy(); });
     }
 });
 

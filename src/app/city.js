@@ -61,9 +61,9 @@ var WeatherWidget = GObject.registerClass({
         for (let t of ['hourly', 'daily']) {
             let box;
             if (t == 'hourly') {
-                box = new HourlyForecast.HourlyForecastFrame();
+                box = new HourlyForecast.HourlyForecastBox();
             } else {
-                box = new DailyForecast.DailyForecastFrame();
+                box = new DailyForecast.DailyForecastBox();
             }
 
             this._forecasts[t] = box;

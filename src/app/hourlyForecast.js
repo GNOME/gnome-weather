@@ -28,22 +28,18 @@ const Util = imports.misc.util;
 // In microseconds
 const TWENTY_FOUR_HOURS = 24 * 3600 * 1000 * 1000;
 
-var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.Frame {
+var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gtk.Box {
 
     _init(params) {
         super._init(Object.assign({
-            halign: Gtk.Align.START,
-            shadow_type: Gtk.ShadowType.IN,
-            name: 'hourly-forecast-frame',
+            orientation: Gtk.Orientation.HORIZONTAL,
+            spacing: 0,
+            name: 'hourly-forecast-box',
         }, params));
 
         this.get_accessible().accessible_name = _('Hourly Forecast');
 
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
-
-        this._box = new Gtk.Box({ orientation: Gtk.Orientation.HORIZONTAL,
-                                  spacing: 0});
-        this.add(this._box);
 
         this._hourlyInfo = [];
 
@@ -89,7 +85,7 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
             let label = new Gtk.Label({ label: _('Forecast not available'),
                                         use_markup: true,
                                         visible: true });
-            this._box.pack_start(label, true, false, 0);
+            this.pack_start(label, true, false, 0);
         }
 
         this._hourlyInfo = hourlyInfo;
@@ -114,7 +110,7 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         hourEntry.image.iconName = info.get_icon_name() + '-small';
         hourEntry.temperatureLabel.label = Util.getTempString(info);
 
-        this._box.pack_start(hourEntry, false, false, 0);
+        this.pack_start(hourEntry, false, false, 0);
 
         this._hasForecastInfo = true;
     }
@@ -122,11 +118,11 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
     _addSeparator() {
         let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL,
                                             visible: true});
-        this._box.pack_start(separator, false, false, 0);
+        this.pack_start(separator, false, false, 0);
     }
 
     clear() {
-        this._box.foreach(function(w) { w.destroy(); });
+        this.foreach(function(w) { w.destroy(); });
     }
 
     hasForecastInfo() {
@@ -146,13 +142,12 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
             values = temps.map(t => t / 2);
         }
 
-        const frameWidth = this.get_allocated_width();
-        const frameHeight = this.get_allocated_height();
+        const width = this.get_allocated_width();
+        const height = this.get_allocated_height();
 
         const entryWidth = 75 ;
         const separatorWidth = 1;
 
-        const frameBorderWidth = 1;
         const lineWidth = 2;
 
         const entryImageY = 56, entryImageHeight = 32;
@@ -162,8 +157,8 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
 
         const borderRadius = 9;
 
-        const graphMinY = frameBorderWidth + lineWidth / 2 + entryImageY + entryImageHeight + spacing;
-        const graphMaxY = frameHeight - frameBorderWidth - lineWidth / 2 - spacing - entryTemperatureLabelHeight - spacing;
+        const graphMinY = lineWidth / 2 + entryImageY + entryImageHeight + spacing;
+        const graphMaxY = height - lineWidth / 2 - spacing - entryTemperatureLabelHeight - spacing;
         const graphHeight = graphMaxY - graphMinY;
 
         const arc0 = 0.0;
@@ -171,14 +166,14 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         const arc2 = Math.PI;
         const arc3 = Math.PI * 1.5
 
-        let frameX = 0;
-        let frameY = 0;
+        let x = 0;
+        let y = 0;
 
         cr.newSubPath();
-        cr.arc(frameX + frameWidth - borderRadius, frameY + borderRadius, borderRadius, arc3, arc0);
-        cr.arc(frameX + frameWidth - borderRadius, frameY + frameHeight - borderRadius, borderRadius, arc0, arc1);
-        cr.arc(frameX + borderRadius, frameY + frameHeight - borderRadius, borderRadius, arc1, arc2);
-        cr.arc(frameX + borderRadius, frameY + borderRadius, borderRadius, arc2, arc3);
+        cr.arc(x + width - borderRadius, y + borderRadius, borderRadius, arc3, arc0);
+        cr.arc(x + width - borderRadius, y + height - borderRadius, borderRadius, arc0, arc1);
+        cr.arc(x + borderRadius, y + height - borderRadius, borderRadius, arc1, arc2);
+        cr.arc(x + borderRadius, y + borderRadius, borderRadius, arc2, arc3);
         cr.closePath();
 
         cr.clip();
@@ -187,13 +182,13 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         let [, backgroundColor] = this.get_style_context().lookup_color('temp_chart_background_color');
         Gdk.cairo_set_source_rgba(cr, backgroundColor);
 
-        cr.rectangle(0, 0, frameWidth, frameHeight);
+        cr.rectangle(0, 0, width, height);
         cr.fill();
 
         let [, strokeColor] = this.get_style_context().lookup_color('temp_chart_stroke_color');
         Gdk.cairo_set_source_rgba(cr, strokeColor);
 
-        let x = 0;
+        x = 0;
         cr.moveTo (x, graphMinY + ((1 - values[0]) * graphHeight));
 
         x += entryWidth / 2;
@@ -204,7 +199,7 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
             cr.lineTo(x, graphMinY + ((1 - values[i]) * graphHeight));
         }
 
-        cr.lineTo(frameWidth, graphMinY + ((1 - values[values.length - 1]) * graphHeight));
+        cr.lineTo(width, graphMinY + ((1 - values[values.length - 1]) * graphHeight));
 
         cr.setLineWidth(lineWidth);
         cr.strokePreserve();
@@ -212,8 +207,8 @@ var HourlyForecastFrame = GObject.registerClass(class ForecastFrame extends Gtk.
         let [, fillColor] = this.get_style_context().lookup_color('temp_chart_fill_color');
         Gdk.cairo_set_source_rgba(cr, fillColor);
 
-        cr.lineTo(frameWidth, frameHeight);
-        cr.lineTo(0, frameHeight);
+        cr.lineTo(width, height);
+        cr.lineTo(0, height);
         cr.fill();
 
         super.vfunc_draw(cr);
