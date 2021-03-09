@@ -208,74 +208,46 @@
                       </packing>
                     </child>
                     <child type="overlay">
-                      <object class="GtkBox" id="rightBox">
+                      <object class="GtkButton" id="rightButton">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
                         <property name="halign">end</property>
+                        <property name="valign">center</property>
+                        <property name="margin_end">28</property>
                         <child>
-                          <object class="GtkButton" id="rightButton">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <property name="halign">end</property>
-                            <property name="valign">center</property>
-                            <property name="margin_end">28</property>
-                            <child>
-                              <object class="GtkImage" id="right-image">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="icon_name">go-next-symbolic</property>
-                              </object>
-                            </child>
-                            <style>
-                              <class name="osd"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkSeparator">
+                          <object class="GtkImage" id="right-image">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="orientation">vertical</property>
+                            <property name="icon_name">go-next-symbolic</property>
                           </object>
                         </child>
+                        <style>
+                          <class name="osd"/>
+                          <class name="circular"/>
+                        </style>
                       </object>
                     </child>
                     <child type="overlay">
-                      <object class="GtkBox" id="leftBox">
+                      <object class="GtkButton" id="leftButton">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
                         <property name="halign">start</property>
+                        <property name="valign">center</property>
+                        <property name="margin_start">28</property>
                         <child>
-                          <object class="GtkSeparator">
+                          <object class="GtkImage" id="left-image">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="orientation">vertical</property>
+                            <property name="icon_name">go-previous-symbolic</property>
+                            <property name="icon_size">1</property>
                           </object>
                         </child>
-                        <child>
-                          <object class="GtkButton" id="leftButton">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <property name="halign">start</property>
-                            <property name="valign">center</property>
-                            <property name="margin_start">28</property>
-                            <child>
-                              <object class="GtkImage" id="left-image">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="icon_name">go-previous-symbolic</property>
-                                <property name="icon_size">1</property>
-                              </object>
-                            </child>
-                            <style>
-                              <class name="osd"/>
-                              <class name="circular"/>
-                            </style>
-                          </object>
-                        </child>
+                        <style>
+                          <class name="osd"/>
+                          <class name="circular"/>
+                        </style>
                       </object>
                       <packing>
                         <property name="index">1</property>

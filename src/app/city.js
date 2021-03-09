@@ -39,7 +39,7 @@ var WeatherWidget = GObject.registerClass({
     InternalChildren: ['contentFrame', 'outerBox',
                        'conditionsImage', 'placesButton', 'placesLabel',
                        'temperatureLabel', 'apparentLabel',
-                       'forecastStack', 'leftBox', 'leftButton', 'rightBox', 'rightButton',
+                       'forecastStack', 'leftButton', 'rightButton',
                        'forecast-hourly', 'forecast-hourly-viewport',
                        'forecast-daily', 'forecast-daily-viewport',
                        'updatedTimeLabel', 'attributionLabel'],
@@ -125,17 +125,17 @@ var WeatherWidget = GObject.registerClass({
     _syncLeftRightButtons() {
         let hadjustment = this._forecastStack.visible_child.get_hadjustment();
         if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
-            this._leftBox.hide();
-            this._rightBox.hide();
+            this._leftButton.hide();
+            this._rightButton.hide();
         } else if (hadjustment.value == hadjustment.get_lower()){
-            this._leftBox.hide();
-            this._rightBox.show();
+            this._leftButton.hide();
+            this._rightButton.show();
         } else if (hadjustment.value >= (hadjustment.get_upper() - hadjustment.page_size)){
-            this._leftBox.show();
-            this._rightBox.hide();
+            this._leftButton.show();
+            this._rightButton.hide();
         } else {
-            this._leftBox.show();
-            this._rightBox.show();
+            this._leftButton.show();
+            this._rightButton.show();
         }
     }
 
