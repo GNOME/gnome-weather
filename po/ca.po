@@ -245,7 +245,7 @@ msgstr "La predicció està disponible"
 #. the current locale
 #: src/app/dailyForecast.js:179
 msgid "%b %e"
-msgstr "%b %e"
+msgstr "%e %b"
 
 #: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
@@ -265,7 +265,7 @@ msgstr ""
 
 #: src/app/window.js:204
 msgid "A weather application"
-msgstr "Un programa sobre meteorologia"
+msgstr "Un programa de meteorologia"
 
 #: src/app/world.js:38
 msgid "World view"
@@ -287,27 +287,3 @@ msgstr "%s / %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#~ msgid "Search for a location"
-#~ msgstr "Cerqueu una ubicació"
-
-#~ msgid "To see weather information, enter the name of a city."
-#~ msgstr ""
-#~ "Per a veure la informació meteorològica, introduïu el nom d'una ciutat."
-
-#~ msgid "%e %b"
-#~ msgstr "%e %b"
-
-#~ msgid "Today"
-#~ msgstr "Avui"
-
-#~ msgid "Tomorrow"
-#~ msgstr "Demà"
-
-#~ msgid "Forecast"
-#~ msgstr "Predicció"
-
-#~ msgid "%R"
-#~ msgstr "%-H:%M"
-
-#~ msgid "%A"
-#~ msgstr "%A"
