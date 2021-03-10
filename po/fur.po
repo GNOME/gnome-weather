@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-12-22 20:25+0000\n"
-"PO-Revision-Date: 2020-12-26 06:09+0100\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-03-10 12:01+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -19,8 +19,8 @@ msgstr ""
 "X-Generator: Poedit 2.4.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:43 src/app/main.js:64
-#: src/app/window.js:232 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Meteo"
 
@@ -55,7 +55,7 @@ msgstr ""
 "meteo atuâi des citâts plui cirudis di resint; al baste scrivi il lôr non "
 "inte Panoramiche Ativitâts."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "Il progjet GNOME"
 
@@ -92,165 +92,169 @@ msgstr ""
 "Le posizion automatiche a je il valôr dal control automatic-location che al "
 "dîs se cjatâ la posizion atuâl o no."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "Viodude citât"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Daûr a cjamâ…"
 
-#: data/day-entry.ui:23
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Gnot"
 
-#: data/day-entry.ui:35
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Buinore"
 
-#: data/day-entry.ui:47
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "Dopomisdì"
 
-#: data/day-entry.ui:59
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Sere"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Posizion automatiche"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Localizant…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "Cîr une citât"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Viodûts di resint"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "Unitât di _temperadure"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "_Celsius"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "_Fahrenheit"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "_Informazions su Meteo"
 
-#: data/weather-widget.ui:47
-msgid "Hourly"
-msgstr "Ore par ore"
-
-#: data/weather-widget.ui:68
-msgid "Daily"
-msgstr "Pe zornade"
-
-#: data/weather-widget.ui:173
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Lûcs"
 
-#: data/weather-widget.ui:249
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Condizions atuâi"
 
-#: data/window.ui:32
+#: data/weather-widget.ui:180
+msgid "Hourly"
+msgstr "Ore par ore"
+
+#: data/weather-widget.ui:201
+msgid "Daily"
+msgstr "Pe zornade"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "Inzorne"
 
-#: data/window.ui:114
-msgid "Search for a location"
-msgstr "Cîr une posizion"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Sielç posizion"
 
-#: data/window.ui:129
-msgid "To see weather information, enter the name of a city."
-msgstr "Par viodi lis informazions meteo, scrîf il non di une citât."
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Benvignûts su Meteo!"
 
-#: src/app/city.js:211
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "Par scomençâ, selezione une lûc."
+
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "Cîr une citât o un paîs"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Si sintin %.0f°"
 
-#: src/app/city.js:243
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Inzornât propite cumò."
 
-#: src/app/city.js:248
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Inzornât %d minût indaûr."
 msgstr[1] "Inzornât %d minûts indaûr."
 
-#: src/app/city.js:254
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Inzornât %d ore indaûr."
 msgstr[1] "Inzornât %d oris indaûr."
 
-#: src/app/city.js:260
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Inzornât %d dì indaûr."
 msgstr[1] "Inzornât %d dîs indaûr."
 
-#: src/app/city.js:266
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Inzornât %d setemane indaûr."
 msgstr[1] "Inzornât %d setemanis indaûr."
 
-#: src/app/city.js:271
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Inzornât %d mês indaûr."
 msgstr[1] "Inzornât %d mês indaûr."
 
-#: src/app/dailyForecast.js:37
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Previsions pe zornade"
 
-#: src/app/dailyForecast.js:94 src/app/hourlyForecast.js:91
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Previsions no disponibii"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:180
+#: src/app/dailyForecast.js:179
 msgid "%b %e"
 msgstr "%e di %b"
 
-#: src/app/hourlyForecast.js:42
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Previsions pe ore"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:109
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%l.%M %p"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Sielç posizion"
-
-#: src/app/window.js:231
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr "Fabio Tomat <f.t.public@gmail.com>"
 
-#: src/app/window.js:233
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "Une aplicazion par il meteo"
 
@@ -273,6 +277,12 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "Cîr une posizion"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "Par viodi lis informazions meteo, scrîf il non di une citât."
 
 #~ msgid "%e %b"
 #~ msgstr "%e di %b"
