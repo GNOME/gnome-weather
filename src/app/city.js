@@ -20,6 +20,7 @@ const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const Gnome = imports.gi.GnomeDesktop;
 const GObject = imports.gi.GObject;
+const Gdk = imports.gi.Gdk;
 const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
 
@@ -39,7 +40,8 @@ var WeatherWidget = GObject.registerClass({
     InternalChildren: ['contentFrame', 'outerBox',
                        'conditionsImage', 'placesButton', 'placesLabel',
                        'temperatureLabel', 'apparentLabel',
-                       'forecastStack', 'leftButton', 'rightButton',
+                       'forecastFrame', 'forecastStack',
+                       'leftButton', 'rightButton',
                        'forecast-hourly', 'forecast-hourly-viewport',
                        'forecast-daily', 'forecast-daily-viewport',
                        'updatedTimeLabel', 'attributionLabel'],
@@ -107,6 +109,30 @@ var WeatherWidget = GObject.registerClass({
             let target = hadjustment.value + hadjustment.page_size;
 
             this._beginScrollAnimation(target);
+        });
+
+        this._forecastFrame.connect('draw', (frame, cr) => {
+            const width = frame.get_allocated_width();
+            const height = frame.get_allocated_height();
+
+            const borderRadius = 8;
+
+            const arc0 = 0.0;
+            const arc1 = Math.PI * 0.5
+            const arc2 = Math.PI;
+            const arc3 = Math.PI * 1.5
+
+            cr.newSubPath();
+            cr.arc(width - borderRadius, borderRadius, borderRadius, arc3, arc0);
+            cr.arc(width - borderRadius, height - borderRadius, borderRadius, arc0, arc1);
+            cr.arc(borderRadius, height - borderRadius, borderRadius, arc1, arc2);
+            cr.arc(borderRadius, borderRadius, borderRadius, arc2, arc3);
+            cr.closePath();
+
+            cr.clip();
+            cr.fill();
+
+            return false;
         });
 
         this._updatedTime = null;

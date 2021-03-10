@@ -42,6 +42,10 @@
     background-color: @theme_base_color;
 }
 
+#forecast-frame > border {
+    border-radius: 8px;
+}
+
 .forecast-temperature-label {
     font-weight: bold;
     color: #c89009;
