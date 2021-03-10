@@ -156,51 +156,59 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkStack" id="forecastStack">
+                      <object class="GtkFrame" id="forecastFrame">
+                        <property name="name">forecast-frame</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="transition_type">crossfade</property>
+                        <property name="shadow-type">GTK_SHADOW_IN</property>
                         <child>
-                          <object class="GtkScrolledWindow" id="forecast-hourly">
+                          <object class="GtkStack" id="forecastStack">
                             <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="vscrollbar_policy">never</property>
-                            <property name="min_content_width">308</property>
+                            <property name="can_focus">False</property>
+                            <property name="transition_type">crossfade</property>
                             <child>
-                              <object class="GtkViewport" id="forecast-hourly-viewport">
+                              <object class="GtkScrolledWindow" id="forecast-hourly">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="hscroll_policy">natural</property>
-                                <property name="vscroll_policy">natural</property>
+                                <property name="can_focus">True</property>
+                                <property name="vscrollbar_policy">never</property>
+                                <property name="min_content_width">308</property>
+                                <child>
+                                  <object class="GtkViewport" id="forecast-hourly-viewport">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="hscroll_policy">natural</property>
+                                    <property name="vscroll_policy">natural</property>
+                                  </object>
+                                </child>
                               </object>
+                              <packing>
+                                <property name="name">hourly</property>
+                                <property name="title" translatable="yes">Hourly</property>
+                                <property name="icon-name">preferences-system-time-symbolic</property>
+                              </packing>
+                            </child>
+                            <child>
+                              <object class="GtkScrolledWindow" id="forecast-daily">
+                                <property name="visible">True</property>
+                                <property name="can_focus">True</property>
+                                <property name="vscrollbar_policy">never</property>
+                                <property name="min_content_width">308</property>
+                                <child>
+                                  <object class="GtkViewport" id="forecast-daily-viewport">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="hscroll_policy">natural</property>
+                                    <property name="vscroll_policy">natural</property>
+                                  </object>
+                                </child>
+                              </object>
+                              <packing>
+                                <property name="name">daily</property>
+                                <property name="title" translatable="yes">Daily</property>
+                                <property name="icon-name">x-office-calendar-symbolic</property>
+                              </packing>
                             </child>
                           </object>
-                          <packing>
-                            <property name="name">hourly</property>
-                            <property name="title" translatable="yes">Hourly</property>
-                            <property name="icon-name">preferences-system-time-symbolic</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkScrolledWindow" id="forecast-daily">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="vscrollbar_policy">never</property>
-                            <property name="min_content_width">308</property>
-                            <child>
-                              <object class="GtkViewport" id="forecast-daily-viewport">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="hscroll_policy">natural</property>
-                                <property name="vscroll_policy">natural</property>
-                              </object>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="name">daily</property>
-                            <property name="title" translatable="yes">Daily</property>
-                            <property name="icon-name">x-office-calendar-symbolic</property>
-                          </packing>
                         </child>
                       </object>
                       <packing>
