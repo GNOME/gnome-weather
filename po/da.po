@@ -3,26 +3,25 @@
 # This file is distributed under the same license as the gnome-weather package.
 # Kris Thomsen <mail@kristhomsen.dk>, 2013-2014.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2014-2015.
-# scootergrisen, 2016, 2020.
+# scootergrisen, 2016, 2020-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-08-23 11:49+0000\n"
-"PO-Revision-Date: 2020-08-24 19:46+0200\n"
-"Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
+"POT-Creation-Date: 2021-01-13 13:54+0000\n"
+"PO-Revision-Date: 2020-02-23 00:00+0000\n"
+"Last-Translator: scootergrisen\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:43 src/app/main.js:64
+#: src/app/window.js:232 src/service/main.js:48
 msgid "Weather"
 msgstr "Vejr"
 
@@ -58,7 +57,7 @@ msgstr ""
 "nuværende forhold i de senest søgte byer, blot ved at indtaste byens navn i "
 "Aktivitets-oversigten."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:118
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -103,19 +102,19 @@ msgstr "Byvisning"
 msgid "Loading…"
 msgstr "Indlæser …"
 
-#: data/day-entry.ui:27
+#: data/day-entry.ui:23
 msgid "Night"
 msgstr "Nat"
 
-#: data/day-entry.ui:39
+#: data/day-entry.ui:35
 msgid "Morning"
 msgstr "Morgen"
 
-#: data/day-entry.ui:51
+#: data/day-entry.ui:47
 msgid "Afternoon"
 msgstr "Eftermiddag"
 
-#: data/day-entry.ui:63
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Aften"
 
@@ -151,97 +150,98 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Om Vejr"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "Hver time"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "Hver dag"
-
-#: data/weather-widget.ui:193
+#: data/weather-widget.ui:71
 msgid "Places"
 msgstr "Steder"
 
-#: data/weather-widget.ui:269
+#: data/weather-widget.ui:147
 msgid "Current conditions"
 msgstr "Nuværende forhold"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:178
+msgid "Hourly"
+msgstr "Hver time"
+
+#: data/weather-widget.ui:199
+msgid "Daily"
+msgstr "Hver dag"
+
+#: data/window.ui:32
 msgid "Refresh"
 msgstr "Opdatér"
 
-#: data/window.ui:105
+#: data/window.ui:114
 msgid "Search for a location"
 msgstr "Søg efter en placering"
 
-#: data/window.ui:119
+#: data/window.ui:129
 msgid "To see weather information, enter the name of a city."
 msgstr "Indtast et bynavn for at få vejrinformation."
 
-#: src/app/city.js:318
+#: src/app/city.js:211
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Føles som %.0f°"
 
-#: src/app/city.js:350
+#: src/app/city.js:243
 msgid "Updated just now."
 msgstr "Er lige blevet opdateret."
 
-#: src/app/city.js:355
+#: src/app/city.js:248
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
-msgstr[0] "Opdateret %d minut siden."
-msgstr[1] "Opdateret %d minutter siden."
+msgstr[0] "Opdateret for %d minut siden."
+msgstr[1] "Opdateret for %d minutter siden."
 
-#: src/app/city.js:361
+#: src/app/city.js:254
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
-msgstr[0] "Opdateret %d time siden."
-msgstr[1] "Opdateret %d timer siden."
+msgstr[0] "Opdateret for %d time siden."
+msgstr[1] "Opdateret for %d timer siden."
 
-#: src/app/city.js:367
+#: src/app/city.js:260
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
-msgstr[0] "Opdateret %d dag siden."
-msgstr[1] "Opdateret %d dage siden."
+msgstr[0] "Opdateret for %d dag siden."
+msgstr[1] "Opdateret for %d dage siden."
 
-#: src/app/city.js:373
+#: src/app/city.js:266
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
-msgstr[0] "Opdateret %d uge siden."
-msgstr[1] "Opdateret %d uger siden."
+msgstr[0] "Opdateret for %d uge siden."
+msgstr[1] "Opdateret for %d uger siden."
 
-#: src/app/city.js:378
+#: src/app/city.js:271
 #, javascript-format
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
-msgstr[0] "Opdateret %d måned siden."
-msgstr[1] "%d måneder siden."
+msgid_plural "Updated %d months ago."
+msgstr[0] "Opdateret for %d måned siden."
+msgstr[1] "Opdateret for %d måneder siden."
 
-#: src/app/dailyForecast.js:34
+#: src/app/dailyForecast.js:37
 msgid "Daily Forecast"
 msgstr "Vejrudsigt hver dag"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:90
+#: src/app/dailyForecast.js:94 src/app/hourlyForecast.js:91
 msgid "Forecast not available"
 msgstr "Vejrudsigt ikke tilgængelig"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
-msgid "%e %b"
-msgstr "%e. %b"
+#: src/app/dailyForecast.js:180
+#| msgid "%b %e "
+msgid "%b %e"
+msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:39
+#: src/app/hourlyForecast.js:42
 msgid "Hourly Forecast"
 msgstr "Vejrudsigt hver time"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:108
+#: src/app/hourlyForecast.js:109
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
@@ -249,7 +249,7 @@ msgstr "%l∶%M %p"
 msgid "Select Location"
 msgstr "Vælg placering"
 
-#: src/app/window.js:226
+#: src/app/window.js:231
 msgid "translator-credits"
 msgstr ""
 "Kris Thomsen\n"
@@ -260,7 +260,7 @@ msgstr ""
 "Websted http://dansk-gruppen.dk\n"
 "E-mail <dansk@dansk-gruppen.dk>"
 
-#: src/app/window.js:228
+#: src/app/window.js:233
 msgid "A weather application"
 msgstr "Et vejrprogram"
 
