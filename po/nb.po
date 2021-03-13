@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of gnome-weather.
 # Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Kjartan Maraas <kmaraas@gnome.org>, 2013-2020.
+# Kjartan Maraas <kmaraas@gnome.org>, 2013-2021.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-weather 3.36.x\n"
+"Project-Id-Version: gnome-weather 3.40.x\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2019-10-22 01:19+0000\n"
-"PO-Revision-Date: 2020-03-09 15:16+0100\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-03-13 11:05+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language:\n"
@@ -17,17 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: data/city.ui:8
-msgid "City view"
-msgstr "Byvisning"
-
-#: data/city.ui:30
-msgid "Loading…"
-msgstr "Laster …"
-
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:61
-#: src/app/window.js:255 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Vær"
 
@@ -61,7 +53,7 @@ msgstr ""
 "Integrerer også med GNOME skallet, og lar deg se tilstanden i de mest brukte "
 "byene ved å søke etter navnet i aktivitetsoversikten."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "GNOME prosjektet"
 
@@ -98,102 +90,169 @@ msgstr ""
 "Automatisk stedsvalg er verdien i valget «automatic-location» som bestemmer "
 "om aktiv lokasjon skal hentes eller ikke."
 
-#: data/places-popover.ui:45
+#: data/city.ui:9
+msgid "City view"
+msgstr "Byvisning"
+
+#: data/city.ui:32
+msgid "Loading…"
+msgstr "Laster …"
+
+#: data/day-entry.ui:26
+msgid "Night"
+msgstr "Natt"
+
+#: data/day-entry.ui:41
+msgid "Morning"
+msgstr "Morgen"
+
+#: data/day-entry.ui:56
+msgid "Afternoon"
+msgstr "Ettermiddag"
+
+#: data/day-entry.ui:71
+msgid "Evening"
+msgstr "Kveld"
+
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Automatisk lokasjon"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Finner …"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "Søk etter en by"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Nylig vist"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "_Temperaturenhet"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "_Celcius"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "_Fahrenheit"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "_Om Vær"
 
-#: data/weather-widget.ui:39
-msgid "Current conditions"
-msgstr "Nåværende forhold"
-
-#: data/weather-widget.ui:151
-msgid "Today"
-msgstr "I dag"
-
-#: data/weather-widget.ui:180
-msgid "Tomorrow"
-msgstr "I morgen"
-
-#: data/window.ui:33
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Steder"
 
-#: data/window.ui:55
+#: data/weather-widget.ui:149
+msgid "Current conditions"
+msgstr "Nåværende forhold"
+
+#: data/weather-widget.ui:180
+msgid "Hourly"
+msgstr "Hver time"
+
+#: data/weather-widget.ui:201
+msgid "Daily"
+msgstr "Daglig"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "Oppdater"
 
-#: data/window.ui:113
-msgid "Search for a location"
-msgstr "Søk etter en lokasjon"
-
-#: data/window.ui:129
-msgid "To see weather information, enter the name of a city."
-msgstr "Oppgi navnet på en by for å se informasjon om vær."
-
-#: src/app/forecast.js:35
-msgid "Forecast"
-msgstr "Værmelding"
-
-#: src/app/forecast.js:116
-msgid "Forecast not available"
-msgstr "Værmelding ikke tilgjengelig"
-
-#. Translators: this is a time format without date used for AM/PM
-#: src/app/forecast.js:132
-msgid "%l∶%M %p"
-msgstr "%H.%M"
-
-#. Translators: this is a time format without date used for 24h mode
-#: src/app/forecast.js:135
-msgid "%R"
-msgstr "%R"
-
-#: src/app/weeklyForecast.js:35
-msgid "Weekly Forecast"
-msgstr "Værmelding for uken"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: src/app/weeklyForecast.js:120
-msgid "%A"
-msgstr "%A"
-
-#: src/app/window.js:139
+#: data/window.ui:77
 msgid "Select Location"
 msgstr "Velg lokasjon"
 
-#: src/app/window.js:254
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Velkommen til Vær!"
+
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "Velg en plassering for å komme i gang."
+
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "Søk etter en by eller et land"
+
+#: src/app/city.js:209
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Føles som %.0f"
+
+#: src/app/city.js:241
+msgid "Updated just now."
+msgstr "Nettopp oppdatert"
+
+#: src/app/city.js:246
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Oppdatert for %d minutt siden."
+msgstr[1] "Oppdatert for %d minutter siden."
+
+#: src/app/city.js:252
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Oppdatert for %d time siden."
+msgstr[1] "Oppdatert for %d timer siden."
+
+#: src/app/city.js:258
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Oppdatert for %d dag siden."
+msgstr[1] "Oppdatert for %d dager siden."
+
+#: src/app/city.js:264
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Oppdatert for %d uke siden."
+msgstr[1] "Oppdatert for %d uker siden."
+
+#: src/app/city.js:269
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "Updated %d months ago."
+msgstr[0] "Oppdatert for %d måned siden."
+msgstr[1] "Oppdatert for %d måneder siden."
+
+#: src/app/dailyForecast.js:36
+msgid "Daily Forecast"
+msgstr "Daglig værmelding"
+
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
+msgid "Forecast not available"
+msgstr "Værmelding ikke tilgjengelig"
+
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:179
+msgid "%b %e"
+msgstr "%b %e"
+
+#: src/app/hourlyForecast.js:40
+msgid "Hourly Forecast"
+msgstr "Værmelding hver time"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/hourlyForecast.js:107
+msgid "%l∶%M %p"
+msgstr "%H.%M"
+
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr "Kjartan Maraas <kmaraas@gnome.org>"
 
-#: src/app/window.js:256
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "Et program for vær"
 
