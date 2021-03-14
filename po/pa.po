@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-12 20:57+0000\n"
-"PO-Revision-Date: 2021-02-13 15:49-0800\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-03-14 10:26-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
@@ -48,10 +48,6 @@ msgstr ""
 "ਇਲਾਵਾ ਅੱਜ ਅਤੇ ਭਲਕ ਲਈ ਘੰਟਿਆਂ ਦੇ ਮੁਤਾਬਕ ਵੇਰਵਾ ਵੀ ਮੌਜੂਦ ਰਹਿੰਦਾ ਹੈ।"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
-#| msgid ""
-#| "It also optionally integrates with the GNOME Shell, allowing you see the "
-#| "current conditions of the most recently searched cities by just typing "
-#| "its name in the Activities Overview."
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you to see the "
 "current conditions of the most recently searched cities by just typing the "
@@ -61,7 +57,7 @@ msgstr ""
 " ਵਿੱਚ ਕਿਸੇ ਲੱਭੇ ਗਏ "
 "ਸ਼ਹਿਰਾਂ ਦਾ ਕੇਵਲ ਨਾਂ ਲਿਖ ਕੇ ਹੀ ਮੌਜੂਦਾ ਹਾਲਤ ਨੂੰ ਵੇਖਣ ਸਕਦੇ ਹੋ।"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:118
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "ਗਨੋਮ ਪਰੋਜੈਕਟ"
 
@@ -108,22 +104,18 @@ msgid "Loading…"
 msgstr "...ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: data/day-entry.ui:26
-#| msgid "Tonight"
 msgid "Night"
 msgstr "ਰਾਤ"
 
 #: data/day-entry.ui:41
-#| msgid "Monday morning"
 msgid "Morning"
 msgstr "ਸੋਮਵਾਰ"
 
 #: data/day-entry.ui:56
-#| msgid "This afternoon"
 msgid "Afternoon"
 msgstr "ਬਾਅਦ ਦੁਪੈਹਰ"
 
 #: data/day-entry.ui:71
-#| msgid "This evening"
 msgid "Evening"
 msgstr "ਆਥਣ"
 
@@ -144,38 +136,34 @@ msgid "Viewed Recently"
 msgstr "ਤਾਜ਼ਾ ਵੇਖੇ"
 
 #: data/primary-menu.ui:4 data/window.ui:7
-#| msgid "Temperature unit"
 msgid "_Temperature Unit"
 msgstr "ਤਾਪਮਾਨ ਇਕਾਈ(_T)"
 
 #: data/primary-menu.ui:6 data/window.ui:9
-#| msgid "Celsius"
 msgid "_Celsius"
 msgstr "ਸੈਲਸੀਅਸ(_C)"
 
 #: data/primary-menu.ui:11 data/window.ui:14
-#| msgid "Fahrenheit"
 msgid "_Fahrenheit"
 msgstr "ਫਾਰਨਹੀਟ(_F)"
 
 #: data/primary-menu.ui:19 data/window.ui:22
-#| msgid "About Weather"
 msgid "_About Weather"
 msgstr "ਮੌਸਮ ਬਾਰੇ(_A)"
 
-#: data/weather-widget.ui:71
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "ਥਾਵਾਂ"
 
-#: data/weather-widget.ui:147
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "ਮੌਜੂਦਾ ਹਾਲਤ"
 
-#: data/weather-widget.ui:179
+#: data/weather-widget.ui:180
 msgid "Hourly"
 msgstr "ਘੰਟੇਵਾਰ"
 
-#: data/weather-widget.ui:200
+#: data/weather-widget.ui:201
 msgid "Daily"
 msgstr "ਰੋਜ਼ਾਨਾ"
 
@@ -188,7 +176,6 @@ msgid "Select Location"
 msgstr "ਟਿਕਾਣਾ ਚੁਣੋ"
 
 #: data/window.ui:126
-#| msgid "World Weather"
 msgid "Welcome to Weather!"
 msgstr "ਮੌਸਮ ਵਲੋਂ ਜੀ ਆਇਆਂ ਨੂੰ!"
 
@@ -196,71 +183,74 @@ msgstr "ਮੌਸਮ ਵਲੋਂ ਜੀ ਆਇਆਂ ਨੂੰ!"
 msgid "To get started, select a location."
 msgstr "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਟਿਕਾਣਾ ਚੁਣੋ।"
 
-#: src/app/city.js:211
+#: data/window.ui:136
+#| msgid "Search for a city"
+msgid "Search for a city or country"
+msgstr "ਸ਼ਹਿਰ ਜਾਂ ਦੇਸ਼ ਨੂੰ ਖੋਜੋ"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "%.0f° ਵਾਂਗ ਮਹਿਸੂਸ ਹੁੰਦਾ ਹੈ"
 
-#: src/app/city.js:243
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "ਹੁਣੇ ਹੀ ਅੱਪਡੇਟ ਕੀਤਾ ਹੈ।"
 
-#: src/app/city.js:248
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d ਮਿੰਟ ਪਹਿਲਾਂ ਅੱਪਡੇਟ ਕੀਤਾ।"
 msgstr[1] "%d ਮਿੰਟ ਪਹਿਲਾਂ ਅੱਪਡੇਟ ਕੀਤਾ।"
 
-#: src/app/city.js:254
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d ਘੰਟਾ ਪਹਿਲਾਂ ਅੱਪਡੇਟ ਕੀਤਾ।"
 msgstr[1] "%d ਘੰਟੇ ਪਹਿਲਾਂ ਅੱਪਡੇਟ ਕੀਤਾ।"
 
-#: src/app/city.js:260
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d ਦਿਨ ਪਹਿਲਾਂ ਅੱਪਡੇਟ ਕੀਤਾ।"
 msgstr[1] "%d ਦਿਨ ਪਹਿਲਾਂ ਅੱਪਡੇਟ ਕੀਤਾ।"
 
-#: src/app/city.js:266
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d ਹਫ਼ਤਾ ਪਹਿਲਾਂ ਅੱਪਡੇਟ ਕੀਤਾ।"
 msgstr[1] "%d ਹਫ਼ਤੇ ਪਹਿਲਾਂ ਅੱਪਡੇਟ ਕੀਤਾ।"
 
-#: src/app/city.js:271
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "%d ਮਹੀਨਾ ਪਹਿਲਾਂ ਅੱਪਡੇਟ ਕੀਤਾ।"
 msgstr[1] "%d ਮਹੀਨੇ ਪਹਿਲਾਂ ਅੱਪਡੇਟ ਕੀਤਾ।"
 
-#: src/app/dailyForecast.js:38
-#| msgid "Detailed forecast"
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "ਰੋਜ਼ਾਨਾ ਭਵਿੱਖਬਾਣੀ"
 
-#: src/app/dailyForecast.js:95 src/app/hourlyForecast.js:91
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "ਭਵਿੱਖਬਾਣੀ ਮੌਜੂਦ ਨਹੀਂ ਹੈ"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:181
+#: src/app/dailyForecast.js:179
 msgid "%b %e"
 msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:42
-#| msgid "Weekly Forecast"
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "ਘੰਟੇਵਾਰ ਭਵਿੱਖਬਾਣੀ"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:109
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
