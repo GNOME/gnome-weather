@@ -110,6 +110,12 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
         hourEntry.image.iconName = info.get_icon_name() + '-small';
         hourEntry.temperatureLabel.label = Util.getTempString(info);
 
+        if (Util.isDarkTheme()) {
+            const color = "#f6d32d";
+            const label = "<span color=\""+ color + "\">" + hourEntry.temperatureLabel.label + "</span>";
+            hourEntry.temperatureLabel.set_markup(label);
+        };
+
         this.pack_start(hourEntry, false, false, 0);
 
         this._hasForecastInfo = true;
@@ -179,6 +185,12 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
         cr.strokePreserve();
 
         let [, fillColor] = this.get_style_context().lookup_color('temp_chart_fill_color');
+
+        if (Util.isDarkTheme()) {
+            fillColor = new Gdk.RGBA();
+            fillColor.parse("rgba(248, 228, 92, 0.15)");
+        };
+
         Gdk.cairo_set_source_rgba(cr, fillColor);
 
         cr.lineTo(width, height);
