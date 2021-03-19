@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-12 20:57+0000\n"
-"PO-Revision-Date: 2021-02-15 09:08+0100\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-03-19 08:08+0100\n"
 "Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -57,7 +57,7 @@ msgstr ""
 "тренутне услове последњих тражених градова једноставним куцањем њихових "
 "имена у прегледу активности."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:118
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "Гном пројекат"
 
@@ -150,19 +150,19 @@ msgstr "_Фаренхајти"
 msgid "_About Weather"
 msgstr "_О Времену"
 
-#: data/weather-widget.ui:71
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Места"
 
-#: data/weather-widget.ui:147
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Текуће прилике"
 
-#: data/weather-widget.ui:179
+#: data/weather-widget.ui:180
 msgid "Hourly"
 msgstr "Сваког часа"
 
-#: data/weather-widget.ui:200
+#: data/weather-widget.ui:201
 msgid "Daily"
 msgstr "Сваког дана"
 
@@ -182,16 +182,20 @@ msgstr "Добро дошли у Време!"
 msgid "To get started, select a location."
 msgstr "За почетак, изаберите место."
 
-#: src/app/city.js:211
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "Потражите град или државу"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Субјективни осећај %.0f°"
 
-#: src/app/city.js:243
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Ажурирано управо сада."
 
-#: src/app/city.js:248
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -200,7 +204,7 @@ msgstr[1] "Ажурирано пре %d минута."
 msgstr[2] "Ажурирано пре %d минута."
 msgstr[3] "Ажурирано пре једног минута."
 
-#: src/app/city.js:254
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -209,7 +213,7 @@ msgstr[1] "Ажурирано пре %d сатa."
 msgstr[2] "Ажурирано пре %d сати."
 msgstr[3] "Ажурирано пре једног сата."
 
-#: src/app/city.js:260
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -218,7 +222,7 @@ msgstr[1] "Ажурирано пре %d дана."
 msgstr[2] "Ажурирано пре %d дана."
 msgstr[3] "Ажурирано пре једног дана."
 
-#: src/app/city.js:266
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -227,7 +231,7 @@ msgstr[1] "Ажурирано пре %d недеље."
 msgstr[2] "Ажурирано пре %d недеља."
 msgstr[3] "Ажурирано пре једне недеље."
 
-#: src/app/city.js:271
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -236,25 +240,25 @@ msgstr[1] "Ажурирано пре %d месеца."
 msgstr[2] "Ажурирано пре %d месеци."
 msgstr[3] "Ажурирано пре једног месеца."
 
-#: src/app/dailyForecast.js:38
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Дневна прогноза"
 
-#: src/app/dailyForecast.js:95 src/app/hourlyForecast.js:91
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Временска прогноза није доступна"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:181
+#: src/app/dailyForecast.js:179
 msgid "%b %e"
 msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:42
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Часовна прогноза"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:109
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
