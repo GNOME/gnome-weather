@@ -46,13 +46,15 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
-    <release date="2021-02-13" version="40.beta">
+    <release date="2021-03-20" version="40.0">
       <description>
         <p>GNOME Weather 40 brings an exciting new redesign that works on both desktop and mobile form factors.</p>
         <p>Weather 40 also comes with updated translations for the following locales:</p>
         <ul>
           <li>Bangla (India)</li>
-          <li>BasqueCatalan</li>
+          <li>Basque</li>
+          <li>Bokmål, Norwegian</li>
+          <li>Catalan</li>
           <li>Chinese (China)</li>
           <li>Chinese (Taiwan)</li>
           <li>Croatian</li>

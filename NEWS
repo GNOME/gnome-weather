@@ -1,4 +1,4 @@
-40.beta
+40.0
 ========
 * Major redesign with new charts (Vitaly Dyachkov, Nahuel Gomez Castro, Evan Welsh, Allan Day, Sam Hewitt, Christopher Davis)
 * Adaptive for mobile and desktop (Christopher Davis)
@@ -9,6 +9,7 @@
 * Translation updates:
  - Bangla (India)
  - Basque
+ - Bokmål, Norwegian
  - Catalan
  - Chinese (China)
  - Chinese (Taiwan)
