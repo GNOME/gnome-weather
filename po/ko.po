@@ -3,14 +3,17 @@
 # This file is distributed under the same license as the gnome-weather package.
 # Jinkyu Yi <jincreator@jincreator.net>, 2013, 2014, 2015, 2016.
 # DaeHyun Sung <sungdh86@gmail.com>, 2019-2020.
+# Changwoo Ryu <cwryu@debian.org>, 2021.
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-22 15:18+0000\n"
-"PO-Revision-Date: 2020-09-02 02:34+0900\n"
-"Last-Translator: DaeHyun Sung <sungdh86+git@gmail.com>\n"
-"Language-Team: 한국어 <gnome-kr@googlegroups.com>\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-03-21 19:55+0900\n"
+"Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
+"Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,8 +22,8 @@ msgstr ""
 "X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "날씨"
 
@@ -51,10 +54,10 @@ msgid ""
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"그놈 쉘에서 선택적으로 통합되므로, 활동 개요에 도시명을 입력하면 가장 최근"
-"에 검색된 도시의 현재 상태를 볼 수 있게 해줍니다."
+"그놈 쉘에서 선택적으로 통합되므로, 활동 개요에 도시명을 입력하면 가장 최근에 "
+"검색된 도시의 현재 상태를 볼 수 있게 해줍니다."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "그놈 프로젝트"
 
@@ -91,91 +94,99 @@ msgstr ""
 "지역 알아서 찾기는 현재 위치를 스스로 받아올지 말지 고른 automatic-location "
 "스위치의 값입니다."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "도시 보기"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "읽어오는 중…"
 
-#: data/day-entry.ui:27
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "밤"
 
-#: data/day-entry.ui:39
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "아침"
 
-#: data/day-entry.ui:51
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "오후"
 
-#: data/day-entry.ui:63
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "저녁"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "지역 알아서 찾기"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "지역 찾는 중…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "도시로 검색"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "최근에 봄"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "온도 단위(_T)"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "섭씨 온도(℃)(_C)"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "화씨 온도(℉)(_F)"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "날씨 정보(_A)"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "시간당"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "매일"
-
-#: data/weather-widget.ui:190
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "장소"
 
-#: data/weather-widget.ui:266
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "현재 날씨"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:180
+msgid "Hourly"
+msgstr "시간당"
+
+#: data/weather-widget.ui:201
+msgid "Daily"
+msgstr "매일"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "새로 고침"
 
-#: data/window.ui:105
-msgid "Search for a location"
-msgstr "위치로 검색"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "지역 선택"
 
-#: data/window.ui:119
-msgid "To see weather information, enter the name of a city."
-msgstr "날씨 정보를 볼 도시 이름을 넣어주십시오."
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "날씨를 시작합니다!"
 
-#: src/app/city.js:211
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "시작하려면 먼저 위치를 선택하십시오."
+
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "도시 또는 국가로 검색"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "체감온도 %.0f°"
@@ -211,42 +222,38 @@ msgstr[0] "%d주 전에 업데이트됨."
 #: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "%d달 전에 업데이트됨."
 
-#: src/app/dailyForecast.js:33
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "일간 예보"
 
-#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "일기예보를 알 수 없음"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:176
-msgid "%e %b"
+#: src/app/dailyForecast.js:179
+msgid "%b %e"
 msgstr "%b %e일"
 
-#: src/app/hourlyForecast.js:38
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "시간당 예보"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:105
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%p %l∶%M"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "지역 선택"
-
-#: src/app/window.js:226
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr ""
 "Jinkyu Yi <jincreator@jincreator.net>\n"
 "DaeHyun Sung <sungdh86@gmail.com>"
 
-#: src/app/window.js:228
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "날씨 프로그램"
 
@@ -269,6 +276,15 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "위치로 검색"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "날씨 정보를 볼 도시 이름을 넣어주십시오."
+
+#~ msgid "%e %b"
+#~ msgstr "%b %e일"
 
 #~ msgid "Today"
 #~ msgstr "오늘"
