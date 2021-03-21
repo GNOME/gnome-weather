@@ -1,15 +1,15 @@
 # British English translation of gnome-weather
 # Copyright (C) 2013 gnome-weather'S COPYRIGHT HOLDER
 # This file is distributed under the same licence as the gnome-weather package.
-# Zander Brown <zbrown@gnome.org>, 2020.
-# Bruce Cowan <bruce@bcowan.me.uk>, 2013-2020.
+# Zander Brown <zbrown@gnome.org>, 2020-2021.
+# Bruce Cowan <bruce@bcowan.me.uk>, 2013-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-08-12 15:08+0000\n"
-"PO-Revision-Date: 2020-09-01 19:44+0100\n"
+"POT-Creation-Date: 2021-03-20 23:38+0000\n"
+"PO-Revision-Date: 2021-03-21 20:30+0000\n"
 "Last-Translator: Bruce Cowan <bruce@bcowan.me.uk>\n"
 "Language-Team: English - United Kingdom <en@li.org>\n"
 "Language: en_GB\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"X-Generator: Gtranslator 3.38.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Weather"
 
@@ -56,7 +56,7 @@ msgstr ""
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:121
 msgid "The GNOME Project"
 msgstr "The GNOME Project"
 
@@ -93,171 +93,172 @@ msgstr ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "City view"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Loading…"
 
-#: data/day-entry.ui:27
-#| msgid "Tonight"
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Night"
 
-#: data/day-entry.ui:39
-#| msgid "Monday morning"
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Morning"
 
-#: data/day-entry.ui:51
-#| msgid "This afternoon"
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "Afternoon"
 
-#: data/day-entry.ui:63
-#| msgid "This evening"
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Evening"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Automatic Location"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Locating…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "Search for a city"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Viewed Recently"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "_Temperature Unit"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "_Celsius"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "_Fahrenheit"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "_About Weather"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "Hourly"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "Daily"
-
-#: data/weather-widget.ui:193
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Places"
 
-#: data/weather-widget.ui:269
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Current conditions"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:180
+msgid "Hourly"
+msgstr "Hourly"
+
+#: data/weather-widget.ui:201
+msgid "Daily"
+msgstr "Daily"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "Refresh"
 
-#: data/window.ui:105
-msgid "Search for a location"
-msgstr "Search for a location"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Select Location"
 
-#: data/window.ui:119
-msgid "To see weather information, enter the name of a city."
-msgstr "To see weather information, enter the name of a city."
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Welcome to Weather!"
 
-#: src/app/city.js:318
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "To get started, select a location."
+
+#: data/window.ui:136
+#| msgid "Search for a city"
+msgid "Search for a city or country"
+msgstr "Search for a city or country"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Feels like %.0f°"
 
-#: src/app/city.js:350
+#: src/app/city.js:241
 msgid "Updated just now."
 msgstr "Updated just now."
 
-#: src/app/city.js:355
+#: src/app/city.js:246
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Updated %d minute ago."
 msgstr[1] "Updated %d minutes ago."
 
-#: src/app/city.js:361
+#: src/app/city.js:252
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Updated %d hour ago."
 msgstr[1] "Updated %d hours ago."
 
-#: src/app/city.js:367
+#: src/app/city.js:258
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Updated %d day ago."
 msgstr[1] "Updated %d days ago."
 
-#: src/app/city.js:373
+#: src/app/city.js:264
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Updated %d week ago."
 msgstr[1] "Updated %d weeks ago."
 
-#: src/app/city.js:378
+#: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "Updated %d month ago."
 msgstr[1] "Updated %d months ago."
 
-#: src/app/dailyForecast.js:34
-#| msgid "Weekly Forecast"
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Daily Forecast"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:90
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Forecast not available"
 
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:179
-msgid "%e %b"
+msgid "%b %e"
 msgstr "%e %b"
 
-#: src/app/hourlyForecast.js:39
-#| msgid "Weekly Forecast"
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Hourly Forecast"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:108
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Select Location"
-
-#: src/app/window.js:226
+#: src/app/window.js:202
 msgid "translator-credits"
-msgstr "Bruce Cowan <bruce@bcowan.me.uk>"
+msgstr ""
+"Bruce Cowan <bruce@bcowan.me.uk>\n"
+"Zander Brown <zbrown@gnome.org>"
 
-#: src/app/window.js:228
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "A weather application"
 
@@ -280,6 +281,15 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "Search for a location"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "To see weather information, enter the name of a city."
+
+#~ msgid "%e %b"
+#~ msgstr "%e %b"
 
 #~ msgid "Today"
 #~ msgstr "Today"
