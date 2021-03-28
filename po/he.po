@@ -2,14 +2,14 @@
 # Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2012.
-# Yosef Or Boczko <yoseforb@gmail.com>, 2014-2020.
+# Yosef Or Boczko <yoseforb@gmail.com>, 2014-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-22 15:18+0000\n"
-"PO-Revision-Date: 2020-09-30 14:04+0300\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-03-29 01:47+0300\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: Hebrew <yoseforb@gmail.com>\n"
 "Language: he\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n>2||n==0) ? 1 : 2\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"X-Generator: Gtranslator 3.38.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "מזג האוויר"
 
@@ -48,10 +48,6 @@ msgstr ""
 "שלאחריו, באמצעות שרתי אינטרנט שונים."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
-#| msgid ""
-#| "It also optionally integrates with the GNOME Shell, allowing you see the "
-#| "current conditions of the most recently searched cities by just typing "
-#| "its name in the Activities Overview."
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you to see the "
 "current conditions of the most recently searched cities by just typing the "
@@ -60,7 +56,7 @@ msgstr ""
 "ניתן לשלב אותו עם מעטפת GNOME, המאפשרת לך לראות את תנאי מזג האוויר של רוב "
 "הערים שחיפשת לאחרונה, בהקלדת שם בסקירת פעילויות."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "מיזם GNOME"
 
@@ -97,99 +93,101 @@ msgstr ""
 "The automatic location is the value of automatic-location switch which "
 "decides whether to fetch current location or not."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "תצוגת עיר"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "בטעינה…"
 
-#: data/day-entry.ui:27
-#| msgid "Tonight"
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "לילה"
 
-#: data/day-entry.ui:39
-#| msgid "Monday morning"
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "בוקר"
 
-#: data/day-entry.ui:51
-#| msgid "This afternoon"
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "אחה״צ"
 
-#: data/day-entry.ui:63
-#| msgid "This evening"
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "ערב"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "מיקום אוטומטי"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "בטעינה…"
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "חיפוש אחר עיר"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "נצפה לאחרונה"
 
-#: data/primary-menu.ui:4
-#| msgid "Temperature unit"
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "יחידת _מעלות"
 
-#: data/primary-menu.ui:6
-#| msgid "Celsius"
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "_צלזיוס"
 
-#: data/primary-menu.ui:11
-#| msgid "Fahrenheit"
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "_פרנהייט"
 
-#: data/primary-menu.ui:19
-#| msgid "About Weather"
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "על _אודות מזג האוויר"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "שעתי"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "יומי"
-
-#: data/weather-widget.ui:190
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "מקומות"
 
-#: data/weather-widget.ui:266
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "תנאים נוכחיים"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:180
+msgid "Hourly"
+msgstr "שעתי"
+
+#: data/weather-widget.ui:201
+msgid "Daily"
+msgstr "יומי"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "רענון"
 
-#: data/window.ui:105
-msgid "Search for a location"
-msgstr "חיפוש אחר מקום"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "בחירת מיקום"
 
-#: data/window.ui:119
-msgid "To see weather information, enter the name of a city."
-msgstr "כדי לראות מידע על מזג אוויר, יש להזין שם של עיר"
+#: data/window.ui:126
+#| msgid "World Weather"
+msgid "Welcome to Weather!"
+msgstr "ברוכים הבאים למזג אוויר!"
 
-#: src/app/city.js:211
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "על מנת להתחיל, יש לבחור מיקום."
+
+#: data/window.ui:136
+#| msgid "Search for a city"
+msgid "Search for a city or country"
+msgstr "חיפוש אחר עיר או מדינה"
+
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "מרגיש כמו ‎%.0f°"
@@ -232,41 +230,37 @@ msgstr[2] "עודכן לפני שבועיים."
 
 #: src/app/city.js:269
 #, javascript-format
+#| msgid "Updated %d month ago."
+#| msgid_plural "%d months ago."
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "עודכן לפני חודש."
 msgstr[1] "עודכן לפני %d חודשים."
 msgstr[2] "עודכן לפני חודשיים."
 
-#: src/app/dailyForecast.js:33
-#| msgid "Detailed forecast"
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "תחזית יומית"
 
-#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "תחזית אינה זמינה"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:176
-msgid "%e %b"
+#: src/app/dailyForecast.js:179
+msgid "%b %e"
 msgstr "%e ב%b"
 
-#: src/app/hourlyForecast.js:38
-#| msgid "Weekly Forecast"
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "תחזית שעתית"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:105
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "בחירת מיקום"
-
-#: src/app/window.js:226
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr ""
 "ירון שהרבני <sh.yaron@gmail.com>\n"
@@ -274,7 +268,7 @@ msgstr ""
 "\n"
 "<a href=\"https://l10n.gnome.org/teams/he/\">מיזם תרגום GNOME לעברית</a>"
 
-#: src/app/window.js:228
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "יישום מזג אוויר"
 
@@ -297,6 +291,15 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "חיפוש אחר מקום"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "כדי לראות מידע על מזג אוויר, יש להזין שם של עיר"
+
+#~ msgid "%e %b"
+#~ msgstr "%e ב%b"
 
 #~ msgid "_New"
 #~ msgstr "_חדש"
@@ -365,9 +368,6 @@ msgstr "%s, %s"
 #~ msgid_plural "%d selected"
 #~ msgstr[0] "נבחרה אחת"
 #~ msgstr[1] "נבחרו %d"
-
-#~ msgid "World Weather"
-#~ msgstr "מזג האוויר בעולם"
 
 #~ msgid "Monday night"
 #~ msgstr "יום שני בלילה"
