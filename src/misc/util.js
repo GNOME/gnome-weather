@@ -208,3 +208,7 @@ function getTempString(info) {
         return "--";
     return Math.round(temp) + "°";
 }
+
+function isDarkTheme() {
+    return Gtk.Settings.get_default().gtk_theme_name.endsWith('-dark');
+}
