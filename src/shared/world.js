@@ -107,6 +107,7 @@ var WorldModel = GObject.registerClass({
 
             info = this._addLocationInternal(location, false);
         }
+        this._currentLocationInfo = info
     }
 
     _updateLoadingCount(delta) {

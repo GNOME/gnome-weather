@@ -67,18 +67,18 @@ var WorldContentView = GObject.registerClass(
 
         let autoLocStack = builder.get_object('auto-location-stack');
         let autoLocSwitch = builder.get_object('auto-location-switch');
-        let currentLocationController = application.currentLocationController;
+        this._currentLocationController = application.currentLocationController;
 
-        if(currentLocationController.autoLocation == CurrentLocationController.AutoLocation.ENABLED) {
+        if(this._currentLocationController.autoLocation == CurrentLocationController.AutoLocation.ENABLED) {
             autoLocStack.visible_child_name = 'locating-label';
         } else {
             autoLocStack.visible_child_name = 'auto-location-switch-grid';
             autoLocSwitch.active = false;
-            autoLocSwitch.sensitive = (currentLocationController.autoLocation != CurrentLocationController.AutoLocation.NOT_AVAILABLE);
+            autoLocSwitch.sensitive = (this._currentLocationController.autoLocation != CurrentLocationController.AutoLocation.NOT_AVAILABLE);
         }
 
         let handlerId = autoLocSwitch.connect('notify::active', () => {
-            currentLocationController.setAutoLocation(autoLocSwitch.active);
+            this._currentLocationController.setAutoLocation(autoLocSwitch.active);
 
             if (autoLocSwitch.active && !this.model.addedCurrentLocation)
                 autoLocStack.visible_child_name = 'locating-label';
@@ -95,8 +95,8 @@ var WorldContentView = GObject.registerClass(
         this.model.connect('current-location-changed', (model, info) => {
             autoLocStack.visible_child_name = 'auto-location-switch-grid';
             GObject.signal_handler_block(autoLocSwitch, handlerId);
-            autoLocSwitch.active = (currentLocationController.autoLocation == CurrentLocationController.AutoLocation.ENABLED);
-            autoLocSwitch.sensitive = (currentLocationController.autoLocation != CurrentLocationController.AutoLocation.NOT_AVAILABLE);
+            autoLocSwitch.active = (this._currentLocationController.autoLocation == CurrentLocationController.AutoLocation.ENABLED);
+            autoLocSwitch.sensitive = (this._currentLocationController.autoLocation != CurrentLocationController.AutoLocation.NOT_AVAILABLE);
             GObject.signal_handler_unblock(autoLocSwitch, handlerId);
 
             this._window.showInfo(info, true);
@@ -216,6 +216,7 @@ var WorldContentView = GObject.registerClass(
         });
 
         this._syncStackPopover();
+        this._currentLocationController.currentLocation = info
     }
 
     _onLocationRemoved(model, info) {
