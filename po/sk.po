@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-22 15:18+0000\n"
-"PO-Revision-Date: 2020-09-03 14:52+0200\n"
+"POT-Creation-Date: 2021-02-28 12:52+0000\n"
+"PO-Revision-Date: 2021-06-11 07:38+0200\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "Počasie"
 
@@ -57,7 +57,7 @@ msgstr ""
 "umožní vidieť aktuálne podmienky naposledy hľadaných miest zadaním názvu v "
 "prehľade Aktivít."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:119
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -96,93 +96,103 @@ msgstr ""
 "Automatická poloha je hodnota prepínača automatic-location, ktorá rozhoduje, "
 "či sa má získať aktuálna poloha alebo nie."
 
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "Mapa mesta"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "Načítava sa…"
 
-#: data/day-entry.ui:27
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "Noc"
 
-#: data/day-entry.ui:39
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "Ráno"
 
-#: data/day-entry.ui:51
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "Popoludnie"
 
-#: data/day-entry.ui:63
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "Večer"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "Automatická poloha"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "Vyhľadáva sa umiestnenie…"
 
 # label
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "Vyhľadajte mesto"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "Nedávno zobrazené"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "_Jednotka teploty"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "_Celsius"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "_Fahrenheit"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "_O aplikácii Počasie"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "Hodinovo"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "Denne"
-
-#: data/weather-widget.ui:190
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "Miesta"
 
-#: data/weather-widget.ui:266
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "Aktuálne podmienky"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:180
+msgid "Hourly"
+msgstr "Hodinovo"
+
+#: data/weather-widget.ui:201
+msgid "Daily"
+msgstr "Denne"
+
+# tooltip
+#: data/window.ui:51
 msgid "Refresh"
-msgstr "Obnoviť"
+msgstr "Obnoví"
+
+# DK:window title
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "Výber polohy"
+
+#: data/window.ui:126
+msgid "Welcome to Weather!"
+msgstr "Vitajte v aplikácii Počasie!"
+
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr "Začnite vybraním umiestnenia."
 
 # label
-#: data/window.ui:105
-msgid "Search for a location"
-msgstr "Vyhľadajte umiestnenie"
+#: data/window.ui:136
+msgid "Search for a city or country"
+msgstr "Vyhľadajte mesto alebo krajinu"
 
-#: data/window.ui:119
-msgid "To see weather information, enter the name of a city."
-msgstr "Na zobrazenie informácií o počasí zadajte názov mesta."
-
-#: src/app/city.js:211
+#: src/app/city.js:209
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Pocitová teplota %.0f°"
@@ -226,45 +236,40 @@ msgstr[2] "Aktualizované pred %d týždňami."
 #: src/app/city.js:269
 #, javascript-format
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "Aktualizované pred %d mesiacmi."
 msgstr[1] "Aktualizované pred %d mesiacom."
 msgstr[2] "Aktualizované pred %d mesiacmi."
 
-#: src/app/dailyForecast.js:33
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Denná predpoveď"
 
-#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
+#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
 msgid "Forecast not available"
 msgstr "Predpoveď nie je dostupná"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:176
-msgid "%e %b"
+#: src/app/dailyForecast.js:179
+msgid "%b %e"
 msgstr "%e. %b"
 
-#: src/app/hourlyForecast.js:38
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "Hodinová predpoveď"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:105
+#: src/app/hourlyForecast.js:107
 msgid "%l∶%M %p"
 msgstr "%H:%M"
 
-# DK:window title
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "Výber polohy"
-
-#: src/app/window.js:226
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr ""
 "Dušan Kazik <prescott66@gmail.com>\n"
 "Ján Kyselica <kyselica.jan@gmail.com>"
 
-#: src/app/window.js:228
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "Aplikácia Počasie"
 
@@ -291,6 +296,16 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+# label
+#~ msgid "Search for a location"
+#~ msgstr "Vyhľadajte umiestnenie"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "Na zobrazenie informácií o počasí zadajte názov mesta."
+
+#~ msgid "%e %b"
+#~ msgstr "%e. %b"
 
 #~ msgid "Today"
 #~ msgstr "Dnes"
