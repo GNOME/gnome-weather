@@ -130,7 +130,7 @@ var DailyForecastBox = GObject.registerClass(class DailyForecastBox extends Gtk.
             }
             if (temp < minTemp) {
                 minInfo = info;
-                minTemp = minTemp;
+                minTemp = temp;
             }
 
             let datetime = Util.getDateTime(info);
