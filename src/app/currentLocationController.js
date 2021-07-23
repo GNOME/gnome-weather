@@ -44,12 +44,14 @@ var CurrentLocationController = class CurrentLocationController {
 
     _startGeolocationService() {
         this._processStarted = true;
-        Geoclue.Simple.new(pkg.name,
-                           Geoclue.AccuracyLevel.CITY,
-                           null,
-                           (object, result) => {
-                                this._onSimpleReady(object, result)
-                            });
+        Geoclue.Simple.new_with_thresholds(pkg.name,
+                                           Geoclue.AccuracyLevel.CITY,
+                                           0, /* time threshold */
+                                           100, /* distance threshold */
+                                           null,
+                                           (object, result) => {
+                                               this._onSimpleReady(object, result)
+                                           });
     }
 
     _geoLocationFailed(e) {
@@ -68,9 +70,6 @@ var CurrentLocationController = class CurrentLocationController {
             this._geoLocationFailed(e);
             return;
         }
-
-        let client = this._simple.get_client();
-        client.distance_threshold = 100;
 
         this._findLocation();
     }
