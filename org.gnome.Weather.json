@@ -12,7 +12,6 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--share=network",
-        "--system-talk-name=org.freedesktop.GeoClue2",
         "--env=G_ENABLE_DIAGNOSTIC=1",
         "--metadata=X-DConf=migrate-path=/org/gnome/Weather/"
     ],
@@ -29,6 +28,22 @@
         "*.a"
     ],
     "modules": [
+        {
+            "name": "libgeoclue",
+            "buildsystem": "meson",
+            "config-opts" : [
+                "-Denable-backend=false",
+                "-Dlibgeoclue=true",
+                "-Dintrospection=true",
+                "-Dgtk-doc=false"
+            ],
+            "sources": [
+                {
+                    "type" : "git",
+                    "url": "https://gitlab.freedesktop.org/geoclue/geoclue.git"
+                }
+            ]
+        },
         {
             "name" : "geocode-glib",
             "config-opts" : [
