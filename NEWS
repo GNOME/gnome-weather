@@ -1,3 +1,30 @@
+40.1
+========
+* Add corner radius to forecast chart (Vitaly Dyachkov)
+* Increase contrast when using dark themes (Björn Daase)
+
+* Bugs fixed:
+ - #146 Less info in Celsius than in Fahrenheit (Jessica Tallon)
+ - #168 UI not loading when start (CalebCintary)
+ - #190 Daily forecast is not correctly showing the lowest temperature (Eric Daigle)
+ - !82 Workaround serialization without icao libgweather issue (AsciiWolf)
+ - #169 Application does not save location (Jessica Tallon)
+
+* Translation updates:
+ - Belarusian
+ - Chinese (China)
+ - Chinese (Taiwan)
+ - Czech
+ - English
+ - Galician
+ - Hebrew
+ - Greek
+ - Korean
+ - Nepali
+ - Occitan
+ - Slovak
+ - Vietnamese
+
 40.0
 ========
 * Major redesign with new charts (Vitaly Dyachkov, Nahuel Gomez Castro, Evan Welsh, Allan Day, Sam Hewitt, Christopher Davis)

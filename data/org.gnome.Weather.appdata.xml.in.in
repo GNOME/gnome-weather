@@ -46,6 +46,28 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2021-08-10" version="40.1">
+      <description>
+        <p>Forecast chart's rounded corners</p>
+        <p>Better dark themes support</p>
+        <p>Updated translations for the following locales:</p>
+        <ul>
+          <li>Belarusian</li>
+          <li>Chinese (China)</li>
+          <li>Chinese (Taiwan)</li>
+          <li>Czech</li>
+          <li>English</li>
+          <li>Galician</li>
+          <li>Hebrew</li>
+          <li>Greek</li>
+          <li>Korean</li>
+          <li>Nepali</li>
+          <li>Occitan</li>
+          <li>Slovak</li>
+          <li>Vietnamese</li>
+        </ul>
+      </description>
+    </release>
     <release date="2021-03-20" version="40.0">
       <description>
         <p>GNOME Weather 40 brings an exciting new redesign that works on both desktop and mobile form factors.</p>
