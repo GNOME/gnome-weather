@@ -69,11 +69,20 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
         return ret;
     }
 
-    update(infos, tz) {
+    update(info) {
+        let forecasts = info.get_forecast_list();
+
+        let coords = info.location.get_coords();
+        let nearestCity = GWeather.Location.get_world().find_nearest_city(coords[0], coords[1]);
+        let tz = GLib.TimeZone.new(nearestCity.get_timezone().get_tzid());
         let now = GLib.DateTime.new_now(tz);
-        let hourlyInfo = this._preprocess(now, infos);
+
+        let hourlyInfo = this._preprocess(now, forecasts);
 
         if (hourlyInfo.length > 0) {
+            this._addHourEntry(info, tz, _('Now'));
+            this._addSeparator();
+
             for (let i = 0; i < hourlyInfo.length; i++) {
                 let info = hourlyInfo[i];
                 this._addHourEntry(info, tz);
@@ -91,22 +100,25 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
         this._hourlyInfo = hourlyInfo;
     }
 
-    _addHourEntry(info, tz) {
-        let [ok, date] = info.get_value_update();
-        let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
-
-        let timeSetting = this._settings.get_string('clock-format');
-        let timeFormat = null;
-
-        if (timeSetting == '12h')
-            /* Translators: this is a time format without date used for AM/PM */
-            timeFormat = _('%l∶%M %p');
-        else
-            timeFormat = '%R';
-
+    _addHourEntry(info, tz, timeLabel) {
         let hourEntry = new HourEntry();
 
-        hourEntry.timeLabel.label = datetime.format(timeFormat);
+        if (!timeLabel) {
+            let [ok, date] = info.get_value_update();
+            let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
+
+            let timeSetting = this._settings.get_string('clock-format');
+            let timeFormat = null;
+
+            if (timeSetting == '12h')
+                /* Translators: this is a time format without date used for AM/PM */
+                timeFormat = _('%l∶%M %p');
+            else
+                timeFormat = '%R';
+
+            timeLabel = datetime.format(timeFormat);
+        }
+        hourEntry.timeLabel.label = timeLabel;
         hourEntry.image.iconName = info.get_icon_name() + '-small';
         hourEntry.temperatureLabel.label = Util.getTempString(info);
 

@@ -234,11 +234,8 @@ var WeatherWidget = GObject.registerClass({
         const [, apparentValue] = info.get_value_apparent(GWeather.TemperatureUnit.DEFAULT);
         this._apparentLabel.label = _('Feels like %.0f°').format(apparentValue);
 
-        let forecasts = info.get_forecast_list();
-        let coords = info.location.get_coords();
-        let tz = GLib.TimeZone.new(GWeather.Location.get_world().find_nearest_city(coords[0], coords[1]).get_timezone().get_tzid());
         for (let t of ['hourly', 'daily'])
-            this._forecasts[t].update(forecasts, tz);
+            this._forecasts[t].update(info);
 
         if (this._updatedTimeTimeoutId)
             GLib.Source.remove(this._updatedTimeTimeoutId);

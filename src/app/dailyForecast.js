@@ -74,8 +74,10 @@ var DailyForecastBox = GObject.registerClass(class DailyForecastBox extends Gtk.
         return weekInfos;
     }
 
-    update(infos) {
-        let weekInfos = this._preprocess(infos);
+    update(info) {
+        let forecasts = info.get_forecast_list();
+
+        let weekInfos = this._preprocess(forecasts);
 
         if (weekInfos.length > 0) {
             for (let i = 0; i < weekInfos.length; i++) {
