@@ -46,6 +46,17 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2021-09-21" version="41.0">
+      <description>
+        <p>GNOME Weather 41 brings updated translations for the following locales:</p>
+        <ul>
+          <li>Belarusian</li>
+          <li>Croatian</li>
+          <li>Danish</li>
+          <li>Western Frisian</li>
+        </ul>
+      </description>
+    </release>
     <release date="2021-08-10" version="40.1">
       <description>
         <p>Forecast chart's rounded corners</p>
