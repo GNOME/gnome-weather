@@ -96,7 +96,7 @@ const Application = GObject.registerClass(
 
         Handy.StyleManager
             .get_default()
-            .set_color_scheme(Handy.StyleManager.PREFER_LIGHT);
+            .set_color_scheme(Handy.ColorScheme.PREFER_LIGHT);
 
         this.world = GWeather.Location.get_world();
         this.model = new World.WorldModel(this.world, true);
