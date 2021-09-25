@@ -94,6 +94,10 @@ const Application = GObject.registerClass(
 
         Util.loadStyleSheet('/org/gnome/Weather/application.css');
 
+        Handy.StyleManager
+            .get_default()
+            .set_color_scheme(Handy.StyleManager.PREFER_LIGHT);
+
         this.world = GWeather.Location.get_world();
         this.model = new World.WorldModel(this.world, true);
         this.currentLocationController = new CurrentLocationController.CurrentLocationController(this.model);

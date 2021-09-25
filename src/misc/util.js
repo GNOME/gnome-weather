@@ -28,6 +28,7 @@ const Gdk = imports.gi.Gdk;
 const Gio = imports.gi.Gio;
 const GLib = imports.gi.GLib;
 const Gtk = imports.gi.Gtk;
+const Handy = imports.gi.Handy;
 const System = imports.system;
 const GWeather = imports.gi.GWeather;
 
@@ -210,5 +211,5 @@ function getTempString(info) {
 }
 
 function isDarkTheme() {
-    return Gtk.Settings.get_default().gtk_theme_name.endsWith('-dark');
+    return Handy.StyleManager.get_default().dark;
 }
