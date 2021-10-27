@@ -352,37 +352,16 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="valign">start</property>
-        <property name="vexpand">True</property>
         <property name="pixel_size">32</property>
         <property name="icon_name">weather-showers-symbolic</property>
       </object>
     </child>
     <child>
-      <object class="GtkBox">
+      <object class="Gjs_Thermometer" id="thermometer">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">12</property>
-        <child>
-          <object class="GtkLabel" id="maxTemperatureLabel">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label">18°</property>
-            <style>
-              <class name="forecast-temperature-label"/>
-            </style>
-          </object>
-        </child>
-        <child>
-          <object class="GtkLabel" id="minTemperatureLabel">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label">9°</property>
-            <style>
-              <class name="forecast-low-temperature-label"/>
-            </style>
-          </object>
-        </child>
+        <property name="vexpand">True</property>
+        <property name="hexpand">True</property>
       </object>
     </child>
     <child>

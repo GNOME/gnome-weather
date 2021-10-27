@@ -55,8 +55,8 @@ const Thermometer = GObject.registerClass({
       return context;
     }
 
-    this._highContext = createStyleContext('high');
-    this._lowContext = createStyleContext('low');
+    this._highStyleContext = createStyleContext('high');
+    this._lowStyleContext = createStyleContext('low');
 
     this._radius = 12;
     this._margin = 12;
@@ -73,19 +73,19 @@ const Thermometer = GObject.registerClass({
   }
 
   vfunc_get_preferred_width() {
-    const [ highWidth ] = this._highLayout.get_pixel_size();
-    const [ lowWidth ] = this._lowLayout.get_pixel_size();
+    const [highWidth] = this._highLayout.get_pixel_size();
+    const [lowWidth] = this._lowLayout.get_pixel_size();
 
     const width = Math.max(this._radius, highWidth, lowWidth);
-    return [ width, width ];
+    return [width, width];
   }
 
   vfunc_get_preferred_height() {
-    const [ , highHeight ] = this._highLayout.get_pixel_size();
-    const [ , lowHeight ] = this._lowLayout.get_pixel_size();
+    const [, highHeight] = this._highLayout.get_pixel_size();
+    const [, lowHeight] = this._lowLayout.get_pixel_size();
 
     const height = highHeight + this._maring + lowHeight;
-    return [ height, height ];
+    return [height, height];
   }
 
   _updatePangoLayouts(adjustment) {
@@ -93,10 +93,10 @@ const Thermometer = GObject.registerClass({
     const pageSize = adjustment.get_page_size();
 
     const highLabel = Math.round(value + pageSize) + "°";
-    this._highLayout = this._createPangoLayout(this._highContext, highLabel);
+    this._highLayout = this._createPangoLayout(this._highStyleContext, highLabel);
 
     const lowLabel = Math.round(value) + "°";
-    this._lowLayout = this._createPangoLayout(this._lowContext, lowLabel);
+    this._lowLayout = this._createPangoLayout(this._lowStyleContext, lowLabel);
   }
 
   _createPangoLayout(styleContext, text) {
@@ -127,8 +127,8 @@ const Thermometer = GObject.registerClass({
     const width = this.get_allocated_width();
     const height = this.get_allocated_height();
 
-    const [ highWidth, highHeight ] = this._highLayout.get_pixel_size();
-    const [ lowWidth, lowHeight ] = this._lowLayout.get_pixel_size();
+    const [highWidth, highHeight] = this._highLayout.get_pixel_size();
+    const [lowWidth, lowHeight] = this._lowLayout.get_pixel_size();
 
     const radius = this._radius;
     const margin = this._margin;
@@ -151,11 +151,11 @@ const Thermometer = GObject.registerClass({
       lowY = scaleY + scaleHeight + radius + margin;
     }
 
-    Gtk.render_layout(this._highContext, cr,
+    Gtk.render_layout(this._highStyleContext, cr,
                       width / 2 - highWidth / 2, highY,
                       this._highLayout);
 
-    Gtk.render_layout(this._lowContext, cr,
+    Gtk.render_layout(this._lowStyleContext, cr,
                       width / 2 - lowWidth / 2, lowY,
                       this._lowLayout);
 
@@ -178,11 +178,13 @@ const Thermometer = GObject.registerClass({
   _createGradient(start, end) {
     const pattern = new Cairo.LinearGradient(0, start, 0, end);
 
-    const highColor = this._highContext.get_color(this._highContext.get_state());
-    pattern.addColorStopRGB(0.0, 246/255, 211/255, 45/255);
+    const styleContext = this.get_style_context();
 
-    const lowColor = this._lowContext.get_color(this._lowContext.get_state());
-    pattern.addColorStopRGB(1.0, 28/255, 113/255, 216/255);
+    const [, warmColor] = styleContext.lookup_color('thermometer_warm_color');
+    pattern.addColorStopRGB(0.0, warmColor.red, warmColor.green, warmColor.blue);
+
+    const [, coldColor] = styleContext.lookup_color('thermometer_cold_color');
+    pattern.addColorStopRGB(1.0, coldColor.red, coldColor.green, coldColor.blue);
 
     return pattern;
   }

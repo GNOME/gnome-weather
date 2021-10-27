@@ -22,6 +22,8 @@ const GObject = imports.gi.GObject;
 const Gtk = imports.gi.Gtk;
 const GWeather = imports.gi.GWeather;
 
+const Thermometer = imports.app.thermometer;
+
 const Util = imports.misc.util;
 
 var DailyForecastBox = GObject.registerClass(class DailyForecastBox extends Gtk.Box {
@@ -80,9 +82,19 @@ var DailyForecastBox = GObject.registerClass(class DailyForecastBox extends Gtk.
         let weekInfos = this._preprocess(forecasts);
 
         if (weekInfos.length > 0) {
+            let weekHighestTemp = -Infinity;
+            let weekLowestTemp = Infinity;
+
+            weekInfos.map(dayInfos => dayInfos.infos).flat().forEach(info => {
+                const temp = Util.getTemp(info);
+
+                weekHighestTemp = Math.max(weekHighestTemp, temp);
+                weekLowestTemp = Math.min(weekLowestTemp, temp);
+            });
+
             for (let i = 0; i < weekInfos.length; i++) {
                 let dayInfos = weekInfos[i];
-                this._addDayEntry(dayInfos);
+                this._addDayEntry(dayInfos, weekHighestTemp, weekLowestTemp);
 
                 if (i < weekInfos.length - 1)
                     this._addSeparator();
@@ -95,7 +107,7 @@ var DailyForecastBox = GObject.registerClass(class DailyForecastBox extends Gtk.
         }
     }
 
-    _addDayEntry({day, infos}) {
+    _addDayEntry({day, infos}, weekHighestTemp, weekLowestTemp) {
         let maxInfo;
         let maxTemp = -Infinity;
 
@@ -179,8 +191,11 @@ var DailyForecastBox = GObject.registerClass(class DailyForecastBox extends Gtk.
 
         dayEntry.image.iconName = dayInfo.get_icon_name() + '-small';
 
-        dayEntry.maxTemperatureLabel.label = Util.getTempString(maxInfo);
-        dayEntry.minTemperatureLabel.label = Util.getTempString(minInfo);
+        const adjustment = Gtk.Adjustment.new(minTemp,
+                                              weekLowestTemp, weekHighestTemp,
+                                              0, 0,
+                                              maxTemp - minTemp);
+        dayEntry.thermometer.adjustment = adjustment;
 
         dayEntry.nightTemperatureLabel.label = Util.getTempString(nightInfo);
         dayEntry.nightImage.iconName = nightInfo.get_icon_name() + '-small';
@@ -229,7 +244,7 @@ var DailyForecastBox = GObject.registerClass(class DailyForecastBox extends Gtk.
 var DayEntry = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/day-entry.ui',
     InternalChildren: ['nameLabel', 'dateLabel', 'image',
-                       'maxTemperatureLabel', 'minTemperatureLabel',
+                       'thermometer',
                        'nightTemperatureLabel', 'nightImage',
                        'nightHumidity', 'nightWind',
                        'morningTemperatureLabel', 'morningImage',
@@ -256,12 +271,8 @@ var DayEntry = GObject.registerClass({
         return this._image;
     }
 
-    get maxTemperatureLabel() {
-        return this._maxTemperatureLabel;
-    }
-
-    get minTemperatureLabel() {
-        return this._minTemperatureLabel;
+    get thermometer() {
+        return this._thermometer;
     }
 
     get nightTemperatureLabel() {
