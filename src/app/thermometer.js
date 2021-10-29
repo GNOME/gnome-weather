@@ -145,6 +145,9 @@ const Thermometer = GObject.registerClass({
     cr.save();
 
     if (maxScaleHeight > 0) {
+      const gradient = this._createGradient(highHeight + margin, height - lowHeight - margin);
+      cr.setSource(gradient);
+
       this._renderScale(cr, width / 2 - radius, scaleY, radius, scaleHeight);
 
       highY = scaleY - radius - margin - highHeight;
@@ -165,9 +168,6 @@ const Thermometer = GObject.registerClass({
   }
 
   _renderScale(cr, x, y, radius, height) {
-    const gradient = this._createGradient(y - radius, y + height + radius);
-    cr.setSource(gradient);
-
     cr.newSubPath();
     cr.arc(x + radius, y, radius, Math.PI, 0);
     cr.arc(x + radius, y + height, radius, 0, Math.PI);
@@ -176,17 +176,17 @@ const Thermometer = GObject.registerClass({
   }
 
   _createGradient(start, end) {
-    const pattern = new Cairo.LinearGradient(0, start, 0, end);
+    const gradient = new Cairo.LinearGradient(0, start, 0, end);
 
     const styleContext = this.get_style_context();
 
     const [, warmColor] = styleContext.lookup_color('thermometer_warm_color');
-    pattern.addColorStopRGB(0.0, warmColor.red, warmColor.green, warmColor.blue);
+    gradient.addColorStopRGB(0.0, warmColor.red, warmColor.green, warmColor.blue);
 
     const [, coldColor] = styleContext.lookup_color('thermometer_cold_color');
-    pattern.addColorStopRGB(1.0, coldColor.red, coldColor.green, coldColor.blue);
+    gradient.addColorStopRGB(1.0, coldColor.red, coldColor.green, coldColor.blue);
 
-    return pattern;
+    return gradient;
   }
 
 });
