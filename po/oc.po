@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-04-06 07:09+0000\n"
-"PO-Revision-Date: 2021-05-13 21:42+0200\n"
+"POT-Creation-Date: 2021-10-28 15:13+0000\n"
+"PO-Revision-Date: 2021-10-31 21:14+0100\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: Tot en òc\n"
 "Language: oc\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.0\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
@@ -58,7 +58,7 @@ msgstr ""
 "actualas de quins vila configurada que siá en picant simplament son nom dins "
 "la vista d'ensemble de las activitats."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:121
+#: data/org.gnome.Weather.appdata.xml.in.in:154
 msgid "The GNOME Project"
 msgstr "Lo projècte GNOME"
 
@@ -192,55 +192,55 @@ msgstr "Recercar una vila o un país"
 msgid "Feels like %.0f°"
 msgstr "Sembla far %.0f°"
 
-#: src/app/city.js:267
+#: src/app/city.js:265
 msgid "Updated just now."
 msgstr "Actualizat ara meteis."
 
-#: src/app/city.js:272
+#: src/app/city.js:270
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Actualizat fa %d minuta."
 msgstr[1] "Actualizat fa %d minutas."
 
-#: src/app/city.js:278
+#: src/app/city.js:276
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Actualizat fa %d ora."
 msgstr[1] "Actualizat fa %d oras."
 
-#: src/app/city.js:284
+#: src/app/city.js:282
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Actualizat fa %d jorn."
 msgstr[1] "Actualizat fa %d jorns."
 
-#: src/app/city.js:290
+#: src/app/city.js:288
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Actualizat fa %d setmana."
 msgstr[1] "Actualizat fa %d setmanas."
 
-#: src/app/city.js:295
+#: src/app/city.js:293
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Actualizat fa %d mes."
 msgstr[1] "Actualizat fa %d meses."
 
-#: src/app/dailyForecast.js:36
+#: src/app/dailyForecast.js:38
 msgid "Daily Forecast"
 msgstr "Previsions del jorn"
 
-#: src/app/dailyForecast.js:89 src/app/hourlyForecast.js:85
+#: src/app/dailyForecast.js:103 src/app/hourlyForecast.js:94
 msgid "Forecast not available"
 msgstr "Previsions pas disponiblas"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:175
+#: src/app/dailyForecast.js:189
 msgid "%b %e"
 msgstr "%e %B"
 
@@ -248,8 +248,12 @@ msgstr "%e %B"
 msgid "Hourly Forecast"
 msgstr "Prevision de l’ora"
 
+#: src/app/hourlyForecast.js:83
+msgid "Now"
+msgstr "Ara"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:103
+#: src/app/hourlyForecast.js:115
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
@@ -268,7 +272,7 @@ msgstr "Vista mondiala"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:141
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -326,9 +330,6 @@ msgstr "%s, %s"
 
 #~ msgid "Click on locations to select them"
 #~ msgstr "Clicatz suls luòcs per los seleccionar"
-
-#~ msgid "New"
-#~ msgstr "Novèl"
 
 #~ msgid "Cancel"
 #~ msgstr "Anullar"
