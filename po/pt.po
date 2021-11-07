@@ -1,25 +1,26 @@
 # gnome-weather's Portuguese translation.
-# Copyright © 2013, 2014 gnome-weather
+# Copyright © 2013-2021 gnome-weather
 # This file is distributed under the same license as the gnome-weather package.
 # Fernando Carvalho <phaetonkde@gmail.com>, 2013.
 # Tiago S. <almosthumane@portugalmail.pt>, 2014, 2015.
 # Sérgio Cardeira <cardeira dot sergio at gmail dot com>, 2016.
 # Juliano de Souza Camargo <julianosc@protonmail.com>, 2020.
 # Hugo Carvalho <hugokarvalho@hotmail.com>, 2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-28 12:52+0000\n"
-"PO-Revision-Date: 2021-03-07 15:09+0000\n"
+"POT-Creation-Date: 2021-10-28 15:13+0000\n"
+"PO-Revision-Date: 2021-11-07 19:24+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
-"Language-Team: Hugo Carvalho\n"
+"Language-Team: Portuguese (https://l10n.gnome.org/teams/pt/)\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
@@ -60,7 +61,7 @@ msgstr ""
 "as condições atuais das cidades mais recentemente procuradas, simplesmente "
 "digitando o seu nome na vista de atividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:154
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -161,11 +162,11 @@ msgstr "Locais"
 msgid "Current conditions"
 msgstr "Condições atuais"
 
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:186
 msgid "Hourly"
 msgstr "A cada hora"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:207
 msgid "Daily"
 msgstr "Diariamente"
 
@@ -189,60 +190,60 @@ msgstr "Para começar, selecione um local."
 msgid "Search for a city or country"
 msgstr "Procurar uma cidade ou país"
 
-#: src/app/city.js:209
+#: src/app/city.js:235
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Sensação de %.0f°"
 
-#: src/app/city.js:241
+#: src/app/city.js:265
 msgid "Updated just now."
 msgstr "Atualizado ainda agora."
 
-#: src/app/city.js:246
+#: src/app/city.js:270
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Atualizado há %d minuto atrás."
 msgstr[1] "Atualizado há %d minutos atrás."
 
-#: src/app/city.js:252
+#: src/app/city.js:276
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Atualizado há %d hora atrás."
 msgstr[1] "Atualizado há %d horas atrás."
 
-#: src/app/city.js:258
+#: src/app/city.js:282
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Atualizado há %d dia atrás."
 msgstr[1] "Atualizado há %d dias atrás."
 
-#: src/app/city.js:264
+#: src/app/city.js:288
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Atualizado há %d semana atrás."
 msgstr[1] "Atualizado há %d semanas atrás."
 
-#: src/app/city.js:269
+#: src/app/city.js:293
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Atualizado há %d mês atrás."
 msgstr[1] "Atualizado há %d meses atrás."
 
-#: src/app/dailyForecast.js:36
+#: src/app/dailyForecast.js:38
 msgid "Daily Forecast"
 msgstr "Previsão diária"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
+#: src/app/dailyForecast.js:103 src/app/hourlyForecast.js:94
 msgid "Forecast not available"
 msgstr "Previsão indisponível"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:189
 msgid "%b %e"
 msgstr "%b %e"
 
@@ -250,8 +251,12 @@ msgstr "%b %e"
 msgid "Hourly Forecast"
 msgstr "Previsão a cada hora"
 
+#: src/app/hourlyForecast.js:83
+msgid "Now"
+msgstr "Agora"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:115
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
@@ -275,7 +280,7 @@ msgstr "Vista do mundo"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:141
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -329,9 +334,6 @@ msgstr "%s, %s"
 
 #~ msgid "Click on locations to select them"
 #~ msgstr "Clique nos itens para os selecionar"
-
-#~ msgid "New"
-#~ msgstr "Novo"
 
 #~ msgid "Back"
 #~ msgstr "Retroceder"
