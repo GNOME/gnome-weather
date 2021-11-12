@@ -79,13 +79,12 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
 
         let hourlyInfo = this._preprocess(now, forecasts);
 
-        if (hourlyInfo.length > 0) {
-            this._addHourEntry(info, tz, _('Now'));
-            this._addSeparator();
+        hourlyInfo.unshift(info);
 
+        if (hourlyInfo.length > 0) {
             for (let i = 0; i < hourlyInfo.length; i++) {
                 let info = hourlyInfo[i];
-                this._addHourEntry(info, tz);
+                this._addHourEntry(info, tz, now);
 
                 if (i < hourlyInfo.length - 1)
                     this._addSeparator();
@@ -100,13 +99,17 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
         this._hourlyInfo = hourlyInfo;
     }
 
-    _addHourEntry(info, tz, timeLabel) {
+    _addHourEntry(info, tz, now) {
         let hourEntry = new HourEntry();
 
-        if (!timeLabel) {
-            let [ok, date] = info.get_value_update();
-            let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
+        let timeLabel;
 
+        let [, date] = info.get_value_update();
+        let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
+
+        if (now.get_hour() == datetime.get_hour()) {
+            timeLabel = _('Now');
+        } else {
             let timeSetting = this._settings.get_string('clock-format');
             let timeFormat = null;
 
@@ -118,6 +121,7 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
 
             timeLabel = datetime.format(timeFormat);
         }
+
         hourEntry.timeLabel.label = timeLabel;
         hourEntry.image.iconName = info.get_icon_name() + '-small';
         hourEntry.temperatureLabel.label = Util.getTempString(info);
