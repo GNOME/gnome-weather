@@ -8,17 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-28 12:52+0000\n"
-"PO-Revision-Date: 2021-03-29 01:47+0300\n"
-"Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
+"POT-Creation-Date: 2021-10-28 15:13+0000\n"
+"PO-Revision-Date: 2021-11-15 15:42+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <yoseforb@gmail.com>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n>2||n==0) ? 1 : 2\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Gtranslator 3.38.0\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 3.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
@@ -56,7 +57,7 @@ msgstr ""
 "ניתן לשלב אותו עם מעטפת GNOME, המאפשרת לך לראות את תנאי מזג האוויר של רוב "
 "הערים שחיפשת לאחרונה, בהקלדת שם בסקירת פעילויות."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:154
 msgid "The GNOME Project"
 msgstr "מיזם GNOME"
 
@@ -67,7 +68,7 @@ msgstr "תחזית;מזג אוויר;תחזית שבועית;"
 
 #: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
-msgstr "מאפשר הצגת מידע על מזג האוויר באיזור שלך"
+msgstr "מאפשר הצגת מידע על מזג האוויר באיזור שלך."
 
 #: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
@@ -157,11 +158,11 @@ msgstr "מקומות"
 msgid "Current conditions"
 msgstr "תנאים נוכחיים"
 
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:186
 msgid "Hourly"
 msgstr "שעתי"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:207
 msgid "Daily"
 msgstr "יומי"
 
@@ -174,7 +175,6 @@ msgid "Select Location"
 msgstr "בחירת מיקום"
 
 #: data/window.ui:126
-#| msgid "World Weather"
 msgid "Welcome to Weather!"
 msgstr "ברוכים הבאים למזג אוויר!"
 
@@ -183,71 +183,73 @@ msgid "To get started, select a location."
 msgstr "על מנת להתחיל, יש לבחור מיקום."
 
 #: data/window.ui:136
-#| msgid "Search for a city"
 msgid "Search for a city or country"
 msgstr "חיפוש אחר עיר או מדינה"
 
-#: src/app/city.js:209
+#: src/app/city.js:235
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "מרגיש כמו ‎%.0f°"
 
-#: src/app/city.js:241
+#: src/app/city.js:265
 msgid "Updated just now."
 msgstr "עודכן עכשיו."
 
-#: src/app/city.js:246
+#: src/app/city.js:270
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "עודכן לפני דקה."
-msgstr[1] "עודכן לפני %d דקות."
-msgstr[2] "עודכן לפני שתי דקות."
+msgstr[1] "עודכן לפני שתי דקות."
+msgstr[2] "עודכן לפני %d דקות."
+msgstr[3] "עודכן לפני %d דקות."
 
-#: src/app/city.js:252
+#: src/app/city.js:276
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "עודכן לפני שעה."
-msgstr[1] "עודכן לפני %d שעות."
-msgstr[2] "עודכן לפני שעתיים."
+msgstr[1] "עודכן לפני שעתיים."
+msgstr[2] "עודכן לפני %d שעות."
+msgstr[3] "עודכן לפני %d שעות."
 
-#: src/app/city.js:258
+#: src/app/city.js:282
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "עודכן אתמול."
-msgstr[1] "עודכן לפני %d ימים."
-msgstr[2] "עודכן שלשום."
+msgstr[1] "עודכן שלשום."
+msgstr[2] "עודכן לפני %d ימים."
+msgstr[3] "עודכן לפני %d ימים."
 
-#: src/app/city.js:264
+#: src/app/city.js:288
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
-msgstr[0] "עודכן בשבוע שעבר."
-msgstr[1] "עודכן לפני %d שבועות."
-msgstr[2] "עודכן לפני שבועיים."
+msgstr[0] "עודכן לפני שבוע."
+msgstr[1] "עודכן לפני שבועיים."
+msgstr[2] "עודכן לפני %d שבועות."
+msgstr[3] "עודכן לפני %d שבועות."
 
-#: src/app/city.js:269
+#: src/app/city.js:293
 #, javascript-format
-#| msgid "Updated %d month ago."
-#| msgid_plural "%d months ago."
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "עודכן לפני חודש."
-msgstr[1] "עודכן לפני %d חודשים."
-msgstr[2] "עודכן לפני חודשיים."
+msgstr[1] "עודכן לפני חודשיים."
+msgstr[2] "עודכן לפני %d חודשים."
+msgstr[3] "עודכן לפני %d חודשים."
 
-#: src/app/dailyForecast.js:36
+#: src/app/dailyForecast.js:38
 msgid "Daily Forecast"
 msgstr "תחזית יומית"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
+#: src/app/dailyForecast.js:103 src/app/hourlyForecast.js:94
 msgid "Forecast not available"
 msgstr "תחזית אינה זמינה"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:189
 msgid "%b %e"
 msgstr "%e ב%b"
 
@@ -255,8 +257,12 @@ msgstr "%e ב%b"
 msgid "Hourly Forecast"
 msgstr "תחזית שעתית"
 
+#: src/app/hourlyForecast.js:83
+msgid "Now"
+msgstr "עכשיו"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:115
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
@@ -279,7 +285,7 @@ msgstr "תצוגת עולם"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:141
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -339,9 +345,6 @@ msgstr "%s, %s"
 
 #~ msgid "Click on locations to select them"
 #~ msgstr "יש ללחוץ על מיקומים כדי לבחור אותם"
-
-#~ msgid "New"
-#~ msgstr "חדש"
 
 #~ msgid "Back"
 #~ msgstr "הקודם"
