@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-28 12:52+0000\n"
-"PO-Revision-Date: 2021-03-07 04:35+0000\n"
-"Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
+"POT-Creation-Date: 2021-10-28 15:13+0000\n"
+"PO-Revision-Date: 2021-11-10 15:06+0330\n"
+"Last-Translator: MohammadSaleh Kamyab <mskf1383@protonmail.com>\n"
 "Language-Team: Persian <>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr ""
 "همچنین به‌طور اختیاری با پوستهٔ گنوم یکپارچه شده، اجازهٔ دیدن وضعیت فعلی شهرهای "
 "جست‌وجوشدهٔ اخیر را تنها با نوشتن نام در نمای‌کلی فعالیت‌ها می‌دهد."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:154
 msgid "The GNOME Project"
 msgstr "پروژهٔ گنوم"
 
@@ -156,11 +156,11 @@ msgstr "مکان‌ها"
 msgid "Current conditions"
 msgstr "وضعیت‌های فعلی"
 
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:186
 msgid "Hourly"
 msgstr "هرساعت"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:207
 msgid "Daily"
 msgstr "روزانه"
 
@@ -184,55 +184,55 @@ msgstr "برای شروع، موقعیتی را برگزینید."
 msgid "Search for a city or country"
 msgstr "جست‌وجوی یک شهر یا کشور"
 
-#: src/app/city.js:209
+#: src/app/city.js:235
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "به نظر %.0f° می‌رسد"
 
-#: src/app/city.js:241
+#: src/app/city.js:265
 msgid "Updated just now."
 msgstr "هم‌اکنون به‌روز شد."
 
-#: src/app/city.js:246
+#: src/app/city.js:270
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%Id دقیقه پیش به‌روز شد."
 
-#: src/app/city.js:252
+#: src/app/city.js:276
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%Id ساعت پیش به‌روز شد."
 
-#: src/app/city.js:258
+#: src/app/city.js:282
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%Id روز پیش به‌روز شد."
 
-#: src/app/city.js:264
+#: src/app/city.js:288
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%Id هفته پیش به‌روز شد."
 
-#: src/app/city.js:269
+#: src/app/city.js:293
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "%Id ماه پیش به‌روز شد."
 
-#: src/app/dailyForecast.js:36
+#: src/app/dailyForecast.js:38
 msgid "Daily Forecast"
 msgstr "پیش‌بینی روزانه"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
+#: src/app/dailyForecast.js:103 src/app/hourlyForecast.js:94
 msgid "Forecast not available"
 msgstr "پیش‌بینی موجود نیست"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:189
 msgid "%b %e"
 msgstr "%Oe %B"
 
@@ -240,8 +240,12 @@ msgstr "%Oe %B"
 msgid "Hourly Forecast"
 msgstr "پیش‌بینی ساعتی"
 
+#: src/app/hourlyForecast.js:83
+msgid "Now"
+msgstr "اکنون"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:115
 msgid "%l∶%M %p"
 msgstr "%Ol∶%OM %p"
 
@@ -262,7 +266,7 @@ msgstr "نمای جهانی"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:141
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -319,9 +323,6 @@ msgstr "%s, %s"
 
 #~ msgid "Click on locations to select them"
 #~ msgstr "کلیک بر روی مکان‌ها جهت انتخاب آنها"
-
-#~ msgid "New"
-#~ msgstr "جدید"
 
 #~ msgid "Cancel"
 #~ msgstr "لغو"
