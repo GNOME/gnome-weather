@@ -59,7 +59,6 @@ endif
 appdata_conf = configuration_data()
 appdata_conf.set('app_id', weather_id)
 appdata = i18n.merge_file(
-  'appdata',
   input: configure_file(
     input: '@0@.appdata.xml.in.in'.format(default_id),
     output: '@0@.appdata.xml.in'.format(default_id),
