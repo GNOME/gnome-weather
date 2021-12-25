@@ -4,12 +4,12 @@
 #
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2013, 2014, 2015, 2016.
 # Edurne Labaka <elabaka@uzei.com>, 2015.
-# Asier Sarasua Garmendia  <asiersarasua@ni.eus, 2013, 2019, 2020.
+# Asier Sarasua Garmendia  <asiersarasua@ni.eus, 2013, 2019, 2020, 2021.
 msgid ""
 msgstr "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-28 12:52+0000\n"
-"PO-Revision-Date: 2020-08-02 19:00+0100\n"
+"POT-Creation-Date: 2021-10-28 15:13+0000\n"
+"PO-Revision-Date: 2021-12-25 19:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -48,7 +48,7 @@ msgid ""
 "name in the Activities Overview."
 msgstr "Aukeran, GNOME Shell-ekin integratu daiteke, azken aldian bilatutako herrien uneko baldintzak ikusteko haien izena jardueren ikuspegian idatzita."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:154
 msgid "The GNOME Project"
 msgstr "GNOME proiektua"
 
@@ -145,11 +145,11 @@ msgstr "Lekuak"
 msgid "Current conditions"
 msgstr "Uneko baldintzak"
 
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:186
 msgid "Hourly"
 msgstr "Orduro"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:207
 msgid "Daily"
 msgstr "Egunero"
 
@@ -173,60 +173,60 @@ msgstr "Hasteko, hautatu kokaleku bat."
 msgid "Search for a city or country"
 msgstr "Bilatu hiria edo herrialdea"
 
-#: src/app/city.js:209
+#: src/app/city.js:235
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "%.0f° ematen du"
 
-#: src/app/city.js:241
+#: src/app/city.js:265
 msgid "Updated just now."
 msgstr "Orain bertan eguneratua."
 
-#: src/app/city.js:246
+#: src/app/city.js:270
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Duela minutu %d eguneratua."
 msgstr[1] "Duela %d minutu eguneratua."
 
-#: src/app/city.js:252
+#: src/app/city.js:276
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Duela ordu %d eguneratua."
 msgstr[1] "Duela %d ordu eguneratua."
 
-#: src/app/city.js:258
+#: src/app/city.js:282
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Duela egun %d eguneratua."
 msgstr[1] "Duela %d egun eguneratua."
 
-#: src/app/city.js:264
+#: src/app/city.js:288
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Duela aste %d eguneratua."
 msgstr[1] "Duela %d aste eguneratua."
 
-#: src/app/city.js:269
+#: src/app/city.js:293
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Duela hilabete %d eguneratua."
 msgstr[1] "Duela %d hilabete eguneratua."
 
-#: src/app/dailyForecast.js:36
+#: src/app/dailyForecast.js:38
 msgid "Daily Forecast"
 msgstr "Eguneroko iragarpena"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
+#: src/app/dailyForecast.js:103 src/app/hourlyForecast.js:94
 msgid "Forecast not available"
 msgstr "Iragarpena ez dago eskuragarri"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:189
 msgid "%b %e"
 msgstr "%b %e"
 
@@ -234,10 +234,14 @@ msgstr "%b %e"
 msgid "Hourly Forecast"
 msgstr "Orduroko iragarpena"
 
+#: src/app/hourlyForecast.js:83
+msgid "Now"
+msgstr "Orain"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:115
 msgid "%l∶%M %p"
-msgstr "%l∶%M %p"
+msgstr "l%l∶%M %p"
 
 #: src/app/window.js:202
 msgid "translator-credits"
@@ -254,7 +258,7 @@ msgstr "Munduaren ikuspegia"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:141
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
