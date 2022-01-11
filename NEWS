@@ -1,3 +1,29 @@
+42.alpha
+=======
+* Show current temperature in the forecast chart (Vitaly Dyachkov)
+* Opt in to libhandy dark style preference (Christopher Davis)
+* Add new Thermometer widget (Vitaly Dyachkov)
+* Use location portal to access location (Bastien Nocera, Florian Müllner)
+
+* Bugs fixed:
+ - Fix hourly graph shifted to the left by one day (Vitaly Dyachkov)
+
+* Translation Updates:
+ - Abkhazian
+ - Basque
+ - Catalan
+ - Chinese (China)
+ - Croatian
+ - Friulian
+ - Hebrew
+ - Icelandic
+ - Indonesian
+ - Latvian
+ - Occitan
+ - Persian
+ - Portuguese
+ - Russian
+
 41.0
 =======
 * Translation updates:

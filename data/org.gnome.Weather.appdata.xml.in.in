@@ -46,6 +46,27 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2022-01-11" version="42.alpha">
+      <description>
+        <p>GNOME Weather 42.alpha comes with a new thermometer widget and support for the new dark style preference.</p>
+        <ul>
+          <li>Abkhazian</li>
+          <li>Basque</li>
+          <li>Catalan</li>
+          <li>Chinese (China)</li>
+          <li>Croatian</li>
+          <li>Friulian</li>
+          <li>Hebrew</li>
+          <li>Icelandic</li>
+          <li>Indonesian</li>
+          <li>Latvian</li>
+          <li>Occitan</li>
+          <li>Persian</li>
+          <li>Portuguese</li>
+          <li>Russian</li>
+        </ul>
+      </description>
+    </release>
     <release date="2021-09-21" version="41.0">
       <description>
         <p>GNOME Weather 41 brings updated translations for the following locales:</p>
