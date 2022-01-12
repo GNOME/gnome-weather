@@ -80,7 +80,8 @@ var CurrentLocationController = class CurrentLocationController {
             return;
         }
 
-        if (!Geoclue.Simple.new_with_thresholds) {
+        // geoclue doesn't use a client proxy inside a flatpak sandbox
+        if (this._simple.client && !Geoclue.Simple.new_with_thresholds) {
             let client = this._simple.get_client();
             client.distance_threshold = 100;
         }
