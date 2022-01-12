@@ -5,14 +5,14 @@
 # Adam Matoušek <adamatousek@gmail.com>, 2013.
 # Daniel Puncman <puncmdan@fel.cvut.cz>, 2013.
 # František Zatloukal <Zatloukal.Frantisek@gmail.com>, 2014.
-# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015, 2016, 2019, 2020, 2021.
+# Marek Černocký <marek@manet.cz>, 2013, 2014, 2015, 2016, 2019, 2020, 2021, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-03-08 14:56+0000\n"
-"PO-Revision-Date: 2021-03-08 15:33+0100\n"
+"POT-Creation-Date: 2021-10-28 15:13+0000\n"
+"PO-Revision-Date: 2022-01-12 22:27+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -59,7 +59,7 @@ msgstr ""
 "aktuální počasí v nedávno vyhledaných městech napsaním jejich názvu v "
 "přehledu činností."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:154
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -162,11 +162,11 @@ msgstr "Místa"
 msgid "Current conditions"
 msgstr "Současné podmínky"
 
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:186
 msgid "Hourly"
 msgstr "Hodinová"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:207
 msgid "Daily"
 msgstr "Denní"
 
@@ -190,16 +190,16 @@ msgstr "Začněte výběrem místa."
 msgid "Search for a city or country"
 msgstr "hledat město nebo zemi"
 
-#: src/app/city.js:209
+#: src/app/city.js:235
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Pocitově jako %.0f"
 
-#: src/app/city.js:241
+#: src/app/city.js:265
 msgid "Updated just now."
 msgstr "Právě aktualizováno."
 
-#: src/app/city.js:246
+#: src/app/city.js:270
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -207,7 +207,7 @@ msgstr[0] "Aktualizováno před %d minutou."
 msgstr[1] "Aktualizováno před %d minutami."
 msgstr[2] "Aktualizováno před %d minutami."
 
-#: src/app/city.js:252
+#: src/app/city.js:276
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -215,7 +215,7 @@ msgstr[0] "Aktualizováno před %d hodinou."
 msgstr[1] "Aktualizováno před %d hodinami"
 msgstr[2] "Aktualizováno před %d hodinami"
 
-#: src/app/city.js:258
+#: src/app/city.js:282
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -223,7 +223,7 @@ msgstr[0] "Aktualizováno před %d dnem."
 msgstr[1] "Aktualizováno před %d dny."
 msgstr[2] "Aktualizováno před %d dny."
 
-#: src/app/city.js:264
+#: src/app/city.js:288
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -231,7 +231,7 @@ msgstr[0] "Aktualizováno před %d týdnem."
 msgstr[1] "Aktualizováno před %d týdny."
 msgstr[2] "Aktualizováno před %d týdny."
 
-#: src/app/city.js:269
+#: src/app/city.js:293
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -239,16 +239,16 @@ msgstr[0] "Aktualizováno před %d měsícem."
 msgstr[1] "Aktualizováno před %d měsíci."
 msgstr[2] "Aktualizováno před %d měsíci."
 
-#: src/app/dailyForecast.js:36
+#: src/app/dailyForecast.js:38
 msgid "Daily Forecast"
 msgstr "Denní předpověď počasí"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
+#: src/app/dailyForecast.js:103 src/app/hourlyForecast.js:94
 msgid "Forecast not available"
 msgstr "Předpověď není dostupná"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:189
 msgid "%b %e"
 msgstr "%e. %B"
 
@@ -256,8 +256,12 @@ msgstr "%e. %B"
 msgid "Hourly Forecast"
 msgstr "Hodinová předpověď počasí"
 
+#: src/app/hourlyForecast.js:83
+msgid "Now"
+msgstr "Právě teď"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:115
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
@@ -278,7 +282,7 @@ msgstr "Zobrazení světa"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:141
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -290,9 +294,3 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
-#~ msgid "Search for a location"
-#~ msgstr "Vyhledání místa"
-
-#~ msgid "To see weather information, enter the name of a city."
-#~ msgstr "Abyste viděli informace o počasí, zadejte název města."
