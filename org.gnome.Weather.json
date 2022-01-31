@@ -89,16 +89,6 @@
             ]
         },
         {
-            "name" : "libhandy",
-            "buildsystem" : "meson",
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libhandy.git"
-                }
-            ]
-        },
-        {
             "name" : "gnome-weather",
             "buildsystem" : "meson",
             "config-opts" : [
