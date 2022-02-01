@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2020-07-22 15:18+0000\n"
+"POT-Creation-Date: 2021-10-31 15:23+0000\n"
 "PO-Revision-Date: 2020-08-17 07:00+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
@@ -20,8 +20,8 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 src/app/main.js:63
-#: src/app/window.js:227 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
+#: src/app/window.js:203 src/service/main.js:48
 msgid "Weather"
 msgstr "天気"
 
@@ -55,7 +55,7 @@ msgstr ""
 "GNOME Shell と統合することができ、アクティビティ画面で都市名を入力すること"
 "で、よく調べる都市の現在の天候を参照することができます。"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:74
+#: data/org.gnome.Weather.appdata.xml.in.in:154
 msgid "The GNOME Project"
 msgstr "The GNOME Project"
 
@@ -93,163 +93,173 @@ msgstr ""
 "す。"
 
 # この文字列は翻訳しない方がいい
-#: data/city.ui:8
+#: data/city.ui:9
 msgid "City view"
 msgstr "City view"
 
-#: data/city.ui:30
+#: data/city.ui:32
 msgid "Loading…"
 msgstr "読み込み中…"
 
-#: data/day-entry.ui:27
+#: data/day-entry.ui:26
 msgid "Night"
 msgstr "深夜"
 
-#: data/day-entry.ui:39
+#: data/day-entry.ui:41
 msgid "Morning"
 msgstr "朝"
 
-#: data/day-entry.ui:51
+#: data/day-entry.ui:56
 msgid "Afternoon"
 msgstr "昼"
 
-#: data/day-entry.ui:63
+#: data/day-entry.ui:71
 msgid "Evening"
 msgstr "夜"
 
-#: data/places-popover.ui:45
+#: data/places-popover.ui:46
 msgid "Automatic Location"
 msgstr "自動位置検出"
 
-#: data/places-popover.ui:84
+#: data/places-popover.ui:85
 msgid "Locating…"
 msgstr "位置を検出中..."
 
-#: data/places-popover.ui:141
+#: data/places-popover.ui:142
 msgid "Search for a city"
 msgstr "都市の検索"
 
-#: data/places-popover.ui:173
+#: data/places-popover.ui:174
 msgid "Viewed Recently"
 msgstr "最近表示した場所"
 
-#: data/primary-menu.ui:4
+#: data/primary-menu.ui:4 data/window.ui:7
 msgid "_Temperature Unit"
 msgstr "温度の単位(_T)"
 
-#: data/primary-menu.ui:6
+#: data/primary-menu.ui:6 data/window.ui:9
 msgid "_Celsius"
 msgstr "摂氏 (℃)(_C)"
 
-#: data/primary-menu.ui:11
+#: data/primary-menu.ui:11 data/window.ui:14
 msgid "_Fahrenheit"
 msgstr "華氏 (℉)(_F)"
 
-#: data/primary-menu.ui:19
+#: data/primary-menu.ui:19 data/window.ui:22
 msgid "_About Weather"
 msgstr "このアプリケーションについて(_A)"
 
-#: data/weather-widget.ui:59
-msgid "Hourly"
-msgstr "1 時間ごと"
-
-#: data/weather-widget.ui:91
-msgid "Daily"
-msgstr "1 日ごと"
-
-#: data/weather-widget.ui:190
+#: data/weather-widget.ui:73
 msgid "Places"
 msgstr "場所"
 
-#: data/weather-widget.ui:266
+#: data/weather-widget.ui:149
 msgid "Current conditions"
 msgstr "現在の天候"
 
-#: data/window.ui:49
+#: data/weather-widget.ui:186
+msgid "Hourly"
+msgstr "1 時間ごと"
+
+#: data/weather-widget.ui:207
+msgid "Daily"
+msgstr "1 日ごと"
+
+#: data/window.ui:51
 msgid "Refresh"
 msgstr "更新"
 
-#: data/window.ui:105
-msgid "Search for a location"
-msgstr "場所の検索"
+#: data/window.ui:77
+msgid "Select Location"
+msgstr "場所の選択"
 
-#: data/window.ui:119
-msgid "To see weather information, enter the name of a city."
-msgstr "気象情報を表示するには、都市の名前を入力してください。"
+#: data/window.ui:126
+#, fuzzy
+#| msgid "_About Weather"
+msgid "Welcome to Weather!"
+msgstr "このアプリケーションについて(_A)"
 
-#: src/app/city.js:211
+#: data/window.ui:127
+msgid "To get started, select a location."
+msgstr ""
+
+#: data/window.ui:136
+#, fuzzy
+#| msgid "Search for a city"
+msgid "Search for a city or country"
+msgstr "都市の検索"
+
+#: src/app/city.js:235
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "体感気温 %.0f°"
 
-#: src/app/city.js:241
+#: src/app/city.js:268
 msgid "Updated just now."
 msgstr "たった今更新しました。"
 
-#: src/app/city.js:246
+#: src/app/city.js:273
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d 分前に更新しました。"
 
-#: src/app/city.js:252
+#: src/app/city.js:279
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d 時間前に更新しました。"
 
-#: src/app/city.js:258
+#: src/app/city.js:285
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d 日前に更新しました。"
 
-#: src/app/city.js:264
+#: src/app/city.js:291
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d 週間前に更新しました。"
 
-#: src/app/city.js:269
-#, javascript-format
+#: src/app/city.js:296
+#, fuzzy, javascript-format
+#| msgid "Updated %d month ago."
+#| msgid_plural "%d months ago."
 msgid "Updated %d month ago."
-msgid_plural "%d months ago."
+msgid_plural "Updated %d months ago."
 msgstr[0] "%d ヵ月前に更新しました。"
 
-#: src/app/dailyForecast.js:33
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "毎日の天気予報"
 
-#: src/app/dailyForecast.js:90 src/app/hourlyForecast.js:87
+#: src/app/dailyForecast.js:89 src/app/hourlyForecast.js:85
 msgid "Forecast not available"
 msgstr "天気予報がありません"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:176
-msgid "%e %b"
-msgstr "%-m月%-e日"
+#: src/app/dailyForecast.js:175
+msgid "%b %e"
+msgstr ""
 
-#: src/app/hourlyForecast.js:38
+#: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "1 時間ごとの天気予報"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:105
+#: src/app/hourlyForecast.js:103
 msgid "%l∶%M %p"
 msgstr "%p %I:%M"
 
-#: src/app/window.js:76
-msgid "Select Location"
-msgstr "場所の選択"
-
-#: src/app/window.js:226
+#: src/app/window.js:202
 msgid "translator-credits"
 msgstr ""
 "松澤 二郎 <jmatsuzawa@gnome.org>\n"
 "Hajime Taira <htaira@redhat.com>\n"
 "sicklylife <translation@sicklylife.jp>"
 
-#: src/app/window.js:228
+#: src/app/window.js:204
 msgid "A weather application"
 msgstr "天気予報アプリケーション"
 
@@ -273,6 +283,15 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Search for a location"
+#~ msgstr "場所の検索"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "気象情報を表示するには、都市の名前を入力してください。"
+
+#~ msgid "%e %b"
+#~ msgstr "%-m月%-e日"
 
 #~ msgid "Today"
 #~ msgstr "今日"
