@@ -1,16 +1,16 @@
 # Japanese translation for gnome-weather.
-# Copyright (C) 2013-2016, 2019-2020 gnome-weather's COPYRIGHT HOLDER
+# Copyright (C) 2013-2016, 2019-2020, 2020 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013, 2015, 2016.
 # Hajime Taira <htaira@redhat.com>, 2014.
-# sicklylife <translation@sicklylife.jp>, 2019-2020.
+# sicklylife <translation@sicklylife.jp>, 2019-2020, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
 "POT-Creation-Date: 2021-10-31 15:23+0000\n"
-"PO-Revision-Date: 2020-08-17 07:00+0900\n"
+"PO-Revision-Date: 2022-02-01 20:00+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -174,20 +174,16 @@ msgid "Select Location"
 msgstr "場所の選択"
 
 #: data/window.ui:126
-#, fuzzy
-#| msgid "_About Weather"
 msgid "Welcome to Weather!"
-msgstr "このアプリケーションについて(_A)"
+msgstr "“天気”へようこそ!"
 
 #: data/window.ui:127
 msgid "To get started, select a location."
-msgstr ""
+msgstr "まず場所を選択してください。"
 
 #: data/window.ui:136
-#, fuzzy
-#| msgid "Search for a city"
 msgid "Search for a city or country"
-msgstr "都市の検索"
+msgstr "都市や国を検索"
 
 #: src/app/city.js:235
 #, javascript-format
@@ -223,9 +219,7 @@ msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d 週間前に更新しました。"
 
 #: src/app/city.js:296
-#, fuzzy, javascript-format
-#| msgid "Updated %d month ago."
-#| msgid_plural "%d months ago."
+#, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "%d ヵ月前に更新しました。"
@@ -241,7 +235,7 @@ msgstr "天気予報がありません"
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:175
 msgid "%b %e"
-msgstr ""
+msgstr "%B%-e日"
 
 #: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
