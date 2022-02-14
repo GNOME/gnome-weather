@@ -1,390 +1,313 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.22.0 -->
 <interface>
-  <requires lib="gtk+" version="3.20"/>
-  <object class="GtkPopoverMenu" id="more_menu">
-    <property name="can_focus">False</property>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkPopover" id="more_menu">
     <style>
       <class name="day-popover"/>
     </style>
-    <child>
+    <property name="child">
       <object class="GtkGrid">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
         <property name="row_spacing">8</property>
         <property name="column_spacing">16</property>
-        <property name="row_homogeneous">True</property>
+
         <property name="margin_top">16</property>
         <property name="margin_bottom">16</property>
         <property name="margin_start">16</property>
         <property name="margin_end">16</property>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="halign">end</property>
             <property name="label" translatable="yes">Night</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">1</property>
+            </layout>
             <style>
-              <class name="small-label"/>
+              <class name="caption"/>
             </style>
           </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">1</property>
-          </packing>
         </child>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="halign">end</property>
             <property name="label" translatable="yes">Morning</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">2</property>
+            </layout>
             <style>
-              <class name="small-label"/>
+              <class name="caption"/>
             </style>
           </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">2</property>
-          </packing>
         </child>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="halign">end</property>
             <property name="label" translatable="yes">Afternoon</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">3</property>
+            </layout>
             <style>
-              <class name="small-label"/>
+              <class name="caption"/>
             </style>
           </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">3</property>
-          </packing>
         </child>
         <child>
           <object class="GtkLabel">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="halign">end</property>
             <property name="label" translatable="yes">Evening</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">4</property>
+            </layout>
             <style>
-              <class name="small-label"/>
+              <class name="caption"/>
             </style>
           </object>
-          <packing>
-            <property name="left_attach">0</property>
-            <property name="top_attach">4</property>
-          </packing>
         </child>
         <child>
           <object class="GtkImage" id="nightImage">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="icon_name">weather-showers-symbolic</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">1</property>
+            </layout>
           </object>
-          <packing>
-            <property name="left_attach">1</property>
-            <property name="top_attach">1</property>
-          </packing>
         </child>
         <child>
           <object class="GtkImage" id="morningImage">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="icon_name">weather-showers-symbolic</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">2</property>
+            </layout>
           </object>
-          <packing>
-            <property name="left_attach">1</property>
-            <property name="top_attach">2</property>
-          </packing>
         </child>
         <child>
           <object class="GtkImage" id="afternoonImage">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="icon_name">weather-showers-symbolic</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">3</property>
+            </layout>
           </object>
-          <packing>
-            <property name="left_attach">1</property>
-            <property name="top_attach">3</property>
-          </packing>
         </child>
         <child>
           <object class="GtkImage" id="eveningImage">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="icon_name">weather-showers-symbolic</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">4</property>
+            </layout>
           </object>
-          <packing>
-            <property name="left_attach">1</property>
-            <property name="top_attach">4</property>
-          </packing>
         </child>
         <child>
           <object class="GtkGrid">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="vexpand">True</property>
             <property name="row_spacing">8</property>
-            <property name="row_homogeneous">True</property>
-            <property name="column_homogeneous">True</property>
+            <property name="row_homogeneous">true</property>
+            <property name="column_homogeneous">true</property>
             <child>
               <object class="GtkLabel" id="nightTemperatureLabel">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">16°</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">1</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">1</property>
-              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="morningTemperatureLabel">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">16°</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">2</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">2</property>
-              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="afternoonTemperatureLabel">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">16°</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">3</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">3</property>
-              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="eveningTemperatureLabel">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">16°</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">4</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">4</property>
-              </packing>
             </child>
             <child>
               <object class="GtkImage">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="icon_name">temperature-symbolic</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-              </packing>
             </child>
             <child>
               <object class="GtkImage">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="icon_name">weather-showers-scattered-symbolic</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">0</property>
-              </packing>
             </child>
             <child>
               <object class="GtkImage">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="icon_name">weather-windy</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">0</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">2</property>
-                <property name="top_attach">0</property>
-              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="nightHumidity">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">2.1 mm</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">1</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">1</property>
-              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="morningHumidity">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">2.1 mm</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">2</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">2</property>
-              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="afternoonHumidity">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">2.1 mm</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">3</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">3</property>
-              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="eveningHumidity">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">2.1 mm</property>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">4</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">4</property>
-              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="nightWind">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">5 m/s</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">1</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">2</property>
-                <property name="top_attach">1</property>
-              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="morningWind">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">5 m/s</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">2</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">2</property>
-                <property name="top_attach">2</property>
-              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="afternoonWind">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">5 m/s</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">3</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">2</property>
-                <property name="top_attach">3</property>
-              </packing>
             </child>
             <child>
               <object class="GtkLabel" id="eveningWind">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label">5 m/s</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="row">4</property>
+                </layout>
               </object>
-              <packing>
-                <property name="left_attach">2</property>
-                <property name="top_attach">4</property>
-              </packing>
             </child>
+            <layout>
+              <property name="column">2</property>
+              <property name="row">0</property>
+              <property name="row-span">5</property>
+            </layout>
           </object>
-          <packing>
-            <property name="left_attach">2</property>
-            <property name="top_attach">0</property>
-            <property name="height">5</property>
-          </packing>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-        <child>
-          <placeholder/>
         </child>
       </object>
-    </child>
+    </property>
   </object>
-  <template class="Gjs_DayEntry" parent="GtkBox">
+  <template class="Gjs_DayEntry">
     <property name="width_request">100</property>
     <property name="height_request">200</property>
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
     <property name="margin_top">18</property>
     <property name="margin_bottom">18</property>
     <property name="hexpand">True</property>
     <property name="vexpand">True</property>
-    <property name="orientation">vertical</property>
-    <property name="spacing">18</property>
     <child>
-      <object class="GtkBox">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">6</property>
-        <child>
-          <object class="GtkLabel" id="nameLabel">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label">Tues</property>
-          </object>
-        </child>
-        <child>
-          <object class="GtkLabel" id="dateLabel">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="label">7 June</property>
-            <style>
-              <class name="small-label"/>
-            </style>
-          </object>
-        </child>
+      <object class="GtkLabel" id="nameLabel">
+        <property name="margin_top">8</property>
+        <property name="label">Tues</property>
+        <style>
+          <class name="caption-heading"/>
+        </style>
+      </object>
+    </child>
+    <child>
+      <object class="GtkLabel" id="dateLabel">
+        <property name="margin_top">8</property>
+        <property name="label">7 June</property>
+        <style>
+          <class name="caption"/>
+        </style>
       </object>
     </child>
     <child>
       <object class="GtkImage" id="image">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
         <property name="valign">start</property>
         <property name="pixel_size">32</property>
         <property name="icon_name">weather-showers-symbolic</property>
+        <style>
+          <class name="forecast-graphic"/>
+        </style>
       </object>
     </child>
     <child>
       <object class="Gjs_Thermometer" id="thermometer">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
         <property name="vexpand">True</property>
         <property name="hexpand">True</property>
       </object>
     </child>
     <child>
       <object class="GtkMenuButton">
-        <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="receives_default">False</property>
         <property name="halign">center</property>
+        <property name="icon_name">view-more-symbolic</property>
         <property name="valign">center</property>
         <property name="popover">more_menu</property>
-        <child>
-          <object class="GtkImage">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="icon_name">view-more-symbolic</property>
-          </object>
-        </child>
         <style>
+          <class name="forecast-button"/>
           <class name="image-button"/>
           <class name="circular"/>
           <class name="flat"/>
         </style>
       </object>
     </child>
+
   </template>
 </interface>

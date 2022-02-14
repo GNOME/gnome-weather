@@ -21,16 +21,15 @@ pkg.initFormat();
 pkg.require({ 'Gio': '2.0',
               'GLib': '2.0',
               'GObject': '2.0',
-              'GWeather': '3.0' });
+              'GWeather': '4.0' });
 
-const Gio = imports.gi.Gio;
-const GLib = imports.gi.GLib;
-const GObject = imports.gi.GObject;
-const GWeather = imports.gi.GWeather;
+import Gio from 'gi://Gio';
+import GLib from 'gi://GLib';
+import GObject from 'gi://GObject';
+import GWeather from 'gi://GWeather';
 
-const Util = imports.misc.util;
-const SearchProvider = imports.service.searchProvider;
-const World = imports.shared.world;
+import * as SearchProvider from './searchProvider.js';
+import * as World from '../shared/world.js';
 
 function initEnvironment() {
     window.getApp = function() {
@@ -41,13 +40,13 @@ function initEnvironment() {
 const BackgroundService = GObject.registerClass(
     class WeatherBackgroundService extends Gio.Application {
 
-    _init() {
-        super._init({ application_id: pkg.name,
+    constructor() {
+        super({ application_id: pkg.name,
                       flags: Gio.ApplicationFlags.IS_SERVICE,
                       inactivity_timeout: 60000 });
         GLib.set_application_name(_("Weather"));
 
-        this._searchProvider = new SearchProvider.SearchProvider(this);
+        this._searchProvider = new SearchProvider.WeatherSearchProvider(this);
 
         if (!pkg.moduledir.startsWith('resource://'))
             this.debug = true;
@@ -106,7 +105,7 @@ const BackgroundService = GObject.registerClass(
     }
 });
 
-function main(argv) {
+export function main(argv) {
     initEnvironment();
 
     return (new BackgroundService()).run(argv);

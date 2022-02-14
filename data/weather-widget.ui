@@ -1,302 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.22.0 -->
 <interface>
-  <requires lib="gtk+" version="3.0"/>
-  <template class="Gjs_WeatherWidget" parent="GtkFrame">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="label_xalign">0</property>
+  <requires lib="gtk" version="4.0"/>
+  <template class="Gjs_WeatherWidget">
     <child>
-      <object class="GtkFrame" id="contentFrame">
-        <property name="name">weather-page-content-view</property>
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="label_xalign">0</property>
-        <property name="shadow_type">none</property>
+      <object class="GtkBox" id="outerBox">
+        <property name="orientation">vertical</property>
+        <property name="margin-start">0</property>
+        <property name="margin-end">0</property>
+        <property name="margin-top">18</property>
+        <property name="margin-bottom">18</property>
+        <property name="spacing">20</property>
         <child>
-          <object class="HdyClamp">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="maximum_size">1010</property>
-            <property name="tightening_threshold">600</property>
+          <object class="GtkGrid">
+            <property name="name">conditions-grid</property>
+            <property name="column_spacing">10</property>
             <child>
-              <object class="GtkBox" id="outerBox">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="orientation">vertical</property>
-                <property name="margin">18</property>
-                <property name="spacing">18</property>
+              <object class="GtkImage" id="conditionsImage">
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="pixel_size">84</property>
+                <style>
+                  <class name="icon-dropshadow"/>
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                  <property name="row-span">2</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuButton" id="placesButton">
+                <property name="receives_default">true</property>
+                <property name="halign">start</property>
+                <property name="valign">start</property>
                 <child>
-                  <object class="GtkGrid" id="inner-grid">
-                    <property name="name">conditions-grid</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="column_spacing">10</property>
+                  <object class="GtkBox" id="placesBox">
+                    <property name="spacing">12</property>
                     <child>
-                      <object class="GtkImage" id="conditionsImage">
-                        <property name="name">conditions-image</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="halign">start</property>
-                        <property name="valign">center</property>
-                        <property name="pixel_size">84</property>
-                        <style>
-                          <class name="icon-dropshadow"/>
-                        </style>
+                      <object class="GtkLabel" id="placesLabel">
+                        <property name="name">places-label</property>
+                        <property name="wrap">true</property>
+                        <property name="wrap-mode">word-char</property>
+                        <property name="label" translatable="yes">Places</property>
                       </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
-                        <property name="height">2</property>
-                      </packing>
                     </child>
                     <child>
-                      <object class="GtkMenuButton" id="placesButton">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="focus_on_click">False</property>
-                        <property name="receives_default">True</property>
-                        <property name="halign">start</property>
-                        <property name="valign">start</property>
-                        <child>
-                          <object class="GtkBox" id="placesBox">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="spacing">12</property>
-                            <child>
-                              <object class="GtkLabel" id="placesLabel">
-                                <property name="name">places-label</property>
-                                <property name="wrap">True</property>
-                                <property name="wrap-mode">word-char</property>
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label" translatable="yes">Places</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkImage" id="placesImage">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="icon_name">pan-down-symbolic</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
-                          </object>
-                        </child>
-                        <style>
-                          <class name="text-button"/>
-                          <class name="flat"/>
-                        </style>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkBox" id="temperatureBox">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="halign">start</property>
-                        <property name="valign">start</property>
-                        <property name="spacing">8</property>
-                        <property name="baseline_position">bottom</property>
-                        <child>
-                          <object class="GtkLabel" id="temperatureLabel">
-                            <property name="name">temperature-label</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="halign">start</property>
-                            <property name="valign">baseline</property>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkLabel" id="apparentLabel">
-                            <property name="name">apparent-label</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="halign">start</property>
-                            <property name="valign">baseline</property>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="left_attach">1</property>
-                        <property name="top_attach">1</property>
-                      </packing>
-                    </child>
-                    <child internal-child="accessible">
-                      <object class="AtkObject" id="inner-grid-atkobject">
-                        <property name="AtkObject::accessible-name" translatable="yes">Current conditions</property>
+                      <object class="GtkImage">
+                        <property name="icon_name">pan-down-symbolic</property>
                       </object>
                     </child>
                   </object>
                 </child>
+                <style>
+                  <class name="text-button"/>
+                  <class name="flat"/>
+                </style>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="temperatureBox">
+                <property name="halign">start</property>
+                <property name="valign">start</property>
+                <property name="spacing">8</property> -->
+                <property name="baseline_position">bottom</property>
                 <child>
-                  <object class="GtkOverlay" id="forecast-overlay">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <child>
-                      <object class="GtkFrame" id="forecastFrame">
-                        <property name="name">forecast-frame</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="shadow-type">GTK_SHADOW_IN</property>
-                        <child>
-                          <object class="GtkStack" id="forecastStack">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="transition_type">crossfade</property>
-                            <child>
-                              <object class="GtkScrolledWindow" id="forecast-hourly">
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="vscrollbar_policy">never</property>
-                                <property name="min_content_width">308</property>
-                                <child>
-                                  <object class="GtkViewport" id="forecast-hourly-viewport">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="hscroll_policy">natural</property>
-                                    <property name="vscroll_policy">natural</property>
-                                  </object>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="name">hourly</property>
-                                <property name="title" translatable="yes">Hourly</property>
-                                <property name="icon-name">preferences-system-time-symbolic</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkScrolledWindow" id="forecast-daily">
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="vscrollbar_policy">never</property>
-                                <property name="min_content_width">308</property>
-                                <child>
-                                  <object class="GtkViewport" id="forecast-daily-viewport">
-                                    <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
-                                    <property name="hscroll_policy">natural</property>
-                                    <property name="vscroll_policy">natural</property>
-                                  </object>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="name">daily</property>
-                                <property name="title" translatable="yes">Daily</property>
-                                <property name="icon-name">x-office-calendar-symbolic</property>
-                              </packing>
-                            </child>
-                          </object>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="index">-1</property>
-                      </packing>
-                    </child>
-                    <child type="overlay">
-                      <object class="GtkButton" id="rightButton">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">True</property>
-                        <property name="halign">end</property>
-                        <property name="valign">center</property>
-                        <property name="margin_end">28</property>
-                        <child>
-                          <object class="GtkImage" id="right-image">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="icon_name">go-next-symbolic</property>
-                          </object>
-                        </child>
-                        <style>
-                          <class name="osd"/>
-                          <class name="circular"/>
-                        </style>
-                      </object>
-                    </child>
-                    <child type="overlay">
-                      <object class="GtkButton" id="leftButton">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">True</property>
-                        <property name="halign">start</property>
-                        <property name="valign">center</property>
-                        <property name="margin_start">28</property>
-                        <child>
-                          <object class="GtkImage" id="left-image">
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="icon_name">go-previous-symbolic</property>
-                            <property name="icon_size">1</property>
-                          </object>
-                        </child>
-                        <style>
-                          <class name="osd"/>
-                          <class name="circular"/>
-                        </style>
-                      </object>
-                      <packing>
-                        <property name="index">1</property>
-                      </packing>
-                    </child>
+                  <object class="GtkLabel" id="temperatureLabel">
+                    <property name="name">temperature-label</property>
+                    <property name="halign">start</property>
+                    <property name="valign">baseline</property>
                   </object>
                 </child>
                 <child>
-                  <object class="GtkGrid">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="row_spacing">8</property>
-                    <child>
-                      <object class="GtkLabel" id="updatedTimeLabel">
-                        <property name="name">updated-time-label</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="halign">start</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="attributionLabel">
-                        <property name="name">attribution-label</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="use_markup">True</property>
-                        <property name="wrap">True</property>
-                        <property name="track_visited_links">False</property>
-                        <property name="xalign">0</property>
-                      </object>
-                      <packing>
-                        <property name="left_attach">0</property>
-                        <property name="top_attach">1</property>
-                      </packing>
-                    </child>
+                  <object class="GtkLabel" id="apparentLabel">
+                    <property name="halign">start</property>
+                    <property name="valign">baseline</property>
+                    <style>
+                      <class name="caption" />
+                    </style>
                   </object>
                 </child>
+                <layout>
+                  <property name="column">1</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkOverlay">
+            <property name="child">
+              <object class="AdwViewStack" id="forecastStack">
+                <child>
+                  <object class="AdwViewStackPage">
+                    <property name="name">hourly</property>
+                    <property name="title" translatable="yes">Hourly</property>
+                    <property name="icon-name">weather-hourly-symbolic</property>
+                    <property name="child">
+                      <object class="GtkScrolledWindow" id="forecastHourlyScrollWindow">
+                        <style>
+                          <class name="forecast-card"/>
+                          <class name="card"/>
+                        </style>
+                        <property name="vscrollbar_policy">never</property>
+                        <property name="hscrollbar_policy">external</property>
+                        <property name="overflow">hidden</property>
+                        <property name="hadjustment">
+                          <object class="GtkAdjustment" id="forecastHourlyAdjustment" />
+                        </property>
+                        <property name="min_content_width">308</property>
+                        <property name="child">
+                          <object class="GtkViewport">
+                            <property name="hscroll_policy">natural</property>
+                            <property name="vscroll_policy">natural</property>
+                            <child>
+                              <object class="Gjs_HourlyForecastBox" id="forecastHourly" />
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwViewStackPage">
+                    <property name="name">daily</property>
+                    <property name="title" translatable="yes">Daily</property>
+                    <property name="icon-name">x-office-calendar-symbolic</property>
+                    <property name="child">
+                      <object class="GtkScrolledWindow" id="forecastDailyScrollWindow">
+                        <style>
+                          <class name="forecast-card"/>
+                          <class name="card"/>
+                        </style>
+                        <property name="vscrollbar_policy">never</property>
+                        <property name="hscrollbar_policy">external</property>
+                        <property name="overflow">hidden</property>
+                        <property name="hadjustment">
+                          <object class="GtkAdjustment" id="forecastDailyAdjustment" />
+                        </property>
+                        <property name="min_content_width">308</property>
+                        <property name="child">
+                          <object class="GtkViewport">
+                            <property name="hscroll_policy">natural</property>
+                            <property name="vscroll_policy">natural</property>
+                            <child>
+                              <object class="Gjs_DailyForecastBox" id="forecastDaily"/>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </property>
+            <child type="overlay">
+              <object class="GtkButton" id="rightButton">
+                <property name="receives_default">true</property>
+                <property name="halign">end</property>
+                <property name="valign">center</property>
+                <property name="margin_end">28</property>
+                <child>
+                  <object class="GtkImage" id="right-image">
+                    <property name="icon_name">go-next-symbolic</property>
+                  </object>
+                </child>
+                <style>
+                  <class name="osd"/>
+                  <class name="circular"/>
+                </style>
+              </object>
+            </child>
+            <child type="overlay">
+              <object class="GtkButton" id="leftButton">
+                <property name="receives_default">true</property>
+                <property name="halign">start</property>
+                <property name="valign">center</property>
+                <property name="margin_start">28</property>
+                <child>
+                  <object class="GtkImage" id="left-image">
+                    <property name="icon_name">go-previous-symbolic</property>
+                    <property name="icon_size">1</property>
+                  </object>
+                </child>
+                <style>
+                  <class name="osd"/>
+                  <class name="circular"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkGrid">
+            <property name="name">attributionGrid</property>
+            <property name="row_spacing">8</property>
+            <child>
+              <object class="GtkLabel" id="updatedTimeLabel">
+                <property name="halign">start</property>
+                <style>
+                  <class name="caption" />
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="attributionLabel">
+                <property name="name">attribution-label</property>
+                <property name="use_markup">true</property>
+                <property name="wrap">1</property>
+                <property name="xalign">0</property>
+                <!-- ellipsize this text so that on small layouts we
+                     don't cause the bottom navigation to overflow -->
+                <property name="ellipsize">end</property>
+                <style>
+                  <class name="caption" />
+                </style>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="row">1</property>
+                </layout>
               </object>
             </child>
           </object>

@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/gnome/Weather@profile@/js">
+  <gresource prefix="/org/gnome/Weather/js">
+    <file>app/application.js</file>
     <file>app/city.js</file>
     <file>app/currentLocationController.js</file>
     <file>app/hourlyForecast.js</file>
+    <file>app/locationRow.js</file>
+    <file>app/locationRow.ui</file>
     <file>app/thermometer.js</file>
+    <file>app/thermometer.ui</file>
     <file>app/dailyForecast.js</file>
+    <file>app/entry.js</file>
     <file>app/main.js</file>
+    <file>app/shell.js</file>
     <file>app/window.js</file>
     <file>app/world.js</file>
     <file>misc/util.js</file>

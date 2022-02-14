@@ -16,29 +16,28 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const Gio = imports.gi.Gio;
-const GLib = imports.gi.GLib;
-const GObject = imports.gi.GObject;
-const Gdk = imports.gi.Gdk;
-const Gtk = imports.gi.Gtk;
-const GWeather = imports.gi.GWeather;
+import Gio from 'gi://Gio';
+import GLib from 'gi://GLib';
+import GObject from 'gi://GObject';
+import Gtk from 'gi://Gtk';
+import Gdk from 'gi://Gdk';
+import GWeather from 'gi://GWeather';
+import Graphene from 'gi://Graphene';
 
-const Util = imports.misc.util;
+import * as Util from '../misc/util.js';
 
 // In microseconds
 const TWENTY_FOUR_HOURS = 24 * 3600 * 1000 * 1000;
 
-var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gtk.Box {
-
-    _init(params) {
-        super._init(Object.assign({
+export class HourlyForecastBox extends Gtk.Box {
+    constructor() {
+        super({
             orientation: Gtk.Orientation.HORIZONTAL,
             spacing: 0,
             name: 'hourly-forecast-box',
-        }, params));
+        });
 
-        this.get_accessible().accessible_name = _('Hourly Forecast');
-
+        this.update_property([Gtk.AccessibleProperty.LABEL], [_('Hourly Forecast')]);
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
         this._hourlyInfo = [];
@@ -54,7 +53,7 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
         for (let i = 0; i < infos.length; i++) {
             let info = infos[i];
 
-            let [ok, date] = info.get_value_update();
+            let [, date] = info.get_value_update();
             let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(now.get_timezone());
 
             if (datetime.difference(now) <= 0)
@@ -74,7 +73,7 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
 
         let coords = info.location.get_coords();
         let nearestCity = GWeather.Location.get_world().find_nearest_city(coords[0], coords[1]);
-        let tz = GLib.TimeZone.new(nearestCity.get_timezone().get_tzid());
+        let tz = nearestCity.get_timezone();
         let now = GLib.DateTime.new_now(tz);
 
         let hourlyInfo = this._preprocess(now, forecasts);
@@ -90,18 +89,18 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
                     this._addSeparator();
             }
         } else {
-            let label = new Gtk.Label({ label: _('Forecast not available'),
-                                        use_markup: true,
-                                        visible: true });
-            this.pack_start(label, true, false, 0);
+            let label = new Gtk.Label({
+                label: _('Forecast not Available'),
+                use_markup: true,
+                visible: true
+            });
+            this.prepend(label);
         }
 
         this._hourlyInfo = hourlyInfo;
     }
 
     _addHourEntry(info, tz, now) {
-        let hourEntry = new HourEntry();
-
         let timeLabel;
 
         let [, date] = info.get_value_update();
@@ -122,36 +121,38 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
             timeLabel = datetime.format(timeFormat);
         }
 
-        hourEntry.timeLabel.label = timeLabel;
-        hourEntry.image.iconName = info.get_icon_name() + '-small';
-        hourEntry.temperatureLabel.label = Util.getTempString(info);
+        let hourEntry = new HourEntry({ info, timeLabel });
 
-        if (Util.isDarkTheme()) {
-            const color = "#f6d32d";
-            const label = "<span color=\""+ color + "\">" + hourEntry.temperatureLabel.label + "</span>";
-            hourEntry.temperatureLabel.set_markup(label);
-        };
-
-        this.pack_start(hourEntry, false, false, 0);
+        this.append(hourEntry);
 
         this._hasForecastInfo = true;
     }
 
     _addSeparator() {
-        let separator = new Gtk.Separator({ orientation: Gtk.Orientation.VERTICAL,
-                                            visible: true});
-        this.pack_start(separator, false, false, 0);
+        let separator = new Gtk.Separator({
+            orientation: Gtk.Orientation.VERTICAL,
+            visible: true
+        });
+        this.append(separator);
     }
 
     clear() {
-        this.foreach(function(w) { w.destroy(); });
+        for (const w of Array.from(this)) {
+            this.remove(w);
+        }
     }
 
     hasForecastInfo() {
         return this._hasForecastInfo;
     }
 
-    vfunc_draw(cr) {
+    vfunc_snapshot(snapshot) {
+        const allocation = this.get_allocation();
+
+        const rect = new Graphene.Rect();
+        rect.init(0, 0, allocation.width, allocation.height);
+
+        let cr = snapshot.append_cairo(rect);
         const temps = this._hourlyInfo.map(info => Util.getTemp(info));
 
         const maxTemp = Math.max(...temps);
@@ -167,7 +168,7 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
         const width = this.get_allocated_width();
         const height = this.get_allocated_height();
 
-        const entryWidth = 75 ;
+        const entryWidth = 75;
         const separatorWidth = 1;
 
         const lineWidth = 2;
@@ -181,11 +182,11 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
         const graphMaxY = height - lineWidth / 2 - spacing - entryTemperatureLabelHeight - spacing;
         const graphHeight = graphMaxY - graphMinY;
 
-        let [, strokeColor] = this.get_style_context().lookup_color('temp_chart_stroke_color');
+        let [, strokeColor] = this.get_style_context().lookup_color('weather_temp_chart_stroke_color');
         Gdk.cairo_set_source_rgba(cr, strokeColor);
 
         let x = 0;
-        cr.moveTo (x, graphMinY + ((1 - values[0]) * graphHeight));
+        cr.moveTo(x, graphMinY + ((1 - values[0]) * graphHeight));
 
         x += entryWidth / 2;
         cr.lineTo(x, graphMinY + ((1 - values[0]) * graphHeight));
@@ -200,12 +201,7 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
         cr.setLineWidth(lineWidth);
         cr.strokePreserve();
 
-        let [, fillColor] = this.get_style_context().lookup_color('temp_chart_fill_color');
-
-        if (Util.isDarkTheme()) {
-            fillColor = new Gdk.RGBA();
-            fillColor.parse("rgba(248, 228, 92, 0.15)");
-        };
+        let [, fillColor] = this.get_style_context().lookup_color('weather_temp_chart_fill_color');
 
         Gdk.cairo_set_source_rgba(cr, fillColor);
 
@@ -213,31 +209,34 @@ var HourlyForecastBox = GObject.registerClass(class HourlyForecastBox extends Gt
         cr.lineTo(0, height);
         cr.fill();
 
-        super.vfunc_draw(cr);
+        super.vfunc_snapshot(snapshot);
         cr.$dispose();
-
-        return Gdk.EVENT_PROPAGATE;
     }
-});
+};
+GObject.registerClass(HourlyForecastBox);
 
-var HourEntry = GObject.registerClass({
+export const HourEntry = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/hour-entry.ui',
-    InternalChildren: ['timeLabel', 'image', 'temperatureLabel'],
-}, class HourEntry extends Gtk.Box {
 
-    _init(params) {
-        super._init(params);
+    InternalChildren: ['timeLabel', 'image', 'forecastTemperatureLabel'],
+}, class HourEntry extends Gtk.Widget {
+    constructor({ timeLabel, info, ...params }) {
+        super({ ...params });
+
+        Object.assign(this.layoutManager, {
+            orientation: Gtk.Orientation.VERTICAL,
+        });
+
+        this._timeLabel.label = timeLabel;
+        this._image.iconName = info.get_icon_name() + '-small';
+        this._forecastTemperatureLabel.label = Util.getTempString(info);
     }
 
-    get timeLabel() {
-        return this._timeLabel;
-    }
+    vfunc_unroot() {
+        [...this].forEach(child => child.unparent());
 
-    get image() {
-        return this._image;
-    }
-
-    get temperatureLabel() {
-        return this._temperatureLabel;
+        super.vfunc_unroot();
     }
 });
+
+HourEntry.set_layout_manager_type(Gtk.BoxLayout);

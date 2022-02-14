@@ -1,0 +1,129 @@
+@define-color weather_temp_chart_fill_color rgba(248, 228, 92, 0.5);
+@define-color weather_temp_chart_stroke_color rgba(246, 211, 45, 1.0);
+
+@define-color weather_thermometer_warm_color @yellow_4;
+@define-color weather_thermometer_cold_color @blue_4;
+
+@define-color weather_thermometer_high_color @yellow_5;
+@define-color weather_thermometer_low_color @blue_5;
+@define-color weather_forecast_color @yellow_5;
+
+#places-label {
+    font-weight: bold;
+}
+
+#temperature-label {
+    font-size: 32pt;
+    font-weight: 900;
+    margin-left: 16px;
+}
+
+#conditions-grid *:backdrop {
+    color: @theme_fg_color;
+}
+
+.content-view.cell {
+    font-weight: bold;
+}
+
+#locationEntry {
+    margin: 6px;
+}
+
+.weather-popover {
+    margin-top: 6px;
+}
+
+WeatherLocationRow .location-container {
+    margin-bottom: 3px;
+}
+
+WeatherLocationRow .selected-location-icon {
+    padding: 12px;
+}
+
+WeatherLocationRow .current-location-icon {
+    padding: 12px;
+}
+
+.forecast-card {
+    transition: border-radius 100ms ease-out;
+    border-radius: 6px;
+}
+
+#conditions-grid,
+#attributionGrid {
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+#weather-page .small .forecast-card {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+}
+
+.forecast-temperature-label {
+    font-weight: bold;
+    color: @weather_forecast_color;
+}
+
+WeatherThermometer {
+    margin-bottom: 12px;
+}
+
+WeatherThermometer > label.high {
+    font-weight: bold;
+    color: @weather_thermometer_high_color;
+}
+
+WeatherThermometer > label.low {
+    font-weight: bold;
+    color: @weather_thermometer_low_color;
+}
+
+.forecast-button {
+    margin: 0 12px;
+}
+
+.forecast-graphic {
+    margin: 18px;
+}
+
+#attribution-label {
+    color: rgba(154, 153, 150, 1);
+}
+
+viewswitchertitle viewswitcher {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+button.osd.circular {
+    border-radius: 9999px;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+button.osd.circular > image {
+    padding: 12px;
+}
+
+scrolledwindow.inline list,
+scrolledwindow.inline listview {
+    background: none;
+    color: inherit;
+}
+
+scrolledwindow.inline undershoot.top {
+    box-shadow: inset 0 1px @borders;
+}
+
+.search-view {
+    background-color: @blue_3;
+    color: @light_1;
+}
+
+.search-view menubutton button:focus:focus-visible {
+    outline-color: alpha(@light_1, 0.3);
+}

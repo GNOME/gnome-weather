@@ -16,29 +16,19 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const GLib = imports.gi.GLib;
-const Gio = imports.gi.Gio;
-const Lang = imports.lang;
-const GWeather = imports.gi.GWeather;
-const Geoclue = imports.gi.Geoclue;
+import GLib from 'gi://GLib';
+import GWeather from 'gi://GWeather';
+import Geoclue from 'gi://Geoclue';
 
-const Util = imports.misc.util;
-
-var AutoLocation = {
-    DISABLED: 0,
-    ENABLED: 1,
-    NOT_AVAILABLE: 2
-};
-
-var CurrentLocationController = class CurrentLocationController {
+import * as Util from '../misc/util.js';
+export class CurrentLocationController {
     constructor(world) {
         this._world = world;
         this._processStarted = false;
         this._settings = Util.getSettings('org.gnome.Weather');
-        let autoLocation = this._settings.get_value('automatic-location').deep_unpack();
-        this._syncAutoLocation(autoLocation);
-        if (this.autoLocation == AutoLocation.ENABLED)
-            this._startGeolocationService();
+      
+        this.autoLocationAvailable = false;
+        this._startGeolocationService();
         this.currentLocation = null;
     }
 
@@ -65,7 +55,7 @@ var CurrentLocationController = class CurrentLocationController {
 
     _geoLocationFailed(e) {
         log ("Failed to connect to GeoClue2 service: " + e.message);
-        this.autoLocation = AutoLocation.NOT_AVAILABLE;
+        this.autoLocationAvailable = false;
         GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
             this._world.currentLocationChanged(null);
         });
@@ -87,6 +77,8 @@ var CurrentLocationController = class CurrentLocationController {
         }
 
         this._findLocation();
+
+        this.autoLocationAvailable = true;
     }
 
     _findLocation() {
@@ -107,22 +99,6 @@ var CurrentLocationController = class CurrentLocationController {
                                                     geoclueLocation.longitude
                                                 );
         this._world.currentLocationChanged(this.currentLocation);
-    }
-
-    setAutoLocation(active) {
-        this._settings.set_value('automatic-location', new GLib.Variant('b', active));
-
-        if (this.autoLocation == AutoLocation.NOT_AVAILABLE)
-            return;
-        this._autoLocationChanged(active);
-        this._syncAutoLocation(active);
-    }
-
-    _syncAutoLocation(autoLocation) {
-        if (autoLocation)
-            this.autoLocation = AutoLocation.ENABLED;
-        else
-            this.autoLocation = AutoLocation.DISABLED;
     }
 
     _autoLocationChanged(active) {

@@ -1,228 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.16.1 -->
 <interface>
-  <requires lib="gtk+" version="3.0"/>
-  <object class="GtkGrid" id="popover-grid">
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
+  <requires lib="gtk" version="4.0" />
+
+  <object class="GtkBox" id="popoverBox">
+
     <property name="orientation">vertical</property>
-    <property name="row_spacing">10</property>
-    <property name="margin">12</property>
-    <property name="vexpand">False</property>
+    <property name="width-request">320</property>
+    <property name="height-request">300</property>
     <child>
-      <object class="GWeatherLocationEntry" id="location-entry">
-        <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="width-request">300</property>
-        <property name="activates_default">True</property>
+      <object class="Gjs_LocationSearchEntry" id="location-entry">
+        <property name="name">locationEntry</property>
+        <property name="hexpand">True</property>
+
+        <property name="placeholder-text" translatable="yes">Search for a city</property>
       </object>
-      <packing>
-        <property name="left_attach">0</property>
-        <property name="top_attach">0</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkStack" id="auto-location-stack">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="vexpand">False</property>
-        <property name="homogeneous">False</property>
-        <property name="transition_type">crossfade</property>
-        <child>
-          <object class="GtkGrid" id="auto-location-grid">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="orientation">horizontal</property>
-            <property name="column_homogeneous">True</property>
-            <property name="margin_top">6</property>
-            <property name="margin_bottom">6</property>
-            <property name="vexpand">False</property>
-            <child>
-              <object class="GtkLabel" id="auto-location-label">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Automatic Location</property>
-                <property name="halign">start</property>
-                <property name="vexpand">False</property>
-                <attributes>
-                  <attribute name="weight" value="PANGO_WEIGHT_BOLD"/>
-                </attributes>
-                <style>
-                  <class name="dim-label"/>
-                </style>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkSwitch" id="auto-location-switch">
-                <property name="visible">True</property>
-                <property name="halign">end</property>
-                <property name="vexpand">False</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">0</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="name">auto-location-switch-grid</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkLabel" id="locating-label">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-            <property name="label" translatable="yes">Locating…</property>
-            <property name="halign">center</property>
-            <property name="valign">center</property>
-            <property name="vexpand">False</property>
-          </object>
-          <packing>
-            <property name="name">locating-label</property>
-          </packing>
-        </child>
-        </object>
-        <packing>
-          <property name="left_attach">0</property>
-          <property name="top_attach">1</property>
-          <property name="width">1</property>
-          <property name="height">1</property>
-        </packing>
     </child>
     <child>
       <object class="GtkStack" id="popover-stack">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="vexpand">False</property>
-        <property name="homogeneous">False</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <property name="width-request">300</property>
         <child>
-          <object class="GtkGrid" id="search-grid">
-            <property name="visible">True</property>
-            <property name="name">search-city-grid</property>
-            <property name="can_focus">False</property>
-            <property name="orientation">vertical</property>
-            <property name="margin_top">25</property>
-            <property name="margin_bottom">25</property>
-            <property name="halign">center</property>
-            <property name="valign">center</property>
-            <property name="row_homogeneous">True</property>
-            <property name="vexpand">False</property>
+          <object class="GtkScrolledWindow" id="search-list-scroll-window">
+            <property name="hscrollbar-policy">never</property>
+            <property name="vexpand">True</property>
+            <style>
+              <class name="inline" />
+            </style>
             <child>
-              <object class="GtkImage" id="search-image">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="icon_name">edit-find-symbolic</property>
-                <property name="icon_size">6</property>
-                <property name="use_fallback">True</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <property name="vexpand">False</property>
+              <object class="GtkListView" id="search-list-view">
+                <property name="name">search-list-view</property>
+                <property name="hscroll-policy">minimum</property>
               </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="search-label">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Search for a city</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <property name="vexpand">False</property>
-                <style>
-                  <class name="dim-label"/>
-                </style>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">1</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
             </child>
           </object>
-          <packing>
-            <property name="name">search-grid</property>
-          </packing>
         </child>
         <child>
-          <object class="GtkGrid" id="locations-grid">
-            <property name="visible">True</property>
-            <property name="name">locations-grid</property>
-            <property name="can_focus">False</property>
-            <property name="orientation">vertical</property>
-            <property name="row_spacing">10</property>
-            <property name="vexpand">False</property>
+          <object class="GtkScrolledWindow" id="locations-list-scroll-window">
+            <property name="hscrollbar-policy">never</property>
+            <style>
+              <class name="inline" />
+            </style>
             <child>
-              <object class="GtkLabel" id="recently-viewed-label">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Viewed Recently</property>
-                <property name="halign">start</property>
-                <property name="vexpand">False</property>
-                <attributes>
-                  <attribute name="weight" value="PANGO_WEIGHT_BOLD"/>
-                </attributes>
-                <style>
-                  <class name="dim-label"/>
-                </style>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkFrame" id="locations-frame">
-                <property name="name">locations-frame</property>
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
+              <object class="GtkViewport">
                 <child>
                   <object class="GtkListBox" id="locations-list-box">
                     <property name="name">locations-list-box</property>
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
                     <property name="hexpand">True</property>
-                    <property name="vexpand">False</property>
                     <property name="selection-mode">none</property>
+                    <property name="show-separators">False</property>
+                    <child type="placeholder">
+                      <object class="GtkGrid" id="empty-search-grid">
+                        <property name="name">search-city-grid</property>
+                        <property name="orientation">vertical</property>
+                        <property name="margin_top">25</property>
+                        <property name="margin_bottom">25</property>
+                        <property name="halign">center</property>
+                        <property name="valign">center</property>
+                        <property name="row_homogeneous">true</property>
+                        <child>
+                          <object class="GtkImage" id="search-image">
+                            <property name="icon_name">edit-find-symbolic</property>
+                            <property name="icon_size">2</property>
+                            <property name="use_fallback">true</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
+                            <layout>
+                              <property name="column">0</property>
+                              <property name="row">0</property>
+                            </layout>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="search-label">
+                            <property name="label" translatable="yes">Search for a city</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
+                            <style>
+                              <class name="dim-label" />
+                            </style>
+                            <layout>
+                              <property name="column">0</property>
+                              <property name="row">1</property>
+                            </layout>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">1</property>
-                <property name="width">1</property>
-                <property name="height">1</property>
-              </packing>
             </child>
           </object>
-          <packing>
-            <property name="name">locations-grid</property>
-          </packing>
         </child>
       </object>
-      <packing>
-        <property name="left-attach">0</property>
-        <property name="top-attach">2</property>
-        <property name="width">1</property>
-        <property name="height">1</property>
-      </packing>
     </child>
   </object>
 </interface>

@@ -16,25 +16,25 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const GLib = imports.gi.GLib;
-const GObject = imports.gi.GObject;
-const GWeather = imports.gi.GWeather;
+import GObject from 'gi://GObject';
+import GLib from 'gi://GLib';
+import Gio from 'gi://Gio';
+import GWeather from 'gi://GWeather';
 
-const Util = imports.misc.util;
+import * as Util from '../misc/util.js';
 
-var WorldModel = GObject.registerClass({
+export const WorldModel = GObject.registerClass({
     Signals: {
-        'current-location-changed': { param_types: [ GWeather.Info ] },
-        'location-added': { param_types: [ GWeather.Info, GObject.Boolean ] },
-        'location-removed': { param_types: [ GWeather.Info ] }
+        'selected-location-changed': { param_types: [GWeather.Info] },
     },
     Properties: {
         'loading': GObject.ParamSpec.boolean('loading', '', '', GObject.ParamFlags.READABLE, false)
     },
+    Implements: [Gio.ListModel]
 }, class WorldModel extends GObject.Object {
 
-    _init(world, enableGtk) {
-        super._init();
+    constructor(world) {
+        super();
 
         this._world = world;
 
@@ -44,23 +44,39 @@ var WorldModel = GObject.registerClass({
         this._loadingCount = 0;
 
         this._currentLocationInfo = null;
+        this._selectedLocation = null;
         this._infoList = [];
+        this.getAll();
     }
 
     get length() {
-        return this._infoList.length + (this._currentLocationInfo ? 1 : 0);
+        return this._allInfos.length
     }
 
     getAll() {
+        // Ensure the current location and selected location are returned first...
+        const infos = [...this._infoList].filter(info => !this.isCurrentLocation(info) && !this.isSelectedLocation(info));
+
         if (this._currentLocationInfo)
-            return [this._currentLocationInfo].concat(this._infoList);
-        else
-            return [].concat(this._infoList);
+            infos.unshift(this._currentLocationInfo);
+
+        if (this._selectedLocation && this._currentLocationInfo !== this._selectedLocation) {
+            infos.unshift(this._selectedLocation);
+        }
+
+        this._allInfos = infos;
+        return infos;
     }
 
     getAtIndex(index) {
-        if (this._currentLocationInfo) {
+        if (this._selectedLocation) {
             if (index == 0)
+                return this._selectedLocation;
+            else
+                index--;
+        }
+        if (this._currentLocationInfo) {
+            if (index == 1)
                 return this._currentLocationInfo;
             else
                 index--;
@@ -74,15 +90,11 @@ var WorldModel = GObject.registerClass({
     }
 
     currentLocationChanged(location) {
-        if (this._currentLocationInfo)
-            this._removeLocationInternal(this._currentLocationInfo, false);
-
-        let info;
-        if (location)
-            info = this.addNewLocation(location, true);
-        else
-            info = null;
-        this.emit('current-location-changed', info);
+        if (location) {
+            this._currentLocationInfo = this.buildInfo(location);
+            this.addCurrentLocation(this._currentLocationInfo);
+            this.#invalidate();
+        }
     }
 
     getRecent() {
@@ -92,11 +104,11 @@ var WorldModel = GObject.registerClass({
             return null;
     }
 
-    load () {
+    load() {
         let locations = this._settings.get_value('locations').deep_unpack();
 
-        if (locations.length > 5) {
-            locations = locations.slice(0, 5);
+        if (locations.length > 10) {
+            locations = locations.slice(0, 10).filter(location => !!location);
             this._settings.set_value('locations', new GLib.Variant('av', locations));
         }
 
@@ -105,9 +117,19 @@ var WorldModel = GObject.registerClass({
             let variant = locations[i];
             let location = this._world.deserialize(variant);
 
-            info = this._addLocationInternal(location, false);
+            info = this._addLocationInternal(location);
         }
-        this._currentLocationInfo = info
+
+        if (info) {
+            this.setSelectedLocation(info);
+        }
+
+        this.#invalidate();
+    }
+
+    #invalidate() {
+        this.getAll();
+        this.items_changed(0, this._allInfos.length, this._allInfos.length);
     }
 
     _updateLoadingCount(delta) {
@@ -138,22 +160,28 @@ var WorldModel = GObject.registerClass({
         return this._loadingCount > 0;
     }
 
-    addNewLocation(newLocation, isCurrentLocation) {
-        if (!isCurrentLocation) {
-            for (let info of this._infoList) {
-                let location = info.location;
-                if (location.equal(newLocation)) {
-                    this.moveLocationToFront(info);
-                    return info;
-                }
-            }
-        }
+    setSelectedLocation(info) {
+        const newInfo = this.addNewLocation(info.get_location());
+        this._selectedLocation = newInfo;
+        this.emit('selected-location-changed', info);
+    }
 
-        let info = this._addLocationInternal(newLocation, isCurrentLocation);
+    isSelectedLocation(info) {
+        return !!this._selectedLocation && this._selectedLocation === info;
+    }
 
-        if (!isCurrentLocation)
-            this._queueSaveSettings();
+    isCurrentLocation(info) {
+        return !!this._currentLocationInfo && this._currentLocationInfo === info;
+    }
 
+    addNewLocation(newLocation) {
+        let info = this._addLocationInternal(newLocation);
+        this._selectedLocation = info;
+        info._isCurrentLocation = false;
+
+        this.#invalidate();
+
+        this._queueSaveSettings();
         return info;
     }
 
@@ -161,7 +189,7 @@ var WorldModel = GObject.registerClass({
         if (this._queueSaveSettingsId)
             return;
 
-        let id = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 10, () => {
+        let id = GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
             this._queueSaveSettingsId = 0;
             this._saveSettingsInternal();
             return false;
@@ -172,9 +200,18 @@ var WorldModel = GObject.registerClass({
     _saveSettingsInternal() {
         let locations = [];
 
-        for (let i = 0; i < this._infoList.length; i++) {
-            if (!this._infoList[i]._isCurrentLocation)
-                locations.push(this._infoList[i].location.serialize());
+        for (const info of this._allInfos) {
+            if (!info._isCurrentLocation) {
+                let serialized = null;
+                try {
+                    serialized = info.location.serialize();
+                } catch (error) {
+                    console.error(error);
+                }
+
+                if (serialized)
+                    locations.push(serialized);
+            }
         }
 
         this._settings.set_value('locations', new GLib.Variant('av', locations));
@@ -190,21 +227,23 @@ var WorldModel = GObject.registerClass({
         this._saveSettingsInternal();
     }
 
-    moveLocationToFront(info) {
-        if (this._infoList.length == 0 || this._infoList[0] == info)
+    addCurrentLocation(info) {
+        if (this._infoList.includes(info))
             return;
 
-        this._removeLocationInternal(info, true);
-        this._addInfoInternal(info, info._isCurrentLocation);
+        const existingInfo = this._infoList.find(i => i.get_location().equal(info.location));
+        if (existingInfo) {
+            this._currentLocationInfo = existingInfo;
+            return;
+        }
 
-        // mark info as a manually chosen location so that we
-        // save it
-        info._isCurrentLocation = false;
-
-        this._queueSaveSettings();
+        info._isCurrentLocation = true;
+        this._addInfoInternal(info);
     }
 
     _removeLocationInternal(oldInfo, skipDisconnect) {
+        if (!oldInfo) return;
+
         if (oldInfo._loadingId && !skipDisconnect) {
             oldInfo.disconnect(oldInfo._loadingId);
             oldInfo._loadingId = 0;
@@ -221,40 +260,48 @@ var WorldModel = GObject.registerClass({
             }
         }
 
-        this.emit('location-removed', oldInfo);
+        this.#invalidate();
     }
 
-    _addLocationInternal(newLocation, isCurrentLocation) {
-        for (let i = 0; i < this._infoList.length; i++) {
-            let info = this._infoList[i];
-            if (info.get_location().equal(newLocation))
-                return info;
-        }
-
-        let info = new GWeather.Info({
+    buildInfo(location) {
+        return new GWeather.Info({
             application_id: pkg.name,
             contact_info: 'https://gitlab.gnome.org/GNOME/gnome-weather/-/raw/master/gnome-weather.doap',
-            location: newLocation,
+            location,
             enabled_providers: this._providers
         });
-        this._addInfoInternal(info, isCurrentLocation);
+    }
+
+    _addLocationInternal(newLocation) {
+        const existingInfo = this._infoList.find(info => info.get_location().equal(newLocation));
+        if (existingInfo)
+            return existingInfo;
+
+        let info = this.buildInfo(newLocation);
+        this._addInfoInternal(info);
 
         return info;
     }
 
-    _addInfoInternal(info, isCurrentLocation) {
-        info._isCurrentLocation = isCurrentLocation;
+    _addInfoInternal(info) {
         this._infoList.unshift(info);
         this.updateInfo(info);
 
-        if (isCurrentLocation)
-            this._currentLocationInfo = info;
-
-        this.emit('location-added', info, isCurrentLocation);
-
-        if (this._infoList.length > 5) {
+        if (this._infoList.length > 10) {
             let oldInfo = this._infoList.pop();
             this._removeLocationInternal(oldInfo);
         }
+    }
+
+    vfunc_get_item_type() {
+        return GWeather.Info.$gtype;
+    }
+
+    vfunc_get_n_items() {
+        return this._allInfos.length;
+    }
+
+    vfunc_get_item(n) {
+        return this._allInfos[n] ?? null;
     }
 });

@@ -16,36 +16,31 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const Handy = imports.gi.Handy;
-const Gio = imports.gi.Gio;
-const GObject = imports.gi.GObject;
-const Gtk = imports.gi.Gtk;
-const GWeather = imports.gi.GWeather;
+import Adw from 'gi://Adw';
+import Gio from 'gi://Gio';
+import GObject from 'gi://GObject';
+import Gtk from 'gi://Gtk';
 
-const City = imports.app.city;
-const CurrentLocationController = imports.app.currentLocationController;
-const World = imports.shared.world;
-const WorldView = imports.app.world;
-const Util = imports.misc.util;
+import * as City from './city.js';
+import { WorldContentView } from './world.js';
 
 const Page = {
     SEARCH: 0,
     CITY: 1
 };
 
-var MainWindow = GObject.registerClass({
+export const MainWindow = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/window.ui',
     InternalChildren: ['header', 'refreshRevealer', 'refresh', 'forecastStackSwitcher', 'stack',
-                       'titleStack', 'searchView', 'searchEntry', 'forecastStackSwitcherBar']
-}, class MainWindow extends Handy.ApplicationWindow {
-
-    _init(params) {
-        super._init(params);
+        'titleStack', 'searchButton', 'searchView', 'forecastStackSwitcherBar']
+}, class MainWindow extends Adw.ApplicationWindow {
+    constructor(params) {
+        super(params);
 
         this._world = this.application.world;
         this.currentInfo = null;
         this._currentPage = Page.SEARCH;
-        this._pageWidgets = [[],[]];
+        this._pageWidgets = [[], []];
 
         let aboutAction = new Gio.SimpleAction({
             enabled: true,
@@ -53,13 +48,6 @@ var MainWindow = GObject.registerClass({
         });
         aboutAction.connect('activate', () => this._showAbout());
         this.add_action(aboutAction);
-
-        let closeAction = new Gio.SimpleAction({
-            enabled: true,
-            name: 'close'
-        });
-        closeAction.connect('activate', () => this._close());
-        this.add_action(closeAction);
 
         let refreshAction = new Gio.SimpleAction({
             enabled: true,
@@ -72,19 +60,20 @@ var MainWindow = GObject.registerClass({
 
         this._searchView.icon_name = pkg.name;
 
-        this._searchEntry.connect('notify::location', (entry) => {
-            this._searchLocationChanged(entry);
+        this._worldView = new WorldContentView(this.application, this, {
+            align: Gtk.Align.CENTER,
         });
+        this._searchButton.set_popover(this._worldView);
 
         this._pageWidgets[Page.CITY].push(this._refresh);
 
         this._cityView = new City.WeatherView(this.application, this,
-                                              { hexpand: true, vexpand: true });
+            { hexpand: true, vexpand: true });
+
         this._stack.add_named(this._cityView, 'city');
 
-        this._forecastStackSwitcher.set_stack(this._cityView.getInfoPage().getForecastStack());
-
-        this._forecastStackSwitcherBar.set_stack(this._cityView.getInfoPage().getForecastStack());
+        this._forecastStackSwitcher.stack = this._cityView.getForecastStack();
+        this._forecastStackSwitcherBar.stack = this._cityView.getForecastStack();
 
         this._stack.set_visible_child(this._searchView);
 
@@ -93,22 +82,24 @@ var MainWindow = GObject.registerClass({
 
         if (pkg.name.endsWith('Devel')) {
             let ctx = this.get_style_context();
-            ctx.add_class('devel')
+            ctx.add_class('devel');
         }
 
         this._showingDefault = false;
-        this.show_all();
+    }
+
+    vfunc_unroot() {
+        this._cityView.unparent();
+        this._cityView = null;
+
+        this._worldView.unparent();
+        this._worldView = null;
+
+        super.vfunc_unroot();
     }
 
     update() {
         this._cityView.update();
-    }
-
-    _searchLocationChanged(entry) {
-        if (entry.location) {
-            let info = this._model.addNewLocation(entry.location, false);
-            this.showInfo(info, false);
-        }
     }
 
     _goToPage(page) {
@@ -116,9 +107,7 @@ var MainWindow = GObject.registerClass({
             this._pageWidgets[this._currentPage][i].hide();
 
         for (let i = 0; i < this._pageWidgets[page].length; i++) {
-            let widget = this._pageWidgets[page][i];
-            if (!widget.no_show_all)
-                this._pageWidgets[page][i].show();
+            this._pageWidgets[page][i].show();
         }
 
         this._currentPage = page;
@@ -127,46 +116,25 @@ var MainWindow = GObject.registerClass({
     showDefault() {
         this._showingDefault = true;
         this._refreshRevealer.reveal_child = false;
-        let clc = this.application.currentLocationController;
-        let autoLocation = clc.autoLocation;
-        let currentLocation = clc.currentLocation;
-        if (currentLocation)
-            this.showInfo(this._model.getCurrentLocation(), false);
-        else if (autoLocation != CurrentLocationController.AutoLocation.ENABLED)
-            this.showInfo(this._model.getRecent(), false);
+
+        let mostRecent = this._model.getRecent();
+        if (mostRecent)
+            this.showInfo(mostRecent);
+        else
+            this.showSearch();
     }
 
     showSearch(text) {
         this._showingDefault = false;
         this._refreshRevealer.reveal_child = true;
-        this._cityView.setTimeVisible(false);
         this._stack.set_visible_child(this._searchView);
         this._goToPage(Page.SEARCH);
-        this._searchEntry.text = text;
-        if (text.length > 0)
-            this._searchEntry.get_completion().complete();
     }
 
-    showInfo(info, isCurrentLocation) {
+    showInfo(info) {
         if (!info) {
-            if (isCurrentLocation && this._showingDefault)
-                this.showDefault();
+            this.showDefault();
             return;
-        }
-
-        /*
-         * Only show location updates if we have no loaded info and no
-         * search text or if we are currently showing the previous
-         * current location.
-         */
-        if (isCurrentLocation) {
-            if (this._currentPage == Page.CITY) {
-                if (!this._cityView.info._isCurrentLocation)
-                    return;
-            } else if (this._currentPage == Page.SEARCH) {
-                if (this._searchEntry.text.length > 0)
-                    return;
-            }
         }
 
         this._showingDefault = false;
@@ -179,37 +147,34 @@ var MainWindow = GObject.registerClass({
     }
 
     _showAbout() {
-        let artists = [ 'Jakub Steiner <jimmac@gmail.com>',
-                        'Pink Sherbet Photography (D. Sharon Pruitt)',
-                        'Elliott Brown',
-                        'Analogick',
-                        'DBduo Photography (Daniel R. Blume)',
-                        'davharuk',
-                        'Tech Haven Ministries',
-                        'Jim Pennucci' ];
+        let artists = ['Jakub Steiner <jimmac@gmail.com>',
+            'Pink Sherbet Photography (D. Sharon Pruitt)',
+            'Elliott Brown',
+            'Analogick',
+            'DBduo Photography (Daniel R. Blume)',
+            'davharuk',
+            'Tech Haven Ministries',
+            'Jim Pennucci'];
 
         let name_prefix = '';
-        if (pkg.name.endsWith('Devel')) {
-            name_prefix = '(Development) ';
-        }
 
         let copyright = 'Copyright 2013-2015 The Weather Developers';
         let attribution = this._cityView.info ? this._cityView.info.get_attribution() : '';
         copyright += attribution ? '\n' + attribution : '';
         let aboutDialog = new Gtk.AboutDialog(
-            { artists: artists,
-              authors: [ 'Giovanni Campagna <gcampagna@src.gnome.org>' ],
-              translator_credits: _("translator-credits"),
-              program_name: name_prefix + _("Weather"),
-              comments: _("A weather application"),
-              license_type: Gtk.License.GPL_2_0,
-              logo_icon_name: pkg.name,
-              version: pkg.version,
-              website: 'https://wiki.gnome.org/Apps/Weather',
-              wrap_license: true,
-              modal: true,
-              transient_for: this,
-              use_header_bar: true
+            {
+                artists: artists,
+                authors: ['Giovanni Campagna <gcampagna@src.gnome.org>'],
+                translator_credits: _("translator-credits"),
+                program_name: name_prefix + _("Weather"),
+                comments: _("A weather application"),
+                license_type: Gtk.License.GPL_2_0,
+                logo_icon_name: pkg.name,
+                version: pkg.version,
+                website: 'https://wiki.gnome.org/Apps/Weather',
+                wrap_license: true,
+                modal: true,
+                transient_for: this
             });
 
         // HACK: we need to poke into gtkaboutdialog internals
@@ -221,12 +186,5 @@ var MainWindow = GObject.registerClass({
         copyrightLabel.show();
 
         aboutDialog.show();
-        aboutDialog.connect('response', function() {
-            aboutDialog.destroy();
-        });
-    }
-
-    _close() {
-        this.destroy();
     }
 });

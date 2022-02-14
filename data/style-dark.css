@@ -1,0 +1,13 @@
+@define-color weather_temp_chart_fill_color alpha(#cd9309, 0.25);
+@define-color weather_temp_chart_stroke_color @yellow_4;
+@define-color weather_forecast_color @yellow_4;
+
+@define-color weather_thermometer_warm_color @yellow_5;
+@define-color weather_thermometer_cold_color @blue_5;
+
+@define-color weather_thermometer_high_color @yellow_2;
+@define-color weather_thermometer_low_color @blue_2;
+
+.search-view {
+    background-color: @window_bg_color;
+}

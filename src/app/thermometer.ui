@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <requires lib="gtk" version="4.0" />
+    <template class="Gjs_Thermometer">
+        <child>
+            <object class="GtkLabel" id="highLabel">
+                <property name="valign">end</property>
+                <style>
+                    <class name="high" />
+                    <class name="body" />
+                </style>
+            </object>
+        </child>
+        <child>
+            <object class="Gjs_ThermometerScale" id="scale"></object>
+        </child>
+        <child>
+            <object class="GtkLabel" id="lowLabel">
+                <property name="valign">start</property>
+                <style>
+                    <class name="low" />
+                    <class name="body" />
+                </style>
+            </object>
+        </child>
+    </template>
+</interface>

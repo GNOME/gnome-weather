@@ -9,11 +9,11 @@ gnome = import('gnome')
 
 dependency('glib-2.0')
 dependency('gobject-introspection-1.0', version: '>=1.35.9')
-dependency('gtk+-3.0', version :'>=3.20')
-dependency('gjs-1.0', version: '>= 1.50.0')
+dependency('gtk4', version :'>=4.5')
+dependency('gjs-1.0', version: '>= 1.71.0')
 dependency('geoclue-2.0', version: '>= 0.12.99')
-dependency('gweather-3.0', version: '>= 40.0')
-dependency('libhandy-1', version: '>= 1.1.90')
+dependency('libadwaita-1')
+dependency('gweather4', version: '>= 3.90.0')
 
 # Profiles
 if get_option('profile') == 'development'

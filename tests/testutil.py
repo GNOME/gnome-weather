@@ -70,7 +70,6 @@ def reset_settings():
                                 "(0.79354303905785273, "
                                 "0.16057029118347829))>)>]")
     settings.set_value("locations", parsed)
-    settings.set_value("automatic-location", GLib.Variant.new_boolean(False))
 
 
 def init():
@@ -78,12 +77,10 @@ def init():
 
     settings = Gio.Settings("org.gnome.Weather")
     _previous_locations = settings.get_value("locations")
-    _automatic_location = settings.get_value("automatic-location")
     reset_settings()
 
 
 def fini():
     settings.set_value("locations", _previous_locations)
-    settings.set_value("automatic-location", _automatic_location)
     _do_bus_call("ActivateAction",
                  GLib.Variant('(sava{sv})', ('quit', [], [])))

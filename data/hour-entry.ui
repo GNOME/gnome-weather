@@ -1,40 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.22.0 -->
 <interface>
-  <requires lib="gtk+" version="3.20"/>
-  <template class="Gjs_HourEntry" parent="GtkBox">
+  <requires lib="gtk" version="4.0"/>
+  <template class="Gjs_HourEntry">
     <property name="width_request">75</property>
     <property name="height_request">200</property>
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="hexpand">True</property>
-    <property name="vexpand">True</property>
-    <property name="orientation">vertical</property>
-    <property name="spacing">18</property>
+    <property name="hexpand">true</property>
+    <property name="vexpand">true</property>
+
     <property name="margin_top">18</property>
     <property name="margin_bottom">18</property>
+    <layout>
+      <property name="orientation">vertical</property>
+      <property name="spacing">18</property>
+    </layout>
     <child>
       <object class="GtkLabel" id="timeLabel">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
         <property name="label">Now</property>
       </object>
     </child>
     <child>
       <object class="GtkImage" id="image">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
         <property name="valign">start</property>
-        <property name="vexpand">True</property>
+        <property name="vexpand">true</property>
         <property name="pixel_size">32</property>
         <property name="icon_name">weather-showers-symbolic</property>
+        <style>
+          <class name="forecast-graphic"/>
+        </style>
       </object>
     </child>
     <child>
-      <object class="GtkLabel" id="temperatureLabel">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="valign">end</property>
+      <object class="GtkLabel" id="forecastTemperatureLabel">
+
+        <property name="valign">2</property>
         <property name="label">13°</property>
         <style>
           <class name="forecast-temperature-label"/>

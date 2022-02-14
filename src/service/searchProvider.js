@@ -16,26 +16,26 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const ByteArray = imports.byteArray;
-const Gio = imports.gi.Gio;
-const GLib = imports.gi.GLib;
-const GWeather = imports.gi.GWeather;
-const Lang = imports.lang;
+import Gio from 'gi://Gio';
+import GLib from 'gi://GLib';
+import GWeather from 'gi://GWeather';
 
-const Util = imports.misc.util;
-const World = imports.shared.world;
+import * as Util from '../misc/util.js';
 
-const SearchProviderInterface = ByteArray.toString(Gio.resources_lookup_data('/org/gnome/shell/ShellSearchProvider2.xml', 0).get_data());
+
+const SearchProviderInterface = new TextDecoder().decode(
+    Gio.resources_lookup_data('/org/gnome/shell/ShellSearchProvider2.xml', 0).get_data()
+);
 
 function getCountryName(location) {
     while (location &&
-           location.get_level() > GWeather.LocationLevel.COUNTRY)
+        location.get_level() > GWeather.LocationLevel.COUNTRY)
         location = location.get_parent();
 
     return location.get_name();
 }
 
-var SearchProvider = class WeatherSearchProvider {
+export class WeatherSearchProvider {
     constructor(application) {
         this._app = application;
 
@@ -180,11 +180,12 @@ var SearchProvider = class WeatherSearchProvider {
                It's the current weather conditions followed by the temperature,
                like "Clear sky, 14 °C" */
             let summary = _("%s, %s").format(conditions, info.get_temp());
-            ret.push({ name: new GLib.Variant('s', name),
-                       id: new GLib.Variant('s', identifiers[i]),
-                       description: new GLib.Variant('s', summary),
-                       icon: (new Gio.ThemedIcon({ name: info.get_icon_name() })).serialize()
-                     });
+            ret.push({
+                name: new GLib.Variant('s', name),
+                id: new GLib.Variant('s', identifiers[i]),
+                description: new GLib.Variant('s', summary),
+                icon: (new Gio.ThemedIcon({ name: info.get_icon_name() })).serialize()
+            });
         }
 
         this._app.release();
@@ -193,7 +194,7 @@ var SearchProvider = class WeatherSearchProvider {
     }
 
     _getPlatformData(timestamp) {
-        return {'desktop-startup-id': new GLib.Variant('s', '_TIME' + timestamp) };
+        return { 'desktop-startup-id': new GLib.Variant('s', '_TIME' + timestamp) };
     }
 
     _activateAction(action, parameter, timestamp) {
@@ -204,27 +205,24 @@ var SearchProvider = class WeatherSearchProvider {
             wrappedParam = [];
 
         profile = '';
-        if (pkg.name.endsWith('Devel')) {
-            profile = 'Devel';
-        }
 
         Gio.DBus.session.call(pkg.name,
-                              '/org/gnome/Weather' + profile,
-                              'org.freedesktop.Application',
-                              'ActivateAction',
-                              new GLib.Variant('(sava{sv})', [action, wrappedParam,
-                                                              this._getPlatformData(timestamp)]),
-                              null,
-                              Gio.DBusCallFlags.NONE,
-                              -1, null, (connection, result) => {
-                                  try {
-                                      connection.call_finish(result);
-                                  } catch(e) {
-                                      log('Failed to launch application: ' + e);
-                                  }
+            '/org/gnome/Weather' + profile,
+            'org.freedesktop.Application',
+            'ActivateAction',
+            new GLib.Variant('(sava{sv})', [action, wrappedParam,
+                this._getPlatformData(timestamp)]),
+            null,
+            Gio.DBusCallFlags.NONE,
+            -1, null, (connection, result) => {
+                try {
+                    connection.call_finish(result);
+                } catch (e) {
+                    log('Failed to launch application: ' + e);
+                }
 
-                                  this._app.release();
-                              });
+                this._app.release();
+            });
     }
 
     ActivateResult(id, terms, timestamp) {

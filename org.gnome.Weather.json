@@ -12,6 +12,7 @@
         "--socket=fallback-x11",
         "--socket=wayland",
         "--share=network",
+        "--system-talk-name=org.freedesktop.GeoClue2",
         "--env=G_ENABLE_DIAGNOSTIC=1",
         "--metadata=X-DConf=migrate-path=/org/gnome/Weather/"
     ],
@@ -69,22 +70,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libgweather.git",
-                    "tag" : "40.0"
-                }
-            ]
-        },
-        {
-            "name" : "gnome-desktop",
-            "buildsystem" : "meson",
-            "config-opts" : [
-                "-Ddebug_tools=false",
-                "-Dudev=disabled",
-                "-Ddesktop_docs=false"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gnome-desktop.git"
+                    "branch" : "main"
                 }
             ]
         },

@@ -17,225 +17,130 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const GLib = imports.gi.GLib;
-const GObject = imports.gi.GObject;
-const Gtk = imports.gi.Gtk;
-const GWeather = imports.gi.GWeather;
+import GObject from 'gi://GObject';
+import Gtk from 'gi://Gtk';
 
-const CurrentLocationController = imports.app.currentLocationController;
-const Util = imports.misc.util;
+import * as Util from '../misc/util.js';
+import { LocationRow } from './locationRow.js';
 
-
-var WorldContentView = GObject.registerClass(
-    class WorldContentView extends Gtk.Popover {
-
-    _init(application, window, params) {
-        super._init(Object.assign({
+export class WorldContentView extends Gtk.Popover {
+    constructor(application, window, { align, ...params } = {}) {
+        super({
+            ...params,
             hexpand: false,
-            vexpand: false
-        }, params));
+            halign: align,
+            vexpand: false,
+            hasArrow: false,
+        });
 
-        this.get_accessible().accessible_name = _("World view");
+        this.add_css_class('weather-popover');
+        this.add_css_class('menu');
 
+        this.update_property([Gtk.AccessibleProperty.LABEL], [_("World view")]);
         let builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/Weather/places-popover.ui');
 
-        let grid = builder.get_object('popover-grid');
-        this.add(grid);
+        const box = builder.get_object('popoverBox');
+        this.set_child(box);
+
+        this._searchListView = builder.get_object('search-list-view');
+        this._searchListScrollWindow = builder.get_object('search-list-scroll-window');
 
         this.model = application.model;
         this._window = window;
 
+        this._listboxScrollWindow = builder.get_object('locations-list-scroll-window');
         this._listbox = builder.get_object('locations-list-box');
-        this._listbox.set_header_func((row, previous) => {
-            let hasHeader = row.get_header() != null;
-            let shouldHaveHeader = previous != null;
-            if (hasHeader != shouldHaveHeader) {
-                if (shouldHaveHeader)
-                    row.set_header(new Gtk.Separator());
-                else
-                    row.set_header(null);
-            }
+        this._listbox.bind_model(this.model, (info) => {
+            return this._buildLocation(this.model, info);
         });
 
-        let locationEntry = builder.get_object('location-entry');
-        locationEntry.connect('notify::location', (entry) => this._locationChanged(entry));
+        this._locationEntry = builder.get_object('location-entry');
+
+        this._locationEntry.setListView(this._searchListView);
+        this._locationEntry.connect('search-updated', (entry, text) => {
+            if (!text) {
+                this._stackPopover.set_visible_child(this._listboxScrollWindow);
+                entry.text = '';
+                return;
+            }
+
+            this._stackPopover.set_visible_child(this._searchListScrollWindow);
+        });
+        this._locationEntry.connect('notify::location', (entry) => {
+            const location = entry.location;
+            entry.text = '';
+
+            this._locationChanged(location);
+
+            this._stackPopover.set_visible_child(this._listboxScrollWindow);
+
+            // Defer the popdown to allow the stack to re-render
+            imports.mainloop.idle_add(() => {
+                this.popdown();
+                return false;
+            });
+        });
 
         this.connect('show', () => {
-            locationEntry.grab_focus();
+            this._locationEntry.grab_focus();
         });
 
-        let autoLocStack = builder.get_object('auto-location-stack');
-        let autoLocSwitch = builder.get_object('auto-location-switch');
         this._currentLocationController = application.currentLocationController;
 
-        if(this._currentLocationController.autoLocation == CurrentLocationController.AutoLocation.ENABLED) {
-            autoLocStack.visible_child_name = 'locating-label';
-        } else {
-            autoLocStack.visible_child_name = 'auto-location-switch-grid';
-            autoLocSwitch.active = false;
-            autoLocSwitch.sensitive = (this._currentLocationController.autoLocation != CurrentLocationController.AutoLocation.NOT_AVAILABLE);
-        }
-
-        let handlerId = autoLocSwitch.connect('notify::active', () => {
-            this._currentLocationController.setAutoLocation(autoLocSwitch.active);
-
-            if (autoLocSwitch.active && !this.model.addedCurrentLocation)
-                autoLocStack.visible_child_name = 'locating-label';
-
-            this.hide();
-        });
-
         this._listbox.connect('row-activated', (listbox, row) => {
-            this._window.showInfo(row._info, false);
-            this.model.moveLocationToFront(row._info);
-            this.hide();
+            if (row._info)
+                this.model.setSelectedLocation(row._info);
+
+            // Defer the popdown to allow the stack to re-render
+            imports.mainloop.idle_add(() => {
+                this.popdown();
+                return false;
+            });
         });
 
-        this.model.connect('current-location-changed', (model, info) => {
-            autoLocStack.visible_child_name = 'auto-location-switch-grid';
-            GObject.signal_handler_block(autoLocSwitch, handlerId);
-            autoLocSwitch.active = (this._currentLocationController.autoLocation == CurrentLocationController.AutoLocation.ENABLED);
-            autoLocSwitch.sensitive = (this._currentLocationController.autoLocation != CurrentLocationController.AutoLocation.NOT_AVAILABLE);
-            GObject.signal_handler_unblock(autoLocSwitch, handlerId);
-
-            this._window.showInfo(info, true);
+        this.model.connect('selected-location-changed', (_, info) => {
+            this._window.showInfo(info);
         });
 
         this._stackPopover = builder.get_object('popover-stack');
-        this._listbox.set_filter_func((row) => this._filterListbox(row));
-
-        this.model.connect('location-added', (model, info, is_current) => {
-            this._onLocationAdded(model, info, is_current);
-        });
-
-        this.model.connect('location-removed', (model, info) => {
-            this._onLocationRemoved(model, info);
-        });
+        this._stackPopover.set_visible_child(this._listboxScrollWindow);
 
         this._currentLocationAdded = false;
-        let list = this.model.getAll();
-        for (let i = list.length - 1; i >= 0; i--)
-            this._onLocationAdded(this.model, list[i], list[i]._isCurrentLocation);
+
+    }
+
+    vfunc_unroot() {
+        this._listbox.bind_model(null, null);
+
+        this._window = null;
+
+        super.vfunc_unroot();
     }
 
     refilter() {
         this._listbox.invalidate_filter();
     }
 
-    _syncStackPopover() {
-        if (this.model.length == 1)
-            this._stackPopover.set_visible_child_name("search-grid");
-        else
-            this._stackPopover.set_visible_child_name("locations-grid");
-    }
-
-    _filterListbox(row) {
-        return this._window.currentInfo == null ||
-            row._info != this._window.currentInfo;
-    }
-
-    _locationChanged(entry) {
-        if (entry.location) {
-            let info = this.model.addNewLocation(entry.location, false);
-            this._window.showInfo(info, false);
-            this.hide();
-            entry.location = null;
+    _locationChanged(location) {
+        if (location) {
+            let info = this.model.addNewLocation(location);
+            this._window.showInfo(info);
         }
     }
 
-    _onLocationAdded(model, info, isCurrentLocation) {
+    _buildLocation(model, info) {
+        if (!info) return new LocationRow({ name: '', countryName: '' });;
+
         let location = info.location;
 
-        let grid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
-                                  column_spacing: 12,
-                                  margin: 12,
-                                  visible: true });
+        const [name, countryName = ''] = Util.getNameAndCountry(location);
 
-        let name = location.get_city_name();
-        let locationGrid = new Gtk.Grid({ orientation: Gtk.Orientation.HORIZONTAL,
-                                          column_spacing: 12,
-                                          halign: Gtk.Align.START,
-                                          hexpand: true,
-                                          visible: true });
-        let locationLabel = new Gtk.Label({ label: name,
-                                            use_markup: true,
-                                            halign: Gtk.Align.START,
-                                            visible: true });
-        locationGrid.attach(locationLabel, 0, 0, 1, 1);
-        grid.attach(locationGrid, 0, 0, 1, 1);
-
-        let tempLabel = new Gtk.Label({ use_markup: true,
-                                        halign: Gtk.Align.END,
-                                        margin_start: 12,
-                                        visible: true });
-        grid.attach(tempLabel, 1, 0, 1, 1);
-
-        if (isCurrentLocation) {
-            let image = new Gtk.Image({ icon_size: Gtk.IconSize.LARGE_TOOLBAR,
-                                        icon_name: 'mark-location-symbolic',
-                                        use_fallback: true,
-                                        halign: Gtk.Align.START,
-                                        visible: true });
-            locationGrid.attach(image, 1, 0, 1, 1);
-        }
-
-        let image = new Gtk.Image({ icon_size: Gtk.IconSize.LARGE_TOOLBAR,
-                                    use_fallback: true,
-                                    halign: Gtk.Align.END,
-                                    visible: true });
-        grid.attach(image, 2, 0, 1, 1);
-
-        let row = new Gtk.ListBoxRow({ visible: true });
-        row.add(grid);
+        const grid = new LocationRow({ name, countryName, isSelected: model.isSelectedLocation(info), isCurrentLocation: model.isCurrentLocation(info) });
+        const row = new Gtk.ListBoxRow({ child: grid });
         row._info = info;
-        row._isCurrentLocation = isCurrentLocation;
-
-        if (isCurrentLocation) {
-            if (this._currentLocationAdded) {
-                let row0 = this._listbox.get_row_at_index(0);
-                if (row0)
-                    row0.destroy();
-            }
-
-            this._currentLocationAdded = true;
-            this._listbox.insert(row, 0);
-        } else {
-            if (this._currentLocationAdded)
-                this._listbox.insert(row, 1);
-            else
-                this._listbox.insert(row, 0);
-        }
-
-        if (info._updatedId)
-            return;
-
-        info._updatedId = info.connect('updated', (info) => {
-            tempLabel.label = info.get_temp_summary();
-            image.icon_name = info.get_symbolic_icon_name();
-        });
-
-        this._syncStackPopover();
-        this._currentLocationController.currentLocation = info
+        return row;
     }
+};
 
-    _onLocationRemoved(model, info) {
-        let rows = this._listbox.get_children();
-
-        for (let row of rows) {
-            if (row._info == info) {
-                row.destroy();
-                break;
-            }
-        }
-
-        if (info._updatedId) {
-            info.disconnect(info._updatedId);
-            info._updatedId = 0;
-        }
-        if (info._isCurrentLocation)
-            this._currentLocationAdded = false;
-
-        this._syncStackPopover();
-    }
-});
+GObject.registerClass(WorldContentView);

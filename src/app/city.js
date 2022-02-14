@@ -16,68 +16,63 @@
 // with Gnome Weather; if not, write to the Free Software Foundation,
 // Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-const Gio = imports.gi.Gio;
-const GLib = imports.gi.GLib;
-const Gnome = imports.gi.GnomeDesktop;
-const GObject = imports.gi.GObject;
-const Gdk = imports.gi.Gdk;
-const Gtk = imports.gi.Gtk;
-const GWeather = imports.gi.GWeather;
+import Adw from 'gi://Adw';
+import GLib from 'gi://GLib';
+import GObject from 'gi://GObject';
+import Gtk from 'gi://Gtk';
+import GWeather from 'gi://GWeather';
 
-const WorldView = imports.app.world;
-const HourlyForecast = imports.app.hourlyForecast;
-const DailyForecast = imports.app.dailyForecast;
-const Util = imports.misc.util;
+import * as WorldView from './world.js';
+import * as Util from '../misc/util.js';
 
-const SPINNER_SIZE = 128;
+import './hourlyForecast.js';
+import './dailyForecast.js';
 
 const SCROLLING_ANIMATION_TIME = 400000; //us
 
 const UPDATED_TIME_TIMEOUT = 60; //s
 
-var WeatherWidget = GObject.registerClass({
+export const WeatherWidget = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/weather-widget.ui',
-    InternalChildren: ['contentFrame', 'outerBox',
-                       'conditionsImage', 'placesButton', 'placesLabel',
-                       'temperatureLabel', 'apparentLabel',
-                       'forecastFrame', 'forecastStack',
-                       'leftButton', 'rightButton',
-                       'forecast-hourly', 'forecast-hourly-viewport',
-                       'forecast-daily', 'forecast-daily-viewport',
-                       'updatedTimeLabel', 'attributionLabel'],
-}, class WeatherWidget extends Gtk.Frame {
-
-    _init(application, window, params) {
-        super._init(Object.assign({
-            shadow_type: Gtk.ShadowType.NONE,
+    InternalChildren: [
+        'conditionsImage',
+        'placesButton',
+        'temperatureLabel',
+        'apparentLabel',
+        'forecastStack',
+        'leftButton',
+        'rightButton',
+        'forecastHourly',
+        'forecastHourlyScrollWindow',
+        'forecastHourlyAdjustment',
+        'forecastDaily',
+        'forecastDailyScrollWindow',
+        'forecastDailyAdjustment',
+        'updatedTimeLabel',
+        'attributionLabel'
+    ],
+}, class WeatherWidget extends Adw.Bin {
+    constructor(application, window) {
+        super({
             name: 'weather-page'
-        }, params));
+        });
+
+        Object.assign(this.layoutManager, {
+            maximumSize: 1010,
+            // Ensures ~18px of margin on the right side
+            tighteningThreshold: 992,
+        });
 
         this._info = null;
 
-        this._worldView = new WorldView.WorldContentView(application, window);
+        this._worldView = new WorldView.WorldContentView(application, window,  {
+            align: Gtk.Align.START,
+        });
         this._placesButton.set_popover(this._worldView);
 
-        this._forecasts = { };
-
-        for (let t of ['hourly', 'daily']) {
-            let box;
-            if (t == 'hourly') {
-                box = new HourlyForecast.HourlyForecastBox();
-            } else {
-                box = new DailyForecast.DailyForecastBox();
-            }
-
-            this._forecasts[t] = box;
-            this['_forecast_' + t + '_viewport'].add(box);
-
-            let fsw = this['_forecast_' + t];
-            let hscrollbar = fsw.get_hscrollbar();
-            hscrollbar.set_opacity(0.0);
-            hscrollbar.hide();
-            let hadjustment = fsw.get_hadjustment();
-            hadjustment.connect('changed', () => this._syncLeftRightButtons());
-            hadjustment.connect('value-changed', () => this._syncLeftRightButtons());
+        for (const adjustment of [this._forecastHourlyAdjustment, this._forecastDailyAdjustment]) {
+            adjustment.connect('changed', () => this._syncLeftRightButtons());
+            adjustment.connect('value-changed', () => this._syncLeftRightButtons());
         }
 
         this._forecastStack.connect('notify::visible-child', () => {
@@ -111,52 +106,36 @@ var WeatherWidget = GObject.registerClass({
             this._beginScrollAnimation(target);
         });
 
-        this._forecastFrame.connect('draw', (frame, cr) => {
-            const width = frame.get_allocated_width();
-            const height = frame.get_allocated_height();
-
-            const borderRadius = 8;
-
-            const arc0 = 0.0;
-            const arc1 = Math.PI * 0.5
-            const arc2 = Math.PI;
-            const arc3 = Math.PI * 1.5
-
-            cr.newSubPath();
-            cr.arc(width - borderRadius, borderRadius, borderRadius, arc3, arc0);
-            cr.arc(width - borderRadius, height - borderRadius, borderRadius, arc0, arc1);
-            cr.arc(borderRadius, height - borderRadius, borderRadius, arc1, arc2);
-            cr.arc(borderRadius, borderRadius, borderRadius, arc2, arc3);
-            cr.closePath();
-
-            cr.clip();
-            cr.fill();
-
-            return false;
-        });
-
         this._updatedTime = null;
         this._updatedTimeTimeoutId = 0;
-
-        this.connect('destroy', () => this._onDestroy());
     }
 
-    _onDestroy() {
+    vfunc_unroot() {
+        this._worldView.unparent();
+        this._worldView = null;
+
+        super.vfunc_unroot();
+    }
+
+    vfunc_unmap() {
         if (this._updatedTimeTimeoutId) {
             GLib.Source.remove(this._updatedTimeTimeoutId);
             this._updatedTimeTimeoutId = 0;
         }
+
+        super.vfunc_unmap();
     }
 
     _syncLeftRightButtons() {
-        let hadjustment = this._forecastStack.visible_child.get_hadjustment();
+        const visible_child = this._forecastStack.visible_child;
+        let hadjustment = visible_child.get_hadjustment();
         if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
             this._leftButton.hide();
             this._rightButton.hide();
-        } else if (hadjustment.value == hadjustment.get_lower()){
+        } else if (hadjustment.value == hadjustment.get_lower()) {
             this._leftButton.hide();
             this._rightButton.show();
-        } else if (hadjustment.value >= (hadjustment.get_upper() - hadjustment.page_size)){
+        } else if (hadjustment.value >= (hadjustment.get_upper() - hadjustment.page_size)) {
             this._leftButton.show();
             this._rightButton.hide();
         } else {
@@ -183,7 +162,7 @@ var WeatherWidget = GObject.registerClass({
 
         if (now < end) {
             t = (now - start) / SCROLLING_ANIMATION_TIME;
-            t = Util.easeOutCubic (t);
+            t = Util.easeOutCubic(t);
             hadjustment.value = value + t * (target - value);
             return true;
         } else {
@@ -194,8 +173,8 @@ var WeatherWidget = GObject.registerClass({
     }
 
     clear() {
-        for (let t of ['hourly', 'daily'])
-            this._forecasts[t].clear();
+        this._forecastHourly.clear();
+        this._forecastDaily.clear();
 
         if (this._tickId) {
             this.remove_tick_callback(this._tickId);
@@ -210,23 +189,12 @@ var WeatherWidget = GObject.registerClass({
     update(info) {
         this._info = info;
 
-        let location = info.location;
-        let city = location;
-        if (location.get_level() == GWeather.LocationLevel.WEATHER_STATION)
-            city = location.get_parent();
-
-        let country = city.get_parent();
-        while (country && country.get_level() > GWeather.LocationLevel.COUNTRY)
-            country = country.get_parent();
-
-        if (country)
-            this._placesLabel.set_text(city.get_name() + ', ' + country.get_name());
-        else
-            this._placesLabel.set_text(city.get_name());
+        const label = Util.getNameAndCountry(info.location);
+        this._placesButton.set_label(label.join(', '));
 
         this._worldView.refilter();
 
-        this._conditionsImage.iconName = info.get_icon_name() + '-large';
+        this._conditionsImage.iconName = `${info.get_icon_name()}-large`;
 
         const [, tempValue] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
         this._temperatureLabel.label = '%d°'.format(Math.round(tempValue));
@@ -234,8 +202,8 @@ var WeatherWidget = GObject.registerClass({
         const [, apparentValue] = info.get_value_apparent(GWeather.TemperatureUnit.DEFAULT);
         this._apparentLabel.label = _('Feels like %.0f°').format(apparentValue);
 
-        for (let t of ['hourly', 'daily'])
-            this._forecasts[t].update(info);
+        this._forecastHourly.update(info);
+        this._forecastDaily.update(info);
 
         if (this._updatedTimeTimeoutId)
             GLib.Source.remove(this._updatedTimeTimeoutId);
@@ -295,26 +263,21 @@ var WeatherWidget = GObject.registerClass({
     }
 });
 
-var WeatherView = GObject.registerClass({
-    Template: 'resource:///org/gnome/Weather/city.ui',
-    InternalChildren: ['spinner']
-}, class WeatherView extends Gtk.Stack {
+WeatherWidget.set_layout_manager_type(Adw.ClampLayout);
 
-    _init(application, window, params) {
-        super._init(params);
+export const WeatherView = GObject.registerClass({
+    Template: 'resource:///org/gnome/Weather/city.ui',
+    InternalChildren: ['spinner', 'stack']
+}, class WeatherView extends Adw.Bin {
+
+    constructor(application, window, params) {
+        super(params);
 
         this._infoPage = new WeatherWidget(application, window);
-        this.add_named(this._infoPage, 'info');
+        this._stack.add_named(this._infoPage, 'info');
 
         this._info = null;
         this._updateId = 0;
-
-        this.connect('destroy', () => this._onDestroy());
-
-        this._wallClock = new Gnome.WallClock();
-        this._clockHandlerId = 0;
-
-        this._desktopSettings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
     }
 
     get info() {
@@ -332,23 +295,39 @@ var WeatherView = GObject.registerClass({
         this._info = info;
 
         if (info) {
+            this._stack.visible_child_name = 'loading';
+            this._spinner.start();
             this._updateId = this._info.connect('updated', (info) => {
                 this._onUpdate(info)
             });
-            if (info.is_valid())
+
+            if (info.is_valid()) {
                 this._onUpdate(info);
+            } else {
+                info.update();
+            }
         }
     }
 
-    _onDestroy() {
+    vfunc_map() {
+        super.vfunc_map();
+
+        this._spinner.start();
+    }
+
+    vfunc_unmap() {
         if (this._updateId) {
             this._info.disconnect(this._updateId);
             this._updateId = 0;
         }
+
+        this._spinner.stop();
+
+        super.vfunc_unmap();
     }
 
     update() {
-        this.visible_child_name = 'loading';
+        this._stack.visible_child_name = 'loading';
         this._spinner.start();
         this._infoPage.clear();
 
@@ -359,10 +338,10 @@ var WeatherView = GObject.registerClass({
         this._infoPage.clear();
         this._infoPage.update(info);
         this._spinner.stop();
-        this.visible_child_name = 'info';
+        this._stack.visible_child_name = 'info';
     }
 
-    getInfoPage() {
-        return this._infoPage;
+    getForecastStack() {
+        return this._infoPage.getForecastStack();
     }
 });

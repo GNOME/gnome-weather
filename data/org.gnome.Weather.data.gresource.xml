@@ -3,12 +3,13 @@
   <gresource prefix="/org/gnome/Weather">
     <file preprocess="xml-stripblanks">city.ui</file>
     <file preprocess="xml-stripblanks">places-popover.ui</file>
-    <file preprocess="xml-stripblanks">primary-menu.ui</file>
     <file preprocess="xml-stripblanks">weather-widget.ui</file>
     <file preprocess="xml-stripblanks">window.ui</file>
     <file preprocess="xml-stripblanks">hour-entry.ui</file>
     <file preprocess="xml-stripblanks">day-entry.ui</file>
-    <file>application.css</file>
+    <file>style.css</file>
+    <file>style-dark.css</file>
+    <file>style-hc.css</file>
   </gresource>
   <gresource prefix="/org/gnome/shell">
     <file>ShellWeatherIntegration.xml</file>
