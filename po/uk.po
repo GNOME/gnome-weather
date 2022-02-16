@@ -1,27 +1,26 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Korostil <ted.korostiled@gmail.com>, 2013, 2014, 2015, 2016.
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-28 12:52+0000\n"
-"PO-Revision-Date: 2021-02-28 15:05+0200\n"
+"POT-Creation-Date: 2022-02-16 01:34+0000\n"
+"PO-Revision-Date: 2022-02-16 09:44+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 20.11.70\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.12.0\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
 msgid "Weather"
 msgstr "Погода"
 
@@ -57,7 +56,7 @@ msgstr ""
 "погодні умови найнедавніших міст. Достатньо ввести потрібного вам міста в "
 "огляді діяльності."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:175
 msgid "The GNOME Project"
 msgstr "Проєкт GNOME"
 
@@ -82,121 +81,88 @@ msgstr ""
 "Місця показані в світовому перегляді. Кожне значення — це GVariant, який "
 "повертає gweather_location_serialize()."
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "Автоматичне знаходження місця"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which "
-"decides whether to fetch current location or not."
-msgstr ""
-"Автоматичне знаходження місця — значення, яке визначає, чи шукати поточне "
-"місце перебування, чи ні."
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "Огляд міста"
-
-#: data/city.ui:32
+#: data/city.ui:24
 msgid "Loading…"
 msgstr "Завантаження…"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "Ніч"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "Ранок"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "Після обіду"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Вечір"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "Автоматичне знаходження місця"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "Знаходження…"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "Пошук міста"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "Недавно переглянуті"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "Одиниця _температури"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "Градуси _Цельсія"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "Градуси _Фаренгейта"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "_Про «Погоду»"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "Місця"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "Поточні погодні умови"
-
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:92
 msgid "Hourly"
 msgstr "Щогодини"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "Щодня"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "Одиниця _температури"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "Градуси _Цельсія"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "Градуси _Фаренгейта"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_Про «Погоду»"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "Оновити"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "Вибрати місцевість"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "Вітаємо у «Погоді»!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "Спочатку, виберіть місце."
 
-#: data/window.ui:136
-#| msgid "Search for a city"
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "Пошук міста або країни"
 
-#: src/app/city.js:209
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Відчувається як %.0f°"
 
-#: src/app/city.js:241
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "Щойно оновлено."
 
-#: src/app/city.js:246
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -204,7 +170,7 @@ msgstr[0] "Оновлено %d хвилину тому."
 msgstr[1] "Оновлено %d хвилини тому."
 msgstr[2] "Оновлено %d хвилин тому."
 
-#: src/app/city.js:252
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -212,7 +178,7 @@ msgstr[0] "Оновлено %d годину тому."
 msgstr[1] "Оновлено %d години тому."
 msgstr[2] "Оновлено %d годин тому."
 
-#: src/app/city.js:258
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -220,7 +186,7 @@ msgstr[0] "Оновлено %d день тому."
 msgstr[1] "Оновлено %d дні тому."
 msgstr[2] "Оновлено %d днів тому."
 
-#: src/app/city.js:264
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -228,7 +194,7 @@ msgstr[0] "Оновлено %d тиждень тому."
 msgstr[1] "Оновлено %d тижні тому."
 msgstr[2] "Оновлено %d тижнів тому."
 
-#: src/app/city.js:269
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -240,12 +206,13 @@ msgstr[2] "Оновлено %d місяців тому."
 msgid "Daily Forecast"
 msgstr "Денний прогноз"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#| msgid "Forecast not available"
+msgid "Forecast not Available"
 msgstr "Прогноз недоступний"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%e %b"
 
@@ -253,27 +220,31 @@ msgstr "%e %b"
 msgid "Hourly Forecast"
 msgstr "Годинний прогноз"
 
+#: src/app/hourlyForecast.js:110
+msgid "Now"
+msgstr "Зараз"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:117
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:202
+#: src/app/window.js:168
 msgid "translator-credits"
 msgstr "Daniel Korostil <ted.korostiled@gmail.com>"
 
-#: src/app/window.js:204
+#: src/app/window.js:170
 msgid "A weather application"
 msgstr "Погодна програма"
 
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Світовий огляд"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:99
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -285,6 +256,31 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Automatic location"
+#~ msgstr "Автоматичне знаходження місця"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which "
+#~ "decides whether to fetch current location or not."
+#~ msgstr ""
+#~ "Автоматичне знаходження місця — значення, яке визначає, чи шукати поточне "
+#~ "місце перебування, чи ні."
+
+#~ msgid "City view"
+#~ msgstr "Огляд міста"
+
+#~ msgid "Automatic Location"
+#~ msgstr "Автоматичне знаходження місця"
+
+#~ msgid "Locating…"
+#~ msgstr "Знаходження…"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "Недавно переглянуті"
+
+#~ msgid "Current conditions"
+#~ msgstr "Поточні погодні умови"
 
 #~ msgid "Search for a location"
 #~ msgstr "Пошук місцевості"
@@ -315,10 +311,6 @@ msgstr "%s, %s"
 
 #~ msgid "9°"
 #~ msgstr "9°"
-
-#~| msgid "New"
-#~ msgid "Now"
-#~ msgstr "Зараз"
 
 #~ msgid "13°"
 #~ msgstr "13°"
