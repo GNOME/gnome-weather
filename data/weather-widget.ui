@@ -177,24 +177,20 @@
           </object>
         </child>
         <child>
-          <object class="GtkGrid">
+          <object class="GtkBox">
             <property name="name">attributionGrid</property>
-            <property name="row_spacing">8</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">6</property>
             <child>
               <object class="GtkLabel" id="updatedTimeLabel">
                 <property name="halign">start</property>
                 <style>
                   <class name="caption" />
                 </style>
-                <layout>
-                  <property name="column">0</property>
-                  <property name="row">0</property>
-                </layout>
               </object>
             </child>
             <child>
               <object class="GtkLabel" id="attributionLabel">
-                <property name="name">attribution-label</property>
                 <property name="use_markup">true</property>
                 <property name="wrap">1</property>
                 <property name="xalign">0</property>
@@ -202,12 +198,9 @@
                      don't cause the bottom navigation to overflow -->
                 <property name="ellipsize">end</property>
                 <style>
+                  <class name="dim-label" />
                   <class name="caption" />
                 </style>
-                <layout>
-                  <property name="column">0</property>
-                  <property name="row">1</property>
-                </layout>
               </object>
             </child>
           </object>

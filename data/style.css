@@ -90,10 +90,6 @@ WeatherThermometer > label.low {
     margin: 18px;
 }
 
-#attribution-label {
-    color: rgba(154, 153, 150, 1);
-}
-
 viewswitchertitle viewswitcher {
     margin-left: 100px;
     margin-right: 100px;
