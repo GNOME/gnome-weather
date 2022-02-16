@@ -164,11 +164,7 @@
                 <property name="halign">end</property>
                 <property name="valign">center</property>
                 <property name="margin_end">28</property>
-                <child>
-                  <object class="GtkImage" id="right-image">
-                    <property name="icon_name">go-next-symbolic</property>
-                  </object>
-                </child>
+                <property name="icon_name">go-next-symbolic</property>
                 <style>
                   <class name="osd"/>
                   <class name="circular"/>
@@ -180,12 +176,7 @@
                 <property name="halign">start</property>
                 <property name="valign">center</property>
                 <property name="margin_start">28</property>
-                <child>
-                  <object class="GtkImage" id="left-image">
-                    <property name="icon_name">go-previous-symbolic</property>
-                    <property name="icon_size">1</property>
-                  </object>
-                </child>
+                <property name="icon_name">go-previous-symbolic</property>
                 <style>
                   <class name="osd"/>
                   <class name="circular"/>
