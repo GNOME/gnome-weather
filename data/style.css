@@ -6,7 +6,7 @@
 
 @define-color weather_thermometer_high_color @yellow_5;
 @define-color weather_thermometer_low_color @blue_5;
-@define-color weather_forecast_color @yellow_5;
+@define-color weather_forecast_color #ae7b03;
 
 #places-label {
     font-weight: bold;
