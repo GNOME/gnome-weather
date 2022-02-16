@@ -46,6 +46,19 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2022-02-15" version="42.beta">
+      <description>
+        <p>GNOME Weather 42.beta comes with a port to GTK4 and libadwaita.</p>
+        <ul>
+          <li>Abkhazian</li>
+          <li>Czech</li>
+          <li>Galician</li>
+          <li>Japanese</li>
+          <li>Portuguese (Brazil)</li>
+          <li>Spanish</li>
+        </ul>
+      </description>
+    </release>
     <release date="2022-01-11" version="42.alpha">
       <description>
         <p>GNOME Weather 42.alpha comes with a new thermometer widget and support for the new dark style preference.</p>

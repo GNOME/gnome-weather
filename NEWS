@@ -1,3 +1,15 @@
+42.beta
+=======
+* Port to GTK4 and libadwaita (Evan Welsh)
+
+* Translation updates:
+ - Abkhazian
+ - Czech
+ - Galician
+ - Japanese
+ - Portuguese (Brazil)
+ - Spanish
+
 42.alpha
 =======
 * Show current temperature in the forecast chart (Vitaly Dyachkov)
