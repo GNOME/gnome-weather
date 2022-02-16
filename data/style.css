@@ -90,11 +90,6 @@ WeatherThermometer > label.low {
     margin: 18px;
 }
 
-viewswitchertitle viewswitcher {
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
 button.osd.circular {
     border-radius: 9999px;
     min-width: 24px;
