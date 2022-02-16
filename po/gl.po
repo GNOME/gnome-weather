@@ -3,22 +3,22 @@
 # This file is distributed under the same license as the gnome-weather package.
 #
 # Fran Diéguez <frandieguez@gnome.org>, 2012, 2015.
-# Fran Dieguez <fran.dieguez@gnome.org>, 2012-2022.
+# Fran Dieguez <frandieguez@gnome.org>, 2012-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-10-28 15:13+0000\n"
-"PO-Revision-Date: 2022-01-26 00:45+0100\n"
-"Last-Translator: Fran Dieguez <fran.dieguez@gnome.org>\n"
+"POT-Creation-Date: 2022-02-16 01:34+0000\n"
+"PO-Revision-Date: 2022-02-16 11:31+0100\n"
+"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 40.0\n"
+"X-Generator: Gtranslator 42.alpha0\n"
 "X-Project-Style: gnome\n"
 "X-DL-Team: gl\n"
 "X-DL-Module: gnome-weather\n"
@@ -27,8 +27,8 @@ msgstr ""
 "X-DL-State: Translating\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
 msgid "Weather"
 msgstr "Clima"
 
@@ -63,7 +63,7 @@ msgstr ""
 "meteorolóxicas actuais das cidades máis buscadas recentemente escribindo o "
 "seu nome na Vista de actividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:154
+#: data/org.gnome.Weather.appdata.xml.in.in:175
 msgid "The GNOME Project"
 msgstr "O Proxecto GNOME"
 
@@ -88,164 +88,132 @@ msgstr ""
 "As localizacións mostradas na vista do mundo de gnome-weather. Cada valor é "
 "un GVariant devolto por gweather_location_serialize()."
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "Localización automática"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which "
-"decides whether to fetch current location or not."
-msgstr ""
-"A localización automática é o valor da configuración automatic-location que "
-"decide se obter a localización automaticamente ou non."
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "Vista de cidade"
-
-#: data/city.ui:32
+#: data/city.ui:24
 msgid "Loading…"
 msgstr "Cargando…"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "Noite"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "Mañá"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "Tarde"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Noitiña"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "Localización automática"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "Localizando…"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "Buscar por unha cidade"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "Visto recentemente"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "_Unidade de temperatura"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "_Celsius"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "_Fahrenheit"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "_Sobre Tempo"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "Lugares"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "Condicións actuais"
-
-#: data/weather-widget.ui:186
+#: data/weather-widget.ui:92
 msgid "Hourly"
 msgstr "Por hora"
 
-#: data/weather-widget.ui:207
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "Por día"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "_Unidade de temperatura"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_Celsius"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_Fahrenheit"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_Sobre Tempo"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "Actualizar"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "Seleccione a localización"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "Benvida a Tempo!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "Para comezar, seleccione unha localización."
 
-#: data/window.ui:136
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "Buscar por unha cidade ou país"
 
-#: src/app/city.js:235
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Sensación de %.0f°"
 
-#: src/app/city.js:265
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "Actualizado agora mesmo."
 
-#: src/app/city.js:270
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Actualizado hai %d minuto."
 msgstr[1] "Actualizado hai %d minutos."
 
-#: src/app/city.js:276
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Actualizado hai %d hora."
 msgstr[1] "Actualizado hai %d horas."
 
-#: src/app/city.js:282
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Actualizado hai %d día."
 msgstr[1] "Actualizado hai %d días."
 
-#: src/app/city.js:288
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Actualizado hai %d semana."
 msgstr[1] "Actualizado hai %d semanas."
 
-#: src/app/city.js:293
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Actualizado hai %d mes."
 msgstr[1] "Actualizado hai %d meses."
 
-#: src/app/dailyForecast.js:38
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Predición diaria"
 
-#: src/app/dailyForecast.js:103 src/app/hourlyForecast.js:94
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+msgid "Forecast not Available"
 msgstr "Predición non dispoñíbel"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:189
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%b %e"
 
@@ -253,31 +221,31 @@ msgstr "%b %e"
 msgid "Hourly Forecast"
 msgstr "Predición por horas"
 
-#: src/app/hourlyForecast.js:83
+#: src/app/hourlyForecast.js:110
 msgid "Now"
 msgstr "Agora"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:115
+#: src/app/hourlyForecast.js:117
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:202
+#: src/app/window.js:168
 msgid "translator-credits"
 msgstr "Fran Diéguez <frandieguez@gnome.org>, 2013-2022"
 
-#: src/app/window.js:204
+#: src/app/window.js:170
 msgid "A weather application"
 msgstr "Unha aplicación do clima"
 
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Vista mundial"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:141
+#: src/misc/util.js:99
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -289,6 +257,31 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Automatic location"
+#~ msgstr "Localización automática"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which "
+#~ "decides whether to fetch current location or not."
+#~ msgstr ""
+#~ "A localización automática é o valor da configuración automatic-location "
+#~ "que decide se obter a localización automaticamente ou non."
+
+#~ msgid "City view"
+#~ msgstr "Vista de cidade"
+
+#~ msgid "Automatic Location"
+#~ msgstr "Localización automática"
+
+#~ msgid "Locating…"
+#~ msgstr "Localizando…"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "Visto recentemente"
+
+#~ msgid "Current conditions"
+#~ msgstr "Condicións actuais"
 
 #~ msgid "Search for a location"
 #~ msgstr "Buscar unha localización"
