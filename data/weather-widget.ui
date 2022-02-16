@@ -31,7 +31,6 @@
             </child>
             <child>
               <object class="GtkMenuButton" id="placesButton">
-                <property name="receives_default">true</property>
                 <property name="halign">start</property>
                 <property name="valign">start</property>
                 <child>
@@ -162,7 +161,6 @@
             </property>
             <child type="overlay">
               <object class="GtkButton" id="rightButton">
-                <property name="receives_default">true</property>
                 <property name="halign">end</property>
                 <property name="valign">center</property>
                 <property name="margin_end">28</property>
@@ -179,7 +177,6 @@
             </child>
             <child type="overlay">
               <object class="GtkButton" id="leftButton">
-                <property name="receives_default">true</property>
                 <property name="halign">start</property>
                 <property name="valign">center</property>
                 <property name="margin_start">28</property>
