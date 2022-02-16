@@ -14,7 +14,8 @@
         "--share=network",
         "--system-talk-name=org.freedesktop.GeoClue2",
         "--env=G_ENABLE_DIAGNOSTIC=1",
-        "--metadata=X-DConf=migrate-path=/org/gnome/Weather/"
+        "--metadata=X-DConf=migrate-path=/org/gnome/Weather/",
+        "--device=dri"
     ],
     "cleanup" : [
         "/include",
