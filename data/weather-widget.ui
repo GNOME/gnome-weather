@@ -33,24 +33,15 @@
               <object class="GtkMenuButton" id="placesButton">
                 <property name="halign">start</property>
                 <property name="valign">start</property>
-                <child>
-                  <object class="GtkBox" id="placesBox">
-                    <property name="spacing">12</property>
-                    <child>
-                      <object class="GtkLabel" id="placesLabel">
-                        <property name="name">places-label</property>
-                        <property name="wrap">true</property>
-                        <property name="wrap-mode">word-char</property>
-                        <property name="label" translatable="yes">Places</property>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkImage">
-                        <property name="icon_name">pan-down-symbolic</property>
-                      </object>
-                    </child>
+                <property name="always-show-arrow">True</property>
+                <property name="child">
+                  <object class="GtkLabel" id="placesLabel">
+                    <property name="name">places-label</property>
+                    <property name="wrap">true</property>
+                    <property name="wrap-mode">word-char</property>
+                    <property name="label" translatable="yes">Places</property>
                   </object>
-                </child>
+                </property>
                 <style>
                   <class name="text-button"/>
                   <class name="flat"/>
