@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-10-28 15:13+0000\n"
-"PO-Revision-Date: 2022-01-01 10:03+0800\n"
+"POT-Creation-Date: 2022-02-16 01:34+0000\n"
+"PO-Revision-Date: 2022-02-16 18:37+0800\n"
 "Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -26,8 +26,8 @@ msgstr ""
 "X-Generator: Gtranslator 41.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
 msgid "Weather"
 msgstr "天气"
 
@@ -59,7 +59,7 @@ msgstr ""
 "它也可选与 GNOME Shell 集成，允许你通过在活动概览中输入名字来查看最近搜索的城"
 "市的当前状况。"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:154
+#: data/org.gnome.Weather.appdata.xml.in.in:175
 msgid "The GNOME Project"
 msgstr "GNOME 项目"
 
@@ -84,157 +84,128 @@ msgstr ""
 "gnome-weather 的世界视图中显示的位置。每个值都是由 "
 "gweather_location_serialize() 返回的 GVariant 值。"
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "自动位置"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which "
-"decides whether to fetch current location or not."
-msgstr "自动位置是 automatic-location 开关的值，决定是否获取当前位置。"
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "城市视图"
-
-#: data/city.ui:32
+#: data/city.ui:24
 msgid "Loading…"
 msgstr "正在加载…"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "深夜"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "上午"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "下午"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "晚上"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "自动位置"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "正在定位……"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "根据城市搜索"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "最近查看"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "温度单位(_T)"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "摄氏度(_C)"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "华氏度(_F)"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "关于天气(_A)"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "地点"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "当前状况"
-
-#: data/weather-widget.ui:186
+#: data/weather-widget.ui:92
 msgid "Hourly"
 msgstr "每小时"
 
-#: data/weather-widget.ui:207
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "每天"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "温度单位(_T)"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "摄氏度(_C)"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "华氏度(_F)"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "关于天气(_A)"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "刷新"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "选择位置"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "欢迎使用天气程序！"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "请选择一个位置以便开始。"
 
-#: data/window.ui:136
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "搜索城市或国家"
 
-#: src/app/city.js:235
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "体感（温度）%.0f°"
 
-#: src/app/city.js:265
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "刚刚更新。"
 
-#: src/app/city.js:270
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d 分钟前更新。"
 
-#: src/app/city.js:276
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d 小时前更新。"
 
-#: src/app/city.js:282
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d 天前更新。"
 
-#: src/app/city.js:288
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d 周前更新。"
 
-#: src/app/city.js:293
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "%d 个月前更新。"
 
-#: src/app/dailyForecast.js:38
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "每日预报"
 
-#: src/app/dailyForecast.js:103 src/app/hourlyForecast.js:94
-msgid "Forecast not available"
-msgstr "天气预报不可用"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#| msgid "Forecast not available"
+msgid "Forecast not Available"
+msgstr "预报不可用"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:189
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%b %e"
 
@@ -242,17 +213,16 @@ msgstr "%b %e"
 msgid "Hourly Forecast"
 msgstr "小时预报"
 
-#: src/app/hourlyForecast.js:83
-#| msgid "New"
+#: src/app/hourlyForecast.js:110
 msgid "Now"
 msgstr "现在"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:115
+#: src/app/hourlyForecast.js:117
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:202
+#: src/app/window.js:168
 msgid "translator-credits"
 msgstr ""
 "tuhaihe <1132321739qq@gmail.com>, 2013,2020\n"
@@ -265,18 +235,18 @@ msgstr ""
 "Weiyi Xu <xuweiyi0923@gmail.com>, 2020\n"
 "lumingzh <lumingzh@qq.com>, 2022"
 
-#: src/app/window.js:204
+#: src/app/window.js:170
 msgid "A weather application"
 msgstr "一款天气应用"
 
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "全球视图"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:141
+#: src/misc/util.js:99
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -288,6 +258,29 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Automatic location"
+#~ msgstr "自动位置"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which "
+#~ "decides whether to fetch current location or not."
+#~ msgstr "自动位置是 automatic-location 开关的值，决定是否获取当前位置。"
+
+#~ msgid "City view"
+#~ msgstr "城市视图"
+
+#~ msgid "Automatic Location"
+#~ msgstr "自动位置"
+
+#~ msgid "Locating…"
+#~ msgstr "正在定位……"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "最近查看"
+
+#~ msgid "Current conditions"
+#~ msgstr "当前状况"
 
 #~ msgid "Search for a location"
 #~ msgstr "根据位置搜索"
