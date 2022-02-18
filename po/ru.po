@@ -9,17 +9,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-09-22 01:04+0000\n"
-"PO-Revision-Date: 2021-09-24 00:16+0300\n"
-"Last-Translator: Melman <Alexmelman88@gmail.com>\n"
+"POT-Creation-Date: 2022-02-16 01:34+0000\n"
+"PO-Revision-Date: 2022-02-16 13:01+0300\n"
+"Last-Translator: Aleksandr Melman <Alexmelman88@gmail.com>\n"
 "Language-Team: Russian <Alexmelman88@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 40.0\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-DL-Team: ru\n"
 "X-DL-Module: gnome-weather\n"
 "X-DL-Branch: master\n"
@@ -27,8 +27,8 @@ msgstr ""
 "X-DL-State: Translated\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
 msgid "Weather"
 msgstr "Погода"
 
@@ -54,10 +54,6 @@ msgstr ""
 "различных Интернет-служб."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
-#| msgid ""
-#| "It also optionally integrates with the GNOME Shell, allowing you see the "
-#| "current conditions of the most recently searched cities by just typing "
-#| "its name in the Activities Overview."
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you to see the "
 "current conditions of the most recently searched cities by just typing the "
@@ -67,7 +63,7 @@ msgstr ""
 "видеть текущие условия в городах, в которых недавно проводился поиск, просто "
 "набрав название города в Обзорном режиме."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:154
+#: data/org.gnome.Weather.appdata.xml.in.in:175
 msgid "The GNOME Project"
 msgstr "Проект GNOME"
 
@@ -92,122 +88,88 @@ msgstr ""
 "Местоположения отображаемые в gnome-weather. Каждое значение GVariant "
 "возвращается gweather_location_serialize ()."
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "Автоматическое местоположение"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which "
-"decides whether to fetch current location or not."
-msgstr ""
-"Автоматическое местоположение — это значение переключателя «automatic-"
-"location», который определяет, нужно получать ли текущее местоположение."
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "Городской режим просмотра"
-
-#: data/city.ui:32
+#: data/city.ui:24
 msgid "Loading…"
 msgstr "Загрузка…"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "Ночь"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "Утро"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "Полдень"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Вечер"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "Автоматическое местоположение"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "Определение местоположения…"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "Поиск по городу"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "Недавно просмотренные"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "_Единица измерения"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "_Цельсий"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "_Фаренгейт"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "_О приложении"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "Местоположения"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "Текущие условия"
-
-#: data/weather-widget.ui:186
+#: data/weather-widget.ui:92
 msgid "Hourly"
 msgstr "Почасовой"
 
-#: data/weather-widget.ui:207
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "Ежедневный"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "_Единица измерения"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_Цельсий"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_Фаренгейт"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_О приложении"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "Обновить"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "Выбрать местоположение"
 
-#: data/window.ui:126
-#| msgid "_About Weather"
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "Добро пожаловать в  приложение Погода!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "Чтобы начать, выберите местоположение."
 
-#: data/window.ui:136
-#| msgid "Search for a city"
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "Поиск по городу или стране"
 
-#: src/app/city.js:235
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "По ощущениям, %.0f°"
 
-#: src/app/city.js:265
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "Обновлено только что."
 
-#: src/app/city.js:270
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -215,7 +177,7 @@ msgstr[0] "Обновлено %d минуту назад."
 msgstr[1] "Обновлено %d минуты назад."
 msgstr[2] "Обновлено %d минут назад."
 
-#: src/app/city.js:276
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -223,7 +185,7 @@ msgstr[0] "Обновлено %d час назад."
 msgstr[1] "Обновлено %d часа назад."
 msgstr[2] "Обновлено %d часов назад."
 
-#: src/app/city.js:282
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -231,7 +193,7 @@ msgstr[0] "Обновлено %d день назад."
 msgstr[1] "Обновлено %d дня назад."
 msgstr[2] "Обновлено %d дней назад."
 
-#: src/app/city.js:288
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -239,7 +201,7 @@ msgstr[0] "Обновлено %d неделю назад."
 msgstr[1] "Обновлено %d недели назад."
 msgstr[2] "Обновлено %d недель назад."
 
-#: src/app/city.js:293
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -248,52 +210,50 @@ msgstr[1] "Обновлено %d месяца назад."
 msgstr[2] "Обновлено %d месяцев назад."
 
 #: src/app/dailyForecast.js:36
-#| msgid "Weekly Forecast"
 msgid "Daily Forecast"
 msgstr "Прогноз на день"
 
-#: src/app/dailyForecast.js:91 src/app/hourlyForecast.js:94
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+msgid "Forecast not Available"
 msgstr "Прогноз недоступен"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:177
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%b %e"
 
 #: src/app/hourlyForecast.js:40
-#| msgid "Weekly Forecast"
 msgid "Hourly Forecast"
 msgstr "Прогноз на час"
 
-#: src/app/hourlyForecast.js:83
+#: src/app/hourlyForecast.js:110
 msgid "Now"
 msgstr "Сейчас"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:115
+#: src/app/hourlyForecast.js:117
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:202
+#: src/app/window.js:168
 msgid "translator-credits"
 msgstr ""
 "Stas Solovey <whats_up@tut.by>, 2012-2019.\n"
 "Yuri Myasoedov <ymyasoedov@yandex.ru>, 2014-2016.\n"
-"Melman <Alexmelman88@gmail.com>, 2021."
+"Aleksandr Melman <alexmelman88@gmail.com>, 2022"
 
-#: src/app/window.js:204
+#: src/app/window.js:170
 msgid "A weather application"
 msgstr "Программа просмотра погоды"
 
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Глобальный режим просмотра"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:99
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -306,38 +266,3 @@ msgstr "%s / %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#~ msgid "@APP_ID@"
-#~ msgstr "@APP_ID@"
-
-#~ msgid "Today"
-#~ msgstr "Сегодня"
-
-#~ msgid "Tomorrow"
-#~ msgstr "Завтра"
-
-#~ msgid "Search for a location"
-#~ msgstr "Найти местоположение"
-
-#~ msgid "To see weather information, enter the name of a city."
-#~ msgstr "Чтобы показать информацию о погоде, введите название города."
-
-#~ msgid "Forecast"
-#~ msgstr "Прогноз"
-
-#~ msgid "%R"
-#~ msgstr "%R"
-
-#~ msgid "%A"
-#~ msgstr "%A"
-
-#~ msgid "_New"
-#~ msgstr "_Создать"
-
-#~ msgid "About"
-#~ msgstr "О приложении"
-
-#~ msgid "Quit"
-#~ msgstr "Завершить"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
