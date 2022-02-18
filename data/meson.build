@@ -1,5 +1,5 @@
 gnome = import('gnome')
-podir = join_paths(meson.source_root(), 'po')
+podir = join_paths(meson.project_source_root(), 'po')
 
 
 gnome.compile_resources(
@@ -67,7 +67,7 @@ appdata = i18n.merge_file(
   output: '@0@.appdata.xml'.format(weather_id),
   install: true,
   install_dir: join_paths(weather_datadir, 'metainfo'),
-  po_dir: join_paths(meson.source_root(), 'po')
+  po_dir: join_paths(meson.project_source_root(), 'po')
 )
 
 # Validating app data

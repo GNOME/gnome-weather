@@ -4,6 +4,6 @@ if get_option('dogtail')
     'world_view',
     pyexec,
     args: [join_paths('tests', 'world_view.py')],
-    workdir: meson.source_root()
+    workdir: meson.project_source_root()
   )
 endif
