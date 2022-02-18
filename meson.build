@@ -1,7 +1,7 @@
 project('gnome-weather', 'c',
   version: '45.alpha',
   meson_version: '>= 0.50.0',
-  license: 'GPL2+'
+  license: 'GPL-2.0-or-later'
 )
 
 i18n = import('i18n')
