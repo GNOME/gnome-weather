@@ -83,7 +83,8 @@
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gnome-weather.git"
+                    "url" : "https://gitlab.gnome.org/GNOME/gnome-weather.git",
+                    "branch" : "main"
                 }
             ]
         }
