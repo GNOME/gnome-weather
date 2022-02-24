@@ -30,10 +30,10 @@
   <project_group>GNOME</project_group>
   <screenshots>
     <screenshot type="default">
-      <image height="555" width="704">https://gitlab.gnome.org/GNOME/gnome-weather/raw/HEAD/misc/screenshots/city-view.png</image>
+      <image>https://gitlab.gnome.org/GNOME/gnome-weather/raw/HEAD/misc/screenshots/hourly.png</image>
     </screenshot>
     <screenshot>
-      <image height="555" width="704">https://gitlab.gnome.org/GNOME/gnome-weather/raw/HEAD/misc/screenshots/world-popover.png</image>
+      <image>https://gitlab.gnome.org/GNOME/gnome-weather/raw/HEAD/misc/screenshots/daily.png</image>
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">@app_id@.desktop</launchable>
