@@ -1,17 +1,17 @@
 # Swedish translation for gnome-weather.
-# Copyright © 2014-2021 gnome-weather's COPYRIGHT HOLDER
+# Copyright © 2014-2022 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Marcus Lundblad <ml@update.uu.se>, 2014.
 # Sebastian Rasmussen <sebras@gmail.com>, 2014.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016, 2018, 2019, 2020, 2021.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016, 2018, 2019, 2020, 2021, 2022.
 # Luna Jernberg <droidbittin@gmail.com>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-28 12:52+0000\n"
-"PO-Revision-Date: 2021-02-28 13:55+0100\n"
+"POT-Creation-Date: 2022-02-26 14:00+0000\n"
+"PO-Revision-Date: 2022-02-28 19:24+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
 msgid "Weather"
 msgstr "Väder"
 
@@ -59,7 +59,7 @@ msgstr ""
 "dig att se aktuella förhållanden för de senast eftersökta städerna genom att "
 "bara skriva namnet i Aktivitetsöversikten."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:188
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -84,148 +84,116 @@ msgstr ""
 "Platser som visas i världsvyn i gnome-weather. Vardera värde är en GVariant "
 "som returneras av gweather_location_serialize()."
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "Automatisk plats"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which "
-"decides whether to fetch current location or not."
-msgstr ""
-"Den automatiska platsen är värdet av inställningen automatisk-plats som "
-"avgör huruvida den aktuella platsen ska hämtas eller ej."
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "Stadsvy"
-
-#: data/city.ui:32
+#: data/city.ui:24
 msgid "Loading…"
 msgstr "Läser in…"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "Natt"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "Morgon"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "Eftermiddag"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Kväll"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "Automatisk plats"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "Söker plats…"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "Sök efter en stad"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "Senast besökta"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "_Temperaturenhet"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "_Celsius"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "_Fahrenheit"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "_Om Väder"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "Platser"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "Aktuella förhållanden"
-
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:92
 msgid "Hourly"
 msgstr "Timvis"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "Dagsvis"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "_Temperaturenhet"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_Celsius"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_Fahrenheit"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_Om Väder"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "Uppdatera"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "Välj plats"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "Välkommen till Väder!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "För att komma igång, välj en plats."
 
-#: data/window.ui:136
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "Sök efter en stad eller ett land"
 
-#: src/app/city.js:209
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Känns som %.0f°"
 
-#: src/app/city.js:241
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "Uppdaterades just nu."
 
-#: src/app/city.js:246
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Uppdaterades för %d minut sedan."
 msgstr[1] "Uppdaterades för %d minuter sedan."
 
-#: src/app/city.js:252
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Uppdaterades för %d timme sedan."
 msgstr[1] "Uppdaterades för %d timmar sedan."
 
-#: src/app/city.js:258
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Uppdaterades för %d dag sedan."
 msgstr[1] "Uppdaterades för %d dagar sedan."
 
-#: src/app/city.js:264
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Uppdaterades för %d vecka sedan."
 msgstr[1] "Uppdaterades för %d veckor sedan."
 
-#: src/app/city.js:269
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -236,12 +204,12 @@ msgstr[1] "Uppdaterades för %d månader sedan."
 msgid "Daily Forecast"
 msgstr "Dagsprognos"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+msgid "Forecast not Available"
 msgstr "Prognos inte tillgänglig"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%e %b"
 
@@ -249,12 +217,16 @@ msgstr "%e %b"
 msgid "Hourly Forecast"
 msgstr "Timprognos"
 
+#: src/app/hourlyForecast.js:110
+msgid "Now"
+msgstr "Nu"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:117
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:202
+#: src/app/window.js:168
 msgid "translator-credits"
 msgstr ""
 "Marcus Lundblad <ml@update.uu.se>\n"
@@ -265,18 +237,18 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/app/window.js:204
+#: src/app/window.js:170
 msgid "A weather application"
 msgstr "Ett väderprogram"
 
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Världsvy"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:99
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
