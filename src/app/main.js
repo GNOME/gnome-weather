@@ -38,4 +38,15 @@ globalThis.getApp = function () {
     return Gio.Application.get_default();
 };
 
-new WeatherApplication().run([system.programInvocationName, ...system.programArgs]);
+let application = new WeatherApplication();
+
+setTimeout(() => {
+    imports.mainloop.quit();
+
+    const code = application.run([system.programInvocationName, ...system.programArgs]);
+    application = null;
+
+    system.exit(code);
+});
+
+imports.mainloop.run();

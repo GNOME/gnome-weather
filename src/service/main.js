@@ -23,6 +23,8 @@ pkg.require({ 'Gio': '2.0',
               'GObject': '2.0',
               'GWeather': '4.0' });
 
+import * as system from 'system';
+
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
@@ -108,5 +110,13 @@ const BackgroundService = GObject.registerClass(
 export function main(argv) {
     initEnvironment();
 
-    return (new BackgroundService()).run(argv);
+    setTimeout(() => {
+        imports.mainloop.quit();
+
+        const code = (new BackgroundService()).run(argv);
+
+        system.exit(code);
+    });
+
+    imports.mainloop.run();
 }
