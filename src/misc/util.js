@@ -50,6 +50,10 @@ function arrayEqual(one, two) {
     return one.every((a, i) => a === two[i]);
 }
 
+function isSameDay(day, datetime) {
+    return arrayEqual(day.get_ymd(), datetime.get_ymd());
+}
+
 function getSettings(schemaId) {
     const schemaSource = Gio.SettingsSchemaSource.get_default();
     const schemaObj = schemaSource.lookup(schemaId, true);
@@ -198,6 +202,7 @@ export {
     getTempString,
     getNight,
     normalizeCasefoldAndUnaccent,
+    isSameDay,
     arrayEqual,
     getSettings,
     getMorning,

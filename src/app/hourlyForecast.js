@@ -27,7 +27,8 @@ import Graphene from 'gi://Graphene';
 import * as Util from '../misc/util.js';
 
 // In microseconds
-const TWENTY_FOUR_HOURS = 24 * 3600 * 1000 * 1000;
+const ONE_HOUR = 60 * 60 * 1000 * 1000;
+const TWENTY_FOUR_HOURS = 24 * ONE_HOUR;
 
 export class HourlyForecastBox extends Gtk.Box {
     constructor() {
@@ -47,23 +48,20 @@ export class HourlyForecastBox extends Gtk.Box {
 
     // Ensure that infos are sufficiently spaced, and
     // remove infos for the wrong day
-    _preprocess(now, infos) {
-        let ret = [];
-
-        for (let i = 0; i < infos.length; i++) {
-            let info = infos[i];
-
+    _preprocess(now, forecastInfo, infos) {
+        const ret = [forecastInfo, ...infos].filter(info => {
             let [, date] = info.get_value_update();
             let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(now.get_timezone());
 
-            if (datetime.difference(now) <= 0)
-                continue;
+            // Show the previous hour's forecast until 30 minutes in
+            if (datetime.difference(now) <= -ONE_HOUR / 2)
+                return false;
 
             if (datetime.difference(now) >= TWENTY_FOUR_HOURS)
-                break;
+                return false;
 
-            ret.push(info);
-        }
+            return true;
+        });
 
         return ret;
     }
@@ -76,14 +74,13 @@ export class HourlyForecastBox extends Gtk.Box {
         let tz = nearestCity.get_timezone();
         let now = GLib.DateTime.new_now(tz);
 
-        let hourlyInfo = this._preprocess(now, forecasts);
-
-        hourlyInfo.unshift(info);
+        let hourlyInfo = this._preprocess(now, info, forecasts);
 
         if (hourlyInfo.length > 0) {
             for (let i = 0; i < hourlyInfo.length; i++) {
-                let info = hourlyInfo[i];
-                this._addHourEntry(info, tz, now);
+                const info = hourlyInfo[i];
+                const isNow = i === 0;
+                this._addHourEntry(info, tz, isNow);
 
                 if (i < hourlyInfo.length - 1)
                     this._addSeparator();
@@ -106,7 +103,7 @@ export class HourlyForecastBox extends Gtk.Box {
         let [, date] = info.get_value_update();
         let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz);
 
-        if (now.get_hour() == datetime.get_hour()) {
+        if (now) {
             timeLabel = _('Now');
         } else {
             let timeSetting = this._settings.get_string('clock-format');
