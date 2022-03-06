@@ -46,7 +46,8 @@ setTimeout(() => {
     const code = application.run([system.programInvocationName, ...system.programArgs]);
     application = null;
 
-    system.exit(code);
+    if (code !== 0)
+        system.exit(code);
 });
 
 imports.mainloop.run();

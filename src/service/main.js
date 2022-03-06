@@ -115,7 +115,8 @@ export function main(argv) {
 
         const code = (new BackgroundService()).run(argv);
 
-        system.exit(code);
+        if (code !== 0)
+            system.exit(code);
     });
 
     imports.mainloop.run();
