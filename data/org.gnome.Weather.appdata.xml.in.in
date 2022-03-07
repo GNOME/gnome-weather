@@ -46,6 +46,36 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2022-03-07" version="42.rc">
+      <description>
+        <p>GNOME Weather 42.rc fixes the position of the "Now" item in the hourly forecast.</p>
+        <ul>
+          <li>Basque</li>
+          <li>Bulgarian</li>
+          <li>Chinese (China)</li>
+          <li>Croatian</li>
+          <li>Czech</li>
+          <li>Danish</li>
+          <li>Finnish</li>
+          <li>Friulian</li>
+          <li>Galician</li>
+          <li>Hebrew</li>
+          <li>Indonesian</li>
+          <li>Korean</li>
+          <li>Lithuanian</li>
+          <li>Occitan (post 1500)</li>
+          <li>Persian</li>
+          <li>Polish</li>
+          <li>Portuguese</li>
+          <li>Portuguese (Brazil)</li>
+          <li>Russian</li>
+          <li>Spanish</li>
+          <li>Swedish</li>
+          <li>Turkish</li>
+          <li>Ukrainian</li>
+        </ul>
+      </description>
+    </release>
     <release date="2022-02-15" version="42.beta">
       <description>
         <p>GNOME Weather 42.beta comes with a port to GTK4 and libadwaita.</p>

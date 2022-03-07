@@ -1,3 +1,32 @@
+42.rc
+=======
+* Fix position of "Now" in hourly forecast (Evan Welsh)
+
+* Translation updates:
+ - Basque
+ - Bulgarian
+ - Chinese (China)
+ - Croatian
+ - Czech
+ - Danish
+ - Finnish
+ - Friulian
+ - Galician
+ - Hebrew
+ - Indonesian
+ - Korean
+ - Lithuanian
+ - Occitan (post 1500)
+ - Persian
+ - Polish
+ - Portuguese
+ - Portuguese (Brazil)
+ - Russian
+ - Spanish
+ - Swedish
+ - Turkish
+ - Ukrainian
+
 42.beta
 =======
 * Port to GTK4 and libadwaita (Evan Welsh)
