@@ -1,14 +1,14 @@
 # Lithuanian translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Aurimas Černius <aurisc4@gmail.com>, 2013-2021.
+# Aurimas Černius <aurisc4@gmail.com>, 2013-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-28 12:52+0000\n"
-"PO-Revision-Date: 2021-03-08 22:28+0200\n"
+"POT-Creation-Date: 2022-02-26 14:00+0000\n"
+"PO-Revision-Date: 2022-03-07 18:20+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 3.38.0\n"
+"X-Generator: Gtranslator 40.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
 msgid "Weather"
 msgstr "Orai"
 
@@ -56,7 +56,7 @@ msgstr ""
 "paskutiniuose ieškotuose miestuose tiesiog įvedant jų pavadinimus veiklų "
 "apžvalgoje."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:188
 msgid "The GNOME Project"
 msgstr "GNOME projektas"
 
@@ -81,121 +81,88 @@ msgstr ""
 "Vietos, rodomas gnome-weather pasaulio vaizde. Kiekviena vertė yra "
 "gweather_location_serialize() grąžintas GVariant."
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "Automatinė vieta"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which "
-"decides whether to fetch current location or not."
-msgstr ""
-"Automatinė vieta yra automatic-location pasirinkimo vertė, kuri nusprendžia, "
-"ar gauti dabartinę vietą."
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "Miestų vaizdas"
-
-#: data/city.ui:32
+#: data/city.ui:24
 msgid "Loading…"
 msgstr "Įkeliama…"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "Naktį"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "Ryte"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "Dieną"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Vakare"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "Automatinė vieta"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "Ieškoma…"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "Ieškoti miesto"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "Rodyti paskutinius"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "_Temperatūros vienetas"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "_Celcijus"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "_Farenheitas"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "Apie orus"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "Vietos"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "Dabartinės sąlygos"
-
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:92
 msgid "Hourly"
 msgstr "Kas valandą"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "Kasdien"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "_Temperatūros vienetas"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_Celcijus"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_Farenheitas"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "Apie orus"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "Atnaujinti"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "Pasirinkti vietą"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "Sveiki pradėję naudoti orus!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "Pradžiai, pasirinkite vietą."
 
-#: data/window.ui:136
-#| msgid "Search for a city"
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "Ieškoti miesto arba rajono"
 
-#: src/app/city.js:209
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Jaučiama kaip %.0f°"
 
-#: src/app/city.js:241
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "Ką tik atnaujinta."
 
-#: src/app/city.js:246
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -203,7 +170,7 @@ msgstr[0] "Atnaujinta prieš %d minutę."
 msgstr[1] "Atnaujinta prieš %d minutes."
 msgstr[2] "Atnaujinta prieš %d minučių."
 
-#: src/app/city.js:252
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -211,7 +178,7 @@ msgstr[0] "Atnaujinta prieš %d valandą."
 msgstr[1] "Atnaujinta prieš %d valandas."
 msgstr[2] "Atnaujinta prieš %d valandų."
 
-#: src/app/city.js:258
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -219,7 +186,7 @@ msgstr[0] "Atnaujinta prieš %d dieną."
 msgstr[1] "Atnaujinta prieš %d dienas."
 msgstr[2] "Atnaujinta prieš %d dienų."
 
-#: src/app/city.js:264
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -227,7 +194,7 @@ msgstr[0] "Atnaujinta prieš %d savaitę."
 msgstr[1] "Atnaujinta prieš %d savaites."
 msgstr[2] "Atnaujinta prieš %d savaičių."
 
-#: src/app/city.js:269
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -239,12 +206,13 @@ msgstr[2] "Atnaujinta prieš %d mėnesių."
 msgid "Daily Forecast"
 msgstr "Kasdienė prognozė"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#| msgid "Forecast not available"
+msgid "Forecast not Available"
 msgstr "Prognozė neprieinama"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%b %e"
 
@@ -252,29 +220,33 @@ msgstr "%b %e"
 msgid "Hourly Forecast"
 msgstr "Kasvalandinė prognozė"
 
+#: src/app/hourlyForecast.js:110
+msgid "Now"
+msgstr "Dabar"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:117
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:202
+#: src/app/window.js:168
 msgid "translator-credits"
 msgstr ""
 "išvertė:\n"
 "Aurimas Černius <aurisc4@gmail.com>"
 
-#: src/app/window.js:204
+#: src/app/window.js:170
 msgid "A weather application"
 msgstr "Orų programa"
 
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Pasaulio vaizdas"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:99
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -286,6 +258,31 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Automatic location"
+#~ msgstr "Automatinė vieta"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which "
+#~ "decides whether to fetch current location or not."
+#~ msgstr ""
+#~ "Automatinė vieta yra automatic-location pasirinkimo vertė, kuri "
+#~ "nusprendžia, ar gauti dabartinę vietą."
+
+#~ msgid "City view"
+#~ msgstr "Miestų vaizdas"
+
+#~ msgid "Automatic Location"
+#~ msgstr "Automatinė vieta"
+
+#~ msgid "Locating…"
+#~ msgstr "Ieškoma…"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "Rodyti paskutinius"
+
+#~ msgid "Current conditions"
+#~ msgstr "Dabartinės sąlygos"
 
 #~ msgid "Search for a location"
 #~ msgstr "Ieškoti vietos"
