@@ -8,20 +8,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-10-28 15:13+0000\n"
-"PO-Revision-Date: 2021-11-10 15:06+0330\n"
-"Last-Translator: MohammadSaleh Kamyab <mskf1383@protonmail.com>\n"
+"POT-Creation-Date: 2022-02-26 14:00+0000\n"
+"PO-Revision-Date: 2022-03-05 10:06+0330\n"
+"Last-Translator: eshagh <eshagh094@gmail.com>\n"
 "Language-Team: Persian <>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
 msgid "Weather"
 msgstr "آب‌وهوا"
 
@@ -35,7 +35,7 @@ msgid ""
 "A small application that allows you to monitor the current weather conditions "
 "for your city, or anywhere in the world."
 msgstr ""
-"برنامه‌ای کوچک که می‌گذارد وضعیت آب‌وهوای فعلی شهرتان یا هرجای دیگری از جهان را "
+"برنامه‌ای کوچک که می‌گذارد وضعیت آب‌وهوای کنونی شهرتان یا هر جای دیگری از جهان را "
 "بررسی کنید."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:20
@@ -44,7 +44,7 @@ msgid ""
 "the current and next day, using various internet services."
 msgstr ""
 "با استفاده از خدمات اینترنتی مختلف، دسترسی به پیش‌بینی‌های دقیق را تا ۷ روز، با "
-"جزییات ساعتی برای امروز و فردا فراهم می‌کند."
+"جزییات ساعتی برای امروز و فردا را فراهم می‌کند."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
@@ -52,10 +52,10 @@ msgid ""
 "current conditions of the most recently searched cities by just typing the name "
 "in the Activities Overview."
 msgstr ""
-"همچنین به‌طور اختیاری با پوستهٔ گنوم یکپارچه شده، اجازهٔ دیدن وضعیت فعلی شهرهای "
-"جست‌وجوشدهٔ اخیر را تنها با نوشتن نام در نمای‌کلی فعالیت‌ها می‌دهد."
+"همچنین به‌طور اختیاری با پوستهٔ گنوم یکپارچه شده، اجازهٔ دیدن وضعیت کنونی شهرهای "
+"جست‌وجو شدهٔ اخیر را تنها با نوشتن نام در نمای‌کلی فعّالیت‌ها را می‌دهد."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:154
+#: data/org.gnome.Weather.appdata.xml.in.in:188
 msgid "The GNOME Project"
 msgstr "پروژهٔ گنوم"
 
@@ -66,7 +66,7 @@ msgstr "Weather;Forecast;آب‌وهوا;پیش‌بینی;"
 
 #: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
-msgstr "می‌گذارد اطّلاعات آب‌وهوا برای موقعیتتان نشان داده شود."
+msgstr "می‌گذارد اطّلاعات آب‌وهوا برای مکانتان نشان داده شود."
 
 #: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
@@ -77,162 +77,131 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"مکان‌هایی که توسط نمای جهان در gnome-weather نمایش داده شده. هر مقدار یک "
-"GVariant است که توسّط ‪gweather_location_serialize()‬ برگردانده شده."
+"مکان‌هایی که توسّط نمای جهانی در gnome-weather نمایش داده می‌شوند. هر مقدار یک "
+"GVariant است که توسّط ‪gweather_location_serialize()‬ برگردانده شده است."
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "موقعیت خودکار"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which decides "
-"whether to fetch current location or not."
-msgstr ""
-"موقعیت خودکار، مقدار کلید automatic-location است که تصمیم می‌گیرد مکان فعلی "
-"گرفته شود یا نه."
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "نمای شهری"
-
-#: data/city.ui:32
+#: data/city.ui:24
 msgid "Loading…"
 msgstr "درحال بار کردن…"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "شب"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "صبح"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "بعدازظهر"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "عصر"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "موقعیت خودکار"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "در حال موقعیت‌یابی…"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
-msgstr "جست‌وجو برای یک شهر"
+msgstr "جست‌وجوی یک شهر"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "به‌تازگی دیده شده"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "_واحد دما"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "_سانتی‌گراد"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "_فارنهایت"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "_درباره آب‌وهوا"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "مکان‌ها"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "وضعیت‌های فعلی"
-
-#: data/weather-widget.ui:186
+#: data/weather-widget.ui:92
 msgid "Hourly"
-msgstr "هرساعت"
+msgstr "ساعتی"
 
-#: data/weather-widget.ui:207
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "روزانه"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "_واحد دما"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_سلسیوس"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_فارنهایت"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_دربارهٔ آب‌وهوا"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "تازه‌سازی"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
-msgstr "گزینش موقعیت"
+msgstr "گزینش مکان"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
-msgstr "_به آب‌وهوا خوش آمدید!"
+msgstr "به آب‌وهوا خوش آمدید!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
-msgstr "برای شروع، موقعیتی را برگزینید."
+msgstr "برای شروع، مکانی را برگزینید."
 
-#: data/window.ui:136
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "جست‌وجوی یک شهر یا کشور"
 
-#: src/app/city.js:235
+# در این رشته از نویسه ایزوله چپ‌به‌راست استفاده شده است
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
-msgstr "به نظر %.0f° می‌رسد"
+msgstr "به نظر ⁦%.0f°⁩ می‌رسد"
 
-#: src/app/city.js:265
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "هم‌اکنون به‌روز شد."
 
-#: src/app/city.js:270
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%Id دقیقه پیش به‌روز شد."
 
-#: src/app/city.js:276
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%Id ساعت پیش به‌روز شد."
 
-#: src/app/city.js:282
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%Id روز پیش به‌روز شد."
 
-#: src/app/city.js:288
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%Id هفته پیش به‌روز شد."
 
-#: src/app/city.js:293
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "%Id ماه پیش به‌روز شد."
 
-#: src/app/dailyForecast.js:38
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "پیش‌بینی روزانه"
 
-#: src/app/dailyForecast.js:103 src/app/hourlyForecast.js:94
-msgid "Forecast not available"
-msgstr "پیش‌بینی موجود نیست"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+msgid "Forecast not Available"
+msgstr "پیش‌بینی در دسترس نیست"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:189
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%Oe %B"
 
@@ -240,33 +209,36 @@ msgstr "%Oe %B"
 msgid "Hourly Forecast"
 msgstr "پیش‌بینی ساعتی"
 
-#: src/app/hourlyForecast.js:83
+#: src/app/hourlyForecast.js:110
 msgid "Now"
 msgstr "اکنون"
 
+# در این رشته از نویسه ایزوله چپ‌به‌راست استفاده شده است
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:115
+#: src/app/hourlyForecast.js:117
 msgid "%l∶%M %p"
-msgstr "%Ol∶%OM %p"
+msgstr "⁦%Ol∶%OM⁩ %p"
 
-#: src/app/window.js:202
+#: src/app/window.js:168
 msgid "translator-credits"
 msgstr ""
 "آرش موسوی <mousavi.arash@gmail.com>\n"
-"دانیال بهزادی <dani.behzi@ubuntu.com>"
+"دانیال بهزادی <dani.behzi@ubuntu.com>\n"
+"سید اسحاق مقیم شهیدانی <eshagh094@gmail.com>\n"
+"محمدصالح کامیاب <mskf1383@protonmail.com>"
 
-#: src/app/window.js:204
+#: src/app/window.js:170
 msgid "A weather application"
 msgstr "یک برنامهٔ آب‌وهوا"
 
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "نمای جهانی"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:141
+#: src/misc/util.js:99
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -277,10 +249,35 @@ msgstr "%s / %s"
 #: src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
-msgstr "%s, %s"
+msgstr "%s، %s"
+
+#~ msgid "Automatic location"
+#~ msgstr "مکان خودکار"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which "
+#~ "decides whether to fetch current location or not."
+#~ msgstr ""
+#~ "مکان خودکار، مقدار کلید automatic-location است که تصمیم می‌گیرد مکان فعلی گرفته "
+#~ "شود یا نه."
+
+#~ msgid "City view"
+#~ msgstr "نمای شهری"
+
+#~ msgid "Automatic Location"
+#~ msgstr "مکان خودکار"
+
+#~ msgid "Locating…"
+#~ msgstr "در حال مکان‌یابی…"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "به‌تازگی دیده شده"
+
+#~ msgid "Current conditions"
+#~ msgstr "وضعیت‌های فعلی"
 
 #~ msgid "Search for a location"
-#~ msgstr "جست‌وجو برای یک موقعیت"
+#~ msgstr "جست‌وجوی یک مکان"
 
 #~ msgid "To see weather information, enter the name of a city."
 #~ msgstr "برای نمایش اطلاعات آب‌وهوا، نام شهری را وارد کنید."
