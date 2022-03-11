@@ -1,14 +1,14 @@
 # Hungarian translation for gnome-weather.
-# Copyright (C) 2013, 2014, 2016, 2019, 2020, 2021 Free Software Foundation, Inc.
+# Copyright (C) 2013, 2014, 2016, 2019, 2020, 2021, 2022 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-weather package.
 #
-# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2016, 2019, 2020, 2021.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2016, 2019, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-28 12:52+0000\n"
-"PO-Revision-Date: 2021-03-01 07:57+0100\n"
+"POT-Creation-Date: 2022-02-26 14:00+0000\n"
+"PO-Revision-Date: 2022-03-11 01:47+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -19,8 +19,8 @@ msgstr ""
 "X-Generator: Lokalize 19.12.3\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
 msgid "Weather"
 msgstr "Időjárás"
 
@@ -56,7 +56,7 @@ msgstr ""
 "leggyakrabban keresett városok aktuális időjárásának megtekintését a név "
 "begépelésével a tevékenységek áttekintőjébe."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:188
 msgid "The GNOME Project"
 msgstr "A GNOME projekt"
 
@@ -81,149 +81,116 @@ msgstr ""
 "A gnome-weather világnézetében megjelenő helyek. Minden érték a "
 "gweather_location_serialize() által visszaadott GVariant."
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "Automatikus hely"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which "
-"decides whether to fetch current location or not."
-msgstr ""
-"Az automatikus hely az automatikus hely átváltásának értéke, amely eldönti, "
-"hogy letöltse-e az aktuális helyet vagy sem."
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "Város nézet"
-
-#: data/city.ui:32
+#: data/city.ui:24
 msgid "Loading…"
 msgstr "Betöltés…"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "Éjszaka"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "Reggel"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "Délután"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Este"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "Automatikus hely"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "Helymeghatározás…"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "Város keresése"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "Legutóbb megtekintett"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "_Hőmérséklet mértékegysége"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "_Celsius"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "_Fahrenheit"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "Az Időjárás _névjegye"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "Helyek"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "Jelenlegi időjárás"
-
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:92
 msgid "Hourly"
 msgstr "Óránként"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "Naponta"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "_Hőmérséklet mértékegysége"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_Celsius"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_Fahrenheit"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "Az Időjárás _névjegye"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "Frissítés"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "Hely kiválasztása"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "Üdvözli az Időjárás!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "A kezdéshez válasszon egy helyet."
 
-#: data/window.ui:136
-#| msgid "Search for a city"
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "Város vagy ország keresése"
 
-#: src/app/city.js:209
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "%.0f°-nak érződik"
 
-#: src/app/city.js:241
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "Épp most frissítve."
 
-#: src/app/city.js:246
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d perce frissítve."
 msgstr[1] "%d perce frissítve."
 
-#: src/app/city.js:252
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d órája frissítve."
 msgstr[1] "%d órája frissítve."
 
-#: src/app/city.js:258
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d napja frissítve."
 msgstr[1] "%d napja frissítve."
 
-#: src/app/city.js:264
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d hete frissítve."
 msgstr[1] "%d hete frissítve."
 
-#: src/app/city.js:269
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -234,12 +201,13 @@ msgstr[1] "%d hónapja frissítve."
 msgid "Daily Forecast"
 msgstr "Napi előrejelzés"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#| msgid "Forecast not available"
+msgid "Forecast not Available"
 msgstr "Nem érhető el előrejelzés"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%B %-e."
 
@@ -247,29 +215,33 @@ msgstr "%B %-e."
 msgid "Hourly Forecast"
 msgstr "Óránkénti előrejelzés"
 
+#: src/app/hourlyForecast.js:110
+msgid "Now"
+msgstr "Most"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:117
 msgid "%l∶%M %p"
 msgstr "%H:%M"
 
-#: src/app/window.js:202
+#: src/app/window.js:168
 msgid "translator-credits"
 msgstr ""
 "Meskó Balázs <mesko dot balazs at fsf dot hu>\n"
 "Úr Balázs <ur.balazs at fsf dot hu>"
 
-#: src/app/window.js:204
+#: src/app/window.js:170
 msgid "A weather application"
 msgstr "Egy időjárás alkalmazás"
 
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Világ nézet"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:99
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
