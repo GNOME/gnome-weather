@@ -13,20 +13,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-28 12:52+0000\n"
-"PO-Revision-Date: 2021-02-28 15:15+0100\n"
-"Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
+"POT-Creation-Date: 2022-02-26 14:00+0000\n"
+"PO-Revision-Date: 2022-03-11 22:43+0100\n"
+"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.12.2\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
 msgid "Weather"
 msgstr "Wetter"
 
@@ -62,7 +62,7 @@ msgstr ""
 "das aktuelle Wetter jeder eingegebenen Stadt informieren können, indem Sie "
 "den Ortsnamen in die Aktivitätenübersicht eingeben."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:188
 msgid "The GNOME Project"
 msgstr "Das GNOME-Projekt"
 
@@ -87,149 +87,116 @@ msgstr ""
 "Die in der Weltansicht von gnome-weather angezeigten Orte. Jeder Wert ist "
 "ein GVariant, das von gweather_location_serialize() zurückgegeben wurde."
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "Automatische Ortsermittlung"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which "
-"decides whether to fetch current location or not."
-msgstr ""
-"Die Einstellung »Automatische Ortsermittlung« legt fest, ob automatisch das "
-"Wetter des aktuell ermittelten Ortes angezeigt werden soll."
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "Stadtansicht"
-
-#: data/city.ui:32
+#: data/city.ui:24
 msgid "Loading…"
 msgstr "Laden …"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "Nachts"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "Morgens"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "Nachmittags"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Abends"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "Automatische Ortsermittlung"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "Ort wird ermittelt …"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "Nach einer Stadt suchen"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "Kürzlich angeschaut"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "_Temperatureinheit"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "Grad _Celsius"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "Grad _Fahrenheit"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "_Info zu Wetter"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "Orte"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "Aktueller Wetterbericht"
-
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:92
 msgid "Hourly"
 msgstr "Stündlich"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "Täglich"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "_Temperatureinheit"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "Grad _Celsius"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "Grad _Fahrenheit"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_Info zu Wetter"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "Aktualisieren"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "Ort wählen"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "Willkommen bei Wetter!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "Wählen Sie einen Ort aus, um zu beginnen."
 
-#: data/window.ui:136
-#| msgid "Search for a city"
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "Nach einer Stadt oder einem Land suchen"
 
-#: src/app/city.js:209
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Gefühlt %.0f°"
 
-#: src/app/city.js:241
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "Soeben aktualisiert."
 
-#: src/app/city.js:246
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Vor %d Minute aktualisiert."
 msgstr[1] "Vor %d Minuten aktualisiert."
 
-#: src/app/city.js:252
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Vor %d Stunde aktualisiert."
 msgstr[1] "Vor %d Stunden aktualisiert."
 
-#: src/app/city.js:258
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Vor %d Tag aktualisiert."
 msgstr[1] "Vor %d Tagen aktualisiert."
 
-#: src/app/city.js:264
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Vor %d Woche aktualisiert."
 msgstr[1] "Vor %d Wochen aktualisiert."
 
-#: src/app/city.js:269
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -240,12 +207,12 @@ msgstr[1] "Vor %d Monaten aktualisiert."
 msgid "Daily Forecast"
 msgstr "Tägliche Vorhersage"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+msgid "Forecast not Available"
 msgstr "Vorhersage nicht verfügbar"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%e. %b"
 
@@ -253,32 +220,36 @@ msgstr "%e. %b"
 msgid "Hourly Forecast"
 msgstr "Stündliche Vorhersage"
 
+#: src/app/hourlyForecast.js:110
+msgid "Now"
+msgstr "Jetzt"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:117
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:202
+#: src/app/window.js:168
 msgid "translator-credits"
 msgstr ""
-"Christian Kirbach <christian.kirbach@gmail.com>, 2013\n"
+"Christian Kirbach <christian.kirbach@gmail.com>, 2013, 2022\n"
 "Benjamin Steinwender <b@stbe.at>, 2014\n"
 "Mario Blättermann <mario.blaettermann@gmail.com>, 2016\n"
 "Bernd Homuth <dev@hmt.im>, 2019\n"
 "Philipp Kiemle <philipp.kiemle@gmail.com>,2021"
 
-#: src/app/window.js:204
+#: src/app/window.js:170
 msgid "A weather application"
 msgstr "Eine Wetter-Anwendung"
 
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Weltansicht"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:99
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -290,6 +261,31 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Automatic location"
+#~ msgstr "Automatische Ortsermittlung"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which "
+#~ "decides whether to fetch current location or not."
+#~ msgstr ""
+#~ "Die Einstellung »Automatische Ortsermittlung« legt fest, ob automatisch "
+#~ "das Wetter des aktuell ermittelten Ortes angezeigt werden soll."
+
+#~ msgid "City view"
+#~ msgstr "Stadtansicht"
+
+#~ msgid "Automatic Location"
+#~ msgstr "Automatische Ortsermittlung"
+
+#~ msgid "Locating…"
+#~ msgstr "Ort wird ermittelt …"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "Kürzlich angeschaut"
+
+#~ msgid "Current conditions"
+#~ msgstr "Aktueller Wetterbericht"
 
 #~ msgid "Search for a location"
 #~ msgstr "Nach einem Ort suchen"
