@@ -3,25 +3,26 @@
 # This file is distributed under the same license as the gnome-weather package.
 #  Dušan Kazik <prescott66@gmail.com>, 2013.
 # Ján Kyselica <kyselica.jan@gmail.com>, 2014.
+# Dušan Kazik <prescott66@gmail.com>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-28 12:52+0000\n"
-"PO-Revision-Date: 2021-06-11 07:38+0200\n"
+"POT-Creation-Date: 2022-02-26 14:00+0000\n"
+"PO-Revision-Date: 2022-03-12 12:19+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 2.4.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0\n"
+"X-Generator: Gtranslator 40.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
 msgid "Weather"
 msgstr "Počasie"
 
@@ -57,7 +58,7 @@ msgstr ""
 "umožní vidieť aktuálne podmienky naposledy hľadaných miest zadaním názvu v "
 "prehľade Aktivít."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:188
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -84,124 +85,92 @@ msgstr ""
 "Polohy zobrazené na mape sveta aplikácie Počasie prostredia Gnome. Každá "
 "hodnota reprezentuje GVariant vrátený službou gweather_location_serialize()."
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "Automatická poloha"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which "
-"decides whether to fetch current location or not."
-msgstr ""
-"Automatická poloha je hodnota prepínača automatic-location, ktorá rozhoduje, "
-"či sa má získať aktuálna poloha alebo nie."
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "Mapa mesta"
-
-#: data/city.ui:32
+#: data/city.ui:24
 msgid "Loading…"
 msgstr "Načítava sa…"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "Noc"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "Ráno"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "Popoludnie"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Večer"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "Automatická poloha"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "Vyhľadáva sa umiestnenie…"
-
 # label
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "Vyhľadajte mesto"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "Nedávno zobrazené"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "_Jednotka teploty"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "_Celsius"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "_Fahrenheit"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "_O aplikácii Počasie"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "Miesta"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "Aktuálne podmienky"
-
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:92
 msgid "Hourly"
 msgstr "Hodinovo"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "Denne"
 
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "_Jednotka teploty"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_Celsius"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_Fahrenheit"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_O aplikácii Počasie"
+
 # tooltip
-#: data/window.ui:51
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "Obnoví"
 
 # DK:window title
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "Výber polohy"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "Vitajte v aplikácii Počasie!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "Začnite vybraním umiestnenia."
 
 # label
-#: data/window.ui:136
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "Vyhľadajte mesto alebo krajinu"
 
-#: src/app/city.js:209
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Pocitová teplota %.0f°"
 
-#: src/app/city.js:241
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "Aktualizované práve teraz."
 
-#: src/app/city.js:246
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -209,7 +178,7 @@ msgstr[0] "Aktualizované pred %d minútami."
 msgstr[1] "Aktualizované pred %d minútou."
 msgstr[2] "Aktualizované pred %d minútami."
 
-#: src/app/city.js:252
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -217,7 +186,7 @@ msgstr[0] "Aktualizované pred %d hodinami."
 msgstr[1] "Aktualizované pred %d hodinou."
 msgstr[2] "Aktualizované pred %d hodinami."
 
-#: src/app/city.js:258
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -225,7 +194,7 @@ msgstr[0] "Aktualizované pred %d dňami."
 msgstr[1] "Aktualizované pred %d dňom."
 msgstr[2] "Aktualizované pred %d dňami."
 
-#: src/app/city.js:264
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -233,7 +202,7 @@ msgstr[0] "Aktualizované pred %d týždňami."
 msgstr[1] "Aktualizované pred %d týždňom."
 msgstr[2] "Aktualizované pred %d týždňami."
 
-#: src/app/city.js:269
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -245,12 +214,13 @@ msgstr[2] "Aktualizované pred %d mesiacmi."
 msgid "Daily Forecast"
 msgstr "Denná predpoveď"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#| msgid "Forecast not available"
+msgid "Forecast not Available"
 msgstr "Predpoveď nie je dostupná"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%e. %b"
 
@@ -258,22 +228,26 @@ msgstr "%e. %b"
 msgid "Hourly Forecast"
 msgstr "Hodinová predpoveď"
 
+#: src/app/hourlyForecast.js:110
+msgid "Now"
+msgstr "Teraz"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:117
 msgid "%l∶%M %p"
 msgstr "%H:%M"
 
-#: src/app/window.js:202
+#: src/app/window.js:168
 msgid "translator-credits"
 msgstr ""
 "Dušan Kazik <prescott66@gmail.com>\n"
 "Ján Kyselica <kyselica.jan@gmail.com>"
 
-#: src/app/window.js:204
+#: src/app/window.js:170
 msgid "A weather application"
 msgstr "Aplikácia Počasie"
 
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Mapa sveta"
 
@@ -283,7 +257,7 @@ msgstr "Mapa sveta"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:99
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -296,6 +270,31 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Automatic location"
+#~ msgstr "Automatická poloha"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which "
+#~ "decides whether to fetch current location or not."
+#~ msgstr ""
+#~ "Automatická poloha je hodnota prepínača automatic-location, ktorá "
+#~ "rozhoduje, či sa má získať aktuálna poloha alebo nie."
+
+#~ msgid "City view"
+#~ msgstr "Mapa mesta"
+
+#~ msgid "Automatic Location"
+#~ msgstr "Automatická poloha"
+
+#~ msgid "Locating…"
+#~ msgstr "Vyhľadáva sa umiestnenie…"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "Nedávno zobrazené"
+
+#~ msgid "Current conditions"
+#~ msgstr "Aktuálne podmienky"
 
 # label
 #~ msgid "Search for a location"
