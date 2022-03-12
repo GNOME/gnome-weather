@@ -1,16 +1,16 @@
 # Japanese translation for gnome-weather.
-# Copyright (C) 2013-2016, 2019-2020, 2020 gnome-weather's COPYRIGHT HOLDER
+# Copyright (C) 2013-2016, 2019-2020, 2022 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2013, 2015, 2016.
 # Hajime Taira <htaira@redhat.com>, 2014.
-# sicklylife <translation@sicklylife.jp>, 2019-2020, 2020.
+# sicklylife <translation@sicklylife.jp>, 2019-2020, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
 "POT-Creation-Date: 2021-10-31 15:23+0000\n"
-"PO-Revision-Date: 2022-02-01 20:00+0900\n"
+"PO-Revision-Date: 2022-03-12 18:10+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -228,8 +228,8 @@ msgstr[0] "%d ヵ月前に更新しました。"
 msgid "Daily Forecast"
 msgstr "毎日の天気予報"
 
-#: src/app/dailyForecast.js:89 src/app/hourlyForecast.js:85
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+msgid "Forecast not Available"
 msgstr "天気予報がありません"
 
 #. Translators: this is the time format for day and month name according to the current locale
@@ -240,6 +240,10 @@ msgstr "%B%-e日"
 #: src/app/hourlyForecast.js:40
 msgid "Hourly Forecast"
 msgstr "1 時間ごとの天気予報"
+
+#: src/app/hourlyForecast.js:110
+msgid "Now"
+msgstr "今"
 
 #. Translators: this is a time format without date used for AM/PM
 #: src/app/hourlyForecast.js:103
