@@ -46,67 +46,48 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
-    <release date="2022-03-07" version="42.rc">
+    <release date="2022-03-20" version="42.0">
       <description>
-        <p>GNOME Weather 42.rc fixes the position of the "Now" item in the hourly forecast.</p>
+        <p>GNOME Weather 42 comes with a port to GTK4, a new thermometer widget, and support for GNOME&#39;s new dark style preference. It also comes with up-to-date translations for the following locales:</p>
         <ul>
+          <li>Abkhazian</li>
           <li>Basque</li>
+          <li>Bokmål, Norwegian</li>
           <li>Bulgarian</li>
+          <li>Catalan</li>
           <li>Chinese (China)</li>
           <li>Croatian</li>
           <li>Czech</li>
           <li>Danish</li>
           <li>Finnish</li>
+          <li>French</li>
           <li>Friulian</li>
           <li>Galician</li>
+          <li>German</li>
           <li>Hebrew</li>
+          <li>Hungarian</li>
+          <li>Icelandic</li>
           <li>Indonesian</li>
+          <li>Italian</li>
+          <li>Japanese</li>
+          <li>Kazakh</li>
           <li>Korean</li>
+          <li>Latvian</li>
           <li>Lithuanian</li>
+          <li>Occitan</li>
           <li>Occitan (post 1500)</li>
           <li>Persian</li>
           <li>Polish</li>
           <li>Portuguese</li>
           <li>Portuguese (Brazil)</li>
           <li>Russian</li>
+          <li>Serbian</li>
+          <li>Slovak</li>
+          <li>Slovenian</li>
           <li>Spanish</li>
           <li>Swedish</li>
           <li>Turkish</li>
           <li>Ukrainian</li>
-        </ul>
-      </description>
-    </release>
-    <release date="2022-02-15" version="42.beta">
-      <description>
-        <p>GNOME Weather 42.beta comes with a port to GTK4 and libadwaita.</p>
-        <ul>
-          <li>Abkhazian</li>
-          <li>Czech</li>
-          <li>Galician</li>
-          <li>Japanese</li>
-          <li>Portuguese (Brazil)</li>
-          <li>Spanish</li>
-        </ul>
-      </description>
-    </release>
-    <release date="2022-01-11" version="42.alpha">
-      <description>
-        <p>GNOME Weather 42.alpha comes with a new thermometer widget and support for the new dark style preference.</p>
-        <ul>
-          <li>Abkhazian</li>
-          <li>Basque</li>
-          <li>Catalan</li>
-          <li>Chinese (China)</li>
-          <li>Croatian</li>
-          <li>Friulian</li>
-          <li>Hebrew</li>
-          <li>Icelandic</li>
-          <li>Indonesian</li>
-          <li>Latvian</li>
-          <li>Occitan</li>
-          <li>Persian</li>
-          <li>Portuguese</li>
-          <li>Russian</li>
         </ul>
       </description>
     </release>
