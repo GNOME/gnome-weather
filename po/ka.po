@@ -1,0 +1,252 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2022-04-06 10:30+0000\n"
+"PO-Revision-Date: 2022-04-24 08:56+0200\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: \n"
+"Language: ka\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+msgid "Weather"
+msgstr "ამინდი"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
+msgid "Show weather conditions and forecast"
+msgstr "ამინდის პირობების და პროგნოზის ჩვენება"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:16
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"პატარა აპლიკაცია, რომელიც საშუალებას გაძლევთ აკონტროლოთ მიმდინარე ამინდის "
+"პირობები თქვენი ქალაქის ან მსოფლიოს ნებისმიერ წერტილში."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:20
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"ის უზრუნველყოფს დეტალურ პროგნოზებზე წვდომას, 7 დღემდე, მიმდინარე და "
+"მომდევნო დღის საათობრივი დეტალებით, სხვადასხვა ინტერნეტ სერვისების "
+"გამოყენებით."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:24
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"ის ასევე არჩევითად ინტეგრირდება GNOME Shell-თან, რაც საშუალებას გაძლევთ "
+"ნახოთ ბოლო მოძიებული ქალაქების ამჟამინდელი პირობები მხოლოდ აქტივობების "
+"მიმოხილვაში სახელის აკრეფით."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:199
+msgid "The GNOME Project"
+msgstr "პროექტი \"GNOME\""
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
+msgid "Weather;Forecast;"
+msgstr "ამინდი;პროგნოზი;"
+
+#: data/org.gnome.Weather.desktop.in.in:14
+msgid "Allows weather information to be displayed for your location."
+msgstr "ამინდის თქვენი მდებარეობის მიხედვით ჩვენება."
+
+#: data/org.gnome.Weather.gschema.xml:6
+msgid "Configured cities to show weather for"
+msgstr "ამინდი ქალაქებში"
+
+#: data/org.gnome.Weather.gschema.xml:7
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Gnome-Weather-ის მსოფლიო ხედში ნაჩვენები მდებარეობები. თითოეული მნიშვნელობა "
+"არის GVariant, დაბრუნებული gweather_location_serialize()-ის მიერ."
+
+#: data/city.ui:24
+msgid "Loading…"
+msgstr "იტვირთება…"
+
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "ღამე"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "დილა"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "ნაშუადღევი"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "საღამო"
+
+#: data/places-popover.ui:15 data/places-popover.ui:76
+msgid "Search for a city"
+msgstr "ქალაქის მოძებნა"
+
+#: data/weather-widget.ui:42
+msgid "Places"
+msgstr "ადგილები"
+
+#: data/weather-widget.ui:92
+msgid "Hourly"
+msgstr "საათობრივ"
+
+#: data/weather-widget.ui:123
+msgid "Daily"
+msgstr "დღიურად"
+
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "_ტემპერატური საზომი ერთეული"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_ცელსიუსი"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_ფარენჰეიტი"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_ამინდის შესახებ"
+
+#: data/window.ui:40
+msgid "Refresh"
+msgstr "განახლება"
+
+#: data/window.ui:60
+msgid "Select Location"
+msgstr "მდებარეობის არჩევა"
+
+#: data/window.ui:100
+msgid "Welcome to Weather!"
+msgstr "კეთილი იყოს თქვენი მობრძანება ამინდის აპლიკაციაში!"
+
+#: data/window.ui:101
+msgid "To get started, select a location."
+msgstr "დასაწყისისთვის აირჩიეთ მდებარეობა."
+
+#: data/window.ui:107
+msgid "Search for a city or country"
+msgstr "ქალაქის ან სოფლის ძებნა"
+
+#: src/app/city.js:203
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "იგრძნობა, როგორც %.0f°"
+
+#: src/app/city.js:233
+msgid "Updated just now."
+msgstr "ახლა განახლდა."
+
+#: src/app/city.js:238
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "განახლდა %d წუთის წინ."
+msgstr[1] "განახლდა %d წუთის წინ."
+
+#: src/app/city.js:244
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "განახლდა %d საათის წინ."
+msgstr[1] "განახლდა %d საათის წინ."
+
+#: src/app/city.js:250
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "განახლდა %d დღის წინ."
+msgstr[1] "განახლდა %d დღის წინ."
+
+#: src/app/city.js:256
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "განახლდა %d კვირის წინ."
+msgstr[1] "განახლდა %d კვირის წინ."
+
+#: src/app/city.js:261
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "Updated %d months ago."
+msgstr[0] "განახლდა %d თვის წინ."
+msgstr[1] "განახლდა %d თვის წინ."
+
+#: src/app/dailyForecast.js:36
+msgid "Daily Forecast"
+msgstr "დღიური ამინდი"
+
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+msgid "Forecast not Available"
+msgstr "ამინდი მიუწვდომელია"
+
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:219
+msgid "%b %e"
+msgstr "%b %e"
+
+#: src/app/hourlyForecast.js:41
+msgid "Hourly Forecast"
+msgstr "საათობრივი ამინდი"
+
+#: src/app/hourlyForecast.js:107
+msgid "Now"
+msgstr "ახლა"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/hourlyForecast.js:114
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: src/app/window.js:168
+msgid "translator-credits"
+msgstr "თარგმანი-შესრულებულია"
+
+#: src/app/window.js:170
+msgid "A weather application"
+msgstr "ამინდის აპლიკაცია"
+
+#: src/app/world.js:39
+msgid "World view"
+msgstr "დედამიწის ხედი"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: src/misc/util.js:103
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: src/service/searchProvider.js:182
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
