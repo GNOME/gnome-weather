@@ -2,8 +2,8 @@
 <interface>
   <requires lib="gtk" version="4.0" />
   <menu id="primary-menu">
-    <submenu>
-      <attribute translatable="yes" name="label">_Temperature Unit</attribute>
+    <section>
+      <attribute translatable="yes" name="label">Temperature Unit</attribute>
       <item>
         <attribute translatable="yes" name="label">_Celsius</attribute>
         <attribute name="action">app.temperature-unit</attribute>
@@ -14,7 +14,7 @@
         <attribute name="action">app.temperature-unit</attribute>
         <attribute name="target">fahrenheit</attribute>
       </item>
-    </submenu>
+    </section>
     <section>
       <item>
         <attribute name="action">win.about</attribute>
