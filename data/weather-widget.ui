@@ -34,14 +34,12 @@
                 <property name="halign">start</property>
                 <property name="valign">start</property>
                 <property name="always-show-arrow">True</property>
-                <property name="child">
+                <child>
                   <object class="GtkLabel" id="placesLabel">
-                    <property name="name">places-label</property>
-                    <property name="wrap">true</property>
-                    <property name="wrap-mode">word-char</property>
                     <property name="label" translatable="yes">Places</property>
+                    <property name="ellipsize">end</property>
                   </object>
-                </property>
+                </child>
                 <style>
                   <class name="text-button"/>
                   <class name="flat"/>

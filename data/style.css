@@ -8,10 +8,6 @@
 @define-color weather_thermometer_low_color @blue_5;
 @define-color weather_forecast_color #ae7b03;
 
-#places-label {
-    font-weight: bold;
-}
-
 #temperature-label {
     font-size: 32pt;
     font-weight: 900;

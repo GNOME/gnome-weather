@@ -37,6 +37,7 @@ export const WeatherWidget = GObject.registerClass({
     InternalChildren: [
         'conditionsImage',
         'placesButton',
+        'placesLabel',
         'temperatureLabel',
         'apparentLabel',
         'forecastStack',
@@ -190,7 +191,7 @@ export const WeatherWidget = GObject.registerClass({
         this._info = info;
 
         const label = Util.getNameAndCountry(info.location);
-        this._placesButton.set_label(label.join(', '));
+        this._placesLabel.set_label(label.join(', '));
 
         this._worldView.refilter();
 
