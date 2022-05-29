@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-02-16 01:34+0000\n"
-"PO-Revision-Date: 2022-02-17 21:42+0000\n"
+"POT-Creation-Date: 2022-05-29 22:31+0000\n"
+"PO-Revision-Date: 2022-05-29 23:34+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (https://l10n.gnome.org/teams/pt/)\n"
 "Language: pt\n"
@@ -25,7 +25,7 @@ msgstr ""
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
 msgid "Weather"
 msgstr "Meteorologia"
 
@@ -61,7 +61,7 @@ msgstr ""
 "as condições atuais das cidades mais recentemente procuradas, simplesmente "
 "digitando o seu nome na vista de atividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:175
+#: data/org.gnome.Weather.appdata.xml.in.in:199
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -123,8 +123,8 @@ msgid "Daily"
 msgstr "Diariamente"
 
 #: data/window.ui:6
-msgid "_Temperature Unit"
-msgstr "_Unidade de temperatura"
+msgid "Temperature Unit"
+msgstr "Unidade de temperatura"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -206,7 +206,7 @@ msgstr[1] "Atualizado há %d meses atrás."
 msgid "Daily Forecast"
 msgstr "Previsão diária"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
 msgid "Forecast not Available"
 msgstr "Previsão não disponível"
 
@@ -215,16 +215,16 @@ msgstr "Previsão não disponível"
 msgid "%b %e"
 msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "Previsão a cada hora"
 
-#: src/app/hourlyForecast.js:110
+#: src/app/hourlyForecast.js:107
 msgid "Now"
 msgstr "Agora"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:117
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
@@ -248,7 +248,7 @@ msgstr "Vista do mundo"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:99
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
