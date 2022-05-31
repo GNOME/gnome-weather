@@ -90,17 +90,17 @@ GObject.registerClass({
 
     const { dailyHigh, dailyLow, weeklyHigh, weeklyLow } = this.range;
 
-    const scaleFactor = height / (weeklyHigh - weeklyLow);
+    const scaleRadius = 12;
+    const scaleFactor = (height - scaleRadius * 2) / (weeklyHigh - weeklyLow);
 
     const scaleWidth = 24;
     const scaleHeight = scaleFactor * (dailyHigh - dailyLow);
-    const scaleRadius = 12;
 
     const x = (width - scaleWidth) / 2;
-    const y = scaleFactor * (weeklyHigh - dailyHigh);
+    const y = scaleRadius + scaleFactor * (weeklyHigh - dailyHigh);
 
     const bounds = new Graphene.Rect();
-    bounds.init(x, y, scaleWidth, scaleHeight);
+    bounds.init(x, y - scaleRadius, scaleWidth, scaleHeight + 2 * scaleRadius);
 
     const outline = new Gsk.RoundedRect();
     outline.init_from_rect(bounds, scaleRadius);
