@@ -8,7 +8,6 @@
     <file>app/locationRow.js</file>
     <file>app/locationRow.ui</file>
     <file>app/thermometer.js</file>
-    <file>app/thermometer.ui</file>
     <file>app/dailyForecast.js</file>
     <file>app/entry.js</file>
     <file>app/main.js</file>

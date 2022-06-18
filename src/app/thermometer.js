@@ -1,6 +1,6 @@
 /* thermometer.js
  *
- * Copyright 2021 Vitaly Dyachkov <obyknovenius@me.com>
+ * Copyright 2021-2022 Vitaly Dyachkov <obyknovenius@me.com>
  * Copyright 2022 Evan Welsh <contact@evanwelsh.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,143 +22,233 @@
 import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
+import Gdk from 'gi://Gdk';
 import Graphene from 'gi://Graphene';
 import Gsk from 'gi://Gsk';
 
 import * as Util from '../misc/util.js';
 
 export class TemperatureRange {
-  dailyLow;
-  dailyHigh;
-  weeklyLow;
-  weeklyHigh;
 
-  constructor({ dailyLow, dailyHigh, weeklyLow, weeklyHigh }) {
-    this.dailyLow = dailyLow;
-    this.dailyHigh = dailyHigh;
-    this.weeklyLow = weeklyLow;
-    this.weeklyHigh = weeklyHigh;
-  }
+    dailyLow;
+    dailyHigh;
+    weeklyLow;
+    weeklyHigh;
+
+    constructor({ dailyLow, dailyHigh, weeklyLow, weeklyHigh }) {
+        this.dailyLow = dailyLow;
+        this.dailyHigh = dailyHigh;
+        this.weeklyLow = weeklyLow;
+        this.weeklyHigh = weeklyHigh;
+    }
 }
 
-GObject.registerClass({
-  CssName: 'WeatherThermometerScale',
-  Properties: {
-    'range': GObject.ParamSpec.jsobject(
-      'range',
-      'range',
-      'The TemperatureRange instance representing this thermometer scale',
-      GObject.ParamFlags.READWRITE,
-    ),
-  },
+const ThermometerScale = GObject.registerClass({
+    CssName: 'WeatherThermometerScale',
+    Properties: {
+        'range': GObject.ParamSpec.jsobject(
+            'range',
+            'range',
+            'The TemperatureRange instance representing this thermometer scale',
+            GObject.ParamFlags.READWRITE,
+        ),
+    },
 }, class ThermometerScale extends Gtk.Widget {
 
-  constructor({ range = null, ...params }) {
-    super({
-      vexpand: true,
-      halign: Gtk.Align.FILL,
-      overflow: Gtk.Overflow.HIDDEN,
-      ...params
-    });
+    minHeight = 64;
+    radius = 12;
 
-    this.range = range;
-  }
+    constructor({ range = null, ...params }) {
+        super(params);
 
-  vfunc_map() {
-    super.vfunc_map();
+        this.range = range;
+    }
 
-    this._rangeChangedId = this.connect('notify::range', () => {
-      this.queue_draw();
-    });
-  }
+    vfunc_map() {
+        super.vfunc_map();
 
-  vfunc_unmap() {
-    this.disconnect(this._rangeChangedId);
+        this._rangeChangedId = this.connect('notify::range', () => {
+            this.queue_draw();
+        });
+    }
 
-    super.vfunc_unmap();
-  }
+    vfunc_unmap() {
+        this.disconnect(this._rangeChangedId);
 
-  vfunc_snapshot(snapshot) {
-    super.vfunc_snapshot(snapshot);
+        super.vfunc_unmap();
+    }
 
-    if (!this.range) return;
+    vfunc_snapshot(snapshot) {
+        super.vfunc_snapshot(snapshot);
 
-    const { width, height } = this.get_allocation();
+        if (!this.range)
+            return;
 
-    // Don't render when allocation is shorter than 64
-    if (height < 64) return;
+        const { width, height } = this.get_allocation();
 
-    const { dailyHigh, dailyLow, weeklyHigh, weeklyLow } = this.range;
+        // Don't render when allocation is shorter than the minimal height
+        if (height < this.minHeight)
+            return;
 
-    const scaleRadius = 12;
-    const scaleFactor = (height - scaleRadius * 2) / (weeklyHigh - weeklyLow);
+        const { dailyHigh, dailyLow, weeklyHigh, weeklyLow } = this.range;
 
-    const scaleWidth = 24;
-    const scaleHeight = scaleFactor * (dailyHigh - dailyLow);
+        const radius = this.radius;
+        const factor = (height - 2 * radius) / (weeklyHigh - weeklyLow);
 
-    const x = (width - scaleWidth) / 2;
-    const y = scaleRadius + scaleFactor * (weeklyHigh - dailyHigh);
+        const gradientWidth = 2 * radius;
+        const gradientHeight = factor * (dailyHigh - dailyLow);
 
-    const bounds = new Graphene.Rect();
-    bounds.init(x, y - scaleRadius, scaleWidth, scaleHeight + 2 * scaleRadius);
+        const x = (width - gradientWidth) / 2;
+        const y = radius + factor * (weeklyHigh - dailyHigh);
 
-    const outline = new Gsk.RoundedRect();
-    outline.init_from_rect(bounds, scaleRadius);
+        const bounds = new Graphene.Rect();
+        bounds.init(x, y - radius, gradientWidth, gradientHeight + 2 * radius);
 
-    snapshot.push_rounded_clip(outline);
+        const outline = new Gsk.RoundedRect();
+        outline.init_from_rect(bounds, radius);
 
-    const [, warmColor] = this.get_style_context().lookup_color('weather_thermometer_warm_color');
-    const [, coolColor] = this.get_style_context().lookup_color('weather_thermometer_cold_color');
+        snapshot.push_rounded_clip(outline);
 
-    snapshot.append_linear_gradient(
-      bounds,
-      new Graphene.Point({ x: x + scaleWidth / 2, y: 0 }),
-      new Graphene.Point({ x: x + scaleWidth / 2, y: height }),
-      [
-        new Gsk.ColorStop({ offset: 0.0, color: warmColor }),
-        new Gsk.ColorStop({ offset: 1.0, color: coolColor })
-      ]
-    );
+        const [, warmColor] = this.get_style_context()
+            .lookup_color('weather_thermometer_warm_color');
 
-    snapshot.pop();
-  }
+        const [, coolColor] = this.get_style_context()
+            .lookup_color('weather_thermometer_cold_color');
+
+        snapshot.append_linear_gradient(
+            bounds,
+            new Graphene.Point({ x: x + gradientWidth / 2, y: 0 }),
+            new Graphene.Point({ x: x + gradientWidth / 2, y: height }),
+            [
+                new Gsk.ColorStop({ offset: 0.0, color: warmColor }),
+                new Gsk.ColorStop({ offset: 1.0, color: coolColor })
+            ]
+        );
+
+        snapshot.pop();
+    }
 });
 
 export const Thermometer = GObject.registerClass({
-  CssName: 'WeatherThermometer',
-  Template: GLib.Uri.resolve_relative(import.meta.url, './thermometer.ui', 0),
-  InternalChildren: ['scale', 'highLabel', 'lowLabel'],
-  Properties: {
-    'range': GObject.ParamSpec.jsobject(
-      'range',
-      'range',
-      'The TemperatureRange instance representing this thermometer scale',
-      GObject.ParamFlags.READWRITE,
-    ),
-  },
+    CssName: 'WeatherThermometer',
+    Properties: {
+        'range': GObject.ParamSpec.jsobject(
+            'range',
+            'range',
+            'The TemperatureRange instance representing this thermometer scale',
+            GObject.ParamFlags.READWRITE,
+        ),
+    },
 }, class Thermometer extends Gtk.Widget {
-  constructor({ ...params }) {
-    super(params);
 
-    Object.assign(this.layoutManager, {
-      orientation: Gtk.Orientation.VERTICAL,
-      spacing: 20
-    });
-  }
+    #highLabel;
+    #lowLabel;
+    #scale;
 
-  vfunc_root() {
-    super.vfunc_root();
+    spacing = 18;
 
-    this.bind_property('range', this._scale, 'range', GObject.BindingFlags.DEFAULT);
+    constructor({ ...params }) {
+        super(params);
 
-    this.bind_property_full('range', this._lowLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
-      return [!!range, Util.formatTemperature(range?.dailyLow) ?? ''];
-    }, null);
+        this.#highLabel = new Gtk.Label({
+            css_classes: ['high', 'body'],
+        });
+        this.#highLabel.set_parent(this);
 
-    this.bind_property_full('range', this._highLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
-      return [!!range, Util.formatTemperature(range?.dailyHigh) ?? ''];
-    }, null);
-  }
+        this.#lowLabel = new Gtk.Label({
+            css_classes: ['low', 'body'],
+        });
+        this.#lowLabel.set_parent(this);
+
+        this.#scale = new ThermometerScale({});
+        this.#scale.set_parent(this);
+    }
+
+    vfunc_measure(orientation, for_size) {
+        const [highMin, highNat, highMinBaseline, highNatBaseline] =
+            this.#highLabel.measure(orientation, for_size);
+
+        const [lowMin, lowNat, lowMinBaseline, lowNatBaseline] =
+            this.#lowLabel.measure(orientation, for_size);
+
+        if (orientation === Gtk.Orientation.HORIZONTAL) {
+            return [
+                Math.max(highMin, lowMin),
+                Math.max(highNat, lowNat),
+                Math.max(highMinBaseline, lowMinBaseline),
+                Math.max(highNatBaseline, lowNatBaseline)
+            ];
+        } else {
+            const spacing = this.spacing;
+            return [
+                highMin + spacing + lowMin,
+                highNat + spacing + lowNat,
+                highMinBaseline + spacing + lowMinBaseline,
+                highNatBaseline + spacing + lowNatBaseline
+            ];
+        }
+    }
+
+    vfunc_size_allocate(width, height, baseline) {
+        const [highMin, highNat] = this.#highLabel.get_preferred_size();
+        const [lowMin, lowNat] = this.#lowLabel.get_preferred_size();
+
+        const spacing = this.spacing;
+
+        const scaleHeight = Math.max(
+            0,
+            height - (highNat.height + lowNat.height) - 2 * spacing);
+
+        const scaleRect = new Gdk.Rectangle({
+            height: scaleHeight,
+            width,
+            x: 0,
+            y:highNat.height + spacing,
+        });
+        this.#scale.size_allocate(scaleRect, -1);
+
+        let highY = 0;
+        let lowY = height - lowNat.height;
+
+        if (scaleHeight >= this.#scale.minHeight) {
+            const { dailyHigh, dailyLow, weeklyHigh, weeklyLow } = this.range;
+
+            const radius = this.#scale.radius;
+            const factor = (scaleHeight - 2 * radius) / (weeklyHigh - weeklyLow);
+
+            highY += (weeklyHigh - dailyHigh) * factor;
+            lowY -= (dailyLow - weeklyLow) * factor;
+        }
+
+        const highRect = new Gdk.Rectangle({
+            height: highNat.height,
+            width: highNat.width,
+            x: (width - highNat.width) / 2,
+            y: highY,
+        });
+        this.#highLabel.size_allocate(highRect, -1);
+
+        const lowRect = new Gdk.Rectangle({
+            height: lowNat.height,
+            width: lowNat.width,
+            x: (width - lowNat.width) / 2,
+            y: lowY,
+        });
+        this.#lowLabel.size_allocate(lowRect, -1);
+    }
+
+    vfunc_root() {
+        super.vfunc_root();
+
+        this.bind_property('range', this.#scale,'range', GObject.BindingFlags.DEFAULT);
+
+        this.bind_property_full('range', this.#lowLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
+            return [!!range, Util.formatTemperature(range?.dailyLow) ?? ''];
+        }, null);
+
+        this.bind_property_full('range', this.#highLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
+            return [!!range, Util.formatTemperature(range?.dailyHigh) ?? ''];
+        }, null);
+    }
 });
 
-Thermometer.set_layout_manager_type(Gtk.BoxLayout);
