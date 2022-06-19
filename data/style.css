@@ -34,18 +34,6 @@
     margin-top: 6px;
 }
 
-WeatherLocationRow .location-container {
-    margin-bottom: 3px;
-}
-
-WeatherLocationRow .selected-location-icon {
-    padding: 12px;
-}
-
-WeatherLocationRow .current-location-icon {
-    padding: 12px;
-}
-
 .forecast-card {
     transition: border-radius 100ms ease-out;
     border-radius: 6px;
@@ -117,4 +105,11 @@ scrolledwindow.inline undershoot.top {
 
 .search-view menubutton button:focus:focus-visible {
     outline-color: alpha(@light_1, 0.3);
+}
+
+image.circular {
+    min-width: 34px;
+    min-height: 34px;
+    padding: 0;
+    border-radius: 9999px;
 }

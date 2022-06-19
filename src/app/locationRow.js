@@ -3,21 +3,20 @@ import Gtk from 'gi://Gtk';
 import GLib from 'gi://GLib';
 
 export const LocationRow = GObject.registerClass({
-    CssName: 'WeatherLocationRow',
     Template: GLib.Uri.resolve_relative(import.meta.url, './locationRow.ui', 0),
-    InternalChildren: ['label', 'countryLabel', 'labelContainer', 'locationIcon', 'currentIcon'],
-}, class LocationRow extends Gtk.Widget {
-    constructor({ name, countryName, isSelected = false, isCurrentLocation = false }) {
+    InternalChildren: ['label', 'countryLabel', 'locationIcon', 'currentIcon', 'removeButton'],
+    Signals: {
+        'remove': {},
+    }
+}, class LocationRow extends Gtk.Box {
+    constructor({ name, countryName, isSelected = false, isCurrentLocation = false, isRemovable = false }) {
         super({ widthRequest: 320 });
-
-        Object.assign(this.layoutManager, {
-            orientation: Gtk.Orientation.HORIZONTAL,
-        });
 
         this.name = name;
         this.countryName = countryName ?? '';
         this.isSelected = isSelected;
         this.isCurrentLocation = isCurrentLocation;
+        this.isRemovable = isRemovable;
     }
 
     set name(name) {
@@ -36,13 +35,12 @@ export const LocationRow = GObject.registerClass({
         this._currentIcon.visible = is;
     }
 
-    vfunc_unroot() {
-        this._labelContainer.unparent();
-        this._currentIcon.unparent();
-        this._locationIcon.unparent();
+    set isRemovable(is) {
+        this._removeButton.visible = is;
+    }
 
-        super.vfunc_unroot();
+    _onRemoveClicked() {
+        this.emit('remove');
     }
 });
 
-LocationRow.set_layout_manager_type(Gtk.BoxLayout);

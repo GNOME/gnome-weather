@@ -241,6 +241,10 @@ export const WorldModel = GObject.registerClass({
         this._addInfoInternal(info);
     }
 
+    removeLocation(oldInfo) {
+        this._removeLocationInternal(oldInfo);
+    }
+
     _removeLocationInternal(oldInfo, skipDisconnect) {
         if (!oldInfo) return;
 
@@ -253,6 +257,12 @@ export const WorldModel = GObject.registerClass({
         if (oldInfo == this._currentLocationInfo)
             this._currentLocationInfo = null;
 
+        for (let i = 0; i < this._allInfos.length; i++) {
+            if (this._allInfos[i] == oldInfo) {
+                this.items_changed(i, 1, 0);
+                break;
+            }
+        }
         for (let i = 0; i < this._infoList.length; i++) {
             if (this._infoList[i] == oldInfo) {
                 this._infoList.splice(i, 1);
@@ -260,7 +270,8 @@ export const WorldModel = GObject.registerClass({
             }
         }
 
-        this.#invalidate();
+        this.getAll();
+        this._queueSaveSettings();
     }
 
     buildInfo(location) {

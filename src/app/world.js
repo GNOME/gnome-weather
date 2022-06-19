@@ -136,7 +136,20 @@ export class WorldContentView extends Gtk.Popover {
 
         const [name, countryName = ''] = Util.getNameAndCountry(location);
 
-        const grid = new LocationRow({ name, countryName, isSelected: model.isSelectedLocation(info), isCurrentLocation: model.isCurrentLocation(info) });
+        const isSelected = model.isSelectedLocation(info);
+        const isCurrentLocation = model.isCurrentLocation(info);
+        const grid = new LocationRow({
+            name,
+            countryName,
+            isSelected,
+            isCurrentLocation,
+            isRemovable: !isSelected && !isCurrentLocation,
+        });
+
+        grid.connect('remove', () => {
+            model.removeLocation(info);
+        });
+
         const row = new Gtk.ListBoxRow({ child: grid });
         row._info = info;
         return row;
