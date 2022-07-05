@@ -49,7 +49,8 @@
             "name" : "geocode-glib",
             "config-opts" : [
                 "-Denable-installed-tests=false",
-                "-Denable-gtk-doc=false"
+                "-Denable-gtk-doc=false",
+                "-Dsoup2=false"
             ],
             "buildsystem" : "meson",
             "sources" : [
