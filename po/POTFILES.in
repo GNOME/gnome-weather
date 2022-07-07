@@ -19,7 +19,6 @@ src/app/locationRow.js
 src/app/locationRow.ui
 src/app/main.js
 src/app/thermometer.js
-src/app/thermometer.ui
 src/app/window.js
 src/app/world.js
 src/misc/util.js
