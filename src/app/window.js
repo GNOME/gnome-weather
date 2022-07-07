@@ -147,7 +147,7 @@ export const MainWindow = GObject.registerClass({
     }
 
     _showAbout() {
-        let artists = ['Jakub Steiner <jimmac@gmail.com>',
+        let designers = ['Jakub Steiner <jimmac@gmail.com>',
             'Pink Sherbet Photography (D. Sharon Pruitt)',
             'Elliott Brown',
             'Analogick',
@@ -156,35 +156,29 @@ export const MainWindow = GObject.registerClass({
             'Tech Haven Ministries',
             'Jim Pennucci'];
 
-        let name_prefix = '';
-
         let copyright = 'Copyright 2013-2015 The Weather Developers';
         let attribution = this._cityView.info ? this._cityView.info.get_attribution() : '';
-        copyright += attribution ? '\n' + attribution : '';
-        let aboutDialog = new Gtk.AboutDialog(
+
+        let aboutWindow = new Adw.AboutWindow(
             {
-                artists: artists,
-                authors: ['Giovanni Campagna <gcampagna@src.gnome.org>'],
+                developers: ['Giovanni Campagna <gcampagna@src.gnome.org>'],
+                designers: designers,
                 translator_credits: _("translator-credits"),
-                program_name: name_prefix + _("Weather"),
-                comments: _("A weather application"),
+                application_name: _("Weather"),
+                application_icon: pkg.name,
+                developer_name: _("The GNOME Project"),
+                copyright: copyright,
                 license_type: Gtk.License.GPL_2_0,
-                logo_icon_name: pkg.name,
                 version: pkg.version,
                 website: 'https://wiki.gnome.org/Apps/Weather',
-                wrap_license: true,
-                modal: true,
+                issue_url: 'https://gitlab.gnome.org/GNOME/gnome-weather/-/issues/new',
                 transient_for: this
             });
 
-        // HACK: we need to poke into gtkaboutdialog internals
-        // to set the copyright with markup like attribution requires
-        // FIXME: file a gtk+ bug
+        if (attribution.len > 0) {
+            aboutWindow.add_legal_section(_("Weather"), null, Gtk.LicenseCustom, attribution);
+        }
 
-        let copyrightLabel = aboutDialog.get_template_child(Gtk.AboutDialog, 'copyright_label');
-        copyrightLabel.set_markup('<span size="small">' + copyright + '</span>');
-        copyrightLabel.show();
-
-        aboutDialog.show();
+        aboutWindow.show();
     }
 });
