@@ -2,6 +2,7 @@
 # Copyright (C) 2013, 2014, 2015, 2016, 2019, 2020, 2021, 2022 The Free Software Foundation
 # This file is distributed under the same license as the gnome-weather package.
 # Milo Casagrande <milo@milo.name>, 2013, 2014, 2015, 2016, 2019, 2020, 2021, 2022.
+# Marco Ciampa <ciampix@posteo.net>, 2022.
 #
 msgid ""
 msgstr ""
@@ -120,7 +121,7 @@ msgstr "Orario"
 
 #: data/weather-widget.ui:121
 msgid "Daily"
-msgstr "Ogni giorno"
+msgstr "Giornaliero"
 
 #: data/window.ui:6
 msgid "_Temperature Unit"
