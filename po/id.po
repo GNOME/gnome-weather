@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-02-16 01:34+0000\n"
-"PO-Revision-Date: 2022-02-18 09:30+0700\n"
+"POT-Creation-Date: 2022-07-08 17:54+0000\n"
+"PO-Revision-Date: 2022-07-12 17:46+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -16,11 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Cuaca"
 
@@ -55,7 +56,7 @@ msgstr ""
 "melihat kondisi saat ini dari kota yang baru-baru ini dicari hanya dengan "
 "mengetikkan namanya dalam Ringkasan Aktivitas."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:175
+#: data/org.gnome.Weather.appdata.xml.in.in:199 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Proyek GNOME"
 
@@ -80,7 +81,7 @@ msgstr ""
 "Lokasi ditunjukkan dalam tampilan dunia gnome-weather. Setiap nilai adalah "
 "GVariant yang dikembalikan oleh gweather_location_serialize()."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Memuat…"
 
@@ -117,8 +118,8 @@ msgid "Daily"
 msgstr "Per Hari"
 
 #: data/window.ui:6
-msgid "_Temperature Unit"
-msgstr "Satuan _Temperatur"
+msgid "Temperature Unit"
+msgstr "Satuan Temperatur"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -195,7 +196,7 @@ msgstr[0] "Dimutakhirkan %d bulan yang lalu."
 msgid "Daily Forecast"
 msgstr "Ramalan Cuaca Per Hari"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
 msgid "Forecast not Available"
 msgstr "Ramalan Cuaca Tak Tersedia"
 
@@ -204,28 +205,24 @@ msgstr "Ramalan Cuaca Tak Tersedia"
 msgid "%b %e"
 msgstr "%e %b"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "Ramalan Cuaca Per Jam"
 
-#: src/app/hourlyForecast.js:110
+#: src/app/hourlyForecast.js:107
 msgid "Now"
 msgstr "Sekarang"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:117
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2013, 2014, 2016.\n"
 "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2019-2022."
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Aplikasi cuaca"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -234,7 +231,7 @@ msgstr "Tilikan dunia"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:99
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -246,6 +243,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "A weather application"
+#~ msgstr "Aplikasi cuaca"
 
 #~ msgid "Automatic location"
 #~ msgstr "Lokasi otomatis"
