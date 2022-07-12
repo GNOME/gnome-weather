@@ -6,3 +6,7 @@
     background-color: @window_bg_color;
     color: @window_fg_color;
 }
+
+.forecast-card separator {
+    background-color: @borders;
+}

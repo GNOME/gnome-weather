@@ -39,6 +39,10 @@
     border-radius: 6px;
 }
 
+.forecast-card separator {
+    background-color: @card_shade_color;
+}
+
 #conditions-grid,
 #attributionGrid {
     margin-left: 18px;
