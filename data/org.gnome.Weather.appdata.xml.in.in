@@ -46,6 +46,27 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2022-07-13" version="43.alpha">
+      <p>GNOME Weather 43.alpha polishes the thermometer widget in the daily view, refreshes the primary menu, uses smooth transitions between views, and makes use of a new adaptive About window. It also comes with up-to-date translations for the following locales:</p>
+      <ul>
+        <li>Chinese (China)</li>
+        <li>Dutch</li>
+        <li>Friulian</li>
+        <li>Georgian</li>
+        <li>Hebrew</li>
+        <li>Icelandic</li>
+        <li>Indonesian</li>
+        <li>Italian</li>
+        <li>Latvian</li>
+        <li>Lithuanian</li>
+        <li>Occitan (post 1500)</li>
+        <li>Persian</li>
+        <li>Portuguese</li>
+        <li>Russian</li>
+        <li>Spanish</li>
+        <li>Ukrainian</li>
+      </ul>
+    </release>
     <release date="2022-03-20" version="42.0">
       <description>
         <p>GNOME Weather 42 comes with a port to GTK4, a new thermometer widget, and support for GNOME&#39;s new dark style preference. It also comes with up-to-date translations for the following locales:</p>

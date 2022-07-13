@@ -1,3 +1,27 @@
+43.alpha
+=======
+GNOME Weather 43.alpha polishes the thermometer widget in the daily view,
+refreshes the primary menu, uses smooth transitions between views, and
+makes use of a new adaptive About window. It also comes with up-to-date
+translations for the following locales:
+
+ - Chinese (China)
+ - Dutch
+ - Friulian
+ - Georgian
+ - Hebrew
+ - Icelandic
+ - Indonesian
+ - Italian
+ - Latvian
+ - Lithuanian
+ - Occitan (post 1500)
+ - Persian
+ - Portuguese
+ - Russian
+ - Spanish
+ - Ukrainian
+
 42.0
 =======
 GNOME Weather 42 comes with a port to GTK4, a new thermometer widget,
