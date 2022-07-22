@@ -26,75 +26,14 @@
     <property name="default_width">760</property>
     <property name="default_height">520</property>
     <child>
-      <object class="GtkBox">
-        <property name="orientation">vertical</property>
+      <object class="GtkStack" id="stack">
+        <property name="transition_type">crossfade</property>
         <child>
-          <object class="AdwHeaderBar" id="header">
-            <property name="centering_policy">strict</property>
-            <child type="start">
-              <object class="GtkRevealer" id="refreshRevealer">
-                <property name="transition_type">crossfade</property>
-                <property name="child">
-                  <object class="GtkButton" id="refresh">
-                    <property name="valign">center</property>
-                    <property name="tooltip-text" translatable="yes">Refresh</property>
-                    <property name="action_name">win.refresh</property>
-                    <property name="icon_name">view-refresh-symbolic</property>
-                  </object>
-                </property>
-              </object>
-            </child>
-            <child type="title">
-              <object class="GtkStack" id="titleStack">
-                <property name="visible-child-name" bind-source="stack" bind-property="visible-child-name" bind-flags="bidirectional|sync-create" />
-                <property name="transition_type">crossfade</property>
-                <child>
-                  <object class="GtkStackPage">
-                    <property name="name">search</property>
-                    <property name="child">
-                      <object class="GtkLabel">
-                        <property name="ellipsize">end</property>
-                        <property name="halign">center</property>
-                        <property name="single-line-mode">true</property>
-                        <property name="width-chars">5</property>
-                        <property name="label" translatable="yes">Select Location</property>
-                        <style>
-                          <class name="title" />
-                        </style>
-                      </object>
-                    </property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkStackPage">
-                    <property name="name">city</property>
-                    <property name="child">
-                      <object class="AdwViewSwitcherTitle" id="forecastStackSwitcher">
-                        <property name="title" translatable="yes">Weather</property>
-                      </object>
-                    </property>
-                  </object>
-                </child>
-              </object>
-            </child>
-            <child type="end">
-              <object class="GtkMenuButton">
-                <property name="valign">center</property>
-                <property name="menu_model">primary-menu</property>
-                <property name="icon_name">open-menu-symbolic</property>
-              </object>
-            </child>
-          </object>
-        </child>
-        <child>
-          <object class="GtkStack" id="stack">
-
-            <property name="transition_type">crossfade</property>
+          <object class="GtkWindowHandle" id="searchView">
             <child>
-              <object class="GtkStackPage">
-                <property name="name">search</property>
+              <object class="GtkOverlay">
                 <property name="child">
-                  <object class="AdwStatusPage" id="searchView">
+                  <object class="AdwStatusPage" id="searchViewStatus">
 
                     <property name="icon_name">mark-location-symbolic</property>
                     <property name="title" translatable="yes">Welcome to Weather!</property>
@@ -107,20 +46,78 @@
                         <property name="label" translatable="yes">Search for a city or country</property>
                       </object>
                     </child>
-
-                    <style>
-                      <class name="search-view" />
-                    </style>
                   </object>
                 </property>
+                <child type="overlay">
+                  <object class="GtkHeaderBar">
+                    <property name="valign">start</property>
+                    <child type="title">
+                      <object class="AdwWindowTitle">
+                      </object>
+                    </child>
+                    <child type="end">
+                      <object class="GtkMenuButton">
+                        <property name="valign">center</property>
+                        <property name="menu_model">primary-menu</property>
+                        <property name="icon_name">open-menu-symbolic</property>
+                      </object>
+                    </child>
+
+                    <style>
+                      <class name="flat" />
+                    </style>
+                  </object>
+                </child>
               </object>
             </child>
 
+            <style>
+              <class name="search-view" />
+            </style>
           </object>
         </child>
+
         <child>
-          <object class="AdwViewSwitcherBar" id="forecastStackSwitcherBar">
-            <property name="reveal" bind-source="forecastStackSwitcher" bind-property="title-visible" bind-flags="sync-create" />
+          <object class="GtkBox" id="cityBox">
+            <property name="orientation">vertical</property>
+            <child>
+              <object class="AdwHeaderBar" id="header">
+                <property name="centering_policy">strict</property>
+                <child type="start">
+                  <object class="GtkRevealer" id="refreshRevealer">
+                    <property name="transition_type">crossfade</property>
+                    <property name="child">
+                      <object class="GtkButton" id="refresh">
+                        <property name="valign">center</property>
+                        <property name="tooltip-text" translatable="yes">Refresh</property>
+                        <property name="action_name">win.refresh</property>
+                        <property name="icon_name">view-refresh-symbolic</property>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+                <child type="title">
+                  <object class="AdwViewSwitcherTitle" id="forecastStackSwitcher">
+                    <property name="title" translatable="yes">Weather</property>
+                  </object>
+                </child>
+                <child type="end">
+                  <object class="GtkMenuButton">
+                    <property name="valign">center</property>
+                    <property name="menu_model">primary-menu</property>
+                    <property name="icon_name">open-menu-symbolic</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwBin" id="cityBin"/>
+            </child>
+            <child>
+              <object class="AdwViewSwitcherBar" id="forecastStackSwitcherBar">
+                <property name="reveal" bind-source="forecastStackSwitcher" bind-property="title-visible" bind-flags="sync-create" />
+              </object>
+            </child>
           </object>
         </child>
       </object>

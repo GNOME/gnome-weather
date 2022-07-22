@@ -32,7 +32,7 @@ const Page = {
 export const MainWindow = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/window.ui',
     InternalChildren: ['header', 'refreshRevealer', 'refresh', 'forecastStackSwitcher', 'stack',
-        'titleStack', 'searchButton', 'searchView', 'forecastStackSwitcherBar']
+        'searchButton', 'searchView', 'searchViewStatus', 'forecastStackSwitcherBar', 'cityBox', 'cityBin']
 }, class MainWindow extends Adw.ApplicationWindow {
     constructor(params) {
         super(params);
@@ -58,7 +58,7 @@ export const MainWindow = GObject.registerClass({
 
         this._model = this.application.model;
 
-        this._searchView.icon_name = pkg.name;
+        this._searchViewStatus.icon_name = pkg.name;
 
         this._worldView = new WorldContentView(this.application, this, {
             align: Gtk.Align.CENTER,
@@ -70,7 +70,7 @@ export const MainWindow = GObject.registerClass({
         this._cityView = new City.WeatherView(this.application, this,
             { hexpand: true, vexpand: true });
 
-        this._stack.add_named(this._cityView, 'city');
+        this._cityBin.set_child(this._cityView);
 
         this._forecastStackSwitcher.stack = this._cityView.getForecastStack();
         this._forecastStackSwitcherBar.stack = this._cityView.getForecastStack();
@@ -142,7 +142,7 @@ export const MainWindow = GObject.registerClass({
         this.currentInfo = info;
         this._cityView.info = info;
 
-        this._stack.set_visible_child(this._cityView);
+        this._stack.set_visible_child(this._cityBox);
         this._goToPage(Page.CITY);
     }
 
