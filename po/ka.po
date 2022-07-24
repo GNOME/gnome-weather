@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-04-06 10:30+0000\n"
-"PO-Revision-Date: 2022-04-24 08:56+0200\n"
+"POT-Creation-Date: 2022-07-22 22:48+0000\n"
+"PO-Revision-Date: 2022-07-24 06:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
 "Language: ka\n"
@@ -16,11 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "ამინდი"
 
@@ -42,9 +43,8 @@ msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"ის უზრუნველყოფს დეტალურ პროგნოზებზე წვდომას, 7 დღემდე, მიმდინარე და "
-"მომდევნო დღის საათობრივი დეტალებით, სხვადასხვა ინტერნეტ სერვისების "
-"გამოყენებით."
+"ის უზრუნველყოფს დეტალურ პროგნოზებზე წვდომას, 7 დღემდე, მიმდინარე და მომდევნო "
+"დღის საათობრივი დეტალებით, სხვადასხვა ინტერნეტ სერვისების გამოყენებით."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
@@ -56,7 +56,7 @@ msgstr ""
 "ნახოთ ბოლო მოძიებული ქალაქების ამჟამინდელი პირობები მხოლოდ აქტივობების "
 "მიმოხილვაში სახელის აკრეფით."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:199
+#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "პროექტი \"GNOME\""
 
@@ -81,7 +81,7 @@ msgstr ""
 "Gnome-Weather-ის მსოფლიო ხედში ნაჩვენები მდებარეობები. თითოეული მნიშვნელობა "
 "არის GVariant, დაბრუნებული gweather_location_serialize()-ის მიერ."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "იტვირთება…"
 
@@ -118,8 +118,8 @@ msgid "Daily"
 msgstr "დღიურად"
 
 #: data/window.ui:6
-msgid "_Temperature Unit"
-msgstr "_ტემპერატური საზომი ერთეული"
+msgid "Temperature Unit"
+msgstr "ტემპერატური ერთეული"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -223,13 +223,9 @@ msgstr "ახლა"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr "თარგმანი-შესრულებულია"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "ამინდის აპლიკაცია"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -250,3 +246,6 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "A weather application"
+#~ msgstr "ამინდის აპლიკაცია"
