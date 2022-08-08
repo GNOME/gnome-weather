@@ -49,5 +49,5 @@ If you're unfamiliar with GJS, here are a few good places to start:
 
 ## Communication
 
-If you want to chat with the maintainers, we're on Matrix at [#gnome-weather:disroot.org](https://matrix.to/#/#gnome-weather:disroot.org)
+If you want to chat with the maintainers, we're on Matrix at [#weather:gnome.org](https://matrix.to/#/#weather:gnome.org)
 
