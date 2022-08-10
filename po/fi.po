@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-02-26 14:00+0000\n"
-"PO-Revision-Date: 2022-02-27 18:46+0200\n"
+"POT-Creation-Date: 2022-07-22 22:48+0000\n"
+"PO-Revision-Date: 2022-08-10 19:36+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -16,11 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Sää"
 
@@ -56,7 +57,7 @@ msgstr ""
 "tarkasteltujen sijaintien säätiedot ovat nähtävissä yleisnäkymässä "
 "kirjoittamalla paikkakunnan nimen."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:188
+#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Gnome-projekti"
 
@@ -81,7 +82,7 @@ msgstr ""
 "Gnomen sääsovelluksen maailmanäkymässä näytettävät sijainnit. Jokainen arvo "
 "on gweather_location_serialize() -toiminnon palauttama GVariant-muuttuja."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Ladataan…"
 
@@ -118,8 +119,8 @@ msgid "Daily"
 msgstr "Päiväkohtainen"
 
 #: data/window.ui:6
-msgid "_Temperature Unit"
-msgstr "_Lämpötilayksikkö"
+msgid "Temperature Unit"
+msgstr "Lämpötilayksikkö"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -201,7 +202,7 @@ msgstr[1] "Päivitetty %d kuukautta sitten."
 msgid "Daily Forecast"
 msgstr "Päiväkohtainen ennuste"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
 msgid "Forecast not Available"
 msgstr "Ennustetta ei ole saatavilla"
 
@@ -210,26 +211,22 @@ msgstr "Ennustetta ei ole saatavilla"
 msgid "%b %e"
 msgstr "%e. %b"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "Tuntikohtainen ennuste"
 
-#: src/app/hourlyForecast.js:110
+#: src/app/hourlyForecast.js:107
 msgid "Now"
 msgstr "Nyt"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:117
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr "Jiri Grönroos"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Sääsovellus"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -238,7 +235,7 @@ msgstr "Maailman näkymä"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:99
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -250,6 +247,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "A weather application"
+#~ msgstr "Sääsovellus"
 
 #~ msgid "Automatic location"
 #~ msgstr "Automaattinen sijainti"
