@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-08-12 13:33+0200\n"
+"POT-Creation-Date: 2022-08-12 11:33+0000\n"
+"PO-Revision-Date: 2022-08-17 14:25+0200\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <hr@li.org>\n"
 "Language: hr\n"
@@ -44,7 +44,7 @@ msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Omogućuje vam pristup opširnoj prognozi vremena, do 7dana, sa satnim "
+"Omogućuje vam pristup opširnoj prognozi vremena, do 7 dana, sa satnim "
 "pojedinostima za trenutni i sljedeći dan, koristeći razne internetske usluge."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
@@ -57,7 +57,7 @@ msgstr ""
 "trenutne vremenske prognoze najčešće traženih gradova, jednostavno samo "
 "upisivanjem naziva grada u Aktivnosti pregledu."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:230 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "GNOME projekt"
 
