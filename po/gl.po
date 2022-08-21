@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-02-16 01:34+0000\n"
-"PO-Revision-Date: 2022-02-16 11:31+0100\n"
+"POT-Creation-Date: 2022-07-22 22:48+0000\n"
+"PO-Revision-Date: 2022-08-21 17:34+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -18,17 +18,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 42.alpha0\n"
+"X-Generator: Gtranslator 40.0\n"
 "X-Project-Style: gnome\n"
 "X-DL-Team: gl\n"
 "X-DL-Module: gnome-weather\n"
-"X-DL-Branch: master\n"
+"X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Clima"
 
@@ -63,7 +64,7 @@ msgstr ""
 "meteorolóxicas actuais das cidades máis buscadas recentemente escribindo o "
 "seu nome na Vista de actividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:175
+#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "O Proxecto GNOME"
 
@@ -88,7 +89,7 @@ msgstr ""
 "As localizacións mostradas na vista do mundo de gnome-weather. Cada valor é "
 "un GVariant devolto por gweather_location_serialize()."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Cargando…"
 
@@ -125,8 +126,9 @@ msgid "Daily"
 msgstr "Por día"
 
 #: data/window.ui:6
-msgid "_Temperature Unit"
-msgstr "_Unidade de temperatura"
+#| msgid "_Temperature Unit"
+msgid "Temperature Unit"
+msgstr "Unidade de temperatura"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -208,7 +210,7 @@ msgstr[1] "Actualizado hai %d meses."
 msgid "Daily Forecast"
 msgstr "Predición diaria"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
 msgid "Forecast not Available"
 msgstr "Predición non dispoñíbel"
 
@@ -217,26 +219,22 @@ msgstr "Predición non dispoñíbel"
 msgid "%b %e"
 msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "Predición por horas"
 
-#: src/app/hourlyForecast.js:110
+#: src/app/hourlyForecast.js:107
 msgid "Now"
 msgstr "Agora"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:117
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr "Fran Diéguez <frandieguez@gnome.org>, 2013-2022"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Unha aplicación do clima"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -245,7 +243,7 @@ msgstr "Vista mundial"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:99
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -257,6 +255,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "A weather application"
+#~ msgstr "Unha aplicación do clima"
 
 #~ msgid "Automatic location"
 #~ msgstr "Localización automática"
