@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-02-16 01:34+0000\n"
-"PO-Revision-Date: 2022-02-16 09:12+0100\n"
+"POT-Creation-Date: 2022-07-22 22:48+0000\n"
+"PO-Revision-Date: 2022-08-25 14:54+0200\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -24,7 +24,8 @@ msgstr ""
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Počasí"
 
@@ -59,7 +60,7 @@ msgstr ""
 "aktuální počasí v nedávno vyhledaných městech napsaním jejich názvu v "
 "přehledu činností."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:175
+#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -86,7 +87,7 @@ msgstr ""
 "Místa zobrazená na mapě světa v aplikaci Počasí pro prostředí Gnome. Každá "
 "hodnota reprezentuje GVariant vrácený službou gweather_location_serialize()."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Načítá se…"
 
@@ -123,8 +124,8 @@ msgid "Daily"
 msgstr "Denní"
 
 #: data/window.ui:6
-msgid "_Temperature Unit"
-msgstr "Jednotky _teploty"
+msgid "Temperature Unit"
+msgstr "Jednotky teploty"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -211,7 +212,7 @@ msgstr[2] "Aktualizováno před %d měsíci."
 msgid "Daily Forecast"
 msgstr "Denní předpověď počasí"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
 msgid "Forecast not Available"
 msgstr "Předpověď není dostupná"
 
@@ -220,28 +221,25 @@ msgstr "Předpověď není dostupná"
 msgid "%b %e"
 msgstr "%e. %B"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "Hodinová předpověď počasí"
 
-#: src/app/hourlyForecast.js:110
+#: src/app/hourlyForecast.js:107
 msgid "Now"
 msgstr "Právě teď"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:117
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr ""
 "Adam Matoušek <adamatousek@gmail.com>\n"
-"Daniel Puncman <puncmdan@fel.cvut.cz>"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Aplikace Počasí"
+"Daniel Puncman <puncmdan@fel.cvut.cz>\n"
+"Marek Černocký <marek@manet.cz>"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -250,7 +248,7 @@ msgstr "Zobrazení světa"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:99
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
