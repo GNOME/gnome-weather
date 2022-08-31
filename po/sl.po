@@ -8,22 +8,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-03-15 09:14+0000\n"
-"PO-Revision-Date: 2022-03-15 22:33+0100\n"
+"POT-Creation-Date: 2022-08-31 11:35+0000\n"
+"PO-Revision-Date: 2022-08-31 20:43+0200\n"
 "Last-Translator: Matej Urbančič <mateju@src.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
+"n%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Vreme"
 
@@ -58,7 +59,7 @@ msgstr ""
 "trenutnega vremena v izbranih oziroma iskanih mestih z enostavnim vpisom "
 "imena v polje pregleda dejavnosti."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:218
+#: data/org.gnome.Weather.appdata.xml.in.in:230 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -81,7 +82,7 @@ msgid ""
 "GVariant returned by gweather_location_serialize()."
 msgstr "Mesta, ki so prikazana v svetovnem pogledu programa."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Poteka nalaganje …"
 
@@ -118,8 +119,8 @@ msgid "Daily"
 msgstr "Dnevno"
 
 #: data/window.ui:6
-msgid "_Temperature Unit"
-msgstr "_Enota temperature"
+msgid "Temperature Unit"
+msgstr "Enota temperature"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -233,13 +234,9 @@ msgstr "Ravnokar"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr "Matej Urbančič <matej.urban@src.gnome.org>"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Program za prikaz podatkov vremena"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -260,6 +257,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "A weather application"
+#~ msgstr "Program za prikaz podatkov vremena"
 
 #~ msgid "Automatic location"
 #~ msgstr "Samodejno določanje mesta"
