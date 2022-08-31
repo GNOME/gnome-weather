@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-02-26 14:00+0000\n"
-"PO-Revision-Date: 2021-11-06 18:12+0100\n"
+"POT-Creation-Date: 2022-07-22 22:48+0000\n"
+"PO-Revision-Date: 2022-08-31 18:12+0100\n"
 "Last-Translator: maite guix <maite.guix@me.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
@@ -22,7 +22,8 @@ msgstr ""
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Meteorologia"
 
@@ -58,7 +59,7 @@ msgstr ""
 "les condicions actuals de les últimes ciutats que hàgiu cercat teclejant el "
 "seu nom al resum d'activitats."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:188
+#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "El projecte GNOME"
 
@@ -84,7 +85,7 @@ msgstr ""
 "La ubicació mostrada a la vista mundial del gnome-weather. Cada valor és un "
 "GVariant retornat per gweather_location_serialize()."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "S'està carregant…"
 
@@ -121,8 +122,8 @@ msgid "Daily"
 msgstr "Diari"
 
 #: data/window.ui:6
-msgid "_Temperature Unit"
-msgstr "_Unitat de temperatura"
+msgid "Temperature Unit"
+msgstr "Unitat de temperatura"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -204,7 +205,7 @@ msgstr[1] "Actualitzat fa %d mesos."
 msgid "Daily Forecast"
 msgstr "Predicció diària"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
 msgid "Forecast not Available"
 msgstr "La predicció està disponible"
 
@@ -213,29 +214,25 @@ msgstr "La predicció està disponible"
 msgid "%b %e"
 msgstr "%e %b"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "Predicció per hores"
 
-#: src/app/hourlyForecast.js:110
+#: src/app/hourlyForecast.js:107
 msgid "Now"
 msgstr "Ara"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:117
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr ""
 "Josep Sanchez Mesegue <papapep@gmx.com>,\n"
 "Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\n"
 "Miquel-Àngel Burgos i Fradeja <miquel.angel.burgos@gmail.com>"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Un programa de meteorologia"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -244,7 +241,7 @@ msgstr "Visualització mundial"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:99
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -256,6 +253,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "A weather application"
+#~ msgstr "Un programa de meteorologia"
 
 #~ msgid "Automatic location"
 #~ msgstr "Ubicació automàtica"
@@ -281,4 +281,3 @@ msgstr "%s, %s"
 
 #~ msgid "Current conditions"
 #~ msgstr "Condicions actuals"
-
