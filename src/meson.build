@@ -1,5 +1,5 @@
 source_conf = configuration_data()
-source_conf.set('GJS', find_program('gjs').path())
+source_conf.set('GJS', gjs.get_variable(pkgconfig: 'gjs_console'))
 source_conf.set('VERSION', meson.project_version() + version_suffix)
 source_conf.set('APP_ID', weather_id)
 source_conf.set('libdir', weather_extensiondir)
