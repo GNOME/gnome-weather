@@ -46,6 +46,24 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2022-09-03" version="43.rc">
+      <p>GNOME Weather 43.rc comes with up-to-date translations for the following locales:</p>
+      <ul>
+        <li>Catalan</li>
+        <li>Chinese (Taiwan)</li>
+        <li>Croatian</li>
+        <li>Czech</li>
+        <li>Danish</li>
+        <li>Finnish</li>
+        <li>Galician</li>
+        <li>Hungarian</li>
+        <li>Latvian</li>
+        <li>Polish</li>
+        <li>Portuguese (Brazil)</li>
+        <li>Slovenian</li>
+        <li>Swedish</li>
+      </ul>
+    </release>
     <release date="2022-08-07" version="43.beta">
       <p>GNOME Weather 43.beta comes with up-to-date translations for the following locales:</p>
       <ul>
