@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-02-28 12:52+0000\n"
-"PO-Revision-Date: 2021-06-16 19:57+0545\n"
+"POT-Creation-Date: 2022-07-22 22:48+0000\n"
+"PO-Revision-Date: 2022-09-08 01:55+0545\n"
 "Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
 "Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
 "Language: ne_NP\n"
@@ -16,10 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2;plural=(n!=1);\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5 data/org.gnome.Weather.desktop.in.in:4
-#: data/window.ui:89 src/app/main.js:64 src/app/window.js:203 src/service/main.js:48
+#: data/window.ui:73 src/app/application.js:43 src/app/window.js:167
+#: src/app/window.js:179 src/service/main.js:49
 msgid "Weather"
 msgstr "मौसम"
 
@@ -52,7 +53,7 @@ msgstr ""
 "यो पनि वैकल्पिक रूपमा जिनोम शैलसँग एकीकृत हुन्छ, तपाईंलाई हालको खोजी सहरहरूको अवस्था र क्रियाकलाप "
 "अवलोकनमा यसको नाम टाइप गरेर हालको अवस्था हेर्न अनुमति दिन्छ।"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:119
+#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "जिनोम परियोजना"
 
@@ -77,147 +78,116 @@ msgstr ""
 "संसारमा देखिएका ठाउँहरू ग्नम-मौसमको दृश्य हेर्नुहोस्। प्रत्येक मान GVariant "
 "gweather_location_serialize() द्वारा फर्काइएको हो।"
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "स्वत: स्थान"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which decides whether "
-"to fetch current location or not."
-msgstr ""
-"स्वचालित स्थान स्वचालित-स्थान स्विचको मान हो जसले निर्णय गर्दछ कि वर्तमान स्थान ल्याउन वा छैन।"
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "शहरी दृश्य"
-
-#: data/city.ui:32
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "लोड गर्दै…"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "रात"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "बिहान"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "दिउँसो"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "साँझ"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "स्वत: स्थान"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "फेला पार्दै…"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "शहर खोज्नुहोस्"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "हालै हेरिसकेको"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "तापक्रम एकाइ"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "सेल्सियस"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "फरेनहाइट"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "मौसम बारेमा"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "स्थानहरू"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "हालको अवस्था"
-
-#: data/weather-widget.ui:180
+#: data/weather-widget.ui:92
 msgid "Hourly"
 msgstr "घण्टा घण्टामा"
 
-#: data/weather-widget.ui:201
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "दैनिक"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "Temperature Unit"
+msgstr "तापक्रम एकाइ"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "सेल्सियस"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "फरेनहाइट"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "मौसम बारेमा"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "ताजा पार्नुहोस्"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "_स्थान छान्नुहोस्"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "मौसम स्वागत!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "सुरु गर्न, स्थान चयन गर्नुहोस् ।"
 
-#: data/window.ui:136
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "सहर वा देशको खोजी गर्नुहोस्"
 
-#: src/app/city.js:209
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "%.0f° जस्तो लाग्छ"
 
-#: src/app/city.js:241
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "अहिले अद्यावधिक गरियो ।"
 
-#: src/app/city.js:246
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d मिनेट पहिले अद्यावधिक गरियो ।"
 msgstr[1] "%d मिनेट पहिले अद्यावधिक गरियो ।"
 
-#: src/app/city.js:252
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d घण्टा पहिले अद्यावधिक गरियो ।"
 msgstr[1] "%d घण्टा पहिले अद्यावधिक गरियो ।"
 
-#: src/app/city.js:258
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d दिन पहिले अद्यावधिक गरियो ।"
 msgstr[1] "%d दिन पहिले अद्यावधिक गरियो ।"
 
-#: src/app/city.js:264
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d हप्ता पहिले अद्यावधिक गरियो ।"
 msgstr[1] "%d हप्ता पहिले अद्यावधिक गरियो ।"
 
-#: src/app/city.js:269
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -228,40 +198,40 @@ msgstr[1] "%d महिना पहिले अद्यावधिक गर
 msgid "Daily Forecast"
 msgstr "दैनिक मौसम पूर्वानुमान"
 
-#: src/app/dailyForecast.js:93 src/app/hourlyForecast.js:89
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+msgid "Forecast not Available"
 msgstr "पूर्वानुमान उपलब्ध छैन"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:179
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "घण्टा घण्टामा मौसम पूर्वानुमान"
 
-#. Translators: this is a time format without date used for AM/PM
 #: src/app/hourlyForecast.js:107
+msgid "Now"
+msgstr "अहिले"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:202
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr "Pawan Chitrakar < chautari@gmail.com >"
 
-#: src/app/window.js:204
-msgid "A weather application"
-msgstr "मौसम अनुप्रयोग"
-
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "विश्व दृश्य"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -273,6 +243,33 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Automatic location"
+#~ msgstr "स्वत: स्थान"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which decides "
+#~ "whether to fetch current location or not."
+#~ msgstr ""
+#~ "स्वचालित स्थान स्वचालित-स्थान स्विचको मान हो जसले निर्णय गर्दछ कि वर्तमान स्थान ल्याउन वा छैन।"
+
+#~ msgid "City view"
+#~ msgstr "शहरी दृश्य"
+
+#~ msgid "Automatic Location"
+#~ msgstr "स्वत: स्थान"
+
+#~ msgid "Locating…"
+#~ msgstr "फेला पार्दै…"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "हालै हेरिसकेको"
+
+#~ msgid "Current conditions"
+#~ msgstr "हालको अवस्था"
+
+#~ msgid "A weather application"
+#~ msgstr "मौसम अनुप्रयोग"
 
 #~ msgid "_New"
 #~ msgstr "नयाँ"
