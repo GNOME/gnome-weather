@@ -7,10 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-weather master\n"
+"Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-02-18 02:31+0000\n"
-"PO-Revision-Date: 2022-02-18 13:33+0100\n"
+"POT-Creation-Date: 2022-09-10 17:43+0000\n"
+"PO-Revision-Date: 2022-09-12 14:02+0200\n"
 "Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -21,7 +21,8 @@ msgstr ""
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Прогноза"
 
@@ -56,7 +57,7 @@ msgstr ""
 "възможност да видите текущите метеорологични условия в скоро търсените "
 "градове като просто напишете името им в прегледа на дейностите."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:188
+#: data/org.gnome.Weather.appdata.xml.in.in:248 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Проектът GNOME"
 
@@ -82,7 +83,7 @@ msgstr ""
 "време. Всяка стойност е структура „GVariant“, която се връща от "
 "„gweather_location_serialize()“."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Зареждане…"
 
@@ -119,8 +120,8 @@ msgid "Daily"
 msgstr "Дневна"
 
 #: data/window.ui:6
-msgid "_Temperature Unit"
-msgstr "_Единица за температура"
+msgid "Temperature Unit"
+msgstr "Единица за температура"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -202,7 +203,7 @@ msgstr[1] "Обновено преди %d месеца."
 msgid "Daily Forecast"
 msgstr "Дневна прогноза"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
 msgid "Forecast not Available"
 msgstr "Липсва прогноза"
 
@@ -211,20 +212,20 @@ msgstr "Липсва прогноза"
 msgid "%b %e"
 msgstr "%е %b"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "Почасова прогноза"
 
-#: src/app/hourlyForecast.js:110
+#: src/app/hourlyForecast.js:107
 msgid "Now"
 msgstr "Сега"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:117
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr ""
 "Александър Шопов &lt;<a href='mailto:ash@kambanaria.org'>ash@kambanaria.org</"
@@ -237,10 +238,6 @@ msgstr ""
 "Докладвайте за грешки в превода в <a href='https://fsa-bg.org/project/gtp/"
 "newticket'>съответния раздел</a>."
 
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Програма за прогноза на времето"
-
 #: src/app/world.js:39
 msgid "World view"
 msgstr "Световен изглед"
@@ -248,7 +245,7 @@ msgstr "Световен изглед"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:99
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
