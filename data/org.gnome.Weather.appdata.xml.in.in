@@ -46,52 +46,55 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
-    <release date="2022-09-03" version="43.rc">
-      <p>GNOME Weather 43.rc comes with up-to-date translations for the following locales:</p>
+    <release date="2022-09-18" version="43.0">
+      <p>GNOME Weather 43.0 brings many improvements:</p>
       <ul>
+        <li>The thermometer widget in the daily view has received a round of polish,
+        with temperature labels sticking to the thermometer as it scales.</li>
+        <li>The temperature choice in the primary menu is now at the top level.</li>
+        <li>Views now transitions smoothly with a crossfade.</li>
+        <li>We use a new adaptive About window.</li>
+      </ul>
+      <p>It also comes with up-to-date translations for the following locales:</p>
+      <ul>
+        <li>Abkhazian</li>
+        <li>Basque</li>
+        <li>Bulgarian</li>
         <li>Catalan</li>
+        <li>Chinese (China)</li>
         <li>Chinese (Taiwan)</li>
         <li>Croatian</li>
         <li>Czech</li>
         <li>Danish</li>
-        <li>Finnish</li>
-        <li>Galician</li>
-        <li>Hungarian</li>
-        <li>Latvian</li>
-        <li>Polish</li>
-        <li>Portuguese (Brazil)</li>
-        <li>Slovenian</li>
-        <li>Swedish</li>
-      </ul>
-    </release>
-    <release date="2022-08-07" version="43.beta">
-      <p>GNOME Weather 43.beta comes with up-to-date translations for the following locales:</p>
-      <ul>
-        <li>Abkhazian</li>
-        <li>Basque</li>
-        <li>Georgian</li>
-        <li>Serbian</li>
-        <li>Turkish</li>
-      </ul>
-    </release>
-    <release date="2022-07-13" version="43.alpha">
-      <p>GNOME Weather 43.alpha polishes the thermometer widget in the daily view, refreshes the primary menu, uses smooth transitions between views, and makes use of a new adaptive About window. It also comes with up-to-date translations for the following locales:</p>
-      <ul>
-        <li>Chinese (China)</li>
         <li>Dutch</li>
+        <li>Finnish</li>
+        <li>French</li>
         <li>Friulian</li>
+        <li>Galician</li>
         <li>Georgian</li>
+        <li>German</li>
+        <li>Greek, Modern (1453-)</li>
         <li>Hebrew</li>
+        <li>Hungarian</li>
         <li>Icelandic</li>
         <li>Indonesian</li>
         <li>Italian</li>
+        <li>Kazakh</li>
+        <li>Korean</li>
         <li>Latvian</li>
         <li>Lithuanian</li>
+        <li>Nepali</li>
         <li>Occitan (post 1500)</li>
         <li>Persian</li>
+        <li>Polish</li>
         <li>Portuguese</li>
+        <li>Portuguese (Brazil)</li>
         <li>Russian</li>
+        <li>Serbian</li>
+        <li>Slovenian</li>
         <li>Spanish</li>
+        <li>Swedish</li>
+        <li>Turkish</li>
         <li>Ukrainian</li>
       </ul>
     </release>
