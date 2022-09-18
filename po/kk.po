@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-02-26 14:00+0000\n"
-"PO-Revision-Date: 2022-03-12 22:47+0500\n"
+"POT-Creation-Date: 2022-07-22 22:48+0000\n"
+"PO-Revision-Date: 2022-09-18 09:42+0600\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk@li.org>\n"
 "Language: kk\n"
@@ -16,11 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Ауа райы"
 
@@ -56,7 +57,7 @@ msgstr ""
 "көрінісінде жақында ізделген қалалар үшін ауа райы болжамын көрсете алады, "
 "ол үшін қала атын енгізу керек."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:188
+#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "GNOME жобасы"
 
@@ -81,7 +82,7 @@ msgstr ""
 "Орналасулар gnome-weather қолданбасының әлемдік көрінісінде көрсетіледі. Әр "
 "мән gweather_location_serialize() қайтаратын GVariant болып табылады."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Жүктелуде…"
 
@@ -118,8 +119,8 @@ msgid "Daily"
 msgstr "Күн сайын"
 
 #: data/window.ui:6
-msgid "_Temperature Unit"
-msgstr "_Температураның өлшем бірлігі"
+msgid "Temperature Unit"
+msgstr "Температураның өлшем бірлігі"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -196,7 +197,7 @@ msgstr[0] "%d ай бұрын жаңартылды."
 msgid "Daily Forecast"
 msgstr "Тәуліктік болжам"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
 msgid "Forecast not Available"
 msgstr "Ауа райы болжамы қолжетімсіз"
 
@@ -205,26 +206,22 @@ msgstr "Ауа райы болжамы қолжетімсіз"
 msgid "%b %e"
 msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "Сағаттық болжам"
 
-#: src/app/hourlyForecast.js:110
+#: src/app/hourlyForecast.js:107
 msgid "Now"
 msgstr "Қазір"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:117
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Ауа райы қолданбасы"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -233,7 +230,7 @@ msgstr "Әлем көрінісі"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:99
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -245,6 +242,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "A weather application"
+#~ msgstr "Ауа райы қолданбасы"
 
 #~ msgid "Automatic location"
 #~ msgstr "Орналасуды автоанықтау"
