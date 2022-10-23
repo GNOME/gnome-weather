@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-05-30 05:58+0000\n"
-"PO-Revision-Date: 2022-05-30 20:54+0300\n"
+"POT-Creation-Date: 2022-09-18 18:41+0000\n"
+"PO-Revision-Date: 2022-10-23 19:54+0300\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: Hebrew <>\n"
 "Language: he\n"
@@ -19,11 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3)\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Gtranslator 40.0\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "מזג האוויר"
 
@@ -57,7 +58,7 @@ msgstr ""
 "ניתן לשלב אותו עם מעטפת GNOME, המאפשרת לך לראות את תנאי מזג האוויר של רוב "
 "הערים שחיפשת לאחרונה, בהקלדת שם בסקירת פעילויות."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:199
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "מיזם GNOME"
 
@@ -82,7 +83,7 @@ msgstr ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "בטעינה…"
 
@@ -119,7 +120,6 @@ msgid "Daily"
 msgstr "יומי"
 
 #: data/window.ui:6
-#| msgid "_Temperature Unit"
 msgid "Temperature Unit"
 msgstr "יחידת מעלות"
 
@@ -235,17 +235,12 @@ msgstr "עכשיו"
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr ""
 "ירון שהרבני <sh.yaron@gmail.com>\n"
 "יוסף אור בוצ׳קו <yoseforb@gmail.com>\n"
-"\n"
-"<a href=\"https://l10n.gnome.org/teams/he/\">מיזם תרגום GNOME לעברית</a>"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "יישום מזג אוויר"
+"מיזם תרגום GNOME לעברית https://l10n.gnome.org/teams/he/"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -266,6 +261,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "A weather application"
+#~ msgstr "יישום מזג אוויר"
 
 #~ msgid "Automatic location"
 #~ msgstr "Automatic location"
