@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gnome Weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-02-26 14:00+0000\n"
-"PO-Revision-Date: 2022-03-25 10:56+0100\n"
+"POT-Creation-Date: 2022-09-18 18:41+0000\n"
+"PO-Revision-Date: 2022-11-02 00:29+0100\n"
 "Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
 "Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
 "Language: nl\n"
@@ -18,12 +18,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:47
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Weer"
 
@@ -59,7 +60,7 @@ msgstr ""
 "de huidige weersomstandigheden te zien van de meest recent gezochte steden "
 "door gewoon de naam in te geven in het activiteitenoverzicht."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:188
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Het Gnome-project"
 
@@ -84,7 +85,7 @@ msgstr ""
 "Locaties getoond in het wereldoverzicht van gnome-weer. Iedere waarde is een "
 "GVariant afkomstig van gweather_location_serialize()."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Laden…"
 
@@ -121,8 +122,8 @@ msgid "Daily"
 msgstr "Dagelijks"
 
 #: data/window.ui:6
-msgid "_Temperature Unit"
-msgstr "Eenheid voor _temperatuur"
+msgid "Temperature Unit"
+msgstr "Temperatuureenheid"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -204,7 +205,7 @@ msgstr[1] "%d maanden geleden bijgewerkt."
 msgid "Daily Forecast"
 msgstr "Dagelijks weersverwachting"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:93
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
 msgid "Forecast not Available"
 msgstr "Weersverwachtingen niet beschikbaar"
 
@@ -213,31 +214,26 @@ msgstr "Weersverwachtingen niet beschikbaar"
 msgid "%b %e"
 msgstr "%d %b"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "Uurlijkse weersverwachtingen"
 
-#: src/app/hourlyForecast.js:110
+#: src/app/hourlyForecast.js:107
 msgid "Now"
 msgstr "Nu"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:117
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr ""
 "Erwin Poeze\n"
 "Hannie Dumoleyn\n"
 "Nathan Follens <nfollens@gnome.org>\n"
-"\n"
 "Meer info over Gnome-NL http://nl.gnome.org/"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Een weertoepassing"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -246,7 +242,7 @@ msgstr "Wereldoverzicht"
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:99
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -258,6 +254,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "A weather application"
+#~ msgstr "Een weertoepassing"
 
 #~ msgid "Automatic location"
 #~ msgstr "Automatische locatie"
