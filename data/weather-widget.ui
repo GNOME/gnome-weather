@@ -89,7 +89,8 @@
                 <child>
                   <object class="AdwViewStackPage">
                     <property name="name">hourly</property>
-                    <property name="title" translatable="yes">Hourly</property>
+                    <property name="title" translatable="yes">_Hourly</property>
+                    <property name="use-underline">True</property>
                     <property name="icon-name">weather-hourly-symbolic</property>
                     <property name="child">
                       <object class="GtkScrolledWindow" id="forecastHourlyScrollWindow">
@@ -120,7 +121,8 @@
                 <child>
                   <object class="AdwViewStackPage">
                     <property name="name">daily</property>
-                    <property name="title" translatable="yes">Daily</property>
+                    <property name="title" translatable="yes">_Daily</property>
+                    <property name="use-underline">True</property>
                     <property name="icon-name">x-office-calendar-symbolic</property>
                     <property name="child">
                       <object class="GtkScrolledWindow" id="forecastDailyScrollWindow">
