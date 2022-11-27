@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2021-08-02 13:06+0000\n"
-"PO-Revision-Date: 2021-08-18 06:47+0300\n"
+"POT-Creation-Date: 2022-09-18 18:41+0000\n"
+"PO-Revision-Date: 2022-10-19 19:24+0300\n"
 "Last-Translator: Launchpad translators\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
@@ -21,8 +21,9 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Надвор'е"
 
@@ -57,7 +58,7 @@ msgstr ""
 "гарадах, якія вы нядаўна шукалі, проста напісаўшы назву аднаго з іх у меню "
 "Агляд дзейнасці."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:121
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Праект GNOME"
 
@@ -82,120 +83,88 @@ msgstr ""
 "Месцазнаходжанні, якія паказваюцца ў сусветным рэжыме прагляду. Кожнае "
 "значэнне – GVariant вернутае функцыяй gweather_location_serialize()."
 
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "Automatic location"
-msgstr "Аўтавызначэнне месцазнаходжання"
-
-#: data/org.gnome.Weather.gschema.xml:15
-msgid ""
-"The automatic location is the value of automatic-location switch which "
-"decides whether to fetch current location or not."
-msgstr ""
-"У залежнасці ад стану пераключальніка «Аўтавызначэнне месцазнаходжання», "
-"аўтаматычна вызначаецца (ці не) бягучае месцазнаходжанне."
-
-#: data/city.ui:9
-msgid "City view"
-msgstr "Гарады"
-
-#: data/city.ui:32
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Загрузка…"
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "Ноч"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "Раніца"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "Дзень"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Вечар"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "Аўтавызначэнне месцазнаходжання"
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "Вызначэнне месцазнаходжання…"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "Пошук горада"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "Нядаўна прагледжаныя"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "_Адзінкі вымярэння тэмпературы"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "Градусы _Цэльсія"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "Градусы _Фарэнгейта"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "_Пра Надвор'е"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "Месцы"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "Бягучае надвор'е"
-
-#: data/weather-widget.ui:186
+#: data/weather-widget.ui:92
 msgid "Hourly"
 msgstr "Па гадзінах"
 
-#: data/weather-widget.ui:207
+#: data/weather-widget.ui:123
 msgid "Daily"
 msgstr "Па днях"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "Temperature Unit"
+msgstr "Адзінкі вымярэння тэмпературы"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "Градусы _Цэльсія"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "Градусы _Фарэнгейта"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_Пра Надвор'е"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "Абнавіць"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "Выберыце месцазнаходжанне"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "Вітаем у праграме Надвор'е!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "Каб пачаць, выберыце месцазнаходжанне."
 
-#: data/window.ui:136
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "Пошук горада або краіны"
 
-#: src/app/city.js:235
+#: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Адчуваецца як %.0f°"
 
-#: src/app/city.js:268
+#: src/app/city.js:233
 msgid "Updated just now."
 msgstr "Абноўлена толькі што."
 
-#: src/app/city.js:273
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -203,7 +172,7 @@ msgstr[0] "Абноўлена %d хвіліну таму."
 msgstr[1] "Абноўлена %d хвіліны таму."
 msgstr[2] "Абноўлена %d хвілін таму."
 
-#: src/app/city.js:279
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -211,7 +180,7 @@ msgstr[0] "Абноўлена %d гадзіну таму."
 msgstr[1] "Абноўлена %d гадзіны таму."
 msgstr[2] "Абноўлена %d гадзін таму."
 
-#: src/app/city.js:285
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -219,7 +188,7 @@ msgstr[0] "Абноўлена %d дзень таму."
 msgstr[1] "Абноўлена %d дні таму."
 msgstr[2] "Абноўлена %d дзён таму."
 
-#: src/app/city.js:291
+#: src/app/city.js:256
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -227,7 +196,7 @@ msgstr[0] "Абноўлена %d тыдзень таму."
 msgstr[1] "Абноўлена %d тыдні таму."
 msgstr[2] "Абноўлена %d тыдняў таму."
 
-#: src/app/city.js:296
+#: src/app/city.js:261
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -239,40 +208,40 @@ msgstr[2] "Абноўлена %d месяцаў таму."
 msgid "Daily Forecast"
 msgstr "Прагноз па днях"
 
-#: src/app/dailyForecast.js:89 src/app/hourlyForecast.js:85
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+msgid "Forecast not Available"
 msgstr "Прагноз недаступны"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:175
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%e %b"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "Прагноз па гадзінах"
 
+#: src/app/hourlyForecast.js:107
+msgid "Now"
+msgstr "Толькі што"
+
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:103
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:202
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr "Launchpad translators"
 
-#: src/app/window.js:204
-msgid "A weather application"
-msgstr "Праграма надвор'я"
-
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Свет"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:140
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -284,3 +253,31 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Automatic location"
+#~ msgstr "Аўтавызначэнне месцазнаходжання"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which "
+#~ "decides whether to fetch current location or not."
+#~ msgstr ""
+#~ "У залежнасці ад стану пераключальніка «Аўтавызначэнне месцазнаходжання», "
+#~ "аўтаматычна вызначаецца (ці не) бягучае месцазнаходжанне."
+
+#~ msgid "City view"
+#~ msgstr "Гарады"
+
+#~ msgid "Automatic Location"
+#~ msgstr "Аўтавызначэнне месцазнаходжання"
+
+#~ msgid "Locating…"
+#~ msgstr "Вызначэнне месцазнаходжання…"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "Нядаўна прагледжаныя"
+
+#~ msgid "Current conditions"
+#~ msgstr "Бягучае надвор'е"
+
+#~ msgid "A weather application"
+#~ msgstr "Праграма надвор'я"
