@@ -82,6 +82,9 @@
             <property name="orientation">vertical</property>
             <child>
               <object class="AdwHeaderBar" id="header">
+                <style>
+                  <class name="flat"/>
+                </style>
                 <property name="centering_policy">strict</property>
                 <child type="start">
                   <object class="GtkRevealer" id="refreshRevealer">
