@@ -23,8 +23,8 @@
     </section>
   </menu>
   <template class="Gjs_MainWindow">
-    <property name="default_width">760</property>
-    <property name="default_height">520</property>
+    <property name="default_width">1050</property>
+    <property name="default_height">650</property>
     <child>
       <object class="GtkStack" id="stack">
         <property name="transition_type">crossfade</property>
