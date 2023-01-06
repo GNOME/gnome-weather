@@ -1,16 +1,9 @@
-# Abkhazian translation for gnome-weather.
-# Copyright (C) 2022 gnome-weather's COPYRIGHT HOLDER
-# This file is distributed under the same license as the gnome-weather package.
-# Наала Нанба <naala-nanba@rambler.ru>, 2022.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-01-11 11:04+0000\n"
-"PO-Revision-Date: 2020-05-01 16:36+0000\n"
-"Last-Translator: Наала Нанба <naala-nanba@rambler.ru>\n"
-"Language-Team: Abkhazian <ab@li.org>\n"
+"POT-Creation-Date: 2022-07-14 03:19+0000\n"
+"Last-Translator: Нанба Наала <naala-nanba@rambler.ru>\n"
+"Language-Team: Abkhazian <daniel.abzakh@gmail.com>\n"
 "Language: ab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,8 +12,8 @@ msgstr ""
 "X-DamnedLies-Scope: partial\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:89 src/app/main.js:64
-#: src/app/window.js:203 src/service/main.js:48
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
 msgid "Weather"
 msgstr "Амш зеиԥшроу"
 
@@ -33,17 +26,15 @@ msgstr "Шәахәаԥш амш зеиԥшроу, насгьы  уи аҽеиҭ�
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
-msgstr ""
-"Идыум аҧшьы  амш зеиԥшроу агәаҭаразы"
-"Шәықалақь, мамзар даҽа ҭыԥк аҟны."
+msgstr "Идыум аҧшьы  амш зеиԥшроу агәаҭаразыШәықалақь, мамзар даҽа ҭыԥк аҟны."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Насгьы иара ишәынаҭоит алшара амш зеиԥшрахо нҭкааны (7 мш рҟынӡа) аилкаара"
-"еиуеиԥшым аинтернет маҵзурақәа рҟны."
+"Насгьы иара ишәынаҭоит алшара амш зеиԥшрахо нҭкааны (7 мш рҟынӡа) "
+"аилкаараеиуеиԥшым аинтернет маҵзурақәа рҟны."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
@@ -51,13 +42,13 @@ msgid ""
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"Хықәкыла аԥшьы GNOME Shell иадцалоуп, уи ишәынаҭоит алшара"
-"изаамҭанытәиу аҭагылазаашьа ааигәа шәызшьҭаз ақалақьқәа рҟны агәаҭара"
-"лаԥшхагаратә режимла ақалақь ахьӡ анашәырбалак."
+"Хықәкыла аԥшьы GNOME Shell иадцалоуп, уи ишәынаҭоит алшараизаамҭанытәиу "
+"аҭагылазаашьа ааигәа шәызшьҭаз ақалақьқәа рҟны агәаҭаралаԥшхагаратә режимла "
+"ақалақь ахьӡ анашәырбалак."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:154
+#: data/org.gnome.Weather.appdata.xml.in.in:199
 msgid "The GNOME Project"
-msgstr "Апроект GNOME."
+msgstr "The GNOME Project"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
@@ -68,185 +59,174 @@ msgstr "Амш зеиԥшроу;Азԥхьагәаҭара;"
 msgid "Allows weather information to be displayed for your location."
 msgstr "Шәахьыҟоу аҭыԥ аҟны амш зеиԥшроу гәашәҭарц азы алшара шәнаҭоит."
 
-#: data/city.ui:9
-msgid "City view"
-msgstr "Ақалақьтәи режимла ахәаԥшра"
+#: data/org.gnome.Weather.gschema.xml:6
+msgid "Configured cities to show weather for"
+msgstr ""
 
-#: data/city.ui:32
+#: data/org.gnome.Weather.gschema.xml:7
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+
+#: data/city.ui:24
 msgid "Loading…"
-msgstr "Аҭагалара…"
+msgstr "Аҭагалара..."
 
-#: data/day-entry.ui:26
+#: data/day-entry.ui:20
 msgid "Night"
 msgstr "Ацх"
 
-#: data/day-entry.ui:41
+#: data/day-entry.ui:33
 msgid "Morning"
 msgstr "Ашьыжь"
 
-#: data/day-entry.ui:56
+#: data/day-entry.ui:46
 msgid "Afternoon"
 msgstr "Шьыбжьон"
 
-#: data/day-entry.ui:71
+#: data/day-entry.ui:59
 msgid "Evening"
 msgstr "Ахәылбыҽха"
 
-#: data/places-popover.ui:46
-msgid "Automatic Location"
-msgstr "Автоматла ааҭгыларҭа арбара "
-
-#: data/places-popover.ui:85
-msgid "Locating…"
-msgstr "Ааҭгыларҭа ашьақәыргылара"
-
-#: data/places-popover.ui:142
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "Ақалақь аҟны аԥшаара"
 
-#: data/places-popover.ui:174
-msgid "Viewed Recently"
-msgstr "Ааигәа шәызхәаԥшхьоу"
-
-#: data/primary-menu.ui:4 data/window.ui:7
-msgid "_Temperature Unit"
-msgstr "_Атемпература ашәага ак"
-
-#: data/primary-menu.ui:6 data/window.ui:9
-msgid "_Celsius"
-msgstr "_Цельси"
-
-#: data/primary-menu.ui:11 data/window.ui:14
-msgid "_Fahrenheit"
-msgstr "_Фарентгеит"
-
-#: data/primary-menu.ui:19 data/window.ui:22
-msgid "_About Weather"
-msgstr "_Амш зеиԥшрахо иазкны"
-
-#: data/weather-widget.ui:73
+#: data/weather-widget.ui:39
 msgid "Places"
 msgstr "Аҭыԥқәа"
 
-#: data/weather-widget.ui:149
-msgid "Current conditions"
-msgstr "Уажәтәи аҭагылазаашьа"
-
-#: data/weather-widget.ui:186
+#: data/weather-widget.ui:90
 msgid "Hourly"
 msgstr "Сааҭлатәи"
 
-#: data/weather-widget.ui:207
+#: data/weather-widget.ui:121
 msgid "Daily"
 msgstr "Есыҽнытәи"
 
-#: data/window.ui:51
+#: data/window.ui:6
+msgid "_Temperature Unit"
+msgstr "_Атемпература ашәага ак"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_Цельси"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_Фарентгеит"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_Аԥшьы иазкны"
+
+#: data/window.ui:40
 msgid "Refresh"
 msgstr "Арҿыцра"
 
-#: data/window.ui:77
+#: data/window.ui:60
 msgid "Select Location"
 msgstr "Ааҭгыларҭа алхра"
 
-#: data/window.ui:126
+#: data/window.ui:100
 msgid "Welcome to Weather!"
 msgstr "Бзиала шәаабеит аԥшьы Амш зеиԥшрахо ахь!"
 
-#: data/window.ui:127
+#: data/window.ui:101
 msgid "To get started, select a location."
 msgstr "Шәалгарц азы иалшәх аангыларҭа ҭыԥ."
 
-#: data/window.ui:136
+#: data/window.ui:107
 msgid "Search for a city or country"
 msgstr "Ақалақь, мамазара аҳәынҭқарра аҟны аԥшаара"
 
-#: src/app/city.js:235
+#: src/app/city.js:204
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Ныррала %.0f°"
 
-#: src/app/city.js:265
+#: src/app/city.js:234
 msgid "Updated just now."
 msgstr "Уажәыцәҟьа ирҿыцуп."
 
-#: src/app/city.js:270
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Ирҿыцуп %d минуҭк аԥхьа."
 msgstr[1] "Ирҿыцуп %d минуҭк раԥхьа."
 
-#: src/app/city.js:276
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Ирҿыцуп %d сааҭк аԥхьа."
 msgstr[1] "Ирҿыцуп %d сааҭк раԥхьа."
 
-#: src/app/city.js:282
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Ирҿыцуп %d мшы аԥхьа."
 msgstr[1] "Ирҿыцуп %d мшы раԥхьа."
 
-#: src/app/city.js:288
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Ирҿыцуп %d мчыбжьы аԥхьа."
 msgstr[1] "Ирҿыцуп %d мчыбжьы раԥхьа."
 
-#: src/app/city.js:293
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Ирҿыцуп %d мзы аԥхьа."
 msgstr[1] "Ирҿыцуп %d мзы раԥхьа."
 
-#: src/app/dailyForecast.js:38
+#: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
 msgstr "Мышктәи амш зеиԥшрахо."
 
-#: src/app/dailyForecast.js:103 src/app/hourlyForecast.js:93
-msgid "Forecast not available"
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+msgid "Forecast not Available"
 msgstr "Азԥхьагәаҭара ахь шәзынаӡом."
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:189
+#: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:40
+#: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
 msgstr "Сааҭк иалакны амш зеиԥшрахо"
 
-#: src/app/hourlyForecast.js:111
+#: src/app/hourlyForecast.js:107
 msgid "Now"
 msgstr "Уажәы"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:118
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:202
+#: src/app/window.js:168
 msgid "translator-credits"
-msgstr ""
-"Naala Nanba <naala-nanba@rambler.ru>,2022."
+msgstr "Нанба Наала <naala-nanba@rambler.ru>, 2022"
 
-#: src/app/window.js:204
+#: src/app/window.js:170
 msgid "A weather application"
 msgstr "Апрограмма амш зеиԥшроу агәаҭаразы"
 
-#: src/app/world.js:38
+#: src/app/world.js:39
 msgid "World view"
 msgstr "Аглобалтә режимла ахәаԥшра."
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:141
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -258,3 +238,15 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+msgid "City view"
+msgstr "Ақалақьтәи режимла ахәаԥшра"
+
+msgid "Locating…"
+msgstr "Ааҭгыларҭа ашьақәыргылара"
+
+msgid "Viewed Recently"
+msgstr "Ааигәа шәызхәаԥшхьоу"
+
+msgid "Current conditions"
+msgstr "Уажәтәи аҭагылазаашьа"
