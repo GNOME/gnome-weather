@@ -179,18 +179,63 @@ export class HourlyForecastBox extends Gtk.Box {
         const graphMaxY = height - lineWidth / 2 - spacing - entryTemperatureLabelHeight - spacing;
         const graphHeight = graphMaxY - graphMinY;
 
+        const pointsGap = entryWidth + separatorWidth;
+
         let [, strokeColor] = this.get_style_context().lookup_color('weather_temp_chart_stroke_color');
         Gdk.cairo_set_source_rgba(cr, strokeColor);
 
-        let x = 0;
-        cr.moveTo(x, graphMinY + ((1 - values[0]) * graphHeight));
+        let yCords = [];
+        for (let i = 0; i < values.length; i++)
+            yCords.push((graphMinY + ((1 - values[i]) * graphHeight)));
 
-        x += entryWidth / 2;
-        cr.lineTo(x, graphMinY + ((1 - values[0]) * graphHeight));
+        let gradients = [];
+        let gradientAngles = [];
+        for (let i = 0; i < yCords.length; i++) {
+            let prevVal = yCords[i];
+            let nextVal = prevVal;
+            if (i > 0)
+                prevVal = yCords[i - 1];
+            if (i < yCords.length - 1)
+                nextVal = yCords[i + 1];
 
-        for (let i = 1; i < values.length; i++) {
-            x += entryWidth + separatorWidth;
-            cr.lineTo(x, graphMinY + ((1 - values[i]) * graphHeight));
+            gradients.push((nextVal - prevVal) / (2 * pointsGap));
+            gradientAngles.push(Math.atan((nextVal - prevVal) / (pointsGap * 2)));
+        }
+
+        let x = -pointsGap / 2;
+
+        cr.moveTo(x, yCords[0]);
+        const smoothnessVal = 0.4
+
+        for (let i = 0; i < yCords.length + 1; i++) {
+
+            let xDistPrev = pointsGap * smoothnessVal
+            if (i > 0)
+                xDistPrev = Math.cos(gradientAngles[i - 1]) * pointsGap * smoothnessVal
+
+            let xDistCurrent = pointsGap * smoothnessVal
+            if (i < yCords.length)
+                xDistCurrent = Math.cos(gradientAngles[i]) * pointsGap * smoothnessVal
+
+            let test = false
+
+            let prevYcord = (i > 0) ? (yCords[i - 1]) : yCords[i]
+            let prevGrad = (i > 0) ? (gradients[i - 1]) : 0
+
+            let currYcord = (i < yCords.length) ? (yCords[i]) : yCords[i - 1]
+            let currGrad = (i < yCords.length) ? (gradients[i]) : 0
+
+
+            let pt1 = [x + xDistPrev, prevYcord + prevGrad * xDistPrev]
+            let pt2 = [x + pointsGap - xDistCurrent, currYcord - currGrad * xDistCurrent]
+
+            cr.curveTo(
+                pt1[0], pt1[1],
+                pt2[0], pt2[1],
+                x + pointsGap, currYcord
+            )
+
+            x += pointsGap;
         }
 
         cr.lineTo(width, graphMinY + ((1 - values[values.length - 1]) * graphHeight));
