@@ -8,17 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-11-12 15:41+0000\n"
-"PO-Revision-Date: 2022-11-28 01:02+0300\n"
-"Last-Translator: Launchpad translators\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-01-26 01:28+0300\n"
+"Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
@@ -112,12 +112,12 @@ msgid "Places"
 msgstr "Месцы"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Па гадзінах"
+msgid "_Hourly"
+msgstr "Па _гадзінах"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Па днях"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "Па _днях"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -228,7 +228,9 @@ msgstr "%l∶%M %p"
 
 #: src/app/window.js:166
 msgid "translator-credits"
-msgstr "Launchpad translators"
+msgstr ""
+"Ігар Грачышка <ihar.hrachyshka@gmail.com>\n"
+"Юрась Шумовіч <shumovichy@gmail.com>"
 
 #: src/app/world.js:39
 msgid "World view"
