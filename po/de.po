@@ -9,13 +9,14 @@
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2013, 2016, 2020-2021.
 # Tim Sabsch <tim@sabsch.com>, 2020.
 # Philipp Kiemle <philipp.kiemle@gmail.com>, 2021.
+# Jürgen Benvenuti <gastornis@posteo.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-09-15 22:17+0200\n"
-"Last-Translator: Tim Sabsch <tim@sabsch.com>\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-01-26 12:10+0100\n"
+"Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +26,7 @@ msgstr ""
 "X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -63,7 +64,7 @@ msgstr ""
 "das aktuelle Wetter jeder eingegebenen Stadt informieren können, indem Sie "
 "den Ortsnamen in die Aktivitätenübersicht eingeben."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Das GNOME-Projekt"
 
@@ -117,12 +118,12 @@ msgid "Places"
 msgstr "Orte"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Stündlich"
+msgid "_Hourly"
+msgstr "_Stündlich"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Täglich"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Täglich"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -140,25 +141,21 @@ msgstr "Grad _Fahrenheit"
 msgid "_About Weather"
 msgstr "_Info zu Wetter"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Aktualisieren"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Ort wählen"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Willkommen bei Wetter!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Wählen Sie einen Ort aus, um zu beginnen."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Nach einer Stadt oder einem Land suchen"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Aktualisieren"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -237,7 +234,8 @@ msgstr ""
 "Benjamin Steinwender <b@stbe.at>, 2014\n"
 "Mario Blättermann <mario.blaettermann@gmail.com>, 2016\n"
 "Bernd Homuth <dev@hmt.im>, 2019\n"
-"Philipp Kiemle <philipp.kiemle@gmail.com>,2021"
+"Philipp Kiemle <philipp.kiemle@gmail.com>,2021\n"
+"Jürgen Benvenuti <gastornis@posteo.org>, 2023"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -258,6 +256,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Ort wählen"
 
 #~ msgid "A weather application"
 #~ msgstr "Eine Wetter-Anwendung"
