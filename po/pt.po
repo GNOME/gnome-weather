@@ -5,14 +5,14 @@
 # Tiago S. <almosthumane@portugalmail.pt>, 2014, 2015.
 # Sérgio Cardeira <cardeira dot sergio at gmail dot com>, 2016.
 # Juliano de Souza Camargo <julianosc@protonmail.com>, 2020.
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2021, 2022.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2021, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-05-29 22:31+0000\n"
-"PO-Revision-Date: 2022-05-29 23:34+0100\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-01-26 15:05+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (https://l10n.gnome.org/teams/pt/)\n"
 "Language: pt\n"
@@ -20,12 +20,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Meteorologia"
 
@@ -61,7 +62,7 @@ msgstr ""
 "as condições atuais das cidades mais recentemente procuradas, simplesmente "
 "digitando o seu nome na vista de atividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:199
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -86,7 +87,7 @@ msgstr ""
 "Os locais mostrados na vista de mundo do gnome-weather. Cada valor é um "
 "GVariant devolvido por gweather_location_serialize()."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "A carregar…"
 
@@ -115,12 +116,12 @@ msgid "Places"
 msgstr "Locais"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "A cada hora"
+msgid "_Hourly"
+msgstr "De _hora em hora"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Diariamente"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Diariamente"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -136,27 +137,23 @@ msgstr "_Fahrenheit"
 
 #: data/window.ui:21
 msgid "_About Weather"
-msgstr "_Acerca do Meteorologia"
+msgstr "_Acerca de Meteorologia"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Atualizar"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Selecionar localização"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Bem-vindo ao Meteorologia!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Para começar, selecione um local."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Procurar uma cidade ou país"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Atualizar"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -228,7 +225,7 @@ msgstr "Agora"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr ""
 "Fernando Carvalho <phaetonkde@gmail.com>\n"
@@ -236,10 +233,6 @@ msgstr ""
 "Waldo Luís Ribeiro <waldoribeiro@sapo.pt>\n"
 "Juliano de Souza Camargo <julianosc@pm.me>\n"
 "Hugo Carvalho <hugokarvalho@hotmail.com>"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Uma aplicação de meteorologia"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -260,6 +253,12 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Selecionar localização"
+
+#~ msgid "A weather application"
+#~ msgstr "Uma aplicação de meteorologia"
 
 #~ msgid "Automatic location"
 #~ msgstr "Localização automática"
