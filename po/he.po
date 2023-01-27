@@ -2,14 +2,14 @@
 # Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2012.
-# Yosef Or Boczko <yoseforb@gmail.com>, 2014-2022.
+# Yosef Or Boczko <yoseforb@gmail.com>, 2014-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: GNOME Weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-09-18 18:41+0000\n"
-"PO-Revision-Date: 2022-10-23 19:54+0300\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-01-27 10:48+0200\n"
 "Last-Translator: Yosef Or Boczko <yoseforb@gmail.com>\n"
 "Language-Team: Hebrew <>\n"
 "Language: he\n"
@@ -22,7 +22,7 @@ msgstr ""
 "X-Generator: Gtranslator 42.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -112,12 +112,12 @@ msgid "Places"
 msgstr "מקומות"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "שעתי"
+msgid "_Hourly"
+msgstr "_שעתי"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "יומי"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_יומי"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -135,25 +135,21 @@ msgstr "_פרנהייט"
 msgid "_About Weather"
 msgstr "על _אודות מזג האוויר"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "רענון"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "בחירת מיקום"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "ברוכים הבאים למזג אוויר!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "על מנת להתחיל, יש לבחור מיקום."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "חיפוש אחר עיר או מדינה"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "רענון"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -261,6 +257,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "בחירת מיקום"
 
 #~ msgid "A weather application"
 #~ msgstr "יישום מזג אוויר"
