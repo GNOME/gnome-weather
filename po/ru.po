@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-05-30 05:58+0000\n"
-"PO-Revision-Date: 2022-05-30 14:48+0300\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-01-26 00:34+0300\n"
 "Last-Translator: Aleksandr Melman <Alexmelman88@gmail.com>\n"
 "Language-Team: Russian <Alexmelman88@gmail.com>\n"
 "Language: ru\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-DL-Team: ru\n"
 "X-DL-Module: gnome-weather\n"
 "X-DL-Branch: master\n"
@@ -27,15 +27,16 @@ msgstr ""
 "X-DL-State: Translated\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Погода"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:6
 #: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
-msgstr "Показать погодные условия и прогноз"
+msgstr "Просмотр погодных условий и прогноза"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
@@ -63,9 +64,9 @@ msgstr ""
 "видеть текущие условия в городах, в которых недавно проводился поиск, просто "
 "набрав название города в Обзорном режиме."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:199
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
-msgstr "Проект GNOME"
+msgstr "The GNOME Project"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
@@ -88,7 +89,7 @@ msgstr ""
 "Местоположения отображаемые в gnome-weather. Каждое значение GVariant "
 "возвращается gweather_location_serialize ()."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Загрузка…"
 
@@ -117,12 +118,12 @@ msgid "Places"
 msgstr "Местоположения"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Почасовой"
+msgid "_Hourly"
+msgstr "_Почасовой"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Ежедневный"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Ежедневный"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -140,25 +141,21 @@ msgstr "_Фаренгейт"
 msgid "_About Weather"
 msgstr "_О приложении"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Обновить"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Выбрать местоположение"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Добро пожаловать в  приложение Погода!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Чтобы начать, выберите местоположение."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Поиск по городу или стране"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Обновить"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -235,16 +232,12 @@ msgstr "Сейчас"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr ""
 "Stas Solovey <whats_up@tut.by>, 2012-2019.\n"
 "Yuri Myasoedov <ymyasoedov@yandex.ru>, 2014-2016.\n"
-"Aleksandr Melman <alexmelman88@gmail.com>, 2022"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Программа просмотра погоды"
+"Aleksandr Melman <alexmelman88@gmail.com>, 2022-2023"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -265,3 +258,6 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Выбрать местоположение"
