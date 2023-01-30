@@ -2,13 +2,13 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Andika Triwidada <andika@gmail.com>, 2013, 2014.
-# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2019-2022.
+# Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2019-2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-08 17:54+0000\n"
-"PO-Revision-Date: 2022-07-12 17:46+0700\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-01-30 11:27+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -56,7 +56,7 @@ msgstr ""
 "melihat kondisi saat ini dari kota yang baru-baru ini dicari hanya dengan "
 "mengetikkan namanya dalam Ringkasan Aktivitas."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:199 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Proyek GNOME"
 
@@ -110,12 +110,12 @@ msgid "Places"
 msgstr "Tempat"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Per Jam"
+msgid "_Hourly"
+msgstr "Per _Jam"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Per Hari"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Harian"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -133,25 +133,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "Tent_ang Cuaca"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Segarkan"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Pilih Lokasi"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Selamat datang di Cuaca!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Untuk memulai, pilih lokasi."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Cari kota atau negara"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Segarkan"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -222,7 +218,7 @@ msgstr "%l∶%M %p"
 msgid "translator-credits"
 msgstr ""
 "Andika Triwidada <andika@gmail.com>, 2013, 2014, 2016.\n"
-"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2019-2022."
+"Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2019-2023."
 
 #: src/app/world.js:39
 msgid "World view"
@@ -243,6 +239,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Pilih Lokasi"
 
 #~ msgid "A weather application"
 #~ msgstr "Aplikasi cuaca"
