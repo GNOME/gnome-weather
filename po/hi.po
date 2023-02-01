@@ -1,26 +1,29 @@
 # Hindi translation for gnome-weather.
 # Copyright (C) 2022 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Hemish <hemish04082005@gmail.com>, 2022.
+# Hemish <hemish04082005@gmail.com>, 2022-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-06 14:57+0000\n"
-"PO-Revision-Date: 2022-11-12 01:15+0530\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-01-28 13:36+0530\n"
 "Last-Translator: Hemish <hemish04082005@gmail.com>\n"
-"Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net> https://indlinux.org/hindi\n"
+"Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net https://indlinux."
+"org/hindi>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-DamnedLies-Scope: partial\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "मौसम"
 
@@ -30,18 +33,31 @@ msgid "Show weather conditions and forecast"
 msgstr "मौसम की स्थिति और पूर्वानुमान दिखाएँ"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:16
-msgid "A small application that allows you to monitor the current weather conditions for your city, or anywhere in the world."
-msgstr "एक छोटा सा एप्लिकेशन जो आपको अपने शहर या दुनिया में कहीं भी वर्तमान मौसम की स्थिति की निगरानी करने की अनुमति देता है।"
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"एक छोटा सा एप्लिकेशन जो आपको अपने शहर या दुनिया में कहीं भी वर्तमान मौसम की स्थिति की "
+"निगरानी करने की अनुमति देता है।"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:20
-msgid "It provides access to detailed forecasts, up to 7 days, with hourly details for the current and next day, using various internet services."
-msgstr "यह विभिन्न इंटरनेट सेवाओं का उपयोग करते हुए, वर्तमान और अगले दिन के लिए प्रति घंटा विवरण के साथ, 7 दिनों तक के विस्तृत पूर्वानुमानों प्रदान करता है।"
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"यह विभिन्न इंटरनेट सेवाओं का उपयोग करते हुए, वर्तमान और अगले दिन के लिए प्रति घंटा विवरण "
+"के साथ, 7 दिनों तक के विस्तृत पूर्वानुमानों प्रदान करता है।"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
-msgid "It also optionally integrates with the GNOME Shell, allowing you to see the current conditions of the most recently searched cities by just typing the name in the Activities Overview."
-msgstr "यह वैकल्पिक रूप से गनोम शेल के साथ भी एकीकृत हो जाता है, जिससे आप हाल ही में खोजे गए शहरों की वर्तमान स्थितियों को केवल गतिविधियों के अवलोकन में नाम टाइप करके देख सकते हैं।"
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"यह वैकल्पिक रूप से गनोम शेल के साथ भी एकीकृत हो जाता है, जिससे आप हाल ही में खोजे गए "
+"शहरों की वर्तमान स्थितियों को केवल गतिविधियों के अवलोकन में नाम टाइप करके देख सकते हैं।"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:199
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "दी गनोम प्रॉजेक्ट"
 
@@ -53,6 +69,18 @@ msgstr "Weather;Forecast;पूर्वानुमान;मौसम"
 #: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
 msgstr "यह आपके स्थान के लिए मौसम की जानकारी प्रदर्शित करने की अनुमति देता है।"
+
+#: data/org.gnome.Weather.gschema.xml:6
+msgid "Configured cities to show weather for"
+msgstr "मौसम दिखाने के लिए कॉन्फ़िगर किए गए शहर"
+
+#: data/org.gnome.Weather.gschema.xml:7
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"गनोम मौसम के विश्व दृश्य में दिखाए गए स्थान। प्रत्येक मान "
+"gweather_location_serialize() द्वारा लौटाया गया एक GVariant होगा।"
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -83,12 +111,12 @@ msgid "Places"
 msgstr "स्थान"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "प्रति घंटा"
+msgid "_Hourly"
+msgstr "प्रति घंटा (_H)"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "रोज़"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "दैनिक/रोज़ाना (_D)"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -106,27 +134,24 @@ msgstr "फ़ारेनहाइट (_F)"
 msgid "_About Weather"
 msgstr "'मौसम' का परिचय (_A)"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "ताज़ा करें"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "स्थान चुनें"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "'मौसम' में आपका स्वागत है!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "आरंभ करने के लिए एक स्थान चुनें।"
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "कोई शहर या देश खोजें"
 
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "ताज़ा करें"
+
 #: src/app/city.js:203
+#, javascript-format
 msgid "Feels like %.0f°"
 msgstr "%.0f° जैसा लग रहा है"
 
@@ -135,30 +160,35 @@ msgid "Updated just now."
 msgstr "अभी अपडेट किया गया।"
 
 #: src/app/city.js:238
+#, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d मिनट पहले अपडेट किया गया।"
 msgstr[1] "%d मिनट पहले अपडेट किया गया।"
 
 #: src/app/city.js:244
+#, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d घंटे पहले अपडेट किया गया।"
 msgstr[1] "%d घंटों पहले अपडेट किया गया।"
 
 #: src/app/city.js:250
+#, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d दिन पहले अपडेट किया गया।"
 msgstr[1] "%d दिनों पहले अपडेट किया गया।"
 
 #: src/app/city.js:256
+#, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d सप्ताह पहले अपडेट किया गया।"
 msgstr[1] "%d सप्ताह पहले अपडेट किया गया।"
 
 #: src/app/city.js:261
+#, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "%d महीने पहले अपडेट किया गया।"
@@ -190,13 +220,9 @@ msgstr "अब"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
-msgstr "Hemish <hemish04082005@gmail.com>"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "एक मौसम अनुप्रयोग"
+msgstr "Hemish (हेमिश) <hemi.sh@outlook.com>"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -204,8 +230,9 @@ msgstr "विश्व दृश्य"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
-#. 7 °C / 19 °C
+#. "7 °C / 19 °C"
 #: src/misc/util.js:103
+#, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
 
@@ -213,6 +240,6 @@ msgstr "%s / %s"
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
 #: src/service/searchProvider.js:182
+#, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
