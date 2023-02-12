@@ -4,12 +4,12 @@
 #
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2013, 2014, 2015, 2016.
 # Edurne Labaka <elabaka@uzei.com>, 2015.
-# Asier Sarasua Garmendia  <asiersarasua@ni.eus, 2013, 2019, 2020, 2021, 2022.
+# Asier Sarasua Garmendia  <asiersarasua@ni.eus, 2013, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-08-07 19:00+0100\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-02-12 19:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -19,7 +19,7 @@ msgstr "Project-Id-Version: gnome-weather master\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -49,7 +49,7 @@ msgid ""
 "name in the Activities Overview."
 msgstr "Aukeran, GNOME Shell-ekin integratu daiteke, azken aldian bilatutako herrien uneko baldintzak ikusteko haien izena jardueren ikuspegian idatzita."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "GNOME proiektua"
 
@@ -101,12 +101,12 @@ msgid "Places"
 msgstr "Lekuak"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Orduro"
+msgid "_Hourly"
+msgstr "_Orduero"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Egunero"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Egunero"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -124,25 +124,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Weather aplikazioari buruz"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Freskatu"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Hautatu kokalekua"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Ongi etorri Eguraldia aplikaziora"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Hasteko, hautatu kokaleku bat."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Bilatu hiria edo herrialdea"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Freskatu"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -237,6 +233,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Hautatu kokalekua"
 
 #~ msgid "A weather application"
 #~ msgstr "Eguraldiaren aplikazio bat"
