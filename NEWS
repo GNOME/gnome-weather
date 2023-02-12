@@ -1,3 +1,26 @@
+44.beta
+=======
+Weather 44.beta comes with a slight UI referesh, featuring flat headers
+that give the app a unified look. The temperature graph now uses
+a smooth line instead of jagged lines.
+
+This version brings translation updates for the following locales:
+ - Belarusian (Vasil Pupkin)
+ - Bokmål, Norwegian (John Erling Blad)
+ - Dutch (Nathan Follens)
+ - Galician (Fran Dieguez)
+ - Georgian (Ekaterine Papava)
+ - German (Jürgen Benvenuti)
+ - Hebrew (Yosef Or Boczko)
+ - Hindi (Hemish)
+ - Icelandic (Sveinn í Felli)
+ - Indonesian (Kukuh Syafaat)
+ - Portuguese (Hugo Carvalho)
+ - Russian (Aleksandr Melman)
+ - Slovak (Dušan Kazik)
+ - Turkish (Sabri Ünal)
+ - Ukrainian (Yuri Chornoivan)
+
 43.0
 =======
 GNOME Weather 43.0 brings many improvements:
