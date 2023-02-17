@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-08-06 16:19+0200\n"
+"POT-Creation-Date: 2023-02-12 07:06+0000\n"
+"PO-Revision-Date: 2023-02-17 07:33+0100\n"
 "Last-Translator: Марко М. Костић <marko.m.kostic@gmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Poedit 3.1.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:104
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -58,7 +58,7 @@ msgstr ""
 "тренутне услове последњих тражених градова једноставним куцањем њихових "
 "имена у прегледу активности."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:272 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Гном пројекат"
 
@@ -112,12 +112,12 @@ msgid "Places"
 msgstr "Места"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Сваког часа"
+msgid "_Hourly"
+msgstr "Сва_ког часа"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Сваког дана"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "Сваког _дана"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -135,25 +135,21 @@ msgstr "_Фаренхајти"
 msgid "_About Weather"
 msgstr "_О Времену"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Освежи"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Изаберите место"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Добро дошли у Време!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "За почетак, изаберите место."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Потражите град или државу"
+
+#: data/window.ui:95
+msgid "Refresh"
+msgstr "Освежи"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -262,6 +258,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Изаберите место"
 
 #~ msgid "A weather application"
 #~ msgstr "Програм за временске прилике"
