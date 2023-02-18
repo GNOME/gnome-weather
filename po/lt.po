@@ -1,14 +1,14 @@
 # Lithuanian translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Aurimas Černius <aurisc4@gmail.com>, 2013-2022.
+# Aurimas Černius <aurisc4@gmail.com>, 2013-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-05-30 05:58+0000\n"
-"PO-Revision-Date: 2022-06-20 22:08+0300\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-02-18 21:58+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -17,11 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 40.0\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Orai"
 
@@ -56,7 +57,7 @@ msgstr ""
 "paskutiniuose ieškotuose miestuose tiesiog įvedant jų pavadinimus veiklų "
 "apžvalgoje."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:199
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "GNOME projektas"
 
@@ -81,7 +82,7 @@ msgstr ""
 "Vietos, rodomas gnome-weather pasaulio vaizde. Kiekviena vertė yra "
 "gweather_location_serialize() grąžintas GVariant."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Įkeliama…"
 
@@ -110,15 +111,14 @@ msgid "Places"
 msgstr "Vietos"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Kas valandą"
+msgid "_Hourly"
+msgstr "Kas _valandą"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Kasdien"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "Kas_dien"
 
 #: data/window.ui:6
-#| msgid "_Temperature Unit"
 msgid "Temperature Unit"
 msgstr "Temperatūros vienetas"
 
@@ -134,25 +134,21 @@ msgstr "_Farenheitas"
 msgid "_About Weather"
 msgstr "Apie orus"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Atnaujinti"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Pasirinkti vietą"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Sveiki pradėję naudoti orus!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Pradžiai, pasirinkite vietą."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Ieškoti miesto arba rajono"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Atnaujinti"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -229,15 +225,11 @@ msgstr "Dabar"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr ""
 "išvertė:\n"
 "Aurimas Černius <aurisc4@gmail.com>"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Orų programa"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -258,6 +250,12 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Pasirinkti vietą"
+
+#~ msgid "A weather application"
+#~ msgstr "Orų programa"
 
 #~ msgid "Automatic location"
 #~ msgstr "Automatinė vieta"
