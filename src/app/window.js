@@ -31,7 +31,7 @@ const Page = {
 
 export const MainWindow = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/window.ui',
-    InternalChildren: ['header', 'refreshRevealer', 'refresh', 'forecastStackSwitcher', 'stack',
+    InternalChildren: ['header', 'refresh', 'forecastStackSwitcher', 'stack',
         'searchButton', 'searchView', 'searchViewStatus', 'forecastStackSwitcherBar', 'cityBox', 'cityBin']
 }, class MainWindow extends Adw.ApplicationWindow {
     constructor(params) {
@@ -115,7 +115,6 @@ export const MainWindow = GObject.registerClass({
 
     showDefault() {
         this._showingDefault = true;
-        this._refreshRevealer.reveal_child = false;
 
         let mostRecent = this._model.getRecent();
         if (mostRecent)
@@ -126,7 +125,6 @@ export const MainWindow = GObject.registerClass({
 
     showSearch(text) {
         this._showingDefault = false;
-        this._refreshRevealer.reveal_child = true;
         this._stack.set_visible_child(this._searchView);
         this._goToPage(Page.SEARCH);
     }
@@ -138,7 +136,6 @@ export const MainWindow = GObject.registerClass({
         }
 
         this._showingDefault = false;
-        this._refreshRevealer.reveal_child = true;
         this.currentInfo = info;
         this._cityView.info = info;
 
