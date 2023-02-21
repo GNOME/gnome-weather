@@ -2,16 +2,15 @@
 # Copyright (C) 2012 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2012-2022.
-# Daniel Mustieles García <daniel.mustieles@gmail.com>, 2022.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2022-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-05-30 05:58+0000\n"
-"PO-Revision-Date: 2022-06-22 11:18+0200\n"
-"Last-Translator: Daniel Mustieles García <daniel.mustieles@gmail.com>\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-02-21 11:59+0100\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
@@ -21,8 +20,9 @@ msgstr ""
 "X-Generator: Gtranslator 42.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Meteorología"
 
@@ -58,7 +58,7 @@ msgstr ""
 "condiciones actuales de cualquier ciudad buscada recientemente simplemente "
 "escribiendo su nombre en la vista de Actividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:199
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "El Proyecto GNOME"
 
@@ -83,7 +83,7 @@ msgstr ""
 "Las ubicaciones mostradas en la vista del mundo de gnome-weather. Cada valor "
 "es un GVariant devuelto por gweather_location_serialize()."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Cargando…"
 
@@ -112,12 +112,12 @@ msgid "Places"
 msgstr "Lugares"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Cada hora"
+msgid "_Hourly"
+msgstr "Cada _hora"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Cada día"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "Cada _día"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -135,25 +135,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Acerca de Meteorología"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Actualizar"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Seleccionar ubicación"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Bienvenido a Meteorología"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Para empezar, seleccione una ubicación."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Buscar una ciudad o un país"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Actualizar"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -225,13 +221,9 @@ msgstr "Ahora"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2022"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Una aplicación de meteorología"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -252,6 +244,12 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Seleccionar ubicación"
+
+#~ msgid "A weather application"
+#~ msgstr "Una aplicación de meteorología"
 
 #~ msgid "Automatic location"
 #~ msgstr "Ubicación automática"
