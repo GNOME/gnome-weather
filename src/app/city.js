@@ -201,6 +201,7 @@ export const WeatherWidget = GObject.registerClass({
 
         const [, apparentValue] = info.get_value_apparent(GWeather.TemperatureUnit.DEFAULT);
         this._apparentLabel.label = _('Feels like %.0f°').format(apparentValue);
+        this._apparentLabel.visible = apparentValue !== tempValue;
 
         this._forecastHourly.update(info);
         this._forecastDaily.update(info);
