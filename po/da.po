@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-08-29 18:48+0200\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-02-25 12:36+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -60,7 +60,7 @@ msgstr ""
 "nuværende forhold i de senest søgte byer, blot ved at indtaste byens navn i "
 "Aktivitets-oversigten."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -114,12 +114,12 @@ msgid "Places"
 msgstr "Steder"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Hver time"
+msgid "_Hourly"
+msgstr "Hver _time"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Hver dag"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "Hver _dag"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -137,25 +137,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Om Vejr"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Opdatér"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Vælg placering"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Velkommen til Vejr!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Vælg en placering for at komme i gang."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Søg efter en by eller et land"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Opdatér"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -257,6 +253,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Vælg placering"
 
 #~ msgid "A weather application"
 #~ msgstr "Et vejrprogram"
