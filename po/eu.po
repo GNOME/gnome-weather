@@ -8,8 +8,8 @@
 msgid ""
 msgstr "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-01-25 20:03+0000\n"
-"PO-Revision-Date: 2023-02-12 19:00+0100\n"
+"POT-Creation-Date: 2023-02-12 07:06+0000\n"
+"PO-Revision-Date: 2023-02-26 19:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -19,11 +19,11 @@ msgstr "Project-Id-Version: gnome-weather master\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:104
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
-msgstr "Eguraldia"
+msgstr "Eguraldias"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:6
 #: data/org.gnome.Weather.desktop.in.in:5
@@ -49,7 +49,7 @@ msgid ""
 "name in the Activities Overview."
 msgstr "Aukeran, GNOME Shell-ekin integratu daiteke, azken aldian bilatutako herrien uneko baldintzak ikusteko haien izena jardueren ikuspegian idatzita."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:272 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "GNOME proiektua"
 
@@ -122,7 +122,7 @@ msgstr "_Fahrenheit"
 
 #: data/window.ui:21
 msgid "_About Weather"
-msgstr "_Weather aplikazioari buruz"
+msgstr "_Eguraldia aplikazioari buruz"
 
 #: data/window.ui:39
 msgid "Welcome to Weather!"
@@ -136,18 +136,18 @@ msgstr "Hasteko, hautatu kokaleku bat."
 msgid "Search for a city or country"
 msgstr "Bilatu hiria edo herrialdea"
 
-#: data/window.ui:92
+#: data/window.ui:95
 msgid "Refresh"
 msgstr "Freskatu"
 
 #: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
-msgstr "%.0f° ematen du"
+msgstr "Sentsazio termikoa: %.0f°"
 
 #: src/app/city.js:233
 msgid "Updated just now."
-msgstr "Orain bertan eguneratua."
+msgstr "sOrain bertan eguneratua."
 
 #: src/app/city.js:238
 #, javascript-format
