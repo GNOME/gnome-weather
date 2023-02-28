@@ -7,14 +7,14 @@
 # Claude Paroz <claude@2xlibre.net>, 2014.
 # Guillaume Bernard <>, 2014.
 # Thibault Martin <mail@thibaultmart.in>, 2020.
-# Charles Monzat <charles.monzat@free.fr>, 2018-2022.
+# Charles Monzat <charles.monzat@free.fr>, 2018-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-09-09 11:53+0200\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-02-26 15:31+0100\n"
 "Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
@@ -22,10 +22,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Gtranslator 40.0\n"
+"X-Generator: Gtranslator 42.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -63,7 +63,7 @@ msgstr ""
 "conditions actuelles de n’importe quelle ville configurée en tapant "
 "simplement le nom dans la vue d’ensemble des activités."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Le projet GNOME"
 
@@ -118,15 +118,14 @@ msgid "Places"
 msgstr "Emplacements"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Par heure"
+msgid "_Hourly"
+msgstr "Par _heure"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Par jour"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "Par _jour"
 
 #: data/window.ui:6
-#| msgid "_Temperature Unit"
 msgid "Temperature Unit"
 msgstr "Unité de température"
 
@@ -142,25 +141,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "À _propos de Météo"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Actualiser"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Choisir un lieu"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Bienvenue sur Météo !"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Pour commencer, sélectionnez un emplacement."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Rechercher une ville ou un pays"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Actualiser"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -239,7 +234,7 @@ msgstr ""
 "Bruno Cauet <brunocauet@gmail.com>, 2014\n"
 "Claude Paroz <claude@2xlibre.net>, 2014\n"
 "Thibault Martin <thibaultamartin@gnome.org>, 2020\n"
-"Charles Monzat <charles.monzat@free.fr>, 2018-2022"
+"Charles Monzat <charles.monzat@free.fr>, 2018-2023"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -260,6 +255,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Choisir un lieu"
 
 #~ msgid "A weather application"
 #~ msgstr "Une application de prévisions météo"
