@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-05-30 05:58+0000\n"
-"PO-Revision-Date: 2022-06-02 21:24+0200\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-02-28 22:17+0100\n"
 "Last-Translator: Quentin PAGÈS\n"
 "Language-Team: Tot en òc\n"
 "Language: oc\n"
@@ -18,12 +18,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Metèo"
 
@@ -58,7 +59,7 @@ msgstr ""
 "actualas de quins vila configurada que siá en picant simplament son nom dins "
 "la vista d'ensemble de las activitats."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:199
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Lo projècte GNOME"
 
@@ -83,7 +84,7 @@ msgstr ""
 "Los luòcs afichats sus la mapamonda de gnome-weather. Cada valor es una "
 "GVariant renviada per gweather_location_serialize()."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Cargament…"
 
@@ -112,12 +113,12 @@ msgid "Places"
 msgstr "Emplaçaments"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Cada ora"
+msgid "_Hourly"
+msgstr "_Cada ora"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Cada jorn"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Cada jorn"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -133,27 +134,23 @@ msgstr "_Fahrenheit"
 
 #: data/window.ui:21
 msgid "_About Weather"
-msgstr "_A prepaus de Weather"
+msgstr "_A prepaus de Metèo"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Actualizar"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Causir un luòc"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "La benvenguda a Metèo !"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Per començar, causissètz un emplaçament."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Recercar una vila o un país"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Actualizar"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -225,15 +222,11 @@ msgstr "Ara"
 msgid "%l∶%M %p"
 msgstr "%kh%M"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr ""
 "Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>\n"
 "Quentin PAGÈS"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Una aplicacion meteorologica"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -254,6 +247,12 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Causir un luòc"
+
+#~ msgid "A weather application"
+#~ msgstr "Una aplicacion meteorologica"
 
 #~ msgid "Automatic location"
 #~ msgstr "Luòc automatic"
