@@ -1,14 +1,14 @@
 # Hungarian translation for gnome-weather.
-# Copyright (C) 2013, 2014, 2016, 2019, 2020, 2021, 2022 Free Software Foundation, Inc.
+# Copyright (C) 2013, 2014, 2016, 2019, 2020, 2021, 2022, 2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-weather package.
 #
-# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2016, 2019, 2020, 2021, 2022.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2016, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-08-30 01:19+0200\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-02-28 01:50+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -57,7 +57,7 @@ msgstr ""
 "leggyakrabban keresett városok aktuális időjárásának megtekintését a név "
 "begépelésével a tevékenységek áttekintőjébe."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "A GNOME projekt"
 
@@ -111,15 +111,16 @@ msgid "Places"
 msgstr "Helyek"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Óránként"
+#| msgid "Hourly"
+msgid "_Hourly"
+msgstr "Ó_ránként"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Naponta"
+#: data/weather-widget.ui:124
+#| msgid "Daily"
+msgid "_Daily"
+msgstr "_Naponta"
 
 #: data/window.ui:6
-#| msgid "_Temperature Unit"
 msgid "Temperature Unit"
 msgstr "Hőmérséklet mértékegysége"
 
@@ -135,25 +136,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "Az Időjárás _névjegye"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Frissítés"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Hely kiválasztása"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Üdvözli az Időjárás!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "A kezdéshez válasszon egy helyet."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Város vagy ország keresése"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Frissítés"
 
 #: src/app/city.js:203
 #, javascript-format
