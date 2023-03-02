@@ -1,28 +1,28 @@
 # Swedish translation for gnome-weather.
-# Copyright © 2014-2022 gnome-weather's COPYRIGHT HOLDER
+# Copyright © 2014-2023 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Marcus Lundblad <ml@update.uu.se>, 2014.
 # Sebastian Rasmussen <sebras@gmail.com>, 2014.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016, 2018, 2019, 2020, 2021, 2022.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2015, 2016, 2018, 2019, 2020, 2021, 2022, 2023.
 # Luna Jernberg <droidbittin@gmail.com>, 2021, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-08-07 21:18+0000\n"
-"PO-Revision-Date: 2022-05-30 01:15+0200\n"
-"Last-Translator: Luna Jernberg <droidbittin@gmail.com>\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-01-25 23:33+0100\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -60,7 +60,7 @@ msgstr ""
 "dig att se aktuella förhållanden för de senast eftersökta städerna genom att "
 "bara skriva namnet i Aktivitetsöversikten."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:230 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "GNOME-projektet"
 
@@ -114,12 +114,12 @@ msgid "Places"
 msgstr "Platser"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Timvis"
+msgid "_Hourly"
+msgstr "Varje _timme"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Dagsvis"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "Varje _dag"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -137,25 +137,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Om Väder"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Uppdatera"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Välj plats"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Välkommen till Väder!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
-msgstr "För att komma igång, välj en plats."
+msgstr "Välj en plats för att komma igång."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Sök efter en stad eller ett land"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Uppdatera"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -257,6 +253,3 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
-#~ msgid "A weather application"
-#~ msgstr "Ett väderprogram"
