@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-08-10 19:36+0300\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-03-02 19:04+0200\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: suomi <gnome-fi-laatu@lists.sourceforge.net>\n"
 "Language: fi\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -57,7 +57,7 @@ msgstr ""
 "tarkasteltujen sijaintien säätiedot ovat nähtävissä yleisnäkymässä "
 "kirjoittamalla paikkakunnan nimen."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Gnome-projekti"
 
@@ -111,12 +111,12 @@ msgid "Places"
 msgstr "Sijainnit"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Tuntikohtainen"
+msgid "_Hourly"
+msgstr "_Tuntikohtainen"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Päiväkohtainen"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Päiväkohtainen"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -134,25 +134,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Tietoja - Sää"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Päivitä"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Valitse sijainti"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Tervetuloa säätietojen pariin!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Aloita valitsemalla sijainti."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Etsi kaupunkia tai maata"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Päivitä"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -247,6 +243,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Valitse sijainti"
 
 #~ msgid "A weather application"
 #~ msgstr "Sääsovellus"
