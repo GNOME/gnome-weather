@@ -2,7 +2,7 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Jinkyu Yi <jincreator@jincreator.net>, 2013, 2014, 2015, 2016.
-# DaeHyun Sung <sungdh86@gmail.com>, 2019-2022.
+# DaeHyun Sung <sungdh86@gmail.com>, 2019-2023.
 # Changwoo Ryu <cwryu@debian.org>, 2021-2022.
 #
 #
@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-09-07 00:16+0900\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-03-02 14:07+0900\n"
 "Last-Translator: DaeHyun Sung <sungdh86+git@gmail.com>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -58,7 +58,7 @@ msgstr ""
 "그놈 쉘에서 선택적으로 통합되므로, 활동 개요에 도시명을 입력하면 가장 최근"
 "에 검색된 도시의 현재 상태를 볼 수 있게 해줍니다."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "그놈 프로젝트"
 
@@ -112,12 +112,12 @@ msgid "Places"
 msgstr "장소"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "시간당"
+msgid "_Hourly"
+msgstr "시간당(_H)"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "매일"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "매일(_D)"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -135,25 +135,21 @@ msgstr "화씨 온도(℉)(_F)"
 msgid "_About Weather"
 msgstr "날씨 정보(_A)"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "새로 고침"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "지역 선택"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "날씨를 시작합니다!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "시작하려면 먼저 위치를 선택하십시오."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "도시 또는 국가로 검색"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "새로 고침"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -224,7 +220,7 @@ msgstr "%p %l∶%M"
 msgid "translator-credits"
 msgstr ""
 "Jinkyu Yi <jincreator@jincreator.net>\n"
-"DaeHyun Sung <sungdh86@gmail.com>"
+"DaeHyun Sung <sungdh86+git@gmail.com>"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -245,6 +241,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "지역 선택"
 
 #~ msgid "A weather application"
 #~ msgstr "날씨 프로그램"
