@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
 "PO-Revision-Date: 2022-02-26 15:02+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -59,7 +59,7 @@ msgstr ""
 "obecnych warunków pogodowych w ostatnio wyszukiwanych miastach poprzez "
 "pisanie ich nazw na ekranie podglądu."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -116,12 +116,12 @@ msgid "Places"
 msgstr "Miejsca"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Godzinowa"
+msgid "_Hourly"
+msgstr "_Godzinowa"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Dzienna"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Dzienna"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -139,25 +139,21 @@ msgstr "Stopnie _Fahrenheita"
 msgid "_About Weather"
 msgstr "_O programie"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Odświeża"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Wybór położenia"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Witamy w prognozie pogody!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Należy wybrać położenie, aby rozpocząć."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Wyszukiwanie miasta lub kraju"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Odświeża"
 
 #: src/app/city.js:203
 #, javascript-format
