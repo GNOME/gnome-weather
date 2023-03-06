@@ -1,16 +1,16 @@
 # Bulgarian translation of gnome-weather po-file.
 # Copyright (C) 2016 Free Software Foundation, Inc.
-# Copyright (C) 2022 Alexander Shopov.
+# Copyright (C) 2022, 2023 Alexander Shopov.
 # This file is distributed under the same license as the gnome-weather package.
-# Alexander Shopov <ash@kambanaria.org>, 2016, 2022
+# Alexander Shopov <ash@kambanaria.org>, 2016, 2022, 2023.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-09-10 17:43+0000\n"
-"PO-Revision-Date: 2022-09-12 14:02+0200\n"
+"POT-Creation-Date: 2023-03-06 09:26+0000\n"
+"PO-Revision-Date: 2023-03-06 23:30+0200\n"
 "Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:104
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -57,7 +57,7 @@ msgstr ""
 "възможност да видите текущите метеорологични условия в скоро търсените "
 "градове като просто напишете името им в прегледа на дейностите."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:248 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:306 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Проектът GNOME"
 
@@ -112,12 +112,12 @@ msgid "Places"
 msgstr "Места"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Почасова"
+msgid "_Hourly"
+msgstr "По_часова"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Дневна"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Дневна"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -135,25 +135,21 @@ msgstr "_Фаренхайт"
 msgid "_About Weather"
 msgstr "Относно „Прогноза“"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Опресняване"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Избор на място"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Добре дошли в „Прогноза“"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Изберете местоположение, за да започнете."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Търсене на град или държава"
+
+#: data/window.ui:95
+msgid "Refresh"
+msgstr "Опресняване"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -257,3 +253,6 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Избор на място"
