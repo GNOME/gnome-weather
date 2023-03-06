@@ -1,19 +1,16 @@
-# Bulgarian translation of gnome-tweak-tool po-file.
-# Copyright (C) 2009, 2011, 2012, 2013, 2014, 2015, 2016 Free Software Foundation, Inc.
-# Copyright (C) 2017 Free Software Foundation, Inc.
-# Copyright (C) 2021, 2022, 2023 Alexander Shopov <ash@kambanaria.org>.
-# This file is distributed under the same license as the gnome-tweak-tool package.
-# Alexander Shopov <ash@kambanaria.org>, 2007, 2008, 2009, 2011, 2012, 2013, 2014.
-# Alexander Shopov <ash@kambanaria.org>, 2015, 2016, 2021, 2022, 2023.
-# Ivaylo Valkov <ivaylo@e-valkov.org>, 2014.
-# Lyubomir Vasilev <lyubomirv@abv.bg>, 2017.
+# Bulgarian translation of gnome-weather po-file.
+# Copyright (C) 2016 Free Software Foundation, Inc.
+# Copyright (C) 2022, 2023 Alexander Shopov.
+# This file is distributed under the same license as the gnome-weather package.
+# Alexander Shopov <ash@kambanaria.org>, 2016, 2022, 2023.
+#
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-tweak-tool master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-tweaks/issues\n"
-"POT-Creation-Date: 2023-03-03 11:48+0000\n"
-"PO-Revision-Date: 2023-03-06 23:31+0200\n"
+"Project-Id-Version: gnome-weather main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2023-03-06 09:26+0000\n"
+"PO-Revision-Date: 2023-03-06 23:30+0200\n"
 "Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -22,685 +19,240 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: data/org.gnome.tweaks.appdata.xml.in:7
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:104
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
+msgid "Weather"
+msgstr "Прогноза"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
+msgid "Show weather conditions and forecast"
+msgstr "Показване на метеорологичното време и прогноза"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:16
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Малка програма за наблюдение на текущото метеорологично време в града ви или "
+"някъде другаде по света."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:20
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Има възможност за подробни прогнози — до седмица напред, с почасово "
+"състояние за текущия и следващия дни. Ползва различни източници по Интернет."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:24
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"Може да се интегрира и с обвивката на GNOME — GNOME Shell, което ви дава "
+"възможност да видите текущите метеорологични условия в скоро търсените "
+"градове като просто напишете името им в прегледа на дейностите."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:306 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Проектът GNOME"
 
-#: data/org.gnome.tweaks.appdata.xml.in:9 gtweak/app.py:43 gtweak/utils.py:326
-#: gtweak/utils.py:343
-msgid "GNOME Tweaks"
-msgstr "Натаманяване на GNOME"
-
-#: data/org.gnome.tweaks.appdata.xml.in:10 data/org.gnome.tweaks.desktop.in:4
-msgid "Tweak advanced GNOME settings"
-msgstr "Нагласяне на разширените настройки на GNOME"
-
-#: data/org.gnome.tweaks.appdata.xml.in:12
-msgid "GNOME Tweaks allows adjusting advanced GNOME options."
-msgstr ""
-"„Натаманяване на GNOME“ позволява нагласянето на разширените настройки на "
-"GNOME."
-
-#: data/org.gnome.tweaks.appdata.xml.in:15
-msgid ""
-"It can install and manage themes, change power settings, manage startup "
-"applications, and enable desktop icons among other settings."
-msgstr "Чрез програмата може да се инсталират и управляват разширения, да се променят настройките на захранването, да се избират автоматично стартираните програми, да се включват иконките на работния плот, както и много други неща."
-
-#: data/org.gnome.tweaks.desktop.in:3 gtweak/tweakview.py:109
-msgid "Tweaks"
-msgstr "Настройки"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.tweaks.desktop.in:14
-msgid "Settings;Advanced;Preferences;Fonts;Theme;XKB;Keyboard;Typing;"
-msgstr ""
-"настройки;разширени;предпочитания;шрифтове;тема;клавиатура;въвеждане;таман;"
-"натаманяване;settings;advanced;preferences;fonts;theme;xkb;keyboard;"
+#: data/org.gnome.Weather.desktop.in.in:13
+msgid "Weather;Forecast;"
+msgstr "време;прогноза;атмосфера;метеоролог;вали;дъжд;weather;forecast;"
 
-#: data/shell.ui:7
-msgid "_Reset to Defaults"
-msgstr "Връщане на _стандартните настройки"
+#: data/org.gnome.Weather.desktop.in.in:14
+msgid "Allows weather information to be displayed for your location."
+msgstr "Извеждане на метеорологична информация за текущото ви местоположение."
 
-#: data/shell.ui:13
-msgid "_About Tweaks"
-msgstr "_Относно"
+#: data/org.gnome.Weather.gschema.xml:6
+msgid "Configured cities to show weather for"
+msgstr "Да се показват прогнози за градовете"
 
-#: gtweak/app.py:23
-msgid "_Continue"
-msgstr "_Напред"
-
-#: gtweak/app.py:25
-msgid "Extensions Has Moved"
-msgstr "Разширенията се преместени"
-
-#. Translators: Placeholder will be replaced with "GNOME Extensions" in active link form
-#: gtweak/app.py:30
-#, python-brace-format
-msgid "Extensions management has been moved to {0}."
-msgstr "Управлението на разширенията е прехвърлено в „{0}“."
-
-#. Translators: Placeholder will be replaced with "Flathub" in active link form
-#: gtweak/app.py:34
-#, python-brace-format
+#: data/org.gnome.Weather.gschema.xml:7
 msgid ""
-"We recommend downloading GNOME Extensions from {0} if your distribution does "
-"not include it."
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Ако дистрибуцията ви не предоставя разширението, пробвайте да го свалите от "
-"„{0}“."
+"Местоположенията показани в световния изглед на програмата за метеорологично "
+"време. Всяка стойност е структура „GVariant“, която се връща от "
+"„gweather_location_serialize()“."
 
-#: gtweak/app.py:83
-msgid "Reset to Defaults"
-msgstr "Връщане на стандартните настройки"
+#: data/city.ui:25
+msgid "Loading…"
+msgstr "Зареждане…"
 
-#: gtweak/app.py:84
-msgid "Reset all tweak settings to the original default state?"
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "Нощем"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "Сутрин"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "Следобед"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "Вечер"
+
+#: data/places-popover.ui:15 data/places-popover.ui:76
+msgid "Search for a city"
+msgstr "Търсене на град"
+
+#: data/weather-widget.ui:42
+msgid "Places"
+msgstr "Места"
+
+#: data/weather-widget.ui:92
+msgid "_Hourly"
+msgstr "По_часова"
+
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Дневна"
+
+#: data/window.ui:6
+msgid "Temperature Unit"
+msgstr "Единица за температура"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_Целзий"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_Фаренхайт"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "Относно „Прогноза“"
+
+#: data/window.ui:39
+msgid "Welcome to Weather!"
+msgstr "Добре дошли в „Прогноза“"
+
+#: data/window.ui:40
+msgid "To get started, select a location."
+msgstr "Изберете местоположение, за да започнете."
+
+#: data/window.ui:46
+msgid "Search for a city or country"
+msgstr "Търсене на град или държава"
+
+#: data/window.ui:95
+msgid "Refresh"
+msgstr "Опресняване"
+
+#: src/app/city.js:203
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Чувства се като %.0f°"
+
+#: src/app/city.js:233
+msgid "Updated just now."
+msgstr "Обновено току що."
+
+#: src/app/city.js:238
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Обновено преди %d минута."
+msgstr[1] "Обновено преди %d минути."
+
+#: src/app/city.js:244
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Обновено преди %d час."
+msgstr[1] "Обновено преди %d часа."
+
+#: src/app/city.js:250
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Обновено преди %d ден."
+msgstr[1] "Обновено преди %d дни."
+
+#: src/app/city.js:256
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Обновено преди %d седмица."
+msgstr[1] "Обновено преди %d седмици."
+
+#: src/app/city.js:261
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "Updated %d months ago."
+msgstr[0] "Обновено преди %d месец."
+msgstr[1] "Обновено преди %d месеца."
+
+#: src/app/dailyForecast.js:36
+msgid "Daily Forecast"
+msgstr "Дневна прогноза"
+
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+msgid "Forecast not Available"
+msgstr "Липсва прогноза"
+
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:219
+msgid "%b %e"
+msgstr "%е %b"
+
+#: src/app/hourlyForecast.js:41
+msgid "Hourly Forecast"
+msgstr "Почасова прогноза"
+
+#: src/app/hourlyForecast.js:107
+msgid "Now"
+msgstr "Сега"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/hourlyForecast.js:114
+msgid "%l∶%M %p"
+msgstr "%H∶%M"
+
+#: src/app/window.js:166
+msgid "translator-credits"
 msgstr ""
-"Да се върнат ли всички „натаманени“ настройки към стандартните си стойности?"
-
-#: gtweak/app.py:101 gtweak/app.py:103
-msgid "GNOME Shell"
-msgstr "Обвивка на GNOME"
-
-#: gtweak/app.py:103
-#, python-format
-msgid "(%s mode)"
-msgstr "(режим: %s)"
-
-#: gtweak/app.py:106
-msgid "GNOME Shell is not running"
-msgstr "Обвивката на GNOME не е стартирана"
-
-#: gtweak/app.py:108
-msgid "GTK"
-msgstr "GTK"
-
-#: gtweak/app.py:115
-msgid "Homepage"
-msgstr "Начална страница"
-
-#: gtweak/tweakmodel.py:31
-msgid "Miscellaneous"
-msgstr "Допълнителни"
-
-#: gtweak/tweakview.py:143
-msgid "Search Tweaks…"
-msgstr "Търсене в настройките…"
-
-#. "General" needs to be first item in sidebar
-#: gtweak/tweakview.py:204 gtweak/tweaks/tweak_group_general.py:53
-msgid "General"
-msgstr "Общи"
-
-#: gtweak/tweaks/tweak_group_appearance.py:54
-msgid "Legacy Applications"
-msgstr "Остарели програми"
-
-#: gtweak/tweaks/tweak_group_appearance.py:88
-msgid "Error writing setting"
-msgstr "Грешка при запазването на настройките"
-
-#: gtweak/tweaks/tweak_group_appearance.py:94
-msgid "Icons"
-msgstr "Икони"
-
-#: gtweak/tweaks/tweak_group_appearance.py:109
-msgid "Cursor"
-msgstr "Показалец на мишката"
-
-#: gtweak/tweaks/tweak_group_appearance.py:133
-msgid "Shell"
-msgstr "Обвивка"
-
-#: gtweak/tweaks/tweak_group_appearance.py:133
-msgid "Install custom or user themes for gnome-shell"
-msgstr "Инсталиране на друга тема за обвивката на GNOME"
-
-#. check the shell is running and the usertheme extension is present
-#: gtweak/tweaks/tweak_group_appearance.py:136
-msgid "Unknown error"
-msgstr "Непозната грешка"
-
-#: gtweak/tweaks/tweak_group_appearance.py:141
-msgid "Shell not running"
-msgstr "Обвивката не е стартирана"
-
-#: gtweak/tweaks/tweak_group_appearance.py:163
-msgid "Shell user-theme extension incorrectly installed"
-msgstr "Разширението за теми на обвивката на GNOME е инсталирано неправилно"
-
-#: gtweak/tweaks/tweak_group_appearance.py:166
-msgid "Shell user-theme extension not enabled"
-msgstr "Разширението за теми на обвивката на GNOME не е включено"
-
-#: gtweak/tweaks/tweak_group_appearance.py:169
-msgid "Could not list shell extensions"
-msgstr "Разширенията на обвивката на GNOME не могат да бъдат изброени"
-
-#: gtweak/tweaks/tweak_group_appearance.py:199
-msgid "<i>Default</i>"
-msgstr "<i>Стандартно</i>"
-
-#: gtweak/tweaks/tweak_group_appearance.py:205
-msgid "Select a theme"
-msgstr "Избор на тема"
-
-#: gtweak/tweaks/tweak_group_appearance.py:254
-#, python-format
-msgid "%s theme updated successfully"
-msgstr "Темата „%s“ е обновена успешно"
-
-#: gtweak/tweaks/tweak_group_appearance.py:256
-#, python-format
-msgid "%s theme installed successfully"
-msgstr "Темата „%s“ е инсталирана успешно"
-
-#: gtweak/tweaks/tweak_group_appearance.py:264
-msgid "Error installing theme"
-msgstr "Грешка при инсталиране на тема"
-
-#. does not look like a valid theme
-#: gtweak/tweaks/tweak_group_appearance.py:269
-msgid "Invalid theme"
-msgstr "Неправилна тема"
-
-#: gtweak/tweaks/tweak_group_appearance.py:281
-msgid "Appearance"
-msgstr "Външен вид"
-
-#. GSettingsSwitchTweak("Buttons Icons","org.gnome.desktop.interface", "buttons-have-icons"),
-#. GSettingsSwitchTweak("Menu Icons","org.gnome.desktop.interface", "menus-have-icons"),
-#: gtweak/tweaks/tweak_group_appearance.py:284
-msgid "Themes"
-msgstr "Теми"
-
-#: gtweak/tweaks/tweak_group_appearance.py:288
-msgid "Sound"
-msgstr "Звук"
-
-#: gtweak/tweaks/tweak_group_appearance.py:289
-msgid "Specifies which sound theme to use for sound events."
-msgstr "Коя тема със звуци да се ползва за аудио събитията."
-
-#: gtweak/tweaks/tweak_group_appearance.py:292
-msgid "Background"
-msgstr "Фон"
-
-#: gtweak/tweaks/tweak_group_appearance.py:293
-msgid "Image"
-msgstr "Изображение"
-
-#: gtweak/tweaks/tweak_group_appearance.py:295
-msgid "Adjustment"
-msgstr "Регулиране"
-
-#: gtweak/tweaks/tweak_group_desktop.py:7
-msgid "Show Icons"
-msgstr "Показване на иконите"
-
-#. show-desktop-icons is in gsettings-desktop-schemas, but it won't actually
-#. *work* unless we have a version of Nautilus that still has the ability to
-#. draw the desktop; use one of the settings that was present in that version
-#. to probe for it.
-#: gtweak/tweaks/tweak_group_desktop.py:13
-msgid "Home"
-msgstr "Домашна папка"
-
-#: gtweak/tweaks/tweak_group_desktop.py:20
-msgid "Desktop"
-msgstr "Работен плот"
-
-#: gtweak/tweaks/tweak_group_desktop.py:21
-msgid "Icons on Desktop"
-msgstr "Икони на работния плот"
-
-#: gtweak/tweaks/tweak_group_desktop.py:24
-msgid "Network Servers"
-msgstr "Мрежови сървъри"
-
-#: gtweak/tweaks/tweak_group_desktop.py:25
-msgid "Trash"
-msgstr "Кошче"
-
-#: gtweak/tweaks/tweak_group_desktop.py:26
-msgid "Mounted Volumes"
-msgstr "Монтирани устройства"
-
-#: gtweak/tweaks/tweak_group_font.py:17 gtweak/tweaks/tweak_group_font.py:31
-msgid "Hinting"
-msgstr "Шрифтови подсказки"
-
-#: gtweak/tweaks/tweak_group_font.py:17 gtweak/tweaks/tweak_group_font.py:63
-msgid "Antialiasing"
-msgstr "Заглаждане на шрифтовете"
-
-#: gtweak/tweaks/tweak_group_font.py:40
-msgid "Full"
-msgstr "Пълно"
-
-#: gtweak/tweaks/tweak_group_font.py:46
-msgid "Medium"
-msgstr "Средно"
-
-#: gtweak/tweaks/tweak_group_font.py:52
-msgid "Slight"
-msgstr "Леко"
-
-#: gtweak/tweaks/tweak_group_font.py:58 gtweak/tweaks/tweak_group_font.py:83
-msgid "None"
-msgstr "Никакво"
-
-#: gtweak/tweaks/tweak_group_font.py:71
-msgid "Subpixel (for LCD screens)"
-msgstr "Подпикселно (за LCD)"
-
-#: gtweak/tweaks/tweak_group_font.py:77
-msgid "Standard (grayscale)"
-msgstr "Стандартно (степени на сивото)"
-
-#: gtweak/tweaks/tweak_group_font.py:108
-msgid "Fonts"
-msgstr "Шрифтове"
-
-#: gtweak/tweaks/tweak_group_font.py:109
-msgid "Interface Text"
-msgstr "Шрифт на интерфейса"
-
-#: gtweak/tweaks/tweak_group_font.py:110
-msgid "Document Text"
-msgstr "Шрифт на документите"
-
-#: gtweak/tweaks/tweak_group_font.py:111
-msgid "Monospace Text"
-msgstr "Равноширок шрифт"
-
-#: gtweak/tweaks/tweak_group_font.py:112
-msgid "Legacy Window Titles"
-msgstr "Остарели заглавни ленти на прозорците"
-
-#: gtweak/tweaks/tweak_group_font.py:114
-msgid "Scaling Factor"
-msgstr "Коефициент на мащабиране"
-
-#: gtweak/tweaks/tweak_group_general.py:28
-msgid "Suspend when laptop lid is closed"
-msgstr "Приспиване при затварянето на екрана на лаптопа"
-
-#. Don't show this setting in the Ubuntu session since this setting is in gnome-control-center there
-#: gtweak/tweaks/tweak_group_general.py:56
-msgid "Over-Amplification"
-msgstr "Свръхусилване на звука"
-
-#: gtweak/tweaks/tweak_group_general.py:57
-msgid ""
-"Allows raising the volume above 100%. This can result in a loss of audio "
-"quality; it is better to increase application volume settings, if possible."
-msgstr ""
-"Позволяване на усилване на звука над 100%. Това може да доведе до "
-"изкривяването му. По-добре е да усилвате от настройките на програмата, ако "
-"това е възможно."
-
-#: gtweak/tweaks/tweak_group_keymouse.py:21
-msgid "Emacs Input"
-msgstr "Клавишни комбинации на Emacs"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:24
-msgid "Overrides shortcuts to use keybindings from the Emacs editor."
-msgstr "Да се използват клавишните комбинации на Emacs."
-
-#: gtweak/tweaks/tweak_group_keymouse.py:40
-msgid "Overview Shortcut"
-msgstr "Преглед"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:47
-msgid "Left Super"
-msgstr "Ляв Super"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:51
-msgid "Right Super"
-msgstr "Десен Super"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:74
-#: gtweak/tweaks/tweak_group_keymouse.py:82
-msgid "Additional Layout Options"
-msgstr "Допълнителни настройки на подредбата"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:104
-#: gtweak/tweaks/tweak_group_keymouse.py:241
-msgid "Mouse Click Emulation"
-msgstr "Имитация на натискане на клавишите на мишката"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:122
-msgid "Fingers"
-msgstr "Пръсти"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:124
-msgid ""
-"Click the touchpad with two fingers for right-click and three fingers for "
-"middle-click."
-msgstr ""
-"Натискането на втория бутон става с потупване на два пръста по сензорния "
-"панел, а на средния бутон — с потупване на три пръста."
-
-#: gtweak/tweaks/tweak_group_keymouse.py:148
-msgid "Area"
-msgstr "Зона"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:150
-msgid ""
-"Click the bottom right of the touchpad for right-click and the bottom middle "
-"for middle-click."
-msgstr ""
-"Натискането на втория бутон става с потупване на зоната долу вляво, а на "
-"средния бутон — с потупване на зоната долу в средата."
-
-#: gtweak/tweaks/tweak_group_keymouse.py:174
-#: gtweak/tweaks/tweak_group_windows.py:211 gtweak/tweaks/tweak_group_xkb.py:39
-msgid "Disabled"
-msgstr "Изключени"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:176
-msgid "Don’t use mouse click emulation."
-msgstr "Без имитация на натискане на клавишите на мишката."
-
-#: gtweak/tweaks/tweak_group_keymouse.py:213
-msgid "Keyboard & Mouse"
-msgstr "Клавиатура и мишка"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:214
-msgid "Keyboard"
-msgstr "Клавиатура"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:215
-msgid "Show Extended Input Sources"
-msgstr "Показване на допълнителните начини за вход"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:218
-msgid "Increases the choice of input sources in the Settings application."
-msgstr "Повече начини за вход на данни в настройките."
-
-#: gtweak/tweaks/tweak_group_keymouse.py:223
-msgid "Mouse"
-msgstr "Мишка"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:224
-msgid "Acceleration Profile"
-msgstr "Профил на ускорението"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:228
-msgid "Pointer Location"
-msgstr "Местоположение на показалеца"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:231
-msgid "Press the Ctrl key to highlight the pointer."
-msgstr "Показалецът на мишката се откроява чрез натискането на Ctrl."
-
-#: gtweak/tweaks/tweak_group_keymouse.py:232
-msgid "Middle Click Paste"
-msgstr "Поставяне на текста със средния бутон"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:236
-msgid "Touchpad"
-msgstr "Сензорен панел"
-
-#: gtweak/tweaks/tweak_group_keymouse.py:237
-msgid "Disable While Typing"
-msgstr "Изключване при натискане на клавиатурата"
-
-#: gtweak/tweaks/tweak_group_startup.py:30
-msgid "Startup applications are automatically started when you log in."
-msgstr ""
-"Началните програми се стартират автоматично при влизането в графичната среда."
-
-#: gtweak/tweaks/tweak_group_startup.py:31
-#: gtweak/tweaks/tweak_group_startup.py:307
-msgid "Startup Applications"
-msgstr "Начални програми"
-
-#: gtweak/tweaks/tweak_group_startup.py:42
-msgid "Applications"
-msgstr "Програми"
-
-#: gtweak/tweaks/tweak_group_startup.py:48
-msgid "Search Applications…"
-msgstr "Търсене на програма…"
-
-#. Translators: This is the accelerator for opening the AppChooser search-bar
-#: gtweak/tweaks/tweak_group_startup.py:58
-msgid "<primary>f"
-msgstr "<модификатор>f"
-
-#: gtweak/tweaks/tweak_group_startup.py:76
-msgid "running"
-msgstr "стартирани"
-
-#: gtweak/tweaks/tweak_group_startup.py:87
-msgid "_Close"
-msgstr "_Затваряне"
-
-#: gtweak/tweaks/tweak_group_startup.py:88
-msgid "_Add"
-msgstr "_Добавяне"
-
-#: gtweak/tweaks/tweak_group_startup.py:233
-msgid "Remove"
-msgstr "Премахване"
-
-#: gtweak/tweaks/tweak_group_startup.py:257
-msgid "New startup application"
-msgstr "Нова програма при стартиране"
-
-#: gtweak/tweaks/tweak_group_startup.py:258
-msgid "Add a new application to be run at startup"
-msgstr ""
-"Добавяне на нова програма, която да се стартира при влизане в графичната "
-"среда"
-
-#: gtweak/tweaks/tweak_group_title_bar.py:57
-msgid "Placement"
-msgstr "Поставяне"
-
-#. Translators: For RTL languages, this is the "Right" direction since the
-#. interface is flipped
-#: gtweak/tweaks/tweak_group_title_bar.py:71
-msgid "Left"
-msgstr "Ляво"
-
-#. Translators: For RTL languages, this is the "Left" direction since the
-#. interface is flipped
-#: gtweak/tweaks/tweak_group_title_bar.py:77
-msgid "Right"
-msgstr "Дясно"
-
-#: gtweak/tweaks/tweak_group_title_bar.py:108
-msgid "Window Titlebars"
-msgstr "Заглавни ленти на прозорците"
-
-#: gtweak/tweaks/tweak_group_title_bar.py:109
-msgid "Titlebar Actions"
-msgstr "Действия със заглавната лента"
-
-#: gtweak/tweaks/tweak_group_title_bar.py:110
-msgid "Double-Click"
-msgstr "Двойно натискане"
-
-#: gtweak/tweaks/tweak_group_title_bar.py:111
-msgid "Middle-Click"
-msgstr "Натискане на средния бутон"
-
-#: gtweak/tweaks/tweak_group_title_bar.py:112
-#: gtweak/tweaks/tweak_group_windows.py:88
-msgid "Secondary-Click"
-msgstr "Натискане на втория бутон"
-
-#: gtweak/tweaks/tweak_group_title_bar.py:113
-msgid "Titlebar Buttons"
-msgstr "Бутони на заглавната лента"
-
-#: gtweak/tweaks/tweak_group_title_bar.py:114
-msgid "Maximize"
-msgstr "Максимизиране"
-
-#: gtweak/tweaks/tweak_group_title_bar.py:115
-msgid "Minimize"
-msgstr "Минимизиране"
-
-#: gtweak/tweaks/tweak_group_top_bar.py:14
-msgid "Top Bar"
-msgstr "Лентата отгоре"
-
-#: gtweak/tweaks/tweak_group_top_bar.py:15
-msgid "Clock"
-msgstr "Часовник"
-
-#: gtweak/tweaks/tweak_group_top_bar.py:16
-msgid "Weekday"
-msgstr "Делник"
-
-#: gtweak/tweaks/tweak_group_top_bar.py:17
-msgid "Date"
-msgstr "Дата"
-
-#: gtweak/tweaks/tweak_group_top_bar.py:18
-msgid "Seconds"
-msgstr "Секунди"
-
-#: gtweak/tweaks/tweak_group_top_bar.py:19
-msgid "Calendar"
-msgstr "Календар"
-
-#: gtweak/tweaks/tweak_group_top_bar.py:20
-msgid "Week Numbers"
-msgstr "Номера̀ на седмиците"
-
-#: gtweak/tweaks/tweak_group_windows.py:18
-#: gtweak/tweaks/tweak_group_windows.py:212
-msgid "Window Focus"
-msgstr "Фокусиране на прозорци"
-
-#: gtweak/tweaks/tweak_group_windows.py:18
-#: gtweak/tweaks/tweak_group_windows.py:36
-#: gtweak/tweaks/tweak_group_windows.py:212
-msgid "Click to Focus"
-msgstr "При натискане"
-
-#: gtweak/tweaks/tweak_group_windows.py:38
-msgid "Windows are focused when they are clicked."
-msgstr "Прозорците се фокусират при натискане на бутон на мишката в тях."
-
-#: gtweak/tweaks/tweak_group_windows.py:62
-msgid "Focus on Hover"
-msgstr "Фокусиране при посочване"
-
-#: gtweak/tweaks/tweak_group_windows.py:64
-msgid ""
-"Window is focused when hovered with the pointer. Windows remain focused when "
-"the desktop is hovered."
-msgstr ""
-"Прозорците се фокусират при посочване с показалеца на мишката и остават така "
-"дори той да е върху работния плот."
-
-#: gtweak/tweaks/tweak_group_windows.py:90
-msgid ""
-"Window is focused when hovered with the pointer. Hovering the desktop "
-"removes focus from the previous window."
-msgstr ""
-"Прозорците се фокусират при посочване с показалеца на мишката, но ако той е "
-"върху работния плот — фокусът се маха."
-
-#: gtweak/tweaks/tweak_group_windows.py:129
-msgid "Window scaling"
-msgstr "Мащабиране на прозорците"
-
-#: gtweak/tweaks/tweak_group_windows.py:129
-msgid "Adjust GDK window scaling factor for HiDPI"
-msgstr ""
-"Промяна на коефициента за мащабиране на прозорците на GTK при висока "
-"разделителна способност (HiDPI)"
-
-#: gtweak/tweaks/tweak_group_windows.py:157
-#, python-brace-format
-msgid "Settings will be reverted in {0} second"
-msgid_plural "Settings will be reverted in {0} seconds"
-msgstr[0] "След {0} секунда настройките ще бъдат отменени"
-msgstr[1] "След {0} секунди настройките ще бъдат отменени"
-
-#: gtweak/tweaks/tweak_group_windows.py:173
-msgid "Do you want to keep these HiDPI settings?"
-msgstr ""
-"Искате ли да запазите настройките за висока разделителна способност (HiDPI)?"
-
-#: gtweak/tweaks/tweak_group_windows.py:180
-msgid "Revert Settings"
-msgstr "Отмяна на промените"
-
-#: gtweak/tweaks/tweak_group_windows.py:181
-msgid "Keep Changes"
-msgstr "Запазване на промените"
-
-#: gtweak/tweaks/tweak_group_windows.py:197
-msgid "HiDPI"
-msgstr "Висока разделителна способност"
-
-#: gtweak/tweaks/tweak_group_windows.py:203
-msgid "Windows"
-msgstr "Прозорци"
-
-#: gtweak/tweaks/tweak_group_windows.py:204
-msgid "Attach Modal Dialogs"
-msgstr "Прикрепени модални прозорци"
-
-#: gtweak/tweaks/tweak_group_windows.py:205
-msgid ""
-"When on, modal dialog windows are attached to their parent windows, and "
-"cannot be moved."
-msgstr ""
-"Модалните прозорци да са прикрепени към създалите ги прозорци и да не може "
-"да се мърдат."
-
-#: gtweak/tweaks/tweak_group_windows.py:206
-msgid "Center New Windows"
-msgstr "Центриране на новите прозорци"
-
-#: gtweak/tweaks/tweak_group_windows.py:207
-msgid "Resize with Secondary-Click"
-msgstr "Преоразмеряване с натискане на втория бутон"
-
-#: gtweak/tweaks/tweak_group_windows.py:208
-msgid "Window Action Key"
-msgstr "Клавиш за действия с прозорци"
-
-#: gtweak/tweaks/tweak_group_windows.py:214
-msgid "Raise Windows When Focused"
-msgstr "Фокусирането издига прозорците"
-
-#: gtweak/tweaks/tweak_group_xkb.py:167
-msgid "Typing"
-msgstr "Клавиатура"
-
-#: gtweak/tweaks/tweak_wacom.py:16
-msgid "Device"
-msgstr "Устройство"
-
-#: gtweak/tweaks/tweak_wacom.py:25
-msgid "Wacom"
-msgstr "Wacom"
-
-#. indicates the default theme, e.g Adwaita (default)
-#: gtweak/utils.py:63
-#, python-format
-msgid "%s <i>(default)</i>"
-msgstr "„%s“ <i>(стандартно)</i>"
-
-#: gtweak/utils.py:345
-msgid "Configuration changes require restart"
-msgstr "Промяната на настройките изисква рестартиране"
-
-#: gtweak/utils.py:346
-msgid "Your session needs to be restarted for settings to take effect"
-msgstr "Промените ще влязат в сила след рестартирането на сесията"
-
-#: gtweak/utils.py:350
-msgid "Restart Session"
-msgstr "Рестартиране на сесията"
+"Александър Шопов &lt;<a href='mailto:ash@kambanaria.org'>ash@kambanaria.org</"
+"a>&gt;\n"
+"\n"
+"\n"
+"Проектът за превод на GNOME има нужда от подкрепа.\n"
+"Научете повече за нас на <a href='https://fsa-bg.org/project/gtp'>уеб сайта</"
+"a> ни.\n"
+"Докладвайте за грешки в превода в <a href='https://fsa-bg.org/project/gtp/"
+"newticket'>съответния раздел</a>."
+
+#: src/app/world.js:39
+msgid "World view"
+msgstr "Световен изглед"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: src/misc/util.js:103
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: src/service/searchProvider.js:182
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Избор на място"
