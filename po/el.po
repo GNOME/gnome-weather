@@ -9,20 +9,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-09-09 12:27+0300\n"
-"Last-Translator: Efstathios Iosifidis <iosifidis@fedoraproject.org>\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-03-11 21:38+0200\n"
+"Last-Translator: Efstathios Iosifidis <eiosifidis@gnome.org>\n"
 "Language-Team: Greek, Modern (1453-) <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -61,7 +61,7 @@ msgstr ""
 "δείτε τις τρέχουσες συνθήκες της πόλης που αναζητήθηκε πρόσφατα απλά "
 "πληκτρολογώντας το όνομα στην επισκόπηση των Δραστηριοτήτων."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Το έργο GNOME"
 
@@ -116,12 +116,12 @@ msgid "Places"
 msgstr "Τοποθεσίες"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Ωριαία"
+msgid "_Hourly"
+msgstr "_Ωριαία"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Ημερησίως"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Ημερησίως"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -139,25 +139,21 @@ msgstr "_Φαρενάϊτ"
 msgid "_About Weather"
 msgstr "_Περί του Καιρός"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Ανανέωση"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Επιλογή τοποθεσίας"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Καλώς ήρθατε στο Καιρός!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Για να ξεκινήσετε, επιλέξτε μια τοποθεσία."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Αναζήτηση πόλης ή χώρας"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Ανανέωση"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -260,6 +256,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Επιλογή τοποθεσίας"
 
 #~ msgid "Automatic location"
 #~ msgstr "Αυτόματη τοποθεσία"
