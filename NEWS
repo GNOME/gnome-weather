@@ -1,3 +1,42 @@
+44.0
+=======
+Weather 44.0 comes with a slight UI refresh, featuring flat headers
+that give the app a unified look, and a smooth temperature graph.
+
+This version brings translation updates for the following locales:
+ - Basque (Asier Sarasua Garmendia)
+ - Belarusian (Vasil Pupkin)
+ - Bokmål, Norwegian (John Erling Blad)
+ - Bulgarian (Alexander Shopov)
+ - Czech (Marek Černocký)
+ - Danish (Alan Mortensen)
+ - Dutch (Nathan Follens)
+ - Finnish (Jiri Grönroos)
+ - French (Charles Monzat)
+ - Galician (Fran Dieguez)
+ - Georgian (Ekaterine Papava)
+ - German (Jürgen Benvenuti)
+ - Greek, Modern (1453-) (Efstathios Iosifidis)
+ - Hebrew (Yosef Or Boczko)
+ - Hindi (Hemish)
+ - Hungarian (Balázs Úr)
+ - Icelandic (Sveinn í Felli)
+ - Indonesian (Kukuh Syafaat)
+ - Korean (DaeHyun Sung)
+ - Lithuanian (Aurimas Černius)
+ - Occitan (post 1500) (Quentin PAGÈS)
+ - Persian (MohammadSaleh Kamyab)
+ - Polish (Piotr Drąg)
+ - Portuguese (Hugo Carvalho)
+ - Russian (Aleksandr Melman)
+ - Serbian (Марко Костић)
+ - Slovak (Dušan Kazik)
+ - Slovenian (Matej Urbančič)
+ - Spanish (Daniel)
+ - Swedish (Anders Jonsson)
+ - Turkish (Sabri Ünal)
+ - Ukrainian (Yuri Chornoivan)
+
 44.rc
 =======
 Weather 44.rc brings translation updates for the following locales:
