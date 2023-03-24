@@ -6,25 +6,25 @@
 # Peteris Krisjanis <peteris.krisjanis@os.lv>, 2006.
 # Peteris Krisjanis <pecisk@gmail.com>, 2006, 2010.
 # Raivis Dejus <orvils@gmail.com>, 2006.
-# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022.
+# Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-09-03 20:23+0300\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-03-24 22:44+0200\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
 " 2);\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -60,7 +60,7 @@ msgstr ""
 "To var arī integrēt ar GNOME čaulu, ļaujot redzēt apstākļus nesen meklētajās "
 "pilsētās, ievadot to nosaukumus aktivitāšu pārskatā."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "GNOME projekts"
 
@@ -114,15 +114,16 @@ msgid "Places"
 msgstr "Vietas"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Ik stundu"
+#| msgid "Hourly"
+msgid "_Hourly"
+msgstr "Ik _stundu"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Ik dienu"
+#: data/weather-widget.ui:124
+#| msgid "Daily"
+msgid "_Daily"
+msgstr "Ik _dienu"
 
 #: data/window.ui:6
-#| msgid "_Temperature Unit"
 msgid "Temperature Unit"
 msgstr "Temperatūras mērvienība"
 
@@ -138,25 +139,21 @@ msgstr "_Fārenheiti"
 msgid "_About Weather"
 msgstr "P_ar “Laikapstākļi“"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Atsvaidzināt"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Izvēlieties vietu"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Laipni lūdzam “Laikapstākļu” lietotnē!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Lai sāktu, izvēlieties atrašanās vietu."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Meklēt pilsētu vai valsti"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Atsvaidzināt"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -256,6 +253,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Izvēlieties vietu"
 
 #~ msgid "A weather application"
 #~ msgstr "Laikapstākļu lietotne"
