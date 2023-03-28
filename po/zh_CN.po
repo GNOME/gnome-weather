@@ -9,14 +9,15 @@
 # 王滋涵 <wi24rd@fedoraproject.org>, 2020.
 # Dingzhong Chen <wsxy162@gmail.com>, 2019-2021.
 # lumingzh <lumingzh@qq.com>, 2022.
+# Nanling <neithern@outlook.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-05-30 05:58+0000\n"
-"PO-Revision-Date: 2022-06-12 12:23+0800\n"
-"Last-Translator: lumingzh <lumingzh@qq.com>\n"
+"POT-Creation-Date: 2023-03-26 13:06+0000\n"
+"PO-Revision-Date: 2023-03-25 21:52+0800\n"
+"Last-Translator: Nanling <neithern@outlook.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -24,10 +25,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "X-Generator: Gtranslator 42.0\n"
+"X-DL-Team: zh_CN\n"
+"X-DL-Module: gnome-weather\n"
+"X-DL-Branch: main\n"
+"X-DL-Domain: po\n"
+"X-DL-State: None\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:104
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "天气"
 
@@ -59,7 +66,7 @@ msgstr ""
 "它也可选与 GNOME Shell 集成，允许你通过在活动概览中输入名字来查看最近搜索的城"
 "市的当前状况。"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:199
+#: data/org.gnome.Weather.appdata.xml.in.in:289 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "GNOME 项目"
 
@@ -84,7 +91,7 @@ msgstr ""
 "gnome-weather 的世界视图中显示的位置。每个值都是由 "
 "gweather_location_serialize() 返回的 GVariant 值。"
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "正在加载…"
 
@@ -113,12 +120,12 @@ msgid "Places"
 msgstr "地点"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "每小时"
+msgid "_Hourly"
+msgstr "每小时(_H)"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "每天"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "每天(_D)"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -136,25 +143,21 @@ msgstr "华氏度(_F)"
 msgid "_About Weather"
 msgstr "关于天气(_A)"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "刷新"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "选择位置"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "欢迎使用天气程序！"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "请选择一个位置以便开始。"
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "搜索城市或国家"
+
+#: data/window.ui:95
+msgid "Refresh"
+msgstr "刷新"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -221,7 +224,7 @@ msgstr "现在"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr ""
 "tuhaihe <1132321739qq@gmail.com>, 2013,2020\n"
@@ -233,10 +236,6 @@ msgstr ""
 "王滋涵 <wi24rd@fedoraproject.org>, 2020\n"
 "Weiyi Xu <xuweiyi0923@gmail.com>, 2020\n"
 "lumingzh <lumingzh@qq.com>, 2022"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "一款天气应用"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -257,6 +256,12 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "选择位置"
+
+#~ msgid "A weather application"
+#~ msgstr "一款天气应用"
 
 #~ msgid "Automatic location"
 #~ msgstr "自动位置"
