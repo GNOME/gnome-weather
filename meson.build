@@ -1,6 +1,6 @@
 project('gnome-weather', 'c',
   version: '45.alpha',
-  meson_version: '>= 0.50.0',
+  meson_version: '>= 0.59.0',
   license: 'GPL2+'
 )
 
@@ -44,10 +44,8 @@ subdir('po')
 subdir('src')
 subdir('tests')
 
-meson.add_install_script(
-  'meson_post_install.py',
-  weather_datadir,
-  weather_pkgdatadir,
-  weather_bindir,
-  weather_id
+gnome.post_install(
+  gtk_update_icon_cache: true,
+  glib_compile_schemas: true,
+  update_desktop_database: true,
 )
