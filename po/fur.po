@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-05-30 05:58+0000\n"
-"PO-Revision-Date: 2022-06-03 09:24+0200\n"
+"POT-Creation-Date: 2023-01-25 20:03+0000\n"
+"PO-Revision-Date: 2023-04-05 17:45+0200\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -17,11 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Editor: HaiPO 1.0 Release\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:169 src/service/main.js:49
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
+#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "Meteo"
 
@@ -56,7 +57,7 @@ msgstr ""
 "meteo atuâi des citâts plui cirudis di resint; al baste scrivi il lôr non "
 "inte Panoramiche Ativitâts."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:199
+#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Il progjet GNOME"
 
@@ -81,7 +82,7 @@ msgstr ""
 "Lis posizions mostradis inte viodude mondiâl di gnome-weather. Ogni valôr al "
 "è un GVariant tornât di gweather_location_serialize()."
 
-#: data/city.ui:24
+#: data/city.ui:25
 msgid "Loading…"
 msgstr "Daûr a cjamâ…"
 
@@ -110,12 +111,12 @@ msgid "Places"
 msgstr "Lûcs"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Ore par ore"
+msgid "_Hourly"
+msgstr "Par _ore"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Pe zornade"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "Par _dì"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -133,25 +134,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Informazions su Meteo"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Inzorne"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Sielç posizion"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Benvignûts su Meteo!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Par scomençâ, selezione une lûc."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Cîr une citât o un paîs"
+
+#: data/window.ui:92
+msgid "Refresh"
+msgstr "Inzorne"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -223,13 +220,9 @@ msgstr "Cumò"
 msgid "%l∶%M %p"
 msgstr "%l.%M %p"
 
-#: src/app/window.js:168
+#: src/app/window.js:166
 msgid "translator-credits"
 msgstr "Fabio Tomat <f.t.public@gmail.com>"
-
-#: src/app/window.js:170
-msgid "A weather application"
-msgstr "Une aplicazion par il meteo"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -250,6 +243,12 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Sielç posizion"
+
+#~ msgid "A weather application"
+#~ msgstr "Une aplicazion par il meteo"
 
 #~ msgid "Automatic location"
 #~ msgstr "Posizion automatiche"
