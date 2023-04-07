@@ -253,6 +253,3 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
-#~ msgid "Select Location"
-#~ msgstr "Избор на място"
