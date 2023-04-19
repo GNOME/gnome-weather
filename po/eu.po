@@ -8,8 +8,8 @@
 msgid ""
 msgstr "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-02-12 07:06+0000\n"
-"PO-Revision-Date: 2023-02-26 19:00+0100\n"
+"POT-Creation-Date: 2023-02-26 07:39+0000\n"
+"PO-Revision-Date: 2023-04-19 19:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -147,7 +147,7 @@ msgstr "Sentsazio termikoa: %.0f°"
 
 #: src/app/city.js:233
 msgid "Updated just now."
-msgstr "sOrain bertan eguneratua."
+msgstr "Orain bertan eguneratua."
 
 #: src/app/city.js:238
 #, javascript-format
