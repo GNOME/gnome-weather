@@ -22,6 +22,7 @@ import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 
 import * as City from './city.js';
+import * as Util from '../misc/util.js';
 import { WorldContentView } from './world.js';
 
 const Page = {
@@ -86,6 +87,10 @@ export const MainWindow = GObject.registerClass({
         }
 
         this._showingDefault = false;
+
+        this._settings = Util.getSettings('org.gnome.Weather');
+        this._restoreWindowGeometry();
+        this.connect('close-request', () => this._saveWindowGeometry());
     }
 
     vfunc_unroot() {
@@ -111,6 +116,30 @@ export const MainWindow = GObject.registerClass({
         }
 
         this._currentPage = page;
+    }
+    _saveWindowGeometry() {
+        this._settings.set_boolean(
+            'window-maximized',
+            this.maximized
+        );
+
+        let defaultWindowSize = this.get_default_size()
+        this._settings.set_int(
+            'window-width', defaultWindowSize[0]
+        );
+        this._settings.set_int(
+            'window-height', defaultWindowSize[1]
+        );
+    }
+
+    _restoreWindowGeometry() {
+        if (this._settings.get_boolean('window-maximized')) {
+            this.maximize()
+        }
+
+        let width = this._settings.get_int('window-width');
+        let height = this._settings.get_int('window-height');
+        this.set_default_size(width, height);
     }
 
     showDefault() {
