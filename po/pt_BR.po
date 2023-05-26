@@ -13,16 +13,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-08-02 14:44-0300\n"
+"POT-Creation-Date: 2023-05-19 17:28+0000\n"
+"PO-Revision-Date: 2023-05-26 08:04-0300\n"
 "Last-Translator: Leônidas Araújo <leorusvellt@hotmail.com>\n"
 "Language-Team: Brazilian Portuguese < gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Gtranslator 40.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-DL-Team: pt_BR\n"
 "X-DL-Module: gnome-weather\n"
 "X-DL-Branch: main\n"
@@ -30,7 +30,7 @@ msgstr ""
 "X-DL-State: Translating\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:104
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -68,7 +68,7 @@ msgstr ""
 "você veja as condições atuais das cidades mais pesquisadas recentemente, "
 "somente digitando o nome no Panorama de Atividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:289 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -123,15 +123,14 @@ msgid "Places"
 msgstr "Locais"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Por hora"
+msgid "_Hourly"
+msgstr "Por _hora"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Por dia"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Diariamente"
 
 #: data/window.ui:6
-#| msgid "_Temperature Unit"
 msgid "Temperature Unit"
 msgstr "Unidade de temperatura"
 
@@ -147,25 +146,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Sobre o Meteorologia"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Atualizar"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Selecionar local"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Bem-vindo ao Meteorologia!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Para começar, selecione uma localização."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Pesquisar por uma cidade ou país"
+
+#: data/window.ui:95
+msgid "Refresh"
+msgstr "Atualizar"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -242,7 +237,8 @@ msgid "translator-credits"
 msgstr ""
 "Enrico Nicoletto <liverig@gmail.com>\n"
 "Yuri Otávio <yuriotavio@hotmail.com>\n"
-"Rafael Fontenelle <rafaelff@gnome.org>"
+"Rafael Fontenelle <rafaelff@gnome.org>\n"
+"Leônidas Araújo <leorusvellt@hotmail.com>"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -263,6 +259,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Selecionar local"
 
 #~ msgid "A weather application"
 #~ msgstr "Um aplicativo de meteorologia"
