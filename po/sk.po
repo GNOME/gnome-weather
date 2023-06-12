@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-09-18 18:41+0000\n"
-"PO-Revision-Date: 2022-10-09 21:02+0200\n"
+"POT-Creation-Date: 2023-05-05 12:38+0000\n"
+"PO-Revision-Date: 2023-06-12 12:07-0400\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -18,10 +18,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:104
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -59,7 +59,7 @@ msgstr ""
 "umožní vidieť aktuálne podmienky naposledy hľadaných miest zadaním názvu v "
 "prehľade Aktivít."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:289 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -116,12 +116,12 @@ msgid "Places"
 msgstr "Miesta"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Hodinovo"
+msgid "_Hourly"
+msgstr "_Hodinovo"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Denne"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Denne"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -139,28 +139,23 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_O aplikácii Počasie"
 
-# tooltip
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Obnoví"
-
-# DK:window title
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Výber polohy"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Vitajte v aplikácii Počasie!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Začnite vybraním umiestnenia."
 
 # label
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Vyhľadajte mesto alebo krajinu"
+
+# tooltip
+#: data/window.ui:95
+msgid "Refresh"
+msgstr "Obnoví"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -266,6 +261,10 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+# DK:window title
+#~ msgid "Select Location"
+#~ msgstr "Výber polohy"
 
 #~ msgid "A weather application"
 #~ msgstr "Aplikácia Počasie"
