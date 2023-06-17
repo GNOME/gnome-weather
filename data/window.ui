@@ -29,48 +29,33 @@
       <object class="GtkStack" id="stack">
         <property name="transition_type">crossfade</property>
         <child>
-          <object class="GtkWindowHandle" id="searchView">
-            <child>
-              <object class="GtkOverlay">
-                <property name="child">
-                  <object class="AdwStatusPage" id="searchViewStatus">
-
-                    <property name="icon_name">mark-location-symbolic</property>
-                    <property name="title" translatable="yes">Welcome to Weather!</property>
-                    <property name="description" translatable="yes">To get started, select a location.</property>
-                    <child>
-                      <object class="GtkMenuButton" id="searchButton">
-                        <property name="hexpand">False</property>
-                        <property name="halign">center</property>
-                        <property name="width-request">146</property>
-                        <property name="label" translatable="yes">Search for a city or country</property>
-                      </object>
-                    </child>
-                  </object>
-                </property>
-                <child type="overlay">
-                  <object class="GtkHeaderBar">
-                    <property name="valign">start</property>
-                    <child type="title">
-                      <object class="AdwWindowTitle">
-                      </object>
-                    </child>
-                    <child type="end">
-                      <object class="GtkMenuButton">
-                        <property name="valign">center</property>
-                        <property name="menu_model">primary-menu</property>
-                        <property name="icon_name">open-menu-symbolic</property>
-                      </object>
-                    </child>
-
-                    <style>
-                      <class name="flat" />
-                    </style>
+          <object class="AdwToolbarView" id="searchView">
+            <child type="top">
+              <object class="AdwHeaderBar">
+                <property name="show-title">False</property>
+                <child type="end">
+                  <object class="GtkMenuButton">
+                    <property name="valign">center</property>
+                    <property name="menu_model">primary-menu</property>
+                    <property name="icon_name">open-menu-symbolic</property>
                   </object>
                 </child>
               </object>
             </child>
-
+            <property name="content">
+              <object class="AdwStatusPage" id="searchViewStatus">
+                <property name="title" translatable="yes">Welcome to Weather!</property>
+                <property name="description" translatable="yes">To get started, select a location.</property>
+                <child>
+                  <object class="GtkMenuButton" id="searchButton">
+                    <property name="hexpand">False</property>
+                    <property name="halign">center</property>
+                    <property name="width-request">146</property>
+                    <property name="label" translatable="yes">Search for a city or country</property>
+                  </object>
+                </child>
+              </object>
+            </property>
             <style>
               <class name="search-view" />
             </style>
@@ -78,13 +63,9 @@
         </child>
 
         <child>
-          <object class="GtkBox" id="cityBox">
-            <property name="orientation">vertical</property>
-            <child>
+          <object class="AdwToolbarView" id="cityBox">
+            <child type="top">
               <object class="AdwHeaderBar" id="header">
-                <style>
-                  <class name="flat"/>
-                </style>
                 <property name="centering_policy">strict</property>
                 <child type="start">
                   <object class="GtkRevealer" id="refreshRevealer">
@@ -114,10 +95,10 @@
                 </child>
               </object>
             </child>
-            <child>
+            <property name="content">
               <object class="AdwBin" id="cityBin"/>
-            </child>
-            <child>
+            </property>
+            <child type="bottom">
               <object class="AdwViewSwitcherBar" id="forecastStackSwitcherBar">
                 <property name="reveal" bind-source="forecastStackSwitcher" bind-property="title-visible" bind-flags="sync-create" />
               </object>
