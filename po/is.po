@@ -1,13 +1,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2016, 2019, 2021, 2022.
+# Sveinn í Felli <sv1@fellsnet.is>, 2015, 2016, 2019, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-09-18 18:41+0000\n"
-"PO-Revision-Date: 2022-10-17 13:33+0000\n"
+"POT-Creation-Date: 2023-05-05 12:38+0000\n"
+"PO-Revision-Date: 2023-06-18 09:11+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Lokalize 21.12.3\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:104
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -56,7 +56,7 @@ msgstr ""
 "veðurskilyrði í þeim borgum sem síðast hefur verið leitað að með því einu að "
 "slá nafn þeirra inn í aðgerðayfirlitið."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:289 src/app/window.js:169
 msgid "The GNOME Project"
 msgstr "GNOME verkefnið"
 
@@ -110,15 +110,16 @@ msgid "Places"
 msgstr "Staðir"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Á klukkustundar fresti"
+#| msgid "Hourly"
+msgid "_Hourly"
+msgstr "Á _klukkustundar fresti"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Daglega"
+#: data/weather-widget.ui:124
+#| msgid "Daily"
+msgid "_Daily"
+msgstr "_Daglega"
 
 #: data/window.ui:6
-#| msgid "_Temperature Unit"
 msgid "Temperature Unit"
 msgstr "Eining fyrir hitastig"
 
@@ -134,25 +135,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Um veðurforritið"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Uppfæra"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Veldu staðsetningu"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Velkomin í veðurforritið!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Til að komast í gang skaltu velja staðsetningu."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Leita að borg eða landi"
+
+#: data/window.ui:95
+msgid "Refresh"
+msgstr "Uppfæra"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -247,6 +244,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Veldu staðsetningu"
 
 #~ msgid "A weather application"
 #~ msgstr "Veðurforrit"
