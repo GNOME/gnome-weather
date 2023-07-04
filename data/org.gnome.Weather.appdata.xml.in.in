@@ -46,6 +46,29 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2023-07-04" version="45.alpha">
+      <p>Weather 45.alpha comes with a few fixes:</p>
+      <ul>
+        <li>The &quot;Feels Like&quot; temperature label is now hidden when it matches the actual temperature (Felipe Kinoshita)</li>
+        <li>By default the window is now large enough to see the thermometer widgets in the Daily view (Jean-François Fortin Tam)</li>
+      </ul>
+      <p>This version brings translation updates for the following locales:</p>
+      <ul>
+        <li>Basque (Asier Sarasua Garmendia)</li>
+        <li>Bulgarian (Alexander Shopov)</li>
+        <li>Chinese (China) (Boyuan Yang)</li>
+        <li>Dutch (Nathan Follens)</li>
+        <li>English (United Kingdom) (Bruce Cowan)</li>
+        <li>Friulian (Fabio Tomat)</li>
+        <li>Icelandic (Sveinn í Felli)</li>
+        <li>Italian (Gianvito Cavasoli)</li>
+        <li>Latvian (Rūdolfs Mazurs)</li>
+        <li>Portuguese (Brazil) (Leônidas Araújo)</li>
+        <li>Romanian (Daniel Șerbănescu)</li>
+        <li>Slovak (Dušan Kazik)</li>
+        <li>Vietnamese (Ngọc Quân Trần)</li>
+      </ul>
+    </release>
     <release date="2023-03-19" version="44.0">
       <p>Weather 44.0 comes with a slight UI refresh, featuring flat headers that give the app a unified look, and a smooth temperature graph.</p>
       <p>This version brings translation updates for the following locales:</p>

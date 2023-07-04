@@ -1,3 +1,24 @@
+45.alpha
+=======
+Weather 45.alpha comes with a few fixes:
+* The "Feels Like" temperature label is now hidden when it matches the actual temperature (Felipe Kinoshita)
+* By default the window is now large enough to see the thermometer widgets in the Daily view (Jean-François Fortin Tam)
+
+This version brings translation updates for the following locales:
+  - Basque (Asier Sarasua Garmendia)
+  - Bulgarian (Alexander Shopov)
+  - Chinese (China) (Boyuan Yang)
+  - Dutch (Nathan Follens)
+  - English (United Kingdom) (Bruce Cowan)
+  - Friulian (Fabio Tomat)
+  - Icelandic (Sveinn í Felli)
+  - Italian (Gianvito Cavasoli)
+  - Latvian (Rūdolfs Mazurs)
+  - Portuguese (Brazil) (Leônidas Araújo)
+  - Romanian (Daniel Șerbănescu)
+  - Slovak (Dušan Kazik)
+  - Vietnamese (Ngọc Quân Trần)
+
 44.0
 =======
 Weather 44.0 comes with a slight UI refresh, featuring flat headers

@@ -12,7 +12,7 @@ dependency('gobject-introspection-1.0', version: '>=1.35.9')
 dependency('gtk4', version :'>=4.5')
 gjs = dependency('gjs-1.0', version: '>= 1.71.0')
 dependency('libgeoclue-2.0', version: '>= 0.12.99')
-dependency('libadwaita-1', version: '>=  1.2.alpha')
+dependency('libadwaita-1', version: '>=  1.4.alpha')
 dependency('gweather4', version: '>= 3.90.0')
 
 # Profiles
