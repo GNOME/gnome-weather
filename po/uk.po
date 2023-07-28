@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
 "POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-07-28 19:59+0300\n"
+"PO-Revision-Date: 2023-07-28 20:00+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -92,14 +92,12 @@ msgid "The height of the main window."
 msgstr "Висота головного вікна."
 
 #: data/org.gnome.Weather.gschema.xml:22
-#, fuzzy
 msgid "Window maximized"
 msgstr "Вікно розгорнуто"
 
 #: data/org.gnome.Weather.gschema.xml:23
-#, fuzzy
 msgid "Whether or not the window is maximized."
-msgstr "Чи розгорнуто вікно"
+msgstr "Чи розгорнуто вікно."
 
 #: data/city.ui:25
 msgid "Loading…"
