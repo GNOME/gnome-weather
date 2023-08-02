@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-01-25 20:03+0000\n"
-"PO-Revision-Date: 2023-01-26 00:34+0300\n"
+"POT-Creation-Date: 2023-07-19 18:48+0000\n"
+"PO-Revision-Date: 2023-07-27 12:00+0300\n"
 "Last-Translator: Aleksandr Melman <Alexmelman88@gmail.com>\n"
 "Language-Team: Russian <Alexmelman88@gmail.com>\n"
 "Language: ru\n"
@@ -27,8 +27,8 @@ msgstr ""
 "X-DL-State: Translated\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
-#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Погода"
@@ -64,7 +64,7 @@ msgstr ""
 "видеть текущие условия в городах, в которых недавно проводился поиск, просто "
 "набрав название города в Обзорном режиме."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "The GNOME Project"
 
@@ -88,6 +88,22 @@ msgid ""
 msgstr ""
 "Местоположения отображаемые в gnome-weather. Каждое значение GVariant "
 "возвращается gweather_location_serialize ()."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "Ширина главного окна."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "Высота главного окна."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Окно развёрнуто"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Является ли окно развёрнутым или нет."
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -141,19 +157,19 @@ msgstr "_Фаренгейт"
 msgid "_About Weather"
 msgstr "_О приложении"
 
-#: data/window.ui:39
+#: data/window.ui:47
 msgid "Welcome to Weather!"
 msgstr "Добро пожаловать в  приложение Погода!"
 
-#: data/window.ui:40
+#: data/window.ui:48
 msgid "To get started, select a location."
 msgstr "Чтобы начать, выберите местоположение."
 
-#: data/window.ui:46
+#: data/window.ui:54
 msgid "Search for a city or country"
 msgstr "Поиск по городу или стране"
 
-#: data/window.ui:92
+#: data/window.ui:76
 msgid "Refresh"
 msgstr "Обновить"
 
@@ -162,11 +178,11 @@ msgstr "Обновить"
 msgid "Feels like %.0f°"
 msgstr "По ощущениям, %.0f°"
 
-#: src/app/city.js:233
+#: src/app/city.js:234
 msgid "Updated just now."
 msgstr "Обновлено только что."
 
-#: src/app/city.js:238
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -174,7 +190,7 @@ msgstr[0] "Обновлено %d минуту назад."
 msgstr[1] "Обновлено %d минуты назад."
 msgstr[2] "Обновлено %d минут назад."
 
-#: src/app/city.js:244
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -182,7 +198,7 @@ msgstr[0] "Обновлено %d час назад."
 msgstr[1] "Обновлено %d часа назад."
 msgstr[2] "Обновлено %d часов назад."
 
-#: src/app/city.js:250
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -190,7 +206,7 @@ msgstr[0] "Обновлено %d день назад."
 msgstr[1] "Обновлено %d дня назад."
 msgstr[2] "Обновлено %d дней назад."
 
-#: src/app/city.js:256
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -198,7 +214,7 @@ msgstr[0] "Обновлено %d неделю назад."
 msgstr[1] "Обновлено %d недели назад."
 msgstr[2] "Обновлено %d недель назад."
 
-#: src/app/city.js:261
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -232,7 +248,7 @@ msgstr "Сейчас"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:166
+#: src/app/window.js:195
 msgid "translator-credits"
 msgstr ""
 "Stas Solovey <whats_up@tut.by>, 2012-2019.\n"
