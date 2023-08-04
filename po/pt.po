@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-01-25 20:03+0000\n"
-"PO-Revision-Date: 2023-01-26 15:05+0000\n"
+"POT-Creation-Date: 2023-07-19 18:48+0000\n"
+"PO-Revision-Date: 2023-08-04 16:03+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (https://l10n.gnome.org/teams/pt/)\n"
 "Language: pt\n"
@@ -20,12 +20,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
-#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Meteorologia"
@@ -62,7 +62,7 @@ msgstr ""
 "as condições atuais das cidades mais recentemente procuradas, simplesmente "
 "digitando o seu nome na vista de atividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -86,6 +86,22 @@ msgid ""
 msgstr ""
 "Os locais mostrados na vista de mundo do gnome-weather. Cada valor é um "
 "GVariant devolvido por gweather_location_serialize()."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "A largura da janela principal."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "A altura da janela principal."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Janela maximizada"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Se a janela está ou não maximizada."
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -139,19 +155,19 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Acerca de Meteorologia"
 
-#: data/window.ui:39
+#: data/window.ui:47
 msgid "Welcome to Weather!"
 msgstr "Bem-vindo ao Meteorologia!"
 
-#: data/window.ui:40
+#: data/window.ui:48
 msgid "To get started, select a location."
 msgstr "Para começar, selecione um local."
 
-#: data/window.ui:46
+#: data/window.ui:54
 msgid "Search for a city or country"
 msgstr "Procurar uma cidade ou país"
 
-#: data/window.ui:92
+#: data/window.ui:76
 msgid "Refresh"
 msgstr "Atualizar"
 
@@ -160,39 +176,39 @@ msgstr "Atualizar"
 msgid "Feels like %.0f°"
 msgstr "Sensação de %.0f°"
 
-#: src/app/city.js:233
+#: src/app/city.js:234
 msgid "Updated just now."
 msgstr "Atualizado ainda agora."
 
-#: src/app/city.js:238
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Atualizado há %d minuto atrás."
 msgstr[1] "Atualizado há %d minutos atrás."
 
-#: src/app/city.js:244
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Atualizado há %d hora atrás."
 msgstr[1] "Atualizado há %d horas atrás."
 
-#: src/app/city.js:250
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Atualizado há %d dia atrás."
 msgstr[1] "Atualizado há %d dias atrás."
 
-#: src/app/city.js:256
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Atualizado há %d semana atrás."
 msgstr[1] "Atualizado há %d semanas atrás."
 
-#: src/app/city.js:261
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -225,7 +241,7 @@ msgstr "Agora"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:166
+#: src/app/window.js:195
 msgid "translator-credits"
 msgstr ""
 "Fernando Carvalho <phaetonkde@gmail.com>\n"
