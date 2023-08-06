@@ -1,16 +1,16 @@
 # Polish translation for gnome-weather.
-# Copyright © 2012-2022 the gnome-weather authors.
+# Copyright © 2012-2023 the gnome-weather authors.
 # This file is distributed under the same license as the gnome-weather package.
-# Piotr Drąg <piotrdrag@gmail.com>, 2012-2022.
+# Piotr Drąg <piotrdrag@gmail.com>, 2012-2023.
 # Paweł Żołnowski <pawel@zolnowski.name>, 2014.
-# Aviary.pl <community-poland@mozilla.org>, 2012-2022.
+# Aviary.pl <community-poland@mozilla.org>, 2012-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-01-25 20:03+0000\n"
-"PO-Revision-Date: 2022-02-26 15:02+0100\n"
+"POT-Creation-Date: 2023-07-19 18:48+0000\n"
+"PO-Revision-Date: 2023-08-06 17:23+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -21,8 +21,8 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
-#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Pogoda"
@@ -59,7 +59,7 @@ msgstr ""
 "obecnych warunków pogodowych w ostatnio wyszukiwanych miastach poprzez "
 "pisanie ich nazw na ekranie podglądu."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -86,6 +86,22 @@ msgid ""
 msgstr ""
 "Położenia wyświetlane w widoku świata programu gnome-weather. Każda wartość "
 "to GVariant zwrócony przez funkcję „gweather_location_serialize()”."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "Szerokość głównego okna."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "Wysokość głównego okna."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Maksymalizacja okna"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Czy okno jest zmaksymalizowane."
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -139,19 +155,19 @@ msgstr "Stopnie _Fahrenheita"
 msgid "_About Weather"
 msgstr "_O programie"
 
-#: data/window.ui:39
+#: data/window.ui:47
 msgid "Welcome to Weather!"
 msgstr "Witamy w prognozie pogody!"
 
-#: data/window.ui:40
+#: data/window.ui:48
 msgid "To get started, select a location."
 msgstr "Należy wybrać położenie, aby rozpocząć."
 
-#: data/window.ui:46
+#: data/window.ui:54
 msgid "Search for a city or country"
 msgstr "Wyszukiwanie miasta lub kraju"
 
-#: data/window.ui:92
+#: data/window.ui:76
 msgid "Refresh"
 msgstr "Odświeża"
 
@@ -160,11 +176,11 @@ msgstr "Odświeża"
 msgid "Feels like %.0f°"
 msgstr "Odczuwalna: %.0f °"
 
-#: src/app/city.js:233
+#: src/app/city.js:234
 msgid "Updated just now."
 msgstr "Zaktualizowano przed chwilą."
 
-#: src/app/city.js:238
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -172,7 +188,7 @@ msgstr[0] "Zaktualizowano %d minutę temu."
 msgstr[1] "Zaktualizowano %d minuty temu."
 msgstr[2] "Zaktualizowano %d minut temu."
 
-#: src/app/city.js:244
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -180,7 +196,7 @@ msgstr[0] "Zaktualizowano %d godzinę temu."
 msgstr[1] "Zaktualizowano %d godziny temu."
 msgstr[2] "Zaktualizowano %d godzin temu."
 
-#: src/app/city.js:250
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -188,7 +204,7 @@ msgstr[0] "Zaktualizowano %d dzień temu."
 msgstr[1] "Zaktualizowano %d dni temu."
 msgstr[2] "Zaktualizowano %d dni temu."
 
-#: src/app/city.js:256
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -196,7 +212,7 @@ msgstr[0] "Zaktualizowano %d tydzień temu."
 msgstr[1] "Zaktualizowano %d tygodnie temu."
 msgstr[2] "Zaktualizowano %d tygodni temu."
 
-#: src/app/city.js:261
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -230,12 +246,12 @@ msgstr "Teraz"
 msgid "%l∶%M %p"
 msgstr "%-l∶%M %p"
 
-#: src/app/window.js:166
+#: src/app/window.js:195
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2012-2022\n"
+"Piotr Drąg <piotrdrag@gmail.com>, 2012-2023\n"
 "Paweł Żołnowski <pawel@zolnowski.name>, 2014\n"
-"Aviary.pl <community-poland@mozilla.org>, 2012-2022"
+"Aviary.pl <community-poland@mozilla.org>, 2012-2023"
 
 #: src/app/world.js:39
 msgid "World view"
