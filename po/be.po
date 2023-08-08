@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-07-29 16:49+0300\n"
+"POT-Creation-Date: 2023-07-29 13:50+0000\n"
+"PO-Revision-Date: 2023-08-08 23:59+0300\n"
 "Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
@@ -235,7 +235,7 @@ msgstr "Прагноз па гадзінах"
 
 #: src/app/hourlyForecast.js:107
 msgid "Now"
-msgstr "Толькі што"
+msgstr "Цяпер"
 
 #. Translators: this is a time format without date used for AM/PM
 #: src/app/hourlyForecast.js:114
