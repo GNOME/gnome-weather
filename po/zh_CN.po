@@ -8,16 +8,16 @@
 # Jeff Bai <jeffbai@aosc.xyz>, 2015, 2016.
 # 王滋涵 <wi24rd@fedoraproject.org>, 2020.
 # Dingzhong Chen <wsxy162@gmail.com>, 2019-2021.
-# lumingzh <lumingzh@qq.com>, 2022.
 # Nanling <neithern@outlook.com>, 2023.
+# lumingzh <lumingzh@qq.com>, 2022-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-03-26 13:06+0000\n"
-"PO-Revision-Date: 2023-03-25 21:52+0800\n"
-"Last-Translator: Nanling <neithern@outlook.com>\n"
+"POT-Creation-Date: 2023-07-19 18:48+0000\n"
+"PO-Revision-Date: 2023-08-08 20:35+0800\n"
+"Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -32,8 +32,8 @@ msgstr ""
 "X-DL-State: None\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:104
-#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "天气"
@@ -66,7 +66,7 @@ msgstr ""
 "它也可选与 GNOME Shell 集成，允许你通过在活动概览中输入名字来查看最近搜索的城"
 "市的当前状况。"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:289 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "GNOME 项目"
 
@@ -90,6 +90,22 @@ msgid ""
 msgstr ""
 "gnome-weather 的世界视图中显示的位置。每个值都是由 "
 "gweather_location_serialize() 返回的 GVariant 值。"
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "主窗口宽度。"
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "主窗口高度。"
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "窗口最大化"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "窗口是否已经最大化。"
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -143,19 +159,19 @@ msgstr "华氏度(_F)"
 msgid "_About Weather"
 msgstr "关于天气(_A)"
 
-#: data/window.ui:39
+#: data/window.ui:47
 msgid "Welcome to Weather!"
 msgstr "欢迎使用天气程序！"
 
-#: data/window.ui:40
+#: data/window.ui:48
 msgid "To get started, select a location."
 msgstr "请选择一个位置以便开始。"
 
-#: data/window.ui:46
+#: data/window.ui:54
 msgid "Search for a city or country"
 msgstr "搜索城市或国家"
 
-#: data/window.ui:95
+#: data/window.ui:76
 msgid "Refresh"
 msgstr "刷新"
 
@@ -164,35 +180,35 @@ msgstr "刷新"
 msgid "Feels like %.0f°"
 msgstr "体感（温度）%.0f°"
 
-#: src/app/city.js:233
+#: src/app/city.js:234
 msgid "Updated just now."
 msgstr "刚刚更新。"
 
-#: src/app/city.js:238
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d 分钟前更新。"
 
-#: src/app/city.js:244
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d 小时前更新。"
 
-#: src/app/city.js:250
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d 天前更新。"
 
-#: src/app/city.js:256
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d 周前更新。"
 
-#: src/app/city.js:261
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -224,7 +240,7 @@ msgstr "现在"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:166
+#: src/app/window.js:195
 msgid "translator-credits"
 msgstr ""
 "tuhaihe <1132321739qq@gmail.com>, 2013,2020\n"
