@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-01-25 20:03+0000\n"
-"PO-Revision-Date: 2023-02-05 22:23+0100\n"
+"POT-Creation-Date: 2023-07-19 18:48+0000\n"
+"PO-Revision-Date: 2023-08-12 11:36+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Project-Style: gnome\n"
 "X-DL-Team: gl\n"
 "X-DL-Module: gnome-weather\n"
@@ -27,8 +27,8 @@ msgstr ""
 "X-DL-State: Translating\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
-#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Clima"
@@ -64,7 +64,7 @@ msgstr ""
 "meteorolóxicas actuais das cidades máis buscadas recentemente escribindo o "
 "seu nome na Vista de actividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "O Proxecto GNOME"
 
@@ -88,6 +88,22 @@ msgid ""
 msgstr ""
 "As localizacións mostradas na vista do mundo de gnome-weather. Cada valor é "
 "un GVariant devolto por gweather_location_serialize()."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "A anchura da xanela principal."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "A altura da xanela principal."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Xanela maximizada"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Indica se a xanela está maximizada ou non"
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -141,19 +157,19 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Sobre Tempo"
 
-#: data/window.ui:39
+#: data/window.ui:47
 msgid "Welcome to Weather!"
 msgstr "Benvida a Tempo!"
 
-#: data/window.ui:40
+#: data/window.ui:48
 msgid "To get started, select a location."
 msgstr "Para comezar, seleccione unha localización."
 
-#: data/window.ui:46
+#: data/window.ui:54
 msgid "Search for a city or country"
 msgstr "Buscar por unha cidade ou país"
 
-#: data/window.ui:92
+#: data/window.ui:76
 msgid "Refresh"
 msgstr "Actualizar"
 
@@ -162,39 +178,39 @@ msgstr "Actualizar"
 msgid "Feels like %.0f°"
 msgstr "Sensación de %.0f°"
 
-#: src/app/city.js:233
+#: src/app/city.js:234
 msgid "Updated just now."
 msgstr "Actualizado agora mesmo."
 
-#: src/app/city.js:238
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Actualizado hai %d minuto."
 msgstr[1] "Actualizado hai %d minutos."
 
-#: src/app/city.js:244
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Actualizado hai %d hora."
 msgstr[1] "Actualizado hai %d horas."
 
-#: src/app/city.js:250
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Actualizado hai %d día."
 msgstr[1] "Actualizado hai %d días."
 
-#: src/app/city.js:256
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Actualizado hai %d semana."
 msgstr[1] "Actualizado hai %d semanas."
 
-#: src/app/city.js:261
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -227,7 +243,7 @@ msgstr "Agora"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:166
+#: src/app/window.js:195
 msgid "translator-credits"
 msgstr "Fran Diéguez <frandieguez@gnome.org>, 2013-2023"
 
