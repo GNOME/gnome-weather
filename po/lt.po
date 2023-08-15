@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-01-25 20:03+0000\n"
-"PO-Revision-Date: 2023-02-18 21:58+0200\n"
+"POT-Creation-Date: 2023-07-19 18:48+0000\n"
+"PO-Revision-Date: 2023-08-15 22:35+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"(n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 42.0\n"
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
-#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Orai"
@@ -57,7 +57,7 @@ msgstr ""
 "paskutiniuose ieškotuose miestuose tiesiog įvedant jų pavadinimus veiklų "
 "apžvalgoje."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "GNOME projektas"
 
@@ -81,6 +81,22 @@ msgid ""
 msgstr ""
 "Vietos, rodomas gnome-weather pasaulio vaizde. Kiekviena vertė yra "
 "gweather_location_serialize() grąžintas GVariant."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "Pagrindinio lango plotis."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "Pagrindinio lango aukštis."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Langas išdidintas"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Ar langas yra išdidintas."
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -134,19 +150,19 @@ msgstr "_Farenheitas"
 msgid "_About Weather"
 msgstr "Apie orus"
 
-#: data/window.ui:39
+#: data/window.ui:47
 msgid "Welcome to Weather!"
 msgstr "Sveiki pradėję naudoti orus!"
 
-#: data/window.ui:40
+#: data/window.ui:48
 msgid "To get started, select a location."
 msgstr "Pradžiai, pasirinkite vietą."
 
-#: data/window.ui:46
+#: data/window.ui:54
 msgid "Search for a city or country"
 msgstr "Ieškoti miesto arba rajono"
 
-#: data/window.ui:92
+#: data/window.ui:76
 msgid "Refresh"
 msgstr "Atnaujinti"
 
@@ -155,11 +171,11 @@ msgstr "Atnaujinti"
 msgid "Feels like %.0f°"
 msgstr "Jaučiama kaip %.0f°"
 
-#: src/app/city.js:233
+#: src/app/city.js:234
 msgid "Updated just now."
 msgstr "Ką tik atnaujinta."
 
-#: src/app/city.js:238
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -167,7 +183,7 @@ msgstr[0] "Atnaujinta prieš %d minutę."
 msgstr[1] "Atnaujinta prieš %d minutes."
 msgstr[2] "Atnaujinta prieš %d minučių."
 
-#: src/app/city.js:244
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -175,7 +191,7 @@ msgstr[0] "Atnaujinta prieš %d valandą."
 msgstr[1] "Atnaujinta prieš %d valandas."
 msgstr[2] "Atnaujinta prieš %d valandų."
 
-#: src/app/city.js:250
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -183,7 +199,7 @@ msgstr[0] "Atnaujinta prieš %d dieną."
 msgstr[1] "Atnaujinta prieš %d dienas."
 msgstr[2] "Atnaujinta prieš %d dienų."
 
-#: src/app/city.js:256
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -191,7 +207,7 @@ msgstr[0] "Atnaujinta prieš %d savaitę."
 msgstr[1] "Atnaujinta prieš %d savaites."
 msgstr[2] "Atnaujinta prieš %d savaičių."
 
-#: src/app/city.js:261
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -225,7 +241,7 @@ msgstr "Dabar"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:166
+#: src/app/window.js:195
 msgid "translator-credits"
 msgstr ""
 "išvertė:\n"
