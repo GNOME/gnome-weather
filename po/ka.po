@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-01-25 20:03+0000\n"
-"PO-Revision-Date: 2023-01-26 15:37+0100\n"
+"POT-Creation-Date: 2023-07-19 18:48+0000\n"
+"PO-Revision-Date: 2023-08-17 21:36+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: \n"
 "Language: ka\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
-#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "ამინდი"
@@ -56,7 +56,7 @@ msgstr ""
 "ნახოთ ბოლო მოძიებული ქალაქების ამჟამინდელი პირობები მხოლოდ აქტივობების "
 "მიმოხილვაში სახელის აკრეფით."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "პროექტი \"GNOME\""
 
@@ -80,6 +80,22 @@ msgid ""
 msgstr ""
 "Gnome-Weather-ის მსოფლიო ხედში ნაჩვენები მდებარეობები. თითოეული მნიშვნელობა "
 "არის GVariant, დაბრუნებული gweather_location_serialize()-ის მიერ."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "მთავარი ფანჯრის სიგანე."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "მთავარი ფანჯრის სიმაღლე."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "გადიდებული ფანჯარა"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "არის თუ არა ფანჯარა გადიდებული."
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -133,19 +149,19 @@ msgstr "_ფარენჰეიტი"
 msgid "_About Weather"
 msgstr "_ამინდის შესახებ"
 
-#: data/window.ui:39
+#: data/window.ui:47
 msgid "Welcome to Weather!"
 msgstr "კეთილი იყოს თქვენი მობრძანება ამინდის აპლიკაციაში!"
 
-#: data/window.ui:40
+#: data/window.ui:48
 msgid "To get started, select a location."
 msgstr "დასაწყისისთვის აირჩიეთ მდებარეობა."
 
-#: data/window.ui:46
+#: data/window.ui:54
 msgid "Search for a city or country"
 msgstr "ქალაქის ან სოფლის ძებნა"
 
-#: data/window.ui:92
+#: data/window.ui:76
 msgid "Refresh"
 msgstr "განახლება"
 
@@ -154,39 +170,39 @@ msgstr "განახლება"
 msgid "Feels like %.0f°"
 msgstr "იგრძნობა, როგორც %.0f°"
 
-#: src/app/city.js:233
+#: src/app/city.js:234
 msgid "Updated just now."
 msgstr "ახლა განახლდა."
 
-#: src/app/city.js:238
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "განახლდა %d წუთის წინ."
 msgstr[1] "განახლდა %d წუთის წინ."
 
-#: src/app/city.js:244
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "განახლდა %d საათის წინ."
 msgstr[1] "განახლდა %d საათის წინ."
 
-#: src/app/city.js:250
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "განახლდა %d დღის წინ."
 msgstr[1] "განახლდა %d დღის წინ."
 
-#: src/app/city.js:256
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "განახლდა %d კვირის წინ."
 msgstr[1] "განახლდა %d კვირის წინ."
 
-#: src/app/city.js:261
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -219,7 +235,7 @@ msgstr "ახლა"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:166
+#: src/app/window.js:195
 msgid "translator-credits"
 msgstr "თარგმანი-შესრულებულია"
 
