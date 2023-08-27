@@ -3,26 +3,26 @@
 # This file is distributed under the same license as the Gnome Weather package.
 # Reinout van Schouwen <reinouts@gnome.org>, 2013.
 # Erwin Poeze <donnut@outlook.com>, 2014.
-# Nathan Follens <nfollens@gnome.org>, 2016, 2019-2020, 2022.
+# Nathan Follens <nfollens@gnome.org>, 2016, 2019-2020, 2022-2023.
 # Hannie Dumoleyn <hannie@ubuntu-nl.org>, 2016, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gnome Weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-09-18 18:41+0000\n"
-"PO-Revision-Date: 2022-11-02 00:29+0100\n"
+"POT-Creation-Date: 2023-06-30 09:31+0000\n"
+"PO-Revision-Date: 2023-08-27 14:13+0200\n"
 "Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
-"Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
+"Language-Team: GNOME-NL https://matrix.to/#/#nl:gnome.org\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:104
 #: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
 #: src/service/main.js:49
 msgid "Weather"
@@ -56,13 +56,13 @@ msgid ""
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"Het integreert ook desgewenst met de Gnome Shell en biedt u de mogelijkheid "
+"Het integreert ook desgewenst met de GNOME Shell en biedt u de mogelijkheid "
 "de huidige weersomstandigheden te zien van de meest recent gezochte steden "
 "door gewoon de naam in te geven in het activiteitenoverzicht."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:289 src/app/window.js:169
 msgid "The GNOME Project"
-msgstr "Het Gnome-project"
+msgstr "Het GNOME-project"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
@@ -82,8 +82,8 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Locaties getoond in het wereldoverzicht van gnome-weer. Iedere waarde is een "
-"GVariant afkomstig van gweather_location_serialize()."
+"Locaties getoond in het wereldoverzicht van gnome-weather. Iedere waarde is "
+"een GVariant afkomstig van gweather_location_serialize()."
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -114,12 +114,12 @@ msgid "Places"
 msgstr "Plaatsen"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Uurlijks"
+msgid "_Hourly"
+msgstr "_Uurlijks"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Dagelijks"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Dagelijks"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -137,25 +137,21 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Over Weer"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Verversen"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Locatie selecteren"
-
-#: data/window.ui:100
+#: data/window.ui:39
 msgid "Welcome to Weather!"
 msgstr "Welkom bij Weer!"
 
-#: data/window.ui:101
+#: data/window.ui:40
 msgid "To get started, select a location."
 msgstr "Om te beginnen kiest u een plaats."
 
-#: data/window.ui:107
+#: data/window.ui:46
 msgid "Search for a city or country"
 msgstr "Naar een stad of land zoeken"
+
+#: data/window.ui:95
+msgid "Refresh"
+msgstr "Verversen"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -233,7 +229,7 @@ msgstr ""
 "Erwin Poeze\n"
 "Hannie Dumoleyn\n"
 "Nathan Follens <nfollens@gnome.org>\n"
-"Meer info over Gnome-NL http://nl.gnome.org/"
+"Meer info over GNOME-NL https://nl.gnome.org/"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -254,6 +250,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "Locatie selecteren"
 
 #~ msgid "A weather application"
 #~ msgstr "Een weertoepassing"
