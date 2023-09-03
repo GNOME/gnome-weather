@@ -9,21 +9,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gnome Weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-01-25 20:03+0000\n"
-"PO-Revision-Date: 2023-03-26 15:05+0200\n"
+"POT-Creation-Date: 2023-08-27 20:29+0000\n"
+"PO-Revision-Date: 2023-09-03 15:33+0200\n"
 "Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
-"Language-Team: Dutch <https://matrix.to/#/#nl:gnome.org>\n"
+"Language-Team: GNOME-NL <https://matrix.to/#/#nl:gnome.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:101
-#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Weer"
@@ -60,7 +60,7 @@ msgstr ""
 "de huidige weersomstandigheden te zien van de meest recent gezochte steden "
 "door gewoon de naam in te geven in het activiteitenoverzicht."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:251 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "Het GNOME-project"
 
@@ -82,8 +82,24 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Locaties getoond in het wereldoverzicht van gnome-weer. Iedere waarde is een "
-"GVariant afkomstig van gweather_location_serialize()."
+"Locaties getoond in het wereldoverzicht van gnome-weather. Iedere waarde is "
+"een GVariant afkomstig van gweather_location_serialize()."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "De breedte van het hoofdvenster."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "De hoogte van het hoofdvenster."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Venster gemaximaliseerd"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Of het venster gemaximaliseerd is."
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -137,19 +153,19 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Over Weer"
 
-#: data/window.ui:39
+#: data/window.ui:47
 msgid "Welcome to Weather!"
 msgstr "Welkom bij Weer!"
 
-#: data/window.ui:40
+#: data/window.ui:48
 msgid "To get started, select a location."
 msgstr "Om te beginnen kiest u een plaats."
 
-#: data/window.ui:46
+#: data/window.ui:54
 msgid "Search for a city or country"
 msgstr "Naar een stad of land zoeken"
 
-#: data/window.ui:92
+#: data/window.ui:76
 msgid "Refresh"
 msgstr "Verversen"
 
@@ -158,39 +174,39 @@ msgstr "Verversen"
 msgid "Feels like %.0f°"
 msgstr "Voelt aan als %.0f°"
 
-#: src/app/city.js:233
+#: src/app/city.js:234
 msgid "Updated just now."
 msgstr "Zojuist bijgewerkt."
 
-#: src/app/city.js:238
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d minuut geleden bijgewerkt."
 msgstr[1] "%d minuten geleden bijgewerkt."
 
-#: src/app/city.js:244
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d uur geleden bijgewerkt."
 msgstr[1] "%d uur geleden bijgewerkt."
 
-#: src/app/city.js:250
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d dag geleden bijgewerkt."
 msgstr[1] "%d dagen geleden bijgewerkt."
 
-#: src/app/city.js:256
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d week geleden bijgewerkt."
 msgstr[1] "%d weken geleden bijgewerkt."
 
-#: src/app/city.js:261
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -223,13 +239,13 @@ msgstr "Nu"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:166
+#: src/app/window.js:195
 msgid "translator-credits"
 msgstr ""
 "Erwin Poeze\n"
 "Hannie Dumoleyn\n"
 "Nathan Follens <nfollens@gnome.org>\n"
-"Meer info over GNOME-NL https://nl.gnome.org/"
+"Meer info over GNOME-NL https://nl.gnome.org"
 
 #: src/app/world.js:39
 msgid "World view"
