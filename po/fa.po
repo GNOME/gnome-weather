@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-07-29 04:58+0330\n"
+"POT-Creation-Date: 2023-08-27 20:29+0000\n"
+"PO-Revision-Date: 2023-09-06 23:44+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <>\n"
 "Language: fa\n"
@@ -127,11 +127,11 @@ msgstr "مکان‌ها"
 
 #: data/weather-widget.ui:92
 msgid "_Hourly"
-msgstr "سا-عتی"
+msgstr "_ساعتی"
 
 #: data/weather-widget.ui:124
 msgid "_Daily"
-msgstr "-روزانه"
+msgstr "_روزانه"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
