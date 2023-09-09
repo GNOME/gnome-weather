@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-09-02 08:43-0700\n"
+"POT-Creation-Date: 2023-09-02 15:44+0000\n"
+"PO-Revision-Date: 2023-09-09 15:30-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
@@ -84,6 +84,22 @@ msgstr ""
 "ਗਨੋਮ-ਮੌਸਮ ਦੀ ਸੰਸਾਰ ਝਲਕ ਵਿੱਚ ਟਿਕਾਣੇ ਵੇਖਾਏ ਜਾਂਦੇ ਹਨ। ਹਰ ਮੁੱਲ ਨੂੰ "
 "gweather_location_serialize() ਰਾਹੀਂ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।"
 
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "ਮੁੱਖ ਵਿੰਡੋ ਦੀ ਚੌੜਾਈ ਹੈ।"
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "ਮੁੱਖ ਵਿੰਡੋ ਦੀ ਉਚਾਈ ਹੈ।"
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "ਵਿੰਡੋ ਵੱਧੋ-ਵੱਧ ਕੀਤੀ"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "ਕੀ ਵਿੰਡੋ ਨੂੰ ਵੱਧੋ-ਵੱਧ ਕਰਨਾ ਹੈ ਜਾਂ ਨਹੀ ਹੈ।"
+
 #: data/city.ui:25
 msgid "Loading…"
 msgstr "...ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
@@ -113,17 +129,14 @@ msgid "Places"
 msgstr "ਥਾਵਾਂ"
 
 #: data/weather-widget.ui:92
-#| msgid "Hourly"
 msgid "_Hourly"
 msgstr "ਘੰਟੇਵਾਰ(_H)"
 
 #: data/weather-widget.ui:124
-#| msgid "Daily"
 msgid "_Daily"
 msgstr "ਰੋਜ਼ਾਨਾ(_D)"
 
 #: data/window.ui:6
-#| msgid "_Temperature Unit"
 msgid "Temperature Unit"
 msgstr "ਤਾਪਮਾਨ ਇਕਾਈ"
 
@@ -204,7 +217,6 @@ msgid "Daily Forecast"
 msgstr "ਰੋਜ਼ਾਨਾ ਭਵਿੱਖਬਾਣੀ"
 
 #: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
-#| msgid "Forecast not available"
 msgid "Forecast not Available"
 msgstr "ਭਵਿੱਖਬਾਣੀ ਮੌਜੂਦ ਨਹੀਂ ਹੈ"
 
@@ -218,7 +230,6 @@ msgid "Hourly Forecast"
 msgstr "ਘੰਟੇਵਾਰ ਭਵਿੱਖਬਾਣੀ"
 
 #: src/app/hourlyForecast.js:107
-#| msgid "New"
 msgid "Now"
 msgstr "ਹੁਣੇ"
 
