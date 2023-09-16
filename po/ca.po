@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-08-31 18:12+0100\n"
-"Last-Translator: maite guix <maite.guix@me.com>\n"
+"POT-Creation-Date: 2023-07-19 18:48+0000\n"
+"PO-Revision-Date: 2023-09-16 18:12+0100\n"
+"Last-Translator: Jordi Mas i Hernàndez <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -21,8 +21,8 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:73
-#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Meteorologia"
@@ -59,11 +59,12 @@ msgstr ""
 "les condicions actuals de les últimes ciutats que hàgiu cercat teclejant el "
 "seu nom al resum d'activitats."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "El projecte GNOME"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "Meteorologia;Predicció;"
@@ -84,6 +85,22 @@ msgid ""
 msgstr ""
 "La ubicació mostrada a la vista mundial del gnome-weather. Cada valor és un "
 "GVariant retornat per gweather_location_serialize()."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "L'amplada de la finestra principal."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "L'alçada de la finestra principal."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Finestra maximitzada"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Si la finestra està maximitzada o no."
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -114,12 +131,12 @@ msgid "Places"
 msgstr "Llocs"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "Per hores"
+msgid "_Hourly"
+msgstr "_Per hores"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
-msgstr "Diari"
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "_Diari"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -137,64 +154,60 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Quant al Meteorologia"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "Actualitza"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "Seleccioneu una ubicació"
-
-#: data/window.ui:100
+#: data/window.ui:47
 msgid "Welcome to Weather!"
 msgstr "Us donem la benvinguda al Meteorologia"
 
-#: data/window.ui:101
+#: data/window.ui:48
 msgid "To get started, select a location."
 msgstr "Per a començar, seleccioneu una ubicació."
 
-#: data/window.ui:107
+#: data/window.ui:54
 msgid "Search for a city or country"
 msgstr "Cerqueu una ciutat o país"
+
+#: data/window.ui:76
+msgid "Refresh"
+msgstr "Actualitza"
 
 #: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Sensació de %.0f°"
 
-#: src/app/city.js:233
+#: src/app/city.js:234
 msgid "Updated just now."
 msgstr "Actualitzat ara mateix."
 
-#: src/app/city.js:238
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Actualitzat fa %d minut."
 msgstr[1] "Actualitzat fa %d minuts."
 
-#: src/app/city.js:244
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Actualitzat fa %d hora."
 msgstr[1] "Actualitzat fa %d hores."
 
-#: src/app/city.js:250
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Actualitzat fa %d dia."
 msgstr[1] "Actualitzat fa %d dies."
 
-#: src/app/city.js:256
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Actualitzat fa %d setmana."
 msgstr[1] "Actualitzat fa %d setmanes."
 
-#: src/app/city.js:261
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -209,7 +222,8 @@ msgstr "Predicció diària"
 msgid "Forecast not Available"
 msgstr "La predicció està disponible"
 
-#. Translators: this is the time format for day and month name according to the current locale
+#. Translators: this is the time format for day and month name according to
+#. the current locale
 #: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%e %b"
@@ -227,7 +241,7 @@ msgstr "Ara"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:166
+#: src/app/window.js:195
 msgid "translator-credits"
 msgstr ""
 "Josep Sanchez Mesegue <papapep@gmx.com>,\n"
@@ -253,31 +267,3 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
-#~ msgid "A weather application"
-#~ msgstr "Un programa de meteorologia"
-
-#~ msgid "Automatic location"
-#~ msgstr "Ubicació automàtica"
-
-#~ msgid ""
-#~ "The automatic location is the value of automatic-location switch which "
-#~ "decides whether to fetch current location or not."
-#~ msgstr ""
-#~ "La ubicació automàtica és el valor del commutador de la ubicació "
-#~ "automàtica que decideix si s'ha de recollir la ubicació automàtica."
-
-#~ msgid "City view"
-#~ msgstr "Visualització de ciutat"
-
-#~ msgid "Automatic Location"
-#~ msgstr "Ubicació automàtica"
-
-#~ msgid "Locating…"
-#~ msgstr "S'està ubicant…"
-
-#~ msgid "Viewed Recently"
-#~ msgstr "Consultats recentment"
-
-#~ msgid "Current conditions"
-#~ msgstr "Condicions actuals"
