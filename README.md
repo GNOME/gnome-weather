@@ -8,7 +8,7 @@ Monitor the current weather conditions for your city, or anywhere in the world.
 
 **Report issues**: https://gitlab.gnome.org/GNOME/gnome-weather/issues/
 
-**Donate**: https://www.gnome.org/friends/
+**Donate**: https://www.gnome.org/donate/
 
 **Translate**: https://wiki.gnome.org/TranslationProject
 

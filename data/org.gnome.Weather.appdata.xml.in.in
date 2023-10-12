@@ -39,6 +39,9 @@
   <launchable type="desktop-id">@app_id@.desktop</launchable>
   <url type="homepage">https://wiki.gnome.org/Apps/Weather</url>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-weather/issues</url>
+  <url type="donation">https://www.gnome.org/donate/</url>
+  <url type="translate">https://l10n.gnome.org/module/gnome-weather/</url>
+  <url type="vcs-browser">https://gitlab.gnome.org/GNOME/gnome-weather</url>
   <update_contact>christopherdavis_at_gnome.org</update_contact>
   <translation type="gettext">org.gnome.Weather</translation>
   <provides>
@@ -47,144 +50,150 @@
   </provides>
   <releases>
     <release date="2023-09-18" version="45.0">
-      <p>Weather 45.0 comes with a few fixes:</p>
-      <ul>
-        <li>The &quot;Feels Like&quot; temperature label is now hidden when it matches the actual temperature (Felipe Kinoshita)</li>
-        <li>By default the window is now large enough to see the thermometer widgets in the Daily view (Jean-François Fortin Tam)</li>
-      </ul>
-      <p>This version brings translation updates for the following locales:</p>
-      <ul>
-        <li>Basque (Asier Sarasua Garmendia)</li>
-        <li>Belarusian (Vasil Pupkin)</li>
-        <li>Bulgarian (Alexander Shopov)</li>
-        <li>Catalan (Jordi Mas)</li>
-        <li>Chinese (China) (Boyuan Yang, Luming Zh)</li>
-        <li>Czech (Daniel Rusek)</li>
-        <li>Danish (Alan Mortensen)</li>
-        <li>Dutch (Nathan Follens)</li>
-        <li>English (United Kingdom) (Bruce Cowan)</li>
-        <li>Finnish (Jiri Grönroos)</li>
-        <li>French (Irénée THIRION)</li>
-        <li>Friulian (Fabio Tomat)</li>
-        <li>Galician (Fran Dieguez)</li>
-        <li>Georgian (Ekaterine Papava)</li>
-        <li>German (Jürgen Benvenuti)</li>
-        <li>Greek, Modern (1453-) (Efstathios Iosifidis)</li>
-        <li>Hebrew (Yosef Or Boczko)</li>
-        <li>Hungarian (Balázs Úr)</li>
-        <li>Icelandic (Sveinn í Felli)</li>
-        <li>Indonesian (Kukuh Syafaat)</li>
-        <li>Italian (Gianvito Cavasoli, Milo Casagrande)</li>
-        <li>Kazakh (Baurzhan Muftakhidinov)</li>
-        <li>Korean (DaeHyun Sung)</li>
-        <li>Latvian (Rūdolfs Mazurs)</li>
-        <li>Lithuanian (Aurimas Černius)</li>
-        <li>Occitan (post 1500) (Quentin PAGÈS)</li>
-        <li>Panjabi (A S Alam)</li>
-        <li>Persian (Danial Behzadi)</li>
-        <li>Polish (Piotr Drąg)</li>
-        <li>Portuguese (Hugo Carvalho)</li>
-        <li>Portuguese (Brazil) (Leônidas Araújo)</li>
-        <li>Romanian (Daniel Șerbănescu)</li>
-        <li>Russian (Artur So)</li>
-        <li>Slovak (Dušan Kazik)</li>
-        <li>Slovenian (Matej Urbančič)</li>
-        <li>Spanish (Daniel Mustieles)</li>
-        <li>Swedish (Anders Jonsson)</li>
-        <li>Turkish (Sabri Ünal)</li>
-        <li>Ukrainian (Yuri Chornoivan)</li>
-        <li>Vietnamese (Ngọc Quân Trần)</li>
-      </ul>
+      <description>
+        <p>Weather 45.0 comes with a few fixes:</p>
+        <ul>
+          <li>The &quot;Feels Like&quot; temperature label is now hidden when it matches the actual temperature (Felipe Kinoshita)</li>
+          <li>By default the window is now large enough to see the thermometer widgets in the Daily view (Jean-François Fortin Tam)</li>
+        </ul>
+        <p>This version brings translation updates for the following locales:</p>
+        <ul>
+          <li>Basque (Asier Sarasua Garmendia)</li>
+          <li>Belarusian (Vasil Pupkin)</li>
+          <li>Bulgarian (Alexander Shopov)</li>
+          <li>Catalan (Jordi Mas)</li>
+          <li>Chinese (China) (Boyuan Yang, Luming Zh)</li>
+          <li>Czech (Daniel Rusek)</li>
+          <li>Danish (Alan Mortensen)</li>
+          <li>Dutch (Nathan Follens)</li>
+          <li>English (United Kingdom) (Bruce Cowan)</li>
+          <li>Finnish (Jiri Grönroos)</li>
+          <li>French (Irénée THIRION)</li>
+          <li>Friulian (Fabio Tomat)</li>
+          <li>Galician (Fran Dieguez)</li>
+          <li>Georgian (Ekaterine Papava)</li>
+          <li>German (Jürgen Benvenuti)</li>
+          <li>Greek, Modern (1453-) (Efstathios Iosifidis)</li>
+          <li>Hebrew (Yosef Or Boczko)</li>
+          <li>Hungarian (Balázs Úr)</li>
+          <li>Icelandic (Sveinn í Felli)</li>
+          <li>Indonesian (Kukuh Syafaat)</li>
+          <li>Italian (Gianvito Cavasoli, Milo Casagrande)</li>
+          <li>Kazakh (Baurzhan Muftakhidinov)</li>
+          <li>Korean (DaeHyun Sung)</li>
+          <li>Latvian (Rūdolfs Mazurs)</li>
+          <li>Lithuanian (Aurimas Černius)</li>
+          <li>Occitan (post 1500) (Quentin PAGÈS)</li>
+          <li>Panjabi (A S Alam)</li>
+          <li>Persian (Danial Behzadi)</li>
+          <li>Polish (Piotr Drąg)</li>
+          <li>Portuguese (Hugo Carvalho)</li>
+          <li>Portuguese (Brazil) (Leônidas Araújo)</li>
+          <li>Romanian (Daniel Șerbănescu)</li>
+          <li>Russian (Artur So)</li>
+          <li>Slovak (Dušan Kazik)</li>
+          <li>Slovenian (Matej Urbančič)</li>
+          <li>Spanish (Daniel Mustieles)</li>
+          <li>Swedish (Anders Jonsson)</li>
+          <li>Turkish (Sabri Ünal)</li>
+          <li>Ukrainian (Yuri Chornoivan)</li>
+          <li>Vietnamese (Ngọc Quân Trần)</li>
+        </ul>
+      </description>
     </release>
     <release date="2023-03-19" version="44.0">
-      <p>Weather 44.0 comes with a slight UI refresh, featuring flat headers that give the app a unified look, and a smooth temperature graph.</p>
-      <p>This version brings translation updates for the following locales:</p>
-      <ul>
-        <li>Basque (Asier Sarasua Garmendia)</li>
-        <li>Belarusian (Vasil Pupkin)</li>
-        <li>Bokmål, Norwegian (John Erling Blad)</li>
-        <li>Bulgarian (Alexander Shopov)</li>
-        <li>Czech (Marek Černocký)</li>
-        <li>Danish (Alan Mortensen)</li>
-        <li>Dutch (Nathan Follens)</li>
-        <li>Finnish (Jiri Grönroos)</li>
-        <li>French (Charles Monzat)</li>
-        <li>Galician (Fran Dieguez)</li>
-        <li>Georgian (Ekaterine Papava)</li>
-        <li>German (Jürgen Benvenuti)</li>
-        <li>Greek, Modern (1453-) (Efstathios Iosifidis)</li>
-        <li>Hebrew (Yosef Or Boczko)</li>
-        <li>Hindi (Hemish)</li>
-        <li>Hungarian (Balázs Úr)</li>
-        <li>Icelandic (Sveinn í Felli)</li>
-        <li>Indonesian (Kukuh Syafaat)</li>
-        <li>Korean (DaeHyun Sung)</li>
-        <li>Lithuanian (Aurimas Černius)</li>
-        <li>Occitan (post 1500) (Quentin PAGÈS)</li>
-        <li>Persian (MohammadSaleh Kamyab)</li>
-        <li>Polish (Piotr Drąg)</li>
-        <li>Portuguese (Hugo Carvalho)</li>
-        <li>Russian (Aleksandr Melman)</li>
-        <li>Serbian (Марко Костић)</li>
-        <li>Slovak (Dušan Kazik)</li>
-        <li>Slovenian (Matej Urbančič)</li>
-        <li>Spanish (Daniel)</li>
-        <li>Swedish (Anders Jonsson)</li>
-        <li>Turkish (Sabri Ünal)</li>
-        <li>Ukrainian (Yuri Chornoivan)</li>
-      </ul>
+      <description>
+        <p>Weather 44.0 comes with a slight UI refresh, featuring flat headers that give the app a unified look, and a smooth temperature graph.</p>
+        <p>This version brings translation updates for the following locales:</p>
+        <ul>
+          <li>Basque (Asier Sarasua Garmendia)</li>
+          <li>Belarusian (Vasil Pupkin)</li>
+          <li>Bokmål, Norwegian (John Erling Blad)</li>
+          <li>Bulgarian (Alexander Shopov)</li>
+          <li>Czech (Marek Černocký)</li>
+          <li>Danish (Alan Mortensen)</li>
+          <li>Dutch (Nathan Follens)</li>
+          <li>Finnish (Jiri Grönroos)</li>
+          <li>French (Charles Monzat)</li>
+          <li>Galician (Fran Dieguez)</li>
+          <li>Georgian (Ekaterine Papava)</li>
+          <li>German (Jürgen Benvenuti)</li>
+          <li>Greek, Modern (1453-) (Efstathios Iosifidis)</li>
+          <li>Hebrew (Yosef Or Boczko)</li>
+          <li>Hindi (Hemish)</li>
+          <li>Hungarian (Balázs Úr)</li>
+          <li>Icelandic (Sveinn í Felli)</li>
+          <li>Indonesian (Kukuh Syafaat)</li>
+          <li>Korean (DaeHyun Sung)</li>
+          <li>Lithuanian (Aurimas Černius)</li>
+          <li>Occitan (post 1500) (Quentin PAGÈS)</li>
+          <li>Persian (MohammadSaleh Kamyab)</li>
+          <li>Polish (Piotr Drąg)</li>
+          <li>Portuguese (Hugo Carvalho)</li>
+          <li>Russian (Aleksandr Melman)</li>
+          <li>Serbian (Марко Костић)</li>
+          <li>Slovak (Dušan Kazik)</li>
+          <li>Slovenian (Matej Urbančič)</li>
+          <li>Spanish (Daniel)</li>
+          <li>Swedish (Anders Jonsson)</li>
+          <li>Turkish (Sabri Ünal)</li>
+          <li>Ukrainian (Yuri Chornoivan)</li>
+        </ul>
+      </description>
     </release>
     <release date="2022-09-18" version="43.0">
-      <p>GNOME Weather 43.0 brings many improvements:</p>
-      <ul>
-        <li>The thermometer widget in the daily view has received a round of polish,
-        with temperature labels sticking to the thermometer as it scales.</li>
-        <li>The temperature choice in the primary menu is now at the top level.</li>
-        <li>Views now transitions smoothly with a crossfade.</li>
-        <li>We use a new adaptive About window.</li>
-      </ul>
-      <p>It also comes with up-to-date translations for the following locales:</p>
-      <ul>
-        <li>Abkhazian</li>
-        <li>Basque</li>
-        <li>Bulgarian</li>
-        <li>Catalan</li>
-        <li>Chinese (China)</li>
-        <li>Chinese (Taiwan)</li>
-        <li>Croatian</li>
-        <li>Czech</li>
-        <li>Danish</li>
-        <li>Dutch</li>
-        <li>Finnish</li>
-        <li>French</li>
-        <li>Friulian</li>
-        <li>Galician</li>
-        <li>Georgian</li>
-        <li>German</li>
-        <li>Greek, Modern (1453-)</li>
-        <li>Hebrew</li>
-        <li>Hungarian</li>
-        <li>Icelandic</li>
-        <li>Indonesian</li>
-        <li>Italian</li>
-        <li>Kazakh</li>
-        <li>Korean</li>
-        <li>Latvian</li>
-        <li>Lithuanian</li>
-        <li>Nepali</li>
-        <li>Occitan (post 1500)</li>
-        <li>Persian</li>
-        <li>Polish</li>
-        <li>Portuguese</li>
-        <li>Portuguese (Brazil)</li>
-        <li>Russian</li>
-        <li>Serbian</li>
-        <li>Slovenian</li>
-        <li>Spanish</li>
-        <li>Swedish</li>
-        <li>Turkish</li>
-        <li>Ukrainian</li>
-      </ul>
+      <description>
+        <p>GNOME Weather 43.0 brings many improvements:</p>
+        <ul>
+          <li>The thermometer widget in the daily view has received a round of polish,
+          with temperature labels sticking to the thermometer as it scales.</li>
+          <li>The temperature choice in the primary menu is now at the top level.</li>
+          <li>Views now transitions smoothly with a crossfade.</li>
+          <li>We use a new adaptive About window.</li>
+        </ul>
+        <p>It also comes with up-to-date translations for the following locales:</p>
+        <ul>
+          <li>Abkhazian</li>
+          <li>Basque</li>
+          <li>Bulgarian</li>
+          <li>Catalan</li>
+          <li>Chinese (China)</li>
+          <li>Chinese (Taiwan)</li>
+          <li>Croatian</li>
+          <li>Czech</li>
+          <li>Danish</li>
+          <li>Dutch</li>
+          <li>Finnish</li>
+          <li>French</li>
+          <li>Friulian</li>
+          <li>Galician</li>
+          <li>Georgian</li>
+          <li>German</li>
+          <li>Greek, Modern (1453-)</li>
+          <li>Hebrew</li>
+          <li>Hungarian</li>
+          <li>Icelandic</li>
+          <li>Indonesian</li>
+          <li>Italian</li>
+          <li>Kazakh</li>
+          <li>Korean</li>
+          <li>Latvian</li>
+          <li>Lithuanian</li>
+          <li>Nepali</li>
+          <li>Occitan (post 1500)</li>
+          <li>Persian</li>
+          <li>Polish</li>
+          <li>Portuguese</li>
+          <li>Portuguese (Brazil)</li>
+          <li>Russian</li>
+          <li>Serbian</li>
+          <li>Slovenian</li>
+          <li>Spanish</li>
+          <li>Swedish</li>
+          <li>Turkish</li>
+          <li>Ukrainian</li>
+        </ul>
+      </description>
     </release>
     <release date="2022-03-20" version="42.0">
       <description>
@@ -336,18 +345,17 @@
     <release date="2019-03-11" version="3.32.0"/>
   </releases>
 
+  <!-- developer_name tag deprecated with Appstream 1.0 -->
   <developer_name>The GNOME Project</developer_name>
-
-  <url type="donation">http://www.gnome.org/friends/</url>
-
-  <url type="translate">https://wiki.gnome.org/TranslationProject</url>
+  <developer id="gnome.org">
+    <name>The GNOME Project</name>
+  </developer>
 
   <content_rating type="oars-1.1">
     <content_attribute id="social-info">mild</content_attribute>
   </content_rating>
 
   <custom>
-    <value key="Purism::form_factor">workstation</value>
     <value key="Purism::form_factor">mobile</value>
   </custom>
 </component>
