@@ -18,7 +18,10 @@ dependency('gweather4', version: '>= 3.90.0')
 # Profiles
 if get_option('profile') == 'development'
   profile = 'Devel'
-  vcs_tag = run_command('git', 'rev-parse', '--short', 'HEAD').stdout().strip()
+  vcs_tag = run_command(
+    ['git', 'rev-parse', '--short', 'HEAD'],
+    check: true
+  ).stdout().strip()
   if vcs_tag == ''
     version_suffix = '-devel'
   else
