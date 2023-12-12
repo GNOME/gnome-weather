@@ -1,214 +1,248 @@
 # Thai translation for gnome-weather.
 # Copyright (C) 2013-2016 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-weather package.
+# Akom Chotiphantawanon <knight2000@gmail.com>, 2013-2016, 2020.
 #
-# Akom Chotiphantawanon <knight2000@gmail.com>, 2013-2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=gnome-"
-"weather&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-03-16 11:16+0000\n"
-"PO-Revision-Date: 2016-05-23 16:06+0700\n"
-"Last-Translator: Akom Chotiphantawanon <knight2000@gmail.com>\n"
-"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
+"POT-Creation-Date: 2023-09-18 22:30+0000\n"
+"PO-Revision-Date: 2023-12-13 03:23+0700\n"
+"Last-Translator: knight2000 <knight2000@gmail.com>\n"
+"Language-Team: ไทย <thai-l10n@googlegroups.com>\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Poedit 3.4.1\n"
 
-#: ../data/app-menu.ui.h:1
-msgid "_New"
-msgstr "ใ_หม่"
-
-#: ../data/app-menu.ui.h:2
-msgid "Temperature unit"
-msgstr "หน่วยอุณหภูมิ"
-
-#: ../data/app-menu.ui.h:3
-msgid "Celsius"
-msgstr "เซลเซียส"
-
-#: ../data/app-menu.ui.h:4
-msgid "Fahrenheit"
-msgstr "ฟาเรนไฮต์"
-
-#: ../data/app-menu.ui.h:5
-msgid "About"
-msgstr "เกี่ยวกับ"
-
-#: ../data/app-menu.ui.h:6
-msgid "Quit"
-msgstr "_ออก"
-
-#: ../data/city.ui.h:1
-msgid "City view"
-msgstr "มุมมองเมือง"
-
-#: ../data/city.ui.h:2
-msgid "Loading…"
-msgstr "กำลังโหลด…"
-
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:1
-#: ../data/org.gnome.Weather.Application.desktop.in.h:1 ../src/app/main.js:52
-#: ../src/app/window.js:226 ../src/service/main.js:49
+#: data/org.gnome.Weather.appdata.xml.in.in:5 data/org.gnome.Weather.desktop.in.in:4
+#: data/window.ui:85 src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: src/service/main.js:49
 msgid "Weather"
 msgstr "รายงานอากาศ"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:2
-#: ../data/org.gnome.Weather.Application.desktop.in.h:2
+#: data/org.gnome.Weather.appdata.xml.in.in:6 data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
 msgstr "แสดงสภาพอากาศและการพยากรณ์"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
+"A small application that allows you to monitor the current weather conditions for your "
+"city, or anywhere in the world."
 msgstr "โปรแกรมเล็กๆ ที่ช่วยคุณติดตามสภาพอากาศปัจจุบันของเมืองของคุณ หรือที่ใดๆ ในโลก"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:4
+#: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
-"It provides access to detailed forecasts, up to 7 days, with hourly details "
-"for the current and next day, using various internet services."
+"It provides access to detailed forecasts, up to 7 days, with hourly details for the "
+"current and next day, using various internet services."
 msgstr ""
-"คุณจะสามารถเข้าถึงข้อมูลพยากรณ์อากาศ 7 วันข้างหน้า "
-"พร้อมรายละเอียดเป็นรายชั่วโมงสำหรับวันปัจจุบันและวันถัดไป จากบริการต่างๆ "
-"หลายแหล่งในอินเทอร์เน็ต"
+"คุณจะสามารถเข้าถึงข้อมูลพยากรณ์อากาศ 7 วันข้างหน้า พร้อมรายละเอียดเป็นรายชั่วโมงสำหรับวันปัจจุบันและวันถัดไป "
+"จากบริการต่างๆ หลายแหล่งในอินเทอร์เน็ต"
 
-#: ../data/org.gnome.Weather.Application.appdata.xml.in.h:5
+#: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you see the "
-"current conditions of the most recently searched cities by just typing its "
-"name in the Activities Overview."
+"It also optionally integrates with the GNOME Shell, allowing you to see the current "
+"conditions of the most recently searched cities by just typing the name in the "
+"Activities Overview."
 msgstr ""
 "นอกจากนี้ยังสามารถเชื่อมรวมกับเชลล์ GNOME ทำให้คุณเห็นสภาพปัจจุบันของเมืองที่ค้นหาล่าสุด "
 "โดยเพียงพิมพ์ชื่อเมืองในภาพรวมกิจกรรม"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:3
+#: data/org.gnome.Weather.appdata.xml.in.in:339 src/app/window.js:198
+msgid "The GNOME Project"
+msgstr "โครงการ GNOME"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "อากาศ;พยากรณ์;"
 
-#: ../data/org.gnome.Weather.Application.desktop.in.h:4
+#: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
 msgstr "แสดงข้อมูลสภาพอากาศสำหรับพื้นที่ที่คุณอยู่"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:1
+#: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
 msgstr "เมืองที่ตั้งค่าไว้ให้แสดงสภาพอากาศ"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:2
+#: data/org.gnome.Weather.gschema.xml:7
 msgid ""
-"The locations shown in the world view of gnome-weather. Each value is a "
-"GVariant returned by gweather_location_serialize()."
+"The locations shown in the world view of gnome-weather. Each value is a GVariant "
+"returned by gweather_location_serialize()."
 msgstr ""
 "ตำแหน่งที่ตั้งที่แสดงในมุมมองโลกของ gnome-weather แต่ละค่าเป็น GVariant ที่คืนค่ามาจาก "
 "gweather_location_serialize()"
 
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:3
-msgid "Automatic location"
-msgstr "ตำแหน่งที่ตั้งอัตโนมัติ"
-
-#: ../data/org.gnome.Weather.Application.gschema.xml.h:4
-msgid ""
-"The automatic location is the value of automatic-location switch which "
-"decides whether to fetch current location or not."
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
 msgstr ""
-"ตำแหน่งที่ตั้งอัตโนมัติ เป็นค่าของตัวเลือก automatic-location "
-"ซึ่งกำหนดว่าจะดึงตำแหน่งที่ตั้งปัจจุบันหรือไม่"
 
-#: ../data/places-popover.ui.h:1
-msgid "Automatic Location"
-msgstr "ตำแหน่งที่ตั้งอัตโนมัติ"
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr ""
 
-#: ../data/places-popover.ui.h:2
-msgid "Locating…"
-msgstr "กำลังหาตำแหน่ง…"
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr ""
 
-#: ../data/places-popover.ui.h:3
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr ""
+
+#: data/city.ui:25
+msgid "Loading…"
+msgstr "กำลังโหลด…"
+
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "กลางคืน"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "เช้า"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "บ่าย"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "เย็น"
+
+#: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
 msgstr "ค้นหาเมือง"
 
-#: ../data/places-popover.ui.h:4
-msgid "Viewed Recently"
-msgstr "ที่ดูล่าสุด"
-
-#: ../data/weather-widget.ui.h:1
-msgid "Current conditions"
-msgstr "สภาพปัจจุบัน"
-
-#: ../data/weather-widget.ui.h:2
-msgid "Today"
-msgstr "วันนี้"
-
-#: ../data/weather-widget.ui.h:3
-msgid "Tomorrow"
-msgstr "พรุ่งนี้"
-
-#: ../data/window.ui.h:1
+#: data/weather-widget.ui:42
 msgid "Places"
 msgstr "สถานที่"
 
-#: ../data/window.ui.h:2
+#: data/weather-widget.ui:92
+#, fuzzy
+#| msgid "Hourly"
+msgid "_Hourly"
+msgstr "รายชั่วโมง"
+
+#: data/weather-widget.ui:124
+#, fuzzy
+#| msgid "Daily"
+msgid "_Daily"
+msgstr "รายวัน"
+
+#: data/window.ui:6
+#, fuzzy
+#| msgid "_Temperature Unit"
+msgid "Temperature Unit"
+msgstr "_หน่วยอุณหภูมิ"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "เ_ซลเซียส"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_ฟาเรนไฮต์"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "เ_กี่ยวกับ รายงานอากาศ"
+
+#: data/window.ui:47
+msgid "Welcome to Weather!"
+msgstr "ยินดีต้อนรับสู่รายงานอากาศ!"
+
+#: data/window.ui:48
+msgid "To get started, select a location."
+msgstr "เลือกที่ตั้งเพื่อเริ่มใช้งาน"
+
+#: data/window.ui:54
+msgid "Search for a city or country"
+msgstr "ค้นหาเมืองหรือประเทศ"
+
+#: data/window.ui:76
 msgid "Refresh"
 msgstr "เรียกใหม่"
 
-#: ../data/window.ui.h:3
-msgid "Search for a location"
-msgstr "ค้นหาตำแหน่งที่ตั้ง"
+#: src/app/city.js:203
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "รู้สึกเหมือน %.0f°"
 
-#: ../data/window.ui.h:4
-msgid "To see weather information, enter the name of a city."
-msgstr "ป้อนชื่อเมืองเพื่อดูข้อมูลสภาพอากาศ"
+#: src/app/city.js:234
+msgid "Updated just now."
+msgstr "เมื่อสักครู่ปรับข้อมูลแล้ว"
 
-#: ../src/app/forecast.js:37
-msgid "Forecast"
-msgstr "การพยากรณ์"
+#: src/app/city.js:239
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "%d นาทีก่อนปรับข้อมูลแล้ว"
 
-#: ../src/app/forecast.js:111
-msgid "Forecast not available"
+#: src/app/city.js:245
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "%d ชั่วโมงก่อนปรับข้อมูลแล้ว"
+
+#: src/app/city.js:251
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "%d วันก่อนปรับข้อมูลแล้ว"
+
+#: src/app/city.js:257
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "%d สัปดาห์ก่อนปรับข้อมูลแล้ว"
+
+#: src/app/city.js:262
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "Updated %d months ago."
+msgstr[0] "%d เดือนก่อนปรับข้อมูลแล้ว"
+
+#: src/app/dailyForecast.js:36
+msgid "Daily Forecast"
+msgstr "การพยากรณ์รายวัน"
+
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+msgid "Forecast not Available"
 msgstr "ไม่มีการพยากรณ์"
 
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:219
+msgid "%b %e"
+msgstr "%e %b"
+
+#: src/app/hourlyForecast.js:41
+msgid "Hourly Forecast"
+msgstr "การพยากรณ์รายชั่วโมง"
+
+#: src/app/hourlyForecast.js:107
+msgid "Now"
+msgstr "ตอนนี้"
+
 #. Translators: this is a time format without date used for AM/PM
-#: ../src/app/forecast.js:127
+#: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#. Translators: this is a time format without date used for 24h mode
-#: ../src/app/forecast.js:130
-msgid "%R"
-msgstr "%R"
-
-#: ../src/app/weeklyForecast.js:36
-msgid "Weekly Forecast"
-msgstr "การพยากรณ์รายสัปดาห์"
-
-#. Translators: this is the time format for full weekday name according to the current locale
-#: ../src/app/weeklyForecast.js:121
-msgid "%A"
-msgstr "%A"
-
-#: ../src/app/window.js:115
-msgid "Select Location"
-msgstr "เลือกตำแหน่งที่ตั้ง"
-
-#: ../src/app/window.js:225
+#: src/app/window.js:195
 msgid "translator-credits"
 msgstr "Akom Chotiphantawanon"
 
-#: ../src/app/window.js:227
-msgid "A weather application"
-msgstr "โปรแกรมรายงานอากาศ"
-
-#: ../src/app/world.js:39
+#: src/app/world.js:39
 msgid "World view"
 msgstr "มุมมองโลก"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: ../src/misc/util.js:159
+#: src/misc/util.js:103
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -216,16 +250,76 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: ../src/service/searchProvider.js:183
+#: src/service/searchProvider.js:182
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
+#~ msgid "Automatic location"
+#~ msgstr "ตำแหน่งที่ตั้งอัตโนมัติ"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which decides "
+#~ "whether to fetch current location or not."
+#~ msgstr ""
+#~ "ตำแหน่งที่ตั้งอัตโนมัติ เป็นค่าของตัวเลือก automatic-location ซึ่งกำหนดว่าจะดึงตำแหน่งที่ตั้งปัจจุบันหรือไม่"
+
+#~ msgid "City view"
+#~ msgstr "มุมมองเมือง"
+
+#~ msgid "Automatic Location"
+#~ msgstr "ตำแหน่งที่ตั้งอัตโนมัติ"
+
+#~ msgid "Locating…"
+#~ msgstr "กำลังหาตำแหน่ง…"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "ที่ดูล่าสุด"
+
+#~ msgid "Current conditions"
+#~ msgstr "สภาพปัจจุบัน"
+
+#~ msgid "Search for a location"
+#~ msgstr "ค้นหาตำแหน่งที่ตั้ง"
+
+#~ msgid "To see weather information, enter the name of a city."
+#~ msgstr "ป้อนชื่อเมืองเพื่อดูข้อมูลสภาพอากาศ"
+
+#~ msgid "%e %b"
+#~ msgstr "%e %b"
+
+#~ msgid "Select Location"
+#~ msgstr "เลือกตำแหน่งที่ตั้ง"
+
+#~ msgid "A weather application"
+#~ msgstr "โปรแกรมรายงานอากาศ"
+
+#~ msgid "Today"
+#~ msgstr "วันนี้"
+
+#~ msgid "Tomorrow"
+#~ msgstr "พรุ่งนี้"
+
+#~ msgid "Forecast"
+#~ msgstr "การพยากรณ์"
+
+#~ msgid "%R"
+#~ msgstr "%R"
+
+#~ msgid "%A"
+#~ msgstr "%A"
+
+#~ msgid "_New"
+#~ msgstr "ใ_หม่"
+
+#~ msgid "About"
+#~ msgstr "เกี่ยวกับ"
+
+#~ msgid "Quit"
+#~ msgstr "_ออก"
+
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
-
-#~ msgid "Detailed forecast"
-#~ msgstr "รายละเอียดการพยากรณ์"
 
 #~ msgid "Select All"
 #~ msgstr "เลือกทั้งหมด"
@@ -235,9 +329,6 @@ msgstr "%s, %s"
 
 #~ msgid "Click on locations to select them"
 #~ msgstr "คลิกตำแหน่งเพื่อเลือก"
-
-#~ msgid "New"
-#~ msgstr "ใหม่"
 
 #~ msgid "Back"
 #~ msgstr "กลับ"
@@ -264,14 +355,8 @@ msgstr "%s, %s"
 #~ msgid_plural "%d selected"
 #~ msgstr[0] "เลือกอยู่ %d รายการ"
 
-#~ msgid "World Weather"
-#~ msgstr "สภาพอากาศโลก"
-
 #~ msgid "Monday night"
 #~ msgstr "คืนวันจันทร์"
-
-#~ msgid "Monday morning"
-#~ msgstr "เช้าวันจันทร์"
 
 #~ msgid "Monday afternoon"
 #~ msgstr "บ่ายวันจันทร์"
@@ -351,17 +436,8 @@ msgstr "%s, %s"
 #~ msgid "Sunday evening"
 #~ msgstr "เย็นวันอาทิตย์"
 
-#~ msgid "Tonight"
-#~ msgstr "คืนนี้"
-
 #~ msgid "This morning"
 #~ msgstr "เช้านี้"
-
-#~ msgid "This afternoon"
-#~ msgstr "บ่ายนี้"
-
-#~ msgid "This evening"
-#~ msgstr "เย็นนี้"
 
 #~ msgid "Tomorrow night"
 #~ msgstr "คืนพรุ่งนี้"
@@ -383,6 +459,3 @@ msgstr "%s, %s"
 
 #~ msgid "label"
 #~ msgstr "ป้ายชื่อ"
-
-#~ msgid "About Weather"
-#~ msgstr "เกี่ยวกับ รายงานอากาศ"
