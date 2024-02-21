@@ -1,19 +1,19 @@
 # Turkish translation for gnome-weather.
-# Copyright (C) 2013-2023 gnome-weather's COPYRIGHT HOLDER
+# Copyright (C) 2013-2024 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 #
 # Gökhan Gurbetoğlu <ggurbet@gmail.com>, 2013.
 # Muhammet Kara <muhammetk@gmail.com>, 2014.
 # Necdet Yücel <necdetyucel@gmail.com>, 2015.
 # Furkan Ahmet Kara <furkanahmetkara.fk@gmail.com>, 2017.
-# Sabri Ünal <libreajans@gmail.com>, 2020, 2021, 2023.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2018-2023.
+# Sabri Ünal <libreajans@gmail.com>, 2020, 2021, 2023, 2024.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2018-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
+"POT-Creation-Date: 2023-10-24 03:56+0000\n"
 "PO-Revision-Date: 2023-07-29 23:09+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <takim@gnome.org.tr>\n"
@@ -63,7 +63,7 @@ msgstr ""
 "son aranan şehirlerin yalnızca adını girerek geçerli hava durumlarını "
 "görmenizi sağlar."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#: data/org.gnome.Weather.appdata.xml.in.in:339 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "GNOME Projesi"
 
