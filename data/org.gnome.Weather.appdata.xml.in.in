@@ -37,7 +37,8 @@
     </screenshot>
   </screenshots>
   <launchable type="desktop-id">@app_id@.desktop</launchable>
-  <url type="homepage">https://wiki.gnome.org/Apps/Weather</url>
+  <url type="homepage">https://apps.gnome.org/Weather/</url>
+  <url type="contribute">https://welcome.gnome.org/app/Weather/</url>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/gnome-weather/issues</url>
   <url type="donation">https://www.gnome.org/donate/</url>
   <url type="translate">https://l10n.gnome.org/module/gnome-weather/</url>

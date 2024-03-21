@@ -4,13 +4,13 @@ Monitor the current weather conditions for your city, or anywhere in the world.
 
 ## Useful links
 
-**Homepage**: https://wiki.gnome.org/Apps/Weather
+**Homepage**: https://apps.gnome.org/Weather/
 
 **Report issues**: https://gitlab.gnome.org/GNOME/gnome-weather/issues/
 
 **Donate**: https://www.gnome.org/donate/
 
-**Translate**: https://wiki.gnome.org/TranslationProject
+**Translate**: https://l10n.gnome.org/module/gnome-weather/
 
 ## Installation
 

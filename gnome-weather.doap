@@ -12,7 +12,7 @@
     access updated forecasts provided by various internet services.
   </description>
 
-  <homepage rdf:resource="https://wiki.gnome.org/Apps/Weather" />
+  <homepage rdf:resource="https://apps.gnome.org/Weather/" />
   <download-page rdf:resource="http://download.gnome.org/sources/gnome-weather/" />
   <bug-database rdf:resource="https://gitlab.gnome.org/GNOME/gnome-weather/issues/" />
   <category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
