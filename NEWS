@@ -1,3 +1,20 @@
+46.0
+=======
+Weather 46.0 comes with a few fixes:
+* #382 Incorrect/missing URLs in app metadata (Maximiliano Sandoval, Sabri Ünal)
+
+* Translation updates:
+  - Basque (Asier Sarasua Garmendia)
+  - Bokmål, Norwegian (Brage Fuglseth)
+  - English (United Kingdom) (Bruce Cowan)
+  - Esperanto (Kristjan SCHMIDT)
+  - Latvian (Rūdolfs Mazurs)
+  - Portuguese (Brazil) (Rafael Fontenelle)
+  - Serbian (Марко Костић)
+  - Tamil (அருள்)
+  - Thai (Aefgh Threenine)
+  - Turkish (Sabri Ünal)
+
 45.0
 =======
 Weather 45.0 comes with a few fixes:

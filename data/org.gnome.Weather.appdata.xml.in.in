@@ -50,6 +50,27 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2024-03-21" version="46.0">
+      <description>
+        <p>Weather 46.0 comes with a few fixes:</p>
+        <ul>
+          <li>#382 Incorrect/missing URLs in app metadata (Maximiliano Sandoval, Sabri Ünal)</li>
+        </ul>
+        <p>This version brings translation updates for the following locales:</p>
+        <ul>
+          <li>Basque (Asier Sarasua Garmendia)</li>
+          <li>Bokmål, Norwegian (Brage Fuglseth)</li>
+          <li>English (United Kingdom) (Bruce Cowan)</li>
+          <li>Esperanto (Kristjan SCHMIDT)</li>
+          <li>Latvian (Rūdolfs Mazurs)</li>>
+          <li>Portuguese (Brazil) (Rafael Fontenelle)</li>
+          <li>Serbian (Марко Костић)</li>
+          <li>Tamil (அருள்)</li>
+          <li>Thai (Aefgh Threenine)</li>
+          <li>Turkish (Sabri Ünal)</li>
+        </ul>
+      </description>
+    </release>
     <release date="2023-09-18" version="45.0">
       <description>
         <p>Weather 45.0 comes with a few fixes:</p>
