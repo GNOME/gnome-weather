@@ -8,21 +8,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2024-03-21 20:26+0000\n"
-"PO-Revision-Date: 2024-03-26 17:57+0100\n"
-"Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
+"POT-Creation-Date: 2024-03-26 17:00+0000\n"
+"PO-Revision-Date: 2024-03-29 09:28+0100\n"
+"Last-Translator: sa\n"
 "Language-Team: Kabyle <>\n"
 "Language: kab\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n>1\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
 "X-DL-Team: kab\n"
 "X-DL-Module: gnome-weather\n"
 "X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
-"X-Generator: Gtranslator 41.0\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
@@ -34,19 +34,24 @@ msgstr "Tignewt"
 #: data/org.gnome.Weather.appdata.xml.in.in:6
 #: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
-msgstr ""
+msgstr "Sken tiwtilin d yiriden n tegnawt"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
 msgstr ""
+"Asnas ameẓẓyan i yessirigen ɣer usefrek n tewtilin n tegnawt timiranin n "
+"yiɣrem-ik, neɣ kra n temnaḍt deg umaḍal."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
+"Yettmuddu anekcum ɣer yiriden s telqayt, azal n 7 wussan, s telqayt yal "
+"asrag deg wass d wass i d-iteddun, s useqdec n yiqeddacen internet "
+"yemgaraden."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
@@ -54,6 +59,9 @@ msgid ""
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
+"Daɣen yettwaslaɣ s wudem afrayan s Shell n GNOME, yessirig timeẓriwt n "
+"tewtilin n tuget n yiɣerman yettwaqelben melmi kan s tira kan n yisem deg "
+"Teskant n yirmad."
 
 #. developer_name tag deprecated with Appstream 1.0
 #: data/org.gnome.Weather.appdata.xml.in.in:371 src/app/window.js:198
@@ -63,21 +71,23 @@ msgstr "Asenfaṛ n GNOME"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
-msgstr "Tignewt;Tagnewt;Tihala;tegnewt"
+msgstr "Tagnawt;Iriden;"
 
 #: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
-msgstr ""
+msgstr "Sireg talɣut n tegnawt ad tettwaskan i wadig-ik."
 
 #: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
-msgstr ""
+msgstr "Swel timdinin iwumi ara tettwaskan tegnawt"
 
 #: data/org.gnome.Weather.gschema.xml:7
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
+"Idgan yettwaskanen deg teskant n umaḍal n gnome-weather. Yal azal d "
+"GVariant tettuɣal-d s gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
 msgid "The width of the main window."
@@ -93,7 +103,7 @@ msgstr "Asfaylu meqqren"
 
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
-msgstr "Ama meqqer usfaylu neɣ ala"
+msgstr "Ama meqqer usfaylu neɣ ala."
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -133,7 +143,7 @@ msgstr "Yal ass (_D)"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
-msgstr ""
+msgstr "Tafesna n teẓɣelt"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -190,8 +200,8 @@ msgstr[1] "%d n yisragen aya seg mi yettlaqqem."
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
-msgstr[0] "%d n wass aya seg mi yettlaqqem"
-msgstr[1] "%d n wussan aya seg mi yettlaqqem"
+msgstr[0] "%d n wass aya seg mi yettlaqqem."
+msgstr[1] "%d n wussan aya seg mi yettlaqqem."
 
 #: src/app/city.js:257
 #, javascript-format
@@ -209,11 +219,11 @@ msgstr[1] "Tettwaleqqem %d n wayyuren aya."
 
 #: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
-msgstr ""
+msgstr "Iriden s wass"
 
 #: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
 msgid "Forecast not Available"
-msgstr ""
+msgstr "Ulac irid"
 
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:219
@@ -222,7 +232,7 @@ msgstr "%e %b"
 
 #: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
-msgstr ""
+msgstr "Iriden s usrag"
 
 #: src/app/hourlyForecast.js:107
 msgid "Now"
@@ -235,7 +245,7 @@ msgstr "%l∶%M %p"
 
 #: src/app/window.js:195
 msgid "translator-credits"
-msgstr ""
+msgstr "amsuqqel-isemdan"
 
 #: src/app/world.js:39
 msgid "World view"
