@@ -36,6 +36,10 @@
       <image>https://gitlab.gnome.org/GNOME/gnome-weather/raw/HEAD/misc/screenshots/daily.png</image>
     </screenshot>
   </screenshots>
+  <branding>
+    <color type="primary" scheme_preference="light">#81d2f5</color>
+    <color type="primary" scheme_preference="dark">#1a5fb4</color>
+  </branding>
   <launchable type="desktop-id">@app_id@.desktop</launchable>
   <url type="homepage">https://apps.gnome.org/Weather/</url>
   <url type="contribute">https://welcome.gnome.org/app/Weather/</url>
