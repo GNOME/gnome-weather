@@ -200,7 +200,7 @@ export const MainWindow = GObject.registerClass({
                 license_type: Gtk.License.GPL_2_0,
                 version: pkg.version,
                 website: 'https://apps.gnome.org/Weather/',
-                issue_url: 'https://gitlab.gnome.org/GNOME/gnome-weather/-/issues/new',
+                issue_url: 'https://gitlab.gnome.org/GNOME/gnome-weather/-/issues/',
                 transient_for: this
             });
 
