@@ -12,9 +12,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-05-19 17:28+0000\n"
-"PO-Revision-Date: 2023-05-26 08:04-0300\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-05-23 11:15+0000\n"
+"PO-Revision-Date: 2024-05-27 20:39-0300\n"
 "Last-Translator: Leônidas Araújo <leorusvellt@hotmail.com>\n"
 "Language-Team: Brazilian Portuguese < gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-DL-Team: pt_BR\n"
 "X-DL-Module: gnome-weather\n"
 "X-DL-Branch: main\n"
@@ -30,8 +30,8 @@ msgstr ""
 "X-DL-State: Translating\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:104
-#: src/app/application.js:43 src/app/window.js:167 src/app/window.js:179
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Meteorologia"
@@ -68,7 +68,7 @@ msgstr ""
 "você veja as condições atuais das cidades mais pesquisadas recentemente, "
 "somente digitando o nome no Panorama de Atividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:289 src/app/window.js:169
+#: data/org.gnome.Weather.appdata.xml.in.in:339 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -93,6 +93,22 @@ msgid ""
 msgstr ""
 "As localizações mostradas na visão global do GNOME Weather. Cada valor é um "
 "GVariant retornado por gweather_location_serialize()."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "A largura da janela principal."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "A altura da janela principal."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Janela maximizada"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Se a janela está maximizada ou não."
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -146,19 +162,19 @@ msgstr "_Fahrenheit"
 msgid "_About Weather"
 msgstr "_Sobre o Meteorologia"
 
-#: data/window.ui:39
+#: data/window.ui:47
 msgid "Welcome to Weather!"
 msgstr "Bem-vindo ao Meteorologia!"
 
-#: data/window.ui:40
+#: data/window.ui:48
 msgid "To get started, select a location."
 msgstr "Para começar, selecione uma localização."
 
-#: data/window.ui:46
+#: data/window.ui:54
 msgid "Search for a city or country"
 msgstr "Pesquisar por uma cidade ou país"
 
-#: data/window.ui:95
+#: data/window.ui:76
 msgid "Refresh"
 msgstr "Atualizar"
 
@@ -167,39 +183,39 @@ msgstr "Atualizar"
 msgid "Feels like %.0f°"
 msgstr "Sensação de %.0f°"
 
-#: src/app/city.js:233
+#: src/app/city.js:234
 msgid "Updated just now."
 msgstr "Atualizado agora mesmo."
 
-#: src/app/city.js:238
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Atualizado %d minuto atrás."
 msgstr[1] "Atualizado %d minutos atrás."
 
-#: src/app/city.js:244
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Atualizado %d hora atrás."
 msgstr[1] "Atualizado %d horas atrás."
 
-#: src/app/city.js:250
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Atualizado %d dia atrás."
 msgstr[1] "Atualizado %d dias atrás."
 
-#: src/app/city.js:256
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Atualizado %d semana atrás."
 msgstr[1] "Atualizado %d semanas atrás."
 
-#: src/app/city.js:261
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -232,7 +248,7 @@ msgstr "Agora"
 msgid "%l∶%M %p"
 msgstr "%H∶%M"
 
-#: src/app/window.js:166
+#: src/app/window.js:195
 msgid "translator-credits"
 msgstr ""
 "Enrico Nicoletto <liverig@gmail.com>\n"
