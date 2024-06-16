@@ -188,7 +188,7 @@ export const MainWindow = GObject.registerClass({
         let copyright = 'Copyright 2013-2015 The Weather Developers';
         let attribution = this._cityView.info ? this._cityView.info.get_attribution() : '';
 
-        let aboutWindow = new Adw.AboutWindow(
+        let aboutDialog = new Adw.AboutDialog(
             {
                 developers: ['Giovanni Campagna <gcampagna@src.gnome.org>'],
                 designers: designers,
@@ -201,13 +201,12 @@ export const MainWindow = GObject.registerClass({
                 version: pkg.version,
                 website: 'https://apps.gnome.org/Weather/',
                 issue_url: 'https://gitlab.gnome.org/GNOME/gnome-weather/-/issues/',
-                transient_for: this
             });
 
         if (attribution.len > 0) {
             aboutWindow.add_legal_section(_("Weather"), null, Gtk.LicenseCustom, attribution);
         }
 
-        aboutWindow.show();
+        aboutDialog.present(this);
     }
 });
