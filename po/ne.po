@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2022-07-22 22:48+0000\n"
-"PO-Revision-Date: 2022-09-08 01:55+0545\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-05-19 13:00+0000\n"
+"PO-Revision-Date: 2024-06-19 14:31+0545\n"
 "Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
 "Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
 "Language: ne_NP\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2;plural=(n!=1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5 data/org.gnome.Weather.desktop.in.in:4
-#: data/window.ui:73 src/app/application.js:43 src/app/window.js:167
-#: src/app/window.js:179 src/service/main.js:49
+#: data/window.ui:85 src/app/application.js:43 src/app/window.js:196
+#: src/app/window.js:208 src/service/main.js:49
 msgid "Weather"
 msgstr "मौसम"
 
@@ -34,7 +34,7 @@ msgid ""
 "city, or anywhere in the world."
 msgstr ""
 "एउटा सानो अनुप्रयोगले तपाईंलाई तपाईंको शहर, वा संसारको कुनै पनि ठाउँमा मौसमको सर्त निगरानी गर्न "
-"अनुमति दिन्छ।"
+"अनुमति दिन्छ।."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:20
 msgid ""
@@ -42,7 +42,7 @@ msgid ""
 "current and next day, using various internet services."
 msgstr ""
 "यसले विभिन्न इन्टरनेट सेवाहरू प्रयोग गरी वर्तमान र अर्को दिनको लागि घटेको विवरणहरूको साथ, ७ "
-"दिनसम्म विस्तृत पूर्वानुमानहरूको पहुँच प्रदान गर्दछ।"
+"दिनसम्म विस्तृत पूर्वानुमानहरूको पहुँच प्रदान गर्दछ।."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
@@ -51,9 +51,10 @@ msgid ""
 "Activities Overview."
 msgstr ""
 "यो पनि वैकल्पिक रूपमा जिनोम शैलसँग एकीकृत हुन्छ, तपाईंलाई हालको खोजी सहरहरूको अवस्था र क्रियाकलाप "
-"अवलोकनमा यसको नाम टाइप गरेर हालको अवस्था हेर्न अनुमति दिन्छ।"
+"अवलोकनमा यसको नाम टाइप गरेर हालको अवस्था हेर्न अनुमति दिन्छ।."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:220 src/app/window.js:169
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:371 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "जिनोम परियोजना"
 
@@ -64,7 +65,7 @@ msgstr "मौसम;पूर्वानुमान;"
 
 #: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
-msgstr "तपाईंको स्थानको लागि मौसम जानकारी प्रदर्शन गर्न अनुमति दिन्छ।"
+msgstr "तपाईंको स्थानको लागि मौसम जानकारी प्रदर्शन गर्न अनुमति दिन्छ।."
 
 #: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
@@ -76,7 +77,23 @@ msgid ""
 "returned by gweather_location_serialize()."
 msgstr ""
 "संसारमा देखिएका ठाउँहरू ग्नम-मौसमको दृश्य हेर्नुहोस्। प्रत्येक मान GVariant "
-"gweather_location_serialize() द्वारा फर्काइएको हो।"
+"gweather_location_serialize() द्वारा फर्काइएको हो।."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "मुख्य सञ्झ्यालको चौडाइ ।."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "मुख्य सञ्झ्यालको उचाइ ।."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "सञ्झ्यालको अधिकतम स्थिति"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "सञ्झ्याल ठूलो पारिएको छ या छैन."
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -107,11 +124,11 @@ msgid "Places"
 msgstr "स्थानहरू"
 
 #: data/weather-widget.ui:92
-msgid "Hourly"
-msgstr "घण्टा घण्टामा"
+msgid "_Hourly"
+msgstr "प्रतिघण्टा"
 
-#: data/weather-widget.ui:123
-msgid "Daily"
+#: data/weather-widget.ui:124
+msgid "_Daily"
 msgstr "दैनिक"
 
 #: data/window.ui:6
@@ -130,69 +147,65 @@ msgstr "फरेनहाइट"
 msgid "_About Weather"
 msgstr "मौसम बारेमा"
 
-#: data/window.ui:40
-msgid "Refresh"
-msgstr "ताजा पार्नुहोस्"
-
-#: data/window.ui:60
-msgid "Select Location"
-msgstr "_स्थान छान्नुहोस्"
-
-#: data/window.ui:100
+#: data/window.ui:47
 msgid "Welcome to Weather!"
 msgstr "मौसम स्वागत!"
 
-#: data/window.ui:101
+#: data/window.ui:48
 msgid "To get started, select a location."
-msgstr "सुरु गर्न, स्थान चयन गर्नुहोस् ।"
+msgstr "सुरु गर्न, स्थान चयन गर्नुहोस् ।."
 
-#: data/window.ui:107
+#: data/window.ui:54
 msgid "Search for a city or country"
 msgstr "सहर वा देशको खोजी गर्नुहोस्"
+
+#: data/window.ui:76
+msgid "Refresh"
+msgstr "ताजा पार्नुहोस्"
 
 #: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "%.0f° जस्तो लाग्छ"
 
-#: src/app/city.js:233
+#: src/app/city.js:234
 msgid "Updated just now."
-msgstr "अहिले अद्यावधिक गरियो ।"
+msgstr "अहिले अद्यावधिक गरियो ।."
 
-#: src/app/city.js:238
+#: src/app/city.js:239
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
-msgstr[0] "%d मिनेट पहिले अद्यावधिक गरियो ।"
-msgstr[1] "%d मिनेट पहिले अद्यावधिक गरियो ।"
+msgstr[0] "%d मिनेट पहिले अद्यावधिक गरियो ।."
+msgstr[1] "%d मिनेट पहिले अद्यावधिक गरियो ।."
 
-#: src/app/city.js:244
+#: src/app/city.js:245
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
-msgstr[0] "%d घण्टा पहिले अद्यावधिक गरियो ।"
-msgstr[1] "%d घण्टा पहिले अद्यावधिक गरियो ।"
+msgstr[0] "%d घण्टा पहिले अद्यावधिक गरियो ।."
+msgstr[1] "%d घण्टा पहिले अद्यावधिक गरियो ।."
 
-#: src/app/city.js:250
+#: src/app/city.js:251
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
-msgstr[0] "%d दिन पहिले अद्यावधिक गरियो ।"
-msgstr[1] "%d दिन पहिले अद्यावधिक गरियो ।"
+msgstr[0] "%d दिन पहिले अद्यावधिक गरियो ।."
+msgstr[1] "%d दिन पहिले अद्यावधिक गरियो ।."
 
-#: src/app/city.js:256
+#: src/app/city.js:257
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
-msgstr[0] "%d हप्ता पहिले अद्यावधिक गरियो ।"
-msgstr[1] "%d हप्ता पहिले अद्यावधिक गरियो ।"
+msgstr[0] "%d हप्ता पहिले अद्यावधिक गरियो ।."
+msgstr[1] "%d हप्ता पहिले अद्यावधिक गरियो ।."
 
-#: src/app/city.js:261
+#: src/app/city.js:262
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
-msgstr[0] "%d महिना पहिले अद्यावधिक गरियो ।"
-msgstr[1] "%d महिना पहिले अद्यावधिक गरियो ।"
+msgstr[0] "%d महिना पहिले अद्यावधिक गरियो ।."
+msgstr[1] "%d महिना पहिले अद्यावधिक गरियो ।."
 
 #: src/app/dailyForecast.js:36
 msgid "Daily Forecast"
@@ -220,9 +233,9 @@ msgstr "अहिले"
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:166
+#: src/app/window.js:195
 msgid "translator-credits"
-msgstr "Pawan Chitrakar < chautari@gmail.com >"
+msgstr "pawan chitrakar < chautari@gmail.com >"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -243,6 +256,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Select Location"
+#~ msgstr "_स्थान छान्नुहोस्"
 
 #~ msgid "Automatic location"
 #~ msgstr "स्वत: स्थान"
