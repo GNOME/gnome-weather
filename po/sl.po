@@ -7,23 +7,23 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-29 13:50+0000\n"
-"PO-Revision-Date: 2023-07-29 16:15+0200\n"
-"Last-Translator: Matej Urbančič <mateju@src.gnome.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-06-24 13:57+0000\n"
+"PO-Revision-Date: 2024-06-25 11:06+0200\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
-"n%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Vreme"
@@ -59,7 +59,8 @@ msgstr ""
 "pregled trenutnega vremena v izbranih oziroma iskanih mestih z vpisom imena "
 "mesta v polje pregleda dejavnosti."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:375 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -166,6 +167,10 @@ msgstr "Iskanje mesta ali države"
 msgid "Refresh"
 msgstr "Osveži"
 
+#: data/window.ui:90
+msgid "Main Menu"
+msgstr "Glavni meni"
+
 #: src/app/city.js:203
 #, javascript-format
 msgid "Feels like %.0f°"
@@ -248,7 +253,9 @@ msgstr "%l∶%M %p"
 
 #: src/app/window.js:195
 msgid "translator-credits"
-msgstr "Matej Urbančič <mateju@src.gnome.org>"
+msgstr ""
+"Matej Urbančič <mateju@svn.gnome.org>\n"
+"Martin Srebotnjak <miles@filmsi.net>"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -269,306 +276,3 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
-#~ msgid "Select Location"
-#~ msgstr "Izbor mesta"
-
-#~ msgid "A weather application"
-#~ msgstr "Program za prikaz podatkov vremena"
-
-#~ msgid "Automatic location"
-#~ msgstr "Samodejno določanje mesta"
-
-#~ msgid ""
-#~ "The automatic location is the value of automatic-location switch which "
-#~ "decides whether to fetch current location or not."
-#~ msgstr ""
-#~ "Samodejno določanje mesta je omogoča določanje trenutnega mesta za prikaz "
-#~ "vremenskih podatkov."
-
-#~ msgid "City view"
-#~ msgstr "Pogled mesta"
-
-#~ msgid "Automatic Location"
-#~ msgstr "Samodejno določanje mesta"
-
-#~ msgid "Locating…"
-#~ msgstr "Iskanje mesta …"
-
-#~ msgid "Viewed Recently"
-#~ msgstr "Nedavno ogledano"
-
-#~ msgid "Current conditions"
-#~ msgstr "Trenutne razmere"
-
-#~ msgid "Search for a location"
-#~ msgstr "Iskanje mesta"
-
-#~ msgid "To see weather information, enter the name of a city."
-#~ msgstr "Za prikaz vremenskih podatkov je treba vpisati ime mesta."
-
-#~ msgid "%e %b"
-#~ msgstr "%e %b"
-
-#~ msgid "16°"
-#~ msgstr "16°"
-
-#~ msgid "2.1 mm"
-#~ msgstr "2.1 mm"
-
-#~ msgid "5 m/s"
-#~ msgstr "5 m/s"
-
-#~ msgid "Tues"
-#~ msgstr "Tor"
-
-#~ msgid "7 June"
-#~ msgstr "7. junij"
-
-#~ msgid "18°"
-#~ msgstr "18°"
-
-#~ msgid "9°"
-#~ msgstr "9°"
-
-#~ msgid "13°"
-#~ msgstr "13°"
-
-#~ msgid "Today"
-#~ msgstr "Danes"
-
-#~ msgid "Tomorrow"
-#~ msgstr "Jutri"
-
-#~ msgid "Forecast"
-#~ msgstr "Napoved"
-
-#~ msgid "%R"
-#~ msgstr "%R"
-
-#~ msgid "%A"
-#~ msgstr "%A"
-
-#~ msgid "@APP_ID@"
-#~ msgstr "@APP_ID@"
-
-#~ msgid "_New"
-#~ msgstr "_Novo"
-
-#~ msgid "About"
-#~ msgstr "O programu"
-
-#~ msgid "Quit"
-#~ msgstr "Končaj"
-
-#~ msgid "%H:%M"
-#~ msgstr "%H:%M"
-
-#~ msgid "Select All"
-#~ msgstr "Izberi vse"
-
-#~ msgid "Select None"
-#~ msgstr "Odstrani izbor"
-
-#~ msgid "Click on locations to select them"
-#~ msgstr "S klikom se predmeti izberejo."
-
-#~ msgid "Back"
-#~ msgstr "Nazaj"
-
-#~ msgid "Select"
-#~ msgstr "Izbor"
-
-#~ msgid "Cancel"
-#~ msgstr "Prekliči"
-
-#~ msgid "Delete"
-#~ msgstr "Izbriši"
-
-#~ msgid "More…"
-#~ msgstr "Več ..."
-
-#~ msgid "Forecast for Tomorrow"
-#~ msgstr "Napoved za jutri"
-
-#~ msgid "%B %d"
-#~ msgstr "%d. %B"
-
-#~ msgid "Monday night"
-#~ msgstr "Ponedeljek ponoči"
-
-#~ msgid "Monday afternoon"
-#~ msgstr "Ponedeljek popoldne"
-
-#~ msgid "Monday evening"
-#~ msgstr "Ponedeljek zvečer"
-
-#~ msgid "Tuesday night"
-#~ msgstr "Torek ponoči"
-
-#~ msgid "Tuesday morning"
-#~ msgstr "Torek zjutraj"
-
-#~ msgid "Tuesday afternoon"
-#~ msgstr "Torek popoldne"
-
-#~ msgid "Tuesday evening"
-#~ msgstr "Torek zvečer"
-
-#~ msgid "Wednesday night"
-#~ msgstr "Sreda ponoči"
-
-#~ msgid "Wednesday morning"
-#~ msgstr "Sreda zjutraj"
-
-#~ msgid "Wednesday afternoon"
-#~ msgstr "Sreda popoldne"
-
-#~ msgid "Wednesday evening"
-#~ msgstr "Sreda zvečer"
-
-#~ msgid "Thursday night"
-#~ msgstr "Četrtek ponoči"
-
-#~ msgid "Thursday morning"
-#~ msgstr "Četrtek zjutraj"
-
-#~ msgid "Thursday afternoon"
-#~ msgstr "Četrtek popoldne"
-
-#~ msgid "Thursday evening"
-#~ msgstr "Četrtek zvečer"
-
-#~ msgid "Friday night"
-#~ msgstr "Petek ponoči"
-
-#~ msgid "Friday morning"
-#~ msgstr "Petek zjutraj"
-
-#~ msgid "Friday afternoon"
-#~ msgstr "Petek popoldne"
-
-#~ msgid "Friday evening"
-#~ msgstr "Petek zvečer"
-
-#~ msgid "Saturday night"
-#~ msgstr "Sobota ponoči"
-
-#~ msgid "Saturday morning"
-#~ msgstr "Sobota zjutraj"
-
-#~ msgid "Saturday afternoon"
-#~ msgstr "Sobota popoldne"
-
-#~ msgid "Saturday evening"
-#~ msgstr "Sobota zvečer"
-
-#~ msgid "Sunday night"
-#~ msgstr "Nedelja ponoči"
-
-#~ msgid "Sunday morning"
-#~ msgstr "Nedelja zjutraj"
-
-#~ msgid "Sunday afternoon"
-#~ msgstr "Nedelja popoldne"
-
-#~ msgid "Sunday evening"
-#~ msgstr "Nedelja zvečer"
-
-#~ msgid "This morning"
-#~ msgstr "Danes zjutraj"
-
-#~ msgid "Tomorrow night"
-#~ msgstr "Jutri ponoči"
-
-#~ msgid "Tomorrow morning"
-#~ msgstr "Jutri zjutraj"
-
-#~ msgid "Tomorrow afternoon"
-#~ msgstr "Jutri popoldne"
-
-#~ msgid "Tomorrow evening"
-#~ msgstr "Jutri zvečer"
-
-#~ msgid "%d selected"
-#~ msgid_plural "%d selected"
-#~ msgstr[0] "%d izbranih"
-#~ msgstr[1] "%d izbrano"
-#~ msgstr[2] "%d izbrani"
-#~ msgstr[3] "%d izbrana"
-
-#~ msgid "Cities"
-#~ msgstr "Mesta"
-
-#~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
-#~ msgstr ""
-#~ "Uporabite gumb <b>Nov</b> v orodni vrstici, da dodate več svetovnih mest"
-
-#~ msgid "Click on items to select them"
-#~ msgstr "S klikom se predmeti izberejo."
-
-#~ msgid "_Preferences"
-#~ msgstr "_Nastavitve"
-
-#~ msgid "Meters (m)"
-#~ msgstr "meter (m)"
-
-#~ msgid "Kilometers (km)"
-#~ msgstr "kilometer (km)"
-
-#~ msgid "Miles (mi)"
-#~ msgstr "milja (mi)"
-
-#~ msgid "Preferences"
-#~ msgstr "Nastavitve"
-
-#~ msgid "Speed unit:"
-#~ msgstr "Merska enota za hitrost:"
-
-#~ msgid "Distance unit:"
-#~ msgstr "Merska enota za dolžino:"
-
-#~ msgid "Pressure unit:"
-#~ msgstr "Merska enota za tlak:"
-
-#~ msgid "Kilopascal (kPa)"
-#~ msgstr "kilopascal (kPa)"
-
-#~ msgid "Hectopascal (hPa)"
-#~ msgstr "hektopascal (hPa)"
-
-#~ msgid "Millibar (mbar)"
-#~ msgstr "milibar (mbar)"
-
-#~ msgid "Millimeters of mercury (mmHg)"
-#~ msgstr "milimeter živega srebra (mmHg)"
-
-#~ msgid "Inches of mercury (inchHg)"
-#~ msgstr "palec živega srebra (inchHg)"
-
-#~ msgid "Atmosphere (atm)"
-#~ msgstr "atmosfera (atm)"
-
-#~ msgid "Meters per second (m/s)"
-#~ msgstr "metri na sekundo (m/s)"
-
-#~ msgid "Kilometers per hour (km/h)"
-#~ msgstr "kilometri na uro (km/h)"
-
-#~ msgid "Miles per hour (mph)"
-#~ msgstr "milje na uro (mph)"
-
-#~ msgid "Knots"
-#~ msgstr "vozli"
-
-#~ msgid "Beaufort scale"
-#~ msgstr "Beaufortova lestvica"
-
-#~ msgid "Kelvin (K)"
-#~ msgstr "kelvin (K)"
-
-#~ msgid "Centigrade (°C)"
-#~ msgstr "stopinja Celzija (°C)"
-
-#~ msgid "Done"
-#~ msgstr "Končano"
