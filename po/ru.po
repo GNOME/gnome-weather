@@ -8,10 +8,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-07-27 12:00+0300\n"
-"Last-Translator: Aleksandr Melman <Alexmelman88@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-06-24 13:57+0000\n"
+"PO-Revision-Date: 2024-07-03 13:02+0300\n"
+"Last-Translator: Artur So <arturios2005@mail.ru>\n"
 "Language-Team: Russian <Alexmelman88@gmail.com>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -19,16 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.2.2\n"
-"X-DL-Team: ru\n"
-"X-DL-Module: gnome-weather\n"
-"X-DL-Branch: master\n"
-"X-DL-Domain: po\n"
-"X-DL-State: Translated\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Погода"
@@ -64,7 +59,8 @@ msgstr ""
 "видеть текущие условия в городах, в которых недавно проводился поиск, просто "
 "набрав название города в Обзорном режиме."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:375 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "The GNOME Project"
 
@@ -172,6 +168,10 @@ msgstr "Поиск по городу или стране"
 #: data/window.ui:76
 msgid "Refresh"
 msgstr "Обновить"
+
+#: data/window.ui:90
+msgid "Main Menu"
+msgstr "Главное меню"
 
 #: src/app/city.js:203
 #, javascript-format
