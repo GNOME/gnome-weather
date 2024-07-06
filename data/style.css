@@ -92,16 +92,6 @@ button.osd.circular > image {
     padding: 12px;
 }
 
-scrolledwindow.inline list,
-scrolledwindow.inline listview {
-    background: none;
-    color: inherit;
-}
-
-scrolledwindow.inline undershoot.top {
-    box-shadow: inset 0 1px @borders;
-}
-
 image.circular {
     min-width: 34px;
     min-height: 34px;

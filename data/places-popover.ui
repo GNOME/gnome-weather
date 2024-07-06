@@ -25,7 +25,7 @@
             <property name="hscrollbar-policy">never</property>
             <property name="vexpand">True</property>
             <style>
-              <class name="inline" />
+              <class name="undershoot-top" />
             </style>
             <child>
               <object class="GtkListView" id="search-list-view">
@@ -39,7 +39,7 @@
           <object class="GtkScrolledWindow" id="locations-list-scroll-window">
             <property name="hscrollbar-policy">never</property>
             <style>
-              <class name="inline" />
+              <class name="undershoot-top" />
             </style>
             <child>
               <object class="GtkViewport">
