@@ -56,9 +56,6 @@
                 </child>
               </object>
             </property>
-            <style>
-              <class name="search-view" />
-            </style>
           </object>
         </child>
 

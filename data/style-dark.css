@@ -7,7 +7,3 @@
 
 @define-color weather_thermometer_high_color @yellow_2;
 @define-color weather_thermometer_low_color @blue_2;
-
-.search-view {
-    background-color: @window_bg_color;
-}
