@@ -1,3 +1,3 @@
 .forecast-card separator {
-    background-color: @borders;
+    background-color: var(--border-color);
 }

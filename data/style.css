@@ -36,7 +36,7 @@
 }
 
 .forecast-card separator {
-    background-color: @card_shade_color;
+    background-color: var(--card-shade-color);
 }
 
 #conditions-grid,
