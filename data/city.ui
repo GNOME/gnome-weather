@@ -9,26 +9,7 @@
           <object class="GtkStackPage">
             <property name="name">loading</property>
             <property name="child">
-              <object class="GtkBox" id="loading-grid">
-                <property name="orientation">vertical</property>
-                <property name="spacing">20</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <child>
-                  <object class="GtkSpinner" id="spinner">
-                    <property name="height_request">64</property>
-                    <property name="width_request">64</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="label" translatable="yes">Loading…</property>
-                    <style>
-                      <class name="title-3" />
-                    </style>
-                  </object>
-                </child>
-              </object>
+              <object class="AdwSpinner"/>
             </property>
           </object>
         </child>

@@ -268,7 +268,7 @@ WeatherWidget.set_layout_manager_type(Adw.ClampLayout);
 
 export const WeatherView = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/city.ui',
-    InternalChildren: ['spinner', 'stack']
+    InternalChildren: ['stack']
 }, class WeatherView extends Adw.Bin {
 
     constructor(application, window, params) {
@@ -297,7 +297,6 @@ export const WeatherView = GObject.registerClass({
 
         if (info) {
             this._stack.visible_child_name = 'loading';
-            this._spinner.start();
             this._updateId = this._info.connect('updated', (info) => {
                 this._onUpdate(info)
             });
@@ -312,8 +311,6 @@ export const WeatherView = GObject.registerClass({
 
     vfunc_map() {
         super.vfunc_map();
-
-        this._spinner.start();
     }
 
     vfunc_unmap() {
@@ -322,14 +319,11 @@ export const WeatherView = GObject.registerClass({
             this._updateId = 0;
         }
 
-        this._spinner.stop();
-
         super.vfunc_unmap();
     }
 
     update() {
         this._stack.visible_child_name = 'loading';
-        this._spinner.start();
         this._infoPage.clear();
 
         getApp().model.updateInfo(this._info);
@@ -338,7 +332,6 @@ export const WeatherView = GObject.registerClass({
     _onUpdate(info) {
         this._infoPage.clear();
         this._infoPage.update(info);
-        this._spinner.stop();
         this._stack.visible_child_name = 'info';
     }
 
