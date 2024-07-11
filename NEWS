@@ -1,3 +1,23 @@
+47.alpha
+========
+Weather 47.alpha comes with the following enhancements:
+
+* Use adaptive dialogs (Isabelle Jackson)
+* Add tooltip to Main Menu (Automeris naranja)
+* Miscellaneous style cleanups (Alice Mikhaylenko)
+
+This version brings translation updates for the following locales:
+  - Bangla (Mahdi Hasan)
+  - Hebrew (Yosef Or Boczko)
+  - Hindi (Guntupalli Karunakar, Scrambled 777)
+  - Hungarian (Balázs Úr)
+  - Kabyle (Rachida SACI, Athmane MOKRAOUI)
+  - Kinyarwanda (Angelo Verlain Shema)
+  - Russian (Artur S0)
+  - Slovak (Jose Riha)
+  - Slovenian (Martin)
+
+
 46.0
 =======
 Weather 46.0 comes with a few fixes:

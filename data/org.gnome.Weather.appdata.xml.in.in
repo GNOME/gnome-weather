@@ -54,6 +54,28 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release date="2024-07-11" version="47.alpha">
+      <description>
+        <p>Weather 47.alpha comes with the following enhancements:</p>
+        <ul>
+          <li>Use adaptive dialogs (Isabelle Jackson)</li>
+          <li>Add tooltip to Main Menu (Automeris naranja)</li>
+          <li>Miscellaneous style cleanups (Alice Mikhaylenko)</li>
+        </ul>
+        <p>This version brings translation updates for the following locales:</p>
+        <ul>
+          <li>Bangla (Mahdi Hasan)</li>
+          <li>Hebrew (Yosef Or Boczko)</li>
+          <li>Hindi (Guntupalli Karunakar, Scrambled 777)</li>
+          <li>Hungarian (Balázs Úr)</li>
+          <li>Kabyle (Rachida SACI, Athmane MOKRAOUI)</li>
+          <li>Kinyarwanda (Angelo Verlain Shema)</li>
+          <li>Russian (Artur S0)</li>
+          <li>Slovak (Jose Riha)</li>
+          <li>Slovenian (Martin)</li>
+        </ul>
+      </description>
+    </release>
     <release date="2024-03-21" version="46.0">
       <description>
         <p>Weather 46.0 comes with a few fixes:</p>
