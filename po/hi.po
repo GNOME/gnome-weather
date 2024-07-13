@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2024-06-12 06:44+0000\n"
-"PO-Revision-Date: 2024-06-19 14:40+0530\n"
+"POT-Creation-Date: 2024-07-02 07:50+0000\n"
+"PO-Revision-Date: 2024-07-05 22:12+0530\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
 "Language: hi\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "मौसम"
@@ -58,7 +58,7 @@ msgstr ""
 "शहरों की वर्तमान स्थितियों को केवल गतिविधियों के अवलोकन में नाम टाइप करके देख सकते हैं।"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:371 src/app/window.js:198
+#: data/org.gnome.Weather.appdata.xml.in.in:375 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "गनोम परियोजना"
 
@@ -85,19 +85,19 @@ msgstr ""
 
 #: data/org.gnome.Weather.gschema.xml:14
 msgid "The width of the main window."
-msgstr "मुख्य खिड़की की चौड़ाई।"
+msgstr "मुख्य विंडो की चौड़ाई।"
 
 #: data/org.gnome.Weather.gschema.xml:18
 msgid "The height of the main window."
-msgstr "मुख्य खिड़की की ऊंचाई।"
+msgstr "मुख्य विंडो की ऊंचाई।"
 
 #: data/org.gnome.Weather.gschema.xml:22
 msgid "Window maximized"
-msgstr "खिड़की अधिकतमीकृत"
+msgstr "विंडो अधिकतमीकृत"
 
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
-msgstr "खिड़की अधिकतमीकृत है या नहीं।"
+msgstr "विंडो अधिकतमीकृत है या नहीं।"
 
 #: data/city.ui:25
 msgid "Loading…"
@@ -149,11 +149,11 @@ msgstr "फारेनहाइट (_F)"
 
 #: data/window.ui:21
 msgid "_About Weather"
-msgstr "'मौसम' का परिचय (_A)"
+msgstr "मौसम के बारे में (_A)"
 
 #: data/window.ui:47
 msgid "Welcome to Weather!"
-msgstr "'मौसम' में आपका स्वागत है!"
+msgstr "मौसम में आपका स्वागत है!"
 
 #: data/window.ui:48
 msgid "To get started, select a location."
@@ -166,6 +166,10 @@ msgstr "कोई शहर या देश खोजें"
 #: data/window.ui:76
 msgid "Refresh"
 msgstr "ताजा करें"
+
+#: data/window.ui:90
+msgid "Main Menu"
+msgstr "मुख्य मेनू"
 
 #: src/app/city.js:203
 #, javascript-format
