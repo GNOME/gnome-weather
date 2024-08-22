@@ -9,14 +9,14 @@
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2013, 2016, 2020-2021.
 # Tim Sabsch <tim@sabsch.com>, 2020.
 # Philipp Kiemle <philipp.kiemle@gmail.com>, 2021.
-# Jürgen Benvenuti <gastornis@posteo.org>, 2023.
+# Jürgen Benvenuti <gastornis@posteo.org>, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-07-27 19:14+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-22 16:15+0000\n"
+"PO-Revision-Date: 2024-08-22 22:03+0200\n"
 "Last-Translator: Jürgen Benvenuti <gastornis@posteo.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -24,11 +24,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Wetter"
@@ -65,7 +65,8 @@ msgstr ""
 "das aktuelle Wetter jeder eingegebenen Stadt informieren können, indem Sie "
 "den Ortsnamen in die Aktivitätenübersicht eingeben."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "Das GNOME-Projekt"
 
@@ -105,10 +106,6 @@ msgstr "Fenster maximiert"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Legt fest, ob das Fenster maximiert ist oder nicht."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Laden …"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -170,9 +167,13 @@ msgstr "Wählen Sie einen Ort aus, um zu beginnen."
 msgid "Search for a city or country"
 msgstr "Nach einer Stadt oder einem Land suchen"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Aktualisieren"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Hauptmenü"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -252,7 +253,7 @@ msgstr ""
 "Mario Blättermann <mario.blaettermann@gmail.com>, 2016\n"
 "Bernd Homuth <dev@hmt.im>, 2019\n"
 "Philipp Kiemle <philipp.kiemle@gmail.com>,2021\n"
-"Jürgen Benvenuti <gastornis@posteo.org>, 2023"
+"Jürgen Benvenuti <gastornis@posteo.org>, 2023, 2024"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -273,6 +274,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "Laden …"
 
 #~ msgid "Select Location"
 #~ msgstr "Ort wählen"
