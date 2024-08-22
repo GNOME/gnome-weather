@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-07-29 13:05+0300\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-07-24 18:03+0000\n"
+"PO-Revision-Date: 2024-08-22 19:15+0300\n"
 "Last-Translator: Florentina Mușat <florentina [dot] musat [dot] 28 [at] "
 "gmail [dot] com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Vreme"
@@ -61,7 +61,8 @@ msgstr ""
 "prin simpla introducere a numelero în căsuța de căutare din panorama "
 "Activități."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "Proiectul GNOME"
 
@@ -103,10 +104,6 @@ msgstr "Fereastră maximizată"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Dacă fereastra este sau nu maximizată."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Se încarcă…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -168,9 +165,13 @@ msgstr "Pentru a începe, selectați o locație."
 msgid "Search for a city or country"
 msgstr "Caută un oraș sau o țară"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Reîmprospătează"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Meniu principal"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -252,7 +253,7 @@ msgid "translator-credits"
 msgstr ""
 "Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014\n"
 "Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, "
-"2018-2023"
+"2018-2024"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -273,6 +274,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "Se încarcă…"
 
 #~ msgid "Automatic location"
 #~ msgstr "Locație automată"
