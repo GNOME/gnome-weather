@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-09-16 18:12+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-22 16:15+0000\n"
+"PO-Revision-Date: 2024-08-23 10:23+0200\n"
 "Last-Translator: Jordi Mas i Hernàndez <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Meteorologia"
@@ -59,12 +59,12 @@ msgstr ""
 "les condicions actuals de les últimes ciutats que hàgiu cercat teclejant el "
 "seu nom al resum d'activitats."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "El projecte GNOME"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "Meteorologia;Predicció;"
@@ -101,10 +101,6 @@ msgstr "Finestra maximitzada"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Si la finestra està maximitzada o no."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "S'està carregant…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -156,7 +152,7 @@ msgstr "_Quant al Meteorologia"
 
 #: data/window.ui:47
 msgid "Welcome to Weather!"
-msgstr "Us donem la benvinguda al Meteorologia"
+msgstr "Us donem la benvinguda al Meteorologia!"
 
 #: data/window.ui:48
 msgid "To get started, select a location."
@@ -166,9 +162,13 @@ msgstr "Per a començar, seleccioneu una ubicació."
 msgid "Search for a city or country"
 msgstr "Cerqueu una ciutat o país"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Actualitza"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Menú principal"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -222,8 +222,7 @@ msgstr "Predicció diària"
 msgid "Forecast not Available"
 msgstr "La predicció està disponible"
 
-#. Translators: this is the time format for day and month name according to
-#. the current locale
+#. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%e %b"
@@ -267,3 +266,6 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "S'està carregant…"
