@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Ekaterine Papava <papava.e@gtu.ge>, 2023.
+# Ekaterine Papava <papava.e@gtu.ge>, 2023-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-08-17 21:36+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-22 16:15+0000\n"
+"PO-Revision-Date: 2024-08-23 11:56+0200\n"
 "Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: \n"
 "Language: ka\n"
@@ -19,8 +19,8 @@ msgstr ""
 "X-Generator: Poedit 3.3.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "ამინდი"
@@ -56,7 +56,8 @@ msgstr ""
 "ნახოთ ბოლო მოძიებული ქალაქების ამჟამინდელი პირობები მხოლოდ აქტივობების "
 "მიმოხილვაში სახელის აკრეფით."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "პროექტი \"GNOME\""
 
@@ -96,10 +97,6 @@ msgstr "გადიდებული ფანჯარა"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "არის თუ არა ფანჯარა გადიდებული."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "იტვირთება…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -161,9 +158,13 @@ msgstr "დასაწყისისთვის აირჩიეთ მდ�
 msgid "Search for a city or country"
 msgstr "ქალაქის ან სოფლის ძებნა"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "განახლება"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "მთავარი მენიუ"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -258,6 +259,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "იტვირთება…"
 
 #~ msgid "Select Location"
 #~ msgstr "მდებარეობის არჩევა"
