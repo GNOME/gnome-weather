@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2024-03-03 19:10+0000\n"
-"PO-Revision-Date: 2024-03-16 12:02+0100\n"
+"POT-Creation-Date: 2024-08-22 16:15+0000\n"
+"PO-Revision-Date: 2024-08-25 00:22+0200\n"
 "Last-Translator: Brage <bragefuglseth@gnome.org>\n"
 "Language-Team: \n"
 "Language: nb\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Været"
@@ -45,8 +45,8 @@ msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Få en detaljert oversikt over været det neste døgnet, og et sammendrag av "
-"de kommende dagene, ved hjelp av forskjellige værtjenester."
+"Få en detaljert oversikt over været det neste døgnet, og et sammendrag av de "
+"kommende dagene, ved hjelp av forskjellige værtjenester."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
@@ -57,7 +57,8 @@ msgstr ""
 "Appen kan også la deg se været for nylig observerte steder ved å bare søke "
 "etter navnene deres i systemet ditt."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:339 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "GNOME"
 
@@ -68,7 +69,7 @@ msgstr "Vær;værmelding;yr;meteorologi;weather;sol;regn;sky;storm;farevarsel;"
 
 #: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
-msgstr "Se hvordan været blir fremover"
+msgstr "Lar værmeldingen vises for enhetens posisjon."
 
 #: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
@@ -97,10 +98,6 @@ msgstr "Maksimering"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Hvis denne innstillingen er på, er vinduet maksimert."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Laster inn…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -162,9 +159,13 @@ msgstr "Velg et sted for å komme i gang"
 msgid "Search for a city or country"
 msgstr "Søk etter steder"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Last inn på nytt"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Hovedmeny"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -259,3 +260,6 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "Laster inn…"
