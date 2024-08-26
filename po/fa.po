@@ -2,14 +2,14 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Arash Mousavi <mousavi.arash@gmail.com>, 2013-2016.
-# Danial Behzadi <dani.behzi@ubuntu.com>, 2017-2023.
+# Danial Behzadi <dani.behzi@ubuntu.com>, 2017-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-08-27 20:29+0000\n"
-"PO-Revision-Date: 2023-09-06 23:44+0330\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-22 16:15+0000\n"
+"PO-Revision-Date: 2024-08-26 17:16+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian <>\n"
 "Language: fa\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "آب‌وهوا"
@@ -56,7 +56,8 @@ msgstr ""
 "همچنین به‌طور اختیاری با پوستهٔ گنوم یکپارچه شده، اجازهٔ دیدن وضعیت کنونی شهرهای "
 "جست‌وجو شدهٔ اخیر را تنها با نوشتن نام در نمای‌کلی فعّالیت‌ها را می‌دهد."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "پروژهٔ گنوم"
 
@@ -96,10 +97,6 @@ msgstr "پنجره بیشینه شد"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "این که پنجره بیشینه است یا نه."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "درحال بار کردن…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -161,9 +158,13 @@ msgstr "برای شروع، مکانی را برگزینید."
 msgid "Search for a city or country"
 msgstr "جست‌وجوی یک شهر یا کشور"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "تازه‌سازی"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "فهرست اصلی"
 
 # در این رشته از نویسه ایزوله چپ‌به‌راست استفاده شده است
 #: src/app/city.js:203
@@ -259,6 +260,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s، %s"
+
+#~ msgid "Loading…"
+#~ msgstr "درحال بار کردن…"
 
 #~ msgid "Select Location"
 #~ msgstr "گزینش مکان"
