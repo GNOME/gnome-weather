@@ -4,12 +4,13 @@
 #
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2013, 2014, 2015, 2016.
 # Edurne Labaka <elabaka@uzei.com>, 2015.
-# Asier Sarasua Garmendia  <asiersarasua@ni.eus, 2013, 2019, 2020, 2021, 2022, 2023.
+# Asier Sarasua Garmendia  <asiersarasua@ni.eus, 2013, 2019, 2020, 2021, 2022, 2023.ç
+# Asier Sarasua Garmendia  <asiersarasua@ni.eus, 2024.
 msgid ""
 msgstr "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-08-27 20:29+0000\n"
-"PO-Revision-Date: 2023-07-29 19:00+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-22 16:15+0000\n"
+"PO-Revision-Date: 2024-08-26 19:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -19,8 +20,8 @@ msgstr "Project-Id-Version: gnome-weather master\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Eguraldia"
@@ -49,7 +50,8 @@ msgid ""
 "name in the Activities Overview."
 msgstr "Aukeran, GNOME Shell-ekin integratu daiteke, azken aldian bilatutako herrien uneko baldintzak ikusteko haien izena jardueren ikuspegian idatzita."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "GNOME proiektua"
 
@@ -87,10 +89,6 @@ msgstr "Leihoa maximizatuta"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Leihoa maximizatuta dagoen ala ez."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Kargatzen…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -152,9 +150,13 @@ msgstr "Hasteko, hautatu kokaleku bat."
 msgid "Search for a city or country"
 msgstr "Bilatu hiria edo herrialdea"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Freskatu"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Menu nagusia"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -211,7 +213,7 @@ msgstr "Iragarpena ez dago eskuragarri"
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.js:219
 msgid "%b %e"
-msgstr "%b %e"
+msgstr "%b/%e"
 
 #: src/app/hourlyForecast.js:41
 msgid "Hourly Forecast"
@@ -224,7 +226,7 @@ msgstr "Orain"
 #. Translators: this is a time format without date used for AM/PM
 #: src/app/hourlyForecast.js:114
 msgid "%l∶%M %p"
-msgstr "l%l∶%M %p"
+msgstr "%l∶%M %p"
 
 #: src/app/window.js:195
 msgid "translator-credits"
@@ -249,6 +251,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "Kargatzen…"
 
 #~ msgid "Select Location"
 #~ msgstr "Hautatu kokalekua"
