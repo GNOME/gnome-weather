@@ -2,16 +2,16 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 # Jinkyu Yi <jincreator@jincreator.net>, 2013, 2014, 2015, 2016.
-# DaeHyun Sung <sungdh86@gmail.com>, 2019-2023.
+# DaeHyun Sung <sungdh86@gmail.com>, 2019-2024.
 # Changwoo Ryu <cwryu@debian.org>, 2021-2022.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-08-27 01:14+0900\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-22 16:15+0000\n"
+"PO-Revision-Date: 2024-08-27 15:01+0900\n"
 "Last-Translator: DaeHyun Sung <sungdh86+git@gmail.com>\n"
 "Language-Team: Korean <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "날씨"
@@ -58,7 +58,8 @@ msgstr ""
 "그놈 쉘에서 선택적으로 통합되므로, 활동 개요에 도시명을 입력하면 가장 최근"
 "에 검색된 도시의 현재 상태를 볼 수 있게 해줍니다."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "그놈 프로젝트"
 
@@ -98,10 +99,6 @@ msgstr "창 최대화"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "창 최대화할지 여부."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "읽어오는 중…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -163,9 +160,13 @@ msgstr "시작하려면 먼저 위치를 선택하십시오."
 msgid "Search for a city or country"
 msgstr "도시 또는 국가로 검색"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "새로 고침"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "주 메뉴"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -257,6 +258,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "읽어오는 중…"
 
 #~ msgid "Select Location"
 #~ msgstr "지역 선택"
