@@ -1,18 +1,18 @@
 # gnome-weather's Portuguese translation.
-# Copyright © 2013-2021 gnome-weather
+# Copyright © 2013-2024 gnome-weather
 # This file is distributed under the same license as the gnome-weather package.
 # Fernando Carvalho <phaetonkde@gmail.com>, 2013.
 # Tiago S. <almosthumane@portugalmail.pt>, 2014, 2015.
 # Sérgio Cardeira <cardeira dot sergio at gmail dot com>, 2016.
 # Juliano de Souza Camargo <julianosc@protonmail.com>, 2020.
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2021, 2022, 2023.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2021, 2022, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.12\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-08-04 16:03+0100\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-22 16:15+0000\n"
+"PO-Revision-Date: 2024-08-29 16:07+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese (https://l10n.gnome.org/teams/pt/)\n"
 "Language: pt\n"
@@ -20,12 +20,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Meteorologia"
@@ -62,7 +62,8 @@ msgstr ""
 "as condições atuais das cidades mais recentemente procuradas, simplesmente "
 "digitando o seu nome na vista de atividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "O Projeto GNOME"
 
@@ -102,10 +103,6 @@ msgstr "Janela maximizada"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Se a janela está ou não maximizada."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "A carregar…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -167,9 +164,13 @@ msgstr "Para começar, selecione um local."
 msgid "Search for a city or country"
 msgstr "Procurar uma cidade ou país"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Atualizar"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Menu Principal"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -269,6 +270,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "A carregar…"
 
 #~ msgid "Select Location"
 #~ msgstr "Selecionar localização"
