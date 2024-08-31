@@ -1,17 +1,17 @@
 # Bulgarian translation of gnome-weather po-file.
 # Copyright (C) 2016 Free Software Foundation, Inc.
-# Copyright (C) 2022, 2023 Alexander Shopov.
+# Copyright (C) 2022, 2023, 2024 Alexander Shopov.
 # Copyright (C) 2024 twlvnn kraftwerk.
 # This file is distributed under the same license as the gnome-weather package.
-# Alexander Shopov <ash@kambanaria.org>, 2016, 2022, 2023.
+# Alexander Shopov <ash@kambanaria.org>, 2016, 2022, 2023, 2024.
 # twlvnn kraftwerk <kraft_werk@tutanota.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2024-08-21 02:16+0000\n"
-"PO-Revision-Date: 2024-08-31 19:00+0200\n"
+"POT-Creation-Date: 2024-08-31 17:02+0000\n"
+"PO-Revision-Date: 2024-08-31 19:03+0200\n"
 "Last-Translator: twlvnn kraftwerk <kraft_werk@tutanota.com>\n"
 "Language-Team: Bulgarian <dict@ludost.net>\n"
 "Language: bg\n"
@@ -22,8 +22,8 @@ msgstr ""
 "X-Generator: Gtranslator 46.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Прогноза"
@@ -60,7 +60,7 @@ msgstr ""
 "градове като просто напишете името им в прегледа на дейностите."
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:371 src/app/window.js:198
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "Проектът GNOME"
 
@@ -101,10 +101,6 @@ msgstr "Максимизиран прозорец"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Дали прозорецът е максимизиран."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Зареждане…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -166,9 +162,13 @@ msgstr "Изберете местоположение, за да започне�
 msgid "Search for a city or country"
 msgstr "Търсене на град или държава"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Опресняване"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Основно меню"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -273,3 +273,6 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "Зареждане…"
