@@ -8,27 +8,27 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather 0.1\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-08-12 11:36+0200\n"
-"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-07-24 18:03+0000\n"
+"PO-Revision-Date: 2024-09-02 19:28+0200\n"
+"Last-Translator: Fran Dieguez <fran.dieguez@gnome.org>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
-"X-Project-Style: gnome\n"
-"X-DL-Team: gl\n"
-"X-DL-Module: gnome-weather\n"
 "X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
+"X-DL-Module: gnome-weather\n"
 "X-DL-State: Translating\n"
+"X-DL-Team: gl\n"
+"X-Generator: Poedit 3.5\n"
+"X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Clima"
@@ -40,8 +40,8 @@ msgstr "Mostrar as condicións e predicións do tempo"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
+"A small application that allows you to monitor the current weather conditions "
+"for your city, or anywhere in the world."
 msgstr ""
 "Un pequena aplicación que lle permitirá facer un seguimento das condicións "
 "meteorolóxicas actuais da súa cidade, ou calquera lugar do mundo."
@@ -51,8 +51,8 @@ msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Fornece acceso a predicións detalladas ate 7 días, con información por hora "
-"do día actual e seguinte, usando varios servizos de internet."
+"Fornece acceso a predicións detalladas ate 7 días, con información por hora do "
+"día actual e seguinte, usando varios servizos de internet."
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
 msgid ""
@@ -61,14 +61,16 @@ msgid ""
 "name in the Activities Overview."
 msgstr ""
 "Tamén se integra con GNOME Shell o que lle permite ver as condicións "
-"meteorolóxicas actuais das cidades máis buscadas recentemente escribindo o "
-"seu nome na Vista de actividades."
+"meteorolóxicas actuais das cidades máis buscadas recentemente escribindo o seu "
+"nome na Vista de actividades."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "O Proxecto GNOME"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "Tempo;Clima;Meteoroloxía;Predición;"
@@ -86,8 +88,8 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"As localizacións mostradas na vista do mundo de gnome-weather. Cada valor é "
-"un GVariant devolto por gweather_location_serialize()."
+"As localizacións mostradas na vista do mundo de gnome-weather. Cada valor é un "
+"GVariant devolto por gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
 msgid "The width of the main window."
@@ -104,10 +106,6 @@ msgstr "Xanela maximizada"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Indica se a xanela está maximizada ou non"
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Cargando…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -169,9 +167,13 @@ msgstr "Para comezar, seleccione unha localización."
 msgid "Search for a city or country"
 msgstr "Buscar por unha cidade ou país"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Actualizar"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Menú principal"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -225,7 +227,8 @@ msgstr "Predición diaria"
 msgid "Forecast not Available"
 msgstr "Predición non dispoñíbel"
 
-#. Translators: this is the time format for day and month name according to the current locale
+#. Translators: this is the time format for day and month name according to
+#. the current locale
 #: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%b %e"
@@ -245,7 +248,7 @@ msgstr "%l∶%M %p"
 
 #: src/app/window.js:195
 msgid "translator-credits"
-msgstr "Fran Diéguez <frandieguez@gnome.org>, 2013-2023"
+msgstr "Fran Diéguez <frandieguez@gnome.org>, 2013-2024"
 
 #: src/app/world.js:39
 msgid "World view"
@@ -267,6 +270,9 @@ msgstr "%s / %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
+#~ msgid "Loading…"
+#~ msgstr "Cargando…"
+
 #~ msgid "Select Location"
 #~ msgstr "Seleccione a localización"
 
@@ -280,8 +286,8 @@ msgstr "%s, %s"
 #~ "The automatic location is the value of automatic-location switch which "
 #~ "decides whether to fetch current location or not."
 #~ msgstr ""
-#~ "A localización automática é o valor da configuración automatic-location "
-#~ "que decide se obter a localización automaticamente ou non."
+#~ "A localización automática é o valor da configuración automatic-location que "
+#~ "decide se obter a localización automaticamente ou non."
 
 #~ msgid "City view"
 #~ msgstr "Vista de cidade"
