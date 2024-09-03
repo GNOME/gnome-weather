@@ -1,26 +1,26 @@
 # Indonesian translation for gnome-weather.
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
-# Andika Triwidada <andika@gmail.com>, 2013, 2014.
+# Andika Triwidada <andika@gmail.com>, 2013, 2014, 2016, 2024.
 # Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2019-2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-08-09 20:37+0700\n"
-"Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-31 14:11+0000\n"
+"PO-Revision-Date: 2024-09-03 17:46+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.5\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Cuaca"
@@ -56,7 +56,8 @@ msgstr ""
 "melihat kondisi saat ini dari kota yang baru-baru ini dicari hanya dengan "
 "mengetikkan namanya dalam Ringkasan Aktivitas."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "Proyek GNOME"
 
@@ -95,11 +96,7 @@ msgstr "Jendela dimaksimalkan"
 
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
-msgstr "Apakah jendela dimaksimalkan atau tidak"
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Memuat…"
+msgstr "Apakah jendela dimaksimalkan atau tidak."
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -161,9 +158,13 @@ msgstr "Untuk memulai, pilih lokasi."
 msgid "Search for a city or country"
 msgstr "Cari kota atau negara"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Segarkan"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Menu Utama"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -233,7 +234,7 @@ msgstr "%l∶%M %p"
 #: src/app/window.js:195
 msgid "translator-credits"
 msgstr ""
-"Andika Triwidada <andika@gmail.com>, 2013, 2014, 2016.\n"
+"Andika Triwidada <andika@gmail.com>, 2013, 2014, 2016, 2024.\n"
 "Kukuh Syafaat <kukuhsyafaat@gnome.org>, 2019-2023."
 
 #: src/app/world.js:39
@@ -255,70 +256,3 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
-#~ msgid "Select Location"
-#~ msgstr "Pilih Lokasi"
-
-#~ msgid "A weather application"
-#~ msgstr "Aplikasi cuaca"
-
-#~ msgid "Automatic location"
-#~ msgstr "Lokasi otomatis"
-
-#~ msgid ""
-#~ "The automatic location is the value of automatic-location switch which "
-#~ "decides whether to fetch current location or not."
-#~ msgstr ""
-#~ "Lokasi otomatis adalah nilai dari dari saklar automatic-location yang "
-#~ "menentukan apakah akan mengambil lokasi saat ini atau tidak."
-
-#~ msgid "City view"
-#~ msgstr "Tilikan kota"
-
-#~ msgid "Automatic Location"
-#~ msgstr "Lokasi Otomatis"
-
-#~ msgid "Locating…"
-#~ msgstr "Mencari…"
-
-#~ msgid "Viewed Recently"
-#~ msgstr "Akhir-akhir Ini Dilihat"
-
-#~ msgid "Current conditions"
-#~ msgstr "Kondisi saat ini"
-
-#~ msgid "Search for a location"
-#~ msgstr "Mencari sebuah lokasi"
-
-#~ msgid "To see weather information, enter the name of a city."
-#~ msgstr "Untuk melihat informasi cuaca, masukkan nama sebuah kota."
-
-#~ msgid "%e %b"
-#~ msgstr "%e %b"
-
-#~ msgid "Today"
-#~ msgstr "Hari Ini"
-
-#~ msgid "Tomorrow"
-#~ msgstr "Besok"
-
-#~ msgid "Forecast"
-#~ msgstr "Prakiraan"
-
-#~ msgid "%R"
-#~ msgstr "%R"
-
-#~ msgid "%A"
-#~ msgstr "%A"
-
-#~ msgid "@APP_ID@"
-#~ msgstr "@APP_ID@"
-
-#~ msgid "_New"
-#~ msgstr "_Baru"
-
-#~ msgid "About"
-#~ msgstr "Tentang"
-
-#~ msgid "Quit"
-#~ msgstr "Keluar"
