@@ -8,8 +8,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-31 17:02+0000\n"
 "PO-Revision-Date: 2024-04-13 16:36+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
@@ -21,8 +21,8 @@ msgstr ""
 "X-Generator: Poedit 3.3.1\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Počasie"
@@ -59,7 +59,8 @@ msgstr ""
 "umožní vidieť aktuálne podmienky naposledy hľadaných miest zadaním názvu v "
 "prehľade Aktivít."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
@@ -101,10 +102,6 @@ msgstr "Maximalizovať okno"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Či má alebo nemá byť okno maximalizované."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Načítava sa…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -169,9 +166,13 @@ msgid "Search for a city or country"
 msgstr "Vyhľadajte mesto alebo krajinu"
 
 # tooltip
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Obnoví"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Hlavná ponuka"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -277,6 +278,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "Načítava sa…"
 
 # DK:window title
 #~ msgid "Select Location"
