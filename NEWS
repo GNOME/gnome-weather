@@ -1,3 +1,44 @@
+47.0
+====
+Weather 47.0 comes with the following enhancements:
+
+* Use AdwSpinner for loading page (Christopher Davis)
+
+This version brings translation updates for the following locales:
+  - Basque (Asier Sarasua Garmendia)
+  - Belarusian (Vasil Pupkin)
+  - Brazilian Portuguese (Juliano de Souza Camargo)
+  - British English (Andi Chandler)
+  - Bulgarian (Alexander Shopov, twlvnn kraftwerk)
+  - Catalan (Jordi Mas i Hernandez)
+  - Chinese (China) (Luming Zh)
+  - Chinese (Taiwan) (Junting Wu)
+  - Czech (Daniel Rusek)
+  - Danish (Alan Mortensen)
+  - Finnish (Jiri Grönroos)
+  - French (Irénée THIRION)
+  - Galician (Fran Dieguez)
+  - Georgian (Ekaterine Papava)
+  - German (Jürgen Benvenuti)
+  - Greek (Efstathios Iosifidis)
+  - Hindi (Scrambled 777)
+  - Indonesian (Andika Triwidada)
+  - Kazakh (Baurzhan Muftakhidinov)
+  - Korean (DaeHyun Sung)
+  - Lithuanian (Aurimas Černius)
+  - Norwegian Bokmål (Brage Fuglseth)
+  - Occitan (Quentin PAGÈS)
+  - Persian (Danial Behzadi)
+  - Polish (Piotr Drąg)
+  - Portuguese (Hugo Carvalho)
+  - Romanian (Florentina Mușat)
+  - Slovak (Jose Riha)
+  - Spanish (Daniel)
+  - Swedish (Anders Jonsson)
+  - Thai (Aefgh Threenine)
+  - Turkish (Emin Tufan Çetin, Sabri Ünal)
+  - Ukrainian (Yuri Chornoivan)
+
 47.alpha
 ========
 Weather 47.alpha comes with the following enhancements:
