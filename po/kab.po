@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2024-03-26 17:00+0000\n"
-"PO-Revision-Date: 2024-03-29 09:28+0100\n"
-"Last-Translator: sa\n"
+"POT-Creation-Date: 2024-08-31 17:02+0000\n"
+"PO-Revision-Date: 2024-10-01 11:53+0100\n"
+"Last-Translator: ButterflyOfFire <ButterflyOfFire@protonmail.com>\n"
 "Language-Team: Kabyle <>\n"
 "Language: kab\n"
 "MIME-Version: 1.0\n"
@@ -22,11 +22,11 @@ msgstr ""
 "X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Gtranslator 41.0\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Tignewt"
@@ -64,7 +64,7 @@ msgstr ""
 "Teskant n yirmad."
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:371 src/app/window.js:198
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "Asenfaṛ n GNOME"
 
@@ -86,8 +86,8 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Idgan yettwaskanen deg teskant n umaḍal n gnome-weather. Yal azal d "
-"GVariant tettuɣal-d s gweather_location_serialize()."
+"Idgan yettwaskanen deg teskant n umaḍal n gnome-weather. Yal azal d GVariant "
+"tettuɣal-d s gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
 msgid "The width of the main window."
@@ -104,10 +104,6 @@ msgstr "Asfaylu meqqren"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Ama meqqer usfaylu neɣ ala."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Asali…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -169,9 +165,13 @@ msgstr "I wakken ad tebduḍ, fren adeg."
 msgid "Search for a city or country"
 msgstr "Nadi tamdint neɣ tamurt"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Smiren"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Umuɣ agejdan"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -266,3 +266,6 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "Asali…"
