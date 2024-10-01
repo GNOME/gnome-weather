@@ -10,22 +10,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-10-24 03:56+0000\n"
-"PO-Revision-Date: 2024-02-24 23:37+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-31 14:11+0000\n"
+"PO-Revision-Date: 2024-10-01 15:38+0300\n"
 "Last-Translator: Rūdolfs Mazurs <rudolfs.mazurs@gmail.com>\n"
 "Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
 " 2);\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Laikapstākļi"
@@ -60,7 +60,8 @@ msgstr ""
 "To var arī integrēt ar GNOME čaulu, ļaujot redzēt apstākļus nesen meklētajās "
 "pilsētās, ievadot to nosaukumus aktivitāšu pārskatā."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:339 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "GNOME projekts"
 
@@ -100,10 +101,6 @@ msgstr "Logs maksimizēts"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Vai logs ir maksimizēts."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Ielādē…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -165,9 +162,14 @@ msgstr "Lai sāktu, izvēlieties atrašanās vietu."
 msgid "Search for a city or country"
 msgstr "Meklēt pilsētu vai valsti"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Atsvaidzināt"
+
+#: data/window.ui:87
+#| msgid "Timezone Menu"
+msgid "Main Menu"
+msgstr "Galvenā izvēlne"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -267,6 +269,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "Ielādē…"
 
 #~ msgid "Select Location"
 #~ msgstr "Izvēlieties vietu"
@@ -1041,16 +1046,16 @@ msgstr "%s, %s"
 #~ msgstr "Spiediena mērvienība"
 
 #~ msgid ""
-#~ "The unit of pressure used for showing weather. Valid values are "
-#~ "“kpa” (kilopascal), “hpa” (hectopascal), “mb” (millibar, mathematically "
+#~ "The unit of pressure used for showing weather. Valid values are “kpa” "
+#~ "(kilopascal), “hpa” (hectopascal), “mb” (millibar, mathematically "
 #~ "equivalent to 1 hPa but shown differently), “mm-hg” (millimeters of "
 #~ "mercury), “inch-hg” (inches of mercury), “atm” (atmospheres)."
 #~ msgstr ""
 #~ "Spiediena mērvienība, ko izmantot, attēlojot laika ziņas. Derīgās "
 #~ "vērtības ir “kpa” (kilopaskāli), “hpa” (hektopaskāli), “mb” (milibāri, "
-#~ "matemātiski ekvivalents 1 hPa, bet tiek attēlots citādi), “mm-"
-#~ "hg” (dzīvsudraba milimetri), “inch-hg” (dzīvsudraba collas), "
-#~ "“atm” (atmosfēras)."
+#~ "matemātiski ekvivalents 1 hPa, bet tiek attēlots citādi), “mm-hg” "
+#~ "(dzīvsudraba milimetri), “inch-hg” (dzīvsudraba collas), “atm” "
+#~ "(atmosfēras)."
 
 #~ msgid "('', 'KNYC', nothing)"
 #~ msgstr "('Rīga', 'EVRA', nothing)"
@@ -1074,9 +1079,6 @@ msgstr "%s, %s"
 
 #~ msgid "Location Entry"
 #~ msgstr "Atrašanās vietas ieraksts"
-
-#~ msgid "Timezone Menu"
-#~ msgstr "Laika joslu izvēlne"
 
 #~ msgid "Timezone"
 #~ msgstr "Laika josla"
