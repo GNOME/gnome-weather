@@ -6,22 +6,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-07-20 21:07+0200\n"
-"Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
-"Language-Team: Friulian <fur@li.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-31 14:11+0000\n"
+"PO-Revision-Date: 2024-10-07 13:42+0000\n"
+"Last-Translator: Fabio T. <f.t.public@gmail.com>\n"
+"Language-Team: Friulian <f.t.public@gmail.com>\n"
 "Language: fur\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Editor: HaiPO 1.0 Release\n"
+"X-Editor: HaiPO 2.0 beta\n"
 "X-Generator: Poedit 3.2.2\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Meteo"
@@ -53,15 +53,17 @@ msgid ""
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"Volint ancje a si integre cun GNOME Shell, permetint di viodi lis condizions "
-"meteo atuâi des citâts plui cirudis di resint; al baste scrivi il lôr non "
+"Volint ancje a si integre cun GNOME Shell, permetint di viodi lis condizions"
+" meteo atuâi des citâts plui cirudis di resint; al baste scrivi il lôr non "
 "inte Panoramiche Ativitâts."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "Il progjet GNOME"
 
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
 msgstr "Timp;Previsions;Meteo;"
@@ -79,8 +81,8 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Lis posizions mostradis inte viodude mondiâl di gnome-weather. Ogni valôr al "
-"è un GVariant tornât di gweather_location_serialize()."
+"Lis posizions mostradis inte viodude mondiâl di gnome-weather. Ogni valôr al"
+" è un GVariant tornât di gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
 msgid "The width of the main window."
@@ -97,10 +99,6 @@ msgstr "Barcon slargjât"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Indiche se il barcon al è slargjât o mancul."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Daûr a cjamâ…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -162,9 +160,13 @@ msgstr "Par scomençâ, selezione une lûc."
 msgid "Search for a city or country"
 msgstr "Cîr une citât o un paîs"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Inzorne"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Menù principâl"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -218,7 +220,8 @@ msgstr "Previsions pe zornade"
 msgid "Forecast not Available"
 msgstr "Previsions no disponibilis"
 
-#. Translators: this is the time format for day and month name according to the current locale
+#. Translators: this is the time format for day and month name according to
+#. the current locale
 #: src/app/dailyForecast.js:219
 msgid "%b %e"
 msgstr "%e di %b"
@@ -260,6 +263,9 @@ msgstr "%s / %s"
 msgid "%s, %s"
 msgstr "%s, %s"
 
+#~ msgid "Loading…"
+#~ msgstr "Daûr a cjamâ…"
+
 #~ msgid "Select Location"
 #~ msgstr "Sielç posizion"
 
@@ -273,8 +279,8 @@ msgstr "%s, %s"
 #~ "The automatic location is the value of automatic-location switch which "
 #~ "decides whether to fetch current location or not."
 #~ msgstr ""
-#~ "Le posizion automatiche a je il valôr dal control automatic-location che "
-#~ "al dîs se cjatâ la posizion atuâl o no."
+#~ "Le posizion automatiche a je il valôr dal control automatic-location che al "
+#~ "dîs se cjatâ la posizion atuâl o no."
 
 #~ msgid "City view"
 #~ msgstr "Viodude citât"
@@ -454,5 +460,5 @@ msgstr "%s, %s"
 
 #~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 #~ msgstr ""
-#~ "Dopre il pulsant <b>Gnove</b> te striche dai struments par zontâ "
-#~ "localitâts mondiâls"
+#~ "Dopre il pulsant <b>Gnove</b> te striche dai struments par zontâ localitâts "
+#~ "mondiâls"
