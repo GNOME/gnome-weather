@@ -8,9 +8,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gnome Weather\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-08-27 20:29+0000\n"
-"PO-Revision-Date: 2023-09-03 15:33+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-31 14:11+0000\n"
+"PO-Revision-Date: 2024-10-27 22:17+0100\n"
 "Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
 "Language-Team: GNOME-NL <https://matrix.to/#/#nl:gnome.org>\n"
 "Language: nl\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "Weer"
@@ -60,7 +60,8 @@ msgstr ""
 "de huidige weersomstandigheden te zien van de meest recent gezochte steden "
 "door gewoon de naam in te geven in het activiteitenoverzicht."
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "Het GNOME-project"
 
@@ -100,10 +101,6 @@ msgstr "Venster gemaximaliseerd"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Of het venster gemaximaliseerd is."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Laden…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -165,9 +162,13 @@ msgstr "Om te beginnen kiest u een plaats."
 msgid "Search for a city or country"
 msgstr "Naar een stad of land zoeken"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Verversen"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Hoofdmenu"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -266,6 +267,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "Laden…"
 
 #~ msgid "Select Location"
 #~ msgstr "Locatie selecteren"
