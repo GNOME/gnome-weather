@@ -1,0 +1,304 @@
+# Belarusian translation for gnome-weather.
+# Copyright (C) 2013 gnome-weathers COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2013, 2014.
+# Yuras Shumovich <shumovichy@gmail.com>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2024-08-31 17:02+0000\n"
+"PO-Revision-Date: 2024-08-23 02:31+0300\n"
+"Last-Translator: Kanviertar Tradycyjny\n"
+"Language-Team: Belarusian Latin <i18n@mova.org>\n"
+"Language: be@latin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
+#: src/service/main.js:49
+msgid "Weather"
+msgstr "Nadvorje"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
+msgid "Show weather conditions and forecast"
+msgstr "Pakaz prahnozaŭ i biahučaha nadvorja"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:16
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Maleńkaja prahrama, jakaja dazvalaje sačyć nadvorjem u vašym horadzie ci ŭ "
+"lubym inšym miescy svietu."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:20
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Jana zabiaspiečvaje dostup da padrabiaznych prahnozaŭ (da siami dzion) z pahadzinnaj "
+"detalizacyjaj na sionnia i zaŭtra."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:24
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"Moža intehravacca ŭ abałonku GNOME, što dazvalaje hladzieć nadvorje ŭ "
+"haradach, jakija vy niadaŭna šukali, prosta napisaŭšy nazvu adnaho z ich u mieniu "
+"Ahlad dziejnasci."
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
+msgid "The GNOME Project"
+msgstr "Prajekt GNOME"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
+msgid "Weather;Forecast;"
+msgstr "Weather;Nadvorje;Prahnoz;"
+
+#: data/org.gnome.Weather.desktop.in.in:14
+msgid "Allows weather information to be displayed for your location."
+msgstr "Dazvalaje pakazvać nadvorje dla vašaha miescaznachodžannia."
+
+#: data/org.gnome.Weather.gschema.xml:6
+msgid "Configured cities to show weather for"
+msgstr "Harady, dla jakich naładžany pakaz nadvorja"
+
+#: data/org.gnome.Weather.gschema.xml:7
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Miescaznachodžanni, jakija pakazvajucca ŭ susvietnym režymie prahladu. Kožnaje "
+"značennie – GVariant viernutaje funkcyjaj gweather_location_serialize()."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "Šyrynia hałoŭnaha akna."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "Vyšynia hałoŭnaha akna."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Razhortvannie akna"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Razhornuta akno ci nie."
+
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "Noč"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "Ranica"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "Dzień"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "Viečar"
+
+#: data/places-popover.ui:15 data/places-popover.ui:76
+msgid "Search for a city"
+msgstr "Pošuk horada"
+
+#: data/weather-widget.ui:42
+msgid "Places"
+msgstr "Miescy"
+
+#: data/weather-widget.ui:92
+msgid "_Hourly"
+msgstr "Pa _hadzinach"
+
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "Pa _dniach"
+
+#: data/window.ui:6
+msgid "Temperature Unit"
+msgstr "Adzinki vymiarennia"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "Hradusy _Celsija"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "Hradusy _Farenhiejta"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_Pra Nadvorje"
+
+#: data/window.ui:47
+msgid "Welcome to Weather!"
+msgstr "Vitajem u prahramie Nadvorje!"
+
+#: data/window.ui:48
+msgid "To get started, select a location."
+msgstr "Kab pačać, vybierycie miescaznachodžannie."
+
+#: data/window.ui:54
+msgid "Search for a city or country"
+msgstr "Pošuk horada abo krainy"
+
+#: data/window.ui:73
+msgid "Refresh"
+msgstr "Abnavić"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Hałoŭnaje mieniu"
+
+#: src/app/city.js:203
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Adčuvajecca jak %.0f°"
+
+#: src/app/city.js:234
+msgid "Updated just now."
+msgstr "Abnoŭlena tolki što."
+
+#: src/app/city.js:239
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Abnoŭlena %d chvilinu tamu."
+msgstr[1] "Abnoŭlena %d chviliny tamu."
+msgstr[2] "Abnoŭlena %d chvilin tamu."
+
+#: src/app/city.js:245
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Abnoŭlena %d hadzinu tamu."
+msgstr[1] "Abnoŭlena %d hadziny tamu."
+msgstr[2] "Abnoŭlena %d hadzin tamu."
+
+#: src/app/city.js:251
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Abnoŭlena %d dzień tamu."
+msgstr[1] "Abnoŭlena %d dni tamu."
+msgstr[2] "Abnoŭlena %d dzion tamu."
+
+#: src/app/city.js:257
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Abnoŭlena %d tydzień tamu."
+msgstr[1] "Abnoŭlena %d tydni tamu."
+msgstr[2] "Abnoŭlena %d tydniaŭ tamu."
+
+#: src/app/city.js:262
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "Updated %d months ago."
+msgstr[0] "Abnoŭlena %d miesiac tamu."
+msgstr[1] "Abnoŭlena %d miesiacy tamu."
+msgstr[2] "Abnoŭlena %d miesiacaŭ tamu."
+
+#: src/app/dailyForecast.js:36
+msgid "Daily Forecast"
+msgstr "Prahnoz pa dniach"
+
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+msgid "Forecast not Available"
+msgstr "Prahnoz niedastupny"
+
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:219
+msgid "%b %e"
+msgstr "%e %b"
+
+#: src/app/hourlyForecast.js:41
+msgid "Hourly Forecast"
+msgstr "Prahnoz pa hadzinach"
+
+#: src/app/hourlyForecast.js:107
+msgid "Now"
+msgstr "Ciapier"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/hourlyForecast.js:114
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: src/app/window.js:195
+msgid "translator-credits"
+msgstr ""
+"Ihar Hračyška <ihar.hrachyshka@gmail.com>\n"
+"Juraś Šumovič <shumovichy@gmail.com>"
+
+#: src/app/world.js:39
+msgid "World view"
+msgstr "Sviet"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: src/misc/util.js:103
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. Its the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: src/service/searchProvider.js:182
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "Zahruzka…"
+
+#~ msgid "Select Location"
+#~ msgstr "Vybierycie miescaznachodžannie"
+
+#~ msgid "Automatic location"
+#~ msgstr "Aŭtavyznačennie miescaznachodžannia"
+
+#~ msgid ""
+#~ "The automatic location is the value of automatic-location switch which "
+#~ "decides whether to fetch current location or not."
+#~ msgstr ""
+#~ "U zaležnasci ad stanu pieraklučalnika «Aŭtavyznačennie miescaznachodžannia», "
+#~ "aŭtamatyčna vyznačajecca (ci nie) biahučaje miescaznachodžannie."
+
+#~ msgid "City view"
+#~ msgstr "Harady"
+
+#~ msgid "Automatic Location"
+#~ msgstr "Aŭtavyznačennie miescaznachodžannia"
+
+#~ msgid "Locating…"
+#~ msgstr "Vyznačennie miescaznachodžannia…"
+
+#~ msgid "Viewed Recently"
+#~ msgstr "Niadaŭna prahledžanyja"
+
+#~ msgid "Current conditions"
+#~ msgstr "Biahučaje nadvorje"
+
+#~ msgid "A weather application"
+#~ msgstr "Prahrama nadvorja"
