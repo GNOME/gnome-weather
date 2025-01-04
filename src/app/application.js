@@ -162,6 +162,7 @@ export class WeatherApplication extends Adw.Application {
 
         this.set_accels_for_action("win.selection-mode", ["Escape"]);
         this.set_accels_for_action("win.select-all", ["<Control>a"]);
+        this.set_accels_for_action("window.close", ["<Control>w"]);
         this.set_accels_for_action("app.quit", ["<Control>q"]);
     }
 
