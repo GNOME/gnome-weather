@@ -54,6 +54,24 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release version="48.alpha" date="2025-01-11" type="development">
+      <description>
+        <p>Weather 48.alpha comes with the following enhancements:</p>
+        <ul>
+          <li>Add ctrl+w shortcut for window.close (Maximiliano Sandoval)</li>
+          <li>Replace emblem-ok symbolic (Maximiliano Sandoval)</li>
+        </ul>
+        <p>This version brings translation updates for the following locales:</p>
+        <ul>
+          <li>Dutch (Nathan Follens)</li>
+          <li>Friulian (Fabio Tomat)</li>
+          <li>Kabyle (Athmane MOKRAOUI)</li>
+          <li>Latvian (Rūdolfs Mazurs)</li>
+          <li>Portuguese (Brazil) (Juliano de Souza Camargo)</li>
+          <li>Serbian (Марко Костић)</li>
+        </ul>
+      </description>
+    </release>
     <release date="2024-09-16" version="47.0">
       <description>
         <p>Weather 47.0 comes with the following enhancements:</p>
