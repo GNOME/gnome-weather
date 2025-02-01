@@ -54,6 +54,14 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release version="48.beta" date="2025-02-01" type="development">
+      <description>
+        <p>Weather 48.beta comes with the following enhancements:</p>
+        <ul>
+          <li>Fix developer id in appdata (Daniel Rusek)</li>
+        </ul>
+      </description>
+    </release>
     <release version="48.alpha" date="2025-01-11" type="development">
       <description>
         <p>Weather 48.alpha comes with the following enhancements:</p>
