@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2024-08-22 16:15+0000\n"
-"PO-Revision-Date: 2024-08-25 00:22+0200\n"
+"POT-Creation-Date: 2025-02-13 01:45+0000\n"
+"PO-Revision-Date: 2025-03-01 14:56+0100\n"
 "Last-Translator: Brage <bragefuglseth@gnome.org>\n"
 "Language-Team: \n"
 "Language: nb\n"
@@ -54,11 +54,11 @@ msgid ""
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"Appen kan også la deg se været for nylig observerte steder ved å bare søke "
+"Appen kan også la deg se været for nylig observerte byer ved å bare søke "
 "etter navnene deres i systemet ditt."
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
+#: data/org.gnome.Weather.appdata.xml.in.in:455 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "GNOME"
 
@@ -73,15 +73,15 @@ msgstr "Lar værmeldingen vises for enhetens posisjon."
 
 #: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
-msgstr "Steder å vise været for"
+msgstr "Byer å vise været for"
 
 #: data/org.gnome.Weather.gschema.xml:7
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Stedene som vises i verdensoversikten til Været. Hvert sted er en GVariant "
-"fra gweather_location_serialize()."
+"Byene som vises i verdensoversikten til Været. Hver by er en GVariant fra "
+"gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
 msgid "The width of the main window."
@@ -117,19 +117,19 @@ msgstr "Kveld"
 
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
-msgstr "Søk etter steder"
+msgstr "Søk etter byer"
 
 #: data/weather-widget.ui:42
 msgid "Places"
-msgstr "Steder"
+msgstr "Byer"
 
 #: data/weather-widget.ui:92
 msgid "_Hourly"
-msgstr "_Døgn"
+msgstr "Hver _time"
 
 #: data/weather-widget.ui:124
 msgid "_Daily"
-msgstr "_Uke"
+msgstr "Hver _dag"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -153,11 +153,11 @@ msgstr "Velkommen til Været"
 
 #: data/window.ui:48
 msgid "To get started, select a location."
-msgstr "Velg et sted for å komme i gang"
+msgstr "Velg en by for å komme i gang"
 
 #: data/window.ui:54
 msgid "Search for a city or country"
-msgstr "Søk etter steder"
+msgstr "Søk etter en by eller et land"
 
 #: data/window.ui:73
 msgid "Refresh"
@@ -239,7 +239,10 @@ msgstr "%l∶%M %p"
 
 #: src/app/window.js:195
 msgid "translator-credits"
-msgstr "Brage Fuglseth https://bragefuglseth.dev"
+msgstr ""
+"Kjartan Maraas <kmaraas@gnome.org>\n"
+"John Erling Blad <jeblad@gmail.com>\n"
+"Brage Fuglseth https://bragefuglseth.dev"
 
 #: src/app/world.js:39
 msgid "World view"
