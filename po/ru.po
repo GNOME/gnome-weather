@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2024-06-24 13:57+0000\n"
-"PO-Revision-Date: 2024-07-03 13:02+0300\n"
+"POT-Creation-Date: 2025-02-13 01:45+0000\n"
+"PO-Revision-Date: 2025-02-21 13:43+0300\n"
 "Last-Translator: Artur So <arturios2005@mail.ru>\n"
 "Language-Team: Russian <Alexmelman88@gmail.com>\n"
 "Language: ru\n"
@@ -19,10 +19,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
 #: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
@@ -60,9 +60,9 @@ msgstr ""
 "набрав название города в Обзорном режиме."
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:375 src/app/window.js:198
+#: data/org.gnome.Weather.appdata.xml.in.in:455 src/app/window.js:198
 msgid "The GNOME Project"
-msgstr "The GNOME Project"
+msgstr "Проект GNOME"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
@@ -100,10 +100,6 @@ msgstr "Окно развёрнуто"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "Является ли окно развёрнутым или нет."
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Загрузка…"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -165,11 +161,11 @@ msgstr "Чтобы начать, выберите местоположение."
 msgid "Search for a city or country"
 msgstr "Поиск по городу или стране"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Обновить"
 
-#: data/window.ui:90
+#: data/window.ui:87
 msgid "Main Menu"
 msgstr "Главное меню"
 
@@ -274,6 +270,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "Загрузка…"
 
 #~ msgid "Select Location"
 #~ msgstr "Выбрать местоположение"
