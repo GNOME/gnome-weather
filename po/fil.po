@@ -1,0 +1,263 @@
+# Filipino translation for gnome-weather.
+# Copyright (C) 2025 gnome-weather's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-weather package.
+# Iverson Briones <ivercoder@proton.me>,  2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather main\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2025-03-05 09:18+0000\n"
+"PO-Revision-Date: 2025-03-07 20:08+0800\n"
+"Last-Translator: \n"
+"Language-Team: Filipino <fil@li.org>\n"
+"Language: fil\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
+#: src/service/main.js:49
+msgid "Weather"
+msgstr "Lagay ng Panahon"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:6
+#: data/org.gnome.Weather.desktop.in.in:5
+msgid "Show weather conditions and forecast"
+msgstr "Ipinapakita ang tinataya't kasalukuyang lagay ng panahon"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:16
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Isang maliit na app na magagamit para makita ang kasalukuyang lagay ng "
+"panahon sa iyong lungsod, o saanman sa mundo."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:20
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Makakakuha ka ng tumpak na taya ng panahon hanggang 7 araw sa hinaharap, na "
+"may oras-oras na detalye para ngayon at kinabukasan, sa pamamagitan ng "
+"iba't ibang serbisyo sa internet."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:24
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"Integrated rin into sa GNOME Shell, kung saan makikita mo kaagad ang "
+"kasalukuyang lagay ng panahon ng mga kamakailang hinanap na lungsod sa pag-"
+"type lang ng pangalan nito sa Activities Overview."
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:455 src/app/window.js:198
+msgid "The GNOME Project"
+msgstr "Proyekto GNOME"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
+msgid "Weather;Forecast;"
+msgstr "Weather;Forecast;Panahon;Taya;"
+
+#: data/org.gnome.Weather.desktop.in.in:14
+msgid "Allows weather information to be displayed for your location."
+msgstr ""
+"Pinapayagang ipakita ang lagay ng panahon ng kasalukuyan mong lokasyon."
+
+#: data/org.gnome.Weather.gschema.xml:6
+msgid "Configured cities to show weather for"
+msgstr "Mga nakatakdang lungsod para ipakita ang lagay ng panahon"
+
+#: data/org.gnome.Weather.gschema.xml:7
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Ang lokasyong ipinapakita sa globo ng gnome-weather. Isang GVariant na "
+"sagot ng gweather_location_serialize() ang bawat value."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "Ang lapad ng pangunahing window."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "Ang taas ng pangunahing window."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Naka-maximize ang window"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Kung naka-maximize ba o hindi ang window."
+
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "Gabi"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "Umaga"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "Hapon"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "Takipsilim"
+
+#: data/places-popover.ui:15 data/places-popover.ui:76
+msgid "Search for a city"
+msgstr "Maghanap ng lungsod"
+
+#: data/weather-widget.ui:42
+msgid "Places"
+msgstr "Mga Lugar"
+
+#: data/weather-widget.ui:92
+msgid "_Hourly"
+msgstr "_Oras-oras"
+
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "Ara_w-araw"
+
+#: data/window.ui:6
+msgid "Temperature Unit"
+msgstr "Yunit ng Temperatura"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_Celsius"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_Fahrenheit"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_Tungkol sa Lagay ng Panahon"
+
+#: data/window.ui:47
+msgid "Welcome to Weather!"
+msgstr "Maligayang pagdating sa Lagay ng Panahon!"
+
+#: data/window.ui:48
+msgid "To get started, select a location."
+msgstr "Para magsimula, pumili ng lokasyon."
+
+#: data/window.ui:54
+msgid "Search for a city or country"
+msgstr "Maghanap ng lungsod o bansa"
+
+#: data/window.ui:73
+msgid "Refresh"
+msgstr "I-refresh"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Pangunahing Menu"
+
+#: src/app/city.js:203
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Mukhang %.0f°"
+
+#: src/app/city.js:234
+msgid "Updated just now."
+msgstr "In-update ngayon lang."
+
+#: src/app/city.js:239
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "In-update %d minuto ang nakalipas."
+msgstr[1] "In-update %d minuto ang nakalipas."
+
+#: src/app/city.js:245
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "In-update %d oras ang nakalipas."
+msgstr[1] "In-update %d oras ang nakalipas."
+
+#: src/app/city.js:251
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "In-update %d araw ang nakalipas."
+msgstr[1] "In-update %d araw ang nakalipas."
+
+#: src/app/city.js:257
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "In-update %d linggo ang nakalipas."
+msgstr[1] "In-update %d linggo ang nakalipas."
+
+#: src/app/city.js:262
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "Updated %d months ago."
+msgstr[0] "In-update %d buwan ang nakalipas."
+msgstr[1] "In-update %d buwan ang nakalipas."
+
+#: src/app/dailyForecast.js:36
+msgid "Daily Forecast"
+msgstr "Araw-araw na Taya"
+
+#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+msgid "Forecast not Available"
+msgstr "Hindi Available ang Taya"
+
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.js:219
+msgid "%b %e"
+msgstr "%b %e"
+
+#: src/app/hourlyForecast.js:41
+msgid "Hourly Forecast"
+msgstr "Oras-oras na Taya"
+
+#: src/app/hourlyForecast.js:107
+msgid "Now"
+msgstr "Ngayon"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/hourlyForecast.js:114
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: src/app/window.js:195
+msgid "translator-credits"
+msgstr "Iverson Briones"
+
+#: src/app/world.js:39
+msgid "World view"
+msgstr "Globo"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: src/misc/util.js:103
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: src/service/searchProvider.js:182
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
