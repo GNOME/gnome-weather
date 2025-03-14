@@ -2,14 +2,14 @@
 # Copyright (C) 2013 gnome-weather's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gnome-weather package.
 #
-# A S Alam <aalam@users.sf.net>, 2013, 2014, 2015, 2017, 2021, 2023.
+# SPDX-FileCopyrightText: 2013, 2014, 2015, 2017, 2021, 2023, 2025 A S Alam <aalam@users.sf.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-09-02 15:44+0000\n"
-"PO-Revision-Date: 2023-09-09 15:30-0700\n"
-"Last-Translator: A S Alam <aalam@satluj.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2025-03-14 17:35+0000\n"
+"PO-Revision-Date: 2025-03-14 15:59-0500\n"
+"Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-DamnedLies-Scope: partial\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "ਮੌਸਮ"
@@ -36,8 +36,8 @@ msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
 msgstr ""
-"ਇੱਕ ਛੋਟੀ ਐਪਲੀਕੇਸ਼ਨ, ਜੋ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਸ਼ਹਿਰ ਜਾਂ ਸੰਸਾਰ ਵਿੱਚੋਂ ਹੋਰ ਥਾਵਾਂ ਲਈ"
-" ਮੌਜੂਦਾ ਮੌਸਮ ਦਾ ਧਿਆਨ ਰੱਖਣ "
+"ਇੱਕ ਛੋਟੀ ਐਪਲੀਕੇਸ਼ਨ, ਜੋ ਤੁਹਾਨੂੰ ਤੁਹਾਡੇ ਸ਼ਹਿਰ ਜਾਂ ਸੰਸਾਰ ਵਿੱਚੋਂ ਹੋਰ ਥਾਵਾਂ ਲਈ ਮੌਜੂਦਾ"
+" ਮੌਸਮ ਦਾ ਧਿਆਨ ਰੱਖਣ "
 "ਲਈ ਸਹਾਇਕ ਹੈ।"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:20
@@ -45,8 +45,8 @@ msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"ਇਹ ਵੱਖ-ਵੱਖ ਇੰਟਰਨੈੱਟ ਸੇਵਾਵਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ 7 ਦਿਨਾਂ ਤੱਕ ਦੀ ਵੇਰਵੇ ਸਮੇਤ ਭਵਿੱਖਬਾਣੀ"
-" ਦਿੰਦੀ ਹੈ, ਇਸ ਤੋਂ "
+"ਇਹ ਵੱਖ-ਵੱਖ ਇੰਟਰਨੈੱਟ ਸੇਵਾਵਾਂ ਦੀ ਵਰਤੋਂ ਕਰਕੇ 7 ਦਿਨਾਂ ਤੱਕ ਦੀ ਵੇਰਵੇ ਸਮੇਤ ਭਵਿੱਖਬਾਣੀ "
+"ਦਿੰਦੀ ਹੈ, ਇਸ ਤੋਂ "
 "ਇਲਾਵਾ ਅੱਜ ਅਤੇ ਭਲਕ ਲਈ ਘੰਟਿਆਂ ਦੇ ਮੁਤਾਬਕ ਵੇਰਵਾ ਵੀ ਮੌਜੂਦ ਰਹਿੰਦਾ ਹੈ।"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:24
@@ -55,11 +55,12 @@ msgid ""
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"ਇਹ ਚੋਣਵੇਂ ਰੂਪ ਵਿੱਚ ਗਨੋਮ ਸ਼ੈੱਲ ਨਾਲ ਵੀ ਜੁੜਿਆ ਹੋਈ ਹੈ, ਜਿਸ ਨਾਲ ਤੁਸੀਂ ਸਰਗਰਮੀ ਸੰਖੇਪ"
-" ਵਿੱਚ ਕਿਸੇ ਲੱਭੇ ਗਏ "
+"ਇਹ ਚੋਣਵੇਂ ਰੂਪ ਵਿੱਚ ਗਨੋਮ ਸ਼ੈੱਲ ਨਾਲ ਵੀ ਜੁੜਿਆ ਹੋਈ ਹੈ, ਜਿਸ ਨਾਲ ਤੁਸੀਂ ਸਰਗਰਮੀ ਸੰਖੇਪ ਵ"
+"ਿੱਚ ਕਿਸੇ ਲੱਭੇ ਗਏ "
 "ਸ਼ਹਿਰਾਂ ਦਾ ਕੇਵਲ ਨਾਂ ਲਿਖ ਕੇ ਹੀ ਮੌਜੂਦਾ ਹਾਲਤ ਨੂੰ ਵੇਖਣ ਸਕਦੇ ਹੋ।"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:451 src/app/window.js:198
 msgid "The GNOME Project"
 msgstr "ਗਨੋਮ ਪਰੋਜੈਕਟ"
 
@@ -99,10 +100,6 @@ msgstr "ਵਿੰਡੋ ਵੱਧੋ-ਵੱਧ ਕੀਤੀ"
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
 msgstr "ਕੀ ਵਿੰਡੋ ਨੂੰ ਵੱਧੋ-ਵੱਧ ਕਰਨਾ ਹੈ ਜਾਂ ਨਹੀ ਹੈ।"
-
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "...ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -164,9 +161,13 @@ msgstr "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਟਿਕਾਣਾ ਚੁਣੋ।"
 msgid "Search for a city or country"
 msgstr "ਸ਼ਹਿਰ ਜਾਂ ਦੇਸ਼ ਨੂੰ ਖੋਜੋ"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "ਤਾਜ਼ਾ ਕਰੋ"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "ਮੁੱਖ ਮੇਨੂ"
 
 #: src/app/city.js:203
 #, javascript-format
@@ -264,6 +265,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
+
+#~ msgid "Loading…"
+#~ msgstr "...ਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
 #~ msgid "Automatic location"
 #~ msgstr "ਆਟੋਮੈਟਿਕ ਟਿਕਾਣਾ"
