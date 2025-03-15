@@ -93,16 +93,6 @@ export const MainWindow = GObject.registerClass({
         this.connect('close-request', () => this._saveWindowGeometry());
     }
 
-    vfunc_unroot() {
-        this._cityView.unparent();
-        this._cityView = null;
-
-        this._worldView.unparent();
-        this._worldView = null;
-
-        super.vfunc_unroot();
-    }
-
     update() {
         this._cityView.update();
     }
