@@ -110,13 +110,6 @@ export const WeatherWidget = GObject.registerClass({
         this._updatedTimeTimeoutId = 0;
     }
 
-    vfunc_unroot() {
-        this._worldView.unparent();
-        this._worldView = null;
-
-        super.vfunc_unroot();
-    }
-
     vfunc_unmap() {
         if (this._updatedTimeTimeoutId) {
             GLib.Source.remove(this._updatedTimeTimeoutId);
