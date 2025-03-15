@@ -20,6 +20,7 @@ import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 import GWeather from 'gi://GWeather';
+import Adw from 'gi://Adw';
 
 import * as Thermometer from './thermometer.js';
 import * as Util from '../misc/util.js';
@@ -175,7 +176,7 @@ export const DayEntry = GObject.registerClass({
         'afternoonHumidity', 'afternoonWind',
         'eveningTemperatureLabel', 'eveningImage',
         'eveningHumidity', 'eveningWind'],
-}, class DayEntry extends Gtk.Widget {
+}, class DayEntry extends Adw.Bin {
 
     constructor(params) {
         const {
@@ -243,12 +244,6 @@ export const DayEntry = GObject.registerClass({
         this._setWindInfo(eveningInfo, this._eveningWind);
     }
 
-    vfunc_unroot() {
-        [...this].forEach(child => child.unparent());
-
-        super.vfunc_unroot();
-    }
-
     _setWindInfo(info, label) {
         let [ok, speed, direction] = info.get_value_wind(GWeather.SpeedUnit.DEFAULT);
         if (ok) {
@@ -259,5 +254,3 @@ export const DayEntry = GObject.registerClass({
         }
     }
 });
-
-DayEntry.set_layout_manager_type(Gtk.BoxLayout);
