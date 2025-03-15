@@ -38,7 +38,7 @@ $ flatpak install org.gnome.WeatherDevel
 
 ## Hacking on Weather
 
-To start working on Weather see the [general guide](https://wiki.gnome.org/Newcomers/BuildProject) for building GNOME apps
+To start working on Weather see the [general guide](https://welcome.gnome.org/app/Weather/#getting-the-app-to-build) for building GNOME apps
 with Flatpak and GNOME Builder. Then, [find a task](https://gitlab.gnome.org/GNOME/gnome-weather/issues?label_name%5B%5D=4.+Newcomers) to work on.
 
 If you're unfamiliar with GJS, here are a few good places to start:
