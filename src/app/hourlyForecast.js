@@ -23,6 +23,7 @@ import Gtk from 'gi://Gtk';
 import Gdk from 'gi://Gdk';
 import GWeather from 'gi://GWeather';
 import Graphene from 'gi://Graphene';
+import Adw from 'gi://Adw';
 
 import * as Util from '../misc/util.js';
 
@@ -261,24 +262,12 @@ export const HourEntry = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/hour-entry.ui',
 
     InternalChildren: ['timeLabel', 'image', 'forecastTemperatureLabel'],
-}, class HourEntry extends Gtk.Widget {
+}, class HourEntry extends Adw.Bin {
     constructor({ timeLabel, info, ...params }) {
         super({ ...params });
-
-        Object.assign(this.layoutManager, {
-            orientation: Gtk.Orientation.VERTICAL,
-        });
 
         this._timeLabel.label = timeLabel;
         this._image.iconName = info.get_icon_name() + '-small';
         this._forecastTemperatureLabel.label = Util.getTempString(info);
     }
-
-    vfunc_unroot() {
-        [...this].forEach(child => child.unparent());
-
-        super.vfunc_unroot();
-    }
 });
-
-HourEntry.set_layout_manager_type(Gtk.BoxLayout);
