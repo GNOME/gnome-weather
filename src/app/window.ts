@@ -26,6 +26,7 @@ import * as City from './city.js';
 import * as Util from '../misc/util.js';
 import { WorldContentView } from './world.js';
 import { WeatherApplication } from './application.js';
+import { WorldModel } from '../shared/world.js';
 
 const Page = {
     SEARCH: 0,
@@ -33,36 +34,25 @@ const Page = {
 };
 
 export class MainWindow extends Adw.ApplicationWindow {
-    /** @type {Adw.ToolbarView} */
-    // @ts-ignore
-    _searchView = this._searchView;
-    /** @type {Adw.StatusPage} */
-    // @ts-ignore
-    _searchViewStatus = this._searchViewStatus;
-    /** @type {Gtk.MenuButton} */
-    // @ts-ignore
-    _searchButton = this._searchButton;
-    /** @type {Gtk.Button} */
-    // @ts-ignore
-    _refresh = this._refresh;
-    /** @type {Gtk.Revealer} */
-    // @ts-ignore
-    _refreshRevealer = this._refreshRevealer;
-    /** @type {Adw.ViewSwitcherTitle} */
-    // @ts-ignore
-    _forecastStackSwitcher = this._forecastStackSwitcher;
-    /** @type {Adw.ViewSwitcherBar} */
-    // @ts-ignore
-    _forecastStackSwitcherBar = this._forecastStackSwitcherBar;
-    /** @type {Adw.Bin} */
-    // @ts-ignore
-    _cityBin = this._cityBin;
-    /** @type {Adw.ToolbarView} */
-    // @ts-ignore
-    _cityBox = this._cityBox;
-    /** @type {Gtk.Stack} */
-    // @ts-ignore
-    _stack = this._stack;
+    _searchView!: Adw.ToolbarView;
+    _searchViewStatus!: Adw.StatusPage;
+    _searchButton!: Gtk.MenuButton;
+    _refresh!: Gtk.Button;
+    _refreshRevealer!: Gtk.Revealer;
+    _forecastStackSwitcher!: Adw.ViewSwitcherTitle;
+    _forecastStackSwitcherBar!: Adw.ViewSwitcherBar;
+    _cityBin!: Adw.Bin;
+    _cityBox!: Adw.ToolbarView;
+    _stack!: Gtk.Stack;
+
+    _world?: GWeather.Location;
+    currentInfo?: GWeather.Info;
+    _currentPage: number;
+    _model?: WorldModel;
+    _worldView: WorldContentView;
+    _cityView: City.WeatherView;
+    _showingDefault: boolean;
+    _settings: Gio.Settings;
 
     static {
         GObject.registerClass({
@@ -72,16 +62,13 @@ export class MainWindow extends Adw.ApplicationWindow {
         }, this)
     }
 
-    /**
-     * @param {Partial<Adw.ApplicationWindow.ConstructorProps> | undefined} params
-     */
-    constructor(params) {
+    constructor(params: Partial<Adw.ApplicationWindow.ConstructorProps> | undefined) {
         super(params);
 
-        const app = (/** @type {WeatherApplication} */ (this.application));
+        const app = this.application as WeatherApplication;
 
         this._world = app.world;
-        this.currentInfo = null;
+        this.currentInfo = undefined;
         this._currentPage = Page.SEARCH;
 
         let aboutAction = new Gio.SimpleAction({
@@ -117,8 +104,7 @@ export class MainWindow extends Adw.ApplicationWindow {
 
         this._stack.set_visible_child(this._searchView);
 
-        // @ts-expect-error ts-for-gir once again treats pkg oddly
-        if (pkg.name.endsWith('Devel')) {
+        if (pkg.name!.endsWith('Devel')) {
             let ctx = this.get_style_context();
             ctx.add_class('devel');
         }
@@ -170,19 +156,13 @@ export class MainWindow extends Adw.ApplicationWindow {
             this.showSearch();
     }
 
-    /**
-     * @param {string | undefined} _text
-     */
-    showSearch(_text = undefined) {
+    showSearch(_text?: string) {
         this._showingDefault = false;
         this._refreshRevealer.reveal_child = true;
         this._stack.set_visible_child(this._searchView);
     }
 
-    /**
-     * @param {GWeather.Info | undefined} info
-     */
-    showInfo(info) {
+    showInfo(info?: GWeather.Info) {
         if (!info) {
             this.showDefault();
             return;

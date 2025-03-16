@@ -8,10 +8,7 @@ import GWeather from 'gi://GWeather';
 import * as Util from '../misc/util.js';
 import { LocationRow } from './locationRow.js';
 
-/**
- * @param {GWeather.Location} location
- */
-function* locationChildren(location) {
+function* locationChildren(location: GWeather.Location) {
     let child = location.next_child(null);
 
     while (child != null) {
@@ -21,7 +18,7 @@ function* locationChildren(location) {
 }
 
 function getAllCitiesAndWeatherStations() {
-    const locations = new Set();
+    const locations = new Set<GWeather.Location>();
     const world = GWeather.Location.get_world();
 
     if (world) {
@@ -58,12 +55,13 @@ const LocationListModel = GObject.registerClass(
         Implements: [Gio.ListModel]
     },
     class LocationListModel extends GObject.Object {
+        _show_named_timezones: boolean;
+        _list: GWeather.Location[];
+
         constructor() {
             super();
 
             this._show_named_timezones = false;
-
-            /** @type {GWeather.Location[]} */
             this._list = [];
         }
 
@@ -83,10 +81,7 @@ const LocationListModel = GObject.registerClass(
             return this._list.length;
         }
 
-        /**
-         * @param {number} n
-         */
-        vfunc_get_item(n) {
+        vfunc_get_item(n: number) {
             return this._list[n] ?? null;
         }
     }
@@ -107,20 +102,19 @@ imports.mainloop.idle_add(() => {
 
 const LocationFilter = GObject.registerClass(
     class LocationFilter extends Gtk.Filter {
+        _itemMap: WeakMap<GWeather.Location, string>;
+        _filter: string | null;
+        _filterLowerCase: string | null;
+
         constructor() {
             super();
 
-            /** @type {WeakMap<GWeather.Location, string>} */
             this._itemMap = new WeakMap();
-            /** @type {string | null} */
             this._filter = null;
             this._filterLowerCase = null;
         }
 
-        /**
-         * @param {string | null} filter
-         */
-        setFilterString(filter) {
+        setFilterString(filter: string | null) {
             if (filter !== this._filter) {
                 this._filter = filter;
                 this._filterLowerCase = this._filter?.toLowerCase() ?? null;
@@ -128,10 +122,7 @@ const LocationFilter = GObject.registerClass(
             }
         }
 
-        /**
-         * @param {GWeather.Location} item
-         */
-        vfunc_match(item) {
+        vfunc_match(item: GWeather.Location) {
             if (!this._filter) return false;
 
             const cached = this._itemMap.get(item);
@@ -151,10 +142,8 @@ export class LocationSearchEntry extends Adw.Bin {
     #entry = new Gtk.SearchEntry({
         hexpand: true,
     });
-    /** @type {GWeather.Location | null} */
-    #location = null;
-    /** @type {Gtk.ListView | null} */
-    #listView = null;
+    #location: GWeather.Location | null = null;
+    #listView: Gtk.ListView | null = null;
     #text = '';
 
     #filter = new LocationFilter();
@@ -162,8 +151,7 @@ export class LocationSearchEntry extends Adw.Bin {
         selected: GLib.MAXUINT32,
         autoselect: false,
         model: new Gtk.FilterListModel({
-            // @ts-expect-error GListModel needs some work in typescript
-            model: locationListModel,
+            model: locationListModel as unknown as Gio.ListModel,
             filter: this.#filter,
             incremental: true,
         })
@@ -205,12 +193,12 @@ export class LocationSearchEntry extends Adw.Bin {
             }
         });
 
-        this.#factory.connect('setup', (_, /** @type {Gtk.ListItem} */ item) => {
+        this.#factory.connect('setup', (_, item: Gtk.ListItem) => {
             const row = new LocationRow({ name: '', countryName: '' });
             item.set_child(row);
         });
 
-        this.#factory.connect('bind', (_, /** @type {Gtk.ListItem} */ { child, item }) => {
+        this.#factory.connect('bind', (_, { child, item }: Gtk.ListItem) => {
             if (child instanceof LocationRow && item instanceof GWeather.Location) {
                 const [name, countryName = ''] = Util.getNameAndCountry(item);
 
@@ -240,10 +228,7 @@ export class LocationSearchEntry extends Adw.Bin {
         return this.#location;
     }
 
-    /**
-     * @param {Gtk.ListView} listView
-     */
-    setListView(listView) {
+    setListView(listView: Gtk.ListView) {
         if (this.#listView)
             // @ts-expect-error ts-for-gir doesn't seem to handle nullability correctly
             // for these property getters/setters
