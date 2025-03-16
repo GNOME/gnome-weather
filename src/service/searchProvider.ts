@@ -29,12 +29,8 @@ const SearchProviderInterface = new TextDecoder().decode(
     Gio.resources_lookup_data('/org/gnome/shell/ShellSearchProvider2.xml', 0).get_data() ?? undefined
 );
 
-/**
- * @param {GWeather.Location} location
- */
-function getCountryName(location) {
-    /** @type {GWeather.Location | null} */
-    let base = location;
+function getCountryName(location: GWeather.Location) {
+    let base: GWeather.Location | null = location;
     while (base &&
         base.get_level() > GWeather.LocationLevel.COUNTRY)
         base = base.get_parent();
@@ -43,39 +39,28 @@ function getCountryName(location) {
 }
 
 export class WeatherSearchProvider {
-    /**
-     * @param {WeatherBackgroundService} application
-     */
-    constructor(application) {
+    _app: WeatherBackgroundService;
+    _impl: Gio.DBusExportedObject;
+
+    constructor(application: WeatherBackgroundService) {
         this._app = application;
 
         this._impl = Gio.DBusExportedObject.wrapJSObject(SearchProviderInterface, this);
     }
 
-    /**
-     * @param {Gio.DBusConnection} connection
-     * @param {string} path
-     */
-    export(connection, path) {
+   export(connection: Gio.DBusConnection, path: string) {
         return this._impl.export(connection, path);
     }
 
-    /**
-     * @param {Gio.DBusConnection} connection
-     */
-    unexport(connection) {
+    unexport(connection: Gio.DBusConnection) {
         return this._impl.unexport_from_connection(connection);
     }
 
-    /**
-     * @param {[string[], string[]]} params
-     * @param {Gio.DBusMethodInvocation} invocation
-     */
-    GetInitialResultSetAsync(params, invocation) {
+    GetInitialResultSetAsync(params: [string[], string[]], invocation: Gio.DBusMethodInvocation) {
         this._app.hold();
 
         let terms = params[0];
-        let model = this._app.model;
+        let model = this._app.model!;
 
         if (model?.loading) {
             let notifyId = model.connect('notify::loading', (model) => {
@@ -89,16 +74,12 @@ export class WeatherSearchProvider {
         }
     }
 
-    /**
-     * @param {string[]} terms
-     * @param {Gio.DBusMethodInvocation} invocation
-     */
-    _runQuery(terms, invocation) {
+    _runQuery(terms: string[], invocation: Gio.DBusMethodInvocation) {
         let nameRet = [];
         let cityRet = [];
         let countryRet = [];
 
-        let model = /** @type {WorldModel} */ (this._app.model);
+        let model = this._app.model!;
 
         let index = 0;
         for (let info of model.getAll()) {
@@ -149,14 +130,10 @@ export class WeatherSearchProvider {
         invocation.return_value(new GLib.Variant('(as)', [result]));
     }
 
-    /**
-     * @param {string[]} previous
-     * @param {string[]} terms
-     */
-    GetSubsearchResultSet(previous, terms) {
+    GetSubsearchResultSet(previous: string[], terms: string[]) {
         this._app.hold();
 
-        let model = /** @type {WorldModel} */ (this._app.model);
+        let model = this._app.model!;
         let ret = [];
 
         for (let i = 0; i < previous.length; i++) {
@@ -190,13 +167,10 @@ export class WeatherSearchProvider {
         return ret;
     }
 
-    /**
-     * @param {string[]} identifiers
-     */
-    GetResultMetas(identifiers) {
+    GetResultMetas(identifiers: string[]) {
         this._app.hold();
 
-        let model = /** @type {WorldModel} */ (this._app.model);
+        let model = this._app.model!;
         let ret = [];
 
         for (let i = 0; i < identifiers.length; i++) {
@@ -225,23 +199,12 @@ export class WeatherSearchProvider {
         return ret;
     }
 
-    /**
-     * @param {number} timestamp
-     */
-    _getPlatformData(timestamp) {
+    _getPlatformData(timestamp: number) {
         return { 'desktop-startup-id': new GLib.Variant('s', '_TIME' + timestamp) };
     }
 
-    /**
-     * @param {string} action
-     * @param {GLib.Variant<"s"> | GLib.Variant<"v">} parameter
-     * @param {number} timestamp
-     */
-    _activateAction(action, parameter, timestamp) {
-        /**
-         * @type {(GLib.Variant<"s"> | GLib.Variant<"v">)[]}
-         */
-        let wrappedParam = [];
+    _activateAction(action: string, parameter: GLib.Variant<"s"> | GLib.Variant<"v">, timestamp: number) {
+        let wrappedParam: (GLib.Variant<"s"> | GLib.Variant<"v">)[] = [];
         if (parameter)
             wrappedParam = [parameter];
 
@@ -266,17 +229,12 @@ export class WeatherSearchProvider {
             });
     }
 
-    /**
-     * @param {string} id
-     * @param {string[]} terms
-     * @param {number} timestamp
-     */
-    ActivateResult(id, terms, timestamp) {
+    ActivateResult(id: string, terms: string[], timestamp: number) {
         this._app.hold();
 
         //log('Activating ' + id);
 
-        let model = /** @type {WorldModel} */ (this._app.model);
+        let model = this._app.model!;
         let info = model.getAtIndex(parseInt(id));
         if (!info) {
             this._app.release();
@@ -289,11 +247,7 @@ export class WeatherSearchProvider {
         this._activateAction('show-location', new GLib.Variant('v', location), timestamp);
     }
 
-    /**
-     * @param {string[]} terms
-     * @param {number} timestamp
-     */
-    LaunchSearch(terms, timestamp) {
+    LaunchSearch(terms: string[], timestamp: number) {
         this._app.hold();
 
         this._activateAction('show-search', new GLib.Variant('s', terms.join(' ')), timestamp);

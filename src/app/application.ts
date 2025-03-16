@@ -32,6 +32,12 @@ import * as CurrentLocationController from './currentLocationController.js';
 import { ShellIntegration } from './shell.js';
 
 export class WeatherApplication extends Adw.Application {
+    _mainWindow?: Window.MainWindow;
+    _shellIntegration?: ShellIntegration;
+
+    world?: GWeather.Location;
+    model?: World.WorldModel;
+    currentLocationController?: CurrentLocationController.CurrentLocationController;
 
     constructor() {
         super({
@@ -41,11 +47,7 @@ export class WeatherApplication extends Adw.Application {
         let name_prefix = '';
 
         GLib.set_application_name(name_prefix + _("Weather"));
-        // @ts-expect-error pkg is a little weird with ts-for-gir
-        Gtk.Window.set_default_icon_name(pkg.name);
-
-        /** @type {Window.MainWindow | undefined} */
-        this._mainWindow = undefined;
+        Gtk.Window.set_default_icon_name(pkg.name!);
     }
 
     get mainWindow() {
@@ -60,17 +62,12 @@ export class WeatherApplication extends Adw.Application {
         this.quit();
     }
 
-    /**
-     * @param {Gio.SimpleAction} action
-     * @param {GLib.Variant<any> | null} parameter
-     */
-    _onShowLocation(action, parameter) {
+    _onShowLocation(action: Gio.SimpleAction, parameter: GLib.Variant | null) {
         if (parameter) {
             let location = this.world?.deserialize(parameter.deep_unpack());
             let win = this._createWindow();
 
-            /** @type {GWeather.Info | undefined} */
-            let info;
+            let info: GWeather.Info | undefined;
             if (location) {
                 info = this.model?.addNewLocation(location);
             }
@@ -79,13 +76,9 @@ export class WeatherApplication extends Adw.Application {
         }
     }
 
-    /**
-     * @param {Gio.SimpleAction} action
-     * @param {GLib.Variant<any> | null} parameter
-     */
-    _onShowSearch(action, parameter) {
+    _onShowSearch(action: Gio.SimpleAction, parameter: GLib.Variant | null) {
         if (parameter) {
-            let text = parameter.deep_unpack();
+            let text = parameter.deep_unpack<string>();
             let win = this._createWindow();
 
             win.showSearch(text);
@@ -96,7 +89,12 @@ export class WeatherApplication extends Adw.Application {
     vfunc_startup() {
         super.vfunc_startup();
 
-        this.world = GWeather.Location.get_world();
+        const world = GWeather.Location.get_world();
+        if (!world) {
+            throw new Error('Failed to load top level location from location providers.');
+        }
+
+        this.world = world;
         this.model = new World.WorldModel(this.world);
         this.currentLocationController = new CurrentLocationController.CurrentLocationController(this.model);
 
@@ -142,10 +140,7 @@ export class WeatherApplication extends Adw.Application {
         let gwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather4' });
         // Sync settings changes to the legacy GTK3 GWeather interface if it is
         // available
-        /**
-         * @type {Gio.Settings | undefined}
-         */
-        let legacyGwSettings;
+        let legacyGwSettings: Gio.Settings | undefined;
         try {
             legacyGwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather' });
         } catch { }
@@ -155,10 +150,7 @@ export class WeatherApplication extends Adw.Application {
         // we would also like to use g_settings_bind_with_mapping(), but that
         // function is not introspectable (two callbacks, one destroy notify)
         // so we hand code the behavior we want
-        /**
-         * @param {GWeather.TemperatureUnit} unit
-         */
-        function resolveDefaultTemperatureUnit(unit) {
+        function resolveDefaultTemperatureUnit(unit: GWeather.TemperatureUnit) {
             // @ts-expect-error ts-for-gir doesn't think it exists, but it does
             unit = GWeather.TemperatureUnit.to_real(unit);
             if (unit == GWeather.TemperatureUnit.CENTIGRADE)
@@ -193,21 +185,13 @@ export class WeatherApplication extends Adw.Application {
         this.set_accels_for_action("app.quit", ["<Control>q"]);
     }
 
-    /**
-     * @param {Gio.DBusConnection} conn
-     * @param {string} path
-     */
-    vfunc_dbus_register(conn, path) {
+    vfunc_dbus_register(conn: Gio.DBusConnection, path: string) {
         this._shellIntegration = new ShellIntegration();
         this._shellIntegration.export(conn, path);
         return true;
     }
 
-    /**
-     * @param {Gio.DBusConnection} conn
-     * @param {string} _path
-     */
-    vfunc_dbus_unregister(conn, _path) {
+    vfunc_dbus_unregister(conn: Gio.DBusConnection, _path: string) {
         this._shellIntegration?.unexport(conn);
     }
 
@@ -220,13 +204,11 @@ export class WeatherApplication extends Adw.Application {
         return window;
     }
 
-    /** @param {Window.MainWindow} win */
-    _showWindowWhenReady(win) {
-        /** @type {number} */
-        let notifyId;
+    _showWindowWhenReady(win: Window.MainWindow) {
+        let notifyId: number;
         win.present();
         if (this.model?.loading) {
-            let timeoutId;
+            let timeoutId: number;
             let model = this.model;
 
             timeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, function () {

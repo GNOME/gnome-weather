@@ -33,6 +33,10 @@ const ONE_HOUR = 60 * 60 * 1000 * 1000;
 const TWENTY_FOUR_HOURS = 24 * ONE_HOUR;
 
 export class HourlyForecastBox extends Gtk.Box {
+    _hourlyInfo: GWeather.Info[];
+    _hasForecastInfo: boolean;
+    _settings: Gio.Settings;
+
     constructor() {
         super({
             orientation: Gtk.Orientation.HORIZONTAL,
@@ -43,22 +47,13 @@ export class HourlyForecastBox extends Gtk.Box {
         this.update_property([Gtk.AccessibleProperty.LABEL], [_('Hourly Forecast')]);
         this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
-        /**
-         * @type {GWeather.Info[]}
-         */
         this._hourlyInfo = [];
-
         this._hasForecastInfo = false;
     }
 
     // Ensure that infos are sufficiently spaced, and
     // remove infos for the wrong day
-    /**
-     * @param {GLib.DateTime} now
-     * @param {GWeather.Info} forecastInfo
-     * @param {GWeather.Info[]} infos
-     */
-    _preprocess(now, forecastInfo, infos) {
+    _preprocess(now: GLib.DateTime, forecastInfo: GWeather.Info, infos: GWeather.Info[]) {
         const ret = [forecastInfo, ...infos].filter(info => {
             let [, date] = info.get_value_update();
             let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(now.get_timezone());
@@ -78,15 +73,12 @@ export class HourlyForecastBox extends Gtk.Box {
         return ret;
     }
 
-    /**
-     * @param {GWeather.Info} info
-     */
-    update(info) {
+    update(info: GWeather.Info) {
         let forecasts = info.get_forecast_list();
 
         let coords = info.location.get_coords();
-        let nearestCity = ( /** @type {GWeather.Location} */ (GWeather.Location.get_world())).find_nearest_city(coords[0], coords[1]);
-        let tz = nearestCity.get_timezone();
+        let nearestCity = GWeather.Location.get_world()?.find_nearest_city(coords[0], coords[1]);
+        let tz = nearestCity?.get_timezone();
 
         if (tz) {
             let now = GLib.DateTime.new_now(tz);
@@ -115,18 +107,11 @@ export class HourlyForecastBox extends Gtk.Box {
         }
     }
 
-    /**
-     * @param {GWeather.Info} info
-     * @param {GLib.TimeZone | null} tz
-     * @param {boolean} now
-     */
-    _addHourEntry(info, tz, now) {
-        /** @type {string | undefined} */
-        let timeLabel;
+    _addHourEntry(info: GWeather.Info, tz: GLib.TimeZone | null, now: boolean) {
+        let timeLabel: string | undefined;
 
         let [, date] = info.get_value_update();
-        /** @type {GLib.DateTime | undefined} */
-        let datetime = undefined;
+        let datetime: GLib.DateTime | undefined = undefined;
         if (tz) {
             datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz) ?? undefined;
         }
@@ -171,16 +156,13 @@ export class HourlyForecastBox extends Gtk.Box {
         return this._hasForecastInfo;
     }
 
-    /**
-     * @param {Gtk.Snapshot} snapshot
-     */
-    vfunc_snapshot(snapshot) {
+    vfunc_snapshot(snapshot: Gtk.Snapshot) {
         const allocation = this.get_allocation();
 
         const rect = new Graphene.Rect();
         rect.init(0, 0, allocation.width, allocation.height);
 
-        let cr = /** @type {Cairo.Context} */ (snapshot.append_cairo(rect));
+        let cr = snapshot.append_cairo(rect) as Cairo.Context;
         const temps = this._hourlyInfo.map(info => Util.getTemp(info));
 
         const maxTemp = Math.max(...temps);
@@ -248,8 +230,6 @@ export class HourlyForecastBox extends Gtk.Box {
             if (i < yCords.length)
                 xDistCurrent = Math.cos(gradientAngles[i]) * pointsGap * smoothnessVal
 
-            let test = false
-
             let prevYcord = (i > 0) ? (yCords[i - 1]) : yCords[i]
             let prevGrad = (i > 0) ? (gradients[i - 1]) : 0
 
@@ -294,22 +274,11 @@ export const HourEntry = GObject.registerClass({
 
     InternalChildren: ['timeLabel', 'image', 'forecastTemperatureLabel'],
 }, class HourEntry extends Adw.Bin {
-    /** @type {Gtk.Label} */
-    // @ts-ignore
-    _timeLabel = this._timeLabel;
-    /** @type {Gtk.Image} */
-    // @ts-ignore
-    _image = this._image;
-    /** @type {Gtk.Label} */
-    // @ts-ignore
-    _forecastTemperatureLabel = this._forecastTemperatureLabel;
+    _timeLabel!: Gtk.Label;
+    _image!: Gtk.Image;
+    _forecastTemperatureLabel!: Gtk.Label;
 
-    /**
-     * @param {string | undefined} timeLabel
-     * @param {GWeather.Info} info
-     * @param {Partial<Adw.Bin.ConstructorProps> | undefined} params
-     */
-    constructor(timeLabel, info, params = undefined) {
+    constructor(timeLabel: string | undefined, info: GWeather.Info, params?: Partial<Adw.Bin.ConstructorProps>) {
         super(params);
 
         this._timeLabel.label = timeLabel ?? '';

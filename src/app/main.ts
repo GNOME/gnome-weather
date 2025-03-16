@@ -33,9 +33,15 @@ import {WeatherApplication} from './application.js';
 pkg.initFormat();
 pkg.initGettext();
 
+declare global {
+    function ngettext(msgid: string, msgid_plural: string, n: number): string;
+    function getApp(): WeatherApplication | undefined;
+}
+
 globalThis.ngettext = imports.gettext.ngettext;
 globalThis.getApp = function () {
-    return (/** @type {WeatherApplication} */ (Gio.Application.get_default()));
+    const app = Gio.Application.get_default();
+    return app ? app as WeatherApplication : undefined;
 };
 
 let application = new WeatherApplication();

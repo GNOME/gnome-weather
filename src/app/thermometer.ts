@@ -35,14 +35,12 @@ export class TemperatureRange {
     weeklyLow;
     weeklyHigh;
 
-    /** @param {{
-     *  dailyLow: number;
-     *  dailyHigh: number;
-     *  weeklyLow: number;
-     *  weeklyHigh: number;
-     * }} param0
-     */
-    constructor({ dailyLow, dailyHigh, weeklyLow, weeklyHigh }) {
+    constructor({ dailyLow, dailyHigh, weeklyLow, weeklyHigh }: {
+            dailyLow: number;
+            dailyHigh: number;
+            weeklyLow: number;
+            weeklyHigh: number;
+        }) {
         this.dailyLow = dailyLow;
         this.dailyHigh = dailyHigh;
         this.weeklyLow = weeklyLow;
@@ -64,13 +62,13 @@ const ThermometerScale = GObject.registerClass({
 
     minHeight = 64;
     radius = 12;
+    range: TemperatureRange | null;
+
+    _rangeChangedId?: number;
 
     constructor({ range = null, ...params }) {
         super(params);
 
-        /**
-         * @type {TemperatureRange | null}
-         */
         this.range = range;
     }
 
@@ -90,10 +88,7 @@ const ThermometerScale = GObject.registerClass({
         super.vfunc_unmap();
     }
 
-    /**
-     * @param {Gtk.Snapshot} snapshot
-     */
-    vfunc_snapshot(snapshot) {
+    vfunc_snapshot(snapshot: Gtk.Snapshot) {
         super.vfunc_snapshot(snapshot);
 
         if (!this.range)
@@ -144,23 +139,26 @@ const ThermometerScale = GObject.registerClass({
     }
 });
 
-export const Thermometer = GObject.registerClass({
-    CssName: 'WeatherThermometer',
-    Properties: {
-        'range': GObject.ParamSpec.jsobject(
-            'range',
-            'range',
-            'The TemperatureRange instance representing this thermometer scale',
-            GObject.ParamFlags.READWRITE,
-        ),
-    },
-}, class Thermometer extends Gtk.Widget {
-
+export class Thermometer extends Gtk.Widget {
     #highLabel;
     #lowLabel;
     #scale;
 
     spacing = 18;
+
+    static {
+        GObject.registerClass({
+            CssName: 'WeatherThermometer',
+            Properties: {
+                'range': GObject.ParamSpec.jsobject(
+                    'range',
+                    'range',
+                    'The TemperatureRange instance representing this thermometer scale',
+                    GObject.ParamFlags.READWRITE,
+                ),
+            },
+        }, this);
+    }
 
     constructor({ ...params }) {
         super(params);
@@ -179,12 +177,7 @@ export const Thermometer = GObject.registerClass({
         this.#scale.set_parent(this);
     }
 
-    /**
-     * @param {Gtk.Orientation} orientation
-     * @param {number} for_size
-     * @returns {[number, number, number, number]}
-     */
-    vfunc_measure(orientation, for_size) {
+    vfunc_measure(orientation: Gtk.Orientation, for_size: number): [number, number, number, number] {
         const [highMin, highNat, highMinBaseline, highNatBaseline] =
             this.#highLabel.measure(orientation, for_size);
 
@@ -209,19 +202,14 @@ export const Thermometer = GObject.registerClass({
         }
     }
 
-    /**
-     * @param {number} width
-     * @param {number} height
-     * @param {number} baseline
-     */
-    vfunc_size_allocate(width, height, baseline) {
+    vfunc_size_allocate(width: number, height: number, baseline: number) {
         const [highMin, highNatOut] = this.#highLabel.get_preferred_size();
         const [lowMin, lowNatOut] = this.#lowLabel.get_preferred_size();
 
         // ts-for-gir interprets the requisitions as nullable due to the input parameters,
         // but as output these aren't actually supposed to be null. JS gives us both requisitions.
-        const highNat = /** @type {Gtk.Requisition} */ (highNatOut);
-        const lowNat = /** @type {Gtk.Requisition} */ (lowNatOut);
+        const highNat = highNatOut as Gtk.Requisition;
+        const lowNat = lowNatOut as Gtk.Requisition;
 
         const spacing = this.spacing;
 
@@ -285,5 +273,5 @@ export const Thermometer = GObject.registerClass({
             return [!!range, Util.formatTemperature(range?.dailyHigh) ?? ''];
         }, null);
     }
-});
+};
 

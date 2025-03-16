@@ -24,46 +24,46 @@ import Gio from 'gi://Gio';
 import * as Util from '../misc/util.js';
 import { WorldModel } from '../shared/world.js';
 export class CurrentLocationController {
-    /**
-     * @param {WorldModel} world
-     */
-    constructor(world) {
+    _world: WorldModel;
+    _processStarted: boolean;
+    _settings: Gio.Settings;
+    _simple?: Geoclue.Simple;
+
+    autoLocationAvailable: boolean;
+    currentLocation?: GWeather.Location;
+    _locationUpdatedId?: number;
+
+    constructor(world: WorldModel) {
         this._world = world;
         this._processStarted = false;
         this._settings = Util.getSettings('org.gnome.Weather');
-      
+
         this.autoLocationAvailable = false;
         this._startGeolocationService();
-        this.currentLocation = null;
     }
 
     _startGeolocationService() {
         this._processStarted = true;
         if (Geoclue.Simple.new_with_thresholds) {
-            // @ts-expect-error pkg shenanigans
-            Geoclue.Simple.new_with_thresholds(pkg.name,
+            Geoclue.Simple.new_with_thresholds(pkg.name!,
                                                Geoclue.AccuracyLevel.CITY,
                                                0, /* time threshold */
                                                100, /* distance threshold */
                                                null,
-                                               (object, result) => {
-                                                   this._onSimpleReady(object, result)
+                                               (_, result) => {
+                                                   this._onSimpleReady(result)
                                                });
         } else {
-            // @ts-expect-error pkg shenanigans
-            Geoclue.Simple.new(pkg.name,
+            Geoclue.Simple.new(pkg.name!,
                                Geoclue.AccuracyLevel.CITY,
                                null,
-                               (object, result) => {
-                                   this._onSimpleReady(object, result)
+                               (_, result) => {
+                                   this._onSimpleReady(result)
                                });
         }
     }
 
-    /**
-     * @param {unknown} e
-     */
-    _geoLocationFailed(e) {
+    _geoLocationFailed(e: unknown) {
         if (e instanceof Error) {
             log ("Failed to connect to GeoClue2 service: " + e.message);
         }
@@ -71,15 +71,11 @@ export class CurrentLocationController {
         this.autoLocationAvailable = false;
         // @ts-expect-error What's going on here is unclear
         GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
-            this._world.currentLocationChanged(null);
+            this._world.currentLocationChanged(undefined);
         });
     }
 
-    /**
-     * @param {Geoclue.Simple | null} object
-     * @param {Gio.AsyncResult} result
-     */
-    _onSimpleReady(object, result) {
+    _onSimpleReady(result: Gio.AsyncResult) {
         try {
             this._simple = Geoclue.Simple.new_finish(result);
         }
@@ -107,11 +103,8 @@ export class CurrentLocationController {
         this._onLocationUpdated(this._simple);
     }
 
-    /**
-     * @param {Geoclue.Simple | undefined} simple
-     */
-    _onLocationUpdated(simple) {
-        this.currentLocation = null;
+    _onLocationUpdated(simple?: Geoclue.Simple) {
+        this.currentLocation = undefined;
         let geoclueLocation = simple?.get_location();
         let world = GWeather.Location.get_world();
 

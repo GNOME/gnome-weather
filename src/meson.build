@@ -22,6 +22,16 @@ configure_file(
   install_dir: weather_pkgdatadir
 )
 
+tsc_out = meson.project_build_root() / 'tsc-out'
+
+typescript = custom_target(
+  'typescript-compile',
+  build_by_default: true,
+  build_always_stale: true,
+  command: [ tsc, '--outDir', tsc_out ],
+  output: ['tsc-output'],
+)
+
 application_sources = gnome.compile_resources(
   '@0@.src'.format(weather_id),
   configure_file(
@@ -29,6 +39,8 @@ application_sources = gnome.compile_resources(
     output: '@0@.src.gresource.xml'.format(default_id),
     configuration: source_conf,
   ),
+  dependencies: typescript,
+  source_dir: tsc_out,
   gresource_bundle: true,
   install: true,
   install_dir: weather_pkgdatadir
@@ -41,6 +53,8 @@ gnome.compile_resources(
     output: '@0@.BackgroundService.src.gresource.xml'.format(default_id),
     configuration: source_conf,
   ),
+  dependencies: typescript,
+  source_dir: tsc_out,
   gresource_bundle: true,
   install: true,
   install_dir: weather_pkgdatadir

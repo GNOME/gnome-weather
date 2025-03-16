@@ -2,7 +2,6 @@
     "compilerOptions": {
         "experimentalDecorators": true,
         "strict": true,
-        "strictPropertyInitialization": false,
         "paths": {
             "*": [
                 "*",

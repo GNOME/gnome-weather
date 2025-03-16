@@ -32,11 +32,7 @@ import GWeather from 'gi://GWeather';
 
 import * as System from 'system';
 
-/**
- * @param {string} resourcePath
- * @param {{ [x: string]: GObject.Object; }} objects
- */
-function loadUI(resourcePath, objects) {
+function loadUI(resourcePath: string, objects: { [x: string]: GObject.Object; }) {
     let ui = new Gtk.Builder();
 
     if (objects) {
@@ -48,22 +44,14 @@ function loadUI(resourcePath, objects) {
     return ui;
 }
 
-/**
- * @template T
- * @param {T[]} one
- * @param {T[]} two 
- */
-function arrayEqual(one, two) {
+function arrayEqual<T>(one: T[], two: T[]) {
     if (one.length !== two.length)
         return false;
 
     return one.every((a, i) => a === two[i]);
 }
 
-/**
- * @param {string} schemaId
- */
-function getSettings(schemaId) {
+function getSettings(schemaId: string) {
     const schemaSource = Gio.SettingsSchemaSource.get_default();
     const schemaObj = schemaSource?.lookup(schemaId, true);
 
@@ -75,20 +63,14 @@ function getSettings(schemaId) {
     return new Gio.Settings({ settings_schema: schemaObj });
 }
 
-/**
- * @param {GWeather.Info} info
- */
-function getWeatherConditions(info) {
+function getWeatherConditions(info: GWeather.Info) {
     let conditions = info.get_conditions();
     if (conditions == '-') // Not significant
         conditions = info.get_sky();
     return conditions;
 }
 
-/**
- * @param {string | null} str
- */
-function normalizeCasefoldAndUnaccent(str) {
+function normalizeCasefoldAndUnaccent(str: string | null) {
     if (!str) return ''
 
     // The one and only!
@@ -109,10 +91,7 @@ function normalizeCasefoldAndUnaccent(str) {
     return str.replace(/[\u0300-\u036f]|[\u1dc0-\u1dff]|[\u20d0-\u20ff]|[\ufe20-\ufe2f]/, '');
 }
 
-/**
- * @param {GWeather.Info} info
- */
-function getTemperature(info) {
+function getTemperature(info: GWeather.Info) {
     let [ok1,] = info.get_value_temp_min(GWeather.TemperatureUnit.DEFAULT);
     let [ok2,] = info.get_value_temp_max(GWeather.TemperatureUnit.DEFAULT);
 
@@ -130,91 +109,61 @@ function getEnabledProviders() {
     return (GWeather.Provider.METAR | GWeather.Provider.MET_NO | GWeather.Provider.OWM);
 }
 
-/**
- * @param {number} value
- */
-function easeOutCubic(value) {
+function easeOutCubic(value: number) {
     let t = value - 1;
     return t * t * t + 1;
 }
 
-/**
- * @param {GLib.DateTime} date
- */
-function getNight(date) {
+function getNight(date: GLib.DateTime) {
     return GLib.DateTime.new_local(date.get_year(),
         date.get_month(),
         date.get_day_of_month(),
         2, 0, 0);
 }
 
-/**
- * @param {GLib.DateTime} date
- */
-function getMorning(date) {
+function getMorning(date: GLib.DateTime) {
     return GLib.DateTime.new_local(date.get_year(),
         date.get_month(),
         date.get_day_of_month(),
         7, 0, 0);
 }
 
-/**
- * @param {GLib.DateTime} date
- */
-function getDay(date) {
+function getDay(date: GLib.DateTime) {
     return GLib.DateTime.new_local(date.get_year(),
         date.get_month(),
         date.get_day_of_month(),
         12, 0, 0);
 }
 
-/**
- * @param {GLib.DateTime} date
- */
-function getAfternoon(date) {
+function getAfternoon(date: GLib.DateTime) {
     return GLib.DateTime.new_local(date.get_year(),
         date.get_month(),
         date.get_day_of_month(),
         17, 0, 0);
 }
 
-/**
- * @param {GLib.DateTime} date
- */
-function getEvening(date) {
+function getEvening(date: GLib.DateTime) {
     return GLib.DateTime.new_local(date.get_year(),
         date.get_month(),
         date.get_day_of_month(),
         22, 0, 0);
 }
 
-/**
- * @param {GWeather.Info} info
- */
-function getDateTime(info) {
+function getDateTime(info: GWeather.Info) {
     let [ok, date] = info.get_value_update();
     return GLib.DateTime.new_from_unix_local(date);
 }
 
-/**
- * @param {GWeather.Info} info
- */
-function getTemp(info) {
+function getTemp(info: GWeather.Info) {
     let [ok, temp] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
     return temp;
 }
 
-/**
- * @param {number | unknown} value
- */
-function formatTemperature(value) {
+function formatTemperature(value: number | unknown) {
     return typeof value === 'number' ? `${Math.round(value).toFixed(0)}°` : undefined;
 };
 
-/**
- * @param {GWeather.Info} info
- */
-function getTempString(info) {
+function getTempString(info: GWeather.Info) {
     try {
         let [, temp] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
         return formatTemperature(temp);
@@ -223,11 +172,7 @@ function getTempString(info) {
     }
 }
 
-/**
- * @param {GWeather.Location} location
- * @returns {[string] | [string, string]}
- */
-function getNameAndCountry(location) {
+function getNameAndCountry(location: GWeather.Location): [string] | [string, string] {
     let country = location.get_parent();
     while (country && country.get_level() > GWeather.LocationLevel.COUNTRY)
         country = country.get_parent();
