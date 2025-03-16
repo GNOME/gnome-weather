@@ -7,6 +7,8 @@ include:
       tarball-artifact-path: "${TARBALL_ARTIFACT_PATH}"
 
 variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  GIT_SUBMODULE_DEPTH: 1
   APP_ID: "org.gnome.WeatherDevel"
   BUNDLE: "gnome-weather-dev.flatpak"
   FLATPAK_MODULE: "gnome-weather"
@@ -16,9 +18,13 @@ variables:
 
 flatpak:
   extends: '.flatpak@x86_64'
+  before_script:
+    - flatpak --user install -y org.freedesktop.Sdk.Extension.node20//24.08 org.freedesktop.Sdk.Extension.typescript//24.08
 
 flatpak@aarch64:
   extends: '.flatpak@aarch64'
+  before_script:
+    - flatpak --user install -y org.freedesktop.Sdk.Extension.node20//24.08 org.freedesktop.Sdk.Extension.typescript//24.08
 
 nightly:
   extends: '.publish_nightly'

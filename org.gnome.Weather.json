@@ -3,6 +3,10 @@
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.node20",
+        "org.freedesktop.Sdk.Extension.typescript"
+    ],
     "command" : "gnome-weather",
     "tags" : [
         "nightly"
@@ -28,6 +32,9 @@
         "*.la",
         "*.a"
     ],
+    "build-options" : {
+        "append-path" : "/usr/lib/sdk/node20/bin:/usr/lib/sdk/typescript/bin"
+    },
     "modules": [
         {
             "name" : "geocode-glib",

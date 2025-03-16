@@ -19,7 +19,7 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 
 const ShellIntegrationInterface = new TextDecoder().decode(
-    Gio.resources_lookup_data('/org/gnome/shell/ShellWeatherIntegration.xml', 0).get_data()
+    Gio.resources_lookup_data('/org/gnome/shell/ShellWeatherIntegration.xml', 0).get_data() ?? undefined
 );
 
 export class ShellIntegration {
@@ -35,10 +35,17 @@ export class ShellIntegration {
         });
     }
 
+    /**
+     * @param {Gio.DBusConnection} connection
+     * @param {string} path
+     */
     export(connection, path) {
         return this._impl.export(connection, path);
     }
 
+    /**
+     * @param {Gio.DBusConnection} connection
+     */
     unexport(connection) {
         return this._impl.unexport_from_connection(connection);
     }

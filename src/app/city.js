@@ -27,6 +27,11 @@ import * as Util from '../misc/util.js';
 
 import './hourlyForecast.js';
 import './dailyForecast.js';
+import { WeatherApplication } from './application.js';
+import { MainWindow } from './window.js';
+import { HourlyForecastBox } from './hourlyForecast.js';
+import { DailyForecastBox } from './dailyForecast.js';
+import Gdk from 'gi://Gdk';
 
 const SCROLLING_ANIMATION_TIME = 400000; //us
 
@@ -52,6 +57,50 @@ export const WeatherWidget = GObject.registerClass({
         'attributionLabel'
     ],
 }, class WeatherWidget extends Adw.Bin {
+    /** @type {Gtk.Image}*/
+    // @ts-ignore
+    _conditionsImage = this._conditionsImage;
+    /** @type {Gtk.MenuButton} */
+    // @ts-ignore
+    _placesButton = this._placesButton;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _temperatureLabel = this._temperatureLabel;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _apparentLabel = this._apparentLabel;
+    /** @type {Adw.ViewStack} */
+    // @ts-ignore
+    _forecastStack = this._forecastStack;
+    /** @type {Gtk.Button} */
+    // @ts-ignore
+    _leftButton = this._leftButton;
+    /** @type {Gtk.Button} */
+    // @ts-ignore
+    _rightButton = this._rightButton;
+    /** @type {HourlyForecastBox} */
+    // @ts-ignore
+    _forecastHourly = this._forecastHourly;
+    /** @type {Gtk.Adjustment} */
+    // @ts-ignore
+    _forecastHourlyAdjustment = this._forecastHourlyAdjustment;
+    /** @type {DailyForecastBox} */
+    // @ts-ignore
+    _forecastDaily = this._forecastDaily;
+    /** @type {Gtk.Adjustment} */
+    // @ts-ignore
+    _forecastDailyAdjustment = this._forecastDailyAdjustment;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _updatedTimeLabel = this._updatedTimeLabel;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _attributionLabel = this._attributionLabel;
+
+    /**
+     * @param {WeatherApplication} application
+     * @param {MainWindow} window
+     */
     constructor(application, window) {
         super({
             name: 'weather-page'
@@ -76,7 +125,7 @@ export const WeatherWidget = GObject.registerClass({
         }
 
         this._forecastStack.connect('notify::visible-child', () => {
-            let visible_child = this._forecastStack.visible_child;
+            let visible_child = /** @type {Gtk.ScrolledWindow}*/ (this._forecastStack.visible_child);
             if (visible_child == null)
                 return; // can happen at destruction
 
@@ -93,14 +142,14 @@ export const WeatherWidget = GObject.registerClass({
         this._tickId = 0;
 
         this._leftButton.connect('clicked', () => {
-            let hadjustment = this._forecastStack.visible_child.get_hadjustment();
+            let hadjustment = (/** @type {Gtk.ScrolledWindow} */ (this._forecastStack.visible_child)).get_hadjustment();
             let target = hadjustment.value - hadjustment.page_size;
 
             this._beginScrollAnimation(target);
         });
 
         this._rightButton.connect('clicked', () => {
-            let hadjustment = this._forecastStack.visible_child.get_hadjustment();
+            let hadjustment = (/** @type {Gtk.ScrolledWindow} */ (this._forecastStack.visible_child)).get_hadjustment();
             let target = hadjustment.value + hadjustment.page_size;
 
             this._beginScrollAnimation(target);
@@ -120,7 +169,7 @@ export const WeatherWidget = GObject.registerClass({
     }
 
     _syncLeftRightButtons() {
-        const visible_child = this._forecastStack.visible_child;
+        const visible_child = /** @type {Gtk.ScrolledWindow}*/ (this._forecastStack.visible_child);
         let hadjustment = visible_child.get_hadjustment();
         if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
             this._leftButton.hide();
@@ -137,8 +186,11 @@ export const WeatherWidget = GObject.registerClass({
         }
     }
 
+    /**
+     * @param {number} target
+     */
     _beginScrollAnimation(target) {
-        let start = this.get_frame_clock().get_frame_time();
+        let start = (/** @type {Gdk.FrameClock} */ (this.get_frame_clock())).get_frame_time();
         let end = start + SCROLLING_ANIMATION_TIME;
 
         if (this._tickId != 0)
@@ -147,11 +199,16 @@ export const WeatherWidget = GObject.registerClass({
         this._tickId = this.add_tick_callback(() => this._animate(target, start, end));
     }
 
+    /**
+     * @param {number} target
+     * @param {number} start
+     * @param {number} end
+     */
     _animate(target, start, end) {
-        let hadjustment = this._forecastStack.visible_child.get_hadjustment();
+        let hadjustment = (/** @type {Gtk.ScrolledWindow} */ (this._forecastStack.visible_child)).get_hadjustment();
         let value = hadjustment.value;
         let t = 1.0;
-        let now = this.get_frame_clock().get_frame_time();
+        let now = (/** @type {Gdk.FrameClock} */ (this.get_frame_clock())).get_frame_time();
 
         if (now < end) {
             t = (now - start) / SCROLLING_ANIMATION_TIME;
@@ -179,6 +236,9 @@ export const WeatherWidget = GObject.registerClass({
         return this._forecastStack;
     }
 
+    /**
+     * @param {GWeather.Info} info
+     */
     update(info) {
         this._info = info;
 
@@ -257,21 +317,31 @@ export const WeatherWidget = GObject.registerClass({
     }
 });
 
-WeatherWidget.set_layout_manager_type(Adw.ClampLayout);
+WeatherWidget.set_layout_manager_type(Adw.ClampLayout.$gtype);
 
 export const WeatherView = GObject.registerClass({
     Template: 'resource:///org/gnome/Weather/city.ui',
     InternalChildren: ['stack']
 }, class WeatherView extends Adw.Bin {
+    /** @type {Gtk.Stack} */
+    // @ts-ignore
+    _stack = this._stack;
 
+    /**
+     * @param {WeatherApplication} application
+     * @param {MainWindow} window
+     * @param {Partial<Adw.Bin.ConstructorProps> | undefined} params
+     */
     constructor(application, window, params) {
         super(params);
 
         this._infoPage = new WeatherWidget(application, window);
         this._stack.add_named(this._infoPage, 'info');
 
-        this._info = null;
-        this._updateId = 0;
+        /** @type {GWeather.Info | undefined} */
+        this._info;
+        /** @type {number | undefined} */
+        this._updateId;
     }
 
     get info() {
@@ -280,7 +350,7 @@ export const WeatherView = GObject.registerClass({
 
     set info(info) {
         if (this._updateId) {
-            this._info.disconnect(this._updateId);
+            this._info?.disconnect(this._updateId);
             this._updateId = 0;
 
             this._infoPage.clear();
@@ -290,7 +360,7 @@ export const WeatherView = GObject.registerClass({
 
         if (info) {
             this._stack.visible_child_name = 'loading';
-            this._updateId = this._info.connect('updated', (info) => {
+            this._updateId = this._info?.connect('updated', (info) => {
                 this._onUpdate(info)
             });
 
@@ -308,7 +378,7 @@ export const WeatherView = GObject.registerClass({
 
     vfunc_unmap() {
         if (this._updateId) {
-            this._info.disconnect(this._updateId);
+            this._info?.disconnect(this._updateId);
             this._updateId = 0;
         }
 
@@ -318,10 +388,14 @@ export const WeatherView = GObject.registerClass({
     update() {
         this._stack.visible_child_name = 'loading';
         this._infoPage.clear();
-
-        getApp().model.updateInfo(this._info);
+        if (this._info) {
+            getApp().model?.updateInfo(this._info);
+        }
     }
 
+    /**
+     * @param {GWeather.Info} info
+     */
     _onUpdate(info) {
         this._infoPage.clear();
         this._infoPage.update(info);
