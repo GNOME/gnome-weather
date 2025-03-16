@@ -19,9 +19,14 @@
 import GLib from 'gi://GLib';
 import GWeather from 'gi://GWeather';
 import Geoclue from 'gi://Geoclue';
+import Gio from 'gi://Gio';
 
 import * as Util from '../misc/util.js';
+import { WorldModel } from '../shared/world.js';
 export class CurrentLocationController {
+    /**
+     * @param {WorldModel} world
+     */
     constructor(world) {
         this._world = world;
         this._processStarted = false;
@@ -35,6 +40,7 @@ export class CurrentLocationController {
     _startGeolocationService() {
         this._processStarted = true;
         if (Geoclue.Simple.new_with_thresholds) {
+            // @ts-expect-error pkg shenanigans
             Geoclue.Simple.new_with_thresholds(pkg.name,
                                                Geoclue.AccuracyLevel.CITY,
                                                0, /* time threshold */
@@ -44,6 +50,7 @@ export class CurrentLocationController {
                                                    this._onSimpleReady(object, result)
                                                });
         } else {
+            // @ts-expect-error pkg shenanigans
             Geoclue.Simple.new(pkg.name,
                                Geoclue.AccuracyLevel.CITY,
                                null,
@@ -53,14 +60,25 @@ export class CurrentLocationController {
         }
     }
 
+    /**
+     * @param {unknown} e
+     */
     _geoLocationFailed(e) {
-        log ("Failed to connect to GeoClue2 service: " + e.message);
+        if (e instanceof Error) {
+            log ("Failed to connect to GeoClue2 service: " + e.message);
+        }
+
         this.autoLocationAvailable = false;
+        // @ts-expect-error What's going on here is unclear
         GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
             this._world.currentLocationChanged(null);
         });
     }
 
+    /**
+     * @param {Geoclue.Simple | null} object
+     * @param {Gio.AsyncResult} result
+     */
     _onSimpleReady(object, result) {
         try {
             this._simple = Geoclue.Simple.new_finish(result);
@@ -72,8 +90,7 @@ export class CurrentLocationController {
 
         // geoclue doesn't use a client proxy inside a flatpak sandbox
         if (this._simple.client && !Geoclue.Simple.new_with_thresholds) {
-            let client = this._simple.get_client();
-            client.distance_threshold = 100;
+            this._simple.client.distance_threshold = 100;
         }
 
         this._findLocation();
@@ -83,36 +100,25 @@ export class CurrentLocationController {
 
     _findLocation() {
         this._locationUpdatedId =
-                    this._simple.connect("notify::location", (simple) => {
+                    this._simple?.connect("notify::location", (simple) => {
                         this._onLocationUpdated(simple);
                     });
 
         this._onLocationUpdated(this._simple);
     }
 
+    /**
+     * @param {Geoclue.Simple | undefined} simple
+     */
     _onLocationUpdated(simple) {
-        let geoclueLocation = simple.get_location();
+        this.currentLocation = null;
+        let geoclueLocation = simple?.get_location();
+        let world = GWeather.Location.get_world();
 
-        this.currentLocation = GWeather.Location.get_world()
-                                                .find_nearest_city(
-                                                    geoclueLocation.latitude,
-                                                    geoclueLocation.longitude
-                                                );
-        this._world.currentLocationChanged(this.currentLocation);
-    }
-
-    _autoLocationChanged(active) {
-        if (active) {
-            if (!this._processStarted) {
-                this._startGeolocationService();
-            } else {
-                this._locationUpdatedId =
-                    this._simple.connect("notify::location", (simple) => {
-                                             this._onLocationUpdated(simple);
-                                         });
-            }
-        } else {
-            this._simple.disconnect(this._locationUpdatedId);
+        if (geoclueLocation && world) {
+            this.currentLocation = world.find_nearest_city(geoclueLocation.latitude, geoclueLocation.longitude);
         }
+
+        this._world.currentLocationChanged(this.currentLocation);
     }
 }

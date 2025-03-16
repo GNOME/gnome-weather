@@ -19,11 +19,22 @@
 
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
+import GWeather from 'gi://GWeather?version=4.0';
+import Gio from 'gi://Gio';
 
 import * as Util from '../misc/util.js';
 import { LocationRow } from './locationRow.js';
+import { LocationSearchEntry } from './entry.js'
+import { MainWindow } from './window.js';
+import { WeatherApplication } from './application.js';
+import { WorldModel } from '../shared/world.js';
 
 export class WorldContentView extends Gtk.Popover {
+    /**
+     * @param {WeatherApplication} application
+     * @param {MainWindow | null} window
+     * @param {{ align?: Gtk.Align, params?: Partial<Gtk.Popover.ConstructorProps>}} param2
+     */
     constructor(application, window, { align, ...params } = {}) {
         super({
             ...params,
@@ -40,22 +51,22 @@ export class WorldContentView extends Gtk.Popover {
         let builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/Weather/places-popover.ui');
 
-        const box = builder.get_object('popoverBox');
+        const box = /** @type {Gtk.Box} */ (builder.get_object('popoverBox'));
         this.set_child(box);
 
-        this._searchListView = builder.get_object('search-list-view');
-        this._searchListScrollWindow = builder.get_object('search-list-scroll-window');
+        this._searchListView = /** @type {Gtk.ListView} */ (builder.get_object('search-list-view'));
+        this._searchListScrollWindow = /** @type {Gtk.ScrolledWindow} */ (builder.get_object('search-list-scroll-window'));
 
-        this.model = application.model;
+        this.model = /** @type {WorldModel & Gio.ListModel} */ (application.model);
         this._window = window;
 
-        this._listboxScrollWindow = builder.get_object('locations-list-scroll-window');
-        this._listbox = builder.get_object('locations-list-box');
+        this._listboxScrollWindow = /** @type {Gtk.ScrolledWindow} */ (builder.get_object('locations-list-scroll-window'));
+        this._listbox = /** @type {Gtk.ListBox} */ (builder.get_object('locations-list-box'));
         this._listbox.bind_model(this.model, (info) => {
-            return this._buildLocation(this.model, info);
+            return this._buildLocation(this.model, /** @type {GWeather.Info} */ (info));
         });
 
-        this._locationEntry = builder.get_object('location-entry');
+        this._locationEntry = /** @type {LocationSearchEntry} */ (builder.get_object('location-entry'));
 
         this._locationEntry.setListView(this._searchListView);
         this._locationEntry.connect('search-updated', (entry, text) => {
@@ -89,8 +100,10 @@ export class WorldContentView extends Gtk.Popover {
         this._currentLocationController = application.currentLocationController;
 
         this._listbox.connect('row-activated', (listbox, row) => {
+            // @ts-expect-error need to rework this to put `_info` on the LocationRow type.
             if (row._info)
-                this.model.setSelectedLocation(row._info);
+                // @ts-expect-error need to rework this to put `_info` on the LocationRow type.
+                this.model?.setSelectedLocation(row._info);
 
             // Defer the popdown to allow the stack to re-render
             imports.mainloop.idle_add(() => {
@@ -100,10 +113,10 @@ export class WorldContentView extends Gtk.Popover {
         });
 
         this.model.connect('selected-location-changed', (_, info) => {
-            this._window.showInfo(info);
+            this._window?.showInfo(info);
         });
 
-        this._stackPopover = builder.get_object('popover-stack');
+        this._stackPopover = /** @type {Gtk.Stack} */ (builder.get_object('popover-stack'));
         this._stackPopover.set_visible_child(this._listboxScrollWindow);
 
         this._currentLocationAdded = false;
@@ -111,6 +124,7 @@ export class WorldContentView extends Gtk.Popover {
     }
 
     vfunc_unroot() {
+        // @ts-expect-error ts-for-gir says undefined when it should be null
         this._listbox.bind_model(null, null);
 
         this._window = null;
@@ -122,13 +136,20 @@ export class WorldContentView extends Gtk.Popover {
         this._listbox.invalidate_filter();
     }
 
+    /**
+     * @param {GWeather.Location} location
+     */
     _locationChanged(location) {
         if (location) {
             let info = this.model.addNewLocation(location);
-            this._window.showInfo(info);
+            this._window?.showInfo(info);
         }
     }
 
+    /**
+     * @param {WorldModel} model
+     * @param {GWeather.Info} info
+     */
     _buildLocation(model, info) {
         if (!info) return new LocationRow({ name: '', countryName: '' });;
 
@@ -151,6 +172,7 @@ export class WorldContentView extends Gtk.Popover {
         });
 
         const row = new Gtk.ListBoxRow({ child: grid });
+        // @ts-expect-error need to rework this to put `_info` on the LocationRow type.
         row._info = info;
         return row;
     }

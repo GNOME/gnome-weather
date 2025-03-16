@@ -35,6 +35,13 @@ export class TemperatureRange {
     weeklyLow;
     weeklyHigh;
 
+    /** @param {{
+     *  dailyLow: number;
+     *  dailyHigh: number;
+     *  weeklyLow: number;
+     *  weeklyHigh: number;
+     * }} param0
+     */
     constructor({ dailyLow, dailyHigh, weeklyLow, weeklyHigh }) {
         this.dailyLow = dailyLow;
         this.dailyHigh = dailyHigh;
@@ -61,6 +68,9 @@ const ThermometerScale = GObject.registerClass({
     constructor({ range = null, ...params }) {
         super(params);
 
+        /**
+         * @type {TemperatureRange | null}
+         */
         this.range = range;
     }
 
@@ -73,11 +83,16 @@ const ThermometerScale = GObject.registerClass({
     }
 
     vfunc_unmap() {
-        this.disconnect(this._rangeChangedId);
+        if (this._rangeChangedId) {
+            this.disconnect(this._rangeChangedId);
+        }
 
         super.vfunc_unmap();
     }
 
+    /**
+     * @param {Gtk.Snapshot} snapshot
+     */
     vfunc_snapshot(snapshot) {
         super.vfunc_snapshot(snapshot);
 
@@ -164,6 +179,11 @@ export const Thermometer = GObject.registerClass({
         this.#scale.set_parent(this);
     }
 
+    /**
+     * @param {Gtk.Orientation} orientation
+     * @param {number} for_size
+     * @returns {[number, number, number, number]}
+     */
     vfunc_measure(orientation, for_size) {
         const [highMin, highNat, highMinBaseline, highNatBaseline] =
             this.#highLabel.measure(orientation, for_size);
@@ -189,9 +209,19 @@ export const Thermometer = GObject.registerClass({
         }
     }
 
+    /**
+     * @param {number} width
+     * @param {number} height
+     * @param {number} baseline
+     */
     vfunc_size_allocate(width, height, baseline) {
-        const [highMin, highNat] = this.#highLabel.get_preferred_size();
-        const [lowMin, lowNat] = this.#lowLabel.get_preferred_size();
+        const [highMin, highNatOut] = this.#highLabel.get_preferred_size();
+        const [lowMin, lowNatOut] = this.#lowLabel.get_preferred_size();
+
+        // ts-for-gir interprets the requisitions as nullable due to the input parameters,
+        // but as output these aren't actually supposed to be null. JS gives us both requisitions.
+        const highNat = /** @type {Gtk.Requisition} */ (highNatOut);
+        const lowNat = /** @type {Gtk.Requisition} */ (lowNatOut);
 
         const spacing = this.spacing;
 
@@ -211,6 +241,7 @@ export const Thermometer = GObject.registerClass({
         let lowY = height - lowNat.height;
 
         if (scaleHeight >= this.#scale.minHeight) {
+            // @ts-expect-error need to get this interpreted as both a GJS prop and a GObject prop
             const { dailyHigh, dailyLow, weeklyHigh, weeklyLow } = this.range;
 
             const radius = this.#scale.radius;
@@ -242,10 +273,14 @@ export const Thermometer = GObject.registerClass({
 
         this.bind_property('range', this.#scale,'range', GObject.BindingFlags.DEFAULT);
 
+        // @ts-expect-error in JS this works, but this doesn't really match any type annotations.
+        // Gonna figure this out later.
         this.bind_property_full('range', this.#lowLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
             return [!!range, Util.formatTemperature(range?.dailyLow) ?? ''];
         }, null);
 
+
+        // @ts-expect-error Same as the above.
         this.bind_property_full('range', this.#highLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
             return [!!range, Util.formatTemperature(range?.dailyHigh) ?? ''];
         }, null);
