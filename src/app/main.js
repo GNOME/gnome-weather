@@ -35,19 +35,18 @@ pkg.initGettext();
 
 globalThis.ngettext = imports.gettext.ngettext;
 globalThis.getApp = function () {
-    return Gio.Application.get_default();
+    return (/** @type {WeatherApplication} */ (Gio.Application.get_default()));
 };
 
 let application = new WeatherApplication();
 
 setTimeout(() => {
-    imports.mainloop.quit();
+    imports.mainloop.quit('gnome-weather');
 
     const code = application.run([system.programInvocationName, ...system.programArgs]);
-    application = null;
 
     if (code !== 0)
         system.exit(code);
 });
 
-imports.mainloop.run();
+imports.mainloop.run('gnome-weather');

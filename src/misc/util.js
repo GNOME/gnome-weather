@@ -26,11 +26,16 @@
 
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
+import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 import GWeather from 'gi://GWeather';
 
 import * as System from 'system';
 
+/**
+ * @param {string} resourcePath
+ * @param {{ [x: string]: GObject.Object; }} objects
+ */
 function loadUI(resourcePath, objects) {
     let ui = new Gtk.Builder();
 
@@ -43,6 +48,11 @@ function loadUI(resourcePath, objects) {
     return ui;
 }
 
+/**
+ * @template T
+ * @param {T[]} one
+ * @param {T[]} two 
+ */
 function arrayEqual(one, two) {
     if (one.length !== two.length)
         return false;
@@ -50,13 +60,12 @@ function arrayEqual(one, two) {
     return one.every((a, i) => a === two[i]);
 }
 
-function isSameDay(day, datetime) {
-    return arrayEqual(day.get_ymd(), datetime.get_ymd());
-}
-
+/**
+ * @param {string} schemaId
+ */
 function getSettings(schemaId) {
     const schemaSource = Gio.SettingsSchemaSource.get_default();
-    const schemaObj = schemaSource.lookup(schemaId, true);
+    const schemaObj = schemaSource?.lookup(schemaId, true);
 
     if (!schemaObj) {
         log(`Missing GSettings schema ${schemaId}`);
@@ -66,6 +75,9 @@ function getSettings(schemaId) {
     return new Gio.Settings({ settings_schema: schemaObj });
 }
 
+/**
+ * @param {GWeather.Info} info
+ */
 function getWeatherConditions(info) {
     let conditions = info.get_conditions();
     if (conditions == '-') // Not significant
@@ -73,14 +85,19 @@ function getWeatherConditions(info) {
     return conditions;
 }
 
+/**
+ * @param {string | null} str
+ */
 function normalizeCasefoldAndUnaccent(str) {
+    if (!str) return ''
+
     // The one and only!
     // Travelled all over gnome, from tracker to gnome-shell to gnome-control-center,
     // to seahorse, epiphany...
     //
     // Originally written by Aleksander Morgado <aleksander@gnu.org>
 
-    str = GLib.utf8_normalize(str, -1, GLib.NormalizeMode.NFKD);
+    str = GLib.utf8_normalize(str, -1, GLib.NormalizeMode.NFKD) ?? '';
     str = GLib.utf8_casefold(str, -1);
 
     /* Combining diacritical mark?
@@ -92,6 +109,9 @@ function normalizeCasefoldAndUnaccent(str) {
     return str.replace(/[\u0300-\u036f]|[\u1dc0-\u1dff]|[\u20d0-\u20ff]|[\ufe20-\ufe2f]/, '');
 }
 
+/**
+ * @param {GWeather.Info} info
+ */
 function getTemperature(info) {
     let [ok1,] = info.get_value_temp_min(GWeather.TemperatureUnit.DEFAULT);
     let [ok2,] = info.get_value_temp_max(GWeather.TemperatureUnit.DEFAULT);
@@ -107,19 +127,20 @@ function getTemperature(info) {
 }
 
 function getEnabledProviders() {
-    let provider_override = GLib.getenv('GWEATHER_DEBUG_BACKEND');
-    if (provider_override) {
-        return (GWeather.Provider.METAR | GWeather.Provider[provider_override]);
-    } else {
-        return (GWeather.Provider.METAR | GWeather.Provider.MET_NO | GWeather.Provider.OWM);
-    }
+    return (GWeather.Provider.METAR | GWeather.Provider.MET_NO | GWeather.Provider.OWM);
 }
 
+/**
+ * @param {number} value
+ */
 function easeOutCubic(value) {
     let t = value - 1;
     return t * t * t + 1;
 }
 
+/**
+ * @param {GLib.DateTime} date
+ */
 function getNight(date) {
     return GLib.DateTime.new_local(date.get_year(),
         date.get_month(),
@@ -127,6 +148,9 @@ function getNight(date) {
         2, 0, 0);
 }
 
+/**
+ * @param {GLib.DateTime} date
+ */
 function getMorning(date) {
     return GLib.DateTime.new_local(date.get_year(),
         date.get_month(),
@@ -134,6 +158,9 @@ function getMorning(date) {
         7, 0, 0);
 }
 
+/**
+ * @param {GLib.DateTime} date
+ */
 function getDay(date) {
     return GLib.DateTime.new_local(date.get_year(),
         date.get_month(),
@@ -141,6 +168,9 @@ function getDay(date) {
         12, 0, 0);
 }
 
+/**
+ * @param {GLib.DateTime} date
+ */
 function getAfternoon(date) {
     return GLib.DateTime.new_local(date.get_year(),
         date.get_month(),
@@ -148,6 +178,9 @@ function getAfternoon(date) {
         17, 0, 0);
 }
 
+/**
+ * @param {GLib.DateTime} date
+ */
 function getEvening(date) {
     return GLib.DateTime.new_local(date.get_year(),
         date.get_month(),
@@ -155,20 +188,32 @@ function getEvening(date) {
         22, 0, 0);
 }
 
+/**
+ * @param {GWeather.Info} info
+ */
 function getDateTime(info) {
     let [ok, date] = info.get_value_update();
     return GLib.DateTime.new_from_unix_local(date);
 }
 
+/**
+ * @param {GWeather.Info} info
+ */
 function getTemp(info) {
     let [ok, temp] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
     return temp;
 }
 
+/**
+ * @param {number | unknown} value
+ */
 function formatTemperature(value) {
     return typeof value === 'number' ? `${Math.round(value).toFixed(0)}°` : undefined;
 };
 
+/**
+ * @param {GWeather.Info} info
+ */
 function getTempString(info) {
     try {
         let [, temp] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
@@ -179,6 +224,7 @@ function getTempString(info) {
 }
 
 /**
+ * @param {GWeather.Location} location
  * @returns {[string] | [string, string]}
  */
 function getNameAndCountry(location) {
@@ -187,9 +233,9 @@ function getNameAndCountry(location) {
         country = country.get_parent();
 
     if (country)
-       return [location.get_name(), country.get_name()];
+       return [location.get_name() ?? '', country.get_name() ?? ''];
     else
-        return [location.get_name()];
+        return [location.get_name() ?? ''];
 }
 
 export {
@@ -202,7 +248,6 @@ export {
     getTempString,
     getNight,
     normalizeCasefoldAndUnaccent,
-    isSameDay,
     arrayEqual,
     getSettings,
     getMorning,
