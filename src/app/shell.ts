@@ -23,6 +23,9 @@ const ShellIntegrationInterface = new TextDecoder().decode(
 );
 
 export class ShellIntegration {
+    _impl: Gio.DBusExportedObject;
+    _settings: Gio.Settings;
+
     constructor() {
         this._impl = Gio.DBusExportedObject.wrapJSObject(
             ShellIntegrationInterface, this);
@@ -35,18 +38,11 @@ export class ShellIntegration {
         });
     }
 
-    /**
-     * @param {Gio.DBusConnection} connection
-     * @param {string} path
-     */
-    export(connection, path) {
+    export(connection: Gio.DBusConnection, path: string) {
         return this._impl.export(connection, path);
     }
 
-    /**
-     * @param {Gio.DBusConnection} connection
-     */
-    unexport(connection) {
+    unexport(connection: Gio.DBusConnection) {
         return this._impl.unexport_from_connection(connection);
     }
 

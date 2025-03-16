@@ -31,77 +31,57 @@ import { WeatherApplication } from './application.js';
 import { MainWindow } from './window.js';
 import { HourlyForecastBox } from './hourlyForecast.js';
 import { DailyForecastBox } from './dailyForecast.js';
-import Gdk from 'gi://Gdk';
 
 const SCROLLING_ANIMATION_TIME = 400000; //us
 
 const UPDATED_TIME_TIMEOUT = 60; //s
 
-export const WeatherWidget = GObject.registerClass({
-    Template: 'resource:///org/gnome/Weather/weather-widget.ui',
-    InternalChildren: [
-        'conditionsImage',
-        'placesButton',
-        'temperatureLabel',
-        'apparentLabel',
-        'forecastStack',
-        'leftButton',
-        'rightButton',
-        'forecastHourly',
-        'forecastHourlyScrollWindow',
-        'forecastHourlyAdjustment',
-        'forecastDaily',
-        'forecastDailyScrollWindow',
-        'forecastDailyAdjustment',
-        'updatedTimeLabel',
-        'attributionLabel'
-    ],
-}, class WeatherWidget extends Adw.Bin {
-    /** @type {Gtk.Image}*/
-    // @ts-ignore
-    _conditionsImage = this._conditionsImage;
-    /** @type {Gtk.MenuButton} */
-    // @ts-ignore
-    _placesButton = this._placesButton;
-    /** @type {Gtk.Label} */
-    // @ts-ignore
-    _temperatureLabel = this._temperatureLabel;
-    /** @type {Gtk.Label} */
-    // @ts-ignore
-    _apparentLabel = this._apparentLabel;
-    /** @type {Adw.ViewStack} */
-    // @ts-ignore
-    _forecastStack = this._forecastStack;
-    /** @type {Gtk.Button} */
-    // @ts-ignore
-    _leftButton = this._leftButton;
-    /** @type {Gtk.Button} */
-    // @ts-ignore
-    _rightButton = this._rightButton;
-    /** @type {HourlyForecastBox} */
-    // @ts-ignore
-    _forecastHourly = this._forecastHourly;
-    /** @type {Gtk.Adjustment} */
-    // @ts-ignore
-    _forecastHourlyAdjustment = this._forecastHourlyAdjustment;
-    /** @type {DailyForecastBox} */
-    // @ts-ignore
-    _forecastDaily = this._forecastDaily;
-    /** @type {Gtk.Adjustment} */
-    // @ts-ignore
-    _forecastDailyAdjustment = this._forecastDailyAdjustment;
-    /** @type {Gtk.Label} */
-    // @ts-ignore
-    _updatedTimeLabel = this._updatedTimeLabel;
-    /** @type {Gtk.Label} */
-    // @ts-ignore
-    _attributionLabel = this._attributionLabel;
+export class WeatherWidget extends Adw.Bin {
+    _conditionsImage!: Gtk.Image;
+    _placesButton!: Gtk.MenuButton;
+    _temperatureLabel!: Gtk.Label;
+    _apparentLabel!: Gtk.Label;
+    _forecastStack!: Adw.ViewStack;
+    _leftButton!: Gtk.Button;
+    _rightButton!: Gtk.Button;
+    _forecastHourly!: HourlyForecastBox;
+    _forecastHourlyAdjustment!: Gtk.Adjustment;
+    _forecastDaily!: DailyForecastBox;
+    _forecastDailyAdjustment!: Gtk.Adjustment;
+    _updatedTimeLabel!: Gtk.Label;
+    _attributionLabel!: Gtk.Label;
 
-    /**
-     * @param {WeatherApplication} application
-     * @param {MainWindow} window
-     */
-    constructor(application, window) {
+    _worldView: WorldView.WorldContentView;
+
+    _tickId: number;
+    _updatedTime?: number;
+    _updatedTimeTimeoutId: number;
+    _info?: GWeather.Info;
+
+    static {
+        GObject.registerClass({
+            Template: 'resource:///org/gnome/Weather/weather-widget.ui',
+            InternalChildren: [
+                'conditionsImage',
+                'placesButton',
+                'temperatureLabel',
+                'apparentLabel',
+                'forecastStack',
+                'leftButton',
+                'rightButton',
+                'forecastHourly',
+                'forecastHourlyScrollWindow',
+                'forecastHourlyAdjustment',
+                'forecastDaily',
+                'forecastDailyScrollWindow',
+                'forecastDailyAdjustment',
+                'updatedTimeLabel',
+                'attributionLabel'
+            ],
+        }, this);
+    }
+
+    constructor(application: WeatherApplication, window: MainWindow) {
         super({
             name: 'weather-page'
         });
@@ -111,8 +91,6 @@ export const WeatherWidget = GObject.registerClass({
             // Ensures ~18px of margin on the right side
             tighteningThreshold: 992,
         });
-
-        this._info = null;
 
         this._worldView = new WorldView.WorldContentView(application, window,  {
             align: Gtk.Align.START,
@@ -125,7 +103,7 @@ export const WeatherWidget = GObject.registerClass({
         }
 
         this._forecastStack.connect('notify::visible-child', () => {
-            let visible_child = /** @type {Gtk.ScrolledWindow}*/ (this._forecastStack.visible_child);
+            const visible_child = this._forecastStack.visible_child as Gtk.ScrolledWindow;
             if (visible_child == null)
                 return; // can happen at destruction
 
@@ -142,20 +120,20 @@ export const WeatherWidget = GObject.registerClass({
         this._tickId = 0;
 
         this._leftButton.connect('clicked', () => {
-            let hadjustment = (/** @type {Gtk.ScrolledWindow} */ (this._forecastStack.visible_child)).get_hadjustment();
+            let hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
             let target = hadjustment.value - hadjustment.page_size;
 
             this._beginScrollAnimation(target);
         });
 
         this._rightButton.connect('clicked', () => {
-            let hadjustment = (/** @type {Gtk.ScrolledWindow} */ (this._forecastStack.visible_child)).get_hadjustment();
+            let hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
             let target = hadjustment.value + hadjustment.page_size;
 
             this._beginScrollAnimation(target);
         });
 
-        this._updatedTime = null;
+        this._updatedTime = undefined;
         this._updatedTimeTimeoutId = 0;
     }
 
@@ -169,7 +147,7 @@ export const WeatherWidget = GObject.registerClass({
     }
 
     _syncLeftRightButtons() {
-        const visible_child = /** @type {Gtk.ScrolledWindow}*/ (this._forecastStack.visible_child);
+        const visible_child = this._forecastStack.visible_child as Gtk.ScrolledWindow;
         let hadjustment = visible_child.get_hadjustment();
         if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
             this._leftButton.hide();
@@ -186,40 +164,38 @@ export const WeatherWidget = GObject.registerClass({
         }
     }
 
-    /**
-     * @param {number} target
-     */
-    _beginScrollAnimation(target) {
-        let start = (/** @type {Gdk.FrameClock} */ (this.get_frame_clock())).get_frame_time();
-        let end = start + SCROLLING_ANIMATION_TIME;
+    _beginScrollAnimation(target: number) {
+        if (this.get_realized()) {
+            let start = this.get_frame_clock()!.get_frame_time();
+            let end = start + SCROLLING_ANIMATION_TIME;
 
-        if (this._tickId != 0)
-            this.remove_tick_callback(this._tickId);
+            if (this._tickId != 0)
+                this.remove_tick_callback(this._tickId);
 
-        this._tickId = this.add_tick_callback(() => this._animate(target, start, end));
+            this._tickId = this.add_tick_callback(() => this._animate(target, start, end));
+        }
     }
 
-    /**
-     * @param {number} target
-     * @param {number} start
-     * @param {number} end
-     */
-    _animate(target, start, end) {
-        let hadjustment = (/** @type {Gtk.ScrolledWindow} */ (this._forecastStack.visible_child)).get_hadjustment();
+    _animate(target: number, start: number, end: number) {
+        let hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
         let value = hadjustment.value;
         let t = 1.0;
-        let now = (/** @type {Gdk.FrameClock} */ (this.get_frame_clock())).get_frame_time();
 
-        if (now < end) {
-            t = (now - start) / SCROLLING_ANIMATION_TIME;
-            t = Util.easeOutCubic(t);
-            hadjustment.value = value + t * (target - value);
-            return true;
-        } else {
-            hadjustment.value = value + t * (target - value);
-            this._tickId = 0;
-            return false;
+        if (this.get_realized()) {
+            let now = this.get_frame_clock()!.get_frame_time();
+            if (now < end) {
+                t = (now - start) / SCROLLING_ANIMATION_TIME;
+                t = Util.easeOutCubic(t);
+                hadjustment.value = value + t * (target - value);
+                return GLib.SOURCE_CONTINUE;
+            } else {
+                hadjustment.value = value + t * (target - value);
+                this._tickId = 0;
+                return GLib.SOURCE_REMOVE;
+            }
         }
+
+        return GLib.SOURCE_REMOVE;
     }
 
     clear() {
@@ -236,10 +212,7 @@ export const WeatherWidget = GObject.registerClass({
         return this._forecastStack;
     }
 
-    /**
-     * @param {GWeather.Info} info
-     */
-    update(info) {
+    update(info: GWeather.Info) {
         this._info = info;
 
         const label = Util.getNameAndCountry(info.location);
@@ -277,7 +250,7 @@ export const WeatherWidget = GObject.registerClass({
     }
 
     _formatUpdatedTime() {
-        if (this._updatedTime == null)
+        if (!this._updatedTime)
             return '';
 
         const milliseconds = Date.now() - this._updatedTime;
@@ -315,33 +288,28 @@ export const WeatherWidget = GObject.registerClass({
             'Updated %d month ago.',
             'Updated %d months ago.', months).format(months);
     }
-});
+};
 
 WeatherWidget.set_layout_manager_type(Adw.ClampLayout.$gtype);
 
-export const WeatherView = GObject.registerClass({
-    Template: 'resource:///org/gnome/Weather/city.ui',
-    InternalChildren: ['stack']
-}, class WeatherView extends Adw.Bin {
-    /** @type {Gtk.Stack} */
-    // @ts-ignore
-    _stack = this._stack;
+export class WeatherView extends Adw.Bin {
+    _stack!: Gtk.Stack;
+    _info?: GWeather.Info;
+    _updateId?: number;
+    _infoPage: WeatherWidget;
 
-    /**
-     * @param {WeatherApplication} application
-     * @param {MainWindow} window
-     * @param {Partial<Adw.Bin.ConstructorProps> | undefined} params
-     */
-    constructor(application, window, params) {
+    static {
+        GObject.registerClass({
+            Template: 'resource:///org/gnome/Weather/city.ui',
+            InternalChildren: ['stack']
+        }, this);
+    }
+
+    constructor(application: WeatherApplication, window: MainWindow, params?: Partial<Adw.Bin.ConstructorProps>) {
         super(params);
 
         this._infoPage = new WeatherWidget(application, window);
         this._stack.add_named(this._infoPage, 'info');
-
-        /** @type {GWeather.Info | undefined} */
-        this._info;
-        /** @type {number | undefined} */
-        this._updateId;
     }
 
     get info() {
@@ -389,14 +357,11 @@ export const WeatherView = GObject.registerClass({
         this._stack.visible_child_name = 'loading';
         this._infoPage.clear();
         if (this._info) {
-            getApp().model?.updateInfo(this._info);
+            getApp()?.model?.updateInfo(this._info);
         }
     }
 
-    /**
-     * @param {GWeather.Info} info
-     */
-    _onUpdate(info) {
+    _onUpdate(info: GWeather.Info) {
         this._infoPage.clear();
         this._infoPage.update(info);
         this._stack.visible_child_name = 'info';
@@ -405,4 +370,4 @@ export const WeatherView = GObject.registerClass({
     getForecastStack() {
         return this._infoPage.getForecastStack();
     }
-});
+};

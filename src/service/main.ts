@@ -34,6 +34,12 @@ import * as SearchProvider from './searchProvider.js';
 import * as World from '../shared/world.js';
 
 export class WeatherBackgroundService extends Gio.Application {
+    _searchProvider: SearchProvider.WeatherSearchProvider;
+    debug: boolean;
+
+    world?: GWeather.Location;
+    model?: World.WorldModel;
+
     static {
         GObject.registerClass(this);
     }
@@ -46,6 +52,8 @@ export class WeatherBackgroundService extends Gio.Application {
 
         this._searchProvider = new SearchProvider.WeatherSearchProvider(this);
 
+        this.debug = false;
+
         if (!pkg.moduledir?.startsWith('resource://'))
             this.debug = true;
     }
@@ -54,11 +62,7 @@ export class WeatherBackgroundService extends Gio.Application {
         this.quit();
     }
 
-    /**
-         * @param {Gio.DBusConnection} connection
-         * @param {string} path
-         */
-    vfunc_dbus_register(connection, path) {
+    vfunc_dbus_register(connection: Gio.DBusConnection, path: string) {
         super.vfunc_dbus_register(connection, path);
 
         this._searchProvider.export(connection, path);
@@ -78,7 +82,12 @@ export class WeatherBackgroundService extends Gio.Application {
     vfunc_startup() {
         super.vfunc_startup();
 
-        this.world = GWeather.Location.get_world();
+        const world = GWeather.Location.get_world();
+        if (!world) {
+            throw new Error('Failed to load top level location from location providers.');
+        }
+
+        this.world = world;
         this.model = new World.WorldModel(this.world);
         this.model.load();
 
@@ -107,10 +116,7 @@ export class WeatherBackgroundService extends Gio.Application {
     }
 };
 
-/**
- * @param {string[] | null} argv
- */
-export function main(argv) {
+export function main(argv: string[] | null) {
     setTimeout(() => {
         imports.mainloop.quit('search-provider');
 
