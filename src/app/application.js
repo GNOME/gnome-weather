@@ -41,8 +41,10 @@ export class WeatherApplication extends Adw.Application {
         let name_prefix = '';
 
         GLib.set_application_name(name_prefix + _("Weather"));
+        // @ts-expect-error pkg is a little weird with ts-for-gir
         Gtk.Window.set_default_icon_name(pkg.name);
 
+        /** @type {Window.MainWindow | undefined} */
         this._mainWindow = undefined;
     }
 
@@ -58,35 +60,51 @@ export class WeatherApplication extends Adw.Application {
         this.quit();
     }
 
+    /**
+     * @param {Gio.SimpleAction} action
+     * @param {GLib.Variant<any> | null} parameter
+     */
     _onShowLocation(action, parameter) {
-        let location = this.world.deserialize(parameter.deep_unpack());
-        let win = this._createWindow();
+        if (parameter) {
+            let location = this.world?.deserialize(parameter.deep_unpack());
+            let win = this._createWindow();
 
-        let info = this.model.addNewLocation(location, false);
-        win.showInfo(info, false);
-        this._showWindowWhenReady(win);
+            /** @type {GWeather.Info | undefined} */
+            let info;
+            if (location) {
+                info = this.model?.addNewLocation(location);
+            }
+            win.showInfo(info);
+            this._showWindowWhenReady(win);
+        }
     }
 
+    /**
+     * @param {Gio.SimpleAction} action
+     * @param {GLib.Variant<any> | null} parameter
+     */
     _onShowSearch(action, parameter) {
-        let text = parameter.deep_unpack();
-        let win = this._createWindow();
+        if (parameter) {
+            let text = parameter.deep_unpack();
+            let win = this._createWindow();
 
-        win.showSearch(text);
-        this._showWindowWhenReady(win);
+            win.showSearch(text);
+            this._showWindowWhenReady(win);
+        }
     }
 
     vfunc_startup() {
         super.vfunc_startup();
 
         this.world = GWeather.Location.get_world();
-        this.model = new World.WorldModel(this.world, true);
+        this.model = new World.WorldModel(this.world);
         this.currentLocationController = new CurrentLocationController.CurrentLocationController(this.model);
 
         this.model.load();
 
 
         this.model.connect('notify::loading', () => {
-            if (this.model.loading)
+            if (this.model?.loading)
                 this.mark_busy();
             else
                 this.unmark_busy();
@@ -124,6 +142,9 @@ export class WeatherApplication extends Adw.Application {
         let gwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather4' });
         // Sync settings changes to the legacy GTK3 GWeather interface if it is
         // available
+        /**
+         * @type {Gio.Settings | undefined}
+         */
         let legacyGwSettings;
         try {
             legacyGwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather' });
@@ -134,7 +155,11 @@ export class WeatherApplication extends Adw.Application {
         // we would also like to use g_settings_bind_with_mapping(), but that
         // function is not introspectable (two callbacks, one destroy notify)
         // so we hand code the behavior we want
+        /**
+         * @param {GWeather.TemperatureUnit} unit
+         */
         function resolveDefaultTemperatureUnit(unit) {
+            // @ts-expect-error ts-for-gir doesn't think it exists, but it does
             unit = GWeather.TemperatureUnit.to_real(unit);
             if (unit == GWeather.TemperatureUnit.CENTIGRADE)
                 return new GLib.Variant('s', 'centigrade');
@@ -150,9 +175,11 @@ export class WeatherApplication extends Adw.Application {
             parameter_type: new GLib.VariantType('s')
         });
         temperatureAction.connect('activate', function (_, parameter) {
-            gwSettings.set_value('temperature-unit', parameter);
-            if (legacyGwSettings) {
-                legacyGwSettings.set_value('temperature-unit', parameter);
+            if (parameter) {
+                gwSettings.set_value('temperature-unit', parameter);
+                if (legacyGwSettings) {
+                    legacyGwSettings.set_value('temperature-unit', parameter);
+                }
             }
         });
         gwSettings.connect('changed::temperature-unit', function () {
@@ -166,14 +193,22 @@ export class WeatherApplication extends Adw.Application {
         this.set_accels_for_action("app.quit", ["<Control>q"]);
     }
 
+    /**
+     * @param {Gio.DBusConnection} conn
+     * @param {string} path
+     */
     vfunc_dbus_register(conn, path) {
         this._shellIntegration = new ShellIntegration();
         this._shellIntegration.export(conn, path);
         return true;
     }
 
-    vfunc_dbus_unregister(conn, path) {
-        this._shellIntegration.unexport(conn);
+    /**
+     * @param {Gio.DBusConnection} conn
+     * @param {string} _path
+     */
+    vfunc_dbus_unregister(conn, _path) {
+        this._shellIntegration?.unexport(conn);
     }
 
     _createWindow() {
@@ -185,10 +220,12 @@ export class WeatherApplication extends Adw.Application {
         return window;
     }
 
+    /** @param {Window.MainWindow} win */
     _showWindowWhenReady(win) {
+        /** @type {number} */
         let notifyId;
         win.present();
-        if (this.model.loading) {
+        if (this.model?.loading) {
             let timeoutId;
             let model = this.model;
 
@@ -218,7 +255,7 @@ export class WeatherApplication extends Adw.Application {
 
     vfunc_shutdown() {
         GWeather.Info.store_cache();
-        this.model.saveSettingsNow();
+        this.model?.saveSettingsNow();
 
         // Ensure our main window is cleaned up before we exit.
         this.mainWindow?.run_dispose();

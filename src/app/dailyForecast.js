@@ -25,6 +25,23 @@ import Adw from 'gi://Adw';
 import * as Thermometer from './thermometer.js';
 import * as Util from '../misc/util.js';
 
+/**
+ * @typedef {{
+ *  day: GLib.DateTime,
+ *  infos: GWeather.Info[],
+ * }} DayInfo
+ */
+
+/**
+ * @typedef {{
+ *  day: GWeather.Info,
+ *  night: GWeather.Info,
+ *  morning: GWeather.Info,
+ *  afternoon: GWeather.Info,
+ *  evening: GWeather.Info,
+ * }} PeriodInfos
+ */
+
 export class DailyForecastBox extends Gtk.Box {
 
     constructor() {
@@ -38,11 +55,14 @@ export class DailyForecastBox extends Gtk.Box {
     }
 
     // get infos for the correct day
+    /**
+     * @param {GWeather.Info[]} infos
+     */
     _preprocess(infos) {
         let i;
 
         let day = GLib.DateTime.new_now_local();
-        day = day.add_days(1);
+        day = /** @type {GLib.DateTime} */ (day.add_days(1));
 
         // First ignore all infos that are on a different
         // older than day.
@@ -59,6 +79,7 @@ export class DailyForecastBox extends Gtk.Box {
 
         let weekInfos = [];
         while (i < infos.length) {
+            /** @type {DayInfo} */
             let dayInfos = { day: day, infos: [] };
             for (; i < infos.length; i++) {
                 let info = infos[i];
@@ -70,7 +91,7 @@ export class DailyForecastBox extends Gtk.Box {
                 dayInfos.infos.push(info);
             }
             weekInfos.push(dayInfos);
-            day = day.add_days(1);
+            day = /** @type {GLib.DateTime} */ (day.add_days(1));
         }
 
         const temperatures = weekInfos.map(dayInfos => dayInfos.infos)
@@ -87,16 +108,19 @@ export class DailyForecastBox extends Gtk.Box {
         };
     }
 
+    /**
+     * @param {GWeather.Info} info
+     */
     update(info) {
         let forecasts = info.get_forecast_list();
 
         let forecast = this._preprocess(forecasts);
 
         if (forecast.days.length > 1) {
-            forecast.days.reduce((_, dayInfos) => {
-                this.append(this._buildDayEntry(dayInfos, forecast.weekHighestTemp, forecast.weekLowestTemp));
+            forecast.days.forEach((info) => {
+                this.append(this._buildDayEntry(info, forecast.weekHighestTemp, forecast.weekLowestTemp));
                 this.append(this._buildSeparator());
-            }, null);
+            })
         } else {
             let label = new Gtk.Label({
                 label: _('Forecast not Available'),
@@ -107,14 +131,23 @@ export class DailyForecastBox extends Gtk.Box {
         }
     }
 
-    _buildDayEntry({ day, infos }, weekHighestTemp, weekLowestTemp) {
+    /**
+     * @param {DayInfo} dayInfos
+     * @param {number} weekHighestTemp
+     * @param {number} weekLowestTemp
+     */
+    _buildDayEntry(dayInfos, weekHighestTemp, weekLowestTemp) {
+        const { day, infos } = dayInfos;
         let datetime = Util.getDay(day);
 
         const temperatures = infos.map(info => Util.getTemp(info));
         const minTemp = Math.min(...temperatures);
         const maxTemp = Math.max(...temperatures);
 
-        let periodInfos = {}, times = {
+        /** @type {Record<string, GWeather.Info>} */
+        let periodInfos = {};
+        /** @type {Record<string, GLib.DateTime>} */
+        let times = {
             day: Util.getDay(datetime),
             night: Util.getNight(datetime),
             morning: Util.getMorning(datetime),
@@ -177,7 +210,80 @@ export const DayEntry = GObject.registerClass({
         'eveningTemperatureLabel', 'eveningImage',
         'eveningHumidity', 'eveningWind'],
 }, class DayEntry extends Adw.Bin {
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _nameLabel = this._nameLabel;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _dateLabel = this._dateLabel;
+    /** @type {Gtk.Image} */
+    // @ts-ignore
+    _image = this._image;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _nightTemperatureLabel = this._nightTemperatureLabel;
+    /** @type {Gtk.Image} */
+    // @ts-ignore
+    _nightImage = this._nightImage;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _nightHumidity = this._nightHumidity;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _nightWind = this._nightWind;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _morningTemperatureLabel = this._morningTemperatureLabel;
+    /** @type {Gtk.Image} */
+    // @ts-ignore
+    _morningImage = this._morningImage;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _morningHumidity = this._morningHumidity;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _morningWind = this._morningWind;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _afternoonTemperatureLabel = this._afternoonTemperatureLabel;
+    /** @type {Gtk.Image} */
+    // @ts-ignore
+    _afternoonImage = this._afternoonImage;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _afternoonHumidity = this._afternoonHumidity;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _afternoonWind = this._afternoonWind;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _eveningTemperatureLabel = this._eveningTemperatureLabel;
+    /** @type {Gtk.Image} */
+    // @ts-ignore
+    _eveningImage = this._eveningImage;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _eveningHumidity = this._eveningHumidity;
+    /** @type {Gtk.Label} */
+    // @ts-ignore
+    _eveningWind = this._eveningWind;
+    /** @type {Thermometer} */
+    // @ts-ignore
+    _thermometer = this._thermometer;
 
+
+    /** @param {{
+     *  datetime: GLib.DateTime;
+     *  weekHighestTemp: number;
+     *  weekLowestTemp: number;
+     *  maxTemp: number;
+     *  minTemp: number;
+     *  day: GWeather.Info;
+     *  night: GWeather.Info;
+     *  morning: GWeather.Info;
+     *  afternoon: GWeather.Info;
+     *  evening: GWeather.Info;
+     * }} params */
     constructor(params) {
         const {
             datetime,
@@ -206,7 +312,6 @@ export const DayEntry = GObject.registerClass({
         this.minTemp = minTemp;
         this.weekHighestTemp = weekHighestTemp;
         this.weekLowestTemp = weekLowestTemp;
-        this.layoutManager.orientation = Gtk.Orientation.VERTICAL;
     }
 
     vfunc_root() {
@@ -215,35 +320,40 @@ export const DayEntry = GObject.registerClass({
         const { datetime } = this;
         const { day: dayInfo, evening: eveningInfo, night: nightInfo, morning: morningInfo, afternoon: afternoonInfo } = this.info;
 
-        this._nameLabel.label = datetime.format('%a');
+        this._nameLabel.label = datetime.format('%a') ?? '';
         /* Translators: this is the time format for day and month name according to the current locale */
         let dateFormat = _('%b %e');
-        this._dateLabel.label = datetime.format(dateFormat);
+        this._dateLabel.label = datetime.format(dateFormat) ?? '';
 
         this._image.iconName = `${dayInfo.get_icon_name()}-small`;
 
+        // @ts-expect-error Need to expose this properly as both a GObject prop and a GJS prop
         this._thermometer.range = new Thermometer.TemperatureRange({ dailyLow: this.minTemp, dailyHigh: this.maxTemp, weeklyLow: this.weekLowestTemp, weeklyHigh: this.weekHighestTemp });
-        this._nightTemperatureLabel.label = Util.getTempString(nightInfo);
+        this._nightTemperatureLabel.label = Util.getTempString(nightInfo) ?? '';
         this._nightImage.iconName = nightInfo.get_icon_name() + '-small';
         this._nightHumidity.label = nightInfo.get_humidity();
         this._setWindInfo(nightInfo, this._nightWind);
 
-        this._morningTemperatureLabel.label = Util.getTempString(morningInfo);
+        this._morningTemperatureLabel.label = Util.getTempString(morningInfo) ?? '';
         this._morningImage.iconName = morningInfo.get_icon_name() + '-small';
         this._morningHumidity.label = morningInfo.get_humidity();
         this._setWindInfo(morningInfo, this._morningWind);
 
-        this._afternoonTemperatureLabel.label = Util.getTempString(afternoonInfo);
+        this._afternoonTemperatureLabel.label = Util.getTempString(afternoonInfo) ?? '';
         this._afternoonImage.iconName = afternoonInfo.get_icon_name() + '-small';
         this._afternoonHumidity.label = afternoonInfo.get_humidity();
         this._setWindInfo(afternoonInfo, this._afternoonWind);
 
-        this._eveningTemperatureLabel.label = Util.getTempString(eveningInfo);
+        this._eveningTemperatureLabel.label = Util.getTempString(eveningInfo) ?? '';
         this._eveningImage.iconName = eveningInfo.get_icon_name() + '-small';
         this._eveningHumidity.label = eveningInfo.get_humidity();
         this._setWindInfo(eveningInfo, this._eveningWind);
     }
 
+    /**
+     * @param {GWeather.Info} info
+     * @param {Gtk.Label} label
+     */
     _setWindInfo(info, label) {
         let [ok, speed, direction] = info.get_value_wind(GWeather.SpeedUnit.DEFAULT);
         if (ok) {

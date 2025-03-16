@@ -20,28 +20,69 @@ import Adw from 'gi://Adw';
 import Gio from 'gi://Gio';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
+import GWeather from 'gi://GWeather';
 
 import * as City from './city.js';
 import * as Util from '../misc/util.js';
 import { WorldContentView } from './world.js';
+import { WeatherApplication } from './application.js';
 
 const Page = {
     SEARCH: 0,
     CITY: 1
 };
 
-export const MainWindow = GObject.registerClass({
-    Template: 'resource:///org/gnome/Weather/window.ui',
-    InternalChildren: ['header', 'refreshRevealer', 'refresh', 'forecastStackSwitcher', 'stack',
-        'searchButton', 'searchView', 'searchViewStatus', 'forecastStackSwitcherBar', 'cityBox', 'cityBin']
-}, class MainWindow extends Adw.ApplicationWindow {
+export class MainWindow extends Adw.ApplicationWindow {
+    /** @type {Adw.ToolbarView} */
+    // @ts-ignore
+    _searchView = this._searchView;
+    /** @type {Adw.StatusPage} */
+    // @ts-ignore
+    _searchViewStatus = this._searchViewStatus;
+    /** @type {Gtk.MenuButton} */
+    // @ts-ignore
+    _searchButton = this._searchButton;
+    /** @type {Gtk.Button} */
+    // @ts-ignore
+    _refresh = this._refresh;
+    /** @type {Gtk.Revealer} */
+    // @ts-ignore
+    _refreshRevealer = this._refreshRevealer;
+    /** @type {Adw.ViewSwitcherTitle} */
+    // @ts-ignore
+    _forecastStackSwitcher = this._forecastStackSwitcher;
+    /** @type {Adw.ViewSwitcherBar} */
+    // @ts-ignore
+    _forecastStackSwitcherBar = this._forecastStackSwitcherBar;
+    /** @type {Adw.Bin} */
+    // @ts-ignore
+    _cityBin = this._cityBin;
+    /** @type {Adw.ToolbarView} */
+    // @ts-ignore
+    _cityBox = this._cityBox;
+    /** @type {Gtk.Stack} */
+    // @ts-ignore
+    _stack = this._stack;
+
+    static {
+        GObject.registerClass({
+            Template: 'resource:///org/gnome/Weather/window.ui',
+            InternalChildren: ['header', 'refreshRevealer', 'refresh', 'forecastStackSwitcher', 'stack',
+                'searchButton', 'searchView', 'searchViewStatus', 'forecastStackSwitcherBar', 'cityBox', 'cityBin']
+        }, this)
+    }
+
+    /**
+     * @param {Partial<Adw.ApplicationWindow.ConstructorProps> | undefined} params
+     */
     constructor(params) {
         super(params);
 
-        this._world = this.application.world;
+        const app = (/** @type {WeatherApplication} */ (this.application));
+
+        this._world = app.world;
         this.currentInfo = null;
         this._currentPage = Page.SEARCH;
-        this._pageWidgets = [[], []];
 
         let aboutAction = new Gio.SimpleAction({
             enabled: true,
@@ -57,18 +98,16 @@ export const MainWindow = GObject.registerClass({
         refreshAction.connect('activate', () => this.update());
         this.add_action(refreshAction);
 
-        this._model = this.application.model;
+        this._model = app.model;
 
-        this._searchViewStatus.icon_name = pkg.name;
+        this._searchViewStatus.icon_name = pkg.name ?? '';
 
-        this._worldView = new WorldContentView(this.application, this, {
+        this._worldView = new WorldContentView(app, this, {
             align: Gtk.Align.CENTER,
         });
         this._searchButton.set_popover(this._worldView);
 
-        this._pageWidgets[Page.CITY].push(this._refresh);
-
-        this._cityView = new City.WeatherView(this.application, this,
+        this._cityView = new City.WeatherView(app, this,
             { hexpand: true, vexpand: true });
 
         this._cityBin.set_child(this._cityView);
@@ -78,9 +117,7 @@ export const MainWindow = GObject.registerClass({
 
         this._stack.set_visible_child(this._searchView);
 
-        for (let i = 0; i < this._pageWidgets[Page.CITY].length; i++)
-            this._pageWidgets[Page.CITY][i].hide();
-
+        // @ts-expect-error ts-for-gir once again treats pkg oddly
         if (pkg.name.endsWith('Devel')) {
             let ctx = this.get_style_context();
             ctx.add_class('devel');
@@ -97,16 +134,6 @@ export const MainWindow = GObject.registerClass({
         this._cityView.update();
     }
 
-    _goToPage(page) {
-        for (let i = 0; i < this._pageWidgets[this._currentPage].length; i++)
-            this._pageWidgets[this._currentPage][i].hide();
-
-        for (let i = 0; i < this._pageWidgets[page].length; i++) {
-            this._pageWidgets[page][i].show();
-        }
-
-        this._currentPage = page;
-    }
     _saveWindowGeometry() {
         this._settings.set_boolean(
             'window-maximized',
@@ -136,20 +163,25 @@ export const MainWindow = GObject.registerClass({
         this._showingDefault = true;
         this._refreshRevealer.reveal_child = false;
 
-        let mostRecent = this._model.getRecent();
+        let mostRecent = this._model?.getRecent();
         if (mostRecent)
             this.showInfo(mostRecent);
         else
             this.showSearch();
     }
 
-    showSearch(text) {
+    /**
+     * @param {string | undefined} _text
+     */
+    showSearch(_text = undefined) {
         this._showingDefault = false;
         this._refreshRevealer.reveal_child = true;
         this._stack.set_visible_child(this._searchView);
-        this._goToPage(Page.SEARCH);
     }
 
+    /**
+     * @param {GWeather.Info | undefined} info
+     */
     showInfo(info) {
         if (!info) {
             this.showDefault();
@@ -162,7 +194,6 @@ export const MainWindow = GObject.registerClass({
         this._cityView.info = info;
 
         this._stack.set_visible_child(this._cityBox);
-        this._goToPage(Page.CITY);
     }
 
     _showAbout() {
@@ -176,7 +207,7 @@ export const MainWindow = GObject.registerClass({
             'Jim Pennucci'];
 
         let copyright = 'Copyright 2013-2015 The Weather Developers';
-        let attribution = this._cityView.info ? this._cityView.info.get_attribution() : '';
+        let attribution = this._cityView.info?.get_attribution();
 
         let aboutDialog = new Adw.AboutDialog(
             {
@@ -193,10 +224,10 @@ export const MainWindow = GObject.registerClass({
                 issue_url: 'https://gitlab.gnome.org/GNOME/gnome-weather/-/issues/',
             });
 
-        if (attribution.len > 0) {
-            aboutWindow.add_legal_section(_("Weather"), null, Gtk.LicenseCustom, attribution);
+        if (attribution) {
+            aboutDialog.add_legal_section(_("Weather"), null, Gtk.License.CUSTOM, attribution);
         }
 
         aboutDialog.present(this);
     }
-});
+};

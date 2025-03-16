@@ -21,42 +21,63 @@ import GLib from 'gi://GLib';
 import GWeather from 'gi://GWeather';
 
 import * as Util from '../misc/util.js';
+import { WorldModel } from '../shared/world.js';
+import { WeatherBackgroundService } from './main.js';
 
 
 const SearchProviderInterface = new TextDecoder().decode(
-    Gio.resources_lookup_data('/org/gnome/shell/ShellSearchProvider2.xml', 0).get_data()
+    Gio.resources_lookup_data('/org/gnome/shell/ShellSearchProvider2.xml', 0).get_data() ?? undefined
 );
 
+/**
+ * @param {GWeather.Location} location
+ */
 function getCountryName(location) {
-    while (location &&
-        location.get_level() > GWeather.LocationLevel.COUNTRY)
-        location = location.get_parent();
+    /** @type {GWeather.Location | null} */
+    let base = location;
+    while (base &&
+        base.get_level() > GWeather.LocationLevel.COUNTRY)
+        base = base.get_parent();
 
-    return location.get_name();
+    return base?.get_name() ?? null;
 }
 
 export class WeatherSearchProvider {
+    /**
+     * @param {WeatherBackgroundService} application
+     */
     constructor(application) {
         this._app = application;
 
         this._impl = Gio.DBusExportedObject.wrapJSObject(SearchProviderInterface, this);
     }
 
+    /**
+     * @param {Gio.DBusConnection} connection
+     * @param {string} path
+     */
     export(connection, path) {
         return this._impl.export(connection, path);
     }
 
+    /**
+     * @param {Gio.DBusConnection} connection
+     */
     unexport(connection) {
         return this._impl.unexport_from_connection(connection);
     }
 
+    /**
+     * @param {[string[], string[]]} params
+     * @param {Gio.DBusMethodInvocation} invocation
+     */
     GetInitialResultSetAsync(params, invocation) {
         this._app.hold();
 
         let terms = params[0];
         let model = this._app.model;
 
-        if (model.loading) {
+        if (model?.loading) {
             let notifyId = model.connect('notify::loading', (model) => {
                 if (!model.loading) {
                     model.disconnect(notifyId);
@@ -68,12 +89,16 @@ export class WeatherSearchProvider {
         }
     }
 
+    /**
+     * @param {string[]} terms
+     * @param {Gio.DBusMethodInvocation} invocation
+     */
     _runQuery(terms, invocation) {
         let nameRet = [];
         let cityRet = [];
         let countryRet = [];
 
-        let model = this._app.model;
+        let model = /** @type {WorldModel} */ (this._app.model);
 
         let index = 0;
         for (let info of model.getAll()) {
@@ -124,10 +149,14 @@ export class WeatherSearchProvider {
         invocation.return_value(new GLib.Variant('(as)', [result]));
     }
 
+    /**
+     * @param {string[]} previous
+     * @param {string[]} terms
+     */
     GetSubsearchResultSet(previous, terms) {
         this._app.hold();
 
-        let model = this._app.model;
+        let model = /** @type {WorldModel} */ (this._app.model);
         let ret = [];
 
         for (let i = 0; i < previous.length; i++) {
@@ -161,10 +190,13 @@ export class WeatherSearchProvider {
         return ret;
     }
 
+    /**
+     * @param {string[]} identifiers
+     */
     GetResultMetas(identifiers) {
         this._app.hold();
 
-        let model = this._app.model;
+        let model = /** @type {WorldModel} */ (this._app.model);
         let ret = [];
 
         for (let i = 0; i < identifiers.length; i++) {
@@ -193,20 +225,29 @@ export class WeatherSearchProvider {
         return ret;
     }
 
+    /**
+     * @param {number} timestamp
+     */
     _getPlatformData(timestamp) {
         return { 'desktop-startup-id': new GLib.Variant('s', '_TIME' + timestamp) };
     }
 
+    /**
+     * @param {string} action
+     * @param {GLib.Variant<"s"> | GLib.Variant<"v">} parameter
+     * @param {number} timestamp
+     */
     _activateAction(action, parameter, timestamp) {
-        let wrappedParam;
+        /**
+         * @type {(GLib.Variant<"s"> | GLib.Variant<"v">)[]}
+         */
+        let wrappedParam = [];
         if (parameter)
             wrappedParam = [parameter];
-        else
-            wrappedParam = [];
 
-        profile = '';
+        let profile = '';
 
-        Gio.DBus.session.call(pkg.name,
+        Gio.DBus.session.call(pkg.name ?? null,
             '/org/gnome/Weather' + profile,
             'org.freedesktop.Application',
             'ActivateAction',
@@ -216,7 +257,7 @@ export class WeatherSearchProvider {
             Gio.DBusCallFlags.NONE,
             -1, null, (connection, result) => {
                 try {
-                    connection.call_finish(result);
+                    connection?.call_finish(result);
                 } catch (e) {
                     log('Failed to launch application: ' + e);
                 }
@@ -225,12 +266,17 @@ export class WeatherSearchProvider {
             });
     }
 
+    /**
+     * @param {string} id
+     * @param {string[]} terms
+     * @param {number} timestamp
+     */
     ActivateResult(id, terms, timestamp) {
         this._app.hold();
 
         //log('Activating ' + id);
 
-        let model = this._app.model;
+        let model = /** @type {WorldModel} */ (this._app.model);
         let info = model.getAtIndex(parseInt(id));
         if (!info) {
             this._app.release();
@@ -243,6 +289,10 @@ export class WeatherSearchProvider {
         this._activateAction('show-location', new GLib.Variant('v', location), timestamp);
     }
 
+    /**
+     * @param {string[]} terms
+     * @param {number} timestamp
+     */
     LaunchSearch(terms, timestamp) {
         this._app.hold();
 

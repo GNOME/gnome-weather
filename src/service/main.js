@@ -33,14 +33,10 @@ import GWeather from 'gi://GWeather';
 import * as SearchProvider from './searchProvider.js';
 import * as World from '../shared/world.js';
 
-function initEnvironment() {
-    window.getApp = function() {
-        return Gio.Application.get_default();
-    };
-}
-
-const BackgroundService = GObject.registerClass(
-    class WeatherBackgroundService extends Gio.Application {
+export class WeatherBackgroundService extends Gio.Application {
+    static {
+        GObject.registerClass(this);
+    }
 
     constructor() {
         super({ application_id: pkg.name,
@@ -50,7 +46,7 @@ const BackgroundService = GObject.registerClass(
 
         this._searchProvider = new SearchProvider.WeatherSearchProvider(this);
 
-        if (!pkg.moduledir.startsWith('resource://'))
+        if (!pkg.moduledir?.startsWith('resource://'))
             this.debug = true;
     }
 
@@ -58,6 +54,10 @@ const BackgroundService = GObject.registerClass(
         this.quit();
     }
 
+    /**
+         * @param {Gio.DBusConnection} connection
+         * @param {string} path
+         */
     vfunc_dbus_register(connection, path) {
         super.vfunc_dbus_register(connection, path);
 
@@ -79,12 +79,12 @@ const BackgroundService = GObject.registerClass(
         super.vfunc_startup();
 
         this.world = GWeather.Location.get_world();
-        this.model = new World.WorldModel(this.world, false);
+        this.model = new World.WorldModel(this.world);
         this.model.load();
 
         if (this.debug) {
             this.model.getAll().forEach(function(info) {
-                log(info.location.get_city_name());
+                log(info.location.get_city_name() ?? '');
             });
         }
 
@@ -105,19 +105,20 @@ const BackgroundService = GObject.registerClass(
 
         super.vfunc_shutdown();
     }
-});
+};
 
+/**
+ * @param {string[] | null} argv
+ */
 export function main(argv) {
-    initEnvironment();
-
     setTimeout(() => {
-        imports.mainloop.quit();
+        imports.mainloop.quit('search-provider');
 
-        const code = (new BackgroundService()).run(argv);
+        const code = new WeatherBackgroundService().run(argv);
 
         if (code !== 0)
             system.exit(code);
     });
 
-    imports.mainloop.run();
+    imports.mainloop.run('search-provider');
 }

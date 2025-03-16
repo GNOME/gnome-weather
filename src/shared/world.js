@@ -23,16 +23,11 @@ import GWeather from 'gi://GWeather';
 
 import * as Util from '../misc/util.js';
 
-export const WorldModel = GObject.registerClass({
-    Signals: {
-        'selected-location-changed': { param_types: [GWeather.Info] },
-    },
-    Properties: {
-        'loading': GObject.ParamSpec.boolean('loading', '', '', GObject.ParamFlags.READABLE, false)
-    },
-    Implements: [Gio.ListModel]
-}, class WorldModel extends GObject.Object {
+export class WorldModel extends GObject.Object {
 
+    /**
+     * @param {GWeather.Location | null} world
+     */
     constructor(world) {
         super();
 
@@ -43,9 +38,13 @@ export const WorldModel = GObject.registerClass({
 
         this._loadingCount = 0;
 
+        /** @type {GWeather.Info & { _isCurrentLocation?: boolean } | null}  **/
         this._currentLocationInfo = null;
         this._selectedLocation = null;
+        /** @type {(GWeather.Info & { _isCurrentLocation?: boolean, _loadingId?: number })[]}  **/
         this._infoList = [];
+        /** @type {(GWeather.Info & { _isCurrentLocation?: boolean, _loadingId?: number })[]}  **/
+        this._allInfos = [];
         this.getAll();
     }
 
@@ -68,6 +67,9 @@ export const WorldModel = GObject.registerClass({
         return infos;
     }
 
+    /**
+     * @param {number} index
+     */
     getAtIndex(index) {
         if (this._selectedLocation) {
             if (index == 0)
@@ -89,6 +91,9 @@ export const WorldModel = GObject.registerClass({
         return this._currentLocationInfo;
     }
 
+    /**
+     * @param {GWeather.Location | null} location
+     */
     currentLocationChanged(location) {
         if (location) {
             this._currentLocationInfo = this.buildInfo(location);
@@ -105,6 +110,7 @@ export const WorldModel = GObject.registerClass({
     }
 
     load() {
+        /** @type {GLib.Variant[]} */
         let locations = this._settings.get_value('locations').deep_unpack();
 
         if (locations.length > 10) {
@@ -115,9 +121,11 @@ export const WorldModel = GObject.registerClass({
         let info = null;
         for (let i = locations.length - 1; i >= 0; i--) {
             let variant = locations[i];
-            let location = this._world.deserialize(variant);
+            let location = this._world?.deserialize(variant);
 
-            info = this._addLocationInternal(location);
+            if (location) {
+                info = this._addLocationInternal(location);
+            }
         }
 
         if (info) {
@@ -129,9 +137,13 @@ export const WorldModel = GObject.registerClass({
 
     #invalidate() {
         this.getAll();
+        // @ts-expect-error ts-for-gir doesn't know how to handle interfaces
         this.items_changed(0, this._allInfos.length, this._allInfos.length);
     }
 
+    /**
+     * @param {number} delta
+     */
     _updateLoadingCount(delta) {
         let wasLoading = this._loadingCount > 0;
         this._loadingCount += delta;
@@ -141,13 +153,18 @@ export const WorldModel = GObject.registerClass({
             this.notify('loading');
     }
 
+    /**
+     * @param {GWeather.Info & { _loadingId?: number }} info
+     */
     updateInfo(info) {
         if (info._loadingId)
             return;
 
         info._loadingId = info.connect('updated', (info) => {
-            info.disconnect(info._loadingId);
-            info._loadingId = 0;
+            if (info._loadingId) {
+                info.disconnect(info._loadingId);
+                info._loadingId = 0;
+            }
 
             this._updateLoadingCount(-1);
         });
@@ -160,21 +177,34 @@ export const WorldModel = GObject.registerClass({
         return this._loadingCount > 0;
     }
 
+    /**
+     * @param {GWeather.Info} info
+     */
     setSelectedLocation(info) {
         const newInfo = this.addNewLocation(info.get_location());
         this._selectedLocation = newInfo;
         this.emit('selected-location-changed', info);
     }
 
+    /**
+     * @param {GWeather.Info} info
+     */
     isSelectedLocation(info) {
         return !!this._selectedLocation && this._selectedLocation === info;
     }
 
+    /**
+     * @param {GWeather.Info} info
+     */
     isCurrentLocation(info) {
         return !!this._currentLocationInfo && this._currentLocationInfo === info;
     }
 
+    /**
+     * @param {GWeather.Location} newLocation
+     */
     addNewLocation(newLocation) {
+        /** @type {GWeather.Info & { _isCurrentLocation?: boolean }}  **/
         let info = this._addLocationInternal(newLocation);
         this._selectedLocation = info;
         info._isCurrentLocation = false;
@@ -227,6 +257,9 @@ export const WorldModel = GObject.registerClass({
         this._saveSettingsInternal();
     }
 
+    /**
+     * @param {GWeather.Info & { _isCurrentLocation?: boolean }} info
+     */
     addCurrentLocation(info) {
         if (this._infoList.includes(info))
             return;
@@ -241,10 +274,17 @@ export const WorldModel = GObject.registerClass({
         this._addInfoInternal(info);
     }
 
+    /**
+     * @param {(GWeather.Info & { _loadingId?: number; }) | null} oldInfo
+     */
     removeLocation(oldInfo) {
         this._removeLocationInternal(oldInfo);
     }
 
+    /**
+     * @param {GWeather.Info & { _loadingId?: number; } | null} oldInfo
+     * @param {undefined} [skipDisconnect]
+     */
     _removeLocationInternal(oldInfo, skipDisconnect) {
         if (!oldInfo) return;
 
@@ -259,6 +299,7 @@ export const WorldModel = GObject.registerClass({
 
         for (let i = 0; i < this._allInfos.length; i++) {
             if (this._allInfos[i] == oldInfo) {
+                // @ts-expect-error ts-for-gir doesn't know how to handle interfaces
                 this.items_changed(i, 1, 0);
                 break;
             }
@@ -274,6 +315,7 @@ export const WorldModel = GObject.registerClass({
         this._queueSaveSettings();
     }
 
+    /** @param {GWeather.Location} location  */
     buildInfo(location) {
         return new GWeather.Info({
             application_id: pkg.name,
@@ -283,6 +325,9 @@ export const WorldModel = GObject.registerClass({
         });
     }
 
+    /**
+     * @param {GWeather.Location} newLocation
+     */
     _addLocationInternal(newLocation) {
         const existingInfo = this._infoList.find(info => info.get_location().equal(newLocation));
         if (existingInfo)
@@ -294,13 +339,18 @@ export const WorldModel = GObject.registerClass({
         return info;
     }
 
+    /**
+     * @param {GWeather.Info} info
+     */
     _addInfoInternal(info) {
         this._infoList.unshift(info);
         this.updateInfo(info);
 
         if (this._infoList.length > 10) {
             let oldInfo = this._infoList.pop();
-            this._removeLocationInternal(oldInfo);
+            if (oldInfo) {
+                this._removeLocationInternal(oldInfo);
+            }
         }
     }
 
@@ -312,7 +362,20 @@ export const WorldModel = GObject.registerClass({
         return this._allInfos.length;
     }
 
+    /**
+     * @param {number} n
+     */
     vfunc_get_item(n) {
         return this._allInfos[n] ?? null;
     }
-});
+};
+
+GObject.registerClass({
+    Signals: {
+        'selected-location-changed': { param_types: [GWeather.Info.$gtype] },
+    },
+    Properties: {
+        'loading': GObject.ParamSpec.boolean('loading', '', '', GObject.ParamFlags.READABLE, false)
+    },
+    Implements: [Gio.ListModel]
+}, WorldModel)
