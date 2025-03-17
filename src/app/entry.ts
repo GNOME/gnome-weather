@@ -8,7 +8,7 @@ import GWeather from 'gi://GWeather';
 import * as Util from '../misc/util.js';
 import { LocationRow } from './locationRow.js';
 
-function* locationChildren(location: GWeather.Location) {
+function* locationChildren(location: GWeather.Location): Generator<GWeather.Location> {
     let child = location.next_child(null);
 
     while (child != null) {
@@ -17,7 +17,7 @@ function* locationChildren(location: GWeather.Location) {
     }
 }
 
-function getAllCitiesAndWeatherStations() {
+function getAllCitiesAndWeatherStations(): GWeather.Location[] {
     const locations = new Set<GWeather.Location>();
     const world = GWeather.Location.get_world();
 
@@ -65,7 +65,7 @@ const LocationListModel = GObject.registerClass(
             this._list = [];
         }
 
-        load() {
+        load(): void {
             const items = getAllCitiesAndWeatherStations()
             this._list.push(...items);
 
@@ -74,15 +74,15 @@ const LocationListModel = GObject.registerClass(
             this.items_changed(0, 0, this._list.length);
         }
 
-        vfunc_get_item_type() {
+        vfunc_get_item_type(): GObject.GType {
             return GWeather.Location.$gtype;
         }
 
-        vfunc_get_n_items() {
+        vfunc_get_n_items(): number {
             return this._list.length;
         }
 
-        vfunc_get_item(n: number) {
+        vfunc_get_item(n: number): GWeather.Location | null {
             return this._list[n] ?? null;
         }
     }
@@ -115,7 +115,7 @@ const LocationFilter = GObject.registerClass(
             this._filterLowerCase = null;
         }
 
-        setFilterString(filter: string | null) {
+        setFilterString(filter: string | null): void {
             if (filter !== this._filter) {
                 this._filter = filter;
                 this._filterLowerCase = this._filter?.toLowerCase() ?? null;
@@ -123,7 +123,7 @@ const LocationFilter = GObject.registerClass(
             }
         }
 
-        vfunc_match(item: GWeather.Location) {
+        vfunc_match(item: GWeather.Location): boolean {
             if (!this._filter) return false;
 
             const cached = this._itemMap.get(item);
@@ -209,7 +209,7 @@ export class LocationSearchEntry extends Adw.Bin {
         });
     }
 
-    get text() {
+    get text(): string {
         return this.#text;
     }
 
@@ -225,11 +225,11 @@ export class LocationSearchEntry extends Adw.Bin {
         this.notify('location');
     }
 
-    get location() {
+    get location(): GWeather.Location | null {
         return this.#location;
     }
 
-    setListView(listView: Gtk.ListView) {
+    setListView(listView: Gtk.ListView): void {
         if (this.#listView)
             // @ts-expect-error ts-for-gir doesn't seem to handle nullability correctly
             // for these property getters/setters
@@ -240,7 +240,7 @@ export class LocationSearchEntry extends Adw.Bin {
         listView.model = this.#model;
     }
 
-    vfunc_unroot() {
+    vfunc_unroot(): void {
         if (this.#listView)
             // @ts-expect-error ts-for-gir doesn't seem to handle nullability correctly
             // for these property getters/setters

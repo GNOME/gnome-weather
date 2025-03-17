@@ -71,7 +71,7 @@ const ThermometerScale = GObject.registerClass({
         this.range = range;
     }
 
-    vfunc_map() {
+    vfunc_map(): void {
         super.vfunc_map();
 
         this._rangeChangedId = this.connect('notify::range', () => {
@@ -79,7 +79,7 @@ const ThermometerScale = GObject.registerClass({
         });
     }
 
-    vfunc_unmap() {
+    vfunc_unmap(): void {
         if (this._rangeChangedId) {
             this.disconnect(this._rangeChangedId);
         }
@@ -87,7 +87,7 @@ const ThermometerScale = GObject.registerClass({
         super.vfunc_unmap();
     }
 
-    vfunc_snapshot(snapshot: Gtk.Snapshot) {
+    vfunc_snapshot(snapshot: Gtk.Snapshot): void {
         super.vfunc_snapshot(snapshot);
 
         if (!this.range)
@@ -201,7 +201,7 @@ export class Thermometer extends Gtk.Widget {
         }
     }
 
-    vfunc_size_allocate(width: number, height: number, _baseline: number) {
+    vfunc_size_allocate(width: number, height: number, _baseline: number): void {
         const [, highNatOut] = this.#highLabel.get_preferred_size();
         const [, lowNatOut] = this.#lowLabel.get_preferred_size();
 
@@ -256,7 +256,7 @@ export class Thermometer extends Gtk.Widget {
         this.#lowLabel.size_allocate(lowRect, -1);
     }
 
-    vfunc_root() {
+    vfunc_root(): void {
         super.vfunc_root();
 
         this.bind_property('range', this.#scale,'range', GObject.BindingFlags.DEFAULT);

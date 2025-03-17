@@ -116,11 +116,11 @@ export class MainWindow extends Adw.ApplicationWindow {
         this.connect('close-request', () => this._saveWindowGeometry());
     }
 
-    update() {
+    update(): void {
         this._cityView.update();
     }
 
-    _saveWindowGeometry() {
+    _saveWindowGeometry(): void {
         this._settings.set_boolean(
             'window-maximized',
             this.maximized
@@ -135,7 +135,7 @@ export class MainWindow extends Adw.ApplicationWindow {
         );
     }
 
-    _restoreWindowGeometry() {
+    _restoreWindowGeometry(): void {
         if (this._settings.get_boolean('window-maximized')) {
             this.maximize()
         }
@@ -145,7 +145,7 @@ export class MainWindow extends Adw.ApplicationWindow {
         this.set_default_size(width, height);
     }
 
-    showDefault() {
+    showDefault(): void {
         this._showingDefault = true;
         this._refreshRevealer.reveal_child = false;
 
@@ -156,13 +156,13 @@ export class MainWindow extends Adw.ApplicationWindow {
             this.showSearch();
     }
 
-    showSearch(_text?: string) {
+    showSearch(_text?: string): void {
         this._showingDefault = false;
         this._refreshRevealer.reveal_child = true;
         this._stack.set_visible_child(this._searchView);
     }
 
-    showInfo(info?: GWeather.Info) {
+    showInfo(info?: GWeather.Info): void {
         if (!info) {
             this.showDefault();
             return;
@@ -176,7 +176,7 @@ export class MainWindow extends Adw.ApplicationWindow {
         this._stack.set_visible_child(this._cityBox);
     }
 
-    _showAbout() {
+    _showAbout(): void {
         const designers = ['Jakub Steiner <jimmac@gmail.com>',
             'Pink Sherbet Photography (D. Sharon Pruitt)',
             'Elliott Brown',
