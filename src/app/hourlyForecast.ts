@@ -55,8 +55,8 @@ export class HourlyForecastBox extends Gtk.Box {
     // remove infos for the wrong day
     _preprocess(now: GLib.DateTime, forecastInfo: GWeather.Info, infos: GWeather.Info[]) {
         const ret = [forecastInfo, ...infos].filter(info => {
-            let [, date] = info.get_value_update();
-            let datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(now.get_timezone());
+            const [, date] = info.get_value_update();
+            const datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(now.get_timezone());
 
             // Show the previous hour's forecast until 30 minutes in
             if (datetime) {
@@ -74,16 +74,16 @@ export class HourlyForecastBox extends Gtk.Box {
     }
 
     update(info: GWeather.Info) {
-        let forecasts = info.get_forecast_list();
+        const forecasts = info.get_forecast_list();
 
-        let coords = info.location.get_coords();
-        let nearestCity = GWeather.Location.get_world()?.find_nearest_city(coords[0], coords[1]);
-        let tz = nearestCity?.get_timezone();
+        const coords = info.location.get_coords();
+        const nearestCity = GWeather.Location.get_world()?.find_nearest_city(coords[0], coords[1]);
+        const tz = nearestCity?.get_timezone();
 
         if (tz) {
-            let now = GLib.DateTime.new_now(tz);
+            const now = GLib.DateTime.new_now(tz);
 
-            let hourlyInfo = this._preprocess(now, info, forecasts);
+            const hourlyInfo = this._preprocess(now, info, forecasts);
 
             if (hourlyInfo.length > 0) {
                 for (let i = 0; i < hourlyInfo.length; i++) {
@@ -95,7 +95,7 @@ export class HourlyForecastBox extends Gtk.Box {
                         this._addSeparator();
                 }
             } else {
-                let label = new Gtk.Label({
+                const label = new Gtk.Label({
                     label: _('Forecast not Available'),
                     use_markup: true,
                     visible: true
@@ -110,7 +110,7 @@ export class HourlyForecastBox extends Gtk.Box {
     _addHourEntry(info: GWeather.Info, tz: GLib.TimeZone | null, now: boolean) {
         let timeLabel: string | undefined;
 
-        let [, date] = info.get_value_update();
+        const [, date] = info.get_value_update();
         let datetime: GLib.DateTime | undefined = undefined;
         if (tz) {
             datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz) ?? undefined;
@@ -119,7 +119,7 @@ export class HourlyForecastBox extends Gtk.Box {
         if (now) {
             timeLabel = _('Now');
         } else {
-            let timeSetting = this._settings.get_string('clock-format');
+            const timeSetting = this._settings.get_string('clock-format');
             let timeFormat = null;
 
             if (timeSetting == '12h')
@@ -131,7 +131,7 @@ export class HourlyForecastBox extends Gtk.Box {
             timeLabel = datetime?.format(timeFormat) ?? undefined;
         }
 
-        let hourEntry = new HourEntry(timeLabel, info);
+        const hourEntry = new HourEntry(timeLabel, info);
 
         this.append(hourEntry);
 
@@ -139,7 +139,7 @@ export class HourlyForecastBox extends Gtk.Box {
     }
 
     _addSeparator() {
-        let separator = new Gtk.Separator({
+        const separator = new Gtk.Separator({
             orientation: Gtk.Orientation.VERTICAL,
             visible: true
         });
@@ -162,7 +162,7 @@ export class HourlyForecastBox extends Gtk.Box {
         const rect = new Graphene.Rect();
         rect.init(0, 0, allocation.width, allocation.height);
 
-        let cr = snapshot.append_cairo(rect) as Cairo.Context;
+        const cr = snapshot.append_cairo(rect) as Cairo.Context;
         const temps = this._hourlyInfo.map(info => Util.getTemp(info));
 
         const maxTemp = Math.max(...temps);
@@ -194,15 +194,15 @@ export class HourlyForecastBox extends Gtk.Box {
 
         const pointsGap = entryWidth + separatorWidth;
 
-        let [, strokeColor] = this.get_style_context().lookup_color('weather_temp_chart_stroke_color');
+        const [, strokeColor] = this.get_style_context().lookup_color('weather_temp_chart_stroke_color');
         Gdk.cairo_set_source_rgba(cr, strokeColor);
 
-        let yCords = [];
+        const yCords = [];
         for (let i = 0; i < values.length; i++)
             yCords.push((graphMinY + ((1 - values[i]) * graphHeight)));
 
-        let gradients = [];
-        let gradientAngles = [];
+        const gradients = [];
+        const gradientAngles = [];
         for (let i = 0; i < yCords.length; i++) {
             let prevVal = yCords[i];
             let nextVal = prevVal;
@@ -230,15 +230,15 @@ export class HourlyForecastBox extends Gtk.Box {
             if (i < yCords.length)
                 xDistCurrent = Math.cos(gradientAngles[i]) * pointsGap * smoothnessVal
 
-            let prevYcord = (i > 0) ? (yCords[i - 1]) : yCords[i]
-            let prevGrad = (i > 0) ? (gradients[i - 1]) : 0
+            const prevYcord = (i > 0) ? (yCords[i - 1]) : yCords[i]
+            const prevGrad = (i > 0) ? (gradients[i - 1]) : 0
 
-            let currYcord = (i < yCords.length) ? (yCords[i]) : yCords[i - 1]
-            let currGrad = (i < yCords.length) ? (gradients[i]) : 0
+            const currYcord = (i < yCords.length) ? (yCords[i]) : yCords[i - 1]
+            const currGrad = (i < yCords.length) ? (gradients[i]) : 0
 
 
-            let pt1 = [x + xDistPrev, prevYcord + prevGrad * xDistPrev]
-            let pt2 = [x + pointsGap - xDistCurrent, currYcord - currGrad * xDistCurrent]
+            const pt1 = [x + xDistPrev, prevYcord + prevGrad * xDistPrev]
+            const pt2 = [x + pointsGap - xDistCurrent, currYcord - currGrad * xDistCurrent]
 
             cr.curveTo(
                 pt1[0], pt1[1],
@@ -254,7 +254,7 @@ export class HourlyForecastBox extends Gtk.Box {
         cr.setLineWidth(lineWidth);
         cr.strokePreserve();
 
-        let [, fillColor] = this.get_style_context().lookup_color('weather_temp_chart_fill_color');
+        const [, fillColor] = this.get_style_context().lookup_color('weather_temp_chart_fill_color');
 
         Gdk.cairo_set_source_rgba(cr, fillColor);
 
@@ -264,6 +264,7 @@ export class HourlyForecastBox extends Gtk.Box {
 
         super.vfunc_snapshot(snapshot);
         // @ts-expect-error not sure if this exists??
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         cr.$dispose();
     }
 };

@@ -37,7 +37,7 @@ export class WorldModel extends GObject.Object {
     _selectedLocation?: GWeatherInfoData;
     _infoList: GWeatherInfoData[];
     _allInfos: GWeatherInfoData[];
-    _queueSaveSettingsId: any;
+    _queueSaveSettingsId?: number;
 
     constructor(world?: GWeather.Location) {
         super();
@@ -119,8 +119,8 @@ export class WorldModel extends GObject.Object {
 
         let info = null;
         for (let i = locations.length - 1; i >= 0; i--) {
-            let variant = locations[i];
-            let location = this._world?.deserialize(variant);
+            const variant = locations[i];
+            const location = this._world?.deserialize(variant);
 
             if (location) {
                 info = this._addLocationInternal(location);
@@ -137,13 +137,14 @@ export class WorldModel extends GObject.Object {
     #invalidate() {
         this.getAll();
         // @ts-expect-error ts-for-gir doesn't know how to handle interfaces
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         this.items_changed(0, this._allInfos.length, this._allInfos.length);
     }
 
     _updateLoadingCount(delta: number) {
-        let wasLoading = this._loadingCount > 0;
+        const wasLoading = this._loadingCount > 0;
         this._loadingCount += delta;
-        let isLoading = this._loadingCount > 0;
+        const isLoading = this._loadingCount > 0;
 
         if (wasLoading != isLoading)
             this.notify('loading');
@@ -185,7 +186,7 @@ export class WorldModel extends GObject.Object {
     }
 
     addNewLocation(newLocation: GWeather.Location) {
-        let info: GWeatherInfoData = this._addLocationInternal(newLocation);
+        const info: GWeatherInfoData = this._addLocationInternal(newLocation);
         this._selectedLocation = info;
         info._isCurrentLocation = false;
 
@@ -199,7 +200,7 @@ export class WorldModel extends GObject.Object {
         if (this._queueSaveSettingsId)
             return;
 
-        let id = GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
+        const id = GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
             this._queueSaveSettingsId = 0;
             this._saveSettingsInternal();
             return false;
@@ -208,7 +209,7 @@ export class WorldModel extends GObject.Object {
     }
 
     _saveSettingsInternal() {
-        let locations = [];
+        const locations = [];
 
         for (const info of this._allInfos) {
             if (!info._isCurrentLocation) {
@@ -270,6 +271,7 @@ export class WorldModel extends GObject.Object {
         for (let i = 0; i < this._allInfos.length; i++) {
             if (this._allInfos[i] == oldInfo) {
                 // @ts-expect-error ts-for-gir doesn't know how to handle interfaces
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                 this.items_changed(i, 1, 0);
                 break;
             }
@@ -299,7 +301,7 @@ export class WorldModel extends GObject.Object {
         if (existingInfo)
             return existingInfo;
 
-        let info = this.buildInfo(newLocation);
+        const info = this.buildInfo(newLocation);
         this._addInfoInternal(info);
 
         return info;
@@ -310,7 +312,7 @@ export class WorldModel extends GObject.Object {
         this.updateInfo(info);
 
         if (this._infoList.length > 10) {
-            let oldInfo = this._infoList.pop();
+            const oldInfo = this._infoList.pop();
             if (oldInfo) {
                 this._removeLocationInternal(oldInfo);
             }

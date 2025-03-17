@@ -56,6 +56,7 @@ export class DailyForecastBox extends Gtk.Box {
 
         let day = GLib.DateTime.new_now_local();
         // We're just adding one day at a time, GLib should be able to handle this fine.
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         day = day.add_days(1)!;
 
         // First ignore all infos that are on a different
@@ -64,26 +65,27 @@ export class DailyForecastBox extends Gtk.Box {
         // there is an info for the day (otherwise, nothing
         // is shown)
         for (i = 0; i < infos.length; i++) {
-            let info = infos[i];
+            const info = infos[i];
 
-            let datetime = Util.getDateTime(info);
+            const datetime = Util.getDateTime(info);
             if (Util.arrayEqual(day.get_ymd(), datetime.get_ymd()))
                 break;
         }
 
-        let weekInfos = [];
+        const weekInfos = [];
         while (i < infos.length) {
-            let dayInfos: DayInfo = { day: day, infos: [] };
+            const dayInfos: DayInfo = { day: day, infos: [] };
             for (; i < infos.length; i++) {
-                let info = infos[i];
+                const info = infos[i];
 
-                let datetime = Util.getDateTime(info);
+                const datetime = Util.getDateTime(info);
                 if (!Util.arrayEqual(day.get_ymd(), datetime.get_ymd()))
                     break;
 
                 dayInfos.infos.push(info);
             }
             weekInfos.push(dayInfos);
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             day = day.add_days(1)!;
         }
 
@@ -102,9 +104,9 @@ export class DailyForecastBox extends Gtk.Box {
     }
 
     update(info: GWeather.Info) {
-        let forecasts = info.get_forecast_list();
+        const forecasts = info.get_forecast_list();
 
-        let forecast = this._preprocess(forecasts);
+        const forecast = this._preprocess(forecasts);
 
         if (forecast.days.length > 1) {
             forecast.days.forEach((info) => {
@@ -112,7 +114,7 @@ export class DailyForecastBox extends Gtk.Box {
                 this.append(this._buildSeparator());
             })
         } else {
-            let label = new Gtk.Label({
+            const label = new Gtk.Label({
                 label: _('Forecast not Available'),
                 use_markup: true,
                 visible: true
@@ -123,14 +125,14 @@ export class DailyForecastBox extends Gtk.Box {
 
     _buildDayEntry(dayInfos: DayInfo, weekHighestTemp: number, weekLowestTemp: number) {
         const { day, infos } = dayInfos;
-        let datetime = Util.getDay(day);
+        const datetime = Util.getDay(day);
 
         const temperatures = infos.map(info => Util.getTemp(info));
         const minTemp = Math.min(...temperatures);
         const maxTemp = Math.max(...temperatures);
 
-        let periodInfos: Record<string, GWeather.Info> = {};
-        let times: Record<string, GLib.DateTime> = {
+        const periodInfos: Record<string, GWeather.Info> = {};
+        const times: Record<string, GLib.DateTime> = {
             day: Util.getDay(datetime),
             night: Util.getNight(datetime),
             morning: Util.getMorning(datetime),
@@ -270,7 +272,7 @@ export const DayEntry = GObject.registerClass({
 
         this._nameLabel.label = datetime.format('%a') ?? '';
         /* Translators: this is the time format for day and month name according to the current locale */
-        let dateFormat = _('%b %e');
+        const dateFormat = _('%b %e');
         this._dateLabel.label = datetime.format(dateFormat) ?? '';
 
         this._image.iconName = `${dayInfo.get_icon_name()}-small`;
@@ -299,7 +301,7 @@ export const DayEntry = GObject.registerClass({
     }
 
     _setWindInfo(info: GWeather.Info, label: Gtk.Label) {
-        let [ok, speed, direction] = info.get_value_wind(GWeather.SpeedUnit.DEFAULT);
+        const [ok, speed] = info.get_value_wind(GWeather.SpeedUnit.DEFAULT);
         if (ok) {
             label.label = `${speed.toFixed(1).toString()} ${GWeather.speed_unit_to_string(GWeather.SpeedUnit.DEFAULT)}`;
         } else {
