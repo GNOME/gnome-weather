@@ -21,8 +21,8 @@ import GLib from 'gi://GLib';
 import GWeather from 'gi://GWeather';
 
 import * as Util from '../misc/util.js';
-import { WorldModel } from '../shared/world.js';
 import { WeatherBackgroundService } from './main.js';
+import { WorldModel } from 'src/shared/world.js';
 
 
 const SearchProviderInterface = new TextDecoder().decode(
@@ -59,11 +59,12 @@ export class WeatherSearchProvider {
     GetInitialResultSetAsync(params: [string[], string[]], invocation: Gio.DBusMethodInvocation) {
         this._app.hold();
 
-        let terms = params[0];
-        let model = this._app.model!;
+        const terms = params[0];
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const model = this._app.model!;
 
         if (model?.loading) {
-            let notifyId = model.connect('notify::loading', (model) => {
+            const notifyId = model.connect('notify::loading', (model: WorldModel) => {
                 if (!model.loading) {
                     model.disconnect(notifyId);
                     this._runQuery(terms, invocation);
@@ -75,19 +76,20 @@ export class WeatherSearchProvider {
     }
 
     _runQuery(terms: string[], invocation: Gio.DBusMethodInvocation) {
-        let nameRet = [];
-        let cityRet = [];
-        let countryRet = [];
+        const nameRet = [];
+        const cityRet = [];
+        const countryRet = [];
 
-        let model = this._app.model!;
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const model = this._app.model!;
 
         let index = 0;
-        for (let info of model.getAll()) {
-            let location = info.location;
+        for (const info of model.getAll()) {
+            const location = info.location;
 
-            let name = Util.normalizeCasefoldAndUnaccent(location.get_name());
-            let city = Util.normalizeCasefoldAndUnaccent(location.get_city_name());
-            let country = Util.normalizeCasefoldAndUnaccent(getCountryName(location));
+            const name = Util.normalizeCasefoldAndUnaccent(location.get_name());
+            const city = Util.normalizeCasefoldAndUnaccent(location.get_city_name());
+            const country = Util.normalizeCasefoldAndUnaccent(getCountryName(location));
 
             let nameMatch = false;
             let cityMatch = false;
@@ -111,13 +113,13 @@ export class WeatherSearchProvider {
             }
 
             if (good) {
-                let path = index.toString();
+                const path = index.toString();
 
                 if (nameMatch)
                     nameRet.push(path);
                 else if (cityMatch)
                     cityRet.push(path);
-                else
+                else if (countryMatch)
                     countryRet.push(path);
             }
 
@@ -126,25 +128,26 @@ export class WeatherSearchProvider {
 
         this._app.release();
 
-        let result = nameRet.concat(cityRet).concat(countryRet);
+        const result = nameRet.concat(cityRet).concat(countryRet);
         invocation.return_value(new GLib.Variant('(as)', [result]));
     }
 
     GetSubsearchResultSet(previous: string[], terms: string[]) {
         this._app.hold();
 
-        let model = this._app.model!;
-        let ret = [];
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const model = this._app.model!;
+        const ret = [];
 
         for (let i = 0; i < previous.length; i++) {
-            let info = model.getAtIndex(parseInt(previous[i]));
+            const info = model.getAtIndex(parseInt(previous[i]));
             if (!info)
                 continue;
 
-            let location = info.location;
-            let name = Util.normalizeCasefoldAndUnaccent(location.get_name());
-            let city = Util.normalizeCasefoldAndUnaccent(location.get_city_name());
-            let country = Util.normalizeCasefoldAndUnaccent(getCountryName(location));
+            const location = info.location;
+            const name = Util.normalizeCasefoldAndUnaccent(location.get_name());
+            const city = Util.normalizeCasefoldAndUnaccent(location.get_city_name());
+            const country = Util.normalizeCasefoldAndUnaccent(getCountryName(location));
             let good = true;
 
             for (let j = 0; j < terms.length && good; j++) {
@@ -170,22 +173,23 @@ export class WeatherSearchProvider {
     GetResultMetas(identifiers: string[]) {
         this._app.hold();
 
-        let model = this._app.model!;
-        let ret = [];
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const model = this._app.model!;
+        const ret = [];
 
         for (let i = 0; i < identifiers.length; i++) {
-            let info = model.getAtIndex(parseInt(identifiers[i]));
+            const info = model.getAtIndex(parseInt(identifiers[i]));
             if (!info)
                 continue;
 
-            let location = info.location;
-            let name = location.get_city_name();
-            let conditions = Util.getWeatherConditions(info);
+            const location = info.location;
+            const name = location.get_city_name();
+            const conditions = Util.getWeatherConditions(info);
 
             /* TRANSLATORS: this is the description shown in the overview search
                It's the current weather conditions followed by the temperature,
                like "Clear sky, 14 °C" */
-            let summary = _("%s, %s").format(conditions, info.get_temp());
+            const summary = _("%s, %s").format(conditions, info.get_temp());
             ret.push({
                 name: new GLib.Variant('s', name),
                 id: new GLib.Variant('s', identifiers[i]),
@@ -208,7 +212,7 @@ export class WeatherSearchProvider {
         if (parameter)
             wrappedParam = [parameter];
 
-        let profile = '';
+        const profile = '';
 
         Gio.DBus.session.call(pkg.name ?? null,
             '/org/gnome/Weather' + profile,
@@ -222,20 +226,23 @@ export class WeatherSearchProvider {
                 try {
                     connection?.call_finish(result);
                 } catch (e) {
-                    log('Failed to launch application: ' + e);
+                    if (e instanceof GLib.Error) {
+                        log('Failed to launch application: ' + e.message);
+                    }
                 }
 
                 this._app.release();
             });
     }
 
-    ActivateResult(id: string, terms: string[], timestamp: number) {
+    ActivateResult(id: string, _terms: string[], timestamp: number) {
         this._app.hold();
 
         //log('Activating ' + id);
 
-        let model = this._app.model!;
-        let info = model.getAtIndex(parseInt(id));
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const model = this._app.model!;
+        const info = model.getAtIndex(parseInt(id));
         if (!info) {
             this._app.release();
             return;
@@ -243,7 +250,7 @@ export class WeatherSearchProvider {
 
         //log('Activating ' + info.get_location_name());
 
-        let location = info.location.serialize();
+        const location = info.location.serialize();
         this._activateAction('show-location', new GLib.Variant('v', location), timestamp);
     }
 

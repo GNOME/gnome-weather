@@ -44,9 +44,10 @@ export class WeatherApplication extends Adw.Application {
             applicationId: pkg.name,
             resourceBasePath: '/org/gnome/Weather',
         });
-        let name_prefix = '';
+        const name_prefix = '';
 
         GLib.set_application_name(name_prefix + _("Weather"));
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         Gtk.Window.set_default_icon_name(pkg.name!);
     }
 
@@ -62,10 +63,10 @@ export class WeatherApplication extends Adw.Application {
         this.quit();
     }
 
-    _onShowLocation(action: Gio.SimpleAction, parameter: GLib.Variant | null) {
+    _onShowLocation(parameter: GLib.Variant | null) {
         if (parameter) {
-            let location = this.world?.deserialize(parameter.deep_unpack());
-            let win = this._createWindow();
+            const location = this.world?.deserialize(parameter.deep_unpack());
+            const win = this._createWindow();
 
             let info: GWeather.Info | undefined;
             if (location) {
@@ -76,10 +77,10 @@ export class WeatherApplication extends Adw.Application {
         }
     }
 
-    _onShowSearch(action: Gio.SimpleAction, parameter: GLib.Variant | null) {
+    _onShowSearch(parameter: GLib.Variant | null) {
         if (parameter) {
-            let text = parameter.deep_unpack<string>();
-            let win = this._createWindow();
+            const text = parameter.deep_unpack<string>();
+            const win = this._createWindow();
 
             win.showSearch(text);
             this._showWindowWhenReady(win);
@@ -110,40 +111,40 @@ export class WeatherApplication extends Adw.Application {
         if (this.model.loading)
             this.mark_busy();
 
-        let quitAction = new Gio.SimpleAction({
+        const quitAction = new Gio.SimpleAction({
             enabled: true,
             name: 'quit'
         });
         quitAction.connect('activate', () => this._onQuit());
         this.add_action(quitAction);
 
-        let showLocationAction = new Gio.SimpleAction({
+        const showLocationAction = new Gio.SimpleAction({
             enabled: true,
             name: 'show-location',
             parameter_type: new GLib.VariantType('v'),
         });
-        showLocationAction.connect('activate', (action, parameter) => {
-            this._onShowLocation(action, parameter);
+        showLocationAction.connect('activate', (_, parameter) => {
+            this._onShowLocation(parameter);
         });
         this.add_action(showLocationAction);
 
-        let showSearchAction = new Gio.SimpleAction({
+        const showSearchAction = new Gio.SimpleAction({
             enabled: true,
             name: 'show-search',
             parameter_type: new GLib.VariantType('v'),
         })
-        showSearchAction.connect('activate', (action, parameter) => {
-            this._onShowSearch(action, parameter);
+        showSearchAction.connect('activate', (_, parameter) => {
+            this._onShowSearch(parameter);
         });
         this.add_action(showSearchAction);
 
-        let gwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather4' });
+        const gwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather4' });
         // Sync settings changes to the legacy GTK3 GWeather interface if it is
         // available
         let legacyGwSettings: Gio.Settings | undefined;
         try {
             legacyGwSettings = new Gio.Settings({ schema_id: 'org.gnome.GWeather' });
-        } catch { }
+        } catch { /* empty */ }
 
         // we would like to use g_settings_create_action() here
         // but that does not handle correctly the case of 'default'
@@ -152,6 +153,7 @@ export class WeatherApplication extends Adw.Application {
         // so we hand code the behavior we want
         function resolveDefaultTemperatureUnit(unit: GWeather.TemperatureUnit) {
             // @ts-expect-error ts-for-gir doesn't think it exists, but it does
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
             unit = GWeather.TemperatureUnit.to_real(unit);
             if (unit == GWeather.TemperatureUnit.CENTIGRADE)
                 return new GLib.Variant('s', 'centigrade');
@@ -160,7 +162,7 @@ export class WeatherApplication extends Adw.Application {
             else
                 return new GLib.Variant('s', 'default');
         }
-        let temperatureAction = new Gio.SimpleAction({
+        const temperatureAction = new Gio.SimpleAction({
             enabled: true,
             name: 'temperature-unit',
             state: resolveDefaultTemperatureUnit(gwSettings.get_enum('temperature-unit')),
@@ -205,11 +207,11 @@ export class WeatherApplication extends Adw.Application {
     }
 
     _showWindowWhenReady(win: Window.MainWindow) {
-        let notifyId: number;
+        let notifyId = 0;
         win.present();
         if (this.model?.loading) {
-            let timeoutId: number;
-            let model = this.model;
+            let timeoutId = 0;
+            const model = this.model;
 
             timeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, function () {
                 log('Timeout during model load, perhaps the network is not available?');
@@ -217,7 +219,8 @@ export class WeatherApplication extends Adw.Application {
 
                 return false;
             });
-            notifyId = this.model.connect('notify::loading', function (model) {
+
+            notifyId = this.model.connect('notify::loading', function (model: World.WorldModel) {
                 if (model.loading)
                     return;
 
@@ -230,7 +233,7 @@ export class WeatherApplication extends Adw.Application {
     }
 
     vfunc_activate() {
-        let win = this._createWindow();
+        const win = this._createWindow();
         win.showDefault();
         this._showWindowWhenReady(win);
     }

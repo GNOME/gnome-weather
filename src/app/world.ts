@@ -60,15 +60,16 @@ export class WorldContentView extends Gtk.Popover {
         this.add_css_class('menu');
 
         this.update_property([Gtk.AccessibleProperty.LABEL], [_("World view")]);
-        let builder = new Gtk.Builder();
+        const builder = new Gtk.Builder();
         builder.add_from_resource('/org/gnome/Weather/places-popover.ui');
 
-        const box = builder.get_object('popoverBox') as Gtk.Box;
+        const box: Gtk.Box = builder.get_object('popoverBox');
         this.set_child(box);
 
         this._searchListView = builder.get_object('search-list-view');
         this._searchListScrollWindow = builder.get_object('search-list-scroll-window');
 
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         this.model = application.model!;
         this._window = window;
 
@@ -81,7 +82,7 @@ export class WorldContentView extends Gtk.Popover {
         this._locationEntry = builder.get_object('location-entry');
 
         this._locationEntry.setListView(this._searchListView);
-        this._locationEntry.connect('search-updated', (entry, text) => {
+        this._locationEntry.connect('search-updated', (entry: LocationSearchEntry, text: string | null) => {
             if (!text) {
                 this._stackPopover.set_visible_child(this._listboxScrollWindow);
                 entry.text = '';
@@ -90,7 +91,7 @@ export class WorldContentView extends Gtk.Popover {
 
             this._stackPopover.set_visible_child(this._searchListScrollWindow);
         });
-        this._locationEntry.connect('notify::location', (entry) => {
+        this._locationEntry.connect('notify::location', (entry: LocationSearchEntry) => {
             const location = entry.location;
             entry.text = '';
 
@@ -111,7 +112,7 @@ export class WorldContentView extends Gtk.Popover {
 
         this._currentLocationController = application.currentLocationController;
 
-        this._listbox.connect('row-activated', (listbox, row: ListBoxRowWithInfo) => {
+        this._listbox.connect('row-activated', (_, row: ListBoxRowWithInfo) => {
             if (row._info)
                 this.model?.setSelectedLocation(row._info);
 
@@ -122,7 +123,7 @@ export class WorldContentView extends Gtk.Popover {
             });
         });
 
-        this.model.connect('selected-location-changed', (_, info) => {
+        this.model.connect('selected-location-changed', (_, info: GWeather.Info) => {
             this._window?.showInfo(info);
         });
 
@@ -146,9 +147,9 @@ export class WorldContentView extends Gtk.Popover {
         this._listbox.invalidate_filter();
     }
 
-    _locationChanged(location: GWeather.Location) {
+    _locationChanged(location: GWeather.Location | null) {
         if (location) {
-            let info = this.model.addNewLocation(location);
+            const info = this.model.addNewLocation(location);
             this._window?.showInfo(info);
         }
     }
@@ -156,7 +157,7 @@ export class WorldContentView extends Gtk.Popover {
     _buildLocation(model: WorldModel, info: GWeather.Info) {
         if (!info) return new LocationRow({ name: '', countryName: '' });;
 
-        let location = info.location;
+        const location = info.location;
 
         const [name, countryName = ''] = Util.getNameAndCountry(location);
 

@@ -70,6 +70,7 @@ const LocationListModel = GObject.registerClass(
             this._list.push(...items);
 
             // @ts-expect-error ts-for-gir interface stuff
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
             this.items_changed(0, 0, this._list.length);
         }
 

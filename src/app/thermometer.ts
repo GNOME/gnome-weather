@@ -19,7 +19,6 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import GLib from 'gi://GLib';
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
 import Gdk from 'gi://Gdk';
@@ -202,9 +201,9 @@ export class Thermometer extends Gtk.Widget {
         }
     }
 
-    vfunc_size_allocate(width: number, height: number, baseline: number) {
-        const [highMin, highNatOut] = this.#highLabel.get_preferred_size();
-        const [lowMin, lowNatOut] = this.#lowLabel.get_preferred_size();
+    vfunc_size_allocate(width: number, height: number, _baseline: number) {
+        const [, highNatOut] = this.#highLabel.get_preferred_size();
+        const [, lowNatOut] = this.#lowLabel.get_preferred_size();
 
         // ts-for-gir interprets the requisitions as nullable due to the input parameters,
         // but as output these aren't actually supposed to be null. JS gives us both requisitions.
@@ -230,6 +229,7 @@ export class Thermometer extends Gtk.Widget {
 
         if (scaleHeight >= this.#scale.minHeight) {
             // @ts-expect-error need to get this interpreted as both a GJS prop and a GObject prop
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             const { dailyHigh, dailyLow, weeklyHigh, weeklyLow } = this.range;
 
             const radius = this.#scale.radius;
@@ -264,12 +264,14 @@ export class Thermometer extends Gtk.Widget {
         // @ts-expect-error in JS this works, but this doesn't really match any type annotations.
         // Gonna figure this out later.
         this.bind_property_full('range', this.#lowLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
             return [!!range, Util.formatTemperature(range?.dailyLow) ?? ''];
         }, null);
 
 
         // @ts-expect-error Same as the above.
         this.bind_property_full('range', this.#highLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
             return [!!range, Util.formatTemperature(range?.dailyHigh) ?? ''];
         }, null);
     }

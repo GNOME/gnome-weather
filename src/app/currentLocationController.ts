@@ -45,6 +45,7 @@ export class CurrentLocationController {
     _startGeolocationService() {
         this._processStarted = true;
         if (Geoclue.Simple.new_with_thresholds) {
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             Geoclue.Simple.new_with_thresholds(pkg.name!,
                                                Geoclue.AccuracyLevel.CITY,
                                                0, /* time threshold */
@@ -54,6 +55,7 @@ export class CurrentLocationController {
                                                    this._onSimpleReady(result)
                                                });
         } else {
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             Geoclue.Simple.new(pkg.name!,
                                Geoclue.AccuracyLevel.CITY,
                                null,
@@ -96,7 +98,7 @@ export class CurrentLocationController {
 
     _findLocation() {
         this._locationUpdatedId =
-                    this._simple?.connect("notify::location", (simple) => {
+                    this._simple?.connect("notify::location", (simple: Geoclue.Simple) => {
                         this._onLocationUpdated(simple);
                     });
 
@@ -105,8 +107,8 @@ export class CurrentLocationController {
 
     _onLocationUpdated(simple?: Geoclue.Simple) {
         this.currentLocation = undefined;
-        let geoclueLocation = simple?.get_location();
-        let world = GWeather.Location.get_world();
+        const geoclueLocation = simple?.get_location();
+        const world = GWeather.Location.get_world();
 
         if (geoclueLocation && world) {
             this.currentLocation = world.find_nearest_city(geoclueLocation.latitude, geoclueLocation.longitude);

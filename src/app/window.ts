@@ -71,14 +71,14 @@ export class MainWindow extends Adw.ApplicationWindow {
         this.currentInfo = undefined;
         this._currentPage = Page.SEARCH;
 
-        let aboutAction = new Gio.SimpleAction({
+        const aboutAction = new Gio.SimpleAction({
             enabled: true,
             name: 'about'
         });
         aboutAction.connect('activate', () => this._showAbout());
         this.add_action(aboutAction);
 
-        let refreshAction = new Gio.SimpleAction({
+        const refreshAction = new Gio.SimpleAction({
             enabled: true,
             name: 'refresh'
         });
@@ -104,8 +104,8 @@ export class MainWindow extends Adw.ApplicationWindow {
 
         this._stack.set_visible_child(this._searchView);
 
-        if (pkg.name!.endsWith('Devel')) {
-            let ctx = this.get_style_context();
+        if (pkg.name?.endsWith('Devel')) {
+            const ctx = this.get_style_context();
             ctx.add_class('devel');
         }
 
@@ -126,7 +126,7 @@ export class MainWindow extends Adw.ApplicationWindow {
             this.maximized
         );
 
-        let defaultWindowSize = this.get_default_size()
+        const defaultWindowSize = this.get_default_size()
         this._settings.set_int(
             'window-width', defaultWindowSize[0]
         );
@@ -140,8 +140,8 @@ export class MainWindow extends Adw.ApplicationWindow {
             this.maximize()
         }
 
-        let width = this._settings.get_int('window-width');
-        let height = this._settings.get_int('window-height');
+        const width = this._settings.get_int('window-width');
+        const height = this._settings.get_int('window-height');
         this.set_default_size(width, height);
     }
 
@@ -149,7 +149,7 @@ export class MainWindow extends Adw.ApplicationWindow {
         this._showingDefault = true;
         this._refreshRevealer.reveal_child = false;
 
-        let mostRecent = this._model?.getRecent();
+        const mostRecent = this._model?.getRecent();
         if (mostRecent)
             this.showInfo(mostRecent);
         else
@@ -177,7 +177,7 @@ export class MainWindow extends Adw.ApplicationWindow {
     }
 
     _showAbout() {
-        let designers = ['Jakub Steiner <jimmac@gmail.com>',
+        const designers = ['Jakub Steiner <jimmac@gmail.com>',
             'Pink Sherbet Photography (D. Sharon Pruitt)',
             'Elliott Brown',
             'Analogick',
@@ -186,10 +186,10 @@ export class MainWindow extends Adw.ApplicationWindow {
             'Tech Haven Ministries',
             'Jim Pennucci'];
 
-        let copyright = 'Copyright 2013-2015 The Weather Developers';
-        let attribution = this._cityView.info?.get_attribution();
+        const copyright = 'Copyright 2013-2015 The Weather Developers';
+        const attribution = this._cityView.info?.get_attribution();
 
-        let aboutDialog = new Adw.AboutDialog(
+        const aboutDialog = new Adw.AboutDialog(
             {
                 developers: ['Giovanni Campagna <gcampagna@src.gnome.org>'],
                 designers: designers,
