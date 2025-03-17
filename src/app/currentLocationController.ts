@@ -42,7 +42,7 @@ export class CurrentLocationController {
         this._startGeolocationService();
     }
 
-    _startGeolocationService() {
+    _startGeolocationService(): void {
         this._processStarted = true;
         if (Geoclue.Simple.new_with_thresholds) {
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -65,7 +65,7 @@ export class CurrentLocationController {
         }
     }
 
-    _geoLocationFailed(e: unknown) {
+    _geoLocationFailed(e: unknown): void {
         if (e instanceof Error) {
             log ("Failed to connect to GeoClue2 service: " + e.message);
         }
@@ -77,7 +77,7 @@ export class CurrentLocationController {
         });
     }
 
-    _onSimpleReady(result: Gio.AsyncResult) {
+    _onSimpleReady(result: Gio.AsyncResult): void {
         try {
             this._simple = Geoclue.Simple.new_finish(result);
         }
@@ -96,7 +96,7 @@ export class CurrentLocationController {
         this.autoLocationAvailable = true;
     }
 
-    _findLocation() {
+    _findLocation(): void {
         this._locationUpdatedId =
                     this._simple?.connect("notify::location", (simple: Geoclue.Simple) => {
                         this._onLocationUpdated(simple);
@@ -105,7 +105,7 @@ export class CurrentLocationController {
         this._onLocationUpdated(this._simple);
     }
 
-    _onLocationUpdated(simple?: Geoclue.Simple) {
+    _onLocationUpdated(simple?: Geoclue.Simple): void {
         this.currentLocation = undefined;
         const geoclueLocation = simple?.get_location();
         const world = GWeather.Location.get_world();

@@ -137,7 +137,7 @@ export class WeatherWidget extends Adw.Bin {
         this._updatedTimeTimeoutId = 0;
     }
 
-    vfunc_unmap() {
+    vfunc_unmap(): void {
         if (this._updatedTimeTimeoutId) {
             GLib.Source.remove(this._updatedTimeTimeoutId);
             this._updatedTimeTimeoutId = 0;
@@ -146,7 +146,7 @@ export class WeatherWidget extends Adw.Bin {
         super.vfunc_unmap();
     }
 
-    _syncLeftRightButtons() {
+    _syncLeftRightButtons(): void {
         const visible_child = this._forecastStack.visible_child as Gtk.ScrolledWindow;
         const hadjustment = visible_child.get_hadjustment();
         if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
@@ -164,7 +164,7 @@ export class WeatherWidget extends Adw.Bin {
         }
     }
 
-    _beginScrollAnimation(target: number) {
+    _beginScrollAnimation(target: number): void {
         if (this.get_realized()) {
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const start = this.get_frame_clock()!.get_frame_time();
@@ -177,7 +177,7 @@ export class WeatherWidget extends Adw.Bin {
         }
     }
 
-    _animate(target: number, start: number, end: number) {
+    _animate(target: number, start: number, end: number): boolean {
         const hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
         const value = hadjustment.value;
         let t = 1.0;
@@ -200,7 +200,7 @@ export class WeatherWidget extends Adw.Bin {
         return GLib.SOURCE_REMOVE;
     }
 
-    clear() {
+    clear(): void {
         this._forecastHourly.clear();
         this._forecastDaily.clear();
 
@@ -210,11 +210,11 @@ export class WeatherWidget extends Adw.Bin {
         }
     }
 
-    getForecastStack() {
+    getForecastStack(): Adw.ViewStack {
         return this._forecastStack;
     }
 
-    update(info: GWeather.Info) {
+    update(info: GWeather.Info): void {
         this._info = info;
 
         const label = Util.getNameAndCountry(info.location);
@@ -251,7 +251,7 @@ export class WeatherWidget extends Adw.Bin {
         this._attributionLabel.label = info.get_attribution();
     }
 
-    _formatUpdatedTime() {
+    _formatUpdatedTime(): string {
         if (!this._updatedTime)
             return '';
 
@@ -314,7 +314,7 @@ export class WeatherView extends Adw.Bin {
         this._stack.add_named(this._infoPage, 'info');
     }
 
-    get info() {
+    get info(): GWeather.Info | undefined {
         return this._info;
     }
 
@@ -342,11 +342,11 @@ export class WeatherView extends Adw.Bin {
         }
     }
 
-    vfunc_map() {
+    vfunc_map(): void {
         super.vfunc_map();
     }
 
-    vfunc_unmap() {
+    vfunc_unmap(): void {
         if (this._updateId) {
             this._info?.disconnect(this._updateId);
             this._updateId = 0;
@@ -355,7 +355,7 @@ export class WeatherView extends Adw.Bin {
         super.vfunc_unmap();
     }
 
-    update() {
+    update(): void {
         this._stack.visible_child_name = 'loading';
         this._infoPage.clear();
         if (this._info) {
@@ -363,13 +363,13 @@ export class WeatherView extends Adw.Bin {
         }
     }
 
-    _onUpdate(info: GWeather.Info) {
+    _onUpdate(info: GWeather.Info): void {
         this._infoPage.clear();
         this._infoPage.update(info);
         this._stack.visible_child_name = 'info';
     }
 
-    getForecastStack() {
+    getForecastStack(): Adw.ViewStack {
         return this._infoPage.getForecastStack();
     }
 };

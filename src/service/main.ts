@@ -58,11 +58,11 @@ export class WeatherBackgroundService extends Gio.Application {
             this.debug = true;
     }
 
-    _onQuit() {
+    _onQuit(): void {
         this.quit();
     }
 
-    vfunc_dbus_register(connection: Gio.DBusConnection, path: string) {
+    vfunc_dbus_register(connection: Gio.DBusConnection, path: string): boolean {
         super.vfunc_dbus_register(connection, path);
 
         this._searchProvider.export(connection, path);
@@ -79,7 +79,7 @@ export class WeatherBackgroundService extends Gio.Application {
     },
 */
 
-    vfunc_startup() {
+    vfunc_startup(): void {
         super.vfunc_startup();
 
         const world = GWeather.Location.get_world();
@@ -105,18 +105,18 @@ export class WeatherBackgroundService extends Gio.Application {
         this.add_action(quitAction);
     }
 
-    vfunc_activate() {
+    vfunc_activate(): void {
         // do nothing, this is a background service
     }
 
-    vfunc_shutdown() {
+    vfunc_shutdown(): void {
         GWeather.Info.store_cache();
 
         super.vfunc_shutdown();
     }
 };
 
-export function main(argv: string[] | null) {
+export function main(argv: string[] | null): void {
     setTimeout(() => {
         imports.mainloop.quit('search-provider');
 

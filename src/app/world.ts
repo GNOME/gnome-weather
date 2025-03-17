@@ -134,7 +134,7 @@ export class WorldContentView extends Gtk.Popover {
 
     }
 
-    vfunc_unroot() {
+    vfunc_unroot(): void {
         // @ts-expect-error ts-for-gir says undefined when it should be null
         this._listbox.bind_model(null, null);
 
@@ -143,18 +143,18 @@ export class WorldContentView extends Gtk.Popover {
         super.vfunc_unroot();
     }
 
-    refilter() {
+    refilter(): void {
         this._listbox.invalidate_filter();
     }
 
-    _locationChanged(location: GWeather.Location | null) {
+    _locationChanged(location: GWeather.Location | null): void {
         if (location) {
             const info = this.model.addNewLocation(location);
             this._window?.showInfo(info);
         }
     }
 
-    _buildLocation(model: WorldModel, info: GWeather.Info) {
+    _buildLocation(model: WorldModel, info: GWeather.Info): ListBoxRowWithInfo | LocationRow {
         if (!info) return new LocationRow({ name: '', countryName: '' });;
 
         const location = info.location;
