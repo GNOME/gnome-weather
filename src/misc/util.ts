@@ -33,10 +33,10 @@ import GWeather from 'gi://GWeather';
 import * as System from 'system';
 
 function loadUI(resourcePath: string, objects: { [x: string]: GObject.Object; }) {
-    let ui = new Gtk.Builder();
+    const ui = new Gtk.Builder();
 
     if (objects) {
-        for (let o in objects)
+        for (const o in objects)
             ui.expose_object(o, objects[o]);
     }
 
@@ -92,8 +92,8 @@ function normalizeCasefoldAndUnaccent(str: string | null) {
 }
 
 function getTemperature(info: GWeather.Info) {
-    let [ok1,] = info.get_value_temp_min(GWeather.TemperatureUnit.DEFAULT);
-    let [ok2,] = info.get_value_temp_max(GWeather.TemperatureUnit.DEFAULT);
+    const [ok1,] = info.get_value_temp_min(GWeather.TemperatureUnit.DEFAULT);
+    const [ok2,] = info.get_value_temp_max(GWeather.TemperatureUnit.DEFAULT);
 
     if (ok1 && ok2) {
         /* TRANSLATORS: this is the temperature string, minimum and maximum.
@@ -110,7 +110,7 @@ function getEnabledProviders() {
 }
 
 function easeOutCubic(value: number) {
-    let t = value - 1;
+    const t = value - 1;
     return t * t * t + 1;
 }
 
@@ -150,22 +150,22 @@ function getEvening(date: GLib.DateTime) {
 }
 
 function getDateTime(info: GWeather.Info) {
-    let [ok, date] = info.get_value_update();
+    const [, date] = info.get_value_update();
     return GLib.DateTime.new_from_unix_local(date);
 }
 
 function getTemp(info: GWeather.Info) {
-    let [ok, temp] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
+    const [, temp] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
     return temp;
 }
 
-function formatTemperature(value: number | unknown) {
-    return typeof value === 'number' ? `${Math.round(value).toFixed(0)}°` : undefined;
-};
+function formatTemperature(value: number) {
+    return `${Math.round(value).toFixed(0)}°`;
+}
 
 function getTempString(info: GWeather.Info) {
     try {
-        let [, temp] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
+        const [, temp] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
         return formatTemperature(temp);
     } catch {
         return "";

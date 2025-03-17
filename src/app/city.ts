@@ -107,7 +107,7 @@ export class WeatherWidget extends Adw.Bin {
             if (visible_child == null)
                 return; // can happen at destruction
 
-            let hadjustment = visible_child.get_hadjustment();
+            const hadjustment = visible_child.get_hadjustment();
             hadjustment.value = hadjustment.get_lower();
             this._syncLeftRightButtons();
 
@@ -120,15 +120,15 @@ export class WeatherWidget extends Adw.Bin {
         this._tickId = 0;
 
         this._leftButton.connect('clicked', () => {
-            let hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
-            let target = hadjustment.value - hadjustment.page_size;
+            const hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
+            const target = hadjustment.value - hadjustment.page_size;
 
             this._beginScrollAnimation(target);
         });
 
         this._rightButton.connect('clicked', () => {
-            let hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
-            let target = hadjustment.value + hadjustment.page_size;
+            const hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
+            const target = hadjustment.value + hadjustment.page_size;
 
             this._beginScrollAnimation(target);
         });
@@ -148,7 +148,7 @@ export class WeatherWidget extends Adw.Bin {
 
     _syncLeftRightButtons() {
         const visible_child = this._forecastStack.visible_child as Gtk.ScrolledWindow;
-        let hadjustment = visible_child.get_hadjustment();
+        const hadjustment = visible_child.get_hadjustment();
         if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
             this._leftButton.hide();
             this._rightButton.hide();
@@ -166,8 +166,9 @@ export class WeatherWidget extends Adw.Bin {
 
     _beginScrollAnimation(target: number) {
         if (this.get_realized()) {
-            let start = this.get_frame_clock()!.get_frame_time();
-            let end = start + SCROLLING_ANIMATION_TIME;
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            const start = this.get_frame_clock()!.get_frame_time();
+            const end = start + SCROLLING_ANIMATION_TIME;
 
             if (this._tickId != 0)
                 this.remove_tick_callback(this._tickId);
@@ -177,12 +178,13 @@ export class WeatherWidget extends Adw.Bin {
     }
 
     _animate(target: number, start: number, end: number) {
-        let hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
-        let value = hadjustment.value;
+        const hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
+        const value = hadjustment.value;
         let t = 1.0;
 
         if (this.get_realized()) {
-            let now = this.get_frame_clock()!.get_frame_time();
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            const now = this.get_frame_clock()!.get_frame_time();
             if (now < end) {
                 t = (now - start) / SCROLLING_ANIMATION_TIME;
                 t = Util.easeOutCubic(t);

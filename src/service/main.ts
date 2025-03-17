@@ -97,7 +97,7 @@ export class WeatherBackgroundService extends Gio.Application {
             });
         }
 
-        let quitAction = new Gio.SimpleAction({
+        const quitAction = new Gio.SimpleAction({
             enabled: true,
             name: 'quit'
         });

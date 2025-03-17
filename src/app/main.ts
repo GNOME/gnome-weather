@@ -44,7 +44,7 @@ globalThis.getApp = function () {
     return app ? app as WeatherApplication : undefined;
 };
 
-let application = new WeatherApplication();
+const application = new WeatherApplication();
 
 setTimeout(() => {
     imports.mainloop.quit('gnome-weather');
