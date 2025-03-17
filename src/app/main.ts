@@ -39,7 +39,7 @@ declare global {
 }
 
 globalThis.ngettext = imports.gettext.ngettext;
-globalThis.getApp = function () {
+globalThis.getApp = function (): WeatherApplication | undefined {
     const app = Gio.Application.get_default();
     return app ? app as WeatherApplication : undefined;
 };

@@ -53,7 +53,7 @@ export class HourlyForecastBox extends Gtk.Box {
 
     // Ensure that infos are sufficiently spaced, and
     // remove infos for the wrong day
-    _preprocess(now: GLib.DateTime, forecastInfo: GWeather.Info, infos: GWeather.Info[]) {
+    _preprocess(now: GLib.DateTime, forecastInfo: GWeather.Info, infos: GWeather.Info[]): GWeather.Info[] {
         const ret = [forecastInfo, ...infos].filter(info => {
             const [, date] = info.get_value_update();
             const datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(now.get_timezone());
@@ -73,7 +73,7 @@ export class HourlyForecastBox extends Gtk.Box {
         return ret;
     }
 
-    update(info: GWeather.Info) {
+    update(info: GWeather.Info): void {
         const forecasts = info.get_forecast_list();
 
         const coords = info.location.get_coords();
@@ -107,7 +107,7 @@ export class HourlyForecastBox extends Gtk.Box {
         }
     }
 
-    _addHourEntry(info: GWeather.Info, tz: GLib.TimeZone | null, now: boolean) {
+    _addHourEntry(info: GWeather.Info, tz: GLib.TimeZone | null, now: boolean): void {
         let timeLabel: string | undefined;
 
         const [, date] = info.get_value_update();
@@ -138,7 +138,7 @@ export class HourlyForecastBox extends Gtk.Box {
         this._hasForecastInfo = true;
     }
 
-    _addSeparator() {
+    _addSeparator(): void {
         const separator = new Gtk.Separator({
             orientation: Gtk.Orientation.VERTICAL,
             visible: true
@@ -146,17 +146,17 @@ export class HourlyForecastBox extends Gtk.Box {
         this.append(separator);
     }
 
-    clear() {
+    clear(): void {
         for (const w of Array.from(this)) {
             this.remove(w);
         }
     }
 
-    hasForecastInfo() {
+    hasForecastInfo(): boolean {
         return this._hasForecastInfo;
     }
 
-    vfunc_snapshot(snapshot: Gtk.Snapshot) {
+    vfunc_snapshot(snapshot: Gtk.Snapshot): void {
         const allocation = this.get_allocation();
 
         const rect = new Graphene.Rect();

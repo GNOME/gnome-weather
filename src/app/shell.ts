@@ -38,20 +38,20 @@ export class ShellIntegration {
         });
     }
 
-    export(connection: Gio.DBusConnection, path: string) {
+    export(connection: Gio.DBusConnection, path: string): void {
         return this._impl.export(connection, path);
     }
 
-    unexport(connection: Gio.DBusConnection) {
+    unexport(connection: Gio.DBusConnection): void {
         return this._impl.unexport_from_connection(connection);
     }
 
-    get AutomaticLocation() {
+    get AutomaticLocation(): boolean {
         // We follow whether the user has location services on.
         return true;
     }
 
-    get Locations() {
+    get Locations(): GLib.Variant[] {
         return this._settings.get_value('locations').deep_unpack();
     }
 };

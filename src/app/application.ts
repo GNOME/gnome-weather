@@ -51,7 +51,7 @@ export class WeatherApplication extends Adw.Application {
         Gtk.Window.set_default_icon_name(pkg.name!);
     }
 
-    get mainWindow() {
+    get mainWindow(): Window.MainWindow | undefined {
         return this._mainWindow;
     }
 
@@ -59,11 +59,11 @@ export class WeatherApplication extends Adw.Application {
         this._mainWindow = value;
     }
 
-    _onQuit() {
+    _onQuit(): void {
         this.quit();
     }
 
-    _onShowLocation(parameter: GLib.Variant | null) {
+    _onShowLocation(parameter: GLib.Variant | null): void {
         if (parameter) {
             const location = this.world?.deserialize(parameter.deep_unpack());
             const win = this._createWindow();
@@ -77,7 +77,7 @@ export class WeatherApplication extends Adw.Application {
         }
     }
 
-    _onShowSearch(parameter: GLib.Variant | null) {
+    _onShowSearch(parameter: GLib.Variant | null): void {
         if (parameter) {
             const text = parameter.deep_unpack<string>();
             const win = this._createWindow();
@@ -87,7 +87,7 @@ export class WeatherApplication extends Adw.Application {
         }
     }
 
-    vfunc_startup() {
+    vfunc_startup(): void {
         super.vfunc_startup();
 
         const world = GWeather.Location.get_world();
@@ -151,7 +151,7 @@ export class WeatherApplication extends Adw.Application {
         // we would also like to use g_settings_bind_with_mapping(), but that
         // function is not introspectable (two callbacks, one destroy notify)
         // so we hand code the behavior we want
-        function resolveDefaultTemperatureUnit(unit: GWeather.TemperatureUnit) {
+        function resolveDefaultTemperatureUnit(unit: GWeather.TemperatureUnit): GLib.Variant<'s'> {
             // @ts-expect-error ts-for-gir doesn't think it exists, but it does
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
             unit = GWeather.TemperatureUnit.to_real(unit);
@@ -187,17 +187,17 @@ export class WeatherApplication extends Adw.Application {
         this.set_accels_for_action("app.quit", ["<Control>q"]);
     }
 
-    vfunc_dbus_register(conn: Gio.DBusConnection, path: string) {
+    vfunc_dbus_register(conn: Gio.DBusConnection, path: string): boolean {
         this._shellIntegration = new ShellIntegration();
         this._shellIntegration.export(conn, path);
         return true;
     }
 
-    vfunc_dbus_unregister(conn: Gio.DBusConnection, _path: string) {
+    vfunc_dbus_unregister(conn: Gio.DBusConnection, _path: string): void {
         this._shellIntegration?.unexport(conn);
     }
 
-    _createWindow() {
+    _createWindow(): Window.MainWindow {
         const window = new Window.MainWindow({ application: this });
 
         // Store a weak reference to the window for cleanup...
@@ -206,7 +206,7 @@ export class WeatherApplication extends Adw.Application {
         return window;
     }
 
-    _showWindowWhenReady(win: Window.MainWindow) {
+    _showWindowWhenReady(win: Window.MainWindow): Window.MainWindow {
         let notifyId = 0;
         win.present();
         if (this.model?.loading) {
@@ -232,13 +232,13 @@ export class WeatherApplication extends Adw.Application {
         return win;
     }
 
-    vfunc_activate() {
+    vfunc_activate(): void {
         const win = this._createWindow();
         win.showDefault();
         this._showWindowWhenReady(win);
     }
 
-    vfunc_shutdown() {
+    vfunc_shutdown(): void {
         GWeather.Info.store_cache();
         this.model?.saveSettingsNow();
 

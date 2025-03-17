@@ -30,6 +30,12 @@ type DayInfo = {
     infos: GWeather.Info[];
 };
 
+type PreprocessedInfo = {
+    weekHighestTemp: number,
+    weekLowestTemp: number,
+    days: DayInfo[]
+}
+
 type PeriodInfos = {
     day: GWeather.Info;
     night: GWeather.Info;
@@ -51,7 +57,7 @@ export class DailyForecastBox extends Gtk.Box {
     }
 
     // get infos for the correct day
-    _preprocess(infos: GWeather.Info[]) {
+    _preprocess(infos: GWeather.Info[]): PreprocessedInfo {
         let i;
 
         let day = GLib.DateTime.new_now_local();
@@ -103,7 +109,7 @@ export class DailyForecastBox extends Gtk.Box {
         };
     }
 
-    update(info: GWeather.Info) {
+    update(info: GWeather.Info): void {
         const forecasts = info.get_forecast_list();
 
         const forecast = this._preprocess(forecasts);
@@ -123,7 +129,7 @@ export class DailyForecastBox extends Gtk.Box {
         }
     }
 
-    _buildDayEntry(dayInfos: DayInfo, weekHighestTemp: number, weekLowestTemp: number) {
+    _buildDayEntry(dayInfos: DayInfo, weekHighestTemp: number, weekLowestTemp: number): DayEntry {
         const { day, infos } = dayInfos;
         const datetime = Util.getDay(day);
 
@@ -167,14 +173,14 @@ export class DailyForecastBox extends Gtk.Box {
         });
     }
 
-    _buildSeparator() {
+    _buildSeparator(): Gtk.Separator {
         return new Gtk.Separator({
             orientation: Gtk.Orientation.VERTICAL,
             visible: true
         });
     }
 
-    clear() {
+    clear(): void {
         for (const entry of Array.from(this)) {
             entry.unparent();
         }
@@ -182,19 +188,7 @@ export class DailyForecastBox extends Gtk.Box {
 };
 GObject.registerClass(DailyForecastBox);
 
-export const DayEntry = GObject.registerClass({
-    Template: 'resource:///org/gnome/Weather/day-entry.ui',
-    InternalChildren: ['nameLabel', 'dateLabel', 'image',
-        'thermometer',
-        'nightTemperatureLabel', 'nightImage',
-        'nightHumidity', 'nightWind',
-        'morningTemperatureLabel', 'morningImage',
-        'morningHumidity', 'morningWind',
-        'afternoonTemperatureLabel', 'afternoonImage',
-        'afternoonHumidity', 'afternoonWind',
-        'eveningTemperatureLabel', 'eveningImage',
-        'eveningHumidity', 'eveningWind'],
-}, class DayEntry extends Adw.Bin {
+export class DayEntry extends Adw.Bin {
     _nameLabel!: Gtk.Label;
     _dateLabel!: Gtk.Label;
     _image!: Gtk.Image;
@@ -222,6 +216,22 @@ export const DayEntry = GObject.registerClass({
     minTemp: number;
     weekHighestTemp: number;
     weekLowestTemp: number;
+
+    static {
+        GObject.registerClass({
+            Template: 'resource:///org/gnome/Weather/day-entry.ui',
+            InternalChildren: ['nameLabel', 'dateLabel', 'image',
+                'thermometer',
+                'nightTemperatureLabel', 'nightImage',
+                'nightHumidity', 'nightWind',
+                'morningTemperatureLabel', 'morningImage',
+                'morningHumidity', 'morningWind',
+                'afternoonTemperatureLabel', 'afternoonImage',
+                'afternoonHumidity', 'afternoonWind',
+                'eveningTemperatureLabel', 'eveningImage',
+                'eveningHumidity', 'eveningWind'],
+        }, this);
+    }
 
     constructor(params: {
             datetime: GLib.DateTime;
@@ -264,7 +274,7 @@ export const DayEntry = GObject.registerClass({
         this.weekLowestTemp = weekLowestTemp;
     }
 
-    vfunc_root() {
+    vfunc_root(): void {
         super.vfunc_root();
 
         const { datetime } = this;
@@ -300,7 +310,7 @@ export const DayEntry = GObject.registerClass({
         this._setWindInfo(eveningInfo, this._eveningWind);
     }
 
-    _setWindInfo(info: GWeather.Info, label: Gtk.Label) {
+    _setWindInfo(info: GWeather.Info, label: Gtk.Label): void {
         const [ok, speed] = info.get_value_wind(GWeather.SpeedUnit.DEFAULT);
         if (ok) {
             label.label = `${speed.toFixed(1).toString()} ${GWeather.speed_unit_to_string(GWeather.SpeedUnit.DEFAULT)}`;
@@ -309,4 +319,4 @@ export const DayEntry = GObject.registerClass({
             label.label = info.get_wind();
         }
     }
-});
+};

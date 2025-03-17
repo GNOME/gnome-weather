@@ -54,11 +54,11 @@ export class WorldModel extends GObject.Object {
         this.getAll();
     }
 
-    get length() {
+    get length(): number {
         return this._allInfos.length
     }
 
-    getAll() {
+    getAll(): GWeatherInfoData[] {
         // Ensure the current location and selected location are returned first...
         const infos = [...this._infoList].filter(info => !this.isCurrentLocation(info) && !this.isSelectedLocation(info));
 
@@ -73,7 +73,7 @@ export class WorldModel extends GObject.Object {
         return infos;
     }
 
-    getAtIndex(index: number) {
+    getAtIndex(index: number): GWeatherInfoData {
         if (this._selectedLocation) {
             if (index == 0)
                 return this._selectedLocation;
@@ -90,11 +90,11 @@ export class WorldModel extends GObject.Object {
         return this._infoList[index];
     }
 
-    getCurrentLocation() {
+    getCurrentLocation(): GWeatherInfoData | undefined {
         return this._currentLocationInfo;
     }
 
-    currentLocationChanged(location?: GWeather.Location) {
+    currentLocationChanged(location?: GWeather.Location): void {
         if (location) {
             this._currentLocationInfo = this.buildInfo(location);
             this.addCurrentLocation(this._currentLocationInfo);
@@ -102,14 +102,14 @@ export class WorldModel extends GObject.Object {
         }
     }
 
-    getRecent() {
+    getRecent(): GWeatherInfoData | null {
         if (this._infoList.length > 0)
             return this._infoList[0];
         else
             return null;
     }
 
-    load() {
+    load(): void {
         let locations: GLib.Variant[] = this._settings.get_value('locations').deep_unpack();
 
         if (locations.length > 10) {
@@ -134,14 +134,14 @@ export class WorldModel extends GObject.Object {
         this.#invalidate();
     }
 
-    #invalidate() {
+    #invalidate(): void {
         this.getAll();
         // @ts-expect-error ts-for-gir doesn't know how to handle interfaces
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         this.items_changed(0, this._allInfos.length, this._allInfos.length);
     }
 
-    _updateLoadingCount(delta: number) {
+    _updateLoadingCount(delta: number): void {
         const wasLoading = this._loadingCount > 0;
         this._loadingCount += delta;
         const isLoading = this._loadingCount > 0;
@@ -150,7 +150,7 @@ export class WorldModel extends GObject.Object {
             this.notify('loading');
     }
 
-    updateInfo(info: GWeather.Info & { _loadingId?: number; }) {
+    updateInfo(info: GWeather.Info & { _loadingId?: number; }): void {
         if (info._loadingId)
             return;
 
@@ -167,25 +167,25 @@ export class WorldModel extends GObject.Object {
         this._updateLoadingCount(+1);
     }
 
-    get loading() {
+    get loading(): boolean {
         return this._loadingCount > 0;
     }
 
-    setSelectedLocation(info: GWeather.Info) {
+    setSelectedLocation(info: GWeather.Info): void {
         const newInfo = this.addNewLocation(info.get_location());
         this._selectedLocation = newInfo;
         this.emit('selected-location-changed', info);
     }
 
-    isSelectedLocation(info: GWeather.Info) {
+    isSelectedLocation(info: GWeather.Info): boolean {
         return !!this._selectedLocation && this._selectedLocation === info;
     }
 
-    isCurrentLocation(info: GWeather.Info) {
+    isCurrentLocation(info: GWeather.Info): boolean {
         return !!this._currentLocationInfo && this._currentLocationInfo === info;
     }
 
-    addNewLocation(newLocation: GWeather.Location) {
+    addNewLocation(newLocation: GWeather.Location): GWeatherInfoData {
         const info: GWeatherInfoData = this._addLocationInternal(newLocation);
         this._selectedLocation = info;
         info._isCurrentLocation = false;
@@ -196,7 +196,7 @@ export class WorldModel extends GObject.Object {
         return info;
     }
 
-    _queueSaveSettings() {
+    _queueSaveSettings(): void {
         if (this._queueSaveSettingsId)
             return;
 
@@ -208,7 +208,7 @@ export class WorldModel extends GObject.Object {
         this._queueSaveSettingsId = id;
     }
 
-    _saveSettingsInternal() {
+    _saveSettingsInternal(): void {
         const locations = [];
 
         for (const info of this._allInfos) {
@@ -228,7 +228,7 @@ export class WorldModel extends GObject.Object {
         this._settings.set_value('locations', new GLib.Variant('av', locations));
     }
 
-    saveSettingsNow() {
+    saveSettingsNow(): void {
         if (!this._queueSaveSettingsId)
             return;
 
@@ -238,7 +238,7 @@ export class WorldModel extends GObject.Object {
         this._saveSettingsInternal();
     }
 
-    addCurrentLocation(info: GWeather.Info & { _isCurrentLocation?: boolean; }) {
+    addCurrentLocation(info: GWeatherInfoData): void {
         if (this._infoList.includes(info))
             return;
 
@@ -252,11 +252,11 @@ export class WorldModel extends GObject.Object {
         this._addInfoInternal(info);
     }
 
-    removeLocation(oldInfo?: GWeatherInfoData) {
+    removeLocation(oldInfo?: GWeatherInfoData): void {
         this._removeLocationInternal(oldInfo);
     }
 
-    _removeLocationInternal(oldInfo?: GWeatherInfoData) {
+    _removeLocationInternal(oldInfo?: GWeatherInfoData): void {
         if (!oldInfo) return;
 
         if (oldInfo._loadingId) {
@@ -287,7 +287,7 @@ export class WorldModel extends GObject.Object {
         this._queueSaveSettings();
     }
 
-    buildInfo(location: GWeather.Location) {
+    buildInfo(location: GWeather.Location): GWeatherInfoData {
         return new GWeather.Info({
             application_id: pkg.name,
             contact_info: 'https://gitlab.gnome.org/GNOME/gnome-weather/-/raw/master/gnome-weather.doap',
@@ -296,7 +296,7 @@ export class WorldModel extends GObject.Object {
         });
     }
 
-    _addLocationInternal(newLocation: GWeather.Location) {
+    _addLocationInternal(newLocation: GWeather.Location): GWeatherInfoData {
         const existingInfo = this._infoList.find(info => info.get_location().equal(newLocation));
         if (existingInfo)
             return existingInfo;
@@ -307,7 +307,7 @@ export class WorldModel extends GObject.Object {
         return info;
     }
 
-    _addInfoInternal(info: GWeather.Info) {
+    _addInfoInternal(info: GWeather.Info): void {
         this._infoList.unshift(info);
         this.updateInfo(info);
 
@@ -319,15 +319,15 @@ export class WorldModel extends GObject.Object {
         }
     }
 
-    vfunc_get_item_type() {
+    vfunc_get_item_type(): GObject.GType {
         return GWeather.Info.$gtype;
     }
 
-    vfunc_get_n_items() {
+    vfunc_get_n_items(): number {
         return this._allInfos.length;
     }
 
-    vfunc_get_item(n: number) {
+    vfunc_get_item(n: number): GWeatherInfoData | null {
         return this._allInfos[n] ?? null;
     }
 };

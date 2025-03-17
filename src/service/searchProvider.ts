@@ -24,12 +24,18 @@ import * as Util from '../misc/util.js';
 import { WeatherBackgroundService } from './main.js';
 import { WorldModel } from 'src/shared/world.js';
 
+type ResultMeta = {
+    name: GLib.Variant<'s'>
+    id: GLib.Variant<'s'>,
+    description: GLib.Variant<'s'>,
+    icon: GLib.Variant<'(sv)'> | null,
+}
 
 const SearchProviderInterface = new TextDecoder().decode(
     Gio.resources_lookup_data('/org/gnome/shell/ShellSearchProvider2.xml', 0).get_data() ?? undefined
 );
 
-function getCountryName(location: GWeather.Location) {
+function getCountryName(location: GWeather.Location): string | null {
     let base: GWeather.Location | null = location;
     while (base &&
         base.get_level() > GWeather.LocationLevel.COUNTRY)
@@ -48,15 +54,15 @@ export class WeatherSearchProvider {
         this._impl = Gio.DBusExportedObject.wrapJSObject(SearchProviderInterface, this);
     }
 
-   export(connection: Gio.DBusConnection, path: string) {
+    export(connection: Gio.DBusConnection, path: string): void {
         return this._impl.export(connection, path);
     }
 
-    unexport(connection: Gio.DBusConnection) {
+    unexport(connection: Gio.DBusConnection): void {
         return this._impl.unexport_from_connection(connection);
     }
 
-    GetInitialResultSetAsync(params: [string[], string[]], invocation: Gio.DBusMethodInvocation) {
+    GetInitialResultSetAsync(params: [string[], string[]], invocation: Gio.DBusMethodInvocation): void {
         this._app.hold();
 
         const terms = params[0];
@@ -75,7 +81,7 @@ export class WeatherSearchProvider {
         }
     }
 
-    _runQuery(terms: string[], invocation: Gio.DBusMethodInvocation) {
+    _runQuery(terms: string[], invocation: Gio.DBusMethodInvocation): void {
         const nameRet = [];
         const cityRet = [];
         const countryRet = [];
@@ -132,7 +138,7 @@ export class WeatherSearchProvider {
         invocation.return_value(new GLib.Variant('(as)', [result]));
     }
 
-    GetSubsearchResultSet(previous: string[], terms: string[]) {
+    GetSubsearchResultSet(previous: string[], terms: string[]): string[] {
         this._app.hold();
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -170,7 +176,7 @@ export class WeatherSearchProvider {
         return ret;
     }
 
-    GetResultMetas(identifiers: string[]) {
+    GetResultMetas(identifiers: string[]): ResultMeta[] {
         this._app.hold();
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -203,11 +209,11 @@ export class WeatherSearchProvider {
         return ret;
     }
 
-    _getPlatformData(timestamp: number) {
+    _getPlatformData(timestamp: number): Record<string, GLib.Variant> {
         return { 'desktop-startup-id': new GLib.Variant('s', '_TIME' + timestamp) };
     }
 
-    _activateAction(action: string, parameter: GLib.Variant<"s"> | GLib.Variant<"v">, timestamp: number) {
+    _activateAction(action: string, parameter: GLib.Variant<"s"> | GLib.Variant<"v">, timestamp: number): void {
         let wrappedParam: (GLib.Variant<"s"> | GLib.Variant<"v">)[] = [];
         if (parameter)
             wrappedParam = [parameter];
@@ -235,7 +241,7 @@ export class WeatherSearchProvider {
             });
     }
 
-    ActivateResult(id: string, _terms: string[], timestamp: number) {
+    ActivateResult(id: string, _terms: string[], timestamp: number): void {
         this._app.hold();
 
         //log('Activating ' + id);
@@ -254,7 +260,7 @@ export class WeatherSearchProvider {
         this._activateAction('show-location', new GLib.Variant('v', location), timestamp);
     }
 
-    LaunchSearch(terms: string[], timestamp: number) {
+    LaunchSearch(terms: string[], timestamp: number): void {
         this._app.hold();
 
         this._activateAction('show-search', new GLib.Variant('s', terms.join(' ')), timestamp);
