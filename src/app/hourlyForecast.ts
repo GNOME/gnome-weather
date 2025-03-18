@@ -33,11 +33,12 @@ const ONE_HOUR = 60 * 60 * 1000 * 1000;
 const TWENTY_FOUR_HOURS = 24 * ONE_HOUR;
 
 export class HourlyForecastBox extends Gtk.Box {
-    _hourlyInfo: GWeather.Info[];
-    _hasForecastInfo: boolean;
-    _settings: Gio.Settings;
+    private _hasForecastInfo: boolean;
 
-    constructor() {
+    private hourlyInfo: GWeather.Info[];
+    private settings: Gio.Settings;
+
+    public constructor() {
         super({
             orientation: Gtk.Orientation.HORIZONTAL,
             spacing: 0,
@@ -45,15 +46,15 @@ export class HourlyForecastBox extends Gtk.Box {
         });
 
         this.update_property([Gtk.AccessibleProperty.LABEL], [_('Hourly Forecast')]);
-        this._settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
+        this.settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
 
-        this._hourlyInfo = [];
+        this.hourlyInfo = [];
         this._hasForecastInfo = false;
     }
 
     // Ensure that infos are sufficiently spaced, and
     // remove infos for the wrong day
-    _preprocess(now: GLib.DateTime, forecastInfo: GWeather.Info, infos: GWeather.Info[]): GWeather.Info[] {
+    private preprocess(now: GLib.DateTime, forecastInfo: GWeather.Info, infos: GWeather.Info[]): GWeather.Info[] {
         const ret = [forecastInfo, ...infos].filter(info => {
             const [, date] = info.get_value_update();
             const datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(now.get_timezone());
@@ -73,7 +74,7 @@ export class HourlyForecastBox extends Gtk.Box {
         return ret;
     }
 
-    update(info: GWeather.Info): void {
+    public update(info: GWeather.Info): void {
         const forecasts = info.get_forecast_list();
 
         const coords = info.location.get_coords();
@@ -83,16 +84,16 @@ export class HourlyForecastBox extends Gtk.Box {
         if (tz) {
             const now = GLib.DateTime.new_now(tz);
 
-            const hourlyInfo = this._preprocess(now, info, forecasts);
+            const hourlyInfo = this.preprocess(now, info, forecasts);
 
             if (hourlyInfo.length > 0) {
                 for (let i = 0; i < hourlyInfo.length; i++) {
                     const info = hourlyInfo[i];
                     const isNow = i === 0;
-                    this._addHourEntry(info, tz, isNow);
+                    this.addHourEntry(info, tz, isNow);
 
                     if (i < hourlyInfo.length - 1)
-                        this._addSeparator();
+                        this.addSeparator();
                 }
             } else {
                 const label = new Gtk.Label({
@@ -103,11 +104,11 @@ export class HourlyForecastBox extends Gtk.Box {
                 this.prepend(label);
             }
 
-            this._hourlyInfo = hourlyInfo;
+            this.hourlyInfo = hourlyInfo;
         }
     }
 
-    _addHourEntry(info: GWeather.Info, tz: GLib.TimeZone | null, now: boolean): void {
+    private addHourEntry(info: GWeather.Info, tz: GLib.TimeZone | null, now: boolean): void {
         let timeLabel: string | undefined;
 
         const [, date] = info.get_value_update();
@@ -119,7 +120,7 @@ export class HourlyForecastBox extends Gtk.Box {
         if (now) {
             timeLabel = _('Now');
         } else {
-            const timeSetting = this._settings.get_string('clock-format');
+            const timeSetting = this.settings.get_string('clock-format');
             let timeFormat = null;
 
             if (timeSetting == '12h')
@@ -138,7 +139,7 @@ export class HourlyForecastBox extends Gtk.Box {
         this._hasForecastInfo = true;
     }
 
-    _addSeparator(): void {
+    private addSeparator(): void {
         const separator = new Gtk.Separator({
             orientation: Gtk.Orientation.VERTICAL,
             visible: true
@@ -146,24 +147,24 @@ export class HourlyForecastBox extends Gtk.Box {
         this.append(separator);
     }
 
-    clear(): void {
+    public clear(): void {
         for (const w of Array.from(this)) {
             this.remove(w);
         }
     }
 
-    hasForecastInfo(): boolean {
+    public hasForecastInfo(): boolean {
         return this._hasForecastInfo;
     }
 
-    vfunc_snapshot(snapshot: Gtk.Snapshot): void {
+    public vfunc_snapshot(snapshot: Gtk.Snapshot): void {
         const allocation = this.get_allocation();
 
         const rect = new Graphene.Rect();
         rect.init(0, 0, allocation.width, allocation.height);
 
         const cr = snapshot.append_cairo(rect) as Cairo.Context;
-        const temps = this._hourlyInfo.map(info => Util.getTemp(info));
+        const temps = this.hourlyInfo.map(info => Util.getTemp(info));
 
         const maxTemp = Math.max(...temps);
         const minTemp = Math.min(...temps);
@@ -275,11 +276,11 @@ export const HourEntry = GObject.registerClass({
 
     InternalChildren: ['timeLabel', 'image', 'forecastTemperatureLabel'],
 }, class HourEntry extends Adw.Bin {
-    _timeLabel!: Gtk.Label;
-    _image!: Gtk.Image;
-    _forecastTemperatureLabel!: Gtk.Label;
+    private _timeLabel!: Gtk.Label;
+    private _image!: Gtk.Image;
+    private _forecastTemperatureLabel!: Gtk.Label;
 
-    constructor(timeLabel: string | undefined, info: GWeather.Info, params?: Partial<Adw.Bin.ConstructorProps>) {
+    public constructor(timeLabel: string | undefined, info: GWeather.Info, params?: Partial<Adw.Bin.ConstructorProps>) {
         super(params);
 
         this._timeLabel.label = timeLabel ?? '';

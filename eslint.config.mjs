@@ -39,6 +39,7 @@ export default tseslint.config(
                 }
             ],
             "@typescript-eslint/explicit-function-return-type": "error",
+            "@typescript-eslint/explicit-member-accessibility": "error"
         }
     }
 )
