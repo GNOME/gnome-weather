@@ -35,9 +35,9 @@ export class WeatherApplication extends Adw.Application {
     private _mainWindow?: Window.MainWindow;
     private shellIntegration?: ShellIntegration;
 
-    public world?: GWeather.Location;
-    public model?: World.WorldModel;
-    public currentLocationController?: CurrentLocationController.CurrentLocationController;
+    public world: GWeather.Location;
+    public model: World.WorldModel;
+    public currentLocationController: CurrentLocationController.CurrentLocationController;
 
     static {
         GObject.registerClass(this);
@@ -53,6 +53,15 @@ export class WeatherApplication extends Adw.Application {
         GLib.set_application_name(name_prefix + _("Weather"));
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         Gtk.Window.set_default_icon_name(pkg.name!);
+
+        const world = GWeather.Location.get_world();
+        if (!world) {
+            throw new Error('Failed to load top level location from location providers.');
+        }
+
+        this.world = world;
+        this.model = new World.WorldModel(this.world);
+        this.currentLocationController = new CurrentLocationController.CurrentLocationController(this.model);
     }
 
     public get mainWindow(): Window.MainWindow | undefined {
@@ -88,26 +97,15 @@ export class WeatherApplication extends Adw.Application {
     public vfunc_startup(): void {
         super.vfunc_startup();
 
-        const world = GWeather.Location.get_world();
-        if (!world) {
-            throw new Error('Failed to load top level location from location providers.');
-        }
-
-        this.world = world;
-        this.model = new World.WorldModel(this.world);
-        this.currentLocationController = new CurrentLocationController.CurrentLocationController(this.model);
-
+        this.mark_busy();
         this.model.load();
 
-
         this.model.connect('notify::loading', () => {
-            if (this.model?.loading)
+            if (this.model.loading)
                 this.mark_busy();
             else
                 this.unmark_busy();
         });
-        if (this.model.loading)
-            this.mark_busy();
 
         const quitAction = new Gio.SimpleAction({
             enabled: true,
@@ -158,9 +156,7 @@ export class WeatherApplication extends Adw.Application {
         // function is not introspectable (two callbacks, one destroy notify)
         // so we hand code the behavior we want
         function resolveDefaultTemperatureUnit(unit: GWeather.TemperatureUnit): GLib.Variant<'s'> {
-            // @ts-expect-error ts-for-gir doesn't think it exists, but it does
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
-            unit = GWeather.TemperatureUnit.to_real(unit);
+            unit = GWeather.temperature_unit_to_real(unit);
             if (unit == GWeather.TemperatureUnit.CENTIGRADE)
                 return new GLib.Variant('s', 'centigrade');
             else if (unit == GWeather.TemperatureUnit.FAHRENHEIT)
@@ -215,7 +211,7 @@ export class WeatherApplication extends Adw.Application {
     private showWindowWhenReady(win: Window.MainWindow): Window.MainWindow {
         let notifyId = 0;
         win.present();
-        if (this.model?.loading) {
+        if (this.model.loading) {
             let timeoutId = 0;
             const model = this.model;
 
@@ -246,7 +242,7 @@ export class WeatherApplication extends Adw.Application {
 
     public vfunc_shutdown(): void {
         GWeather.Info.store_cache();
-        this.model?.saveSettingsNow();
+        this.model.saveSettingsNow();
 
         // Ensure our main window is cleaned up before we exit.
         this.mainWindow?.run_dispose();

@@ -268,7 +268,7 @@ export class HourlyForecastBox extends Gtk.Box {
         cr.fill();
 
         super.vfunc_snapshot(snapshot);
-        // @ts-expect-error not sure if this exists??
+        // @ts-expect-error ts-for-gir doesn't include this in its cairo overrides
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         cr.$dispose();
     }

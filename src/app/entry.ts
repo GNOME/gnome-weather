@@ -236,9 +236,7 @@ export class LocationSearchEntry extends Adw.Bin {
 
     public setListView(listView: Gtk.ListView): void {
         if (this.listView)
-            // @ts-expect-error ts-for-gir doesn't seem to handle nullability correctly
-            // for these property getters/setters
-            this.listView.model = null;
+            this.listView.set_model(null);
 
         this.listView = listView;
         listView.factory = this.factory;
@@ -247,9 +245,7 @@ export class LocationSearchEntry extends Adw.Bin {
 
     public vfunc_unroot(): void {
         if (this.listView)
-            // @ts-expect-error ts-for-gir doesn't seem to handle nullability correctly
-            // for these property getters/setters
-            this.listView.model = null;
+            this.listView.set_model(null);
 
         super.vfunc_unroot();
     }

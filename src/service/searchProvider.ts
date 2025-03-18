@@ -66,8 +66,7 @@ export class WeatherSearchProvider {
         this.app.hold();
 
         const terms = params[0];
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const model = this.app.model!;
+        const model = this.app.model;
 
         if (model?.loading) {
             const notifyId = model.connect('notify::loading', (model: WorldModel) => {
@@ -86,8 +85,7 @@ export class WeatherSearchProvider {
         const cityRet = [];
         const countryRet = [];
 
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const model = this.app.model!;
+        const model = this.app.model;
 
         let index = 0;
         for (const info of model.getAll()) {
@@ -141,8 +139,7 @@ export class WeatherSearchProvider {
     public GetSubsearchResultSet(previous: string[], terms: string[]): string[] {
         this.app.hold();
 
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const model = this.app.model!;
+        const model = this.app.model;
         const ret = [];
 
         for (let i = 0; i < previous.length; i++) {
@@ -179,8 +176,7 @@ export class WeatherSearchProvider {
     public GetResultMetas(identifiers: string[]): ResultMeta[] {
         this.app.hold();
 
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const model = this.app.model!;
+        const model = this.app.model;
         const ret = [];
 
         for (let i = 0; i < identifiers.length; i++) {
@@ -246,8 +242,7 @@ export class WeatherSearchProvider {
 
         //log('Activating ' + id);
 
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const model = this.app.model!;
+        const model = this.app.model;
         const info = model.getAtIndex(parseInt(id));
         if (!info) {
             this.app.release();

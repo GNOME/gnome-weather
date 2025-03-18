@@ -44,6 +44,15 @@ type PeriodInfos = {
     evening: GWeather.Info;
 };
 
+function addDay(base: GLib.DateTime): GLib.DateTime {
+    const day = base.add_days(1);
+    if (!day) {
+        throw new Error("We're only adding a single day. Have 10,000 years passed already?");
+    }
+
+    return day;
+}
+
 export class DailyForecastBox extends Gtk.Box {
     static {
         GObject.registerClass(this);
@@ -64,9 +73,7 @@ export class DailyForecastBox extends Gtk.Box {
         let i;
 
         let day = GLib.DateTime.new_now_local();
-        // We're just adding one day at a time, GLib should be able to handle this fine.
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        day = day.add_days(1)!;
+        day = addDay(day);
 
         // First ignore all infos that are on a different
         // older than day.
@@ -94,8 +101,7 @@ export class DailyForecastBox extends Gtk.Box {
                 dayInfos.infos.push(info);
             }
             weekInfos.push(dayInfos);
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            day = day.add_days(1)!;
+            day = addDay(day);
         }
 
         const temperatures = weekInfos.map(dayInfos => dayInfos.infos)
@@ -289,7 +295,6 @@ export class DayEntry extends Adw.Bin {
 
         this._image.iconName = `${dayInfo.get_icon_name()}-small`;
 
-        // @ts-expect-error Need to expose this properly as both a GObject prop and a GJS prop
         this._thermometer.range = new Thermometer.TemperatureRange({ dailyLow: this.minTemp, dailyHigh: this.maxTemp, weeklyLow: this.weekLowestTemp, weeklyHigh: this.weekHighestTemp });
         this._nightTemperatureLabel.label = Util.getTempString(nightInfo) ?? '';
         this._nightImage.iconName = nightInfo.get_icon_name() + '-small';

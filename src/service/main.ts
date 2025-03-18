@@ -37,8 +37,8 @@ export class WeatherBackgroundService extends Gio.Application {
     private searchProvider: SearchProvider.WeatherSearchProvider;
     private debug: boolean;
 
-    public world?: GWeather.Location;
-    public model?: World.WorldModel;
+    public world: GWeather.Location;
+    public model: World.WorldModel;
 
     static {
         GObject.registerClass(this);
@@ -56,6 +56,14 @@ export class WeatherBackgroundService extends Gio.Application {
 
         if (!pkg.moduledir?.startsWith('resource://'))
             this.debug = true;
+
+        const world = GWeather.Location.get_world();
+        if (!world) {
+            throw new Error('Failed to load top level location from location providers.');
+        }
+
+        this.world = world;
+        this.model = new World.WorldModel(this.world);
     }
 
     private onQuit(): void {
@@ -72,13 +80,6 @@ export class WeatherBackgroundService extends Gio.Application {
     public vfunc_startup(): void {
         super.vfunc_startup();
 
-        const world = GWeather.Location.get_world();
-        if (!world) {
-            throw new Error('Failed to load top level location from location providers.');
-        }
-
-        this.world = world;
-        this.model = new World.WorldModel(this.world);
         this.model.load();
 
         if (this.debug) {

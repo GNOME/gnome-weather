@@ -39,7 +39,7 @@ export class MainWindow extends Adw.ApplicationWindow {
     private _cityBox!: Adw.ToolbarView;
     private _stack!: Gtk.Stack;
 
-    private model?: WorldModel;
+    private model: WorldModel;
     private worldView: WorldContentView;
     private cityView: City.WeatherView;
     private settings: Gio.Settings;
@@ -132,7 +132,7 @@ export class MainWindow extends Adw.ApplicationWindow {
     public showDefault(): void {
         this._refreshRevealer.reveal_child = false;
 
-        const mostRecent = this.model?.getRecent();
+        const mostRecent = this.model.getRecent();
         if (mostRecent)
             this.showInfo(mostRecent);
         else
