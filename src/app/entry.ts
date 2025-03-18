@@ -55,13 +55,11 @@ const LocationListModel = GObject.registerClass(
         Implements: [Gio.ListModel]
     },
     class LocationListModel extends GObject.Object {
-        private show_named_timezones: boolean;
         private list: GWeather.Location[];
 
         public constructor() {
             super();
 
-            this.show_named_timezones = false;
             this.list = [];
         }
 

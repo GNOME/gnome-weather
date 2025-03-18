@@ -28,16 +28,10 @@ import { WorldContentView } from './world.js';
 import { WeatherApplication } from './application.js';
 import { WorldModel } from '../shared/world.js';
 
-const Page = {
-    SEARCH: 0,
-    CITY: 1
-};
-
 export class MainWindow extends Adw.ApplicationWindow {
     private _searchView!: Adw.ToolbarView;
     private _searchViewStatus!: Adw.StatusPage;
     private _searchButton!: Gtk.MenuButton;
-    private _refresh!: Gtk.Button;
     private _refreshRevealer!: Gtk.Revealer;
     private _forecastStackSwitcher!: Adw.ViewSwitcherTitle;
     private _forecastStackSwitcherBar!: Adw.ViewSwitcherBar;
@@ -45,13 +39,9 @@ export class MainWindow extends Adw.ApplicationWindow {
     private _cityBox!: Adw.ToolbarView;
     private _stack!: Gtk.Stack;
 
-    private world?: GWeather.Location;
-    private currentInfo?: GWeather.Info;
-    private currentPage: number;
     private model?: WorldModel;
     private worldView: WorldContentView;
     private cityView: City.WeatherView;
-    private showingDefault: boolean;
     private settings: Gio.Settings;
 
     static {
@@ -66,10 +56,6 @@ export class MainWindow extends Adw.ApplicationWindow {
         super(params);
 
         const app = this.application as WeatherApplication;
-
-        this.world = app.world;
-        this.currentInfo = undefined;
-        this.currentPage = Page.SEARCH;
 
         const aboutAction = new Gio.SimpleAction({
             enabled: true,
@@ -109,8 +95,6 @@ export class MainWindow extends Adw.ApplicationWindow {
             ctx.add_class('devel');
         }
 
-        this.showingDefault = false;
-
         this.settings = Util.getSettings('org.gnome.Weather');
         this.restoreWindowGeometry();
         this.connect('close-request', () => this.saveWindowGeometry());
@@ -146,7 +130,6 @@ export class MainWindow extends Adw.ApplicationWindow {
     }
 
     public showDefault(): void {
-        this.showingDefault = true;
         this._refreshRevealer.reveal_child = false;
 
         const mostRecent = this.model?.getRecent();
@@ -157,7 +140,6 @@ export class MainWindow extends Adw.ApplicationWindow {
     }
 
     public showSearch(_text?: string): void {
-        this.showingDefault = false;
         this._refreshRevealer.reveal_child = true;
         this._stack.set_visible_child(this._searchView);
     }
@@ -168,9 +150,7 @@ export class MainWindow extends Adw.ApplicationWindow {
             return;
         }
 
-        this.showingDefault = false;
         this._refreshRevealer.reveal_child = true;
-        this.currentInfo = info;
         this.cityView.info = info;
 
         this._stack.set_visible_child(this._cityBox);
