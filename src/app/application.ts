@@ -32,14 +32,14 @@ import * as CurrentLocationController from './currentLocationController.js';
 import { ShellIntegration } from './shell.js';
 
 export class WeatherApplication extends Adw.Application {
-    _mainWindow?: Window.MainWindow;
-    _shellIntegration?: ShellIntegration;
+    private _mainWindow?: Window.MainWindow;
+    private shellIntegration?: ShellIntegration;
 
-    world?: GWeather.Location;
-    model?: World.WorldModel;
-    currentLocationController?: CurrentLocationController.CurrentLocationController;
+    public world?: GWeather.Location;
+    public model?: World.WorldModel;
+    public currentLocationController?: CurrentLocationController.CurrentLocationController;
 
-    constructor() {
+    public constructor() {
         super({
             applicationId: pkg.name,
             resourceBasePath: '/org/gnome/Weather',
@@ -51,43 +51,43 @@ export class WeatherApplication extends Adw.Application {
         Gtk.Window.set_default_icon_name(pkg.name!);
     }
 
-    get mainWindow(): Window.MainWindow | undefined {
+    public get mainWindow(): Window.MainWindow | undefined {
         return this._mainWindow;
     }
 
-    set mainWindow(value) {
+    public set mainWindow(value) {
         this._mainWindow = value;
     }
 
-    _onQuit(): void {
+    private onQuit(): void {
         this.quit();
     }
 
-    _onShowLocation(parameter: GLib.Variant | null): void {
+    private onShowLocation(parameter: GLib.Variant | null): void {
         if (parameter) {
             const location = this.world?.deserialize(parameter.deep_unpack());
-            const win = this._createWindow();
+            const win = this.createWindow();
 
             let info: GWeather.Info | undefined;
             if (location) {
                 info = this.model?.addNewLocation(location);
             }
             win.showInfo(info);
-            this._showWindowWhenReady(win);
+            this.showWindowWhenReady(win);
         }
     }
 
-    _onShowSearch(parameter: GLib.Variant | null): void {
+    private onShowSearch(parameter: GLib.Variant | null): void {
         if (parameter) {
             const text = parameter.deep_unpack<string>();
-            const win = this._createWindow();
+            const win = this.createWindow();
 
             win.showSearch(text);
-            this._showWindowWhenReady(win);
+            this.showWindowWhenReady(win);
         }
     }
 
-    vfunc_startup(): void {
+    public vfunc_startup(): void {
         super.vfunc_startup();
 
         const world = GWeather.Location.get_world();
@@ -115,7 +115,7 @@ export class WeatherApplication extends Adw.Application {
             enabled: true,
             name: 'quit'
         });
-        quitAction.connect('activate', () => this._onQuit());
+        quitAction.connect('activate', () => this.onQuit());
         this.add_action(quitAction);
 
         const showLocationAction = new Gio.SimpleAction({
@@ -124,7 +124,7 @@ export class WeatherApplication extends Adw.Application {
             parameter_type: new GLib.VariantType('v'),
         });
         showLocationAction.connect('activate', (_, parameter) => {
-            this._onShowLocation(parameter);
+            this.onShowLocation(parameter);
         });
         this.add_action(showLocationAction);
 
@@ -134,7 +134,7 @@ export class WeatherApplication extends Adw.Application {
             parameter_type: new GLib.VariantType('v'),
         })
         showSearchAction.connect('activate', (_, parameter) => {
-            this._onShowSearch(parameter);
+            this.onShowSearch(parameter);
         });
         this.add_action(showSearchAction);
 
@@ -187,17 +187,17 @@ export class WeatherApplication extends Adw.Application {
         this.set_accels_for_action("app.quit", ["<Control>q"]);
     }
 
-    vfunc_dbus_register(conn: Gio.DBusConnection, path: string): boolean {
-        this._shellIntegration = new ShellIntegration();
-        this._shellIntegration.export(conn, path);
+    public vfunc_dbus_register(conn: Gio.DBusConnection, path: string): boolean {
+        this.shellIntegration = new ShellIntegration();
+        this.shellIntegration.export(conn, path);
         return true;
     }
 
-    vfunc_dbus_unregister(conn: Gio.DBusConnection, _path: string): void {
-        this._shellIntegration?.unexport(conn);
+    public vfunc_dbus_unregister(conn: Gio.DBusConnection, _path: string): void {
+        this.shellIntegration?.unexport(conn);
     }
 
-    _createWindow(): Window.MainWindow {
+    private createWindow(): Window.MainWindow {
         const window = new Window.MainWindow({ application: this });
 
         // Store a weak reference to the window for cleanup...
@@ -206,7 +206,7 @@ export class WeatherApplication extends Adw.Application {
         return window;
     }
 
-    _showWindowWhenReady(win: Window.MainWindow): Window.MainWindow {
+    private showWindowWhenReady(win: Window.MainWindow): Window.MainWindow {
         let notifyId = 0;
         win.present();
         if (this.model?.loading) {
@@ -232,13 +232,13 @@ export class WeatherApplication extends Adw.Application {
         return win;
     }
 
-    vfunc_activate(): void {
-        const win = this._createWindow();
+    public vfunc_activate(): void {
+        const win = this.createWindow();
         win.showDefault();
-        this._showWindowWhenReady(win);
+        this.showWindowWhenReady(win);
     }
 
-    vfunc_shutdown(): void {
+    public vfunc_shutdown(): void {
         GWeather.Info.store_cache();
         this.model?.saveSettingsNow();
 

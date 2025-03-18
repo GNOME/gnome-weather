@@ -24,26 +24,26 @@ import Gio from 'gi://Gio';
 import * as Util from '../misc/util.js';
 import { WorldModel } from '../shared/world.js';
 export class CurrentLocationController {
-    _world: WorldModel;
-    _processStarted: boolean;
-    _settings: Gio.Settings;
-    _simple?: Geoclue.Simple;
+    private world: WorldModel;
+    private processStarted: boolean;
+    private settings: Gio.Settings;
+    private simple?: Geoclue.Simple;
 
-    autoLocationAvailable: boolean;
-    currentLocation?: GWeather.Location;
-    _locationUpdatedId?: number;
+    private autoLocationAvailable: boolean;
+    private currentLocation?: GWeather.Location;
+    private locationUpdatedId?: number;
 
-    constructor(world: WorldModel) {
-        this._world = world;
-        this._processStarted = false;
-        this._settings = Util.getSettings('org.gnome.Weather');
+    public constructor(world: WorldModel) {
+        this.world = world;
+        this.processStarted = false;
+        this.settings = Util.getSettings('org.gnome.Weather');
 
         this.autoLocationAvailable = false;
-        this._startGeolocationService();
+        this.startGeolocationService();
     }
 
-    _startGeolocationService(): void {
-        this._processStarted = true;
+    private startGeolocationService(): void {
+        this.processStarted = true;
         if (Geoclue.Simple.new_with_thresholds) {
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             Geoclue.Simple.new_with_thresholds(pkg.name!,
@@ -52,7 +52,7 @@ export class CurrentLocationController {
                                                100, /* distance threshold */
                                                null,
                                                (_, result) => {
-                                                   this._onSimpleReady(result)
+                                                   this.onSimpleReady(result)
                                                });
         } else {
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -60,12 +60,12 @@ export class CurrentLocationController {
                                Geoclue.AccuracyLevel.CITY,
                                null,
                                (_, result) => {
-                                   this._onSimpleReady(result)
+                                   this.onSimpleReady(result)
                                });
         }
     }
 
-    _geoLocationFailed(e: unknown): void {
+    private geoLocationFailed(e: unknown): void {
         if (e instanceof Error) {
             log ("Failed to connect to GeoClue2 service: " + e.message);
         }
@@ -73,39 +73,39 @@ export class CurrentLocationController {
         this.autoLocationAvailable = false;
         // @ts-expect-error What's going on here is unclear
         GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
-            this._world.currentLocationChanged(undefined);
+            this.world.currentLocationChanged(undefined);
         });
     }
 
-    _onSimpleReady(result: Gio.AsyncResult): void {
+    private onSimpleReady(result: Gio.AsyncResult): void {
         try {
-            this._simple = Geoclue.Simple.new_finish(result);
+            this.simple = Geoclue.Simple.new_finish(result);
         }
         catch (e) {
-            this._geoLocationFailed(e);
+            this.geoLocationFailed(e);
             return;
         }
 
         // geoclue doesn't use a client proxy inside a flatpak sandbox
-        if (this._simple.client && !Geoclue.Simple.new_with_thresholds) {
-            this._simple.client.distance_threshold = 100;
+        if (this.simple.client && !Geoclue.Simple.new_with_thresholds) {
+            this.simple.client.distance_threshold = 100;
         }
 
-        this._findLocation();
+        this.findLocation();
 
         this.autoLocationAvailable = true;
     }
 
-    _findLocation(): void {
-        this._locationUpdatedId =
-                    this._simple?.connect("notify::location", (simple: Geoclue.Simple) => {
-                        this._onLocationUpdated(simple);
+    private findLocation(): void {
+        this.locationUpdatedId =
+                    this.simple?.connect("notify::location", (simple: Geoclue.Simple) => {
+                        this.onLocationUpdated(simple);
                     });
 
-        this._onLocationUpdated(this._simple);
+        this.onLocationUpdated(this.simple);
     }
 
-    _onLocationUpdated(simple?: Geoclue.Simple): void {
+    private onLocationUpdated(simple?: Geoclue.Simple): void {
         this.currentLocation = undefined;
         const geoclueLocation = simple?.get_location();
         const world = GWeather.Location.get_world();
@@ -114,6 +114,6 @@ export class CurrentLocationController {
             this.currentLocation = world.find_nearest_city(geoclueLocation.latitude, geoclueLocation.longitude);
         }
 
-        this._world.currentLocationChanged(this.currentLocation);
+        this.world.currentLocationChanged(this.currentLocation);
     }
 }

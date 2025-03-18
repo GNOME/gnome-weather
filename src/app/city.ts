@@ -37,26 +37,26 @@ const SCROLLING_ANIMATION_TIME = 400000; //us
 const UPDATED_TIME_TIMEOUT = 60; //s
 
 export class WeatherWidget extends Adw.Bin {
-    _conditionsImage!: Gtk.Image;
-    _placesButton!: Gtk.MenuButton;
-    _temperatureLabel!: Gtk.Label;
-    _apparentLabel!: Gtk.Label;
-    _forecastStack!: Adw.ViewStack;
-    _leftButton!: Gtk.Button;
-    _rightButton!: Gtk.Button;
-    _forecastHourly!: HourlyForecastBox;
-    _forecastHourlyAdjustment!: Gtk.Adjustment;
-    _forecastDaily!: DailyForecastBox;
-    _forecastDailyAdjustment!: Gtk.Adjustment;
-    _updatedTimeLabel!: Gtk.Label;
-    _attributionLabel!: Gtk.Label;
+    private _conditionsImage!: Gtk.Image;
+    private _placesButton!: Gtk.MenuButton;
+    private _temperatureLabel!: Gtk.Label;
+    private _apparentLabel!: Gtk.Label;
+    private _forecastStack!: Adw.ViewStack;
+    private _leftButton!: Gtk.Button;
+    private _rightButton!: Gtk.Button;
+    private _forecastHourly!: HourlyForecastBox;
+    private _forecastHourlyAdjustment!: Gtk.Adjustment;
+    private _forecastDaily!: DailyForecastBox;
+    private _forecastDailyAdjustment!: Gtk.Adjustment;
+    private _updatedTimeLabel!: Gtk.Label;
+    private _attributionLabel!: Gtk.Label;
 
-    _worldView: WorldView.WorldContentView;
+    private worldView: WorldView.WorldContentView;
 
-    _tickId: number;
-    _updatedTime?: number;
-    _updatedTimeTimeoutId: number;
-    _info?: GWeather.Info;
+    private tickId: number;
+    private updatedTime?: number;
+    private updatedTimeTimeoutId: number;
+    private info?: GWeather.Info;
 
     static {
         GObject.registerClass({
@@ -81,7 +81,7 @@ export class WeatherWidget extends Adw.Bin {
         }, this);
     }
 
-    constructor(application: WeatherApplication, window: MainWindow) {
+    public constructor(application: WeatherApplication, window: MainWindow) {
         super({
             name: 'weather-page'
         });
@@ -92,14 +92,14 @@ export class WeatherWidget extends Adw.Bin {
             tighteningThreshold: 992,
         });
 
-        this._worldView = new WorldView.WorldContentView(application, window,  {
+        this.worldView = new WorldView.WorldContentView(application, window,  {
             align: Gtk.Align.START,
         });
-        this._placesButton.set_popover(this._worldView);
+        this._placesButton.set_popover(this.worldView);
 
         for (const adjustment of [this._forecastHourlyAdjustment, this._forecastDailyAdjustment]) {
-            adjustment.connect('changed', () => this._syncLeftRightButtons());
-            adjustment.connect('value-changed', () => this._syncLeftRightButtons());
+            adjustment.connect('changed', () => this.syncLeftRightButtons());
+            adjustment.connect('value-changed', () => this.syncLeftRightButtons());
         }
 
         this._forecastStack.connect('notify::visible-child', () => {
@@ -109,44 +109,44 @@ export class WeatherWidget extends Adw.Bin {
 
             const hadjustment = visible_child.get_hadjustment();
             hadjustment.value = hadjustment.get_lower();
-            this._syncLeftRightButtons();
+            this.syncLeftRightButtons();
 
-            if (this._tickId) {
-                this.remove_tick_callback(this._tickId);
-                this._tickId = 0;
+            if (this.tickId) {
+                this.remove_tick_callback(this.tickId);
+                this.tickId = 0;
             }
         });
 
-        this._tickId = 0;
+        this.tickId = 0;
 
         this._leftButton.connect('clicked', () => {
             const hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
             const target = hadjustment.value - hadjustment.page_size;
 
-            this._beginScrollAnimation(target);
+            this.beginScrollAnimation(target);
         });
 
         this._rightButton.connect('clicked', () => {
             const hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
             const target = hadjustment.value + hadjustment.page_size;
 
-            this._beginScrollAnimation(target);
+            this.beginScrollAnimation(target);
         });
 
-        this._updatedTime = undefined;
-        this._updatedTimeTimeoutId = 0;
+        this.updatedTime = undefined;
+        this.updatedTimeTimeoutId = 0;
     }
 
-    vfunc_unmap(): void {
-        if (this._updatedTimeTimeoutId) {
-            GLib.Source.remove(this._updatedTimeTimeoutId);
-            this._updatedTimeTimeoutId = 0;
+    public vfunc_unmap(): void {
+        if (this.updatedTimeTimeoutId) {
+            GLib.Source.remove(this.updatedTimeTimeoutId);
+            this.updatedTimeTimeoutId = 0;
         }
 
         super.vfunc_unmap();
     }
 
-    _syncLeftRightButtons(): void {
+    private syncLeftRightButtons(): void {
         const visible_child = this._forecastStack.visible_child as Gtk.ScrolledWindow;
         const hadjustment = visible_child.get_hadjustment();
         if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
@@ -164,20 +164,20 @@ export class WeatherWidget extends Adw.Bin {
         }
     }
 
-    _beginScrollAnimation(target: number): void {
+    private beginScrollAnimation(target: number): void {
         if (this.get_realized()) {
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             const start = this.get_frame_clock()!.get_frame_time();
             const end = start + SCROLLING_ANIMATION_TIME;
 
-            if (this._tickId != 0)
-                this.remove_tick_callback(this._tickId);
+            if (this.tickId != 0)
+                this.remove_tick_callback(this.tickId);
 
-            this._tickId = this.add_tick_callback(() => this._animate(target, start, end));
+            this.tickId = this.add_tick_callback(() => this.animate(target, start, end));
         }
     }
 
-    _animate(target: number, start: number, end: number): boolean {
+    private animate(target: number, start: number, end: number): boolean {
         const hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
         const value = hadjustment.value;
         let t = 1.0;
@@ -192,7 +192,7 @@ export class WeatherWidget extends Adw.Bin {
                 return GLib.SOURCE_CONTINUE;
             } else {
                 hadjustment.value = value + t * (target - value);
-                this._tickId = 0;
+                this.tickId = 0;
                 return GLib.SOURCE_REMOVE;
             }
         }
@@ -200,27 +200,27 @@ export class WeatherWidget extends Adw.Bin {
         return GLib.SOURCE_REMOVE;
     }
 
-    clear(): void {
+    public clear(): void {
         this._forecastHourly.clear();
         this._forecastDaily.clear();
 
-        if (this._tickId) {
-            this.remove_tick_callback(this._tickId);
-            this._tickId = 0;
+        if (this.tickId) {
+            this.remove_tick_callback(this.tickId);
+            this.tickId = 0;
         }
     }
 
-    getForecastStack(): Adw.ViewStack {
+    public getForecastStack(): Adw.ViewStack {
         return this._forecastStack;
     }
 
-    update(info: GWeather.Info): void {
-        this._info = info;
+    public update(info: GWeather.Info): void {
+        this.info = info;
 
         const label = Util.getNameAndCountry(info.location);
         this._placesButton.set_label(label.join(', '));
 
-        this._worldView.refilter();
+        this.worldView.refilter();
 
         this._conditionsImage.iconName = `${info.get_icon_name()}-large`;
 
@@ -234,16 +234,16 @@ export class WeatherWidget extends Adw.Bin {
         this._forecastHourly.update(info);
         this._forecastDaily.update(info);
 
-        if (this._updatedTimeTimeoutId)
-            GLib.Source.remove(this._updatedTimeTimeoutId);
+        if (this.updatedTimeTimeoutId)
+            GLib.Source.remove(this.updatedTimeTimeoutId);
 
-        this._updatedTime = Date.now();
-        this._updatedTimeLabel.label = this._formatUpdatedTime();
+        this.updatedTime = Date.now();
+        this._updatedTimeLabel.label = this.formatUpdatedTime();
 
-        this._updatedTimeTimeoutId = GLib.timeout_add_seconds(
+        this.updatedTimeTimeoutId = GLib.timeout_add_seconds(
             GLib.PRIORITY_DEFAULT,
             UPDATED_TIME_TIMEOUT, () => {
-                this._updatedTimeLabel.label = this._formatUpdatedTime();
+                this._updatedTimeLabel.label = this.formatUpdatedTime();
                 return GLib.SOURCE_CONTINUE;
             }
         );
@@ -251,11 +251,11 @@ export class WeatherWidget extends Adw.Bin {
         this._attributionLabel.label = info.get_attribution();
     }
 
-    _formatUpdatedTime(): string {
-        if (!this._updatedTime)
+    private formatUpdatedTime(): string {
+        if (!this.updatedTime)
             return '';
 
-        const milliseconds = Date.now() - this._updatedTime;
+        const milliseconds = Date.now() - this.updatedTime;
 
         const seconds = milliseconds / 1000;
         if (seconds < 60)
@@ -295,10 +295,12 @@ export class WeatherWidget extends Adw.Bin {
 WeatherWidget.set_layout_manager_type(Adw.ClampLayout.$gtype);
 
 export class WeatherView extends Adw.Bin {
-    _stack!: Gtk.Stack;
-    _info?: GWeather.Info;
-    _updateId?: number;
-    _infoPage: WeatherWidget;
+    private _stack!: Gtk.Stack;
+
+    private _info?: GWeather.Info;
+
+    private updateId?: number;
+    private infoPage: WeatherWidget;
 
     static {
         GObject.registerClass({
@@ -307,69 +309,69 @@ export class WeatherView extends Adw.Bin {
         }, this);
     }
 
-    constructor(application: WeatherApplication, window: MainWindow, params?: Partial<Adw.Bin.ConstructorProps>) {
+    public constructor(application: WeatherApplication, window: MainWindow, params?: Partial<Adw.Bin.ConstructorProps>) {
         super(params);
 
-        this._infoPage = new WeatherWidget(application, window);
-        this._stack.add_named(this._infoPage, 'info');
+        this.infoPage = new WeatherWidget(application, window);
+        this._stack.add_named(this.infoPage, 'info');
     }
 
-    get info(): GWeather.Info | undefined {
+    public get info(): GWeather.Info | undefined {
         return this._info;
     }
 
-    set info(info) {
-        if (this._updateId) {
-            this._info?.disconnect(this._updateId);
-            this._updateId = 0;
+    public set info(info) {
+        if (this.updateId) {
+            this._info?.disconnect(this.updateId);
+            this.updateId = 0;
 
-            this._infoPage.clear();
+            this.infoPage.clear();
         }
 
         this._info = info;
 
         if (info) {
             this._stack.visible_child_name = 'loading';
-            this._updateId = this._info?.connect('updated', (info) => {
-                this._onUpdate(info)
+            this.updateId = this._info?.connect('updated', (info) => {
+                this.onUpdate(info)
             });
 
             if (info.is_valid()) {
-                this._onUpdate(info);
+                this.onUpdate(info);
             } else {
                 info.update();
             }
         }
     }
 
-    vfunc_map(): void {
+    public vfunc_map(): void {
         super.vfunc_map();
     }
 
-    vfunc_unmap(): void {
-        if (this._updateId) {
-            this._info?.disconnect(this._updateId);
-            this._updateId = 0;
+    public vfunc_unmap(): void {
+        if (this.updateId) {
+            this._info?.disconnect(this.updateId);
+            this.updateId = 0;
         }
 
         super.vfunc_unmap();
     }
 
-    update(): void {
+    public update(): void {
         this._stack.visible_child_name = 'loading';
-        this._infoPage.clear();
+        this.infoPage.clear();
         if (this._info) {
             getApp()?.model?.updateInfo(this._info);
         }
     }
 
-    _onUpdate(info: GWeather.Info): void {
-        this._infoPage.clear();
-        this._infoPage.update(info);
+    private onUpdate(info: GWeather.Info): void {
+        this.infoPage.clear();
+        this.infoPage.update(info);
         this._stack.visible_child_name = 'info';
     }
 
-    getForecastStack(): Adw.ViewStack {
-        return this._infoPage.getForecastStack();
+    public getForecastStack(): Adw.ViewStack {
+        return this.infoPage.getForecastStack();
     }
 };

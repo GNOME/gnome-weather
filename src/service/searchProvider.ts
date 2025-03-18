@@ -45,49 +45,49 @@ function getCountryName(location: GWeather.Location): string | null {
 }
 
 export class WeatherSearchProvider {
-    _app: WeatherBackgroundService;
-    _impl: Gio.DBusExportedObject;
+    private app: WeatherBackgroundService;
+    private impl: Gio.DBusExportedObject;
 
-    constructor(application: WeatherBackgroundService) {
-        this._app = application;
+    public constructor(application: WeatherBackgroundService) {
+        this.app = application;
 
-        this._impl = Gio.DBusExportedObject.wrapJSObject(SearchProviderInterface, this);
+        this.impl = Gio.DBusExportedObject.wrapJSObject(SearchProviderInterface, this);
     }
 
-    export(connection: Gio.DBusConnection, path: string): void {
-        return this._impl.export(connection, path);
+    public export(connection: Gio.DBusConnection, path: string): void {
+        return this.impl.export(connection, path);
     }
 
-    unexport(connection: Gio.DBusConnection): void {
-        return this._impl.unexport_from_connection(connection);
+    public unexport(connection: Gio.DBusConnection): void {
+        return this.impl.unexport_from_connection(connection);
     }
 
-    GetInitialResultSetAsync(params: [string[], string[]], invocation: Gio.DBusMethodInvocation): void {
-        this._app.hold();
+    public GetInitialResultSetAsync(params: [string[], string[]], invocation: Gio.DBusMethodInvocation): void {
+        this.app.hold();
 
         const terms = params[0];
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const model = this._app.model!;
+        const model = this.app.model!;
 
         if (model?.loading) {
             const notifyId = model.connect('notify::loading', (model: WorldModel) => {
                 if (!model.loading) {
                     model.disconnect(notifyId);
-                    this._runQuery(terms, invocation);
+                    this.runQuery(terms, invocation);
                 }
             });
         } else {
-            this._runQuery(terms, invocation);
+            this.runQuery(terms, invocation);
         }
     }
 
-    _runQuery(terms: string[], invocation: Gio.DBusMethodInvocation): void {
+    private runQuery(terms: string[], invocation: Gio.DBusMethodInvocation): void {
         const nameRet = [];
         const cityRet = [];
         const countryRet = [];
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const model = this._app.model!;
+        const model = this.app.model!;
 
         let index = 0;
         for (const info of model.getAll()) {
@@ -132,17 +132,17 @@ export class WeatherSearchProvider {
             index++;
         }
 
-        this._app.release();
+        this.app.release();
 
         const result = nameRet.concat(cityRet).concat(countryRet);
         invocation.return_value(new GLib.Variant('(as)', [result]));
     }
 
-    GetSubsearchResultSet(previous: string[], terms: string[]): string[] {
-        this._app.hold();
+    public GetSubsearchResultSet(previous: string[], terms: string[]): string[] {
+        this.app.hold();
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const model = this._app.model!;
+        const model = this.app.model!;
         const ret = [];
 
         for (let i = 0; i < previous.length; i++) {
@@ -171,16 +171,16 @@ export class WeatherSearchProvider {
                 ret.push(previous[i]);
         }
 
-        this._app.release();
+        this.app.release();
 
         return ret;
     }
 
-    GetResultMetas(identifiers: string[]): ResultMeta[] {
-        this._app.hold();
+    public GetResultMetas(identifiers: string[]): ResultMeta[] {
+        this.app.hold();
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const model = this._app.model!;
+        const model = this.app.model!;
         const ret = [];
 
         for (let i = 0; i < identifiers.length; i++) {
@@ -204,16 +204,16 @@ export class WeatherSearchProvider {
             });
         }
 
-        this._app.release();
+        this.app.release();
 
         return ret;
     }
 
-    _getPlatformData(timestamp: number): Record<string, GLib.Variant> {
+    private getPlatformData(timestamp: number): Record<string, GLib.Variant> {
         return { 'desktop-startup-id': new GLib.Variant('s', '_TIME' + timestamp) };
     }
 
-    _activateAction(action: string, parameter: GLib.Variant<"s"> | GLib.Variant<"v">, timestamp: number): void {
+    private activateAction(action: string, parameter: GLib.Variant<"s"> | GLib.Variant<"v">, timestamp: number): void {
         let wrappedParam: (GLib.Variant<"s"> | GLib.Variant<"v">)[] = [];
         if (parameter)
             wrappedParam = [parameter];
@@ -225,7 +225,7 @@ export class WeatherSearchProvider {
             'org.freedesktop.Application',
             'ActivateAction',
             new GLib.Variant('(sava{sv})', [action, wrappedParam,
-                this._getPlatformData(timestamp)]),
+                this.getPlatformData(timestamp)]),
             null,
             Gio.DBusCallFlags.NONE,
             -1, null, (connection, result) => {
@@ -237,32 +237,32 @@ export class WeatherSearchProvider {
                     }
                 }
 
-                this._app.release();
+                this.app.release();
             });
     }
 
-    ActivateResult(id: string, _terms: string[], timestamp: number): void {
-        this._app.hold();
+    public ActivateResult(id: string, _terms: string[], timestamp: number): void {
+        this.app.hold();
 
         //log('Activating ' + id);
 
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        const model = this._app.model!;
+        const model = this.app.model!;
         const info = model.getAtIndex(parseInt(id));
         if (!info) {
-            this._app.release();
+            this.app.release();
             return;
         }
 
         //log('Activating ' + info.get_location_name());
 
         const location = info.location.serialize();
-        this._activateAction('show-location', new GLib.Variant('v', location), timestamp);
+        this.activateAction('show-location', new GLib.Variant('v', location), timestamp);
     }
 
-    LaunchSearch(terms: string[], timestamp: number): void {
-        this._app.hold();
+    public LaunchSearch(terms: string[], timestamp: number): void {
+        this.app.hold();
 
-        this._activateAction('show-search', new GLib.Variant('s', terms.join(' ')), timestamp);
+        this.activateAction('show-search', new GLib.Variant('s', terms.join(' ')), timestamp);
     }
 }

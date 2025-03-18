@@ -35,19 +35,19 @@ type ListBoxRowWithInfo = Gtk.ListBoxRow & {
 };
 
 export class WorldContentView extends Gtk.Popover {
-    _searchListView: Gtk.ListView;
-    _searchListScrollWindow: Gtk.ScrolledWindow;
-    _window?: MainWindow;
-    _listboxScrollWindow: Gtk.ScrolledWindow;
-    _listbox: Gtk.ListBox;
-    _locationEntry: LocationSearchEntry;
-    _stackPopover: Gtk.Stack;
-    _currentLocationController?: CurrentLocationController;
+    private _searchListView: Gtk.ListView;
+    private _searchListScrollWindow: Gtk.ScrolledWindow;
+    private _window?: MainWindow;
+    private _listboxScrollWindow: Gtk.ScrolledWindow;
+    private _listbox: Gtk.ListBox;
+    private _locationEntry: LocationSearchEntry;
+    private _stackPopover: Gtk.Stack;
+    private _currentLocationController?: CurrentLocationController;
+    private _currentLocationAdded: boolean;
 
-    model: WorldModel;
-    _currentLocationAdded: boolean;
+    public model: WorldModel;
 
-    constructor(application: WeatherApplication, window?: MainWindow, { align, ...params }: { align?: Gtk.Align; params?: Partial<Gtk.Popover.ConstructorProps>; } = {}) {
+    public constructor(application: WeatherApplication, window?: MainWindow, { align, ...params }: { align?: Gtk.Align; params?: Partial<Gtk.Popover.ConstructorProps>; } = {}) {
         super({
             ...params,
             hexpand: false,
@@ -76,7 +76,7 @@ export class WorldContentView extends Gtk.Popover {
         this._listboxScrollWindow = builder.get_object('locations-list-scroll-window');
         this._listbox = builder.get_object('locations-list-box');
         this._listbox.bind_model(this.model as unknown as Gio.ListModel<GWeather.Info>, (info) => {
-            return this._buildLocation(this.model, info);
+            return this.buildLocation(this.model, info);
         });
 
         this._locationEntry = builder.get_object('location-entry');
@@ -95,7 +95,7 @@ export class WorldContentView extends Gtk.Popover {
             const location = entry.location;
             entry.text = '';
 
-            this._locationChanged(location);
+            this.locationChanged(location);
 
             this._stackPopover.set_visible_child(this._listboxScrollWindow);
 
@@ -134,7 +134,7 @@ export class WorldContentView extends Gtk.Popover {
 
     }
 
-    vfunc_unroot(): void {
+    public vfunc_unroot(): void {
         // @ts-expect-error ts-for-gir says undefined when it should be null
         this._listbox.bind_model(null, null);
 
@@ -143,18 +143,18 @@ export class WorldContentView extends Gtk.Popover {
         super.vfunc_unroot();
     }
 
-    refilter(): void {
+    public refilter(): void {
         this._listbox.invalidate_filter();
     }
 
-    _locationChanged(location: GWeather.Location | null): void {
+    private locationChanged(location: GWeather.Location | null): void {
         if (location) {
             const info = this.model.addNewLocation(location);
             this._window?.showInfo(info);
         }
     }
 
-    _buildLocation(model: WorldModel, info: GWeather.Info): ListBoxRowWithInfo | LocationRow {
+    private buildLocation(model: WorldModel, info: GWeather.Info): ListBoxRowWithInfo | LocationRow {
         if (!info) return new LocationRow({ name: '', countryName: '' });;
 
         const location = info.location;

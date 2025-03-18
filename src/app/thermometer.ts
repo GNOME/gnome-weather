@@ -28,13 +28,12 @@ import Gsk from 'gi://Gsk';
 import * as Util from '../misc/util.js';
 
 export class TemperatureRange {
+    public dailyLow;
+    public dailyHigh;
+    public weeklyLow;
+    public weeklyHigh;
 
-    dailyLow;
-    dailyHigh;
-    weeklyLow;
-    weeklyHigh;
-
-    constructor({ dailyLow, dailyHigh, weeklyLow, weeklyHigh }: {
+    public constructor({ dailyLow, dailyHigh, weeklyLow, weeklyHigh }: {
             dailyLow: number;
             dailyHigh: number;
             weeklyLow: number;
@@ -58,36 +57,35 @@ const ThermometerScale = GObject.registerClass({
         ),
     },
 }, class ThermometerScale extends Gtk.Widget {
+    private range: TemperatureRange | null;
+    private rangeChangedId?: number;
 
-    minHeight = 64;
-    radius = 12;
-    range: TemperatureRange | null;
+    public minHeight = 64;
+    public radius = 12;
 
-    _rangeChangedId?: number;
-
-    constructor({ range = null, ...params }) {
+    public constructor({ range = null, ...params }) {
         super(params);
 
         this.range = range;
     }
 
-    vfunc_map(): void {
+    public vfunc_map(): void {
         super.vfunc_map();
 
-        this._rangeChangedId = this.connect('notify::range', () => {
+        this.rangeChangedId = this.connect('notify::range', () => {
             this.queue_draw();
         });
     }
 
-    vfunc_unmap(): void {
-        if (this._rangeChangedId) {
-            this.disconnect(this._rangeChangedId);
+    public vfunc_unmap(): void {
+        if (this.rangeChangedId) {
+            this.disconnect(this.rangeChangedId);
         }
 
         super.vfunc_unmap();
     }
 
-    vfunc_snapshot(snapshot: Gtk.Snapshot): void {
+    public vfunc_snapshot(snapshot: Gtk.Snapshot): void {
         super.vfunc_snapshot(snapshot);
 
         if (!this.range)
@@ -143,7 +141,7 @@ export class Thermometer extends Gtk.Widget {
     #lowLabel;
     #scale;
 
-    spacing = 18;
+    private spacing = 18;
 
     static {
         GObject.registerClass({
@@ -159,7 +157,7 @@ export class Thermometer extends Gtk.Widget {
         }, this);
     }
 
-    constructor({ ...params }) {
+    public constructor({ ...params }) {
         super(params);
 
         this.#highLabel = new Gtk.Label({
@@ -176,7 +174,7 @@ export class Thermometer extends Gtk.Widget {
         this.#scale.set_parent(this);
     }
 
-    vfunc_measure(orientation: Gtk.Orientation, for_size: number): [number, number, number, number] {
+    public vfunc_measure(orientation: Gtk.Orientation, for_size: number): [number, number, number, number] {
         const [highMin, highNat, highMinBaseline, highNatBaseline] =
             this.#highLabel.measure(orientation, for_size);
 
@@ -201,7 +199,7 @@ export class Thermometer extends Gtk.Widget {
         }
     }
 
-    vfunc_size_allocate(width: number, height: number, _baseline: number): void {
+    public vfunc_size_allocate(width: number, height: number, _baseline: number): void {
         const [, highNatOut] = this.#highLabel.get_preferred_size();
         const [, lowNatOut] = this.#lowLabel.get_preferred_size();
 
@@ -256,7 +254,7 @@ export class Thermometer extends Gtk.Widget {
         this.#lowLabel.size_allocate(lowRect, -1);
     }
 
-    vfunc_root(): void {
+    public vfunc_root(): void {
         super.vfunc_root();
 
         this.bind_property('range', this.#scale,'range', GObject.BindingFlags.DEFAULT);

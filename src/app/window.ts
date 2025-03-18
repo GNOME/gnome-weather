@@ -34,25 +34,25 @@ const Page = {
 };
 
 export class MainWindow extends Adw.ApplicationWindow {
-    _searchView!: Adw.ToolbarView;
-    _searchViewStatus!: Adw.StatusPage;
-    _searchButton!: Gtk.MenuButton;
-    _refresh!: Gtk.Button;
-    _refreshRevealer!: Gtk.Revealer;
-    _forecastStackSwitcher!: Adw.ViewSwitcherTitle;
-    _forecastStackSwitcherBar!: Adw.ViewSwitcherBar;
-    _cityBin!: Adw.Bin;
-    _cityBox!: Adw.ToolbarView;
-    _stack!: Gtk.Stack;
+    private _searchView!: Adw.ToolbarView;
+    private _searchViewStatus!: Adw.StatusPage;
+    private _searchButton!: Gtk.MenuButton;
+    private _refresh!: Gtk.Button;
+    private _refreshRevealer!: Gtk.Revealer;
+    private _forecastStackSwitcher!: Adw.ViewSwitcherTitle;
+    private _forecastStackSwitcherBar!: Adw.ViewSwitcherBar;
+    private _cityBin!: Adw.Bin;
+    private _cityBox!: Adw.ToolbarView;
+    private _stack!: Gtk.Stack;
 
-    _world?: GWeather.Location;
-    currentInfo?: GWeather.Info;
-    _currentPage: number;
-    _model?: WorldModel;
-    _worldView: WorldContentView;
-    _cityView: City.WeatherView;
-    _showingDefault: boolean;
-    _settings: Gio.Settings;
+    private world?: GWeather.Location;
+    private currentInfo?: GWeather.Info;
+    private currentPage: number;
+    private model?: WorldModel;
+    private worldView: WorldContentView;
+    private cityView: City.WeatherView;
+    private showingDefault: boolean;
+    private settings: Gio.Settings;
 
     static {
         GObject.registerClass({
@@ -62,20 +62,20 @@ export class MainWindow extends Adw.ApplicationWindow {
         }, this)
     }
 
-    constructor(params: Partial<Adw.ApplicationWindow.ConstructorProps> | undefined) {
+    public constructor(params: Partial<Adw.ApplicationWindow.ConstructorProps> | undefined) {
         super(params);
 
         const app = this.application as WeatherApplication;
 
-        this._world = app.world;
+        this.world = app.world;
         this.currentInfo = undefined;
-        this._currentPage = Page.SEARCH;
+        this.currentPage = Page.SEARCH;
 
         const aboutAction = new Gio.SimpleAction({
             enabled: true,
             name: 'about'
         });
-        aboutAction.connect('activate', () => this._showAbout());
+        aboutAction.connect('activate', () => this.showAbout());
         this.add_action(aboutAction);
 
         const refreshAction = new Gio.SimpleAction({
@@ -85,22 +85,22 @@ export class MainWindow extends Adw.ApplicationWindow {
         refreshAction.connect('activate', () => this.update());
         this.add_action(refreshAction);
 
-        this._model = app.model;
+        this.model = app.model;
 
         this._searchViewStatus.icon_name = pkg.name ?? '';
 
-        this._worldView = new WorldContentView(app, this, {
+        this.worldView = new WorldContentView(app, this, {
             align: Gtk.Align.CENTER,
         });
-        this._searchButton.set_popover(this._worldView);
+        this._searchButton.set_popover(this.worldView);
 
-        this._cityView = new City.WeatherView(app, this,
+        this.cityView = new City.WeatherView(app, this,
             { hexpand: true, vexpand: true });
 
-        this._cityBin.set_child(this._cityView);
+        this._cityBin.set_child(this.cityView);
 
-        this._forecastStackSwitcher.stack = this._cityView.getForecastStack();
-        this._forecastStackSwitcherBar.stack = this._cityView.getForecastStack();
+        this._forecastStackSwitcher.stack = this.cityView.getForecastStack();
+        this._forecastStackSwitcherBar.stack = this.cityView.getForecastStack();
 
         this._stack.set_visible_child(this._searchView);
 
@@ -109,74 +109,74 @@ export class MainWindow extends Adw.ApplicationWindow {
             ctx.add_class('devel');
         }
 
-        this._showingDefault = false;
+        this.showingDefault = false;
 
-        this._settings = Util.getSettings('org.gnome.Weather');
-        this._restoreWindowGeometry();
-        this.connect('close-request', () => this._saveWindowGeometry());
+        this.settings = Util.getSettings('org.gnome.Weather');
+        this.restoreWindowGeometry();
+        this.connect('close-request', () => this.saveWindowGeometry());
     }
 
-    update(): void {
-        this._cityView.update();
+    public update(): void {
+        this.cityView.update();
     }
 
-    _saveWindowGeometry(): void {
-        this._settings.set_boolean(
+    private saveWindowGeometry(): void {
+        this.settings.set_boolean(
             'window-maximized',
             this.maximized
         );
 
         const defaultWindowSize = this.get_default_size()
-        this._settings.set_int(
+        this.settings.set_int(
             'window-width', defaultWindowSize[0]
         );
-        this._settings.set_int(
+        this.settings.set_int(
             'window-height', defaultWindowSize[1]
         );
     }
 
-    _restoreWindowGeometry(): void {
-        if (this._settings.get_boolean('window-maximized')) {
+    private restoreWindowGeometry(): void {
+        if (this.settings.get_boolean('window-maximized')) {
             this.maximize()
         }
 
-        const width = this._settings.get_int('window-width');
-        const height = this._settings.get_int('window-height');
+        const width = this.settings.get_int('window-width');
+        const height = this.settings.get_int('window-height');
         this.set_default_size(width, height);
     }
 
-    showDefault(): void {
-        this._showingDefault = true;
+    public showDefault(): void {
+        this.showingDefault = true;
         this._refreshRevealer.reveal_child = false;
 
-        const mostRecent = this._model?.getRecent();
+        const mostRecent = this.model?.getRecent();
         if (mostRecent)
             this.showInfo(mostRecent);
         else
             this.showSearch();
     }
 
-    showSearch(_text?: string): void {
-        this._showingDefault = false;
+    public showSearch(_text?: string): void {
+        this.showingDefault = false;
         this._refreshRevealer.reveal_child = true;
         this._stack.set_visible_child(this._searchView);
     }
 
-    showInfo(info?: GWeather.Info): void {
+    public showInfo(info?: GWeather.Info): void {
         if (!info) {
             this.showDefault();
             return;
         }
 
-        this._showingDefault = false;
+        this.showingDefault = false;
         this._refreshRevealer.reveal_child = true;
         this.currentInfo = info;
-        this._cityView.info = info;
+        this.cityView.info = info;
 
         this._stack.set_visible_child(this._cityBox);
     }
 
-    _showAbout(): void {
+    private showAbout(): void {
         const designers = ['Jakub Steiner <jimmac@gmail.com>',
             'Pink Sherbet Photography (D. Sharon Pruitt)',
             'Elliott Brown',
@@ -187,7 +187,7 @@ export class MainWindow extends Adw.ApplicationWindow {
             'Jim Pennucci'];
 
         const copyright = 'Copyright 2013-2015 The Weather Developers';
-        const attribution = this._cityView.info?.get_attribution();
+        const attribution = this.cityView.info?.get_attribution();
 
         const aboutDialog = new Adw.AboutDialog(
             {

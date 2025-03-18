@@ -34,23 +34,23 @@ import * as SearchProvider from './searchProvider.js';
 import * as World from '../shared/world.js';
 
 export class WeatherBackgroundService extends Gio.Application {
-    _searchProvider: SearchProvider.WeatherSearchProvider;
-    debug: boolean;
+    private searchProvider: SearchProvider.WeatherSearchProvider;
+    private debug: boolean;
 
-    world?: GWeather.Location;
-    model?: World.WorldModel;
+    public world?: GWeather.Location;
+    public model?: World.WorldModel;
 
     static {
         GObject.registerClass(this);
     }
 
-    constructor() {
+    public constructor() {
         super({ application_id: pkg.name,
                       flags: Gio.ApplicationFlags.IS_SERVICE,
                       inactivity_timeout: 60000 });
         GLib.set_application_name(_("Weather"));
 
-        this._searchProvider = new SearchProvider.WeatherSearchProvider(this);
+        this.searchProvider = new SearchProvider.WeatherSearchProvider(this);
 
         this.debug = false;
 
@@ -58,28 +58,18 @@ export class WeatherBackgroundService extends Gio.Application {
             this.debug = true;
     }
 
-    _onQuit(): void {
+    private onQuit(): void {
         this.quit();
     }
 
-    vfunc_dbus_register(connection: Gio.DBusConnection, path: string): boolean {
+    public vfunc_dbus_register(connection: Gio.DBusConnection, path: string): boolean {
         super.vfunc_dbus_register(connection, path);
 
-        this._searchProvider.export(connection, path);
+        this.searchProvider.export(connection, path);
         return true;
     }
 
-/*
-  Can't do until GApplication is fixed.
-
-    vfunc_dbus_unregister(connection, path) {
-        this._searchProvider.unexport(connection);
-
-        super.vfunc_dbus_unregister(connection, path);
-    },
-*/
-
-    vfunc_startup(): void {
+    public vfunc_startup(): void {
         super.vfunc_startup();
 
         const world = GWeather.Location.get_world();
@@ -101,15 +91,15 @@ export class WeatherBackgroundService extends Gio.Application {
             enabled: true,
             name: 'quit'
         });
-        quitAction.connect('activate', () => this._onQuit());
+        quitAction.connect('activate', () => this.onQuit());
         this.add_action(quitAction);
     }
 
-    vfunc_activate(): void {
+    public vfunc_activate(): void {
         // do nothing, this is a background service
     }
 
-    vfunc_shutdown(): void {
+    public vfunc_shutdown(): void {
         GWeather.Info.store_cache();
 
         super.vfunc_shutdown();
