@@ -21,29 +21,21 @@ import GWeather from 'gi://GWeather';
 import Geoclue from 'gi://Geoclue';
 import Gio from 'gi://Gio';
 
-import * as Util from '../misc/util.js';
 import { WorldModel } from '../shared/world.js';
+
 export class CurrentLocationController {
     private world: WorldModel;
-    private processStarted: boolean;
-    private settings: Gio.Settings;
     private simple?: Geoclue.Simple;
 
-    private autoLocationAvailable: boolean;
     private currentLocation?: GWeather.Location;
-    private locationUpdatedId?: number;
 
     public constructor(world: WorldModel) {
         this.world = world;
-        this.processStarted = false;
-        this.settings = Util.getSettings('org.gnome.Weather');
 
-        this.autoLocationAvailable = false;
         this.startGeolocationService();
     }
 
     private startGeolocationService(): void {
-        this.processStarted = true;
         if (Geoclue.Simple.new_with_thresholds) {
             // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             Geoclue.Simple.new_with_thresholds(pkg.name!,
@@ -70,7 +62,6 @@ export class CurrentLocationController {
             log ("Failed to connect to GeoClue2 service: " + e.message);
         }
 
-        this.autoLocationAvailable = false;
         // @ts-expect-error What's going on here is unclear
         GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
             this.world.currentLocationChanged(undefined);
@@ -92,15 +83,12 @@ export class CurrentLocationController {
         }
 
         this.findLocation();
-
-        this.autoLocationAvailable = true;
     }
 
     private findLocation(): void {
-        this.locationUpdatedId =
-                    this.simple?.connect("notify::location", (simple: Geoclue.Simple) => {
-                        this.onLocationUpdated(simple);
-                    });
+        this.simple?.connect("notify::location", (simple: Geoclue.Simple) => {
+            this.onLocationUpdated(simple);
+        });
 
         this.onLocationUpdated(this.simple);
     }
