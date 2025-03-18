@@ -146,6 +146,8 @@ export class Thermometer extends Gtk.Widget {
     private scale;
     private spacing = 18;
 
+    public range!: TemperatureRange;
+
     static {
         GObject.registerClass({
             CssName: 'WeatherThermometer',
@@ -229,8 +231,6 @@ export class Thermometer extends Gtk.Widget {
         let lowY = height - lowNat.height;
 
         if (scaleHeight >= this.scale.minHeight) {
-            // @ts-expect-error need to get this interpreted as both a GJS prop and a GObject prop
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             const { dailyHigh, dailyLow, weeklyHigh, weeklyLow } = this.range;
 
             const radius = this.scale.radius;
@@ -262,17 +262,16 @@ export class Thermometer extends Gtk.Widget {
 
         this.bind_property('range', this.scale,'range', GObject.BindingFlags.DEFAULT);
 
-        // @ts-expect-error in JS this works, but this doesn't really match any type annotations.
-        // Gonna figure this out later.
-        this.bind_property_full('range', this.lowLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+        // @ts-expect-error ts-for-gir does not `bind_property_full` correctly. In GJS it actually returns a
+        // tuple of [boolean, value] where the boolean is whether the transformation succeeded, and the value
+        // is the transformed value.
+        this.bind_property_full('range', this.lowLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range: TemperatureRange) => {
             return [!!range, Util.formatTemperature(range?.dailyLow) ?? ''];
         }, null);
 
 
         // @ts-expect-error Same as the above.
-        this.bind_property_full('range', this.highLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
+        this.bind_property_full('range', this.highLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range: TemperatureRange) => {
             return [!!range, Util.formatTemperature(range?.dailyHigh) ?? ''];
         }, null);
     }
