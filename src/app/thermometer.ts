@@ -141,10 +141,9 @@ class ThermometerScale extends Gtk.Widget {
 };
 
 export class Thermometer extends Gtk.Widget {
-    #highLabel;
-    #lowLabel;
-    #scale;
-
+    private highLabel;
+    private lowLabel;
+    private scale;
     private spacing = 18;
 
     static {
@@ -164,26 +163,26 @@ export class Thermometer extends Gtk.Widget {
     public constructor({ ...params }) {
         super(params);
 
-        this.#highLabel = new Gtk.Label({
+        this.highLabel = new Gtk.Label({
             css_classes: ['high', 'body'],
         });
-        this.#highLabel.set_parent(this);
+        this.highLabel.set_parent(this);
 
-        this.#lowLabel = new Gtk.Label({
+        this.lowLabel = new Gtk.Label({
             css_classes: ['low', 'body'],
         });
-        this.#lowLabel.set_parent(this);
+        this.lowLabel.set_parent(this);
 
-        this.#scale = new ThermometerScale({});
-        this.#scale.set_parent(this);
+        this.scale = new ThermometerScale({});
+        this.scale.set_parent(this);
     }
 
     public vfunc_measure(orientation: Gtk.Orientation, for_size: number): [number, number, number, number] {
         const [highMin, highNat, highMinBaseline, highNatBaseline] =
-            this.#highLabel.measure(orientation, for_size);
+            this.highLabel.measure(orientation, for_size);
 
         const [lowMin, lowNat, lowMinBaseline, lowNatBaseline] =
-            this.#lowLabel.measure(orientation, for_size);
+            this.lowLabel.measure(orientation, for_size);
 
         if (orientation === Gtk.Orientation.HORIZONTAL) {
             return [
@@ -204,8 +203,8 @@ export class Thermometer extends Gtk.Widget {
     }
 
     public vfunc_size_allocate(width: number, height: number, _baseline: number): void {
-        const [, highNatOut] = this.#highLabel.get_preferred_size();
-        const [, lowNatOut] = this.#lowLabel.get_preferred_size();
+        const [, highNatOut] = this.highLabel.get_preferred_size();
+        const [, lowNatOut] = this.lowLabel.get_preferred_size();
 
         // ts-for-gir interprets the requisitions as nullable due to the input parameters,
         // but as output these aren't actually supposed to be null. JS gives us both requisitions.
@@ -224,17 +223,17 @@ export class Thermometer extends Gtk.Widget {
             x: 0,
             y:highNat.height + spacing,
         });
-        this.#scale.size_allocate(scaleRect, -1);
+        this.scale.size_allocate(scaleRect, -1);
 
         let highY = 0;
         let lowY = height - lowNat.height;
 
-        if (scaleHeight >= this.#scale.minHeight) {
+        if (scaleHeight >= this.scale.minHeight) {
             // @ts-expect-error need to get this interpreted as both a GJS prop and a GObject prop
             // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             const { dailyHigh, dailyLow, weeklyHigh, weeklyLow } = this.range;
 
-            const radius = this.#scale.radius;
+            const radius = this.scale.radius;
             const factor = (scaleHeight - 2 * radius) / (weeklyHigh - weeklyLow);
 
             highY += (weeklyHigh - dailyHigh) * factor;
@@ -247,7 +246,7 @@ export class Thermometer extends Gtk.Widget {
             x: (width - highNat.width) / 2,
             y: highY,
         });
-        this.#highLabel.size_allocate(highRect, -1);
+        this.highLabel.size_allocate(highRect, -1);
 
         const lowRect = new Gdk.Rectangle({
             height: lowNat.height,
@@ -255,24 +254,24 @@ export class Thermometer extends Gtk.Widget {
             x: (width - lowNat.width) / 2,
             y: lowY,
         });
-        this.#lowLabel.size_allocate(lowRect, -1);
+        this.lowLabel.size_allocate(lowRect, -1);
     }
 
     public vfunc_root(): void {
         super.vfunc_root();
 
-        this.bind_property('range', this.#scale,'range', GObject.BindingFlags.DEFAULT);
+        this.bind_property('range', this.scale,'range', GObject.BindingFlags.DEFAULT);
 
         // @ts-expect-error in JS this works, but this doesn't really match any type annotations.
         // Gonna figure this out later.
-        this.bind_property_full('range', this.#lowLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
+        this.bind_property_full('range', this.lowLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
             return [!!range, Util.formatTemperature(range?.dailyLow) ?? ''];
         }, null);
 
 
         // @ts-expect-error Same as the above.
-        this.bind_property_full('range', this.#highLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
+        this.bind_property_full('range', this.highLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range) => {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
             return [!!range, Util.formatTemperature(range?.dailyHigh) ?? ''];
         }, null);
