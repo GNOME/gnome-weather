@@ -141,24 +141,14 @@ class LocationFilter extends Gtk.Filter {
 };
 
 export class LocationSearchEntry extends Adw.Bin {
-    #entry = new Gtk.SearchEntry({
-        hexpand: true,
-    });
-    #location: GWeather.Location | null = null;
-    #listView: Gtk.ListView | null = null;
-    #text = '';
+    private _text: string;
+    private _location: GWeather.Location | null;
 
-    #filter = new LocationFilter();
-    #model = new Gtk.SingleSelection({
-        selected: GLib.MAXUINT32,
-        autoselect: false,
-        model: new Gtk.FilterListModel({
-            model: locationListModel as unknown as Gio.ListModel,
-            filter: this.#filter,
-            incremental: true,
-        })
-    });
-    #factory = new Gtk.SignalListItemFactory();
+    private entry: Gtk.SearchEntry;
+    private listView: Gtk.ListView | null;
+    private filter: LocationFilter;
+    private model: Gtk.SingleSelection;
+    private factory: Gtk.SignalListItemFactory;
 
     static {
         GObject.registerClass({
@@ -177,30 +167,50 @@ export class LocationSearchEntry extends Adw.Bin {
     public constructor() {
         super();
 
-        this.set_child(this.#entry);
+        this._text = '';
+        this._location = null;
+        this.entry = new Gtk.SearchEntry({
+            hexpand: true,
+        });
 
-        this.bind_property('placeholder-text', this.#entry, 'placeholder-text', GObject.BindingFlags.DEFAULT);
-        this.bind_property('text', this.#entry, 'text', GObject.BindingFlags.BIDIRECTIONAL);
+        this.listView = null;
+        this.filter = new LocationFilter();
+        this.model = new Gtk.SingleSelection({
+            selected: GLib.MAXUINT32,
+            autoselect: false,
+            model: new Gtk.FilterListModel({
+                model: locationListModel as unknown as Gio.ListModel,
+                filter: this.filter,
+                incremental: true,
+            })
+        });
 
-        this.#entry.connect('search-changed', source => {
+        this.factory = new Gtk.SignalListItemFactory();
+
+        this.set_child(this.entry);
+
+        this.bind_property('placeholder-text', this.entry, 'placeholder-text', GObject.BindingFlags.DEFAULT);
+        this.bind_property('text', this.entry, 'text', GObject.BindingFlags.BIDIRECTIONAL);
+
+        this.entry.connect('search-changed', source => {
             const text = source.text || null;
 
-            this.#filter.setFilterString(text);
+            this.filter.setFilterString(text);
             this.emit('search-updated', text);
         });
 
-        this.#model.connect('notify::selected', ({ selectedItem }) => {
+        this.model.connect('notify::selected', ({ selectedItem }) => {
             if (selectedItem instanceof GWeather.Location) {
                 this.location = selectedItem;
             }
         });
 
-        this.#factory.connect('setup', (_, item: Gtk.ListItem) => {
+        this.factory.connect('setup', (_, item: Gtk.ListItem) => {
             const row = new LocationRow({ name: '', countryName: '' });
             item.set_child(row);
         });
 
-        this.#factory.connect('bind', (_, { child, item }: Gtk.ListItem) => {
+        this.factory.connect('bind', (_, { child, item }: Gtk.ListItem) => {
             if (child instanceof LocationRow && item instanceof GWeather.Location) {
                 const [name, countryName = ''] = Util.getNameAndCountry(item);
 
@@ -211,41 +221,41 @@ export class LocationSearchEntry extends Adw.Bin {
     }
 
     public get text(): string {
-        return this.#text;
+        return this._text;
     }
 
     public set text(text) {
-        this.#text = text;
+        this._text = text;
 
         this.notify('text');
     }
 
     public set location(location) {
-        this.#location = location;
+        this._location = location;
 
         this.notify('location');
     }
 
     public get location(): GWeather.Location | null {
-        return this.#location;
+        return this._location;
     }
 
     public setListView(listView: Gtk.ListView): void {
-        if (this.#listView)
+        if (this.listView)
             // @ts-expect-error ts-for-gir doesn't seem to handle nullability correctly
             // for these property getters/setters
-            this.#listView.model = null;
+            this.listView.model = null;
 
-        this.#listView = listView;
-        listView.factory = this.#factory;
-        listView.model = this.#model;
+        this.listView = listView;
+        listView.factory = this.factory;
+        listView.model = this.model;
     }
 
     public vfunc_unroot(): void {
-        if (this.#listView)
+        if (this.listView)
             // @ts-expect-error ts-for-gir doesn't seem to handle nullability correctly
             // for these property getters/setters
-            this.#listView.model = null;
+            this.listView.model = null;
 
         super.vfunc_unroot();
     }
