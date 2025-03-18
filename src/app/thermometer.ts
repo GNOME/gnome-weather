@@ -46,22 +46,26 @@ export class TemperatureRange {
     }
 }
 
-const ThermometerScale = GObject.registerClass({
-    CssName: 'WeatherThermometerScale',
-    Properties: {
-        'range': GObject.ParamSpec.jsobject(
-            'range',
-            'range',
-            'The TemperatureRange instance representing this thermometer scale',
-            GObject.ParamFlags.READWRITE,
-        ),
-    },
-}, class ThermometerScale extends Gtk.Widget {
+class ThermometerScale extends Gtk.Widget {
     private range: TemperatureRange | null;
     private rangeChangedId?: number;
 
     public minHeight = 64;
     public radius = 12;
+
+    static {
+        GObject.registerClass({
+            CssName: 'WeatherThermometerScale',
+            Properties: {
+                'range': GObject.ParamSpec.jsobject(
+                    'range',
+                    'range',
+                    'The TemperatureRange instance representing this thermometer scale',
+                    GObject.ParamFlags.READWRITE,
+                ),
+            },
+        }, this);
+    }
 
     public constructor({ range = null, ...params }) {
         super(params);
@@ -134,7 +138,7 @@ const ThermometerScale = GObject.registerClass({
 
         snapshot.pop();
     }
-});
+};
 
 export class Thermometer extends Gtk.Widget {
     #highLabel;

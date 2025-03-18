@@ -39,6 +39,18 @@ export class WorldModel extends GObject.Object {
     private allInfos: GWeatherInfoData[];
     private queueSaveSettingsId?: number;
 
+    static {
+        GObject.registerClass({
+            Signals: {
+                'selected-location-changed': { param_types: [GWeather.Info.$gtype] },
+            },
+            Properties: {
+                'loading': GObject.ParamSpec.boolean('loading', '', '', GObject.ParamFlags.READABLE, false)
+            },
+            Implements: [Gio.ListModel]
+        }, this)
+    }
+
     public constructor(world?: GWeather.Location) {
         super();
 
@@ -331,13 +343,3 @@ export class WorldModel extends GObject.Object {
         return this.allInfos[n] ?? null;
     }
 };
-
-GObject.registerClass({
-    Signals: {
-        'selected-location-changed': { param_types: [GWeather.Info.$gtype] },
-    },
-    Properties: {
-        'loading': GObject.ParamSpec.boolean('loading', '', '', GObject.ParamFlags.READABLE, false)
-    },
-    Implements: [Gio.ListModel]
-}, WorldModel)

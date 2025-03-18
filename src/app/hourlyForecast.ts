@@ -38,6 +38,10 @@ export class HourlyForecastBox extends Gtk.Box {
     private hourlyInfo: GWeather.Info[];
     private settings: Gio.Settings;
 
+    static {
+        GObject.registerClass(this);
+    }
+
     public constructor() {
         super({
             orientation: Gtk.Orientation.HORIZONTAL,
@@ -269,16 +273,18 @@ export class HourlyForecastBox extends Gtk.Box {
         cr.$dispose();
     }
 };
-GObject.registerClass(HourlyForecastBox);
 
-export const HourEntry = GObject.registerClass({
-    Template: 'resource:///org/gnome/Weather/hour-entry.ui',
-
-    InternalChildren: ['timeLabel', 'image', 'forecastTemperatureLabel'],
-}, class HourEntry extends Adw.Bin {
+export class HourEntry extends Adw.Bin {
     private _timeLabel!: Gtk.Label;
     private _image!: Gtk.Image;
     private _forecastTemperatureLabel!: Gtk.Label;
+
+    static {
+        GObject.registerClass({
+            Template: 'resource:///org/gnome/Weather/hour-entry.ui',
+            InternalChildren: ['timeLabel', 'image', 'forecastTemperatureLabel'],
+        }, this);
+    }
 
     public constructor(timeLabel: string | undefined, info: GWeather.Info, params?: Partial<Adw.Bin.ConstructorProps>) {
         super(params);
@@ -287,4 +293,4 @@ export const HourEntry = GObject.registerClass({
         this._image.iconName = info.get_icon_name() + '-small';
         this._forecastTemperatureLabel.label = Util.getTempString(info) ?? '';
     }
-});
+};
