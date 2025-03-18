@@ -67,28 +67,22 @@ export class WeatherApplication extends Adw.Application {
         this.quit();
     }
 
-    private onShowLocation(parameter: GLib.Variant | null): void {
-        if (parameter) {
-            const location = this.world?.deserialize(parameter.deep_unpack());
-            const win = this.createWindow();
+    private onShowLocation(location?: GWeather.Location): void {
+        const win = this.createWindow();
 
-            let info: GWeather.Info | undefined;
-            if (location) {
-                info = this.model?.addNewLocation(location);
-            }
-            win.showInfo(info);
-            this.showWindowWhenReady(win);
+        let info: GWeather.Info | undefined;
+        if (location) {
+            info = this.model?.addNewLocation(location);
         }
+        win.showInfo(info);
+        this.showWindowWhenReady(win);
     }
 
-    private onShowSearch(parameter: GLib.Variant | null): void {
-        if (parameter) {
-            const text = parameter.deep_unpack<string>();
-            const win = this.createWindow();
+    private onShowSearch(text: string): void {
+        const win = this.createWindow();
 
-            win.showSearch(text);
-            this.showWindowWhenReady(win);
-        }
+        win.showSearch(text);
+        this.showWindowWhenReady(win);
     }
 
     public vfunc_startup(): void {
@@ -128,7 +122,11 @@ export class WeatherApplication extends Adw.Application {
             parameter_type: new GLib.VariantType('v'),
         });
         showLocationAction.connect('activate', (_, parameter) => {
-            this.onShowLocation(parameter);
+            if (!parameter)
+                return;
+
+            const location = this.world?.deserialize(parameter.deep_unpack());
+            this.onShowLocation(location);
         });
         this.add_action(showLocationAction);
 
@@ -138,7 +136,11 @@ export class WeatherApplication extends Adw.Application {
             parameter_type: new GLib.VariantType('v'),
         })
         showSearchAction.connect('activate', (_, parameter) => {
-            this.onShowSearch(parameter);
+            if (!parameter)
+                return;
+
+            const text = parameter.deep_unpack<string>();
+            this.onShowSearch(text);
         });
         this.add_action(showSearchAction);
 

@@ -47,7 +47,7 @@ export class TemperatureRange {
 }
 
 class ThermometerScale extends Gtk.Widget {
-    private range: TemperatureRange | null;
+    private range?: TemperatureRange;
     private rangeChangedId?: number;
 
     public minHeight = 64;
@@ -67,7 +67,7 @@ class ThermometerScale extends Gtk.Widget {
         }, this);
     }
 
-    public constructor({ range = null, ...params }) {
+    public constructor({ range = undefined, ...params }) {
         super(params);
 
         this.range = range;

@@ -143,7 +143,7 @@ export class WorldContentView extends Gtk.Popover {
         this._listbox.invalidate_filter();
     }
 
-    private locationChanged(location: GWeather.Location | null): void {
+    private locationChanged(location?: GWeather.Location): void {
         if (location) {
             const info = this.model.addNewLocation(location);
             this._window?.showInfo(info);
