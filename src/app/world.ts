@@ -28,7 +28,6 @@ import { LocationSearchEntry } from './entry.js'
 import { MainWindow } from './window.js';
 import { WeatherApplication } from './application.js';
 import { WorldModel } from '../shared/world.js';
-import { CurrentLocationController } from './currentLocationController.js';
 
 type ListBoxRowWithInfo = Gtk.ListBoxRow & {
     _info?: GWeather.Info;
@@ -42,8 +41,6 @@ export class WorldContentView extends Gtk.Popover {
     private _listbox: Gtk.ListBox;
     private _locationEntry: LocationSearchEntry;
     private _stackPopover: Gtk.Stack;
-    private _currentLocationController?: CurrentLocationController;
-    private _currentLocationAdded: boolean;
 
     public model: WorldModel;
 
@@ -110,8 +107,6 @@ export class WorldContentView extends Gtk.Popover {
             this._locationEntry.grab_focus();
         });
 
-        this._currentLocationController = application.currentLocationController;
-
         this._listbox.connect('row-activated', (_, row: ListBoxRowWithInfo) => {
             if (row._info)
                 this.model?.setSelectedLocation(row._info);
@@ -129,9 +124,6 @@ export class WorldContentView extends Gtk.Popover {
 
         this._stackPopover = builder.get_object('popover-stack');
         this._stackPopover.set_visible_child(this._listboxScrollWindow);
-
-        this._currentLocationAdded = false;
-
     }
 
     public vfunc_unroot(): void {

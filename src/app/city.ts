@@ -217,12 +217,12 @@ export class WeatherWidget extends Adw.Bin {
     public update(info: GWeather.Info): void {
         this.info = info;
 
-        const label = Util.getNameAndCountry(info.location);
+        const label = Util.getNameAndCountry(this.info.location);
         this._placesButton.set_label(label.join(', '));
 
         this.worldView.refilter();
 
-        this._conditionsImage.iconName = `${info.get_icon_name()}-large`;
+        this._conditionsImage.iconName = `${this.info.get_icon_name()}-large`;
 
         const [, tempValue] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
         this._temperatureLabel.label = '%d°'.format(Math.round(tempValue));
@@ -231,8 +231,8 @@ export class WeatherWidget extends Adw.Bin {
         this._apparentLabel.label = _('Feels like %.0f°').format(apparentValue);
         this._apparentLabel.visible = apparentValue !== tempValue;
 
-        this._forecastHourly.update(info);
-        this._forecastDaily.update(info);
+        this._forecastHourly.update(this.info);
+        this._forecastDaily.update(this.info);
 
         if (this.updatedTimeTimeoutId)
             GLib.Source.remove(this.updatedTimeTimeoutId);
@@ -248,7 +248,7 @@ export class WeatherWidget extends Adw.Bin {
             }
         );
 
-        this._attributionLabel.label = info.get_attribution();
+        this._attributionLabel.label = this.info.get_attribution();
     }
 
     private formatUpdatedTime(): string {
