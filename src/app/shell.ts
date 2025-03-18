@@ -23,35 +23,35 @@ const ShellIntegrationInterface = new TextDecoder().decode(
 );
 
 export class ShellIntegration {
-    _impl: Gio.DBusExportedObject;
-    _settings: Gio.Settings;
+    private impl: Gio.DBusExportedObject;
+    private settings: Gio.Settings;
 
-    constructor() {
-        this._impl = Gio.DBusExportedObject.wrapJSObject(
+    public constructor() {
+        this.impl = Gio.DBusExportedObject.wrapJSObject(
             ShellIntegrationInterface, this);
 
-        this._settings = new Gio.Settings({ schema_id: 'org.gnome.Weather' });
+        this.settings = new Gio.Settings({ schema_id: 'org.gnome.Weather' });
 
-        this._settings.connect('changed::locations', () => {
-            this._impl.emit_property_changed('Locations',
+        this.settings.connect('changed::locations', () => {
+            this.impl.emit_property_changed('Locations',
                 new GLib.Variant('av', this.Locations));
         });
     }
 
-    export(connection: Gio.DBusConnection, path: string): void {
-        return this._impl.export(connection, path);
+    public export(connection: Gio.DBusConnection, path: string): void {
+        return this.impl.export(connection, path);
     }
 
-    unexport(connection: Gio.DBusConnection): void {
-        return this._impl.unexport_from_connection(connection);
+    public unexport(connection: Gio.DBusConnection): void {
+        return this.impl.unexport_from_connection(connection);
     }
 
-    get AutomaticLocation(): boolean {
+    public get AutomaticLocation(): boolean {
         // We follow whether the user has location services on.
         return true;
     }
 
-    get Locations(): GLib.Variant[] {
-        return this._settings.get_value('locations').deep_unpack();
+    public get Locations(): GLib.Variant[] {
+        return this.settings.get_value('locations').deep_unpack();
     }
 };

@@ -3,11 +3,11 @@ import Gtk from 'gi://Gtk';
 import GLib from 'gi://GLib';
 
 export class LocationRow extends Gtk.Box {
-    _label!: Gtk.Label;
-    _countryLabel!: Gtk.Label;
-    _locationIcon!: Gtk.Image;
-    _currentIcon!: Gtk.Image;
-    _removeButton!: Gtk.Button;
+    private _label!: Gtk.Label;
+    private _countryLabel!: Gtk.Label;
+    private _locationIcon!: Gtk.Image;
+    private _currentIcon!: Gtk.Image;
+    private _removeButton!: Gtk.Button;
 
     static {
         GObject.registerClass({
@@ -19,7 +19,7 @@ export class LocationRow extends Gtk.Box {
         }, this);
     }
 
-    constructor({ name, countryName, isSelected = false, isCurrentLocation = false, isRemovable = false }: { name: string; countryName: string; isSelected?: boolean; isCurrentLocation?: boolean; isRemovable?: boolean; }) {
+    public constructor({ name, countryName, isSelected = false, isCurrentLocation = false, isRemovable = false }: { name: string; countryName: string; isSelected?: boolean; isCurrentLocation?: boolean; isRemovable?: boolean; }) {
         super({ widthRequest: 320 });
 
         this.name = name;
@@ -29,27 +29,27 @@ export class LocationRow extends Gtk.Box {
         this.isRemovable = isRemovable;
     }
 
-    set name(name: string) {
+    public set name(name: string) {
         this._label.label = name;
     }
 
-    set countryName(name: string) {
+    public set countryName(name: string) {
         this._countryLabel.label = name;
     }
 
-    set isCurrentLocation(is: boolean) {
+    public set isCurrentLocation(is: boolean) {
         this._locationIcon.visible = is;
     }
 
-    set isSelected(is: boolean) {
+    public set isSelected(is: boolean) {
         this._currentIcon.visible = is;
     }
 
-    set isRemovable(is: boolean) {
+    public set isRemovable(is: boolean) {
         this._removeButton.visible = is;
     }
 
-    _onRemoveClicked(): void {
+    public _onRemoveClicked(): void {
         this.emit('remove');
     }
 };
