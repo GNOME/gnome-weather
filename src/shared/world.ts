@@ -114,11 +114,11 @@ export class WorldModel extends GObject.Object {
         }
     }
 
-    public getRecent(): GWeatherInfoData | null {
+    public getRecent(): GWeatherInfoData | undefined {
         if (this.infoList.length > 0)
             return this.infoList[0];
         else
-            return null;
+            return undefined;
     }
 
     public load(): void {
@@ -339,7 +339,7 @@ export class WorldModel extends GObject.Object {
         return this.allInfos.length;
     }
 
-    public vfunc_get_item(n: number): GWeatherInfoData | null {
-        return this.allInfos[n] ?? null;
+    public vfunc_get_item(n: number): GWeatherInfoData | undefined {
+        return this.allInfos[n] ?? undefined;
     }
 };

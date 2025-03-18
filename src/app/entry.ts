@@ -102,8 +102,8 @@ imports.mainloop.idle_add(() => {
 
 class LocationFilter extends Gtk.Filter {
     private itemMap: WeakMap<GWeather.Location, string>;
-    private filter: string | null;
-    private filterLowerCase: string | null;
+    private filter?: string;
+    private filterLowerCase?: string;
 
     static {
         GObject.registerClass(this);
@@ -113,11 +113,9 @@ class LocationFilter extends Gtk.Filter {
         super();
 
         this.itemMap = new WeakMap();
-        this.filter = null;
-        this.filterLowerCase = null;
     }
 
-    public setFilterString(filter: string | null): void {
+    public setFilterString(filter: string): void {
         if (filter !== this.filter) {
             this.filter = filter;
             this.filterLowerCase = this.filter?.toLowerCase() ?? null;
@@ -142,10 +140,10 @@ class LocationFilter extends Gtk.Filter {
 
 export class LocationSearchEntry extends Adw.Bin {
     private _text: string;
-    private _location: GWeather.Location | null;
+    private _location?: GWeather.Location;
 
     private entry: Gtk.SearchEntry;
-    private listView: Gtk.ListView | null;
+    private listView?: Gtk.ListView;
     private filter: LocationFilter;
     private model: Gtk.SingleSelection;
     private factory: Gtk.SignalListItemFactory;
@@ -168,12 +166,10 @@ export class LocationSearchEntry extends Adw.Bin {
         super();
 
         this._text = '';
-        this._location = null;
         this.entry = new Gtk.SearchEntry({
             hexpand: true,
         });
 
-        this.listView = null;
         this.filter = new LocationFilter();
         this.model = new Gtk.SingleSelection({
             selected: GLib.MAXUINT32,
@@ -193,10 +189,8 @@ export class LocationSearchEntry extends Adw.Bin {
         this.bind_property('text', this.entry, 'text', GObject.BindingFlags.BIDIRECTIONAL);
 
         this.entry.connect('search-changed', source => {
-            const text = source.text || null;
-
-            this.filter.setFilterString(text);
-            this.emit('search-updated', text);
+            this.filter.setFilterString(source.text);
+            this.emit('search-updated', source.text);
         });
 
         this.model.connect('notify::selected', ({ selectedItem }) => {
@@ -236,7 +230,7 @@ export class LocationSearchEntry extends Adw.Bin {
         this.notify('location');
     }
 
-    public get location(): GWeather.Location | null {
+    public get location(): GWeather.Location | undefined {
         return this._location;
     }
 
