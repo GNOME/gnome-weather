@@ -166,8 +166,11 @@ export class WeatherWidget extends Adw.Bin {
 
     private beginScrollAnimation(target: number): void {
         if (this.get_realized()) {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            const start = this.get_frame_clock()!.get_frame_time();
+            const start = this.get_frame_clock()?.get_frame_time();
+            if (!start) {
+                throw new Error("The frame clock should always exist when realized.")
+            }
+
             const end = start + SCROLLING_ANIMATION_TIME;
 
             if (this.tickId != 0)
@@ -183,8 +186,11 @@ export class WeatherWidget extends Adw.Bin {
         let t = 1.0;
 
         if (this.get_realized()) {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            const now = this.get_frame_clock()!.get_frame_time();
+            const now = this.get_frame_clock()?.get_frame_time();
+            if (!now) {
+                throw new Error("The frame clock should always exist when realized.")
+            }
+
             if (now < end) {
                 t = (now - start) / SCROLLING_ANIMATION_TIME;
                 t = Util.easeOutCubic(t);
@@ -361,7 +367,7 @@ export class WeatherView extends Adw.Bin {
         this._stack.visible_child_name = 'loading';
         this.infoPage.clear();
         if (this._info) {
-            getApp()?.model?.updateInfo(this._info);
+            getApp()?.model.updateInfo(this._info);
         }
     }
 

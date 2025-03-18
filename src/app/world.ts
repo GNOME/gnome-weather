@@ -70,8 +70,7 @@ export class WorldContentView extends Gtk.Popover {
         this._searchListView = builder.get_object('search-list-view');
         this._searchListScrollWindow = builder.get_object('search-list-scroll-window');
 
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        this.model = application.model!;
+        this.model = application.model;
         this._window = window;
 
         this._listboxScrollWindow = builder.get_object('locations-list-scroll-window');
@@ -113,7 +112,7 @@ export class WorldContentView extends Gtk.Popover {
 
         this._listbox.connect('row-activated', (_, row: ListBoxRowWithInfo) => {
             if (row._info)
-                this.model?.setSelectedLocation(row._info);
+                this.model.setSelectedLocation(row._info);
 
             // Defer the popdown to allow the stack to re-render
             imports.mainloop.idle_add(() => {

@@ -62,9 +62,9 @@ export class CurrentLocationController {
             log ("Failed to connect to GeoClue2 service: " + e.message);
         }
 
-        // @ts-expect-error What's going on here is unclear
         GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
             this.world.currentLocationChanged(undefined);
+            return GLib.SOURCE_REMOVE;
         });
     }
 
