@@ -39,6 +39,10 @@ export class WeatherApplication extends Adw.Application {
     public model?: World.WorldModel;
     public currentLocationController?: CurrentLocationController.CurrentLocationController;
 
+    static {
+        GObject.registerClass(this);
+    }
+
     public constructor() {
         super({
             applicationId: pkg.name,
@@ -249,5 +253,3 @@ export class WeatherApplication extends Adw.Application {
         super.vfunc_shutdown();
     }
 };
-
-GObject.registerClass(WeatherApplication);

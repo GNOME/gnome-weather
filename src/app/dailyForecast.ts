@@ -45,6 +45,9 @@ type PeriodInfos = {
 };
 
 export class DailyForecastBox extends Gtk.Box {
+    static {
+        GObject.registerClass(this);
+    }
 
     public constructor() {
         super({
@@ -186,7 +189,6 @@ export class DailyForecastBox extends Gtk.Box {
         }
     }
 };
-GObject.registerClass(DailyForecastBox);
 
 export class DayEntry extends Adw.Bin {
     private _nameLabel!: Gtk.Label;

@@ -50,41 +50,42 @@ function getAllCitiesAndWeatherStations(): GWeather.Location[] {
     return [...locations.values()];
 }
 
-const LocationListModel = GObject.registerClass(
-    {
-        Implements: [Gio.ListModel]
-    },
-    class LocationListModel extends GObject.Object {
-        private list: GWeather.Location[];
+class LocationListModel extends GObject.Object {
+    private list: GWeather.Location[];
 
-        public constructor() {
-            super();
-
-            this.list = [];
-        }
-
-        public load(): void {
-            const items = getAllCitiesAndWeatherStations()
-            this.list.push(...items);
-
-            // @ts-expect-error ts-for-gir interface stuff
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-            this.items_changed(0, 0, this.list.length);
-        }
-
-        public vfunc_get_item_type(): GObject.GType {
-            return GWeather.Location.$gtype;
-        }
-
-        public vfunc_get_n_items(): number {
-            return this.list.length;
-        }
-
-        public vfunc_get_item(n: number): GWeather.Location | null {
-            return this.list[n] ?? null;
-        }
+    static {
+        GObject.registerClass({
+            Implements: [Gio.ListModel]
+        }, this);
     }
-);
+
+    public constructor() {
+        super();
+
+        this.list = [];
+    }
+
+    public load(): void {
+        const items = getAllCitiesAndWeatherStations()
+        this.list.push(...items);
+
+        // @ts-expect-error ts-for-gir interface stuff
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+        this.items_changed(0, 0, this.list.length);
+    }
+
+    public vfunc_get_item_type(): GObject.GType {
+        return GWeather.Location.$gtype;
+    }
+
+    public vfunc_get_n_items(): number {
+        return this.list.length;
+    }
+
+    public vfunc_get_item(n: number): GWeather.Location | null {
+        return this.list[n] ?? null;
+    }
+};
 
 const locationListModel = new LocationListModel();
 imports.mainloop.idle_add(() => {
@@ -99,43 +100,45 @@ imports.mainloop.idle_add(() => {
 
 // Avoid the overhead of closures and Gtk.StringFilter
 
-const LocationFilter = GObject.registerClass(
-    class LocationFilter extends Gtk.Filter {
-        private itemMap: WeakMap<GWeather.Location, string>;
-        private filter: string | null;
-        private filterLowerCase: string | null;
+class LocationFilter extends Gtk.Filter {
+    private itemMap: WeakMap<GWeather.Location, string>;
+    private filter: string | null;
+    private filterLowerCase: string | null;
 
-        public constructor() {
-            super();
+    static {
+        GObject.registerClass(this);
+    }
 
-            this.itemMap = new WeakMap();
-            this.filter = null;
-            this.filterLowerCase = null;
-        }
+    public constructor() {
+        super();
 
-        public setFilterString(filter: string | null): void {
-            if (filter !== this.filter) {
-                this.filter = filter;
-                this.filterLowerCase = this.filter?.toLowerCase() ?? null;
-                this.changed(Gtk.FilterChange.DIFFERENT);
-            }
-        }
+        this.itemMap = new WeakMap();
+        this.filter = null;
+        this.filterLowerCase = null;
+    }
 
-        public vfunc_match(item: GWeather.Location): boolean {
-            if (!this.filter) return false;
-
-            const cached = this.itemMap.get(item);
-            const string = cached ?? item.get_name()?.toLowerCase();
-            if (!cached && string)
-                this.itemMap.set(item, string);
-
-            if (this.filterLowerCase)
-                return string?.includes(this.filterLowerCase) ?? false;
-            else
-                return false;
+    public setFilterString(filter: string | null): void {
+        if (filter !== this.filter) {
+            this.filter = filter;
+            this.filterLowerCase = this.filter?.toLowerCase() ?? null;
+            this.changed(Gtk.FilterChange.DIFFERENT);
         }
     }
-);
+
+    public vfunc_match(item: GWeather.Location): boolean {
+        if (!this.filter) return false;
+
+        const cached = this.itemMap.get(item);
+        const string = cached ?? item.get_name()?.toLowerCase();
+        if (!cached && string)
+            this.itemMap.set(item, string);
+
+        if (this.filterLowerCase)
+            return string?.includes(this.filterLowerCase) ?? false;
+        else
+            return false;
+    }
+};
 
 export class LocationSearchEntry extends Adw.Bin {
     #entry = new Gtk.SearchEntry({
