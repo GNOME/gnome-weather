@@ -44,6 +44,10 @@ export class WorldContentView extends Gtk.Popover {
 
     public model: WorldModel;
 
+    static {
+        GObject.registerClass(this);
+    }
+
     public constructor(application: WeatherApplication, window?: MainWindow, { align, ...params }: { align?: Gtk.Align; params?: Partial<Gtk.Popover.ConstructorProps>; } = {}) {
         super({
             ...params,
@@ -172,5 +176,3 @@ export class WorldContentView extends Gtk.Popover {
         return row;
     }
 };
-
-GObject.registerClass(WorldContentView);
