@@ -79,10 +79,8 @@ export class WeatherApplication extends Adw.Application {
     private onShowLocation(location?: GWeather.Location): void {
         const win = this.createWindow();
 
-        let info: GWeather.Info | undefined;
-        if (location) {
-            info = this.model?.addNewLocation(location);
-        }
+        const info = location ? this.model?.addNewLocation(location) : undefined;
+
         win.showInfo(info);
         this.showWindowWhenReady(win);
     }
