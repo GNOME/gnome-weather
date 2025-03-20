@@ -320,7 +320,7 @@ export class DayEntry extends Adw.Bin {
     private setWindInfo(info: GWeather.Info, label: Gtk.Label): void {
         const [ok, speed] = info.get_value_wind(GWeather.SpeedUnit.DEFAULT);
         if (ok) {
-            label.label = `${speed.toFixed(1).toString()} ${GWeather.speed_unit_to_string(GWeather.SpeedUnit.DEFAULT)}`;
+            label.label = `${speed.toFixed(1)} ${GWeather.speed_unit_to_string(GWeather.SpeedUnit.DEFAULT)}`;
         } else {
             /* Fall back to get_wind() */
             label.label = info.get_wind();
