@@ -116,10 +116,7 @@ export class HourlyForecastBox extends Gtk.Box {
         let timeLabel: string | undefined;
 
         const [, date] = info.get_value_update();
-        let datetime: GLib.DateTime | undefined = undefined;
-        if (tz) {
-            datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(tz) ?? undefined;
-        }
+        const datetime = tz ? GLib.DateTime.new_from_unix_utc(date).to_timezone(tz) ?? undefined : undefined;
 
         if (now) {
             timeLabel = _('Now');
