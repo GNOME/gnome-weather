@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "gnome-weather",
   "version": "48.0",
   "main": "src/app/main.js",

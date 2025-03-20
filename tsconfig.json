@@ -2,36 +2,20 @@
     "compilerOptions": {
         "experimentalDecorators": true,
         "strict": true,
-        "paths": {
-            "*": [
-                "*",
-                "types/*",
-                "gi-types/*"
-            ]
-        },
         "target": "ES2019",
         "baseUrl": ".",
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "module": "ES2020",
-        "outDir": "_build",
         "lib": [
             "es2019"
         ],
         "allowJs": true,
         "checkJs": true,
         "skipLibCheck": true,
-        "typeRoots": [
-            "types",
-            "gi-types"
-        ],
     },
     "include": [
         "gi-types/index.d.ts",
-        "types/*",
-        "src/*",
-        "src/*/*",
-    ],
-    "exclude": [
-        "node_modules/@types/**"
-    ],
+        "types",
+        "src",
+    ]
 }
