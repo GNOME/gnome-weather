@@ -153,7 +153,6 @@ export class LocationSearchEntry extends Adw.Bin {
             Properties: {
                 'text': GObject.ParamSpec.string('text', 'text', 'text', GObject.ParamFlags.READWRITE, ''),
                 'placeholder-text': GObject.ParamSpec.string('placeholder-text', 'placeholder-text', 'placeholder-text', GObject.ParamFlags.READWRITE, ''),
-                // @ts-expect-error ts-for-gir has incorrect typing for the `flags` param
                 'location': GObject.ParamSpec.object('location', 'location', 'location', GObject.ParamFlags.READWRITE, GWeather.Location.$gtype)
             },
             Signals: {

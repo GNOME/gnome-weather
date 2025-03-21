@@ -37,8 +37,7 @@ export class CurrentLocationController {
 
     private startGeolocationService(): void {
         if (Geoclue.Simple.new_with_thresholds) {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            Geoclue.Simple.new_with_thresholds(pkg.name!,
+            Geoclue.Simple.new_with_thresholds(pkg.name,
                                                Geoclue.AccuracyLevel.CITY,
                                                0, /* time threshold */
                                                100, /* distance threshold */
@@ -47,8 +46,7 @@ export class CurrentLocationController {
                                                    this.onSimpleReady(result)
                                                });
         } else {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-            Geoclue.Simple.new(pkg.name!,
+            Geoclue.Simple.new(pkg.name,
                                Geoclue.AccuracyLevel.CITY,
                                null,
                                (_, result) => {
