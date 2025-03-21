@@ -24,7 +24,6 @@ import Gdk from 'gi://Gdk';
 import GWeather from 'gi://GWeather';
 import Graphene from 'gi://Graphene';
 import Adw from 'gi://Adw';
-import Cairo from 'cairo'
 
 import * as Util from '../misc/util.js';
 
@@ -164,7 +163,7 @@ export class HourlyForecastBox extends Gtk.Box {
         const rect = new Graphene.Rect();
         rect.init(0, 0, allocation.width, allocation.height);
 
-        const cr = snapshot.append_cairo(rect) as Cairo.Context;
+        const cr = snapshot.append_cairo(rect);
         const temps = this.hourlyInfo.map(info => Util.getTemp(info));
 
         const maxTemp = Math.max(...temps);
@@ -265,8 +264,6 @@ export class HourlyForecastBox extends Gtk.Box {
         cr.fill();
 
         super.vfunc_snapshot(snapshot);
-        // @ts-expect-error ts-for-gir doesn't include this in its cairo overrides
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         cr.$dispose();
     }
 };

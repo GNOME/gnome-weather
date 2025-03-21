@@ -51,8 +51,7 @@ export class WeatherApplication extends Adw.Application {
         const name_prefix = '';
 
         GLib.set_application_name(name_prefix + _("Weather"));
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        Gtk.Window.set_default_icon_name(pkg.name!);
+        Gtk.Window.set_default_icon_name(pkg.name);
 
         const world = GWeather.Location.get_world();
         if (!world) {
