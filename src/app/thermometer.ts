@@ -146,7 +146,7 @@ export class Thermometer extends Gtk.Widget {
     private scale;
     private spacing = 18;
 
-    public range!: TemperatureRange;
+    declare public range: TemperatureRange;
 
     static {
         GObject.registerClass({

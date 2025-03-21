@@ -2,12 +2,12 @@
     "compilerOptions": {
         "experimentalDecorators": true,
         "strict": true,
-        "target": "ES2019",
+        "target": "ES2022",
         "baseUrl": ".",
         "moduleResolution": "bundler",
-        "module": "ES2020",
+        "module": "ES2022",
         "lib": [
-            "es2019"
+            "es2022"
         ],
         "allowJs": true,
         "checkJs": true,
