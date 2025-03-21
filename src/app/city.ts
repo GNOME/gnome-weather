@@ -37,19 +37,19 @@ const SCROLLING_ANIMATION_TIME = 400000; //us
 const UPDATED_TIME_TIMEOUT = 60; //s
 
 export class WeatherWidget extends Adw.Bin {
-    private _conditionsImage!: Gtk.Image;
-    private _placesButton!: Gtk.MenuButton;
-    private _temperatureLabel!: Gtk.Label;
-    private _apparentLabel!: Gtk.Label;
-    private _forecastStack!: Adw.ViewStack;
-    private _leftButton!: Gtk.Button;
-    private _rightButton!: Gtk.Button;
-    private _forecastHourly!: HourlyForecastBox;
-    private _forecastHourlyAdjustment!: Gtk.Adjustment;
-    private _forecastDaily!: DailyForecastBox;
-    private _forecastDailyAdjustment!: Gtk.Adjustment;
-    private _updatedTimeLabel!: Gtk.Label;
-    private _attributionLabel!: Gtk.Label;
+    declare private _conditionsImage: Gtk.Image;
+    declare private _placesButton: Gtk.MenuButton;
+    declare private _temperatureLabel: Gtk.Label;
+    declare private _apparentLabel: Gtk.Label;
+    declare private _forecastStack: Adw.ViewStack;
+    declare private _leftButton: Gtk.Button;
+    declare private _rightButton: Gtk.Button;
+    declare private _forecastHourly: HourlyForecastBox;
+    declare private _forecastHourlyAdjustment: Gtk.Adjustment;
+    declare private _forecastDaily: DailyForecastBox;
+    declare private _forecastDailyAdjustment: Gtk.Adjustment;
+    declare private _updatedTimeLabel: Gtk.Label;
+    declare private _attributionLabel: Gtk.Label;
 
     private worldView: WorldView.WorldContentView;
 
@@ -301,7 +301,7 @@ export class WeatherWidget extends Adw.Bin {
 WeatherWidget.set_layout_manager_type(Adw.ClampLayout.$gtype);
 
 export class WeatherView extends Adw.Bin {
-    private _stack!: Gtk.Stack;
+    declare private _stack: Gtk.Stack;
 
     private _info?: GWeather.Info;
 

@@ -3,11 +3,11 @@ import Gtk from 'gi://Gtk';
 import GLib from 'gi://GLib';
 
 export class LocationRow extends Gtk.Box {
-    private _label!: Gtk.Label;
-    private _countryLabel!: Gtk.Label;
-    private _locationIcon!: Gtk.Image;
-    private _currentIcon!: Gtk.Image;
-    private _removeButton!: Gtk.Button;
+    declare private _label: Gtk.Label;
+    declare private _countryLabel: Gtk.Label;
+    declare private _locationIcon: Gtk.Image;
+    declare private _currentIcon: Gtk.Image;
+    declare private _removeButton: Gtk.Button;
 
     static {
         GObject.registerClass({
