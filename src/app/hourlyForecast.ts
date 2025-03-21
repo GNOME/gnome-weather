@@ -272,9 +272,9 @@ export class HourlyForecastBox extends Gtk.Box {
 };
 
 export class HourEntry extends Adw.Bin {
-    private _timeLabel!: Gtk.Label;
-    private _image!: Gtk.Image;
-    private _forecastTemperatureLabel!: Gtk.Label;
+    declare private _timeLabel: Gtk.Label;
+    declare private _image: Gtk.Image;
+    declare private _forecastTemperatureLabel: Gtk.Label;
 
     static {
         GObject.registerClass({

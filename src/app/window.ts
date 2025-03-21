@@ -29,15 +29,15 @@ import { WeatherApplication } from './application.js';
 import { WorldModel } from '../shared/world.js';
 
 export class MainWindow extends Adw.ApplicationWindow {
-    private _searchView!: Adw.ToolbarView;
-    private _searchViewStatus!: Adw.StatusPage;
-    private _searchButton!: Gtk.MenuButton;
-    private _refreshRevealer!: Gtk.Revealer;
-    private _forecastStackSwitcher!: Adw.ViewSwitcherTitle;
-    private _forecastStackSwitcherBar!: Adw.ViewSwitcherBar;
-    private _cityBin!: Adw.Bin;
-    private _cityBox!: Adw.ToolbarView;
-    private _stack!: Gtk.Stack;
+    declare private _searchView: Adw.ToolbarView;
+    declare private _searchViewStatus: Adw.StatusPage;
+    declare private _searchButton: Gtk.MenuButton;
+    declare private _refreshRevealer: Gtk.Revealer;
+    declare private _forecastStackSwitcher: Adw.ViewSwitcherTitle;
+    declare private _forecastStackSwitcherBar: Adw.ViewSwitcherBar;
+    declare private _cityBin: Adw.Bin;
+    declare private _cityBox: Adw.ToolbarView;
+    declare private _stack: Gtk.Stack;
 
     private model: WorldModel;
     private worldView: WorldContentView;

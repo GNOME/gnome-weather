@@ -197,26 +197,26 @@ export class DailyForecastBox extends Gtk.Box {
 };
 
 export class DayEntry extends Adw.Bin {
-    private _nameLabel!: Gtk.Label;
-    private _dateLabel!: Gtk.Label;
-    private _image!: Gtk.Image;
-    private _nightTemperatureLabel!: Gtk.Label;
-    private _nightImage!: Gtk.Image;
-    private _nightHumidity!: Gtk.Label;
-    private _nightWind!: Gtk.Label;
-    private _morningTemperatureLabel!: Gtk.Label;
-    private _morningImage!: Gtk.Image;
-    private _morningHumidity!: Gtk.Label;
-    private _morningWind!: Gtk.Label;
-    private _afternoonTemperatureLabel!: Gtk.Label;
-    private _afternoonImage!: Gtk.Image;
-    private _afternoonHumidity!: Gtk.Label;
-    private _afternoonWind!: Gtk.Label;
-    private _eveningTemperatureLabel!: Gtk.Label;
-    private _eveningImage!: Gtk.Image;
-    private _eveningHumidity!: Gtk.Label;
-    private _eveningWind!: Gtk.Label;
-    private _thermometer!: Thermometer.Thermometer;
+    declare private _nameLabel: Gtk.Label;
+    declare private _dateLabel: Gtk.Label;
+    declare private _image: Gtk.Image;
+    declare private _nightTemperatureLabel: Gtk.Label;
+    declare private _nightImage: Gtk.Image;
+    declare private _nightHumidity: Gtk.Label;
+    declare private _nightWind: Gtk.Label;
+    declare private _morningTemperatureLabel: Gtk.Label;
+    declare private _morningImage: Gtk.Image;
+    declare private _morningHumidity: Gtk.Label;
+    declare private _morningWind: Gtk.Label;
+    declare private _afternoonTemperatureLabel: Gtk.Label;
+    declare private _afternoonImage: Gtk.Image;
+    declare private _afternoonHumidity: Gtk.Label;
+    declare private _afternoonWind: Gtk.Label;
+    declare private _eveningTemperatureLabel: Gtk.Label;
+    declare private _eveningImage: Gtk.Image;
+    declare private _eveningHumidity: Gtk.Label;
+    declare private _eveningWind: Gtk.Label;
+    declare private _thermometer: Thermometer.Thermometer;
 
     private datetime: GLib.DateTime;
     private info: PeriodInfos;
