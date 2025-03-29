@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
 "POT-Creation-Date: 2025-03-16 09:32+0000\n"
-"PO-Revision-Date: 2025-03-22 19:06+0500\n"
+"PO-Revision-Date: 2025-03-29 21:59+0500\n"
 "Last-Translator: \n"
 "Language-Team: Uzbek (Latin) <uz@li.org>\n"
 "Language: uz\n"
@@ -236,7 +236,7 @@ msgstr "%l∶%M %p"
 
 #: src/app/window.js:185
 msgid "translator-credits"
-msgstr "tarjimonlar uchun minnatdorchilik"
+msgstr "Baxrom Raxmatov <magdiyevbahrom@gmail.com>"
 
 #: src/app/world.js:39
 msgid "World view"
