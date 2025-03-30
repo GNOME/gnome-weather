@@ -21,7 +21,7 @@ import GWeather from 'gi://GWeather';
 import Geoclue from 'gi://Geoclue';
 import Gio from 'gi://Gio';
 
-import { WorldModel } from '../shared/world.js';
+import {WorldModel} from '../shared/world.js';
 
 export class CurrentLocationController {
     private world: WorldModel;
@@ -37,27 +37,31 @@ export class CurrentLocationController {
 
     private startGeolocationService(): void {
         if (Geoclue.Simple.new_with_thresholds) {
-            Geoclue.Simple.new_with_thresholds(pkg.name,
-                                               Geoclue.AccuracyLevel.CITY,
-                                               0, /* time threshold */
-                                               100, /* distance threshold */
-                                               null,
-                                               (_, result) => {
-                                                   this.onSimpleReady(result)
-                                               });
+            Geoclue.Simple.new_with_thresholds(
+                pkg.name,
+                Geoclue.AccuracyLevel.CITY,
+                0 /* time threshold */,
+                100 /* distance threshold */,
+                null,
+                (_, result) => {
+                    this.onSimpleReady(result);
+                }
+            );
         } else {
-            Geoclue.Simple.new(pkg.name,
-                               Geoclue.AccuracyLevel.CITY,
-                               null,
-                               (_, result) => {
-                                   this.onSimpleReady(result)
-                               });
+            Geoclue.Simple.new(
+                pkg.name,
+                Geoclue.AccuracyLevel.CITY,
+                null,
+                (_, result) => {
+                    this.onSimpleReady(result);
+                }
+            );
         }
     }
 
     private geoLocationFailed(e: unknown): void {
         if (e instanceof Error) {
-            log ("Failed to connect to GeoClue2 service: " + e.message);
+            log('Failed to connect to GeoClue2 service: ' + e.message);
         }
 
         GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
@@ -69,8 +73,7 @@ export class CurrentLocationController {
     private onSimpleReady(result: Gio.AsyncResult): void {
         try {
             this.simple = Geoclue.Simple.new_finish(result);
-        }
-        catch (e) {
+        } catch (e) {
             this.geoLocationFailed(e);
             return;
         }
@@ -84,7 +87,7 @@ export class CurrentLocationController {
     }
 
     private findLocation(): void {
-        this.simple?.connect("notify::location", (simple: Geoclue.Simple) => {
+        this.simple?.connect('notify::location', (simple: Geoclue.Simple) => {
             this.onLocationUpdated(simple);
         });
 
@@ -97,7 +100,10 @@ export class CurrentLocationController {
         const world = GWeather.Location.get_world();
 
         if (geoclueLocation && world) {
-            this.currentLocation = world.find_nearest_city(geoclueLocation.latitude, geoclueLocation.longitude);
+            this.currentLocation = world.find_nearest_city(
+                geoclueLocation.latitude,
+                geoclueLocation.longitude
+            );
         }
 
         this.world.currentLocationChanged(this.currentLocation);

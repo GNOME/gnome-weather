@@ -24,9 +24,9 @@ import GWeather from 'gi://GWeather';
 
 import * as City from './city.js';
 import * as Util from '../misc/util.js';
-import { WorldContentView } from './world.js';
-import { WeatherApplication } from './application.js';
-import { WorldModel } from '../shared/world.js';
+import {WorldContentView} from './world.js';
+import {WeatherApplication} from './application.js';
+import {WorldModel} from '../shared/world.js';
 
 export class MainWindow extends Adw.ApplicationWindow {
     declare private _searchView: Adw.ToolbarView;
@@ -45,28 +45,44 @@ export class MainWindow extends Adw.ApplicationWindow {
     private settings: Gio.Settings;
 
     static {
-        GObject.registerClass({
-            Template: 'resource:///org/gnome/Weather/window.ui',
-            InternalChildren: ['header', 'refreshRevealer', 'refresh', 'forecastStackSwitcher', 'stack',
-                'searchButton', 'searchView', 'searchViewStatus', 'forecastStackSwitcherBar', 'cityBox', 'cityBin']
-        }, this)
+        GObject.registerClass(
+            {
+                Template: 'resource:///org/gnome/Weather/window.ui',
+                InternalChildren: [
+                    'header',
+                    'refreshRevealer',
+                    'refresh',
+                    'forecastStackSwitcher',
+                    'stack',
+                    'searchButton',
+                    'searchView',
+                    'searchViewStatus',
+                    'forecastStackSwitcherBar',
+                    'cityBox',
+                    'cityBin',
+                ],
+            },
+            this
+        );
     }
 
-    public constructor(params: Partial<Adw.ApplicationWindow.ConstructorProps> | undefined) {
+    public constructor(
+        params: Partial<Adw.ApplicationWindow.ConstructorProps> | undefined
+    ) {
         super(params);
 
         const app = this.application as WeatherApplication;
 
         const aboutAction = new Gio.SimpleAction({
             enabled: true,
-            name: 'about'
+            name: 'about',
         });
         aboutAction.connect('activate', () => this.showAbout());
         this.add_action(aboutAction);
 
         const refreshAction = new Gio.SimpleAction({
             enabled: true,
-            name: 'refresh'
+            name: 'refresh',
         });
         refreshAction.connect('activate', () => this.update());
         this.add_action(refreshAction);
@@ -80,8 +96,10 @@ export class MainWindow extends Adw.ApplicationWindow {
         });
         this._searchButton.set_popover(this.worldView);
 
-        this.cityView = new City.WeatherView(app, this,
-            { hexpand: true, vexpand: true });
+        this.cityView = new City.WeatherView(app, this, {
+            hexpand: true,
+            vexpand: true,
+        });
 
         this._cityBin.set_child(this.cityView);
 
@@ -105,23 +123,16 @@ export class MainWindow extends Adw.ApplicationWindow {
     }
 
     private saveWindowGeometry(): void {
-        this.settings.set_boolean(
-            'window-maximized',
-            this.maximized
-        );
+        this.settings.set_boolean('window-maximized', this.maximized);
 
-        const defaultWindowSize = this.get_default_size()
-        this.settings.set_int(
-            'window-width', defaultWindowSize[0]
-        );
-        this.settings.set_int(
-            'window-height', defaultWindowSize[1]
-        );
+        const defaultWindowSize = this.get_default_size();
+        this.settings.set_int('window-width', defaultWindowSize[0]);
+        this.settings.set_int('window-height', defaultWindowSize[1]);
     }
 
     private restoreWindowGeometry(): void {
         if (this.settings.get_boolean('window-maximized')) {
-            this.maximize()
+            this.maximize();
         }
 
         const width = this.settings.get_int('window-width');
@@ -133,10 +144,8 @@ export class MainWindow extends Adw.ApplicationWindow {
         this._refreshRevealer.reveal_child = false;
 
         const mostRecent = this.model.getRecent();
-        if (mostRecent)
-            this.showInfo(mostRecent);
-        else
-            this.showSearch();
+        if (mostRecent) this.showInfo(mostRecent);
+        else this.showSearch();
     }
 
     public showSearch(_text?: string): void {
@@ -157,37 +166,43 @@ export class MainWindow extends Adw.ApplicationWindow {
     }
 
     private showAbout(): void {
-        const designers = ['Jakub Steiner <jimmac@gmail.com>',
+        const designers = [
+            'Jakub Steiner <jimmac@gmail.com>',
             'Pink Sherbet Photography (D. Sharon Pruitt)',
             'Elliott Brown',
             'Analogick',
             'DBduo Photography (Daniel R. Blume)',
             'davharuk',
             'Tech Haven Ministries',
-            'Jim Pennucci'];
+            'Jim Pennucci',
+        ];
 
         const copyright = 'Copyright 2013-2015 The Weather Developers';
         const attribution = this.cityView.info?.get_attribution();
 
-        const aboutDialog = new Adw.AboutDialog(
-            {
-                developers: ['Giovanni Campagna <gcampagna@src.gnome.org>'],
-                designers: designers,
-                translator_credits: _("translator-credits"),
-                application_name: _("Weather"),
-                application_icon: pkg.name,
-                developer_name: _("The GNOME Project"),
-                copyright: copyright,
-                license_type: Gtk.License.GPL_2_0,
-                version: pkg.version,
-                website: 'https://apps.gnome.org/Weather/',
-                issue_url: 'https://gitlab.gnome.org/GNOME/gnome-weather/-/issues/',
-            });
+        const aboutDialog = new Adw.AboutDialog({
+            developers: ['Giovanni Campagna <gcampagna@src.gnome.org>'],
+            designers: designers,
+            translator_credits: _('translator-credits'),
+            application_name: _('Weather'),
+            application_icon: pkg.name,
+            developer_name: _('The GNOME Project'),
+            copyright: copyright,
+            license_type: Gtk.License.GPL_2_0,
+            version: pkg.version,
+            website: 'https://apps.gnome.org/Weather/',
+            issue_url: 'https://gitlab.gnome.org/GNOME/gnome-weather/-/issues/',
+        });
 
         if (attribution) {
-            aboutDialog.add_legal_section(_("Weather"), null, Gtk.License.CUSTOM, attribution);
+            aboutDialog.add_legal_section(
+                _('Weather'),
+                null,
+                Gtk.License.CUSTOM,
+                attribution
+            );
         }
 
         aboutDialog.present(this);
     }
-};
+}

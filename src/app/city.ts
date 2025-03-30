@@ -27,10 +27,10 @@ import * as Util from '../misc/util.js';
 
 import './hourlyForecast.js';
 import './dailyForecast.js';
-import { WeatherApplication } from './application.js';
-import { MainWindow } from './window.js';
-import { HourlyForecastBox } from './hourlyForecast.js';
-import { DailyForecastBox } from './dailyForecast.js';
+import {WeatherApplication} from './application.js';
+import {MainWindow} from './window.js';
+import {HourlyForecastBox} from './hourlyForecast.js';
+import {DailyForecastBox} from './dailyForecast.js';
 
 const SCROLLING_ANIMATION_TIME = 400000; //us
 
@@ -59,31 +59,34 @@ export class WeatherWidget extends Adw.Bin {
     private info?: GWeather.Info;
 
     static {
-        GObject.registerClass({
-            Template: 'resource:///org/gnome/Weather/weather-widget.ui',
-            InternalChildren: [
-                'conditionsImage',
-                'placesButton',
-                'temperatureLabel',
-                'apparentLabel',
-                'forecastStack',
-                'leftButton',
-                'rightButton',
-                'forecastHourly',
-                'forecastHourlyScrollWindow',
-                'forecastHourlyAdjustment',
-                'forecastDaily',
-                'forecastDailyScrollWindow',
-                'forecastDailyAdjustment',
-                'updatedTimeLabel',
-                'attributionLabel'
-            ],
-        }, this);
+        GObject.registerClass(
+            {
+                Template: 'resource:///org/gnome/Weather/weather-widget.ui',
+                InternalChildren: [
+                    'conditionsImage',
+                    'placesButton',
+                    'temperatureLabel',
+                    'apparentLabel',
+                    'forecastStack',
+                    'leftButton',
+                    'rightButton',
+                    'forecastHourly',
+                    'forecastHourlyScrollWindow',
+                    'forecastHourlyAdjustment',
+                    'forecastDaily',
+                    'forecastDailyScrollWindow',
+                    'forecastDailyAdjustment',
+                    'updatedTimeLabel',
+                    'attributionLabel',
+                ],
+            },
+            this
+        );
     }
 
     public constructor(application: WeatherApplication, window: MainWindow) {
         super({
-            name: 'weather-page'
+            name: 'weather-page',
         });
 
         Object.assign(this.layoutManager, {
@@ -92,20 +95,25 @@ export class WeatherWidget extends Adw.Bin {
             tighteningThreshold: 992,
         });
 
-        this.worldView = new WorldView.WorldContentView(application, window,  {
+        this.worldView = new WorldView.WorldContentView(application, window, {
             align: Gtk.Align.START,
         });
         this._placesButton.set_popover(this.worldView);
 
-        for (const adjustment of [this._forecastHourlyAdjustment, this._forecastDailyAdjustment]) {
+        for (const adjustment of [
+            this._forecastHourlyAdjustment,
+            this._forecastDailyAdjustment,
+        ]) {
             adjustment.connect('changed', () => this.syncLeftRightButtons());
-            adjustment.connect('value-changed', () => this.syncLeftRightButtons());
+            adjustment.connect('value-changed', () =>
+                this.syncLeftRightButtons()
+            );
         }
 
         this._forecastStack.connect('notify::visible-child', () => {
-            const visible_child = this._forecastStack.visible_child as Gtk.ScrolledWindow;
-            if (visible_child == null)
-                return; // can happen at destruction
+            const visible_child = this._forecastStack
+                .visible_child as Gtk.ScrolledWindow;
+            if (visible_child == null) return; // can happen at destruction
 
             const hadjustment = visible_child.get_hadjustment();
             hadjustment.value = hadjustment.get_lower();
@@ -120,14 +128,18 @@ export class WeatherWidget extends Adw.Bin {
         this.tickId = 0;
 
         this._leftButton.connect('clicked', () => {
-            const hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
+            const hadjustment = (
+                this._forecastStack.visible_child as Gtk.ScrolledWindow
+            ).get_hadjustment();
             const target = hadjustment.value - hadjustment.page_size;
 
             this.beginScrollAnimation(target);
         });
 
         this._rightButton.connect('clicked', () => {
-            const hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
+            const hadjustment = (
+                this._forecastStack.visible_child as Gtk.ScrolledWindow
+            ).get_hadjustment();
             const target = hadjustment.value + hadjustment.page_size;
 
             this.beginScrollAnimation(target);
@@ -147,15 +159,22 @@ export class WeatherWidget extends Adw.Bin {
     }
 
     private syncLeftRightButtons(): void {
-        const visible_child = this._forecastStack.visible_child as Gtk.ScrolledWindow;
+        const visible_child = this._forecastStack
+            .visible_child as Gtk.ScrolledWindow;
         const hadjustment = visible_child.get_hadjustment();
-        if ((hadjustment.get_upper() - hadjustment.get_lower()) == hadjustment.page_size) {
+        if (
+            hadjustment.get_upper() - hadjustment.get_lower() ==
+            hadjustment.page_size
+        ) {
             this._leftButton.hide();
             this._rightButton.hide();
         } else if (hadjustment.value == hadjustment.get_lower()) {
             this._leftButton.hide();
             this._rightButton.show();
-        } else if (hadjustment.value >= (hadjustment.get_upper() - hadjustment.page_size)) {
+        } else if (
+            hadjustment.value >=
+            hadjustment.get_upper() - hadjustment.page_size
+        ) {
             this._leftButton.show();
             this._rightButton.hide();
         } else {
@@ -168,27 +187,34 @@ export class WeatherWidget extends Adw.Bin {
         if (this.get_realized()) {
             const start = this.get_frame_clock()?.get_frame_time();
             if (!start) {
-                throw new Error("The frame clock should always exist when realized.")
+                throw new Error(
+                    'The frame clock should always exist when realized.'
+                );
             }
 
             const end = start + SCROLLING_ANIMATION_TIME;
 
-            if (this.tickId != 0)
-                this.remove_tick_callback(this.tickId);
+            if (this.tickId != 0) this.remove_tick_callback(this.tickId);
 
-            this.tickId = this.add_tick_callback(() => this.animate(target, start, end));
+            this.tickId = this.add_tick_callback(() =>
+                this.animate(target, start, end)
+            );
         }
     }
 
     private animate(target: number, start: number, end: number): boolean {
-        const hadjustment = (this._forecastStack.visible_child as Gtk.ScrolledWindow).get_hadjustment();
+        const hadjustment = (
+            this._forecastStack.visible_child as Gtk.ScrolledWindow
+        ).get_hadjustment();
         const value = hadjustment.value;
         let t = 1.0;
 
         if (this.get_realized()) {
             const now = this.get_frame_clock()?.get_frame_time();
             if (!now) {
-                throw new Error("The frame clock should always exist when realized.")
+                throw new Error(
+                    'The frame clock should always exist when realized.'
+                );
             }
 
             if (now < end) {
@@ -230,10 +256,14 @@ export class WeatherWidget extends Adw.Bin {
 
         this._conditionsImage.iconName = `${this.info.get_icon_name()}-large`;
 
-        const [, tempValue] = info.get_value_temp(GWeather.TemperatureUnit.DEFAULT);
+        const [, tempValue] = info.get_value_temp(
+            GWeather.TemperatureUnit.DEFAULT
+        );
         this._temperatureLabel.label = '%d°'.format(Math.round(tempValue));
 
-        const [, apparentValue] = info.get_value_apparent(GWeather.TemperatureUnit.DEFAULT);
+        const [, apparentValue] = info.get_value_apparent(
+            GWeather.TemperatureUnit.DEFAULT
+        );
         this._apparentLabel.label = _('Feels like %.0f°').format(apparentValue);
         this._apparentLabel.visible = apparentValue !== tempValue;
 
@@ -248,7 +278,8 @@ export class WeatherWidget extends Adw.Bin {
 
         this.updatedTimeTimeoutId = GLib.timeout_add_seconds(
             GLib.PRIORITY_DEFAULT,
-            UPDATED_TIME_TIMEOUT, () => {
+            UPDATED_TIME_TIMEOUT,
+            () => {
                 this._updatedTimeLabel.label = this.formatUpdatedTime();
                 return GLib.SOURCE_CONTINUE;
             }
@@ -258,45 +289,53 @@ export class WeatherWidget extends Adw.Bin {
     }
 
     private formatUpdatedTime(): string {
-        if (!this.updatedTime)
-            return '';
+        if (!this.updatedTime) return '';
 
         const milliseconds = Date.now() - this.updatedTime;
 
         const seconds = milliseconds / 1000;
-        if (seconds < 60)
-            return _('Updated just now.');
+        if (seconds < 60) return _('Updated just now.');
 
         const minutes = seconds / 60;
         if (minutes < 60)
             return ngettext(
                 'Updated %d minute ago.',
-                'Updated %d minutes ago.', minutes).format(minutes);
+                'Updated %d minutes ago.',
+                minutes
+            ).format(minutes);
 
         const hours = minutes / 60;
         if (hours < 24)
             return ngettext(
                 'Updated %d hour ago.',
-                'Updated %d hours ago.', hours).format(hours);
+                'Updated %d hours ago.',
+                hours
+            ).format(hours);
 
         const days = hours / 24;
         if (days < 7)
             return ngettext(
                 'Updated %d day ago.',
-                'Updated %d days ago.', days).format(days);
+                'Updated %d days ago.',
+                days
+            ).format(days);
 
         const weeks = days / 7;
         if (days < 30)
             return ngettext(
                 'Updated %d week ago.',
-                'Updated %d weeks ago.', weeks).format(weeks);
+                'Updated %d weeks ago.',
+                weeks
+            ).format(weeks);
 
         const months = days / 30;
         return ngettext(
             'Updated %d month ago.',
-            'Updated %d months ago.', months).format(months);
+            'Updated %d months ago.',
+            months
+        ).format(months);
     }
-};
+}
 
 WeatherWidget.set_layout_manager_type(Adw.ClampLayout.$gtype);
 
@@ -309,13 +348,20 @@ export class WeatherView extends Adw.Bin {
     private infoPage: WeatherWidget;
 
     static {
-        GObject.registerClass({
-            Template: 'resource:///org/gnome/Weather/city.ui',
-            InternalChildren: ['stack']
-        }, this);
+        GObject.registerClass(
+            {
+                Template: 'resource:///org/gnome/Weather/city.ui',
+                InternalChildren: ['stack'],
+            },
+            this
+        );
     }
 
-    public constructor(application: WeatherApplication, window: MainWindow, params?: Partial<Adw.Bin.ConstructorProps>) {
+    public constructor(
+        application: WeatherApplication,
+        window: MainWindow,
+        params?: Partial<Adw.Bin.ConstructorProps>
+    ) {
         super(params);
 
         this.infoPage = new WeatherWidget(application, window);
@@ -338,8 +384,8 @@ export class WeatherView extends Adw.Bin {
 
         if (info) {
             this._stack.visible_child_name = 'loading';
-            this.updateId = this._info?.connect('updated', (info) => {
-                this.onUpdate(info)
+            this.updateId = this._info?.connect('updated', info => {
+                this.onUpdate(info);
             });
 
             if (info.is_valid()) {
@@ -380,4 +426,4 @@ export class WeatherView extends Adw.Bin {
     public getForecastStack(): Adw.ViewStack {
         return this.infoPage.getForecastStack();
     }
-};
+}

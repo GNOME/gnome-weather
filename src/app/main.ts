@@ -41,7 +41,7 @@ declare global {
 globalThis.ngettext = imports.gettext.ngettext;
 globalThis.getApp = function (): WeatherApplication | undefined {
     const app = Gio.Application.get_default();
-    return app ? app as WeatherApplication : undefined;
+    return app ? (app as WeatherApplication) : undefined;
 };
 
 const application = new WeatherApplication();
@@ -49,10 +49,12 @@ const application = new WeatherApplication();
 setTimeout(() => {
     imports.mainloop.quit('gnome-weather');
 
-    const code = application.run([system.programInvocationName, ...system.programArgs]);
+    const code = application.run([
+        system.programInvocationName,
+        ...system.programArgs,
+    ]);
 
-    if (code !== 0)
-        system.exit(code);
+    if (code !== 0) system.exit(code);
 });
 
 imports.mainloop.run('gnome-weather');
