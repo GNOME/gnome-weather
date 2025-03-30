@@ -31,10 +31,10 @@ type DayInfo = {
 };
 
 type PreprocessedInfo = {
-    weekHighestTemp: number,
-    weekLowestTemp: number,
-    days: DayInfo[]
-}
+    weekHighestTemp: number;
+    weekLowestTemp: number;
+    days: DayInfo[];
+};
 
 type PeriodInfos = {
     day: GWeather.Info;
@@ -47,7 +47,9 @@ type PeriodInfos = {
 function addDay(base: GLib.DateTime): GLib.DateTime {
     const day = base.add_days(1);
     if (!day) {
-        throw new Error("We're only adding a single day. Have 10,000 years passed already?");
+        throw new Error(
+            "We're only adding a single day. Have 10,000 years passed already?"
+        );
     }
 
     return day;
@@ -65,7 +67,10 @@ export class DailyForecastBox extends Gtk.Box {
             name: 'daily-forecast-box',
         });
 
-        this.update_property([Gtk.AccessibleProperty.LABEL], [_('Daily Forecast')]);
+        this.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            [_('Daily Forecast')]
+        );
     }
 
     // get infos for the correct day
@@ -84,19 +89,17 @@ export class DailyForecastBox extends Gtk.Box {
             const info = infos[i];
 
             const datetime = Util.getDateTime(info);
-            if (Util.arrayEqual(day.get_ymd(), datetime.get_ymd()))
-                break;
+            if (Util.arrayEqual(day.get_ymd(), datetime.get_ymd())) break;
         }
 
         const weekInfos = [];
         while (i < infos.length) {
-            const dayInfos: DayInfo = { day: day, infos: [] };
+            const dayInfos: DayInfo = {day: day, infos: []};
             for (; i < infos.length; i++) {
                 const info = infos[i];
 
                 const datetime = Util.getDateTime(info);
-                if (!Util.arrayEqual(day.get_ymd(), datetime.get_ymd()))
-                    break;
+                if (!Util.arrayEqual(day.get_ymd(), datetime.get_ymd())) break;
 
                 dayInfos.infos.push(info);
             }
@@ -104,7 +107,8 @@ export class DailyForecastBox extends Gtk.Box {
             day = addDay(day);
         }
 
-        const temperatures = weekInfos.map(dayInfos => dayInfos.infos)
+        const temperatures = weekInfos
+            .map(dayInfos => dayInfos.infos)
             .flat()
             .map(info => Util.getTemp(info));
 
@@ -114,7 +118,7 @@ export class DailyForecastBox extends Gtk.Box {
         return {
             weekHighestTemp,
             weekLowestTemp,
-            days: weekInfos
+            days: weekInfos,
         };
     }
 
@@ -124,22 +128,32 @@ export class DailyForecastBox extends Gtk.Box {
         const forecast = this.preprocess(forecasts);
 
         if (forecast.days.length > 1) {
-            forecast.days.forEach((info) => {
-                this.append(this.buildDayEntry(info, forecast.weekHighestTemp, forecast.weekLowestTemp));
+            forecast.days.forEach(info => {
+                this.append(
+                    this.buildDayEntry(
+                        info,
+                        forecast.weekHighestTemp,
+                        forecast.weekLowestTemp
+                    )
+                );
                 this.append(this.buildSeparator());
-            })
+            });
         } else {
             const label = new Gtk.Label({
                 label: _('Forecast not Available'),
                 use_markup: true,
-                visible: true
+                visible: true,
             });
             this.prepend(label);
         }
     }
 
-    private buildDayEntry(dayInfos: DayInfo, weekHighestTemp: number, weekLowestTemp: number): DayEntry {
-        const { day, infos } = dayInfos;
+    private buildDayEntry(
+        dayInfos: DayInfo,
+        weekHighestTemp: number,
+        weekLowestTemp: number
+    ): DayEntry {
+        const {day, infos} = dayInfos;
         const datetime = Util.getDay(day);
 
         const temperatures = infos.map(info => Util.getTemp(info));
@@ -152,21 +166,28 @@ export class DailyForecastBox extends Gtk.Box {
             night: Util.getNight(datetime),
             morning: Util.getMorning(datetime),
             afternoon: Util.getAfternoon(datetime),
-            evening: Util.getEvening(datetime)
+            evening: Util.getEvening(datetime),
         };
 
         const datetimes = infos.map(info => Util.getDateTime(info));
 
-        for (const period of ['day', 'night', 'morning', 'afternoon', 'evening']) {
-            const differences = datetimes.map(datetime => Math.abs(datetime.difference(times[period])));
+        for (const period of [
+            'day',
+            'night',
+            'morning',
+            'afternoon',
+            'evening',
+        ]) {
+            const differences = datetimes.map(datetime =>
+                Math.abs(datetime.difference(times[period]))
+            );
 
-            const index = differences.indexOf(Math.min(...differences))
+            const index = differences.indexOf(Math.min(...differences));
 
             periodInfos[period] = infos[index];
         }
 
-
-        const { day: dayInfo, night, morning, afternoon, evening } = periodInfos;
+        const {day: dayInfo, night, morning, afternoon, evening} = periodInfos;
 
         return new DayEntry({
             datetime,
@@ -178,14 +199,14 @@ export class DailyForecastBox extends Gtk.Box {
             night,
             morning,
             afternoon,
-            evening
+            evening,
         });
     }
 
     private buildSeparator(): Gtk.Separator {
         return new Gtk.Separator({
             orientation: Gtk.Orientation.VERTICAL,
-            visible: true
+            visible: true,
         });
     }
 
@@ -194,7 +215,7 @@ export class DailyForecastBox extends Gtk.Box {
             entry.unparent();
         }
     }
-};
+}
 
 export class DayEntry extends Adw.Bin {
     declare private _nameLabel: Gtk.Label;
@@ -226,33 +247,48 @@ export class DayEntry extends Adw.Bin {
     private weekLowestTemp: number;
 
     static {
-        GObject.registerClass({
-            Template: 'resource:///org/gnome/Weather/day-entry.ui',
-            InternalChildren: ['nameLabel', 'dateLabel', 'image',
-                'thermometer',
-                'nightTemperatureLabel', 'nightImage',
-                'nightHumidity', 'nightWind',
-                'morningTemperatureLabel', 'morningImage',
-                'morningHumidity', 'morningWind',
-                'afternoonTemperatureLabel', 'afternoonImage',
-                'afternoonHumidity', 'afternoonWind',
-                'eveningTemperatureLabel', 'eveningImage',
-                'eveningHumidity', 'eveningWind'],
-        }, this);
+        GObject.registerClass(
+            {
+                Template: 'resource:///org/gnome/Weather/day-entry.ui',
+                InternalChildren: [
+                    'nameLabel',
+                    'dateLabel',
+                    'image',
+                    'thermometer',
+                    'nightTemperatureLabel',
+                    'nightImage',
+                    'nightHumidity',
+                    'nightWind',
+                    'morningTemperatureLabel',
+                    'morningImage',
+                    'morningHumidity',
+                    'morningWind',
+                    'afternoonTemperatureLabel',
+                    'afternoonImage',
+                    'afternoonHumidity',
+                    'afternoonWind',
+                    'eveningTemperatureLabel',
+                    'eveningImage',
+                    'eveningHumidity',
+                    'eveningWind',
+                ],
+            },
+            this
+        );
     }
 
     public constructor(params: {
-            datetime: GLib.DateTime;
-            weekHighestTemp: number;
-            weekLowestTemp: number;
-            maxTemp: number;
-            minTemp: number;
-            day: GWeather.Info;
-            night: GWeather.Info;
-            morning: GWeather.Info;
-            afternoon: GWeather.Info;
-            evening: GWeather.Info;
-        }) {
+        datetime: GLib.DateTime;
+        weekHighestTemp: number;
+        weekLowestTemp: number;
+        maxTemp: number;
+        minTemp: number;
+        day: GWeather.Info;
+        night: GWeather.Info;
+        morning: GWeather.Info;
+        afternoon: GWeather.Info;
+        evening: GWeather.Info;
+    }) {
         const {
             datetime,
             maxTemp,
@@ -263,7 +299,7 @@ export class DayEntry extends Adw.Bin {
             night,
             morning,
             afternoon,
-            evening
+            evening,
         } = params;
 
         super();
@@ -274,7 +310,7 @@ export class DayEntry extends Adw.Bin {
             night,
             morning,
             afternoon,
-            evening
+            evening,
         };
         this.maxTemp = maxTemp;
         this.minTemp = minTemp;
@@ -285,8 +321,14 @@ export class DayEntry extends Adw.Bin {
     public vfunc_root(): void {
         super.vfunc_root();
 
-        const { datetime } = this;
-        const { day: dayInfo, evening: eveningInfo, night: nightInfo, morning: morningInfo, afternoon: afternoonInfo } = this.info;
+        const {datetime} = this;
+        const {
+            day: dayInfo,
+            evening: eveningInfo,
+            night: nightInfo,
+            morning: morningInfo,
+            afternoon: afternoonInfo,
+        } = this.info;
 
         this._nameLabel.label = datetime.format('%a') ?? '';
         /* Translators: this is the time format for day and month name according to the current locale */
@@ -295,23 +337,32 @@ export class DayEntry extends Adw.Bin {
 
         this._image.iconName = `${dayInfo.get_icon_name()}-small`;
 
-        this._thermometer.range = new Thermometer.TemperatureRange({ dailyLow: this.minTemp, dailyHigh: this.maxTemp, weeklyLow: this.weekLowestTemp, weeklyHigh: this.weekHighestTemp });
+        this._thermometer.range = new Thermometer.TemperatureRange({
+            dailyLow: this.minTemp,
+            dailyHigh: this.maxTemp,
+            weeklyLow: this.weekLowestTemp,
+            weeklyHigh: this.weekHighestTemp,
+        });
         this._nightTemperatureLabel.label = Util.getTempString(nightInfo) ?? '';
         this._nightImage.iconName = nightInfo.get_icon_name() + '-small';
         this._nightHumidity.label = nightInfo.get_humidity();
         this.setWindInfo(nightInfo, this._nightWind);
 
-        this._morningTemperatureLabel.label = Util.getTempString(morningInfo) ?? '';
+        this._morningTemperatureLabel.label =
+            Util.getTempString(morningInfo) ?? '';
         this._morningImage.iconName = morningInfo.get_icon_name() + '-small';
         this._morningHumidity.label = morningInfo.get_humidity();
         this.setWindInfo(morningInfo, this._morningWind);
 
-        this._afternoonTemperatureLabel.label = Util.getTempString(afternoonInfo) ?? '';
-        this._afternoonImage.iconName = afternoonInfo.get_icon_name() + '-small';
+        this._afternoonTemperatureLabel.label =
+            Util.getTempString(afternoonInfo) ?? '';
+        this._afternoonImage.iconName =
+            afternoonInfo.get_icon_name() + '-small';
         this._afternoonHumidity.label = afternoonInfo.get_humidity();
         this.setWindInfo(afternoonInfo, this._afternoonWind);
 
-        this._eveningTemperatureLabel.label = Util.getTempString(eveningInfo) ?? '';
+        this._eveningTemperatureLabel.label =
+            Util.getTempString(eveningInfo) ?? '';
         this._eveningImage.iconName = eveningInfo.get_icon_name() + '-small';
         this._eveningHumidity.label = eveningInfo.get_humidity();
         this.setWindInfo(eveningInfo, this._eveningWind);
@@ -326,4 +377,4 @@ export class DayEntry extends Adw.Bin {
             label.label = info.get_wind();
         }
     }
-};
+}

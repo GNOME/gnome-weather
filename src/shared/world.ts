@@ -26,7 +26,7 @@ import * as Util from '../misc/util.js';
 type GWeatherInfoData = GWeather.Info & {
     _isCurrentLocation?: boolean;
     _loadingId?: number;
-}
+};
 
 export class WorldModel extends GObject.Object {
     private world?: GWeather.Location;
@@ -40,15 +40,26 @@ export class WorldModel extends GObject.Object {
     private queueSaveSettingsId?: number;
 
     static {
-        GObject.registerClass({
-            Signals: {
-                'selected-location-changed': { param_types: [GWeather.Info.$gtype] },
+        GObject.registerClass(
+            {
+                Signals: {
+                    'selected-location-changed': {
+                        param_types: [GWeather.Info.$gtype],
+                    },
+                },
+                Properties: {
+                    loading: GObject.ParamSpec.boolean(
+                        'loading',
+                        '',
+                        '',
+                        GObject.ParamFlags.READABLE,
+                        false
+                    ),
+                },
+                Implements: [Gio.ListModel],
             },
-            Properties: {
-                'loading': GObject.ParamSpec.boolean('loading', '', '', GObject.ParamFlags.READABLE, false)
-            },
-            Implements: [Gio.ListModel]
-        }, this)
+            this
+        );
     }
 
     public constructor(world?: GWeather.Location) {
@@ -67,17 +78,22 @@ export class WorldModel extends GObject.Object {
     }
 
     public get length(): number {
-        return this.allInfos.length
+        return this.allInfos.length;
     }
 
     public getAll(): GWeatherInfoData[] {
         // Ensure the current location and selected location are returned first...
-        const infos = [...this.infoList].filter(info => !this.isCurrentLocation(info) && !this.isSelectedLocation(info));
+        const infos = [...this.infoList].filter(
+            info =>
+                !this.isCurrentLocation(info) && !this.isSelectedLocation(info)
+        );
 
-        if (this.currentLocationInfo)
-            infos.unshift(this.currentLocationInfo);
+        if (this.currentLocationInfo) infos.unshift(this.currentLocationInfo);
 
-        if (this.selectedLocation && this.currentLocationInfo !== this.selectedLocation) {
+        if (
+            this.selectedLocation &&
+            this.currentLocationInfo !== this.selectedLocation
+        ) {
             infos.unshift(this.selectedLocation);
         }
 
@@ -87,16 +103,12 @@ export class WorldModel extends GObject.Object {
 
     public getAtIndex(index: number): GWeatherInfoData {
         if (this.selectedLocation) {
-            if (index == 0)
-                return this.selectedLocation;
-            else
-                index--;
+            if (index == 0) return this.selectedLocation;
+            else index--;
         }
         if (this.currentLocationInfo) {
-            if (index == 1)
-                return this.currentLocationInfo;
-            else
-                index--;
+            if (index == 1) return this.currentLocationInfo;
+            else index--;
         }
 
         return this.infoList[index];
@@ -115,18 +127,21 @@ export class WorldModel extends GObject.Object {
     }
 
     public getRecent(): GWeatherInfoData | undefined {
-        if (this.infoList.length > 0)
-            return this.infoList[0];
-        else
-            return undefined;
+        if (this.infoList.length > 0) return this.infoList[0];
+        else return undefined;
     }
 
     public load(): void {
-        let locations: GLib.Variant[] = this.settings.get_value('locations').deep_unpack();
+        let locations: GLib.Variant[] = this.settings
+            .get_value('locations')
+            .deep_unpack();
 
         if (locations.length > 10) {
             locations = locations.slice(0, 10).filter(location => !!location);
-            this.settings.set_value('locations', new GLib.Variant('av', locations));
+            this.settings.set_value(
+                'locations',
+                new GLib.Variant('av', locations)
+            );
         }
 
         let info = null;
@@ -158,15 +173,13 @@ export class WorldModel extends GObject.Object {
         this.loadingCount += delta;
         const isLoading = this.loadingCount > 0;
 
-        if (wasLoading != isLoading)
-            this.notify('loading');
+        if (wasLoading != isLoading) this.notify('loading');
     }
 
-    public updateInfo(info: GWeather.Info & { _loadingId?: number; }): void {
-        if (info._loadingId)
-            return;
+    public updateInfo(info: GWeather.Info & {_loadingId?: number}): void {
+        if (info._loadingId) return;
 
-        info._loadingId = info.connect('updated', (info) => {
+        info._loadingId = info.connect('updated', info => {
             if (info._loadingId) {
                 info.disconnect(info._loadingId);
                 info._loadingId = 0;
@@ -209,8 +222,7 @@ export class WorldModel extends GObject.Object {
     }
 
     private queueSaveSettings(): void {
-        if (this.queueSaveSettingsId)
-            return;
+        if (this.queueSaveSettingsId) return;
 
         const id = GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
             this.queueSaveSettingsId = 0;
@@ -232,8 +244,7 @@ export class WorldModel extends GObject.Object {
                     console.error(error);
                 }
 
-                if (serialized)
-                    locations.push(serialized);
+                if (serialized) locations.push(serialized);
             }
         }
 
@@ -241,8 +252,7 @@ export class WorldModel extends GObject.Object {
     }
 
     public saveSettingsNow(): void {
-        if (!this.queueSaveSettingsId)
-            return;
+        if (!this.queueSaveSettingsId) return;
 
         GLib.source_remove(this.queueSaveSettingsId);
         this.queueSaveSettingsId = 0;
@@ -251,10 +261,11 @@ export class WorldModel extends GObject.Object {
     }
 
     public addCurrentLocation(info: GWeatherInfoData): void {
-        if (this.infoList.includes(info))
-            return;
+        if (this.infoList.includes(info)) return;
 
-        const existingInfo = this.infoList.find(i => i.get_location().equal(info.location));
+        const existingInfo = this.infoList.find(i =>
+            i.get_location().equal(info.location)
+        );
         if (existingInfo) {
             this.currentLocationInfo = existingInfo;
             return;
@@ -302,16 +313,20 @@ export class WorldModel extends GObject.Object {
     public buildInfo(location: GWeather.Location): GWeatherInfoData {
         return new GWeather.Info({
             application_id: pkg.name,
-            contact_info: 'https://gitlab.gnome.org/GNOME/gnome-weather/-/raw/master/gnome-weather.doap',
+            contact_info:
+                'https://gitlab.gnome.org/GNOME/gnome-weather/-/raw/master/gnome-weather.doap',
             location,
-            enabled_providers: this.providers
+            enabled_providers: this.providers,
         });
     }
 
-    private addLocationInternal(newLocation: GWeather.Location): GWeatherInfoData {
-        const existingInfo = this.infoList.find(info => info.get_location().equal(newLocation));
-        if (existingInfo)
-            return existingInfo;
+    private addLocationInternal(
+        newLocation: GWeather.Location
+    ): GWeatherInfoData {
+        const existingInfo = this.infoList.find(info =>
+            info.get_location().equal(newLocation)
+        );
+        if (existingInfo) return existingInfo;
 
         const info = this.buildInfo(newLocation);
         this.addInfoInternal(info);
@@ -342,4 +357,4 @@ export class WorldModel extends GObject.Object {
     public vfunc_get_item(n: number): GWeatherInfoData | undefined {
         return this.allInfos[n] ?? undefined;
     }
-};
+}

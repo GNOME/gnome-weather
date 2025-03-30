@@ -19,7 +19,10 @@ import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 
 const ShellIntegrationInterface = new TextDecoder().decode(
-    Gio.resources_lookup_data('/org/gnome/shell/ShellWeatherIntegration.xml', 0).get_data() ?? undefined
+    Gio.resources_lookup_data(
+        '/org/gnome/shell/ShellWeatherIntegration.xml',
+        0
+    ).get_data() ?? undefined
 );
 
 export class ShellIntegration {
@@ -28,13 +31,17 @@ export class ShellIntegration {
 
     public constructor() {
         this.impl = Gio.DBusExportedObject.wrapJSObject(
-            ShellIntegrationInterface, this);
+            ShellIntegrationInterface,
+            this
+        );
 
-        this.settings = new Gio.Settings({ schema_id: 'org.gnome.Weather' });
+        this.settings = new Gio.Settings({schema_id: 'org.gnome.Weather'});
 
         this.settings.connect('changed::locations', () => {
-            this.impl.emit_property_changed('Locations',
-                new GLib.Variant('av', this.Locations));
+            this.impl.emit_property_changed(
+                'Locations',
+                new GLib.Variant('av', this.Locations)
+            );
         });
     }
 
@@ -54,4 +61,4 @@ export class ShellIntegration {
     public get Locations(): GLib.Variant[] {
         return this.settings.get_value('locations').deep_unpack();
     }
-};
+}

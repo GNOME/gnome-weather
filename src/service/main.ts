@@ -18,10 +18,7 @@
 
 pkg.initGettext();
 pkg.initFormat();
-pkg.require({ 'Gio': '2.0',
-              'GLib': '2.0',
-              'GObject': '2.0',
-              'GWeather': '4.0' });
+pkg.require({Gio: '2.0', GLib: '2.0', GObject: '2.0', GWeather: '4.0'});
 
 import * as system from 'system';
 
@@ -45,21 +42,24 @@ export class WeatherBackgroundService extends Gio.Application {
     }
 
     public constructor() {
-        super({ application_id: pkg.name,
-                      flags: Gio.ApplicationFlags.IS_SERVICE,
-                      inactivity_timeout: 60000 });
-        GLib.set_application_name(_("Weather"));
+        super({
+            application_id: pkg.name,
+            flags: Gio.ApplicationFlags.IS_SERVICE,
+            inactivity_timeout: 60000,
+        });
+        GLib.set_application_name(_('Weather'));
 
         this.searchProvider = new SearchProvider.WeatherSearchProvider(this);
 
         this.debug = false;
 
-        if (!pkg.moduledir?.startsWith('resource://'))
-            this.debug = true;
+        if (!pkg.moduledir?.startsWith('resource://')) this.debug = true;
 
         const world = GWeather.Location.get_world();
         if (!world) {
-            throw new Error('Failed to load top level location from location providers.');
+            throw new Error(
+                'Failed to load top level location from location providers.'
+            );
         }
 
         this.world = world;
@@ -70,7 +70,10 @@ export class WeatherBackgroundService extends Gio.Application {
         this.quit();
     }
 
-    public vfunc_dbus_register(connection: Gio.DBusConnection, path: string): boolean {
+    public vfunc_dbus_register(
+        connection: Gio.DBusConnection,
+        path: string
+    ): boolean {
         super.vfunc_dbus_register(connection, path);
 
         this.searchProvider.export(connection, path);
@@ -83,14 +86,14 @@ export class WeatherBackgroundService extends Gio.Application {
         this.model.load();
 
         if (this.debug) {
-            this.model.getAll().forEach(function(info) {
+            this.model.getAll().forEach(function (info) {
                 log(info.location.get_city_name() ?? '');
             });
         }
 
         const quitAction = new Gio.SimpleAction({
             enabled: true,
-            name: 'quit'
+            name: 'quit',
         });
         quitAction.connect('activate', () => this.onQuit());
         this.add_action(quitAction);
@@ -105,7 +108,7 @@ export class WeatherBackgroundService extends Gio.Application {
 
         super.vfunc_shutdown();
     }
-};
+}
 
 export function main(argv: string[] | null): void {
     setTimeout(() => {
@@ -113,8 +116,7 @@ export function main(argv: string[] | null): void {
 
         const code = new WeatherBackgroundService().run(argv);
 
-        if (code !== 0)
-            system.exit(code);
+        if (code !== 0) system.exit(code);
     });
 
     imports.mainloop.run('search-provider');

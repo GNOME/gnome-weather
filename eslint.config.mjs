@@ -12,6 +12,7 @@ export default tseslint.config(
         "types/**",
         "gi-types/**",
         "eslint.config.mjs",
+        "prettier.config.js",
         "*.doap"
     ]),
     eslint.configs.recommended,

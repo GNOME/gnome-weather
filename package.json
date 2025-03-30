@@ -2,6 +2,7 @@
   "private": true,
   "name": "gnome-weather",
   "version": "48.0",
+  "type": "module",
   "main": "src/app/main.js",
   "repository": "https://gitlab.gnome.org/GNOME/gnome-weather.git",
   "contributors": [
@@ -21,6 +22,7 @@
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "3.5.3",
     "typescript-eslint": "^8.26.1"
   },
   "scripts": {

@@ -33,3 +33,19 @@ nightly:
 nightly aarch64:
   extends: '.publish_nightly'
   needs: ['flatpak@aarch64']
+
+lint:
+  variables:
+    LINT_LOG: "eslint-report.txt"
+    FORMAT_LOG: "prettier-report.diff"
+  script:
+    - sudo dnf install -y npm
+    - npm install
+    - npx eslint -o $LINT_LOG --no-color src || { cat $LINT_LOG; false; }
+    - npx prettier -c ./src/ || { npx prettier -w ./src/; git diff >> $FORMAT_LOG; false; }
+  artifacts:
+    paths:
+      - ${LINT_LOG}
+      - ${FORMAT_LOG}
+    when: on_failure
+

@@ -10,17 +10,42 @@ export class LocationRow extends Gtk.Box {
     declare private _removeButton: Gtk.Button;
 
     static {
-        GObject.registerClass({
-            Template: GLib.Uri.resolve_relative(import.meta.url, './locationRow.ui', 0),
-            InternalChildren: ['label', 'countryLabel', 'locationIcon', 'currentIcon', 'removeButton'],
-            Signals: {
-                'remove': {},
-            }
-        }, this);
+        GObject.registerClass(
+            {
+                Template: GLib.Uri.resolve_relative(
+                    import.meta.url,
+                    './locationRow.ui',
+                    0
+                ),
+                InternalChildren: [
+                    'label',
+                    'countryLabel',
+                    'locationIcon',
+                    'currentIcon',
+                    'removeButton',
+                ],
+                Signals: {
+                    remove: {},
+                },
+            },
+            this
+        );
     }
 
-    public constructor({ name, countryName, isSelected = false, isCurrentLocation = false, isRemovable = false }: { name: string; countryName: string; isSelected?: boolean; isCurrentLocation?: boolean; isRemovable?: boolean; }) {
-        super({ widthRequest: 320 });
+    public constructor({
+        name,
+        countryName,
+        isSelected = false,
+        isCurrentLocation = false,
+        isRemovable = false,
+    }: {
+        name: string;
+        countryName: string;
+        isSelected?: boolean;
+        isCurrentLocation?: boolean;
+        isRemovable?: boolean;
+    }) {
+        super({widthRequest: 320});
 
         this.name = name;
         this.countryName = countryName;
@@ -52,5 +77,4 @@ export class LocationRow extends Gtk.Box {
     public _onRemoveClicked(): void {
         this.emit('remove');
     }
-};
-
+}

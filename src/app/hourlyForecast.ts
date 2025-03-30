@@ -48,8 +48,13 @@ export class HourlyForecastBox extends Gtk.Box {
             name: 'hourly-forecast-box',
         });
 
-        this.update_property([Gtk.AccessibleProperty.LABEL], [_('Hourly Forecast')]);
-        this.settings = new Gio.Settings({ schema_id: 'org.gnome.desktop.interface' });
+        this.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            [_('Hourly Forecast')]
+        );
+        this.settings = new Gio.Settings({
+            schema_id: 'org.gnome.desktop.interface',
+        });
 
         this.hourlyInfo = [];
         this._hasForecastInfo = false;
@@ -57,18 +62,22 @@ export class HourlyForecastBox extends Gtk.Box {
 
     // Ensure that infos are sufficiently spaced, and
     // remove infos for the wrong day
-    private preprocess(now: GLib.DateTime, forecastInfo: GWeather.Info, infos: GWeather.Info[]): GWeather.Info[] {
+    private preprocess(
+        now: GLib.DateTime,
+        forecastInfo: GWeather.Info,
+        infos: GWeather.Info[]
+    ): GWeather.Info[] {
         const ret = [forecastInfo, ...infos].filter(info => {
             const [, date] = info.get_value_update();
-            const datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(now.get_timezone());
+            const datetime = GLib.DateTime.new_from_unix_utc(date).to_timezone(
+                now.get_timezone()
+            );
 
             // Show the previous hour's forecast until 30 minutes in
             if (datetime) {
-                if (datetime.difference(now) <= -ONE_HOUR / 2)
-                    return false;
+                if (datetime.difference(now) <= -ONE_HOUR / 2) return false;
 
-                if (datetime.difference(now) >= TWENTY_FOUR_HOURS)
-                    return false;
+                if (datetime.difference(now) >= TWENTY_FOUR_HOURS) return false;
             }
 
             return true;
@@ -81,7 +90,10 @@ export class HourlyForecastBox extends Gtk.Box {
         const forecasts = info.get_forecast_list();
 
         const coords = info.location.get_coords();
-        const nearestCity = GWeather.Location.get_world()?.find_nearest_city(coords[0], coords[1]);
+        const nearestCity = GWeather.Location.get_world()?.find_nearest_city(
+            coords[0],
+            coords[1]
+        );
         const tz = nearestCity?.get_timezone();
 
         if (tz) {
@@ -95,14 +107,13 @@ export class HourlyForecastBox extends Gtk.Box {
                     const isNow = i === 0;
                     this.addHourEntry(info, tz, isNow);
 
-                    if (i < hourlyInfo.length - 1)
-                        this.addSeparator();
+                    if (i < hourlyInfo.length - 1) this.addSeparator();
                 }
             } else {
                 const label = new Gtk.Label({
                     label: _('Forecast not Available'),
                     use_markup: true,
-                    visible: true
+                    visible: true,
                 });
                 this.prepend(label);
             }
@@ -111,11 +122,18 @@ export class HourlyForecastBox extends Gtk.Box {
         }
     }
 
-    private addHourEntry(info: GWeather.Info, tz: GLib.TimeZone | null, now: boolean): void {
+    private addHourEntry(
+        info: GWeather.Info,
+        tz: GLib.TimeZone | null,
+        now: boolean
+    ): void {
         let timeLabel: string | undefined;
 
         const [, date] = info.get_value_update();
-        const datetime = tz ? GLib.DateTime.new_from_unix_utc(date).to_timezone(tz) ?? undefined : undefined;
+        const datetime = tz
+            ? (GLib.DateTime.new_from_unix_utc(date).to_timezone(tz) ??
+              undefined)
+            : undefined;
 
         if (now) {
             timeLabel = _('Now');
@@ -126,8 +144,7 @@ export class HourlyForecastBox extends Gtk.Box {
             if (timeSetting == '12h')
                 /* Translators: this is a time format without date used for AM/PM */
                 timeFormat = _('%l∶%M %p');
-            else
-                timeFormat = '%R';
+            else timeFormat = '%R';
 
             timeLabel = datetime?.format(timeFormat) ?? undefined;
         }
@@ -142,7 +159,7 @@ export class HourlyForecastBox extends Gtk.Box {
     private addSeparator(): void {
         const separator = new Gtk.Separator({
             orientation: Gtk.Orientation.VERTICAL,
-            visible: true
+            visible: true,
         });
         this.append(separator);
     }
@@ -184,78 +201,98 @@ export class HourlyForecastBox extends Gtk.Box {
 
         const lineWidth = 2;
 
-        const entryImageY = 56, entryImageHeight = 32;
+        const entryImageY = 56,
+            entryImageHeight = 32;
         const entryTemperatureLabelHeight = 19;
 
         const spacing = 18;
 
-        const graphMinY = lineWidth / 2 + entryImageY + entryImageHeight + spacing;
-        const graphMaxY = height - lineWidth / 2 - spacing - entryTemperatureLabelHeight - spacing;
+        const graphMinY =
+            lineWidth / 2 + entryImageY + entryImageHeight + spacing;
+        const graphMaxY =
+            height -
+            lineWidth / 2 -
+            spacing -
+            entryTemperatureLabelHeight -
+            spacing;
         const graphHeight = graphMaxY - graphMinY;
 
         const pointsGap = entryWidth + separatorWidth;
 
-        const [, strokeColor] = this.get_style_context().lookup_color('weather_temp_chart_stroke_color');
+        const [, strokeColor] = this.get_style_context().lookup_color(
+            'weather_temp_chart_stroke_color'
+        );
         Gdk.cairo_set_source_rgba(cr, strokeColor);
 
         const yCords = [];
         for (let i = 0; i < values.length; i++)
-            yCords.push((graphMinY + ((1 - values[i]) * graphHeight)));
+            yCords.push(graphMinY + (1 - values[i]) * graphHeight);
 
         const gradients = [];
         const gradientAngles = [];
         for (let i = 0; i < yCords.length; i++) {
             let prevVal = yCords[i];
             let nextVal = prevVal;
-            if (i > 0)
-                prevVal = yCords[i - 1];
-            if (i < yCords.length - 1)
-                nextVal = yCords[i + 1];
+            if (i > 0) prevVal = yCords[i - 1];
+            if (i < yCords.length - 1) nextVal = yCords[i + 1];
 
             gradients.push((nextVal - prevVal) / (2 * pointsGap));
-            gradientAngles.push(Math.atan((nextVal - prevVal) / (pointsGap * 2)));
+            gradientAngles.push(
+                Math.atan((nextVal - prevVal) / (pointsGap * 2))
+            );
         }
 
         let x = -pointsGap / 2;
 
         cr.moveTo(x, yCords[0]);
-        const smoothnessVal = 0.4
+        const smoothnessVal = 0.4;
 
         for (let i = 0; i < yCords.length + 1; i++) {
-
-            let xDistPrev = pointsGap * smoothnessVal
+            let xDistPrev = pointsGap * smoothnessVal;
             if (i > 0)
-                xDistPrev = Math.cos(gradientAngles[i - 1]) * pointsGap * smoothnessVal
+                xDistPrev =
+                    Math.cos(gradientAngles[i - 1]) * pointsGap * smoothnessVal;
 
-            let xDistCurrent = pointsGap * smoothnessVal
+            let xDistCurrent = pointsGap * smoothnessVal;
             if (i < yCords.length)
-                xDistCurrent = Math.cos(gradientAngles[i]) * pointsGap * smoothnessVal
+                xDistCurrent =
+                    Math.cos(gradientAngles[i]) * pointsGap * smoothnessVal;
 
-            const prevYcord = (i > 0) ? (yCords[i - 1]) : yCords[i]
-            const prevGrad = (i > 0) ? (gradients[i - 1]) : 0
+            const prevYcord = i > 0 ? yCords[i - 1] : yCords[i];
+            const prevGrad = i > 0 ? gradients[i - 1] : 0;
 
-            const currYcord = (i < yCords.length) ? (yCords[i]) : yCords[i - 1]
-            const currGrad = (i < yCords.length) ? (gradients[i]) : 0
+            const currYcord = i < yCords.length ? yCords[i] : yCords[i - 1];
+            const currGrad = i < yCords.length ? gradients[i] : 0;
 
-
-            const pt1 = [x + xDistPrev, prevYcord + prevGrad * xDistPrev]
-            const pt2 = [x + pointsGap - xDistCurrent, currYcord - currGrad * xDistCurrent]
+            const pt1 = [x + xDistPrev, prevYcord + prevGrad * xDistPrev];
+            const pt2 = [
+                x + pointsGap - xDistCurrent,
+                currYcord - currGrad * xDistCurrent,
+            ];
 
             cr.curveTo(
-                pt1[0], pt1[1],
-                pt2[0], pt2[1],
-                x + pointsGap, currYcord
-            )
+                pt1[0],
+                pt1[1],
+                pt2[0],
+                pt2[1],
+                x + pointsGap,
+                currYcord
+            );
 
             x += pointsGap;
         }
 
-        cr.lineTo(width, graphMinY + ((1 - values[values.length - 1]) * graphHeight));
+        cr.lineTo(
+            width,
+            graphMinY + (1 - values[values.length - 1]) * graphHeight
+        );
 
         cr.setLineWidth(lineWidth);
         cr.strokePreserve();
 
-        const [, fillColor] = this.get_style_context().lookup_color('weather_temp_chart_fill_color');
+        const [, fillColor] = this.get_style_context().lookup_color(
+            'weather_temp_chart_fill_color'
+        );
 
         Gdk.cairo_set_source_rgba(cr, fillColor);
 
@@ -266,7 +303,7 @@ export class HourlyForecastBox extends Gtk.Box {
         super.vfunc_snapshot(snapshot);
         cr.$dispose();
     }
-};
+}
 
 export class HourEntry extends Adw.Bin {
     declare private _timeLabel: Gtk.Label;
@@ -274,17 +311,28 @@ export class HourEntry extends Adw.Bin {
     declare private _forecastTemperatureLabel: Gtk.Label;
 
     static {
-        GObject.registerClass({
-            Template: 'resource:///org/gnome/Weather/hour-entry.ui',
-            InternalChildren: ['timeLabel', 'image', 'forecastTemperatureLabel'],
-        }, this);
+        GObject.registerClass(
+            {
+                Template: 'resource:///org/gnome/Weather/hour-entry.ui',
+                InternalChildren: [
+                    'timeLabel',
+                    'image',
+                    'forecastTemperatureLabel',
+                ],
+            },
+            this
+        );
     }
 
-    public constructor(timeLabel: string | undefined, info: GWeather.Info, params?: Partial<Adw.Bin.ConstructorProps>) {
+    public constructor(
+        timeLabel: string | undefined,
+        info: GWeather.Info,
+        params?: Partial<Adw.Bin.ConstructorProps>
+    ) {
         super(params);
 
         this._timeLabel.label = timeLabel ?? '';
         this._image.iconName = info.get_icon_name() + '-small';
         this._forecastTemperatureLabel.label = Util.getTempString(info) ?? '';
     }
-};
+}

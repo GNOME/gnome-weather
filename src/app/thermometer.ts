@@ -33,12 +33,17 @@ export class TemperatureRange {
     public weeklyLow;
     public weeklyHigh;
 
-    public constructor({ dailyLow, dailyHigh, weeklyLow, weeklyHigh }: {
-            dailyLow: number;
-            dailyHigh: number;
-            weeklyLow: number;
-            weeklyHigh: number;
-        }) {
+    public constructor({
+        dailyLow,
+        dailyHigh,
+        weeklyLow,
+        weeklyHigh,
+    }: {
+        dailyLow: number;
+        dailyHigh: number;
+        weeklyLow: number;
+        weeklyHigh: number;
+    }) {
         this.dailyLow = dailyLow;
         this.dailyHigh = dailyHigh;
         this.weeklyLow = weeklyLow;
@@ -54,20 +59,23 @@ class ThermometerScale extends Gtk.Widget {
     public radius = 12;
 
     static {
-        GObject.registerClass({
-            CssName: 'WeatherThermometerScale',
-            Properties: {
-                'range': GObject.ParamSpec.jsobject(
-                    'range',
-                    'range',
-                    'The TemperatureRange instance representing this thermometer scale',
-                    GObject.ParamFlags.READWRITE,
-                ),
+        GObject.registerClass(
+            {
+                CssName: 'WeatherThermometerScale',
+                Properties: {
+                    range: GObject.ParamSpec.jsobject(
+                        'range',
+                        'range',
+                        'The TemperatureRange instance representing this thermometer scale',
+                        GObject.ParamFlags.READWRITE
+                    ),
+                },
             },
-        }, this);
+            this
+        );
     }
 
-    public constructor({ range = undefined, ...params }) {
+    public constructor({range = undefined, ...params}) {
         super(params);
 
         this.range = range;
@@ -92,16 +100,14 @@ class ThermometerScale extends Gtk.Widget {
     public vfunc_snapshot(snapshot: Gtk.Snapshot): void {
         super.vfunc_snapshot(snapshot);
 
-        if (!this.range)
-            return;
+        if (!this.range) return;
 
-        const { width, height } = this.get_allocation();
+        const {width, height} = this.get_allocation();
 
         // Don't render when allocation is shorter than the minimal height
-        if (height < this.minHeight)
-            return;
+        if (height < this.minHeight) return;
 
-        const { dailyHigh, dailyLow, weeklyHigh, weeklyLow } = this.range;
+        const {dailyHigh, dailyLow, weeklyHigh, weeklyLow} = this.range;
 
         const radius = this.radius;
         const factor = (height - 2 * radius) / (weeklyHigh - weeklyLow);
@@ -120,25 +126,27 @@ class ThermometerScale extends Gtk.Widget {
 
         snapshot.push_rounded_clip(outline);
 
-        const [, warmColor] = this.get_style_context()
-            .lookup_color('weather_thermometer_warm_color');
+        const [, warmColor] = this.get_style_context().lookup_color(
+            'weather_thermometer_warm_color'
+        );
 
-        const [, coolColor] = this.get_style_context()
-            .lookup_color('weather_thermometer_cold_color');
+        const [, coolColor] = this.get_style_context().lookup_color(
+            'weather_thermometer_cold_color'
+        );
 
         snapshot.append_linear_gradient(
             bounds,
-            new Graphene.Point({ x: x + gradientWidth / 2, y: 0 }),
-            new Graphene.Point({ x: x + gradientWidth / 2, y: height }),
+            new Graphene.Point({x: x + gradientWidth / 2, y: 0}),
+            new Graphene.Point({x: x + gradientWidth / 2, y: height}),
             [
-                new Gsk.ColorStop({ offset: 0.0, color: warmColor }),
-                new Gsk.ColorStop({ offset: 1.0, color: coolColor })
+                new Gsk.ColorStop({offset: 0.0, color: warmColor}),
+                new Gsk.ColorStop({offset: 1.0, color: coolColor}),
             ]
         );
 
         snapshot.pop();
     }
-};
+}
 
 export class Thermometer extends Gtk.Widget {
     private highLabel;
@@ -149,20 +157,23 @@ export class Thermometer extends Gtk.Widget {
     declare public range: TemperatureRange;
 
     static {
-        GObject.registerClass({
-            CssName: 'WeatherThermometer',
-            Properties: {
-                'range': GObject.ParamSpec.jsobject(
-                    'range',
-                    'range',
-                    'The TemperatureRange instance representing this thermometer scale',
-                    GObject.ParamFlags.READWRITE,
-                ),
+        GObject.registerClass(
+            {
+                CssName: 'WeatherThermometer',
+                Properties: {
+                    range: GObject.ParamSpec.jsobject(
+                        'range',
+                        'range',
+                        'The TemperatureRange instance representing this thermometer scale',
+                        GObject.ParamFlags.READWRITE
+                    ),
+                },
             },
-        }, this);
+            this
+        );
     }
 
-    public constructor({ ...params }) {
+    public constructor({...params}) {
         super(params);
 
         this.highLabel = new Gtk.Label({
@@ -179,7 +190,10 @@ export class Thermometer extends Gtk.Widget {
         this.scale.set_parent(this);
     }
 
-    public vfunc_measure(orientation: Gtk.Orientation, for_size: number): [number, number, number, number] {
+    public vfunc_measure(
+        orientation: Gtk.Orientation,
+        for_size: number
+    ): [number, number, number, number] {
         const [highMin, highNat, highMinBaseline, highNatBaseline] =
             this.highLabel.measure(orientation, for_size);
 
@@ -191,7 +205,7 @@ export class Thermometer extends Gtk.Widget {
                 Math.max(highMin, lowMin),
                 Math.max(highNat, lowNat),
                 Math.max(highMinBaseline, lowMinBaseline),
-                Math.max(highNatBaseline, lowNatBaseline)
+                Math.max(highNatBaseline, lowNatBaseline),
             ];
         } else {
             const spacing = this.spacing;
@@ -199,12 +213,16 @@ export class Thermometer extends Gtk.Widget {
                 highMin + spacing + lowMin,
                 highNat + spacing + lowNat,
                 highMinBaseline + spacing + lowMinBaseline,
-                highNatBaseline + spacing + lowNatBaseline
+                highNatBaseline + spacing + lowNatBaseline,
             ];
         }
     }
 
-    public vfunc_size_allocate(width: number, height: number, _baseline: number): void {
+    public vfunc_size_allocate(
+        width: number,
+        height: number,
+        _baseline: number
+    ): void {
         const [, highNatOut] = this.highLabel.get_preferred_size();
         const [, lowNatOut] = this.lowLabel.get_preferred_size();
 
@@ -217,13 +235,14 @@ export class Thermometer extends Gtk.Widget {
 
         const scaleHeight = Math.max(
             0,
-            height - (highNat.height + lowNat.height) - 2 * spacing);
+            height - (highNat.height + lowNat.height) - 2 * spacing
+        );
 
         const scaleRect = new Gdk.Rectangle({
             height: scaleHeight,
             width,
             x: 0,
-            y:highNat.height + spacing,
+            y: highNat.height + spacing,
         });
         this.scale.size_allocate(scaleRect, -1);
 
@@ -231,10 +250,11 @@ export class Thermometer extends Gtk.Widget {
         let lowY = height - lowNat.height;
 
         if (scaleHeight >= this.scale.minHeight) {
-            const { dailyHigh, dailyLow, weeklyHigh, weeklyLow } = this.range;
+            const {dailyHigh, dailyLow, weeklyHigh, weeklyLow} = this.range;
 
             const radius = this.scale.radius;
-            const factor = (scaleHeight - 2 * radius) / (weeklyHigh - weeklyLow);
+            const factor =
+                (scaleHeight - 2 * radius) / (weeklyHigh - weeklyLow);
 
             highY += (weeklyHigh - dailyHigh) * factor;
             lowY -= (dailyLow - weeklyLow) * factor;
@@ -260,20 +280,40 @@ export class Thermometer extends Gtk.Widget {
     public vfunc_root(): void {
         super.vfunc_root();
 
-        this.bind_property('range', this.scale,'range', GObject.BindingFlags.DEFAULT);
+        this.bind_property(
+            'range',
+            this.scale,
+            'range',
+            GObject.BindingFlags.DEFAULT
+        );
 
         // @ts-expect-error ts-for-gir does not `bind_property_full` correctly. In GJS it actually returns a
         // tuple of [boolean, value] where the boolean is whether the transformation succeeded, and the value
         // is the transformed value.
-        this.bind_property_full('range', this.lowLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range: TemperatureRange) => {
-            return [!!range, Util.formatTemperature(range?.dailyLow) ?? ''];
-        }, null);
-
+        this.bind_property_full(
+            'range',
+            this.lowLabel,
+            'label',
+            GObject.BindingFlags.DEFAULT,
+            (_, range: TemperatureRange) => {
+                return [!!range, Util.formatTemperature(range?.dailyLow) ?? ''];
+            },
+            null
+        );
 
         // @ts-expect-error Same as the above.
-        this.bind_property_full('range', this.highLabel, 'label', GObject.BindingFlags.DEFAULT, (_, range: TemperatureRange) => {
-            return [!!range, Util.formatTemperature(range?.dailyHigh) ?? ''];
-        }, null);
+        this.bind_property_full(
+            'range',
+            this.highLabel,
+            'label',
+            GObject.BindingFlags.DEFAULT,
+            (_, range: TemperatureRange) => {
+                return [
+                    !!range,
+                    Util.formatTemperature(range?.dailyHigh) ?? '',
+                ];
+            },
+            null
+        );
     }
-};
-
+}
