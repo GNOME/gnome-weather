@@ -194,6 +194,7 @@ export class WeatherApplication extends Adw.Application {
         this.set_accels_for_action('win.select-all', ['<Control>a']);
         this.set_accels_for_action('window.close', ['<Control>w']);
         this.set_accels_for_action('app.quit', ['<Control>q']);
+        this.set_accels_for_action('win.refresh', ['F5', '<Control>r']);
     }
 
     public vfunc_dbus_register(
