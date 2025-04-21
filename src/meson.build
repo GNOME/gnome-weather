@@ -28,7 +28,7 @@ typescript = custom_target(
   'typescript-compile',
   build_by_default: true,
   build_always_stale: true,
-  command: [ tsc, '--outDir', tsc_out ],
+  command: [ tsc, '--project', tsconfig, '--outDir', tsc_out ],
   output: ['tsc-output'],
 )
 

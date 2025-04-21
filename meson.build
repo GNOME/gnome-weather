@@ -43,6 +43,7 @@ weather_pkgdatadir = join_paths(weather_datadir, weather_id)
 weather_bindir = join_paths(weather_prefix, get_option('bindir'))
 
 tsc = find_program('tsc', required: true)
+tsconfig = files('tsconfig.json')
 
 subdir('data')
 subdir('po')
