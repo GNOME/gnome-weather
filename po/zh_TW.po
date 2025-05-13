@@ -9,10 +9,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2024-04-13 01:15+0800\n"
-"Last-Translator: Freddy Cheng <freddy4212@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2025-03-24 07:26+0000\n"
+"PO-Revision-Date: 2025-04-03 20:55+0800\n"
+"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese - Taiwan <chinese-l10n@googlegroups.com>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-DamnedLies-Scope: partial\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
+#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: src/app/application.js:43 src/app/window.js:186 src/app/window.js:197
 #: src/service/main.js:49
 msgid "Weather"
 msgstr "天氣"
@@ -57,7 +57,8 @@ msgstr ""
 "將《GNOME Shell》的整合選項開啟後，只需在概覽中輸入城市名稱即可查看即時天氣情"
 "況。"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:451 src/app/window.js:188
 msgid "The GNOME Project"
 msgstr "GNOME 專案"
 
@@ -82,9 +83,21 @@ msgstr ""
 "《gnome-weather》中所顯示的位置名稱。每個數值都是由 "
 "gweather_location_serialize() 傳回的 GVariant。"
 
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "正在載入…"
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "主視窗寬度。"
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "主視窗高度。"
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "視窗最大化狀態"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "指示這個視窗是否為最大化狀態。"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -146,80 +159,85 @@ msgstr "選擇欲查看天氣的位置後即可開始使用。"
 msgid "Search for a city or country"
 msgstr "搜尋城市或國家"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "重新整理"
 
-#: src/app/city.js:203
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "主選單"
+
+#: src/app/city.js:196
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "體感溫度 %.0f°"
 
-#: src/app/city.js:234
+#: src/app/city.js:227
 msgid "Updated just now."
 msgstr "剛剛更新。"
 
-#: src/app/city.js:239
+#: src/app/city.js:232
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d 分鐘前更新。"
 
-#: src/app/city.js:245
+#: src/app/city.js:238
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d 小時前更新。"
 
-#: src/app/city.js:251
+#: src/app/city.js:244
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d 天前更新。"
 
-#: src/app/city.js:257
+#: src/app/city.js:250
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d 週前更新。"
 
-#: src/app/city.js:262
+#: src/app/city.js:255
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "%d 個月前更新。"
 
-#: src/app/dailyForecast.js:36
+#: src/app/dailyForecast.js:37
 msgid "Daily Forecast"
 msgstr "每日預報"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+#: src/app/dailyForecast.js:102 src/app/hourlyForecast.js:91
 msgid "Forecast not Available"
 msgstr "天氣預報無法使用"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:219
+#: src/app/dailyForecast.js:220
 msgid "%b %e"
 msgstr "%-m月%-d日"
 
-#: src/app/hourlyForecast.js:41
+#: src/app/hourlyForecast.js:42
 msgid "Hourly Forecast"
 msgstr "每小時預報"
 
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.js:108
 msgid "Now"
 msgstr "現在"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:114
+#: src/app/hourlyForecast.js:115
 msgid "%l∶%M %p"
 msgstr "%p %I:%M"
 
-#: src/app/window.js:195
+#: src/app/window.js:185
 msgid "translator-credits"
 msgstr ""
 "Chao-Hsiung Liao  <j_h_liau@yahoo.com.tw>, 2013.\n"
-"Freddy Cheng <freddy4212@gmail.com>, 2022."
+"Freddy Cheng <freddy4212@gmail.com>, 2022.\n"
+"Yi-Jyun Pan <me@pan93.com>, 2025."
 
 #: src/app/world.js:39
 msgid "World view"
@@ -240,6 +258,9 @@ msgstr "%s / %s"
 #, javascript-format
 msgid "%s, %s"
 msgstr "%2s %1s"
+
+#~ msgid "Loading…"
+#~ msgstr "正在載入…"
 
 #~ msgid "Select Location"
 #~ msgstr "選擇位置"
