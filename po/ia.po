@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2025-05-27 15:28+0000\n"
-"PO-Revision-Date: 2025-06-11 15:12-0400\n"
+"POT-Creation-Date: 2025-06-11 19:14+0000\n"
+"PO-Revision-Date: 2025-06-11 18:23-0400\n"
 "Last-Translator: Emilio Sepulveda <emism.translations@gmail.com>\n"
 "Language-Team: Interlingua <softinterlingua@gmail.com>\n"
 "Language: ia\n"
@@ -27,12 +27,12 @@ msgstr ""
 #: data/org.gnome.Weather.appdata.xml.in.in:5
 #: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
 msgid "Weather"
-msgstr "Tempore"
+msgstr "Meteorologia"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:6
 #: data/org.gnome.Weather.desktop.in.in:5
 msgid "Show weather conditions and forecast"
-msgstr "Monstra le conditiones e le prognosis del tempore"
+msgstr "Monstra le conditiones e le prognosticos meteorologic"
 
 #: data/org.gnome.Weather.appdata.xml.in.in:16
 msgid ""
@@ -68,7 +68,7 @@ msgstr "Le projecto GNOME"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Weather;Forecast;"
-msgstr "Tempore;Prognosis;"
+msgstr "Tempore;Prognosticos;"
 
 #: data/org.gnome.Weather.desktop.in.in:14
 msgid "Allows weather information to be displayed for your location."
@@ -149,11 +149,11 @@ msgstr "_Fahrenheit"
 
 #: data/window.ui:21
 msgid "_About Weather"
-msgstr "_A proposito de Tempore"
+msgstr "_A proposito de Meteorologia"
 
 #: data/window.ui:47
 msgid "Welcome to Weather!"
-msgstr "Benvenite a Tempore!"
+msgstr "Benvenite a Meteorologia!"
 
 #: data/window.ui:48
 msgid "To get started, select a location."
