@@ -1,8 +1,8 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-data/org.gnome.Weather.appdata.xml.in.in
 data/org.gnome.Weather.desktop.in.in
 data/org.gnome.Weather.gschema.xml
+data/org.gnome.Weather.metainfo.xml.in.in
 data/city.ui
 data/day-entry.ui
 data/hour-entry.ui

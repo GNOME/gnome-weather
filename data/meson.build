@@ -56,15 +56,15 @@ if desktop_file_validate.found()
 endif
 
 # Building app data
-appdata_conf = configuration_data()
-appdata_conf.set('app_id', weather_id)
-appdata = i18n.merge_file(
+metainfo_conf = configuration_data()
+metainfo_conf.set('app_id', weather_id)
+metainfo = i18n.merge_file(
   input: configure_file(
-    input: '@0@.appdata.xml.in.in'.format(default_id),
-    output: '@0@.appdata.xml.in'.format(default_id),
-    configuration: appdata_conf
+    input: '@0@.metainfo.xml.in.in'.format(default_id),
+    output: '@0@.metainfo.xml.in'.format(default_id),
+    configuration: metainfo_conf
   ),
-  output: '@0@.appdata.xml'.format(weather_id),
+  output: '@0@.metainfo.xml'.format(weather_id),
   install: true,
   install_dir: join_paths(weather_datadir, 'metainfo'),
   po_dir: join_paths(meson.project_source_root(), 'po')
@@ -74,9 +74,9 @@ appdata = i18n.merge_file(
 appstreamcli = find_program('appstreamcli', required: false)
 if appstreamcli.found()
   test(
-    'Validate appdata file',
+    'Validate metainfo file',
     appstreamcli,
-    args: ['validate', '--no-net', '--explain', appdata]
+    args: ['validate', '--no-net', '--explain', metainfo]
   )
 endif
 
