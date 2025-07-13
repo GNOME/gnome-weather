@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014 Giovanni Campagna -->
-<component type="desktop">
+<component type="desktop-application">
   <id>@app_id@</id>
   <name>Weather</name>
   <summary>Show weather conditions and forecast</summary>
