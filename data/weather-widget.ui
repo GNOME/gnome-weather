@@ -56,7 +56,7 @@
               <object class="GtkBox" id="temperatureBox">
                 <property name="halign">start</property>
                 <property name="valign">start</property>
-                <property name="spacing">8</property> -->
+                <property name="spacing">8</property>
                 <property name="baseline_position">bottom</property>
                 <child>
                   <object class="GtkLabel" id="temperatureLabel">
