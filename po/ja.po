@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2025-06-11 22:37+0000\n"
+"POT-Creation-Date: 2025-07-24 17:21+0000\n"
 "PO-Revision-Date: 2025-07-08 09:52+0900\n"
 "Last-Translator: Makoto Sakaguchi <ycco34vx@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.gnome.org/teams/ja/>\n"
@@ -21,52 +21,22 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.6\n"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: data/org.gnome.Weather.desktop.in.in:3
+#: data/org.gnome.Weather.metainfo.xml.in.in:5 data/window.ui:82
 msgid "Weather"
 msgstr "天気"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:6
-#: data/org.gnome.Weather.desktop.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4
+#: data/org.gnome.Weather.metainfo.xml.in.in:6
 msgid "Show weather conditions and forecast"
 msgstr "天気の概況と予報を表示します"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:16
-msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
-msgstr ""
-"あなたの街や、世界中の都市の現在の天候を確認することができる小さなアプリケー"
-"ションです。"
-
-#: data/org.gnome.Weather.appdata.xml.in.in:20
-msgid ""
-"It provides access to detailed forecasts, up to 7 days, with hourly details "
-"for the current and next day, using various internet services."
-msgstr ""
-"さまざまなインターネットサービスを使用して詳細な天気予報を参照できます。週間"
-"天気予報や、当日と翌日の時間ごとの詳細な天気予報などが利用できます。"
-
-#: data/org.gnome.Weather.appdata.xml.in.in:24
-msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you to see the "
-"current conditions of the most recently searched cities by just typing the "
-"name in the Activities Overview."
-msgstr ""
-"GNOME Shell と統合することができ、アクティビティ画面で都市名を入力すること"
-"で、よく調べる都市の現在の天候を参照することができます。"
-
-#. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:451
-msgid "The GNOME Project"
-msgstr "The GNOME Project"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Weather.desktop.in.in:13
+#: data/org.gnome.Weather.desktop.in.in:12
 msgid "Weather;Forecast;"
 msgstr "Weather;Forecast;天気予報;天候;気象;"
 
-#: data/org.gnome.Weather.desktop.in.in:14
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Allows weather information to be displayed for your location."
 msgstr "現在地の気象情報を表示できるようにします。"
 
@@ -98,6 +68,36 @@ msgstr "ウィンドウ最大化"
 msgid "Whether or not the window is maximized."
 msgstr "ウィンドウが最大化されているかどうかです。"
 
+#: data/org.gnome.Weather.metainfo.xml.in.in:16
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"あなたの街や、世界中の都市の現在の天候を確認することができる小さなアプリケー"
+"ションです。"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:20
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"さまざまなインターネットサービスを使用して詳細な天気予報を参照できます。週間"
+"天気予報や、当日と翌日の時間ごとの詳細な天気予報などが利用できます。"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:24
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"GNOME Shell と統合することができ、アクティビティ画面で都市名を入力すること"
+"で、よく調べる都市の現在の天候を参照することができます。"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.metainfo.xml.in.in:451
+msgid "The GNOME Project"
+msgstr "The GNOME Project"
+
 #: data/day-entry.ui:20
 msgid "Night"
 msgstr "深夜"
@@ -124,11 +124,11 @@ msgstr "場所"
 
 #: data/weather-widget.ui:92
 msgid "_Hourly"
-msgstr "1 時間ごと(_H)"
+msgstr "1 時間(_H)"
 
 #: data/weather-widget.ui:124
 msgid "_Daily"
-msgstr "1 日ごと(_D)"
+msgstr "1 日(_D)"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
