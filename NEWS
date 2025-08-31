@@ -1,3 +1,28 @@
+49.rc
+=====
+Weather 49.rc comes with the following enhancements:
+  - Provide F5 and Ctrl+R keyboard shortcuts to refresh (Nestor Alonso Torres)
+  - Make hourlyForecast widget subclass AdwBin (Christopher Davis)
+  - Port to typescript (Christopher Davis)
+  - Multiple code cleanups (Christopher Davis)
+  - Fix meson warnings (Hari Rana)
+  - Improve grid Layout (Philipp S)
+  - Rename appdata to metainfo (AsciiWolf)
+  - Change component type to "desktop-application" (AsciiWolf)
+  - Replace Purism::form_factor key with <requires> block (knuxify)
+
+This version brings translation updates for the following locales:
+  - Azerbaijani (Ramal Rəhimov)
+  - Chinese (Taiwan) (Yi-Jyun Pan)
+  - Interlingua (International Auxiliary Language Association) (Emilio
+    Sepúlveda)
+  - Japanese (Makoto Sakaguchi, Seiji Iizuka)
+  - Lao (Saikeo Kavhanxay)
+  - Nepali (Pawan Chitrakar)
+  - Panjabi (A S Alam)
+  - Romanian (Antonio Marin)
+  - Uzbek (Baxrom Raxmatov)
+
 48.0
 ====
 Weather 48.0 comes with the following translation updates for the following

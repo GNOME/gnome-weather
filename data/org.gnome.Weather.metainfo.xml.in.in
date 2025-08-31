@@ -54,6 +54,35 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release version="49.rc" date="2025-08-31" type="development">
+      <description>
+        <p>Weather 49.rc comes with the following enhancements:</p>
+        <ul>
+          <li>Provide F5 and Ctrl+R keyboard shortcuts to refresh (Nestor Alonso Torres)</li>
+          <li>Make hourlyForecast widget subclass AdwBin (Christopher Davis)</li>
+          <li>Port to typescript (Christopher Davis)</li>
+          <li>Multiple code cleanups (Christopher Davis)</li>
+          <li>Fix meson warnings (Hari Rana)</li>
+          <li>Improve grid Layout (Philipp S)</li>
+          <li>Rename appdata to metainfo (AsciiWolf)</li>
+          <li>Change component type to "desktop-application" (AsciiWolf)</li>
+          <li>Replace Purism::form_factor key with requires block (knuxify)</li>
+        </ul>
+        <p>This version brings translation updates for the following locales:</p>
+        <ul>
+          <li>Azerbaijani (Ramal Rəhimov)</li>
+          <li>Chinese (Taiwan) (Yi-Jyun Pan)</li>
+          <li>Interlingua (International Auxiliary Language Association) (Emilio
+          Sepúlveda)</li>
+          <li>Japanese (Makoto Sakaguchi, Seiji Iizuka)</li>
+          <li>Lao (Saikeo Kavhanxay)</li>
+          <li>Nepali (Pawan Chitrakar)</li>
+          <li>Panjabi (A S Alam)</li>
+          <li>Romanian (Antonio Marin)</li>
+          <li>Uzbek (Baxrom Raxmatov)</li>
+        </ul>
+      </description>
+    </release>
     <release version="48.0" date="2025-03-14">
       <description>
         <p>Weather 48.0 comes with the following enhancements:</p>
