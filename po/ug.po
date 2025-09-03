@@ -1,0 +1,144 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2025-05-10 18:53+0000\n"
+"PO-Revision-Date: 2025-08-28 15:04-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
+"Language-Team: \n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:5 data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+msgid "Weather"
+msgstr "ھاۋا رايى"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:6 data/org.gnome.Weather.desktop.in.in:5
+msgid "Show weather conditions and forecast"
+msgstr "ھاۋا رايى ئەھۋالى ۋە ھاۋا رايى مەلۇماتىنى كۆرسىتىدۇ"
+
+#: data/org.gnome.Weather.appdata.xml.in.in:16
+msgid "A small application that allows you to monitor the current weather conditions for your city, or anywhere in the world."
+msgstr "سىز تۇرۇشلۇق شەھەر ياكى دۇنيانىڭ ھەر قايسى جايلىرىنىڭ ھاۋا رايى ئەھۋالىنى كۆزىتىشىڭىزگە يول قويىدىغان كىچىك ئەپ."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:20
+msgid "It provides access to detailed forecasts, up to 7 days, with hourly details for the current and next day, using various internet services."
+msgstr "ئۇ ئوخشاش بولمىغان تور مۇلازىمىتى ئارقىلىق، بۈگۈنكى ۋە ئەتىدىكى ئىنتايىن تەپسىلىي بولغان ھەر بىر سائەتلىك ھاۋا رايىنى ئۆز ئىچىگە ئالغان 7 كۈنلۈك ھاۋا رايى ئالدىن مەلۇماتىنى تەمىنلەيدۇ."
+
+#: data/org.gnome.Weather.appdata.xml.in.in:24
+msgid "It also optionally integrates with the GNOME Shell, allowing you to see the current conditions of the most recently searched cities by just typing the name in the Activities Overview."
+msgstr "ئۇنى تاللاشچان ھالدا GNOME Shell بىلەن  بىرلەشتۈرگىلىمۇ بولىدۇ، پائالىيەت ئىخچام كۆرۈنۈشىدە ئىسمىنى كىرگۈزۈش ئارقىلىق يېقىندا ئىزدىگەن شەھەرنىڭ ئەھۋالىنى بىلىشىڭىزگە يول قويىدۇ."
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.appdata.xml.in.in:451
+msgid "The GNOME Project"
+msgstr "GNOME قۇرۇلۇشى"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:13
+msgid "Weather;Forecast;"
+msgstr "ھاۋا رايى؛ھاۋا رايىدىن مەلۇمات؛"
+
+#: data/org.gnome.Weather.desktop.in.in:14
+msgid "Allows weather information to be displayed for your location."
+msgstr "سىز تۇرۇشلۇق ئورۇننىڭ ھاۋا رايى ئۇچۇرىنى كۆرسىتىشكە يول قويىدۇ."
+
+#: data/org.gnome.Weather.gschema.xml:6
+msgid "Configured cities to show weather for"
+msgstr "ھاۋا رايىنى كۆرسىتىشكە سەپلەنگەن شەھەر"
+
+#: data/org.gnome.Weather.gschema.xml:7
+msgid "The locations shown in the world view of gnome-weather. Each value is a GVariant returned by gweather_location_serialize()."
+msgstr "gnome-weather نىڭ دۇنيا كۆرۈنۈشىدە كۆرسىتىدىغان ئورنى. ھەر بىر قىممىتىنى gweather_location_serialize() قايتۇرغان GVariant قىممەت."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "ئاساسىي كۆزنەكنىڭ كەڭلىكى."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "ئاساسىي كۆزنەكنىڭ ئېگىزلىكى."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "كۆزنەك چوڭايتىلغاندا"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "كۆزنەك چوڭايتىلغانمۇ يوق."
+
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "كېچە"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "سەھەر"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "چۈشتىن كېيىن"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "ئاخشام"
+
+#: data/places-popover.ui:15 data/places-popover.ui:76
+msgid "Search for a city"
+msgstr "شەھەر بويىچە ئىزدەيدۇ"
+
+#: data/weather-widget.ui:42
+msgid "Places"
+msgstr "ئورۇن"
+
+#: data/weather-widget.ui:92
+msgid "_Hourly"
+msgstr "سائەتلىك(_H)"
+
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "كۈندىلىك(_D)"
+
+#: data/window.ui:6
+msgid "Temperature Unit"
+msgstr "تېمپېراتۇرا بىرلىكى"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "سېلسىيە(_C)"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "فارېنگېيت(_F)"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "ھاۋا رايى ھەققىدە(_A)"
+
+#: data/window.ui:47
+msgid "Welcome to Weather!"
+msgstr "ھاۋا رايىغا خۇش كېلىپسىز!"
+
+#: data/window.ui:48
+msgid "To get started, select a location."
+msgstr "باشلاش ئۈچۈن ئورۇن تاللىنىدۇ."
+
+#: data/window.ui:54
+msgid "Search for a city or country"
+msgstr "شەھەر ياكى دۆلەت بويىچە ئىزدەيدۇ"
+
+#: data/window.ui:73
+msgid "Refresh"
+msgstr "يېڭىلا"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "ئاساسىي تىزىملىك"
