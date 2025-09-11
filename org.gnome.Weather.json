@@ -55,6 +55,7 @@
             "name" : "libgweather",
             "config-opts" : [
                 "-Denable_vala=false",
+                "-Dtests=false",
                 "-Dgtk_doc=false"
             ],
             "buildsystem" : "meson",
