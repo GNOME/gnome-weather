@@ -62,7 +62,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/GNOME/libgweather.git",
-                    "branch" : "main"
+                    "branch" : "gnome-49"
                 }
             ]
         },
