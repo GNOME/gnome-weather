@@ -54,9 +54,9 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
-    <release version="49.rc" date="2025-08-31" type="development">
+    <release version="49.0" date="2025-09-11">
       <description>
-        <p>Weather 49.rc comes with the following enhancements:</p>
+        <p>Weather 49.0 comes with the following enhancements:</p>
         <ul>
           <li>Provide F5 and Ctrl+R keyboard shortcuts to refresh (Nestor Alonso Torres)</li>
           <li>Make hourlyForecast widget subclass AdwBin (Christopher Davis)</li>
@@ -80,6 +80,8 @@
           <li>Panjabi (A S Alam)</li>
           <li>Romanian (Antonio Marin)</li>
           <li>Uzbek (Baxrom Raxmatov)</li>
+          <li>Norwegian Nynorsk (Bjørn Mørkedal)</li>
+          <li>Uighur (Abduqadir Abliz)</li>
         </ul>
       </description>
     </release>
