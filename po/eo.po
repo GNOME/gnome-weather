@@ -5,14 +5,14 @@
 # Nicolas MAIA < >, 2015.
 # Tirifto <tirifto@posteo.cz>, 2019.
 # Carmen Bianca BAKKER <carmen@carmenbianca.eu>, 2020.
-# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2013-2023.
+# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2013-2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues\n"
-"POT-Creation-Date: 2023-07-19 18:48+0000\n"
-"PO-Revision-Date: 2023-09-24 00:31+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2025-09-18 17:40+0000\n"
+"PO-Revision-Date: 2025-09-20 11:34+0200\n"
 "Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
 "Language-Team: Esperanto <gnome-eo-list@gnome.org>\n"
 "Language: eo\n"
@@ -20,59 +20,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 42.0\n"
+"X-Generator: Gtranslator 48.0\n"
 "X-Project-Style: gnome\n"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:208
-#: src/service/main.js:49
+#: data/org.gnome.Weather.desktop.in.in:3
+#: data/org.gnome.Weather.metainfo.xml.in.in:5 data/window.ui:82
 msgid "Weather"
 msgstr "Vetero"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:6
-#: data/org.gnome.Weather.desktop.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4
+#: data/org.gnome.Weather.metainfo.xml.in.in:6
 msgid "Show weather conditions and forecast"
-msgstr "Montras veterajn statojn kaj prognozojn"
-
-#: data/org.gnome.Weather.appdata.xml.in.in:16
-msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
-msgstr ""
-"Eta aplikaĵo kiu permesas al vi observi la nunajn veterajn kondiĉojn de via "
-"urbo, aŭ ie ajn en la mondo."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:20
-msgid ""
-"It provides access to detailed forecasts, up to 7 days, with hourly details "
-"for the current and next day, using various internet services."
-msgstr ""
-"Disponigas la atingon je detalaj prognozoj, ĝis 7 tagoj, kun hora detalo por "
-"la nuna kaj sekvanta tago, pere de diversaj retaj serviloj."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:24
-msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you to see the "
-"current conditions of the most recently searched cities by just typing the "
-"name in the Activities Overview."
-msgstr ""
-"Ĝi ankaŭ laŭvole integras kun la GNOME Ŝelo, permesante al vi vidi la nunajn "
-"kondiĉojn de la plej freŝe serĉitaj urboj per nura tajpo de ties nomo en la "
-"Superrigardo de Agoj."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:312 src/app/window.js:198
-msgid "The GNOME Project"
-msgstr "La Projekto GNOME"
+msgstr "Montri veterkondiĉojn kaj prognozojn"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Weather.desktop.in.in:13
+#: data/org.gnome.Weather.desktop.in.in:12
 msgid "Weather;Forecast;"
 msgstr "Vetero;Prognozo;"
 
-#: data/org.gnome.Weather.desktop.in.in:14
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Allows weather information to be displayed for your location."
-msgstr "Ebligas la vidigon de veter-informoj por via loko."
+msgstr "Ebligas montri veterinformojn por via loko."
 
 #: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
@@ -83,8 +51,8 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"La montritaj lokoj de la monda vido de gnome-weather. Ĉiu valoro estas "
-"GVariant-liverita de gweather_location_serialize()."
+"La lokoj montrataj en la monda vido de gnome-weather. Ĉiu valoro estas "
+"GVariant redonita de gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
 msgid "The width of the main window."
@@ -100,11 +68,38 @@ msgstr "Fenestro maksimumigita"
 
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
-msgstr "Ĉu fenestro estas maksimumigita."
+msgstr "Ĉu la fenestro estas maksimumigita."
 
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Enlegante…"
+#: data/org.gnome.Weather.metainfo.xml.in.in:16
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Eta aplikaĵo, kiu permesas al vi observi la nunajn veterajn kondiĉojn de via "
+"urbo, aŭ ie ajn en la mondo."
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:20
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Ĝi provizas detalajn prognozojn ĝis 7 tagoj, kun horaj detaloj por la nuna kaj "
+"sekva tago, uzante diversajn retajn servojn."
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:24
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"Ĝi ankaŭ, laŭvole, integriĝas kun la GNOMO-ŝelo, permesante al vi vidi la "
+"nunajn kondiĉojn de la plej lastatempe serĉitaj urboj nur tajpante ilian "
+"nomon en la Superrigardo de Aktivecoj."
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.metainfo.xml.in.in:482
+msgid "The GNOME Project"
+msgstr "La Projekto GNOMO"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -166,108 +161,90 @@ msgstr "Por komenci, elektu lokon."
 msgid "Search for a city or country"
 msgstr "Serĉi urbon aŭ landon"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Aktualigi"
 
-#: src/app/city.js:203
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Ĉefa menuo"
+
+#~ msgid "Loading…"
+#~ msgstr "Enlegante…"
+
 #, javascript-format
-msgid "Feels like %.0f°"
-msgstr "Sentas kvazaŭ %.0f°"
+#~ msgid "Feels like %.0f°"
+#~ msgstr "Sentas kvazaŭ %.0f°"
 
-#: src/app/city.js:234
-msgid "Updated just now."
-msgstr "Ĵus ĝisdatiĝis."
+#~ msgid "Updated just now."
+#~ msgstr "Ĵus ĝisdatiĝis."
 
-#: src/app/city.js:239
 #, javascript-format
-msgid "Updated %d minute ago."
-msgid_plural "Updated %d minutes ago."
-msgstr[0] "Ĝisdatiĝis antaŭ %d minuto."
-msgstr[1] "Ĝisdatiĝis antaŭ %d minutoj."
+#~ msgid "Updated %d minute ago."
+#~ msgid_plural "Updated %d minutes ago."
+#~ msgstr[0] "Ĝisdatiĝis antaŭ %d minuto."
+#~ msgstr[1] "Ĝisdatiĝis antaŭ %d minutoj."
 
-#: src/app/city.js:245
 #, javascript-format
-msgid "Updated %d hour ago."
-msgid_plural "Updated %d hours ago."
-msgstr[0] "Ĝisdatiĝis antaŭ %d horo."
-msgstr[1] "Ĝisdatiĝis antaŭ %d horoj."
+#~ msgid "Updated %d hour ago."
+#~ msgid_plural "Updated %d hours ago."
+#~ msgstr[0] "Ĝisdatiĝis antaŭ %d horo."
+#~ msgstr[1] "Ĝisdatiĝis antaŭ %d horoj."
 
-#: src/app/city.js:251
 #, javascript-format
-msgid "Updated %d day ago."
-msgid_plural "Updated %d days ago."
-msgstr[0] "Ĝisdatiĝis antaŭ %d tago."
-msgstr[1] "Ĝisdatiĝis antaŭ %d tagoj."
+#~ msgid "Updated %d day ago."
+#~ msgid_plural "Updated %d days ago."
+#~ msgstr[0] "Ĝisdatiĝis antaŭ %d tago."
+#~ msgstr[1] "Ĝisdatiĝis antaŭ %d tagoj."
 
-#: src/app/city.js:257
 #, javascript-format
-msgid "Updated %d week ago."
-msgid_plural "Updated %d weeks ago."
-msgstr[0] "Ĝisdatiĝis antaŭ %d semajno."
-msgstr[1] "Ĝisdatiĝis antaŭ %d semajnoj."
+#~ msgid "Updated %d week ago."
+#~ msgid_plural "Updated %d weeks ago."
+#~ msgstr[0] "Ĝisdatiĝis antaŭ %d semajno."
+#~ msgstr[1] "Ĝisdatiĝis antaŭ %d semajnoj."
 
-#: src/app/city.js:262
 #, javascript-format
-msgid "Updated %d month ago."
-msgid_plural "Updated %d months ago."
-msgstr[0] "Ĝisdatiĝis antaŭ %d monato."
-msgstr[1] "Ĝisdatiĝis antaŭ %d monatoj."
+#~ msgid "Updated %d month ago."
+#~ msgid_plural "Updated %d months ago."
+#~ msgstr[0] "Ĝisdatiĝis antaŭ %d monato."
+#~ msgstr[1] "Ĝisdatiĝis antaŭ %d monatoj."
 
-#: src/app/dailyForecast.js:36
-msgid "Daily Forecast"
-msgstr "Taga prognozo"
+#~ msgid "Daily Forecast"
+#~ msgstr "Taga prognozo"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
-msgid "Forecast not Available"
-msgstr "Prognozo ne disponeblas"
+#~ msgid "Forecast not Available"
+#~ msgstr "Prognozo ne disponeblas"
 
-#. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:219
-msgid "%b %e"
-msgstr "%-e-a de %b"
+#~ msgid "%b %e"
+#~ msgstr "%-e-a de %b"
 
-#: src/app/hourlyForecast.js:41
-msgid "Hourly Forecast"
-msgstr "Hora prognozo"
+#~ msgid "Hourly Forecast"
+#~ msgstr "Hora prognozo"
 
-#: src/app/hourlyForecast.js:107
-msgid "Now"
-msgstr "Nun"
+#~ msgid "Now"
+#~ msgstr "Nun"
 
-#. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:114
-msgid "%l∶%M %p"
-msgstr "%l∶%M %p"
+#~ msgid "%l∶%M %p"
+#~ msgstr "%l∶%M %p"
 
-#: src/app/window.js:195
-msgid "translator-credits"
-msgstr ""
-"Kristjan SCHMIDT\n"
-"Daniel PUENTES\n"
-"Nicolas MAIA\n"
-"Tirifto\n"
-"Carmen Bianca BAKKER <carmen@carmenbianca.eu>"
+#~ msgid "translator-credits"
+#~ msgstr ""
+#~ "Kristjan SCHMIDT\n"
+#~ "Daniel PUENTES\n"
+#~ "Nicolas MAIA\n"
+#~ "Tirifto\n"
+#~ "Carmen Bianca BAKKER <carmen@carmenbianca.eu>"
 
-#: src/app/world.js:39
-msgid "World view"
-msgstr "Monda vido"
+#~ msgid "World view"
+#~ msgstr "Monda vido"
 
-#. TRANSLATORS: this is the temperature string, minimum and maximum.
-#. The two values are already formatted, so it would be something like
-#. "7 °C / 19 °C"
-#: src/misc/util.js:103
 #, javascript-format
-msgid "%s / %s"
-msgstr "%s / %s"
+#~ msgid "%s / %s"
+#~ msgstr "%s / %s"
 
-#. TRANSLATORS: this is the description shown in the overview search
-#. It's the current weather conditions followed by the temperature,
-#. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:182
 #, javascript-format
-msgid "%s, %s"
-msgstr "%s, %s"
+#~ msgid "%s, %s"
+#~ msgstr "%s, %s"
 
 #~ msgid "Automatic location"
 #~ msgstr "Aŭtomata lokado"
