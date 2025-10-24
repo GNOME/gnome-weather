@@ -219,7 +219,7 @@ export class WeatherWidget extends Adw.Bin {
 
             if (now < end) {
                 t = (now - start) / SCROLLING_ANIMATION_TIME;
-                t = Util.easeOutCubic(t);
+                t = Adw.easing_ease(Adw.Easing.EASE, t);
                 hadjustment.value = value + t * (target - value);
                 return GLib.SOURCE_CONTINUE;
             } else {

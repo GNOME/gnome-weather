@@ -118,11 +118,6 @@ function getEnabledProviders(): number {
     );
 }
 
-function easeOutCubic(value: number): number {
-    const t = value - 1;
-    return t * t * t + 1;
-}
-
 function getNight(date: GLib.DateTime): GLib.DateTime {
     return GLib.DateTime.new_local(
         date.get_year(),
@@ -227,7 +222,6 @@ export {
     getMorning,
     getTemperature,
     getDay,
-    easeOutCubic,
     getEnabledProviders,
     getWeatherConditions,
     getNameAndCountry,
