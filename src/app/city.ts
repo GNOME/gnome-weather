@@ -166,20 +166,20 @@ export class WeatherWidget extends Adw.Bin {
             hadjustment.get_upper() - hadjustment.get_lower() ==
             hadjustment.page_size
         ) {
-            this._leftButton.hide();
-            this._rightButton.hide();
+            this._leftButton.visible = false;
+            this._rightButton.visible = false;
         } else if (hadjustment.value == hadjustment.get_lower()) {
-            this._leftButton.hide();
-            this._rightButton.show();
+            this._leftButton.visible = false;
+            this._rightButton.visible = true;
         } else if (
             hadjustment.value >=
             hadjustment.get_upper() - hadjustment.page_size
         ) {
-            this._leftButton.show();
-            this._rightButton.hide();
+            this._leftButton.visible = true;
+            this._rightButton.visible = false;
         } else {
-            this._leftButton.show();
-            this._rightButton.show();
+            this._leftButton.visible = true;
+            this._rightButton.visible = true;
         }
     }
 
