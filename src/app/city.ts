@@ -128,19 +128,23 @@ export class WeatherWidget extends Adw.Bin {
         this.tickId = 0;
 
         this._leftButton.connect('clicked', () => {
-            const hadjustment = (
-                this._forecastStack.visible_child as Gtk.ScrolledWindow
-            ).get_hadjustment();
-            const target = hadjustment.value - hadjustment.page_size;
+            const child = this._forecastStack.visible_child;
+            const hadjustment = (child as Gtk.ScrolledWindow).get_hadjustment();
+            const target =
+                child.get_direction() == Gtk.TextDirection.RTL
+                    ? hadjustment.value + hadjustment.page_size
+                    : hadjustment.value - hadjustment.page_size;
 
             this.beginScrollAnimation(target);
         });
 
         this._rightButton.connect('clicked', () => {
-            const hadjustment = (
-                this._forecastStack.visible_child as Gtk.ScrolledWindow
-            ).get_hadjustment();
-            const target = hadjustment.value + hadjustment.page_size;
+            const child = this._forecastStack.visible_child;
+            const hadjustment = (child as Gtk.ScrolledWindow).get_hadjustment();
+            const target =
+                child.get_direction() == Gtk.TextDirection.RTL
+                    ? hadjustment.value - hadjustment.page_size
+                    : hadjustment.value + hadjustment.page_size;
 
             this.beginScrollAnimation(target);
         });
@@ -162,24 +166,35 @@ export class WeatherWidget extends Adw.Bin {
         const visible_child = this._forecastStack
             .visible_child as Gtk.ScrolledWindow;
         const hadjustment = visible_child.get_hadjustment();
+        let start_button;
+        let end_button;
+
+        if (visible_child.get_direction() == Gtk.TextDirection.RTL) {
+            start_button = this._rightButton;
+            end_button = this._leftButton;
+        } else {
+            start_button = this._leftButton;
+            end_button = this._rightButton;
+        }
+
         if (
             hadjustment.get_upper() - hadjustment.get_lower() ==
             hadjustment.page_size
         ) {
-            this._leftButton.visible = false;
-            this._rightButton.visible = false;
+            start_button.visible = false;
+            end_button.visible = false;
         } else if (hadjustment.value == hadjustment.get_lower()) {
-            this._leftButton.visible = false;
-            this._rightButton.visible = true;
+            start_button.visible = false;
+            end_button.visible = true;
         } else if (
             hadjustment.value >=
             hadjustment.get_upper() - hadjustment.page_size
         ) {
-            this._leftButton.visible = true;
-            this._rightButton.visible = false;
+            start_button.visible = true;
+            end_button.visible = false;
         } else {
-            this._leftButton.visible = true;
-            this._rightButton.visible = true;
+            start_button.visible = true;
+            end_button.visible = true;
         }
     }
 
