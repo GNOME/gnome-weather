@@ -162,25 +162,11 @@ export class WeatherWidget extends Adw.Bin {
         const visible_child = this._forecastStack
             .visible_child as Gtk.ScrolledWindow;
         const hadjustment = visible_child.get_hadjustment();
-        if (
-            hadjustment.get_upper() - hadjustment.get_lower() ==
-            hadjustment.page_size
-        ) {
-            this._leftButton.hide();
-            this._rightButton.hide();
-        } else if (hadjustment.value == hadjustment.get_lower()) {
-            this._leftButton.hide();
-            this._rightButton.show();
-        } else if (
-            hadjustment.value >=
-            hadjustment.get_upper() - hadjustment.page_size
-        ) {
-            this._leftButton.show();
-            this._rightButton.hide();
-        } else {
-            this._leftButton.show();
-            this._rightButton.show();
-        }
+        const leftmost = hadjustment.value > hadjustment.lower;
+        const rightmost = hadjustment.value < hadjustment.upper - hadjustment.page_size;
+
+        this._leftButton.visible = leftmost;
+        this._rightButton.visible = rightmost;
     }
 
     private beginScrollAnimation(target: number): void {
