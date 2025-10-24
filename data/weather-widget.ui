@@ -153,7 +153,7 @@
               </object>
             </property>
             <child type="overlay">
-              <object class="GtkButton" id="rightButton">
+              <object class="GtkButton" id="endButton">
                 <property name="halign">end</property>
                 <property name="valign">center</property>
                 <property name="margin_end">28</property>
@@ -165,7 +165,7 @@
               </object>
             </child>
             <child type="overlay">
-              <object class="GtkButton" id="leftButton">
+              <object class="GtkButton" id="startButton">
                 <property name="halign">start</property>
                 <property name="valign">center</property>
                 <property name="margin_start">28</property>

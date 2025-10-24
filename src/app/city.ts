@@ -42,8 +42,8 @@ export class WeatherWidget extends Adw.Bin {
     declare private _temperatureLabel: Gtk.Label;
     declare private _apparentLabel: Gtk.Label;
     declare private _forecastStack: Adw.ViewStack;
-    declare private _leftButton: Gtk.Button;
-    declare private _rightButton: Gtk.Button;
+    declare private _startButton: Gtk.Button;
+    declare private _endButton: Gtk.Button;
     declare private _forecastHourly: HourlyForecastBox;
     declare private _forecastHourlyAdjustment: Gtk.Adjustment;
     declare private _forecastDaily: DailyForecastBox;
@@ -68,8 +68,8 @@ export class WeatherWidget extends Adw.Bin {
                     'temperatureLabel',
                     'apparentLabel',
                     'forecastStack',
-                    'leftButton',
-                    'rightButton',
+                    'startButton',
+                    'endButton',
                     'forecastHourly',
                     'forecastHourlyScrollWindow',
                     'forecastHourlyAdjustment',
@@ -111,12 +111,12 @@ export class WeatherWidget extends Adw.Bin {
         }
 
         this._forecastStack.connect('notify::visible-child', () => {
-            const visible_child = this._forecastStack
-                .visible_child as Gtk.ScrolledWindow;
-            if (visible_child == null) return; // can happen at destruction
+            const child = this._forecastStack.visible_child;
+            if (child == null) return; // can happen at destruction
 
-            const hadjustment = visible_child.get_hadjustment();
-            hadjustment.value = hadjustment.get_lower();
+            const hadjustment = (child as Gtk.ScrolledWindow).hadjustment;
+            const is_ltr = child.get_direction() != Gtk.TextDirection.RTL;
+            hadjustment.value = is_ltr ? hadjustment.lower : hadjustment.upper;
             this.syncLeftRightButtons();
 
             if (this.tickId) {
@@ -127,20 +127,24 @@ export class WeatherWidget extends Adw.Bin {
 
         this.tickId = 0;
 
-        this._leftButton.connect('clicked', () => {
-            const hadjustment = (
-                this._forecastStack.visible_child as Gtk.ScrolledWindow
-            ).get_hadjustment();
-            const target = hadjustment.value - hadjustment.page_size;
+        this._startButton.connect('clicked', () => {
+            const child = this._forecastStack.visible_child;
+            const hadjustment = (child as Gtk.ScrolledWindow).hadjustment;
+            const is_ltr = child.get_direction() != Gtk.TextDirection.RTL;
+            const value = hadjustment.value;
+            const size = hadjustment.page_size;
+            const target = is_ltr ? value - size : value + size;
 
             this.beginScrollAnimation(target);
         });
 
-        this._rightButton.connect('clicked', () => {
-            const hadjustment = (
-                this._forecastStack.visible_child as Gtk.ScrolledWindow
-            ).get_hadjustment();
-            const target = hadjustment.value + hadjustment.page_size;
+        this._endButton.connect('clicked', () => {
+            const child = this._forecastStack.visible_child;
+            const hadjustment = (child as Gtk.ScrolledWindow).hadjustment;
+            const is_ltr = child.get_direction() != Gtk.TextDirection.RTL;
+            const value = hadjustment.value;
+            const size = hadjustment.page_size;
+            const target = is_ltr ? value + size : value - size;
 
             this.beginScrollAnimation(target);
         });
@@ -162,11 +166,13 @@ export class WeatherWidget extends Adw.Bin {
         const visible_child = this._forecastStack
             .visible_child as Gtk.ScrolledWindow;
         const hadjustment = visible_child.get_hadjustment();
+        const is_ltr = visible_child.get_direction() != Gtk.TextDirection.RTL;
         const leftmost = hadjustment.value > hadjustment.lower;
-        const rightmost = hadjustment.value < hadjustment.upper - hadjustment.page_size;
+        const rightmost =
+            hadjustment.value < hadjustment.upper - hadjustment.page_size;
 
-        this._leftButton.visible = leftmost;
-        this._rightButton.visible = rightmost;
+        this._startButton.visible = is_ltr ? leftmost : rightmost;
+        this._endButton.visible = is_ltr ? rightmost : leftmost;
     }
 
     private beginScrollAnimation(target: number): void {
