@@ -39,7 +39,7 @@ lint:
     LINT_LOG: "eslint-report.txt"
     FORMAT_LOG: "prettier-report.diff"
   script:
-    - sudo dnf install -y npm
+    - sudo dnf install -y npm git
     - npm install
     - npx eslint -o $LINT_LOG --no-color src || { cat $LINT_LOG; false; }
     - npx prettier -c ./src/ || { npx prettier -w ./src/; git diff >> $FORMAT_LOG; false; }
