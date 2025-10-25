@@ -32,7 +32,6 @@
 
 .forecast-card {
     transition: border-radius 100ms ease-out;
-    border-radius: 6px;
 }
 
 .forecast-card separator {
