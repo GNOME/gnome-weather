@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
 "POT-Creation-Date: 2025-05-10 18:53+0000\n"
-"PO-Revision-Date: 2025-08-28 15:04-0400\n"
+"PO-Revision-Date: 2025-09-02 22:44-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: \n"
 "Language: ug\n"
@@ -69,7 +69,7 @@ msgstr "ئاساسىي كۆزنەكنىڭ ئېگىزلىكى."
 
 #: data/org.gnome.Weather.gschema.xml:22
 msgid "Window maximized"
-msgstr "كۆزنەك چوڭايتىلغاندا"
+msgstr "كۆزنەك چوڭايتىلدى"
 
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
