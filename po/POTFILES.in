@@ -1,27 +1,18 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
+data/day-entry.ui
 data/org.gnome.Weather.desktop.in.in
 data/org.gnome.Weather.gschema.xml
 data/org.gnome.Weather.metainfo.xml.in.in
-data/city.ui
-data/day-entry.ui
-data/hour-entry.ui
 data/places-popover.ui
 data/weather-widget.ui
 data/window.ui
 src/app/application.ts
 src/app/city.ts
-src/app/currentLocationController.ts
 src/app/dailyForecast.ts
-src/app/entry.ts
 src/app/hourlyForecast.ts
-src/app/locationRow.ts
-src/app/locationRow.ui
-src/app/main.ts
-src/app/thermometer.ts
 src/app/window.ts
 src/app/world.ts
 src/misc/util.ts
 src/service/main.ts
 src/service/searchProvider.ts
-src/shared/world.ts
