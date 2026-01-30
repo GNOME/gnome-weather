@@ -25,9 +25,11 @@
   <screenshots>
     <screenshot type="default">
       <image>https://gitlab.gnome.org/GNOME/gnome-weather/raw/HEAD/misc/screenshots/hourly.png</image>
+      <caption>Hourly View</caption>
     </screenshot>
     <screenshot>
       <image>https://gitlab.gnome.org/GNOME/gnome-weather/raw/HEAD/misc/screenshots/daily.png</image>
+      <caption>Daily View</caption>
     </screenshot>
   </screenshots>
   <branding>
