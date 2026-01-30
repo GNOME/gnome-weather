@@ -6,12 +6,6 @@
   <summary>Show weather conditions and forecast</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0-or-later</project_license>
-  <kudos>
-    <kudo>HiDpiIcon</kudo>
-    <kudo>HighContrast</kudo>
-    <kudo>ModernToolkit</kudo>
-    <kudo>SearchProvider</kudo>
-  </kudos>
   <description>
     <p>
       A small application that allows you to monitor the current weather
