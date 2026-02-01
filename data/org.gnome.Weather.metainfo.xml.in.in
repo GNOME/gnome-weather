@@ -24,11 +24,11 @@
   <project_group>GNOME</project_group>
   <screenshots>
     <screenshot type="default">
-      <image>https://gitlab.gnome.org/GNOME/gnome-weather/raw/HEAD/misc/screenshots/hourly.png</image>
+      <image>https://static.gnome.org/appdata/gnome-47/org.gnome.Weather/hourly.png</image>
       <caption>Hourly View</caption>
     </screenshot>
     <screenshot>
-      <image>https://gitlab.gnome.org/GNOME/gnome-weather/raw/HEAD/misc/screenshots/daily.png</image>
+      <image>https://static.gnome.org/appdata/gnome-47/org.gnome.Weather/daily.png</image>
       <caption>Daily View</caption>
     </screenshot>
   </screenshots>
