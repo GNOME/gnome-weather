@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2025-12-27 22:15+0000\n"
-"PO-Revision-Date: 2026-01-25 17:34+0000\n"
+"POT-Creation-Date: 2026-02-01 08:18+0000\n"
+"PO-Revision-Date: 2026-02-01 12:07+0000\n"
 "Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
 "Language-Team: kw\n"
 "Language: kw\n"
@@ -90,7 +90,7 @@ msgstr "Kowlvoghhys fenester"
 msgid "Whether or not the window is maximized."
 msgstr "Mar an fenester yw kowlvoghhys"
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:16
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -98,7 +98,7 @@ msgstr ""
 "Unn app byghan gasa ty mires orth an studh kewer a'n jydh rag dha cita, po "
 "neb le y'n bys."
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:20
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -107,7 +107,7 @@ msgstr ""
 "herwydh an our rag an dydh lemmyn ha nessa, ow devnydhya gonisyow "
 "kesrosweyth dyffrans."
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:24
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you to see the "
 "current conditions of the most recently searched cities by just typing the "
@@ -117,8 +117,16 @@ msgstr ""
 "a'n jydh an citys hwilys diwettha gans ow jynnskrifa an hanow yn an Gorwolok "
 "Gwriansow."
 
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+msgid "Hourly View"
+msgstr "Gwel Herwydh An Our"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+msgid "Daily View"
+msgstr "Gwel Dedhyek"
+
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.metainfo.xml.in.in:482 src/app/window.ts:189
+#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
 msgid "The GNOME Project"
 msgstr "An Ragdres GNOME"
 
