@@ -50,6 +50,14 @@
     <id>org.gnome.Weather.desktop</id>
   </provides>
   <releases>
+    <release version="50~beta" date="2026-02-01">
+      <description>
+        <p>Weather 50.0 comes with the following enhancements:</p>
+        <ul>
+          <li>Translation updates</li>
+        </ul>
+      </description>
+    </release>
     <release version="49.0" date="2025-09-11">
       <description>
         <p>Weather 49.0 comes with the following enhancements:</p>

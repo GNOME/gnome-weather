@@ -1,3 +1,20 @@
+50.beta
+=======
+Weather 50.beta comes with the following enhancements:
+  - Various metainfo improvements
+  - Screenshots in the metainfo now link to static.gnome.org
+  - Improve CSS style for forecast
+
+This version brings translation updates for the following locales:
+  - Bokmål, Norwegian (Kjartan Maraas)
+  - Cornish (Flynn Peck)
+  - Esperanto (Kristjan SCHMIDT)
+  - Gujarati (વિશાલ ભલાણી)
+  - Icelandic (Sveinn í Felli)
+  - Romanian (Antonio Marin)
+  - Uighur (Abduqadir Abliz)
+  - Serbian (Милош Поповић)
+
 49.0
 ====
 Weather 49.0 comes with the following translation updates for the following
