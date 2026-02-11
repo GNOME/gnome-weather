@@ -4,14 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # FULL NAME <EMAIL@ADDRESS>, 2025.
 # Emilio Sepulveda <emism.translations@gmail.com>, 2025.
+# Emilio Sepúlveda <emism.translations@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2025-06-11 19:14+0000\n"
-"PO-Revision-Date: 2025-06-11 18:23-0400\n"
-"Last-Translator: Emilio Sepulveda <emism.translations@gmail.com>\n"
+"POT-Creation-Date: 2026-02-01 08:18+0000\n"
+"PO-Revision-Date: 2026-02-10 22:23-0300\n"
+"Last-Translator: Emilio Sepúlveda <emism.translations@gmail.com>\n"
 "Language-Team: Interlingua <softinterlingua@gmail.com>\n"
 "Language: ia\n"
 "MIME-Version: 1.0\n"
@@ -22,55 +23,44 @@ msgstr ""
 "X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
-"X-Generator: Gtranslator 48.0\n"
+"X-Generator: Gtranslator 49.0\n"
+"X-DL-VCS-Web: https://gitlab.gnome.org/GNOME/gnome-weather/\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "Nocte"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "Matino"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "Postmeridie"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "Vespere"
+
+#: data/org.gnome.Weather.desktop.in.in:3
+#: data/org.gnome.Weather.metainfo.xml.in.in:5 data/window.ui:82
+#: src/app/application.ts:53 src/app/window.ts:187 src/app/window.ts:199
+#: src/service/main.ts:50
 msgid "Weather"
 msgstr "Meteorologia"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:6
-#: data/org.gnome.Weather.desktop.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4
+#: data/org.gnome.Weather.metainfo.xml.in.in:6
 msgid "Show weather conditions and forecast"
 msgstr "Monstra le conditiones e le prognosticos meteorologic"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:16
-msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
-msgstr ""
-"Un parve application que te permitte surveliar le conditiones actual del "
-"tempore pro tu citate, o ubique le mundo."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:20
-msgid ""
-"It provides access to detailed forecasts, up to 7 days, with hourly details "
-"for the current and next day, using various internet services."
-msgstr ""
-"Il forni accesso a prognosticos detaliate, usque 7 dies, con detalios cata "
-"hora pro le dia actual e le sequente, usante varie servicios de internet."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:24
-msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you to see the "
-"current conditions of the most recently searched cities by just typing the "
-"name in the Activities Overview."
-msgstr ""
-"Il se pote integrar optionalmente con GNOME Shell, illo te permitte vider le "
-"conditiones actual del citates le plus cercate recentemente solmente al "
-"scriber su nomine in le Panorama de activitates."
-
-#. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:451
-msgid "The GNOME Project"
-msgstr "Le projecto GNOME"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Weather.desktop.in.in:13
+#: data/org.gnome.Weather.desktop.in.in:12
 msgid "Weather;Forecast;"
 msgstr "Tempore;Prognosticos;"
 
-#: data/org.gnome.Weather.desktop.in.in:14
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Allows weather information to be displayed for your location."
 msgstr ""
 "Permitte al information de tempore esser monstrate pro tu localisation."
@@ -103,21 +93,44 @@ msgstr "Fenestra maximisate"
 msgid "Whether or not the window is maximized."
 msgstr "Si le fenestra es maximisate o no"
 
-#: data/day-entry.ui:20
-msgid "Night"
-msgstr "Nocte"
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Un parve application que te permitte surveliar le conditiones actual del "
+"tempore pro tu citate, o ubique le mundo."
 
-#: data/day-entry.ui:33
-msgid "Morning"
-msgstr "Matino"
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Il forni accesso a prognosticos detaliate, usque 7 dies, con detalios cata "
+"hora pro le dia actual e le sequente, usante varie servicios de internet."
 
-#: data/day-entry.ui:46
-msgid "Afternoon"
-msgstr "Postmeridie"
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"Il se pote integrar optionalmente con GNOME Shell, illo te permitte vider le "
+"conditiones actual del citates le plus cercate recentemente solmente al "
+"scriber su nomine in le Panorama de activitates."
 
-#: data/day-entry.ui:59
-msgid "Evening"
-msgstr "Vespere"
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+msgid "Hourly View"
+msgstr "Vista de cata hora"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+msgid "Daily View"
+msgstr "Vista quotidian"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
+msgid "The GNOME Project"
+msgstr "Le projecto GNOME"
 
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
@@ -170,3 +183,97 @@ msgstr "Actualisar"
 #: data/window.ui:87
 msgid "Main Menu"
 msgstr "Menu principal"
+
+#: src/app/city.ts:259
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Sensation de %.0f°"
+
+#: src/app/city.ts:289
+msgid "Updated just now."
+msgstr "Actualisate justo ora."
+
+#: src/app/city.ts:294
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Actualisate %d minuta retro."
+msgstr[1] "Actualisate %d minutas retro."
+
+#: src/app/city.ts:302
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Actualisate %d hora retro."
+msgstr[1] "Actualisate %d horas retro."
+
+#: src/app/city.ts:310
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Actualisate %d die retro."
+msgstr[1] "Actualisate %d dies retro."
+
+#: src/app/city.ts:318
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Actualisate %d septimana retro."
+msgstr[1] "Actualisate %d septimanas retro."
+
+#: src/app/city.ts:325
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "Updated %d months ago."
+msgstr[0] "Actualisate %d mense retro."
+msgstr[1] "Actualisate %d menses retro."
+
+#: src/app/dailyForecast.ts:72
+msgid "Daily Forecast"
+msgstr "Prognostico quotidian"
+
+#: src/app/dailyForecast.ts:143 src/app/hourlyForecast.ts:114
+msgid "Forecast not Available"
+msgstr "Prognostico non disponibile"
+
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.ts:335
+msgid "%b %e"
+msgstr "%b %e"
+
+#: src/app/hourlyForecast.ts:53
+msgid "Hourly Forecast"
+msgstr "Prognostico de cata hora"
+
+#: src/app/hourlyForecast.ts:139
+msgid "Now"
+msgstr "Ora"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/hourlyForecast.ts:146
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: src/app/window.ts:186
+msgid "translator-credits"
+msgstr "Emilio Sepúlveda <emism.translations@gmail.com>"
+
+#: src/app/world.ts:73
+msgid "World view"
+msgstr "Vista mundial"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: src/misc/util.ts:107
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: src/service/searchProvider.ts:214
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
