@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2024-08-31 14:11+0000\n"
-"PO-Revision-Date: 2024-09-01 19:45+0300\n"
-"Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
+"POT-Creation-Date: 2026-02-01 08:18+0000\n"
+"PO-Revision-Date: 2026-02-11 22:51+0200\n"
+"Last-Translator: Aurimas Černius <aurimas.cernius@mailo.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -17,57 +17,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.8\n"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
-#: src/service/main.js:49
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "Naktį"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "Ryte"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "Dieną"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "Vakare"
+
+#: data/org.gnome.Weather.desktop.in.in:3
+#: data/org.gnome.Weather.metainfo.xml.in.in:5 data/window.ui:82
+#: src/app/application.ts:53 src/app/window.ts:187 src/app/window.ts:199
+#: src/service/main.ts:50
 msgid "Weather"
 msgstr "Orai"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:6
-#: data/org.gnome.Weather.desktop.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4
+#: data/org.gnome.Weather.metainfo.xml.in.in:6
 msgid "Show weather conditions and forecast"
 msgstr "Rodyti orų sąlygas ir prognozes"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:16
-msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
-msgstr ""
-"Maža programa, kuri jums leidžia stebėti orų sąlygas jūsų mieste arba bet "
-"kur pasaulyje."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:20
-msgid ""
-"It provides access to detailed forecasts, up to 7 days, with hourly details "
-"for the current and next day, using various internet services."
-msgstr ""
-"Ji leidžia matyti iki 7 dienų prognozę su valandų tikslumo informacija, "
-"teikiamą įvairių interneto tarnybų."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:24
-msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you to see the "
-"current conditions of the most recently searched cities by just typing the "
-"name in the Activities Overview."
-msgstr ""
-"Ji taip pat integruojasi su GNOME Shell, leisdama matyti orų sąlygas "
-"paskutiniuose ieškotuose miestuose tiesiog įvedant jų pavadinimus veiklų "
-"apžvalgoje."
-
-#. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
-msgid "The GNOME Project"
-msgstr "GNOME projektas"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Weather.desktop.in.in:13
+#: data/org.gnome.Weather.desktop.in.in:12
 msgid "Weather;Forecast;"
 msgstr "Orai;Prognozė;"
 
-#: data/org.gnome.Weather.desktop.in.in:14
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Allows weather information to be displayed for your location."
 msgstr "Leidžia rodyti jūsų vietovės orų informaciją."
 
@@ -99,21 +84,44 @@ msgstr "Langas išdidintas"
 msgid "Whether or not the window is maximized."
 msgstr "Ar langas yra išdidintas."
 
-#: data/day-entry.ui:20
-msgid "Night"
-msgstr "Naktį"
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Maža programa, kuri jums leidžia stebėti orų sąlygas jūsų mieste arba bet "
+"kur pasaulyje."
 
-#: data/day-entry.ui:33
-msgid "Morning"
-msgstr "Ryte"
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Ji leidžia matyti iki 7 dienų prognozę su valandų tikslumo informacija, "
+"teikiamą įvairių interneto tarnybų."
 
-#: data/day-entry.ui:46
-msgid "Afternoon"
-msgstr "Dieną"
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"Ji taip pat integruojasi su GNOME Shell, leisdama matyti orų sąlygas "
+"paskutiniuose ieškotuose miestuose tiesiog įvedant jų pavadinimus veiklų "
+"apžvalgoje."
 
-#: data/day-entry.ui:59
-msgid "Evening"
-msgstr "Vakare"
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+msgid "Hourly View"
+msgstr "Valandų rodinys"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+msgid "Daily View"
+msgstr "Dienų rodinys"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
+msgid "The GNOME Project"
+msgstr "GNOME projektas"
 
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
@@ -167,16 +175,16 @@ msgstr "Atnaujinti"
 msgid "Main Menu"
 msgstr "Pagrindinis meniu"
 
-#: src/app/city.js:203
+#: src/app/city.ts:259
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Jaučiama kaip %.0f°"
 
-#: src/app/city.js:234
+#: src/app/city.ts:289
 msgid "Updated just now."
 msgstr "Ką tik atnaujinta."
 
-#: src/app/city.js:239
+#: src/app/city.ts:294
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
@@ -184,7 +192,7 @@ msgstr[0] "Atnaujinta prieš %d minutę."
 msgstr[1] "Atnaujinta prieš %d minutes."
 msgstr[2] "Atnaujinta prieš %d minučių."
 
-#: src/app/city.js:245
+#: src/app/city.ts:302
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
@@ -192,7 +200,7 @@ msgstr[0] "Atnaujinta prieš %d valandą."
 msgstr[1] "Atnaujinta prieš %d valandas."
 msgstr[2] "Atnaujinta prieš %d valandų."
 
-#: src/app/city.js:251
+#: src/app/city.ts:310
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
@@ -200,7 +208,7 @@ msgstr[0] "Atnaujinta prieš %d dieną."
 msgstr[1] "Atnaujinta prieš %d dienas."
 msgstr[2] "Atnaujinta prieš %d dienų."
 
-#: src/app/city.js:257
+#: src/app/city.ts:318
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
@@ -208,7 +216,7 @@ msgstr[0] "Atnaujinta prieš %d savaitę."
 msgstr[1] "Atnaujinta prieš %d savaites."
 msgstr[2] "Atnaujinta prieš %d savaičių."
 
-#: src/app/city.js:262
+#: src/app/city.ts:325
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
@@ -216,46 +224,46 @@ msgstr[0] "Atnaujinta prieš %d mėnesį."
 msgstr[1] "Atnaujinta prieš %d mėnesius."
 msgstr[2] "Atnaujinta prieš %d mėnesių."
 
-#: src/app/dailyForecast.js:36
+#: src/app/dailyForecast.ts:72
 msgid "Daily Forecast"
 msgstr "Kasdienė prognozė"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+#: src/app/dailyForecast.ts:143 src/app/hourlyForecast.ts:114
 msgid "Forecast not Available"
 msgstr "Prognozė neprieinama"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:219
+#: src/app/dailyForecast.ts:335
 msgid "%b %e"
 msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:41
+#: src/app/hourlyForecast.ts:53
 msgid "Hourly Forecast"
 msgstr "Kasvalandinė prognozė"
 
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.ts:139
 msgid "Now"
 msgstr "Dabar"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:114
+#: src/app/hourlyForecast.ts:146
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:195
+#: src/app/window.ts:186
 msgid "translator-credits"
 msgstr ""
 "išvertė:\n"
 "Aurimas Černius <aurisc4@gmail.com>"
 
-#: src/app/world.js:39
+#: src/app/world.ts:73
 msgid "World view"
 msgstr "Pasaulio vaizdas"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:103
+#: src/misc/util.ts:107
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -263,7 +271,7 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:182
+#: src/service/searchProvider.ts:214
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
