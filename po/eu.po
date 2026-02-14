@@ -4,14 +4,14 @@
 #
 # Iñaki Larrañaga Murgoitio <dooteo@zundan.com>, 2013, 2014, 2015, 2016.
 # Edurne Labaka <elabaka@uzei.com>, 2015.
-# Asier Sarasua Garmendia  <asiersarasua@ni.eus, 2013, 2019, 2020, 2021, 2022, 2023.ç
-# Asier Sarasua Garmendia  <asiersarasua@ni.eus, 2024.
+# Asier Saratsua Garmendia  <asiersarasua@ni.eus, 2013, 2019, 2020, 2021, 2022, 2023.
+# Asier Saratsua Garmendia  <asiersarasua@ni.eus, 2024, 2026.
 msgid ""
 msgstr "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2024-08-22 16:15+0000\n"
-"PO-Revision-Date: 2024-08-26 19:00+0100\n"
-"Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
+"POT-Creation-Date: 2026-02-01 08:18+0000\n"
+"PO-Revision-Date: 2026-02-14 19:00+0100\n"
+"Last-Translator: Asier Saratsua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
@@ -19,48 +19,40 @@ msgstr "Project-Id-Version: gnome-weather master\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
-#: src/service/main.js:49
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "Gaua"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "Goiza"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "Arratsaldea"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "Iluntzea"
+
+#: data/org.gnome.Weather.desktop.in.in:3
+#: data/org.gnome.Weather.metainfo.xml.in.in:5 data/window.ui:82
+#: src/app/application.ts:53 src/app/window.ts:187 src/app/window.ts:199
+#: src/service/main.ts:50
 msgid "Weather"
 msgstr "Eguraldia"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:6
-#: data/org.gnome.Weather.desktop.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4
+#: data/org.gnome.Weather.metainfo.xml.in.in:6
 msgid "Show weather conditions and forecast"
 msgstr "Erakutsi eguraldiaren egoera eta iragarpena"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:16
-msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
-msgstr "Aplikazio txiki bat da, zure herriko edo munduko beste leku bateko uneko eguraldiaren berri ematen dizuna."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:20
-msgid ""
-"It provides access to detailed forecasts, up to 7 days, with hourly details "
-"for the current and next day, using various internet services."
-msgstr "Iragarpen xehatuak ikusteko aukera ematen du, 7 egun artekoak, ordukako xehetasunak ematen dituztenak uneko egunerako eta hurrengo egunerako, hainbat Interneteko zerbitzu erabiliz."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:24
-msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you to see the "
-"current conditions of the most recently searched cities by just typing the "
-"name in the Activities Overview."
-msgstr "Aukeran, GNOME Shell-ekin integratu daiteke, azken aldian bilatutako herrien uneko baldintzak ikusteko haien izena jardueren ikuspegian idatzita."
-
-#. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
-msgid "The GNOME Project"
-msgstr "GNOME proiektua"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Weather.desktop.in.in:13
+#: data/org.gnome.Weather.desktop.in.in:12
 msgid "Weather;Forecast;"
 msgstr "Eguraldia;Iragarpena;"
 
-#: data/org.gnome.Weather.desktop.in.in:14
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Allows weather information to be displayed for your location."
 msgstr "Zure kokalekuko eguraldiari buruzko informazioa bistaratzea baimentzen du."
 
@@ -90,21 +82,37 @@ msgstr "Leihoa maximizatuta"
 msgid "Whether or not the window is maximized."
 msgstr "Leihoa maximizatuta dagoen ala ez."
 
-#: data/day-entry.ui:20
-msgid "Night"
-msgstr "Gaua"
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr "Aplikazio txiki bat da, zure herriko edo munduko beste leku bateko uneko eguraldiaren berri ematen dizuna."
 
-#: data/day-entry.ui:33
-msgid "Morning"
-msgstr "Goiza"
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr "Iragarpen xehatuak ikusteko aukera ematen du, 7 egun artekoak, ordukako xehetasunak ematen dituztenak uneko egunerako eta hurrengo egunerako, hainbat Interneteko zerbitzu erabiliz."
 
-#: data/day-entry.ui:46
-msgid "Afternoon"
-msgstr "Arratsaldea"
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr "Aukeran, GNOME Shell-ekin integratu daiteke, azken aldian bilatutako herrien uneko baldintzak ikusteko haien izena jardueren ikuspegian idatzita."
 
-#: data/day-entry.ui:59
-msgid "Evening"
-msgstr "Iluntzea"
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+msgid "Hourly View"
+msgstr "Orduen ikuspegia"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+msgid "Daily View"
+msgstr "Egunen ikuspegia"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
+msgid "The GNOME Project"
+msgstr "GNOME proiektua"
 
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
@@ -158,88 +166,88 @@ msgstr "Freskatu"
 msgid "Main Menu"
 msgstr "Menu nagusia"
 
-#: src/app/city.js:203
+#: src/app/city.ts:259
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Sentsazio termikoa: %.0f°"
 
-#: src/app/city.js:234
+#: src/app/city.ts:289
 msgid "Updated just now."
 msgstr "Orain bertan eguneratua."
 
-#: src/app/city.js:239
+#: src/app/city.ts:294
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Duela minutu %d eguneratua."
 msgstr[1] "Duela %d minutu eguneratua."
 
-#: src/app/city.js:245
+#: src/app/city.ts:302
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Duela ordu %d eguneratua."
 msgstr[1] "Duela %d ordu eguneratua."
 
-#: src/app/city.js:251
+#: src/app/city.ts:310
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Duela egun %d eguneratua."
 msgstr[1] "Duela %d egun eguneratua."
 
-#: src/app/city.js:257
+#: src/app/city.ts:318
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Duela aste %d eguneratua."
 msgstr[1] "Duela %d aste eguneratua."
 
-#: src/app/city.js:262
+#: src/app/city.ts:325
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Duela hilabete %d eguneratua."
 msgstr[1] "Duela %d hilabete eguneratua."
 
-#: src/app/dailyForecast.js:36
+#: src/app/dailyForecast.ts:72
 msgid "Daily Forecast"
 msgstr "Eguneroko iragarpena"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+#: src/app/dailyForecast.ts:143 src/app/hourlyForecast.ts:114
 msgid "Forecast not Available"
 msgstr "Iragarpena ez dago eskuragarri"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:219
+#: src/app/dailyForecast.ts:335
 msgid "%b %e"
 msgstr "%b/%e"
 
-#: src/app/hourlyForecast.js:41
+#: src/app/hourlyForecast.ts:53
 msgid "Hourly Forecast"
 msgstr "Orduroko iragarpena"
 
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.ts:139
 msgid "Now"
 msgstr "Orain"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:114
+#: src/app/hourlyForecast.ts:146
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:195
+#: src/app/window.ts:186
 msgid "translator-credits"
 msgstr "translator-credits"
 
-#: src/app/world.js:39
+#: src/app/world.ts:73
 msgid "World view"
 msgstr "Munduaren ikuspegia"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:103
+#: src/misc/util.ts:107
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -247,7 +255,7 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:182
+#: src/service/searchProvider.ts:214
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
