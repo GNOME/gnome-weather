@@ -1,14 +1,14 @@
 # Hungarian translation for gnome-weather.
-# Copyright (C) 2013, 2014, 2016, 2019, 2020, 2021, 2022, 2023, 2024 Free Software Foundation, Inc.
+# Copyright (C) 2013, 2014, 2016, 2019, 2020, 2021, 2022, 2023, 2024, 2026 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-weather package.
 #
-# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2016, 2019, 2020, 2021, 2022, 2023, 2024.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2016, 2019, 2020, 2021, 2022, 2023, 2024, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2024-06-24 13:57+0000\n"
-"PO-Revision-Date: 2024-06-28 16:26+0200\n"
+"POT-Creation-Date: 2026-02-01 08:18+0000\n"
+"PO-Revision-Date: 2026-02-22 18:36+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
@@ -16,58 +16,42 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 25.08.1\n"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:85
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
-#: src/service/main.js:49
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "Éjszaka"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "Reggel"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "Délután"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "Este"
+
+#: data/org.gnome.Weather.desktop.in.in:3
+#: data/org.gnome.Weather.metainfo.xml.in.in:5 data/window.ui:82
+#: src/app/application.ts:53 src/app/window.ts:187 src/app/window.ts:199
+#: src/service/main.ts:50
 msgid "Weather"
 msgstr "Időjárás"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:6
-#: data/org.gnome.Weather.desktop.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4
+#: data/org.gnome.Weather.metainfo.xml.in.in:6
 msgid "Show weather conditions and forecast"
 msgstr "Időjárási viszonyok és előrejelzés megjelenítése"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:16
-msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
-msgstr ""
-"Egy kicsi alkalmazás, amely lehető teszi a jelenlegi időjárási körülmények "
-"figyelését a településén vagy bárhol a világon."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:20
-msgid ""
-"It provides access to detailed forecasts, up to 7 days, with hourly details "
-"for the current and next day, using various internet services."
-msgstr ""
-"Részletes előrejelzésekhez biztosít hozzáférést 7 napos időtávra, valamint "
-"különféle internetes szolgáltatásokat felhasználva óránkénti részleteket "
-"nyújt az aktuális és a következő napra."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:24
-msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you to see the "
-"current conditions of the most recently searched cities by just typing the "
-"name in the Activities Overview."
-msgstr ""
-"Ezen felül opcionálisan beépül a GNOME parancsértelmezőbe, lehetővé téve a "
-"leggyakrabban keresett városok aktuális időjárásának megtekintését a név "
-"begépelésével a tevékenységek áttekintőjébe."
-
-#. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:375 src/app/window.js:198
-msgid "The GNOME Project"
-msgstr "A GNOME projekt"
-
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Weather.desktop.in.in:13
+#: data/org.gnome.Weather.desktop.in.in:12
 msgid "Weather;Forecast;"
 msgstr "Időjárás;Előrejelzés;"
 
-#: data/org.gnome.Weather.desktop.in.in:14
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Allows weather information to be displayed for your location."
 msgstr "Lehetővé teszi az időjárási információk megjelenítését az Ön helyén."
 
@@ -99,25 +83,47 @@ msgstr "Teljes méretű ablak"
 msgid "Whether or not the window is maximized."
 msgstr "Az ablak teljes méretű-e."
 
-#: data/city.ui:25
-msgid "Loading…"
-msgstr "Betöltés…"
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Egy kicsi alkalmazás, amely lehető teszi a jelenlegi időjárási körülmények "
+"figyelését a településén vagy bárhol a világon."
 
-#: data/day-entry.ui:20
-msgid "Night"
-msgstr "Éjszaka"
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Részletes előrejelzésekhez biztosít hozzáférést 7 napos időtávra, valamint "
+"különféle internetes szolgáltatásokat felhasználva óránkénti részleteket "
+"nyújt az aktuális és a következő napra."
 
-#: data/day-entry.ui:33
-msgid "Morning"
-msgstr "Reggel"
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"Ezen felül opcionálisan beépül a GNOME parancsértelmezőbe, lehetővé téve a "
+"leggyakrabban keresett városok aktuális időjárásának megtekintését a név "
+"begépelésével a tevékenységek áttekintőjébe."
 
-#: data/day-entry.ui:46
-msgid "Afternoon"
-msgstr "Délután"
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+#| msgid "_Hourly"
+msgid "Hourly View"
+msgstr "Óránkénti nézet"
 
-#: data/day-entry.ui:59
-msgid "Evening"
-msgstr "Este"
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+#| msgid "_Daily"
+msgid "Daily View"
+msgstr "Napi nézet"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
+msgid "The GNOME Project"
+msgstr "A GNOME projekt"
 
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
@@ -163,98 +169,98 @@ msgstr "A kezdéshez válasszon egy helyet."
 msgid "Search for a city or country"
 msgstr "Város vagy ország keresése"
 
-#: data/window.ui:76
+#: data/window.ui:73
 msgid "Refresh"
 msgstr "Frissítés"
 
-#: data/window.ui:90
+#: data/window.ui:87
 msgid "Main Menu"
 msgstr "Főmenü"
 
-#: src/app/city.js:203
+#: src/app/city.ts:259
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "%.0f°-nak érződik"
 
-#: src/app/city.js:234
+#: src/app/city.ts:289
 msgid "Updated just now."
 msgstr "Épp most frissítve."
 
-#: src/app/city.js:239
+#: src/app/city.ts:294
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "%d perce frissítve."
 msgstr[1] "%d perce frissítve."
 
-#: src/app/city.js:245
+#: src/app/city.ts:302
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "%d órája frissítve."
 msgstr[1] "%d órája frissítve."
 
-#: src/app/city.js:251
+#: src/app/city.ts:310
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "%d napja frissítve."
 msgstr[1] "%d napja frissítve."
 
-#: src/app/city.js:257
+#: src/app/city.ts:318
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "%d hete frissítve."
 msgstr[1] "%d hete frissítve."
 
-#: src/app/city.js:262
+#: src/app/city.ts:325
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "%d hónapja frissítve."
 msgstr[1] "%d hónapja frissítve."
 
-#: src/app/dailyForecast.js:36
+#: src/app/dailyForecast.ts:72
 msgid "Daily Forecast"
 msgstr "Napi előrejelzés"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+#: src/app/dailyForecast.ts:143 src/app/hourlyForecast.ts:114
 msgid "Forecast not Available"
 msgstr "Nem érhető el előrejelzés"
 
 #. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:219
+#: src/app/dailyForecast.ts:335
 msgid "%b %e"
 msgstr "%B %-e."
 
-#: src/app/hourlyForecast.js:41
+#: src/app/hourlyForecast.ts:53
 msgid "Hourly Forecast"
 msgstr "Óránkénti előrejelzés"
 
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.ts:139
 msgid "Now"
 msgstr "Most"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:114
+#: src/app/hourlyForecast.ts:146
 msgid "%l∶%M %p"
 msgstr "%H:%M"
 
-#: src/app/window.js:195
+#: src/app/window.ts:186
 msgid "translator-credits"
 msgstr ""
 "Meskó Balázs <mesko dot balazs at fsf dot hu>\n"
 "Úr Balázs <ur.balazs at fsf dot hu>"
 
-#: src/app/world.js:39
+#: src/app/world.ts:73
 msgid "World view"
 msgstr "Világ nézet"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:103
+#: src/misc/util.ts:107
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -262,8 +268,7 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:182
+#: src/service/searchProvider.ts:214
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
-
