@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the gnome-weather package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2022-2023.
-# Daniel Mustieles García <daniel.mustieles@gmail.com>, 2023-2024.
+# Daniel Mustieles García <daniel.mustieles@gmail.com>, 2023-2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2024-08-31 14:11+0000\n"
-"PO-Revision-Date: 2024-09-03 10:20+0200\n"
+"POT-Creation-Date: 2026-02-01 08:18+0000\n"
+"PO-Revision-Date: 2026-02-12 15:40+0100\n"
 "Last-Translator: Daniel Mustieles García <daniel.mustieles@gmail.com>\n"
 "Language-Team: Spanish - Spain <gnome-es-list@gnome.org>\n"
 "Language: es_ES\n"
@@ -18,58 +18,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 46.1\n"
+"X-Generator: Gtranslator 49.0\n"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
-#: src/app/application.js:43 src/app/window.js:196 src/app/window.js:207
-#: src/service/main.js:49
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "Noche"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "Mañana"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "Tarde"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "Noche"
+
+#: data/org.gnome.Weather.desktop.in.in:3
+#: data/org.gnome.Weather.metainfo.xml.in.in:5 data/window.ui:82
+#: src/app/application.ts:53 src/app/window.ts:187 src/app/window.ts:199
+#: src/service/main.ts:50
 msgid "Weather"
 msgstr "Meteorología"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:6
-#: data/org.gnome.Weather.desktop.in.in:5
+#: data/org.gnome.Weather.desktop.in.in:4
+#: data/org.gnome.Weather.metainfo.xml.in.in:6
 msgid "Show weather conditions and forecast"
 msgstr "Mostrar las condiciones meteorológicas y el pronóstico"
 
-#: data/org.gnome.Weather.appdata.xml.in.in:16
-msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
-msgstr ""
-"Una pequeña aplicación que le permite monitorizar el tiempo actual en su "
-"ciudad, o en cualquier lugar del mundo."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:20
-msgid ""
-"It provides access to detailed forecasts, up to 7 days, with hourly details "
-"for the current and next day, using various internet services."
-msgstr ""
-"Proporciona acceso a pronósticos actualizados, hasta 7 días, con detalles "
-"cada hora para el día actual y el siguiente, usando varios servicios de "
-"Internet."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:24
-msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you to see the "
-"current conditions of the most recently searched cities by just typing the "
-"name in the Activities Overview."
-msgstr ""
-"También se integra opcionalmente con GNOME Shell, permitiéndole ver las "
-"condiciones actuales de cualquier ciudad buscada recientemente simplemente "
-"escribiendo su nombre en la vista de Actividades."
-
-#. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:397 src/app/window.js:198
-msgid "The GNOME Project"
-msgstr "El Proyecto GNOME"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Weather.desktop.in.in:13
+#. Translators: Search terms to find this application. Do NOT translate or
+#. localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:12
 msgid "Weather;Forecast;"
 msgstr "Pronóstico;Tiempo;Meteorología;Clima;"
 
-#: data/org.gnome.Weather.desktop.in.in:14
+#: data/org.gnome.Weather.desktop.in.in:13
 msgid "Allows weather information to be displayed for your location."
 msgstr "Permite mostrar la información sobre el tiempo de su ubicación."
 
@@ -101,21 +86,45 @@ msgstr "Ventana maximizada"
 msgid "Whether or not the window is maximized."
 msgstr "Indica is la ventana está o no maximizada"
 
-#: data/day-entry.ui:20
-msgid "Night"
-msgstr "Noche"
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Una pequeña aplicación que le permite monitorizar el tiempo actual en su "
+"ciudad, o en cualquier lugar del mundo."
 
-#: data/day-entry.ui:33
-msgid "Morning"
-msgstr "Mañana"
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Proporciona acceso a pronósticos actualizados, hasta 7 días, con detalles "
+"cada hora para el día actual y el siguiente, usando varios servicios de "
+"Internet."
 
-#: data/day-entry.ui:46
-msgid "Afternoon"
-msgstr "Tarde"
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"También se integra opcionalmente con GNOME Shell, permitiéndole ver las "
+"condiciones actuales de cualquier ciudad buscada recientemente simplemente "
+"escribiendo su nombre en la vista de Actividades."
 
-#: data/day-entry.ui:59
-msgid "Evening"
-msgstr "Noche"
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+msgid "Hourly View"
+msgstr "Vista horaria"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+msgid "Daily View"
+msgstr "Vista diaria"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
+msgid "The GNOME Project"
+msgstr "El Proyecto GNOME"
 
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
@@ -169,88 +178,89 @@ msgstr "Actualizar"
 msgid "Main Menu"
 msgstr "Menú principal"
 
-#: src/app/city.js:203
+#: src/app/city.ts:259
 #, javascript-format
 msgid "Feels like %.0f°"
 msgstr "Sensación de %.0f°"
 
-#: src/app/city.js:234
+#: src/app/city.ts:289
 msgid "Updated just now."
 msgstr "Actualizado justo ahora."
 
-#: src/app/city.js:239
+#: src/app/city.ts:294
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
 msgstr[0] "Actualizado hace %d minuto."
 msgstr[1] "Actualizado hace %d minutos."
 
-#: src/app/city.js:245
+#: src/app/city.ts:302
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
 msgstr[0] "Actualizado hace %d hora."
 msgstr[1] "Actualizado hace %d horas."
 
-#: src/app/city.js:251
+#: src/app/city.ts:310
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
 msgstr[0] "Actualizado hace %d día."
 msgstr[1] "Actualizado hace %d días."
 
-#: src/app/city.js:257
+#: src/app/city.ts:318
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
 msgstr[0] "Actualizado hace %d semana."
 msgstr[1] "Actualizado hace %d semanas."
 
-#: src/app/city.js:262
+#: src/app/city.ts:325
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
 msgstr[0] "Actualizado hace %d mes."
 msgstr[1] "Actualizado hace %d meses."
 
-#: src/app/dailyForecast.js:36
+#: src/app/dailyForecast.ts:72
 msgid "Daily Forecast"
 msgstr "Pronóstico diario"
 
-#: src/app/dailyForecast.js:101 src/app/hourlyForecast.js:90
+#: src/app/dailyForecast.ts:143 src/app/hourlyForecast.ts:114
 msgid "Forecast not Available"
 msgstr "Pronóstico no disponible"
 
-#. Translators: this is the time format for day and month name according to the current locale
-#: src/app/dailyForecast.js:219
+#. Translators: this is the time format for day and month name according to
+#. the current locale
+#: src/app/dailyForecast.ts:335
 msgid "%b %e"
 msgstr "%b %e"
 
-#: src/app/hourlyForecast.js:41
+#: src/app/hourlyForecast.ts:53
 msgid "Hourly Forecast"
 msgstr "Pronóstico por horas"
 
-#: src/app/hourlyForecast.js:107
+#: src/app/hourlyForecast.ts:139
 msgid "Now"
 msgstr "Ahora"
 
 #. Translators: this is a time format without date used for AM/PM
-#: src/app/hourlyForecast.js:114
+#: src/app/hourlyForecast.ts:146
 msgid "%l∶%M %p"
 msgstr "%l∶%M %p"
 
-#: src/app/window.js:195
+#: src/app/window.ts:186
 msgid "translator-credits"
 msgstr "Daniel Mustieles <daniel.mustieles@gmail.com>, 2013-2022"
 
-#: src/app/world.js:39
+#: src/app/world.ts:73
 msgid "World view"
 msgstr "Vista mundial"
 
 #. TRANSLATORS: this is the temperature string, minimum and maximum.
 #. The two values are already formatted, so it would be something like
 #. "7 °C / 19 °C"
-#: src/misc/util.js:103
+#: src/misc/util.ts:107
 #, javascript-format
 msgid "%s / %s"
 msgstr "%s / %s"
@@ -258,320 +268,420 @@ msgstr "%s / %s"
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
 #. like "Clear sky, 14 °C"
-#: src/service/searchProvider.js:182
+#: src/service/searchProvider.ts:214
 #, javascript-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
+#, fuzzy
 #~ msgid "Loading…"
 #~ msgstr "Cargando…"
 
+#, fuzzy
 #~ msgid "Select Location"
-#~ msgstr "Seleccionar ubicación"
+#~ msgstr "Seleccionar Ubicación"
 
+#, fuzzy
 #~ msgid "A weather application"
-#~ msgstr "Una aplicación de meteorología"
+#~ msgstr "Una aplicación meteorológica"
 
+#, fuzzy
 #~ msgid "Automatic location"
 #~ msgstr "Ubicación automática"
 
+#, fuzzy
 #~ msgid ""
 #~ "The automatic location is the value of automatic-location switch which "
 #~ "decides whether to fetch current location or not."
 #~ msgstr ""
-#~ "La ubicación automática es el valor del botón «ubicación-automática», que "
-#~ "decide si se debe o no obtener la ubicación actual."
+#~ "La ubicación automática es el valor del interruptor de ubicación "
+#~ "automática que decide si se busca la ubicación actual o no."
 
+#, fuzzy
 #~ msgid "City view"
 #~ msgstr "Vista de la ciudad"
 
+#, fuzzy
 #~ msgid "Automatic Location"
-#~ msgstr "Ubicación automática"
+#~ msgstr "Ubicación automática"
 
+#, fuzzy
 #~ msgid "Locating…"
-#~ msgstr "Buscando…"
+#~ msgstr "Ubicando…"
 
+#, fuzzy
 #~ msgid "Viewed Recently"
-#~ msgstr "Vistas recientemente"
+#~ msgstr "Visto recientemente"
 
+#, fuzzy
 #~ msgid "Current conditions"
 #~ msgstr "Condiciones actuales"
 
+#, fuzzy
 #~ msgid "Search for a location"
 #~ msgstr "Buscar una ubicación"
 
+#, fuzzy
 #~ msgid "To see weather information, enter the name of a city."
 #~ msgstr ""
-#~ "Para ver la información sobre el tiempo, introduzca el nombre de una "
-#~ "ciudad."
+#~ "Para ver información meteorológica, ingrese el nombre de una ciudad."
 
+#, fuzzy
 #~ msgid "%e %b"
 #~ msgstr "%e %b"
 
+#, fuzzy
 #~ msgid "16°"
 #~ msgstr "16°"
 
+#, fuzzy
 #~ msgid "2.1 mm"
-#~ msgstr "2.1 mm"
+#~ msgstr "2,1 milímetros"
 
+#, fuzzy
 #~ msgid "5 m/s"
 #~ msgstr "5 m/s"
 
+#, fuzzy
 #~ msgid "Tues"
-#~ msgstr "Jue"
+#~ msgstr "martes"
 
+#, fuzzy
 #~ msgid "7 June"
-#~ msgstr "7 junio"
+#~ msgstr "7 de junio"
 
+#, fuzzy
 #~ msgid "18°"
 #~ msgstr "18°"
 
+#, fuzzy
 #~ msgid "9°"
 #~ msgstr "9°"
 
+#, fuzzy
 #~ msgid "13°"
 #~ msgstr "13°"
 
+#, fuzzy
 #~ msgid "Today"
 #~ msgstr "Hoy"
 
+#, fuzzy
 #~ msgid "Tomorrow"
 #~ msgstr "Mañana"
 
+#, fuzzy
 #~ msgid "Forecast"
 #~ msgstr "Pronóstico"
 
+#, fuzzy
 #~ msgid "%R"
 #~ msgstr "%R"
 
+#, fuzzy
 #~ msgid "%A"
 #~ msgstr "%A"
 
+#, fuzzy
 #~ msgid "@APP_ID@"
 #~ msgstr "@APP_ID@"
 
+#, fuzzy
 #~ msgid "_New"
-#~ msgstr "Nueva"
+#~ msgstr "_Nuevo"
 
+#, fuzzy
 #~ msgid "About"
 #~ msgstr "Acerca de"
 
+#, fuzzy
 #~ msgid "Quit"
-#~ msgstr "Salir"
+#~ msgstr "Abandonar"
 
+#, fuzzy
 #~ msgid "%H:%M"
 #~ msgstr "%H:%M"
 
+#, fuzzy
 #~ msgid "Select All"
 #~ msgstr "Seleccionar todo"
 
+#, fuzzy
 #~ msgid "Select None"
-#~ msgstr "Seleccionar nada"
+#~ msgstr "Seleccionar Ninguno"
 
+#, fuzzy
 #~ msgid "Click on locations to select them"
-#~ msgstr "Pulse sobre las ubicaciones para seleccionarlas"
+#~ msgstr "Haga clic en las ubicaciones para seleccionarlas"
 
+#, fuzzy
 #~ msgid "Back"
 #~ msgstr "Atrás"
 
+#, fuzzy
 #~ msgid "Select"
 #~ msgstr "Seleccionar"
 
+#, fuzzy
 #~ msgid "Cancel"
 #~ msgstr "Cancelar"
 
+#, fuzzy
 #~ msgid "Delete"
-#~ msgstr "Eliminar"
+#~ msgstr "Borrar"
 
+#, fuzzy
 #~ msgid "More…"
-#~ msgstr "Más…"
+#~ msgstr "Más…"
 
+#, fuzzy
 #~ msgid "Forecast for Tomorrow"
 #~ msgstr "Pronóstico para mañana"
 
+#, fuzzy
 #~ msgid "%B %d"
 #~ msgstr "%B %d"
 
+#, fuzzy
 #~ msgid "%d selected"
 #~ msgid_plural "%d selected"
-#~ msgstr[0] "%d seleccionada"
-#~ msgstr[1] "%d seleccionadas"
+#~ msgstr[0] "%d seleccionado"
+#~ msgstr[1] "%d seleccionado"
 
+#, fuzzy
 #~ msgid "Monday night"
-#~ msgstr "Lunes por la noche"
+#~ msgstr "lunes por la noche"
 
+#, fuzzy
 #~ msgid "Monday afternoon"
-#~ msgstr "Lunes por la tarde"
+#~ msgstr "lunes por la tarde"
 
+#, fuzzy
 #~ msgid "Monday evening"
-#~ msgstr "Lunes a medianoche"
+#~ msgstr "lunes por la tarde"
 
+#, fuzzy
 #~ msgid "Tuesday night"
-#~ msgstr "Martes por la noche"
+#~ msgstr "martes por la noche"
 
+#, fuzzy
 #~ msgid "Tuesday morning"
-#~ msgstr "Martes por la mañana"
+#~ msgstr "martes por la mañana"
 
+#, fuzzy
 #~ msgid "Tuesday afternoon"
-#~ msgstr "Martes por la tarde"
+#~ msgstr "martes por la tarde"
 
+#, fuzzy
 #~ msgid "Tuesday evening"
-#~ msgstr "Martes a medianoche"
+#~ msgstr "martes por la noche"
 
+#, fuzzy
 #~ msgid "Wednesday night"
-#~ msgstr "Miércoles por la noche"
+#~ msgstr "miércoles por la noche"
 
+#, fuzzy
 #~ msgid "Wednesday morning"
-#~ msgstr "Miércoles por la mañana"
+#~ msgstr "miércoles por la mañana"
 
+#, fuzzy
 #~ msgid "Wednesday afternoon"
-#~ msgstr "Miércoles por la tarde"
+#~ msgstr "miércoles por la tarde"
 
+#, fuzzy
 #~ msgid "Wednesday evening"
-#~ msgstr "Miércoles a medianoche"
+#~ msgstr "miércoles por la tarde"
 
+#, fuzzy
 #~ msgid "Thursday night"
-#~ msgstr "Jueves por la noche"
+#~ msgstr "jueves por la noche"
 
+#, fuzzy
 #~ msgid "Thursday morning"
-#~ msgstr "Jueves por la mañana"
+#~ msgstr "jueves por la mañana"
 
+#, fuzzy
 #~ msgid "Thursday afternoon"
-#~ msgstr "Jueves por la tarde"
+#~ msgstr "jueves por la tarde"
 
+#, fuzzy
 #~ msgid "Thursday evening"
-#~ msgstr "Jueves a medianoche"
+#~ msgstr "jueves por la tarde"
 
+#, fuzzy
 #~ msgid "Friday night"
-#~ msgstr "Viernes por la noche"
+#~ msgstr "viernes por la noche"
 
+#, fuzzy
 #~ msgid "Friday morning"
-#~ msgstr "Viernes por la mañana"
+#~ msgstr "viernes por la mañana"
 
+#, fuzzy
 #~ msgid "Friday afternoon"
-#~ msgstr "Viernes por la tarde"
+#~ msgstr "viernes por la tarde"
 
+#, fuzzy
 #~ msgid "Friday evening"
-#~ msgstr "Viernes a medianoche"
+#~ msgstr "viernes por la noche"
 
+#, fuzzy
 #~ msgid "Saturday night"
 #~ msgstr "Sábado por la noche"
 
+#, fuzzy
 #~ msgid "Saturday morning"
 #~ msgstr "Sábado por la mañana"
 
+#, fuzzy
 #~ msgid "Saturday afternoon"
 #~ msgstr "Sábado por la tarde"
 
+#, fuzzy
 #~ msgid "Saturday evening"
-#~ msgstr "Sábado a medianoche"
+#~ msgstr "Sábado por la noche"
 
+#, fuzzy
 #~ msgid "Sunday night"
-#~ msgstr "Domingo por la noche"
+#~ msgstr "domingo por la noche"
 
+#, fuzzy
 #~ msgid "Sunday morning"
-#~ msgstr "Domingo por la mañana"
+#~ msgstr "domingo por la mañana"
 
+#, fuzzy
 #~ msgid "Sunday afternoon"
-#~ msgstr "Domingo por la tarde"
+#~ msgstr "domingo por la tarde"
 
+#, fuzzy
 #~ msgid "Sunday evening"
-#~ msgstr "Domingo a medianoche"
+#~ msgstr "domingo por la tarde"
 
+#, fuzzy
 #~ msgid "This morning"
 #~ msgstr "Esta mañana"
 
+#, fuzzy
 #~ msgid "Tomorrow night"
 #~ msgstr "Mañana por la noche"
 
+#, fuzzy
 #~ msgid "Tomorrow morning"
 #~ msgstr "Mañana por la mañana"
 
+#, fuzzy
 #~ msgid "Tomorrow afternoon"
-#~ msgstr "Mañana por la tarde"
+#~ msgstr "Tarde de mañana"
 
+#, fuzzy
 #~ msgid "Tomorrow evening"
-#~ msgstr "Mañana a medianoche"
+#~ msgstr "Noche de mañana"
 
+#, fuzzy
 #~ msgid "Cities"
 #~ msgstr "Ciudades"
 
+#, fuzzy
 #~ msgid "Use the <b>New</b> button on the toolbar to add more world locations"
 #~ msgstr ""
-#~ "Use el botón <b>Nueva</b> en la barra de herramientas para añadir más "
-#~ "ubicaciones mundiales."
+#~ "Utilice el botón <b>Nuevo</b> en la barra de herramientas para agregar "
+#~ "más ubicaciones del mundo."
 
+#, fuzzy
 #~ msgid "label"
 #~ msgstr "etiqueta"
 
+#, fuzzy
 #~ msgid "Click on items to select them"
-#~ msgstr "Pulse sobre los elementos para seleccionarlos"
+#~ msgstr "Haga clic en los elementos para seleccionarlos"
 
+#, fuzzy
 #~ msgid "_Preferences"
 #~ msgstr "_Preferencias"
 
+#, fuzzy
 #~ msgid "Meters (m)"
 #~ msgstr "Metros (m)"
 
+#, fuzzy
 #~ msgid "Kilometers (km)"
 #~ msgstr "Kilómetros (km)"
 
+#, fuzzy
 #~ msgid "Miles (mi)"
 #~ msgstr "Millas (mi)"
 
+#, fuzzy
 #~ msgid "Preferences"
 #~ msgstr "Preferencias"
 
+#, fuzzy
 #~ msgid "Speed unit:"
 #~ msgstr "Unidad de velocidad:"
 
+#, fuzzy
 #~ msgid "Distance unit:"
 #~ msgstr "Unidad de distancia:"
 
+#, fuzzy
 #~ msgid "Pressure unit:"
-#~ msgstr "Unidades de presión:"
+#~ msgstr "Unidad de presión:"
 
+#, fuzzy
 #~ msgid "Kilopascal (kPa)"
-#~ msgstr "Kilopascales (kPa)"
+#~ msgstr "Kilopascal (kPa)"
 
+#, fuzzy
 #~ msgid "Hectopascal (hPa)"
-#~ msgstr "Hectopascales (hPa)"
+#~ msgstr "Hectopascal (hPa)"
 
+#, fuzzy
 #~ msgid "Millibar (mbar)"
-#~ msgstr "Milibares (mbar)"
+#~ msgstr "Milibar (mbar)"
 
+#, fuzzy
 #~ msgid "Millimeters of mercury (mmHg)"
 #~ msgstr "Milímetros de mercurio (mmHg)"
 
+#, fuzzy
 #~ msgid "Inches of mercury (inchHg)"
-#~ msgstr "Pulgadas de mercurio (inchHg)"
+#~ msgstr "Pulgadas de mercurio (pulgadas Hg)"
 
+#, fuzzy
 #~ msgid "Atmosphere (atm)"
-#~ msgstr "Atmósferas (atm)"
+#~ msgstr "Atmósfera (cajero automático)"
 
+#, fuzzy
 #~ msgid "Meters per second (m/s)"
 #~ msgstr "Metros por segundo (m/s)"
 
+#, fuzzy
 #~ msgid "Kilometers per hour (km/h)"
 #~ msgstr "Kilómetros por hora (km/h)"
 
+#, fuzzy
 #~ msgid "Miles per hour (mph)"
 #~ msgstr "Millas por hora (mph)"
 
+#, fuzzy
 #~ msgid "Knots"
 #~ msgstr "Nudos"
 
+#, fuzzy
 #~ msgid "Beaufort scale"
-#~ msgstr "Escala Beaufort"
+#~ msgstr "escala de beaufort"
 
+#, fuzzy
 #~ msgid "Kelvin (K)"
-#~ msgstr "Kelvin (K)"
+#~ msgstr "Kelvin(K)"
 
+#, fuzzy
 #~ msgid "Centigrade (°C)"
 #~ msgstr "Centígrados (°C)"
 
+#, fuzzy
 #~ msgid "Done"
 #~ msgstr "Hecho"
 
+#, fuzzy
 #~ msgid "Wind: "
-#~ msgstr "Viento: "
+#~ msgstr "Viento:"
