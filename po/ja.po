@@ -5,24 +5,42 @@
 # Hajime Taira <htaira@redhat.com>, 2014.
 # sicklylife <translation@sicklylife.jp>, 2019-2020, 2022.
 # Makoto Sakaguchi <ycco34vx@gmail.com>, 2025.
+# 小山田 純 <oyamadajun@outlook.jp>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2025-07-24 17:21+0000\n"
-"PO-Revision-Date: 2025-07-08 09:52+0900\n"
-"Last-Translator: Makoto Sakaguchi <ycco34vx@gmail.com>\n"
+"POT-Creation-Date: 2026-02-01 08:18+0000\n"
+"PO-Revision-Date: 2026-03-02 21:50+0900\n"
+"Last-Translator: 小山田 純 <oyamadajun@outlook.jp>\n"
 "Language-Team: Japanese <https://l10n.gnome.org/teams/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.6\n"
+
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "深夜"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "朝"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "昼"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "夜"
 
 #: data/org.gnome.Weather.desktop.in.in:3
 #: data/org.gnome.Weather.metainfo.xml.in.in:5 data/window.ui:82
+#: src/app/application.ts:53 src/app/window.ts:187 src/app/window.ts:199
+#: src/service/main.ts:50
 msgid "Weather"
 msgstr "天気"
 
@@ -68,7 +86,7 @@ msgstr "ウィンドウ最大化"
 msgid "Whether or not the window is maximized."
 msgstr "ウィンドウが最大化されているかどうかです。"
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:16
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -76,7 +94,7 @@ msgstr ""
 "あなたの街や、世界中の都市の現在の天候を確認することができる小さなアプリケー"
 "ションです。"
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:20
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -84,7 +102,7 @@ msgstr ""
 "さまざまなインターネットサービスを使用して詳細な天気予報を参照できます。週間"
 "天気予報や、当日と翌日の時間ごとの詳細な天気予報などが利用できます。"
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:24
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you to see the "
 "current conditions of the most recently searched cities by just typing the "
@@ -93,26 +111,18 @@ msgstr ""
 "GNOME Shell と統合することができ、アクティビティ画面で都市名を入力すること"
 "で、よく調べる都市の現在の天候を参照することができます。"
 
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+msgid "Hourly View"
+msgstr "時間ごとの表示"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+msgid "Daily View"
+msgstr "日ごとの表示"
+
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.metainfo.xml.in.in:451
+#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
 msgid "The GNOME Project"
 msgstr "The GNOME Project"
-
-#: data/day-entry.ui:20
-msgid "Night"
-msgstr "深夜"
-
-#: data/day-entry.ui:33
-msgid "Morning"
-msgstr "朝"
-
-#: data/day-entry.ui:46
-msgid "Afternoon"
-msgstr "昼"
-
-#: data/day-entry.ui:59
-msgid "Evening"
-msgstr "夜"
 
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
@@ -166,6 +176,100 @@ msgstr "更新"
 msgid "Main Menu"
 msgstr "メインメニュー"
 
+#: src/app/city.ts:259
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "体感気温 %.0f°"
+
+#: src/app/city.ts:289
+msgid "Updated just now."
+msgstr "たった今更新しました。"
+
+#: src/app/city.ts:294
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "%d 分前に更新しました。"
+
+#: src/app/city.ts:302
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "%d 時間前に更新しました。"
+
+#: src/app/city.ts:310
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "%d 日前に更新しました。"
+
+#: src/app/city.ts:318
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "%d 週間前に更新しました。"
+
+#: src/app/city.ts:325
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "Updated %d months ago."
+msgstr[0] "%d ヵ月前に更新しました。"
+
+#: src/app/dailyForecast.ts:72
+msgid "Daily Forecast"
+msgstr "毎日の天気予報"
+
+#: src/app/dailyForecast.ts:143 src/app/hourlyForecast.ts:114
+msgid "Forecast not Available"
+msgstr "天気予報がありません"
+
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.ts:335
+msgid "%b %e"
+msgstr "%B%-e日"
+
+#: src/app/hourlyForecast.ts:53
+msgid "Hourly Forecast"
+msgstr "1 時間ごとの天気予報"
+
+#: src/app/hourlyForecast.ts:139
+msgid "Now"
+msgstr "今"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/hourlyForecast.ts:146
+msgid "%l∶%M %p"
+msgstr "%p %I:%M"
+
+#: src/app/window.ts:186
+msgid "translator-credits"
+msgstr ""
+"松澤 二郎 <jmatsuzawa@gnome.org>\n"
+"Hajime Taira <htaira@redhat.com>\n"
+"sicklylife <translation@sicklylife.jp>\n"
+"小山田 純 <oyamadajun@outlook.jp>"
+
+# この文字列は翻訳しない方がいい
+#: src/app/world.ts:73
+msgid "World view"
+msgstr "World view"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: src/misc/util.ts:107
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: src/service/searchProvider.ts:214
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
 #~ msgid "Automatic location"
 #~ msgstr "自動位置検出"
 
@@ -198,76 +302,8 @@ msgstr "メインメニュー"
 #~ msgid "Select Location"
 #~ msgstr "場所の選択"
 
-#, javascript-format
-#~ msgid "Feels like %.0f°"
-#~ msgstr "体感気温 %.0f°"
-
-#~ msgid "Updated just now."
-#~ msgstr "たった今更新しました。"
-
-#, javascript-format
-#~ msgid "Updated %d minute ago."
-#~ msgid_plural "Updated %d minutes ago."
-#~ msgstr[0] "%d 分前に更新しました。"
-
-#, javascript-format
-#~ msgid "Updated %d hour ago."
-#~ msgid_plural "Updated %d hours ago."
-#~ msgstr[0] "%d 時間前に更新しました。"
-
-#, javascript-format
-#~ msgid "Updated %d day ago."
-#~ msgid_plural "Updated %d days ago."
-#~ msgstr[0] "%d 日前に更新しました。"
-
-#, javascript-format
-#~ msgid "Updated %d week ago."
-#~ msgid_plural "Updated %d weeks ago."
-#~ msgstr[0] "%d 週間前に更新しました。"
-
-#, javascript-format
-#~ msgid "Updated %d month ago."
-#~ msgid_plural "Updated %d months ago."
-#~ msgstr[0] "%d ヵ月前に更新しました。"
-
-#~ msgid "Daily Forecast"
-#~ msgstr "毎日の天気予報"
-
-#~ msgid "Forecast not Available"
-#~ msgstr "天気予報がありません"
-
-#~ msgid "%b %e"
-#~ msgstr "%B%-e日"
-
-#~ msgid "Hourly Forecast"
-#~ msgstr "1 時間ごとの天気予報"
-
-#~ msgid "Now"
-#~ msgstr "今"
-
-#~ msgid "%l∶%M %p"
-#~ msgstr "%p %I:%M"
-
-#~ msgid "translator-credits"
-#~ msgstr ""
-#~ "松澤 二郎 <jmatsuzawa@gnome.org>\n"
-#~ "Hajime Taira <htaira@redhat.com>\n"
-#~ "sicklylife <translation@sicklylife.jp>"
-
 #~ msgid "A weather application"
 #~ msgstr "天気予報アプリケーション"
-
-# この文字列は翻訳しない方がいい
-#~ msgid "World view"
-#~ msgstr "World view"
-
-#, javascript-format
-#~ msgid "%s / %s"
-#~ msgstr "%s / %s"
-
-#, javascript-format
-#~ msgid "%s, %s"
-#~ msgstr "%s, %s"
 
 #~ msgid "Search for a location"
 #~ msgstr "場所の検索"
