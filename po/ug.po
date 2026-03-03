@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2025-12-27 22:15+0000\n"
-"PO-Revision-Date: 2026-01-26 11:50-0500\n"
+"POT-Creation-Date: 2026-02-01 08:18+0000\n"
+"PO-Revision-Date: 2026-03-03 00:01-0500\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: \n"
 "Language: ug\n"
@@ -83,7 +83,7 @@ msgstr "كۆزنەك چوڭايتىلدى"
 msgid "Whether or not the window is maximized."
 msgstr "كۆزنەك چوڭايتىلغانمۇ يوق."
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:16
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -91,7 +91,7 @@ msgstr ""
 "سىز تۇرۇشلۇق شەھەر ياكى دۇنيانىڭ ھەر قايسى جايلىرىنىڭ ھاۋا رايى ئەھۋالىنى "
 "كۆزىتىشىڭىزگە يول قويىدىغان كىچىك ئەپ."
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:20
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -100,7 +100,7 @@ msgstr ""
 "تەپسىلىي بولغان ھەر بىر سائەتلىك ھاۋا رايىنى ئۆز ئىچىگە ئالغان 7 كۈنلۈك ھاۋا "
 "رايى ئالدىن مەلۇماتىنى تەمىنلەيدۇ."
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:24
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you to see the "
 "current conditions of the most recently searched cities by just typing the "
@@ -110,8 +110,16 @@ msgstr ""
 "ئىخچام كۆرۈنۈشىدە ئىسمىنى كىرگۈزۈش ئارقىلىق يېقىندا ئىزدىگەن شەھەرنىڭ "
 "ئەھۋالىنى بىلىشىڭىزگە يول قويىدۇ."
 
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+msgid "Hourly View"
+msgstr "سائەتلىك كۆرۈنۈش"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+msgid "Daily View"
+msgstr "كۈندىلىك كۆرۈنۈش"
+
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.metainfo.xml.in.in:482 src/app/window.ts:189
+#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
 msgid "The GNOME Project"
 msgstr "GNOME قۇرۇلۇشى"
 
