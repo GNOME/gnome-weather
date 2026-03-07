@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
 "POT-Creation-Date: 2026-01-30 18:10+0000\n"
-"PO-Revision-Date: 2026-02-01 09:03+0100\n"
+"PO-Revision-Date: 2026-03-07 09:03+0100\n"
 "Last-Translator: Jordi Mas i Hernàndez <jmas@softcatala.org>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
 "Language: ca\n"
@@ -228,7 +228,7 @@ msgstr "Predicció diària"
 
 #: src/app/dailyForecast.ts:143 src/app/hourlyForecast.ts:114
 msgid "Forecast not Available"
-msgstr "La predicció està disponible"
+msgstr "La predicció no està disponible"
 
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.ts:335
