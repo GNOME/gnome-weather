@@ -1,13 +1,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2015, 2016, 2019, 2021, 2022, 2023, 2025 Sveinn í Felli <sv1@fellsnet.is>
+# SPDX-FileCopyrightText: 2015, 2016, 2019, 2021, 2022, 2023, 2025, 2026 Sveinn í Felli <sv1@fellsnet.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2025-11-17 03:50+0000\n"
-"PO-Revision-Date: 2025-11-28 15:18+0000\n"
+"POT-Creation-Date: 2026-03-12 19:37+0000\n"
+"PO-Revision-Date: 2026-03-20 18:13+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -17,8 +17,26 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "Nótt"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "Morgunn"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "Eftirmiðdagur"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "Kvöld"
+
 #: data/org.gnome.Weather.desktop.in.in:3
 #: data/org.gnome.Weather.metainfo.xml.in.in:5 data/window.ui:82
+#: src/app/application.ts:53 src/app/window.ts:187 src/app/window.ts:199
+#: src/service/main.ts:50
 msgid "Weather"
 msgstr "Veður"
 
@@ -64,7 +82,7 @@ msgstr "Gluggi hámarkaður"
 msgid "Whether or not the window is maximized."
 msgstr "Hvort glugginn er hámarkaður eða ekki."
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:16
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
@@ -72,7 +90,7 @@ msgstr ""
 "Lítið forrit til að fylgjast með veðurskilyrðum og spám fyrir ákveðinn stað, "
 "eða í heiminum öllum."
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:20
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
@@ -81,7 +99,7 @@ msgstr ""
 "með upplýsingar á klukkustundar fresti fyrir næstu 2 daga; það styðst við "
 "ýmsar þjónustur á internetinu."
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:24
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you to see the "
 "current conditions of the most recently searched cities by just typing the "
@@ -91,26 +109,20 @@ msgstr ""
 "veðurskilyrði í þeim borgum sem síðast hefur verið leitað að með því einu að "
 "slá nafn þeirra inn í aðgerðayfirlitið."
 
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+#| msgid "_Hourly"
+msgid "Hourly View"
+msgstr "Klukkustundar yfirlit"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+#| msgid "_Daily"
+msgid "Daily View"
+msgstr "_Daglegt yfirlit"
+
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.metainfo.xml.in.in:482
+#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
 msgid "The GNOME Project"
 msgstr "GNOME verkefnið"
-
-#: data/day-entry.ui:20
-msgid "Night"
-msgstr "Nótt"
-
-#: data/day-entry.ui:33
-msgid "Morning"
-msgstr "Morgunn"
-
-#: data/day-entry.ui:46
-msgid "Afternoon"
-msgstr "Eftirmiðdagur"
-
-#: data/day-entry.ui:59
-msgid "Evening"
-msgstr "Kvöld"
 
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
@@ -164,77 +176,102 @@ msgstr "Uppfæra"
 msgid "Main Menu"
 msgstr "Aðalvalmynd"
 
+#: src/app/city.ts:259
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Með vindkælingu %.0f°"
+
+#: src/app/city.ts:289
+msgid "Updated just now."
+msgstr "Uppfært rétt í þessu."
+
+#: src/app/city.ts:294
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Uppfært fyrir %d mínútu síðan."
+msgstr[1] "Uppfært fyrir %d mínútum."
+
+#: src/app/city.ts:302
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Uppfært fyrir %d klukkustund síðan."
+msgstr[1] "Uppfært fyrir %d klukkutímum."
+
+#: src/app/city.ts:310
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Uppfært fyrir %d degi síðan."
+msgstr[1] "Uppfært fyrir %d dögum."
+
+#: src/app/city.ts:318
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Uppfært fyrir %d viku síðan."
+msgstr[1] "Uppfært fyrir %d vikum."
+
+#: src/app/city.ts:325
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "Updated %d months ago."
+msgstr[0] "Uppfært fyrir %d mánuði síðan."
+msgstr[1] "Uppfært fyrir %d mánuðum."
+
+#: src/app/dailyForecast.ts:72
+msgid "Daily Forecast"
+msgstr "Veðurspá fyrir daga"
+
+#: src/app/dailyForecast.ts:143 src/app/hourlyForecast.ts:114
+msgid "Forecast not Available"
+msgstr "Veðurspá ekki tiltæk"
+
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.ts:335
+msgid "%b %e"
+msgstr "%e. %b"
+
+#: src/app/hourlyForecast.ts:53
+msgid "Hourly Forecast"
+msgstr "Veðurspá fyrir klukkustundir"
+
+#: src/app/hourlyForecast.ts:139
+msgid "Now"
+msgstr "Núna"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/hourlyForecast.ts:146
+msgid "%l∶%M %p"
+msgstr "%l:%M"
+
+#: src/app/window.ts:186
+msgid "translator-credits"
+msgstr "Sveinn í Felli, sv1@fellsnet.is"
+
+#: src/app/world.ts:73
+msgid "World view"
+msgstr "Skoða heiminn"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: src/misc/util.ts:107
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: src/service/searchProvider.ts:214
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
 #~ msgid "Loading…"
 #~ msgstr "Hleð..."
-
-#, javascript-format
-#~ msgid "Feels like %.0f°"
-#~ msgstr "Með vindkælingu %.0f°"
-
-#~ msgid "Updated just now."
-#~ msgstr "Uppfært rétt í þessu."
-
-#, javascript-format
-#~ msgid "Updated %d minute ago."
-#~ msgid_plural "Updated %d minutes ago."
-#~ msgstr[0] "Uppfært fyrir %d mínútu síðan."
-#~ msgstr[1] "Uppfært fyrir %d mínútum."
-
-#, javascript-format
-#~ msgid "Updated %d hour ago."
-#~ msgid_plural "Updated %d hours ago."
-#~ msgstr[0] "Uppfært fyrir %d klukkustund síðan."
-#~ msgstr[1] "Uppfært fyrir %d klukkutímum."
-
-#, javascript-format
-#~ msgid "Updated %d day ago."
-#~ msgid_plural "Updated %d days ago."
-#~ msgstr[0] "Uppfært fyrir %d degi síðan."
-#~ msgstr[1] "Uppfært fyrir %d dögum."
-
-#, javascript-format
-#~ msgid "Updated %d week ago."
-#~ msgid_plural "Updated %d weeks ago."
-#~ msgstr[0] "Uppfært fyrir %d viku síðan."
-#~ msgstr[1] "Uppfært fyrir %d vikum."
-
-#, javascript-format
-#~ msgid "Updated %d month ago."
-#~ msgid_plural "Updated %d months ago."
-#~ msgstr[0] "Uppfært fyrir %d mánuði síðan."
-#~ msgstr[1] "Uppfært fyrir %d mánuðum."
-
-#~ msgid "Daily Forecast"
-#~ msgstr "Veðurspá fyrir daga"
-
-#~ msgid "Forecast not Available"
-#~ msgstr "Veðurspá ekki tiltæk"
-
-#~ msgid "%b %e"
-#~ msgstr "%e. %b"
-
-#~ msgid "Hourly Forecast"
-#~ msgstr "Veðurspá fyrir klukkustundir"
-
-#~ msgid "Now"
-#~ msgstr "Núna"
-
-#~ msgid "%l∶%M %p"
-#~ msgstr "%l:%M"
-
-#~ msgid "translator-credits"
-#~ msgstr "Sveinn í Felli, sv1@fellsnet.is"
-
-#~ msgid "World view"
-#~ msgstr "Skoða heiminn"
-
-#, javascript-format
-#~ msgid "%s / %s"
-#~ msgstr "%s / %s"
-
-#, javascript-format
-#~ msgid "%s, %s"
-#~ msgstr "%s, %s"
 
 #~ msgid "Select Location"
 #~ msgstr "Veldu staðsetningu"
