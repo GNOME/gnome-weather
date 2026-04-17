@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2025-12-27 22:15+0000\n"
-"PO-Revision-Date: 2026-01-08 16:23+0100\n"
+"POT-Creation-Date: 2026-03-12 19:37+0000\n"
+"PO-Revision-Date: 2026-04-13 20:19+0200\n"
 "Last-Translator: Kjartan Maraas <kjartan.maraas@gmail.com>\n"
 "Language-Team: \n"
 "Language: nb\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -48,7 +49,7 @@ msgstr "Se hvordan været blir fremover"
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:12
 msgid "Weather;Forecast;"
-msgstr "Vær;værmelding;yr;meteorologi;weather;sol;regn;sky;storm;farevarsel;"
+msgstr "Været;vær;værmelding;yr;meteorologi;weather;sol;regn;sky;storm;farevarsel;"
 
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Allows weather information to be displayed for your location."
@@ -56,14 +57,14 @@ msgstr "Lar værmeldingen vises for enhetens posisjon."
 
 #: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
-msgstr "Byer å vise været for"
+msgstr "Steder å vise været for"
 
 #: data/org.gnome.Weather.gschema.xml:7
 msgid ""
-"The locations shown in the world view of gnome-weather. Each value is a "
-"GVariant returned by gweather_location_serialize()."
+"The locations shown in the world view of gnome-weather. Each value is a GVariant "
+"returned by gweather_location_serialize()."
 msgstr ""
-"Byene som vises i verdensoversikten til Været. Hver by er en GVariant fra "
+"Stedene som vises i verdensoversikten til Været. Hvert sted er en GVariant fra "
 "gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
@@ -82,52 +83,60 @@ msgstr "Maksimering"
 msgid "Whether or not the window is maximized."
 msgstr "Hvis denne innstillingen er på, er vinduet maksimert."
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:16
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
 msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
+"A small application that allows you to monitor the current weather conditions "
+"for your city, or anywhere in the world."
 msgstr ""
-"Finn ut om det er en god idé å dra på piknik i morgen, eller undersøk "
-"hvordan været blir der du skal på ferie. Denne appen lar deg sjekke "
-"værmeldingen for hvor som helst i verden."
+"Finn ut om det er en god idé å dra på piknik i morgen, eller undersøk hvordan "
+"været blir der du skal på ferie. Denne appen lar deg sjekke værmeldingen for "
+"hvor som helst i verden."
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:20
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
 msgid ""
-"It provides access to detailed forecasts, up to 7 days, with hourly details "
-"for the current and next day, using various internet services."
+"It provides access to detailed forecasts, up to 7 days, with hourly details for "
+"the current and next day, using various internet services."
 msgstr ""
-"Få en detaljert oversikt over været det neste døgnet, og et sammendrag av de "
-"kommende dagene, ved hjelp av forskjellige værtjenester."
+"Få en detaljert oversikt over været det neste døgnet og et sammendrag av de "
+"kommende dagene ved hjelp av forskjellige værtjenester."
 
-#: data/org.gnome.Weather.metainfo.xml.in.in:24
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
 msgid ""
 "It also optionally integrates with the GNOME Shell, allowing you to see the "
-"current conditions of the most recently searched cities by just typing the "
-"name in the Activities Overview."
+"current conditions of the most recently searched cities by just typing the name "
+"in the Activities Overview."
 msgstr ""
-"Appen kan også la deg se været for nylig observerte byer ved å bare søke "
-"etter navnene deres i systemet ditt."
+"Appen kan også la deg se været for nylig observerte steder ved bare å søke etter "
+"navnene deres i systemet ditt."
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+msgid "Hourly View"
+msgstr "Timesvarsel"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+msgid "Daily View"
+msgstr "Dagsvarsel"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.metainfo.xml.in.in:482 src/app/window.ts:189
+#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
 msgid "The GNOME Project"
 msgstr "GNOME"
 
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
-msgstr "Søk etter byer"
+msgstr "Søk etter steder"
 
 #: data/weather-widget.ui:42
 msgid "Places"
-msgstr "Byer"
+msgstr "Steder"
 
 #: data/weather-widget.ui:92
 msgid "_Hourly"
-msgstr "Hver _time"
+msgstr "_Timesvarsel"
 
 #: data/weather-widget.ui:124
 msgid "_Daily"
-msgstr "Hver _dag"
+msgstr "_Dagsvarsel"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
@@ -151,11 +160,11 @@ msgstr "Velkommen til Været"
 
 #: data/window.ui:48
 msgid "To get started, select a location."
-msgstr "Velg en by for å komme i gang"
+msgstr "Velg et sted for å komme i gang"
 
 #: data/window.ui:54
 msgid "Search for a city or country"
-msgstr "Søk etter en by eller et land"
+msgstr "Søk etter et sted eller et land"
 
 #: data/window.ui:73
 msgid "Refresh"
@@ -172,7 +181,7 @@ msgstr "Føles som %.0f°"
 
 #: src/app/city.ts:289
 msgid "Updated just now."
-msgstr "Oppdatert nettopp"
+msgstr "Nettopp oppdatert"
 
 #: src/app/city.ts:294
 #, javascript-format
