@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-weather master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
 "POT-Creation-Date: 2026-03-12 19:37+0000\n"
-"PO-Revision-Date: 2026-04-16 21:58+0200\n"
+"PO-Revision-Date: 2026-04-21 11:40+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -68,7 +68,7 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Polohy zobrazené na mape sveta aplikácie Počasie prostredia Gnome. Každá "
+"Polohy zobrazené na mape sveta aplikácie Počasie prostredia GNOME. Každá "
 "hodnota reprezentuje GVariant vrátený službou gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
@@ -81,11 +81,11 @@ msgstr "Výška hlavného okna."
 
 #: data/org.gnome.Weather.gschema.xml:22
 msgid "Window maximized"
-msgstr "Maximalizovať okno"
+msgstr "Maximalizované okno"
 
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
-msgstr "Či má alebo nemá byť okno maximalizované."
+msgstr "Či je alebo nie je okno maximalizované."
 
 #: data/org.gnome.Weather.metainfo.xml.in.in:10
 msgid ""
