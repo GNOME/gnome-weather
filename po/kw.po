@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2026-02-01 08:18+0000\n"
-"PO-Revision-Date: 2026-02-01 12:07+0000\n"
+"POT-Creation-Date: 2026-03-12 19:37+0000\n"
+"PO-Revision-Date: 2026-04-22 13:14+0100\n"
 "Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
 "Language-Team: kw\n"
 "Language: kw\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-DL-Branch: main\n"
 "X-DL-Domain: po\n"
 "X-DL-State: Translating\n"
-"X-Generator: Gtranslator 49.0\n"
+"X-Generator: Gtranslator 50.0\n"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -60,7 +60,7 @@ msgstr "Kewer;Dargan;"
 
 #: data/org.gnome.Weather.desktop.in.in:13
 msgid "Allows weather information to be displayed for your location."
-msgstr "Gasa kedhlow kewer bos diskwedhes rag dha tyller."
+msgstr "Gasa kedhlow kewer bos diskwedhys rag agas tyller."
 
 #: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
@@ -71,16 +71,16 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"An tylleryow diskwedhys y'n gwel bys gnome-weather. Pub niver yw unn "
-"GVariant daskorys gans gweather_location_serialize()."
+"An dylleryow diskwedhys y'n gwel bys gnome-weather. Pub niver yw GVariant "
+"daskorys gans gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
 msgid "The width of the main window."
-msgstr "An lester an fenester chif."
+msgstr "An lester a'n pennfenester."
 
 #: data/org.gnome.Weather.gschema.xml:18
 msgid "The height of the main window."
-msgstr "An ughelder an fenester chif."
+msgstr "An ughelder a'n pennfenester."
 
 #: data/org.gnome.Weather.gschema.xml:22
 msgid "Window maximized"
@@ -88,23 +88,23 @@ msgstr "Kowlvoghhys fenester"
 
 #: data/org.gnome.Weather.gschema.xml:23
 msgid "Whether or not the window is maximized."
-msgstr "Mar an fenester yw kowlvoghhys"
+msgstr "Mars an fenester yw kowlvoghhys."
 
 #: data/org.gnome.Weather.metainfo.xml.in.in:10
 msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
 msgstr ""
-"Unn app byghan gasa ty mires orth an studh kewer a'n jydh rag dha cita, po "
-"neb le y'n bys."
+"App byghan ow kasa dhywgh mires orth an studh kewer a-lemmyn rag agas cita, "
+"po neb le y'n bys."
 
 #: data/org.gnome.Weather.metainfo.xml.in.in:14
 msgid ""
 "It provides access to detailed forecasts, up to 7 days, with hourly details "
 "for the current and next day, using various internet services."
 msgstr ""
-"Yth provia hedhas rag darganow manylys, bys dhe 7 dedhyow, gans manylyon "
-"herwydh an our rag an dydh lemmyn ha nessa, ow devnydhya gonisyow "
+"Ow provia hedhas rag darganow manylys, bys dhe 7 dedhyow, gans manylyon "
+"herwydh an our rag an dydh a-lemmyn ha nessa, ow tevnydhya gonisyow "
 "kesrosweyth dyffrans."
 
 #: data/org.gnome.Weather.metainfo.xml.in.in:18
@@ -113,8 +113,8 @@ msgid ""
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"Yth maga ta oberi dre dhewis gans an Shell GNOME, ow gasa ty gweles an kewer "
-"a'n jydh an citys hwilys diwettha gans ow jynnskrifa an hanow yn an Gorwolok "
+"Ynwedh oberi dre dhewis gans an Shell GNOME, ow kasa dhywgh gweles an gewer "
+"a-lemmyn a'n citys hwilys diwettha gans ow jynnskrifa an hanow y'n Worwolok "
 "Gwriansow."
 
 #: data/org.gnome.Weather.metainfo.xml.in.in:28
@@ -132,7 +132,7 @@ msgstr "An Ragdres GNOME"
 
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
-msgstr "Hwilas rag unn cita"
+msgstr "Hwilas rag cita"
 
 #: data/weather-widget.ui:42
 msgid "Places"
@@ -148,7 +148,7 @@ msgstr "_Dedhyek"
 
 #: data/window.ui:6
 msgid "Temperature Unit"
-msgstr "Eghen Tempredh"
+msgstr "Unsys Tempredh"
 
 #: data/window.ui:8
 msgid "_Celsius"
@@ -160,11 +160,11 @@ msgstr "_Fahrenheit"
 
 #: data/window.ui:21
 msgid "_About Weather"
-msgstr "_A-dro Kewer"
+msgstr "_A-dro dhe Gewer"
 
 #: data/window.ui:47
 msgid "Welcome to Weather!"
-msgstr "Dynnarfh dhe Kewer!"
+msgstr "Dynnargh dhe Gewer!"
 
 #: data/window.ui:48
 msgid "To get started, select a location."
@@ -172,7 +172,7 @@ msgstr "Rag dalleth, dewis unn tyller."
 
 #: data/window.ui:54
 msgid "Search for a city or country"
-msgstr "Hwilas unn cita po bro"
+msgstr "Hwilas cita po bro"
 
 #: data/window.ui:73
 msgid "Refresh"
@@ -180,12 +180,12 @@ msgstr "Disegha"
 
 #: data/window.ui:87
 msgid "Main Menu"
-msgstr "Rol Chif"
+msgstr "Pennrol"
 
 #: src/app/city.ts:259
 #, javascript-format
 msgid "Feels like %.0f°"
-msgstr "Klewes avel %.0f°"
+msgstr "%.0f° dell omglewir"
 
 #: src/app/city.ts:289
 msgid "Updated just now."
