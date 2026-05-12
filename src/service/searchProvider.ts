@@ -22,7 +22,7 @@ import GWeather from 'gi://GWeather';
 
 import * as Util from '../misc/util.js';
 import {WeatherBackgroundService} from './main.js';
-import {WorldModel} from 'src/shared/world.js';
+import {WorldModel} from '../shared/world.js';
 
 type ResultMeta = {
     name: GLib.Variant<'s'>;
