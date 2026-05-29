@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
 "POT-Creation-Date: 2026-03-12 19:37+0000\n"
-"PO-Revision-Date: 2026-04-22 13:14+0100\n"
+"PO-Revision-Date: 2026-05-29 17:07+0100\n"
 "Last-Translator: Flynn Peck <cirilla@tuta.io>\n"
 "Language-Team: kw\n"
 "Language: kw\n"
@@ -64,14 +64,14 @@ msgstr "Gasa kedhlow kewer bos diskwedhys rag agas tyller."
 
 #: data/org.gnome.Weather.gschema.xml:6
 msgid "Configured cities to show weather for"
-msgstr "Citys selys rag diskwedhes kewer rag"
+msgstr "Citys selys rag diskwedhes kewer"
 
 #: data/org.gnome.Weather.gschema.xml:7
 msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"An dylleryow diskwedhys y'n gwel bys gnome-weather. Pub niver yw GVariant "
+"An tylleryow diskwedhys y'n gwel bys gnome-weather. Pub niver yw GVariant "
 "daskorys gans gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
@@ -140,7 +140,7 @@ msgstr "Tylleryow"
 
 #: data/weather-widget.ui:92
 msgid "_Hourly"
-msgstr "_Herwydh An Our"
+msgstr "_Euryek"
 
 #: data/weather-widget.ui:124
 msgid "_Daily"
@@ -168,7 +168,7 @@ msgstr "Dynnargh dhe Gewer!"
 
 #: data/window.ui:48
 msgid "To get started, select a location."
-msgstr "Rag dalleth, dewis unn tyller."
+msgstr "Rag dalleth, dewisewgh tyller."
 
 #: data/window.ui:54
 msgid "Search for a city or country"
@@ -232,7 +232,7 @@ msgstr "Dargan Dedhyek"
 
 #: src/app/dailyForecast.ts:143 src/app/hourlyForecast.ts:114
 msgid "Forecast not Available"
-msgstr "Dargan Ankavadow"
+msgstr "Dargan nag yw Kavadow"
 
 #. Translators: this is the time format for day and month name according to the current locale
 #: src/app/dailyForecast.ts:335
@@ -241,7 +241,7 @@ msgstr "%b %e"
 
 #: src/app/hourlyForecast.ts:53
 msgid "Hourly Forecast"
-msgstr "Dargan Herwydh an Our"
+msgstr "Dargan Euryek"
 
 #: src/app/hourlyForecast.ts:139
 msgid "Now"
