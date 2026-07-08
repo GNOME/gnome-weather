@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Tchelmino Windrick <tchelminowindrick@gmail.com>, 2025.
+# Thierry Randrianiriana <randrianiriana@gmail.com>, 2026.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-weather\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
+"POT-Creation-Date: 2026-03-12 19:37+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: mg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.9\n"
+
+#: data/day-entry.ui:20
+msgid "Night"
+msgstr "Alina"
+
+#: data/day-entry.ui:33
+msgid "Morning"
+msgstr "Maraina"
+
+#: data/day-entry.ui:46
+msgid "Afternoon"
+msgstr "Tolak'andro"
+
+#: data/day-entry.ui:59
+msgid "Evening"
+msgstr "Hariva"
+
+# "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+# "Language-Team: LANGUAGE <LL@li.org>\n"
+#: data/org.gnome.Weather.desktop.in.in:3
+#: data/org.gnome.Weather.metainfo.xml.in.in:5 data/window.ui:82
+#: src/app/application.ts:53 src/app/window.ts:187 src/app/window.ts:199
+#: src/service/main.ts:50
+msgid "Weather"
+msgstr "Toetr'andro"
+
+#: data/org.gnome.Weather.desktop.in.in:4
+#: data/org.gnome.Weather.metainfo.xml.in.in:6
+msgid "Show weather conditions and forecast"
+msgstr "Aseho ny toetran'ny andro sy ny mety ho toetoetran'ny andro"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:12
+msgid "Weather;Forecast;"
+msgstr "Toetr'andro;Vinavinan'ny toetr'andro;"
+
+#: data/org.gnome.Weather.desktop.in.in:13
+msgid "Allows weather information to be displayed for your location."
+msgstr ""
+"Omena lalana ny hisehoan'ny momban'ny toetr'andro amin'ny faritra misy anao."
+
+#: data/org.gnome.Weather.gschema.xml:6
+msgid "Configured cities to show weather for"
+msgstr "Afaka tsidiha ny toetr'andro amin'ny faritra"
+
+#: data/org.gnome.Weather.gschema.xml:7
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Ny faritra hita amin'ny bolantan'ny gnome-weather. Izy ireo dia GVariant "
+"returned by gweather_location_serialize()."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "Ny antsakan'ny varavan-kely."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "Ny andavan'ny varavaran-kely."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Varavaran-kely farany ngeza"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Mariho raha efa farany ngeza ny varavaran-kely."
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Fampiharana kely afahanao mijery ny toetr'andro amin'izao fotoana amin'ny "
+"faritra misy anao, na amin'ny toeran-kafa n'aiza n'aiza maneran-tany."
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Izay ahita antsipirian'ny vina ho mety ny toetran'ny andro, hatramin'ny 7 "
+"andro, miarak'amin'ny ora amin'ny fotoana amin'izao sy ny ampitso, amin'ny "
+"fampiasana antontak'asa ainterinety samihafa."
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"Izy koa afaka atsofoka miaraka amin'ny GNOME Shell, afahanao manaraka "
+"nytahany amizao amin'ny tanàna notadiavina vao tsy ela amin'ny fampotsirina "
+"nyanarana eo amin'ny Hetsika Hehetra."
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+msgid "Hourly View"
+msgstr "Isan'Ora"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+msgid "Daily View"
+msgstr "Isan'Andro"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
+msgid "The GNOME Project"
+msgstr "Ny vinank'asan'ny GNOME"
+
+#: data/places-popover.ui:15 data/places-popover.ui:76
+msgid "Search for a city"
+msgstr "Hitady toerana"
+
+#: data/weather-widget.ui:42
+msgid "Places"
+msgstr "Ireo toerana"
+
+#: data/weather-widget.ui:92
+msgid "_Hourly"
+msgstr "Isan'_Ora"
+
+#: data/weather-widget.ui:124
+msgid "_Daily"
+msgstr "Isan'_Andro"
+
+#: data/window.ui:6
+msgid "Temperature Unit"
+msgstr "Famaratana toetr'andro"
+
+#: data/window.ui:8
+msgid "_Celsius"
+msgstr "_Celsius"
+
+#: data/window.ui:13
+msgid "_Fahrenheit"
+msgstr "_Fahrenheit"
+
+#: data/window.ui:21
+msgid "_About Weather"
+msgstr "_Momban'ny toetr'andro"
+
+#: data/window.ui:47
+msgid "Welcome to Weather!"
+msgstr "Tonga soa eto amin'ny Weather !"
+
+#: data/window.ui:48
+msgid "To get started, select a location."
+msgstr "Mba hanombohana azy, fidio ny faritra misy anao."
+
+#: data/window.ui:54
+msgid "Search for a city or country"
+msgstr "Hitady tanàna na firenena"
+
+#: data/window.ui:73
+msgid "Refresh"
+msgstr "Hanavao"
+
+#: data/window.ui:87
+msgid "Main Menu"
+msgstr "Pejy fandraisana"
+
+#: src/app/city.ts:259
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Feels like %.0f°"
+
+#: src/app/city.ts:289
+msgid "Updated just now."
+msgstr "Vao nohavaozina teo."
+
+#: src/app/city.ts:294
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "Vao nohavaozina %d minitra lasa."
+msgstr[1] "Vao nohavaozina %d minitra lasa."
+
+#: src/app/city.ts:302
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "Vao nohavaozina %d ora lasa."
+msgstr[1] "Vao nohavaozina %d ora lasa."
+
+#: src/app/city.ts:310
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "Vao nohavaozina %d andro lasa."
+msgstr[1] "Vao nohavaozina %d andro lasa."
+
+#: src/app/city.ts:318
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "Vao nohavaozina %d herinandro lasa."
+msgstr[1] "Vao nohavaozina %d herinandro lasa."
+
+#: src/app/city.ts:325
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "Updated %d months ago."
+msgstr[0] "Vao nohavaozina %d volana lasa."
+msgstr[1] "Vao nohavaozina %d volana lasa."
+
+#: src/app/dailyForecast.ts:72
+msgid "Daily Forecast"
+msgstr "Vinavina isan'andro"
+
+#: src/app/dailyForecast.ts:143 src/app/hourlyForecast.ts:114
+msgid "Forecast not Available"
+msgstr "Tsy misy ny vinavina"
+
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.ts:335
+msgid "%b %e"
+msgstr "%b %e"
+
+#: src/app/hourlyForecast.ts:53
+msgid "Hourly Forecast"
+msgstr "Vinavina isan'ora"
+
+#: src/app/hourlyForecast.ts:139
+msgid "Now"
+msgstr "Ankehitriny"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/hourlyForecast.ts:146
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: src/app/window.ts:186
+msgid "translator-credits"
+msgstr "translator-credits"
+
+#: src/app/world.ts:73
+msgid "World view"
+msgstr "Fijery izao tontolo izao"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: src/misc/util.ts:107
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: src/service/searchProvider.ts:214
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
