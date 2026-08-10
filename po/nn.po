@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
 "POT-Creation-Date: 2026-03-12 19:37+0000\n"
-"PO-Revision-Date: 2026-04-14 20:11+0200\n"
+"PO-Revision-Date: 2026-08-04 20:23+0200\n"
 "Last-Translator: Gersemi <Gnome@morkedal.com>\n"
 "Language-Team: Norwegian Nynorsk <nn@li.org>\n"
 "Language: nn\n"
@@ -62,7 +62,7 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a GVariant "
 "returned by gweather_location_serialize()."
 msgstr ""
-"Stadene som blir viste i verdsvisinga av GNOME Vêr. Kvar verdi er ein GVariant frå "
+"Stadene som blir viste i verdsvisinga av Vêr. Kvar verdi er ein GVariant returnert frå "
 "gweather_location_serialize()."
 
 #: data/org.gnome.Weather.gschema.xml:14
@@ -86,7 +86,7 @@ msgid ""
 "A small application that allows you to monitor the current weather conditions for your "
 "city, or anywhere in the world."
 msgstr ""
-"Eit lite program som lar deg følgje med på vêret på staden din – eller kor som helst i "
+"Eit lite program som lar deg følgja med på vêret på staden din – eller kor som helst i "
 "verda."
 
 #: data/org.gnome.Weather.metainfo.xml.in.in:14
@@ -104,7 +104,7 @@ msgid ""
 "Activities Overview."
 msgstr ""
 "Programmet kan også integrerast med GNOME-skalet, slik at du ser vêret for nyleg søkte "
-"stader berre ved å skrive namnet i oversikta over aktivitetar."
+"stader berre ved å skriva namnet i oversikta over aktivitetar."
 
 #: data/org.gnome.Weather.metainfo.xml.in.in:28
 msgid "Hourly View"
@@ -115,7 +115,8 @@ msgid "Daily View"
 msgstr "Dagsvarsel"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
+#: data/org.gnome.Weather.metainfo.xml.in.in:486
+#: data/org.gnome.Weather.metainfo.xml.in.in:488 src/app/window.ts:189
 msgid "The GNOME Project"
 msgstr "GNOME"
 
@@ -184,36 +185,36 @@ msgstr "Oppdatert nett no."
 #, javascript-format
 msgid "Updated %d minute ago."
 msgid_plural "Updated %d minutes ago."
-msgstr[0] "Oppdatert %d minutt sidan."
-msgstr[1] "Oppdatert %d minutt sidan."
+msgstr[0] "Oppdatert for %d minutt sidan."
+msgstr[1] "Oppdatert for %d minutt sidan."
 
 #: src/app/city.ts:302
 #, javascript-format
 msgid "Updated %d hour ago."
 msgid_plural "Updated %d hours ago."
-msgstr[0] "Oppdatert %d time sidan."
-msgstr[1] "Oppdatert %d timar sidan."
+msgstr[0] "Oppdatert for %d time sidan."
+msgstr[1] "Oppdatert for %d timar sidan."
 
 #: src/app/city.ts:310
 #, javascript-format
 msgid "Updated %d day ago."
 msgid_plural "Updated %d days ago."
-msgstr[0] "Oppdatert %d dag sidan."
-msgstr[1] "Oppdatert %d dagar sidan."
+msgstr[0] "Oppdatert for %d dag sidan."
+msgstr[1] "Oppdatert for %d dagar sidan."
 
 #: src/app/city.ts:318
 #, javascript-format
 msgid "Updated %d week ago."
 msgid_plural "Updated %d weeks ago."
-msgstr[0] "Oppdatert %d veke sidan."
-msgstr[1] "Oppdatert %d veker sidan."
+msgstr[0] "Oppdatert for %d veke sidan."
+msgstr[1] "Oppdatert for %d veker sidan."
 
 #: src/app/city.ts:325
 #, javascript-format
 msgid "Updated %d month ago."
 msgid_plural "Updated %d months ago."
-msgstr[0] "Oppdatert %d månad sidan."
-msgstr[1] "Oppdatert %d månader sidan."
+msgstr[0] "Oppdatert for %d månad sidan."
+msgstr[1] "Oppdatert for %d månader sidan."
 
 #: src/app/dailyForecast.ts:72
 msgid "Daily Forecast"
@@ -243,7 +244,7 @@ msgstr "%l∶%M %p"
 
 #: src/app/window.ts:186
 msgid "translator-credits"
-msgstr "iMAniaC"
+msgstr "Miika Brenna Jarsve"
 
 #: src/app/world.ts:73
 msgid "World view"
