@@ -5,22 +5,23 @@
 # Paweł Żołnowski <pawel@zolnowski.name>, 2014.
 # Aviary.pl <community-poland@mozilla.org>, 2012-2023.
 # Victoria <royal.victoria@proton.me>, 2026.
+# Marcel Mrówka <micro.mail88@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2026-02-01 08:18+0000\n"
-"PO-Revision-Date: 2026-02-24 18:45+0100\n"
-"Last-Translator: Victoria <royal.victoria@proton.me>\n"
-"Language-Team: Polish\n"
+"POT-Creation-Date: 2026-03-12 19:37+0000\n"
+"PO-Revision-Date: 2026-08-19 17:19+0200\n"
+"Last-Translator: Marcel Mrówka <micro.mail88@gmail.com>\n"
+"Language-Team: Polish <https://l10n.gnome.org/teams/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 49.0\n"
+"X-Generator: Gtranslator 50.0\n"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -48,7 +49,7 @@ msgstr "Pogoda"
 #: data/org.gnome.Weather.desktop.in.in:4
 #: data/org.gnome.Weather.metainfo.xml.in.in:6
 msgid "Show weather conditions and forecast"
-msgstr "Wyświetlanie warunków pogodowych i prognozy"
+msgstr "Wyświetlaj warunki pogodowe i prognozy"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/org.gnome.Weather.desktop.in.in:12
@@ -69,7 +70,7 @@ msgid ""
 "The locations shown in the world view of gnome-weather. Each value is a "
 "GVariant returned by gweather_location_serialize()."
 msgstr ""
-"Położenia wyświetlane w widoku świata programu gnome-weather. Każda wartość "
+"Położenia wyświetlane w widoku świata aplikacji gnome-weather. Każda wartość "
 "to GVariant zwrócony przez funkcję „gweather_location_serialize()”."
 
 #: data/org.gnome.Weather.gschema.xml:14
@@ -93,7 +94,7 @@ msgid ""
 "A small application that allows you to monitor the current weather "
 "conditions for your city, or anywhere in the world."
 msgstr ""
-"Mały program umożliwiający monitorowanie obecnych warunków pogodowych "
+"Mała aplikacja umożliwiająca monitorowanie obecnych warunków pogodowych "
 "w miejscu zamieszkania lub w dowolnym miejscu na świecie."
 
 #: data/org.gnome.Weather.metainfo.xml.in.in:14
@@ -111,8 +112,8 @@ msgid ""
 "current conditions of the most recently searched cities by just typing the "
 "name in the Activities Overview."
 msgstr ""
-"Program można również zintegrować z powłoką GNOME, co umożliwia dostęp do "
-"obecnych warunków pogodowych w ostatnio wyszukiwanych miastach poprzez "
+"Aplikacja również może się integrować z powłoką GNOME, co umożliwia dostęp "
+"do obecnych warunków pogodowych w ostatnio wyszukiwanych miastach poprzez "
 "pisanie ich nazw na ekranie podglądu."
 
 #: data/org.gnome.Weather.metainfo.xml.in.in:28
@@ -124,13 +125,14 @@ msgid "Daily View"
 msgstr "Widok dzienny"
 
 #. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.metainfo.xml.in.in:486 src/app/window.ts:189
+#: data/org.gnome.Weather.metainfo.xml.in.in:486
+#: data/org.gnome.Weather.metainfo.xml.in.in:488 src/app/window.ts:189
 msgid "The GNOME Project"
 msgstr "Projekt GNOME"
 
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
-msgstr "Wyszukiwanie miasta"
+msgstr "Wyszukaj miasto"
 
 #: data/weather-widget.ui:42
 msgid "Places"
@@ -158,11 +160,11 @@ msgstr "Stopnie _Fahrenheita"
 
 #: data/window.ui:21
 msgid "_About Weather"
-msgstr "_O programie"
+msgstr "_O aplikacji"
 
 #: data/window.ui:47
 msgid "Welcome to Weather!"
-msgstr "Witamy w prognozie pogody!"
+msgstr "Witamy w Pogodzie!"
 
 #: data/window.ui:48
 msgid "To get started, select a location."
@@ -170,11 +172,11 @@ msgstr "Należy wybrać położenie, aby rozpocząć."
 
 #: data/window.ui:54
 msgid "Search for a city or country"
-msgstr "Wyszukiwanie miasta lub kraju"
+msgstr "Wyszukaj miasto lub kraj"
 
 #: data/window.ui:73
 msgid "Refresh"
-msgstr "Odświeża"
+msgstr "Odśwież"
 
 #: data/window.ui:87
 msgid "Main Menu"
@@ -272,7 +274,7 @@ msgstr "Widok świata"
 #: src/misc/util.ts:107
 #, javascript-format
 msgid "%s / %s"
-msgstr "%s/%s"
+msgstr "%s / %s"
 
 #. TRANSLATORS: this is the description shown in the overview search
 #. It's the current weather conditions followed by the temperature,
