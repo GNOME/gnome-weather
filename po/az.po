@@ -7,93 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-weather main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gnome-weather/issues/\n"
-"POT-Creation-Date: 2025-05-13 06:28+0000\n"
-"PO-Revision-Date: 2025-05-15 14:52+0400\n"
+"POT-Creation-Date: 2026-03-12 19:37+0000\n"
+"PO-Revision-Date: 2026-10-17 03:20+0400\n"
 "Last-Translator: Ramal Rəhimov <jhonaluman@gmail.com>\n"
 "Language-Team: Azerbaijani <az@li.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 41.0\n"
-
-#: data/org.gnome.Weather.appdata.xml.in.in:5
-#: data/org.gnome.Weather.desktop.in.in:4 data/window.ui:82
-msgid "Weather"
-msgstr "Hava Proqnozu"
-
-#: data/org.gnome.Weather.appdata.xml.in.in:6
-#: data/org.gnome.Weather.desktop.in.in:5
-msgid "Show weather conditions and forecast"
-msgstr "Hava şəraitini və proqnozunu göstər"
-
-#: data/org.gnome.Weather.appdata.xml.in.in:16
-msgid ""
-"A small application that allows you to monitor the current weather "
-"conditions for your city, or anywhere in the world."
-msgstr ""
-"Şəhərinizdə və ya dünyanın istənilən yerində cari hava şəraitini izləməyə "
-"imkan verən kiçik tətbiq."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:20
-msgid ""
-"It provides access to detailed forecasts, up to 7 days, with hourly details "
-"for the current and next day, using various internet services."
-msgstr ""
-"Hazırki və növbəti gün üçün saatlıq detallarda daxil olmaqla, 7 günə qədər "
-"ətraflı proqnozlara çıxış imkanı təqdim edir."
-
-#: data/org.gnome.Weather.appdata.xml.in.in:24
-msgid ""
-"It also optionally integrates with the GNOME Shell, allowing you to see the "
-"current conditions of the most recently searched cities by just typing the "
-"name in the Activities Overview."
-msgstr ""
-"Eyni zamanda GNOME Shell ilə inteqrasiya olunaraq, son istifadə olunan "
-"məkanın cari hava şəraitini göstərməyə imkan verir."
-
-#. developer_name tag deprecated with Appstream 1.0
-#: data/org.gnome.Weather.appdata.xml.in.in:451
-msgid "The GNOME Project"
-msgstr "GNOME Layihəsi"
-
-#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/org.gnome.Weather.desktop.in.in:13
-msgid "Weather;Forecast;"
-msgstr "Hava;Proqnoz;"
-
-#: data/org.gnome.Weather.desktop.in.in:14
-msgid "Allows weather information to be displayed for your location."
-msgstr "Sizin üçün hava məlumatlarını göstərməyə imkan verir."
-
-#: data/org.gnome.Weather.gschema.xml:6
-msgid "Configured cities to show weather for"
-msgstr "Hava proqnozu göstəriləcək konfiqurasiya olunmuş şəhərlər"
-
-#: data/org.gnome.Weather.gschema.xml:7
-msgid ""
-"The locations shown in the world view of gnome-weather. Each value is a "
-"GVariant returned by gweather_location_serialize()."
-msgstr ""
-"Gnome-weather tətbiqinin dünya xəritəsi görünüşündə göstərilən məkanlar. Hər "
-"bir dəyər gweather_location_to_variant() tərəfindən qaytarılan GVariant-dir."
-
-#: data/org.gnome.Weather.gschema.xml:14
-msgid "The width of the main window."
-msgstr "Əsas pəncərənin eni."
-
-#: data/org.gnome.Weather.gschema.xml:18
-msgid "The height of the main window."
-msgstr "Əsas pəncərənin hündürlüyü."
-
-#: data/org.gnome.Weather.gschema.xml:22
-msgid "Window maximized"
-msgstr "Pəncərə maksimum ölçüdədir"
-
-#: data/org.gnome.Weather.gschema.xml:23
-msgid "Whether or not the window is maximized."
-msgstr "Pəncərənin maksimum ölçüdə olub-olmaması."
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.10\n"
 
 #: data/day-entry.ui:20
 msgid "Night"
@@ -111,9 +34,98 @@ msgstr "Günorta"
 msgid "Evening"
 msgstr "Axşam"
 
+#: data/org.gnome.Weather.desktop.in.in:3
+#: data/org.gnome.Weather.metainfo.xml.in.in:5 data/window.ui:82
+#: src/app/application.ts:53 src/app/window.ts:187 src/app/window.ts:199
+#: src/service/main.ts:50
+msgid "Weather"
+msgstr "Hava"
+
+#: data/org.gnome.Weather.desktop.in.in:4
+#: data/org.gnome.Weather.metainfo.xml.in.in:6
+msgid "Show weather conditions and forecast"
+msgstr "Hava şəraitini və proqnozunu göstər"
+
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: data/org.gnome.Weather.desktop.in.in:12
+msgid "Weather;Forecast;"
+msgstr "Hava;Proqnoz;Hava durumu;Hava proqnozu;"
+
+#: data/org.gnome.Weather.desktop.in.in:13
+msgid "Allows weather information to be displayed for your location."
+msgstr "Yerləşdiyiniz məkan üçün hava məlumatlarının göstərilməsinə imkan verir."
+
+#: data/org.gnome.Weather.gschema.xml:6
+msgid "Configured cities to show weather for"
+msgstr "Havası göstəriləcək tənzimlənmiş şəhərlər"
+
+#: data/org.gnome.Weather.gschema.xml:7
+msgid ""
+"The locations shown in the world view of gnome-weather. Each value is a "
+"GVariant returned by gweather_location_serialize()."
+msgstr ""
+"Gnome-weather tətbiqinin dünya görünüşündə göstərilən məkanlar. Hər "
+"bir dəyər gweather_location_serialize() tərəfindən qaytarılan GVariant-dir."
+
+#: data/org.gnome.Weather.gschema.xml:14
+msgid "The width of the main window."
+msgstr "Əsas pəncərənin eni."
+
+#: data/org.gnome.Weather.gschema.xml:18
+msgid "The height of the main window."
+msgstr "Əsas pəncərənin hündürlüyü."
+
+#: data/org.gnome.Weather.gschema.xml:22
+msgid "Window maximized"
+msgstr "Pəncərə böyüdülüb"
+
+#: data/org.gnome.Weather.gschema.xml:23
+msgid "Whether or not the window is maximized."
+msgstr "Pəncərənin böyüdülüb-böyüdülməməsi."
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:10
+msgid ""
+"A small application that allows you to monitor the current weather "
+"conditions for your city, or anywhere in the world."
+msgstr ""
+"Şəhərinizdə və ya dünyanın istənilən yerində cari hava şəraitini izləməyə "
+"imkan verən kiçik tətbiq."
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:14
+msgid ""
+"It provides access to detailed forecasts, up to 7 days, with hourly details "
+"for the current and next day, using various internet services."
+msgstr ""
+"Müxtəlif internet xidmətlərindən istifadə edərək, cari və növbəti gün üçün "
+"saatlıq detallar da daxil olmaqla, 7 günə qədər ətraflı proqnozlar təqdim edir."
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:18
+msgid ""
+"It also optionally integrates with the GNOME Shell, allowing you to see the "
+"current conditions of the most recently searched cities by just typing the "
+"name in the Activities Overview."
+msgstr ""
+"Həmçinin istəyə bağlı olaraq GNOME Shell ilə inteqrasiya olunur və sadəcə "
+"Fəaliyyətlər İcmalında adını yazmaqla ən son axtarılmış şəhərlərin cari hava "
+"şəraitini görməyə imkan verir."
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:28
+msgid "Hourly View"
+msgstr "Saatlıq görünüş"
+
+#: data/org.gnome.Weather.metainfo.xml.in.in:32
+msgid "Daily View"
+msgstr "Gündəlik görünüş"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Weather.metainfo.xml.in.in:486
+#: data/org.gnome.Weather.metainfo.xml.in.in:488 src/app/window.ts:189
+msgid "The GNOME Project"
+msgstr "GNOME Layihəsi"
+
 #: data/places-popover.ui:15 data/places-popover.ui:76
 msgid "Search for a city"
-msgstr "Şəhər axtarın"
+msgstr "Şəhər axtar"
 
 #: data/weather-widget.ui:42
 msgid "Places"
@@ -137,15 +149,15 @@ msgstr "_Selsi"
 
 #: data/window.ui:13
 msgid "_Fahrenheit"
-msgstr "_Farenhayt"
+msgstr "_Farenheyt"
 
 #: data/window.ui:21
 msgid "_About Weather"
-msgstr "_Weather haqqında"
+msgstr "Hava _haqqında"
 
 #: data/window.ui:47
 msgid "Welcome to Weather!"
-msgstr "Hava Proqnozuna xoş gəlmisiniz!"
+msgstr "Hava tətbiqinə xoş gəlmisiniz!"
 
 #: data/window.ui:48
 msgid "To get started, select a location."
@@ -153,7 +165,7 @@ msgstr "Başlamaq üçün bir məkan seçin."
 
 #: data/window.ui:54
 msgid "Search for a city or country"
-msgstr "Şəhər və ya Ölkə axtar"
+msgstr "Şəhər və ya ölkə axtar"
 
 #: data/window.ui:73
 msgid "Refresh"
@@ -161,4 +173,98 @@ msgstr "Yenilə"
 
 #: data/window.ui:87
 msgid "Main Menu"
-msgstr "Əsas Menyu"
+msgstr "Əsas menyu"
+
+#: src/app/city.ts:259
+#, javascript-format
+msgid "Feels like %.0f°"
+msgstr "Hiss edilən: %.0f°"
+
+#: src/app/city.ts:289
+msgid "Updated just now."
+msgstr "İndicə yenilənib."
+
+#: src/app/city.ts:294
+#, javascript-format
+msgid "Updated %d minute ago."
+msgid_plural "Updated %d minutes ago."
+msgstr[0] "%d dəqiqə əvvəl yenilənib."
+msgstr[1] "%d dəqiqə əvvəl yenilənib."
+
+#: src/app/city.ts:302
+#, javascript-format
+msgid "Updated %d hour ago."
+msgid_plural "Updated %d hours ago."
+msgstr[0] "%d saat əvvəl yenilənib."
+msgstr[1] "%d saat əvvəl yenilənib."
+
+#: src/app/city.ts:310
+#, javascript-format
+msgid "Updated %d day ago."
+msgid_plural "Updated %d days ago."
+msgstr[0] "%d gün əvvəl yenilənib."
+msgstr[1] "%d gün əvvəl yenilənib."
+
+#: src/app/city.ts:318
+#, javascript-format
+msgid "Updated %d week ago."
+msgid_plural "Updated %d weeks ago."
+msgstr[0] "%d həftə əvvəl yenilənib."
+msgstr[1] "%d həftə əvvəl yenilənib."
+
+#: src/app/city.ts:325
+#, javascript-format
+msgid "Updated %d month ago."
+msgid_plural "Updated %d months ago."
+msgstr[0] "%d ay əvvəl yenilənib."
+msgstr[1] "%d ay əvvəl yenilənib."
+
+#: src/app/dailyForecast.ts:72
+msgid "Daily Forecast"
+msgstr "Gündəlik proqnoz"
+
+#: src/app/dailyForecast.ts:143 src/app/hourlyForecast.ts:114
+msgid "Forecast not Available"
+msgstr "Proqnoz əlçatan deyil"
+
+#. Translators: this is the time format for day and month name according to the current locale
+#: src/app/dailyForecast.ts:335
+msgid "%b %e"
+msgstr "%e %b"
+
+#: src/app/hourlyForecast.ts:53
+msgid "Hourly Forecast"
+msgstr "Saatlıq proqnoz"
+
+#: src/app/hourlyForecast.ts:139
+msgid "Now"
+msgstr "İndi"
+
+#. Translators: this is a time format without date used for AM/PM
+#: src/app/hourlyForecast.ts:146
+msgid "%l∶%M %p"
+msgstr "%l∶%M %p"
+
+#: src/app/window.ts:186
+msgid "translator-credits"
+msgstr "Ramal Rəhimov <jhonaluman@gmail.com>"
+
+#: src/app/world.ts:73
+msgid "World view"
+msgstr "Dünya görünüşü"
+
+#. TRANSLATORS: this is the temperature string, minimum and maximum.
+#. The two values are already formatted, so it would be something like
+#. "7 °C / 19 °C"
+#: src/misc/util.ts:107
+#, javascript-format
+msgid "%s / %s"
+msgstr "%s / %s"
+
+#. TRANSLATORS: this is the description shown in the overview search
+#. It's the current weather conditions followed by the temperature,
+#. like "Clear sky, 14 °C"
+#: src/service/searchProvider.ts:214
+#, javascript-format
+msgid "%s, %s"
+msgstr "%s, %s"
